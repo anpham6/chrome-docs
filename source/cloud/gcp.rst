@@ -1,0 +1,499 @@
+=====================
+Google Cloud Platform
+=====================
+
+- **npm** i *@pi-r/gcp*
+
+.. note:: The alias "gcloud" can be used in place of "gcp" for the **service** property.
+
+Storage
+=======
+
+- https://cloud.google.com/storage
+- https://firebase.google.com/products/storage
+
+.. note:: **npm** i *firebase* && **npm** i *firebase-admin* (optional)
+
+Interface
+---------
+
+.. code-block:: typescript
+
+  import type { CloudStorage } from "./interface";
+  import type { StorageOptions } from '@google-cloud/storage';
+  import type { FirebaseOptions } from '@firebase/app';
+
+  interface GCPStorage extends CloudStorage {
+      service: "gcp | gcloud";
+      credential: string | GCPStorageCredential;
+      bucket: string;
+  }
+
+  interface GCPStorageCredential extends StorageOptions, FirebaseOptions {
+      product?: "firebase";
+      admin?: boolean; // firebase-admin
+  }
+
+API
+~~~
+.. code-block:: typescript
+
+  type Document = Record<string, any>;
+  type Metadata = Record<string, any>;
+
+Authentication
+--------------
+
+- `Credentials <https://cloud.google.com/docs/authentication/client-libraries>`_
+
+.. code-block:: javascript
+  :caption: using process.env
+
+  GOOGLE_APPLICATION_CREDENTIALS = "";
+
+.. code-block::
+
+  {
+    "dataSource": {
+      "credential": "main", // squared.cloud.json
+      /* OR */
+      "credential": {
+        "keyFilename": "./gcp.json", // Path to JSON credentials
+        "projectId": "nodejs"
+      },
+      /* OR */
+      "credential": {
+        "projectId": "nodejs",
+        "credentials": {
+          "client_email": "**********",
+          "private_key": "**********",
+          "type": "service_account", // Optional
+          "project_id": "nodejs"
+        }
+      },
+      /* OR */
+      "credential": {
+        "projectId": "nodejs" // When using GOOGLE_APPLICATION_CREDENTIALS
+      },
+      /* OR */
+      "credential": {
+        "projectId": "nodejs",
+        "apiKey": "**********",
+        "authDomain": "<project-id>.firebaseapp.com",
+        /* OR */
+        "product": "firebase" // When using GOOGLE_APPLICATION_CREDENTIALS
+      }
+    }
+  }
+
+Example usage
+-------------
+
+- `Storage Client API <https://googleapis.dev/nodejs/storage/latest>`_
+- `Firebase Client API <https://firebase.google.com/docs/reference/node/firebase.storage>`_
+- `Class ACL <https://cloud.google.com/nodejs/docs/reference/storage/latest/storage/acl>`_
+
+.. note:: **Firebase** does not support any bucket operations except "emptyBucket" and "metadata".
+
+.. code-block::
+
+  {
+    "selector": "html", // Any resource
+    "cloudStorage": [{
+      "service": "gcp",
+      "bucket": "nodejs-001",
+      "credential": {/* Authentication */},
+      "admin": {
+        "publicRead": true, // New buckets only
+        /* OR */
+        "acl": "private", // See "policy"
+
+        "configBucket": {
+          "policy": { // MakeBucketPrivateOptions
+            "acl": "private", // makePrivate + includeFiles + projectPrivate
+            "acl": "projectPrivate", // makePrivate + allUsers (delete) + allAuthenticatedUsers (delete)
+            "acl": "authenticatedRead", // projectPrivate + allAuthenticatedUsers:READER
+            "acl": "publicRead", // makePublic + includeFiles
+            "acl": "publicReadWrite", // publicRead + allUsers:WRITER
+            "acl": [{ "entity": "allUsers", "role": "READER" } /* add */, { "entity": "allAuthenticatedUsers" } /* delete */], // Custom
+
+            /* Unofficial aliases - gcp.setMetadata{iamConfiguration} */
+            "acl": "bucketAccessUniform", // Enable uniform bucket-level access
+            "acl": "bucketAccessACL" // Revert uniform bucket-level access (within 90 days)
+          },
+          "tags": { // gcp.setMetadata{labels}
+            "key_1": "value",
+            "key_2": "value"
+          },
+          "tags": {}, // gcp.setMetadata{labels=null}
+          "website": { // gcp.setMetadata{website}
+            "indexPage": "index.html", // mainPageSuffix
+            "errorPage": "404.html" // notFoundPage
+          },
+          /* During call to "upload" */
+          "create": { // gcp.createBucket{CreateBucketRequest}
+            "location": "ASIA",
+            "storageClass": "STANDARD" // "NEARLINE" | "COLDLINE" | "ARCHIVE"
+          },
+          "lifecycle": [/* LifecycleRule */], // gcp.addLifecycleRule
+          "lifecycle": [/* LifecycleRule */, false], // options.append = false
+          "lifecycle": [], // Delete all rules
+          "cors": [/* Cors */], // gcp.setCorsConfiguration
+          "cors": [], // Delete all rules
+          "retentionPolicy": 86400 // gcp.setRetentionPeriod (seconds)
+        }
+      },
+      "upload": {
+        /* gcp.file.save */
+        "publicRead": true, // Will not clobber existing ACLs
+        "publicRead": 0, // Remove ACL without affecting other ACLs
+        /* OR */
+        "acl": "authenticatedRead", // "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead"
+
+        "options": { // UploadOptions
+          "contentType": "text/html",
+          "predefinedAcl": "publicRead", // Supplementary are public
+          "metadata": {/* UploadMetadata */} // All objects except when "metadata" is defined
+        },
+
+        /* firebase.uploadBytes */
+        "options": { // UploadMetadata
+          "contentType": "text/html",
+          "customMetadata": {/* Metadata */} // All objects except when "metadata" is defined
+        },
+
+        /* Primary object only */
+        "metadata": {
+          "contentType": "text/html"
+        }
+      },
+      "download": {/* Same as interface - gcp.download | firebase.getDownloadURL */}
+    }]
+  }
+
+Database
+========
+
+Interface
+---------
+
+.. code-block:: typescript
+
+  import type { CloudDatabase } from "./interface";
+  import type { GoogleAuthOptions } from "google-auth-library";
+  import type { PathType } from "@google-cloud/datastore";
+  import type { entity } from "@google-cloud/datastore/build/src/entity";
+
+  interface GCPDatabaseQuery extends CloudDatabase {
+      source: "cloud";
+      service: "gcp" | "gcloud";
+      credential: string | GCPDatabaseCredential;
+      product?: "firestore" | "bigquery" | "bigtable" | "datastore" | "spanner" | "firebase";
+      id?: string | string[];
+      params?: unknown[] | Document;
+      database?: string;
+      updateType?: 0 | 1 | 2;
+      columns?: string[];
+      keys?: DatastoreKey | DatastoreKey[];
+      kind?: string | string[];
+      orderBy?: unknown[][];
+  }
+
+  interface GCPDatabaseCredential extends GoogleAuthOptions {/* Empty */}
+
+  type DatastoreKey = string | PathType[] | entity.KeyOptions;
+
+Authentication
+--------------
+
+.. code-block::
+
+  {
+    "dataSource": {
+      "credential": "main", // squared.cloud.json
+      /* OR */
+      "credential": {/* Same as Storage */},
+      /* OR */
+      "credential": {
+        "projectId": "nodejs",
+        "apiKey": "**********",
+        "authDomain": "<project-id>.firebaseapp.com",
+        "databaseURL": "https://<database-name>.firebaseio.com" // Required
+      }
+    }
+  }
+
+Example usage
+-------------
+
+Firestore
+~~~~~~~~~
+
+- https://cloud.google.com/firestore
+- `Client API <https://googleapis.dev/nodejs/firestore/latest>`__
+
+.. code-block::
+
+  {
+    "selector": "h1",
+    "type": "text",
+    "dataSource": {
+      "source": "cloud",
+      "service": "gcp",
+      "product": "firestore",
+      "credential": {/* Authentication */},
+      "table": "demo",
+
+      "id": "1", // fs.collection(table).doc
+      /* OR */
+      "id": ["1", "2"], // fs.getAll (table/id)
+      "options": {/* ReadOptions */},
+      /* OR */
+      "query": [ // fs.collection(table)
+        ["where", "group", "==", "Firestore"], // endAt | endBefore | limit | limitToLast | offset | orderBy | select | startAfter | startAt | where | withConverter
+        ["where", "id", "==", "1"],
+        ["limitToLast", 2],
+        ["orderBy", "title", "asc"]
+      ],
+      "orderBy": [ // Optional
+        ["title", "asc"]
+      ],
+
+      "value": "<b>${title}</b>: ${description}",
+
+      "update": {/* Document */}, // fs.update
+      "id": "1" // Same as item being retrieved
+    }
+  }
+
+BigQuery
+~~~~~~~~
+
+- https://cloud.google.com/bigquery
+- `Client API <https://googleapis.dev/nodejs/bigquery/latest>`__
+
+.. note:: **npm** i *@google-cloud/bigquery*
+
+.. code-block::
+
+  {
+    "selector": "h1",
+    "type": "text",
+    "dataSource": {
+      "source": "cloud",
+      "service": "gcp",
+      "product": "bigquery",
+      "credential": {/* Authentication */},
+
+      "database": "nodejs", // Dataset (optional)
+      "table": "demo", // Destination table (optional)
+
+      "query": "SELECT name, count FROM `demo.names_2014` WHERE gender = 'M' ORDER BY count DESC LIMIT 10", // bq.getQueryResults (required)
+      /* Optional */
+      "params": { "name": "value" },
+      "params": ["arg0" /* ? */, "arg1" /* ? */],
+      "options": {/* IQuery */},
+
+      /* Result: { "item_src": "bigquery.png", "item_alt": "BigQuery" } */
+      "value": {
+        "src": "item_src",
+        "alt": "item_alt"
+      },
+
+      "update": "SELECT name, state FROM `bigquery-public-data.usa_names.usa_1910_current` LIMIT 10" // "database" | "database" + "table" (bq.setMetadata)
+    }
+  }
+
+Datastore
+~~~~~~~~~
+
+- https://cloud.google.com/datastore
+- `Client API <https://googleapis.dev/nodejs/datastore/latest>`__
+
+.. note:: **npm** i *@google-cloud/datastore*
+
+.. code-block::
+
+  {
+    "selector": "h1",
+    "type": "text",
+    "dataSource": {
+      "source": "cloud",
+      "service": "gcp",
+      "product": "datastore",
+      "credential": {/* Authentication */},
+
+      "keys": "task", // ds.get
+      "keys": ["task", "sampletask1"], // PathType[]
+      "keys": { // KeyOptions
+        "namespace": "nodejs",
+        "path": ["task", "sampletask3"]
+      },
+      "keys": ["task", ["task", "sampletask2"]],
+      /* OR */
+      "name": "<namespace>", // With "kind" (optional)
+      "kind": "Task", // ds.runQuery (at least one parameter)
+      "kind": ["Task1", "Task2"],
+      "query": [ // end | filter | groupBy | hasAncestor | limit | offset | order | select | start
+        ["filter", "done", "=", false],
+        ["filter", "priority", ">=", 4],
+        ["order", "priority", { "descending": true }]
+      ],
+      "options": {/* RunQueryOptions */},
+
+      "value": "`<b>${this.title}</b>: ${this.description} (${this.total * 2})`", // Function template literal
+
+      "update": {/* Document */}, // ds.save
+      "keys": "task", // Same as item being retrieved
+      /* OR */
+      "kind": "Task",
+      "query": [/* Same */]
+    }
+  }
+
+Bigtable
+~~~~~~~~~
+
+- https://cloud.google.com/bigtable
+- `Client API <https://googleapis.dev/nodejs/bigtable/latest>`__
+
+.. note:: **npm** i *@google-cloud/bigtable*
+
+.. code-block::
+
+  {
+    "selector": "h1",
+    "type": "text",
+    "dataSource": {
+      "source": "cloud",
+      "service": "gcp",
+      "product": "bigtable",
+      "credential": {/* Authentication */},
+      "name": "nodejs", // Instance
+      "table": "demo",
+
+      "id": "rowKey1", // bt.get
+      "columns": ["column1", "column2"], // Optional
+      /* OR */
+      "id": "<empty>", // bt.createReadStream
+
+      "query": {/* Filter */}, // Overrides "filter" in GetRowOptions (optional)
+      "options": {/* GetRowOptions */},
+
+      "value": "{{if not expired}}<b>${title}</b>: ${description}{{else}}Expired{{end}}",
+
+      "update": {/* Document */}, // bt.save
+      "id": "rowKey1" // Same as item being retrieved
+    }
+  }
+
+Spanner
+~~~~~~~~~
+
+- https://cloud.google.com/spanner
+- `Client API <https://googleapis.dev/nodejs/spanner/latest>`__
+
+.. note:: **npm** i *@google-cloud/spanner*
+
+.. code-block::
+
+  {
+    "selector": "h1",
+    "type": "text",
+    "dataSource": {
+      "source": "cloud",
+      "service": "gcp",
+      "product": "spanner",
+      "credential": {/* Authentication */},
+      "name": "nodejs", // Instance
+
+      "database": "sample", // Required
+      "options": { // Optional
+        "databasePool": {/* session-pool.SessionPoolOptions */},
+        "databaseQuery": {/* protos.IQueryOptions */}
+      },
+
+      "table": "demo", // sp.table.read
+      "columns": ["col1", "col2"], // Overrides "columns" in ReadRequest
+      "query": { // ReadRequest
+        "columns": [],
+        "keys": []
+      },
+      "options": {
+        "tableRead": {/* TimestampBounds */}
+      },
+      /* OR */
+      "table": "<empty>", // sp.run
+      "query": "SELECT 1", // DML
+      "query": { "sql": "SELECT 1", "params": { "p1": 0, "p2": 1 } } // ExecuteSqlRequest
+
+      "dynamic": true, // element.innerXml (with tags)
+      "dynamic": false, // element.textContent
+
+      "table": "demo", // sp.table.update
+      "update": {/* Document */},
+      "updateType": 0, // 0 - update | 1 - insert | 2 - replace
+      "options": {
+        "tableUpdate": {/* UpdateRowsOptions */}
+      },
+      /* OR */
+      "table": "<empty>", // sp.runUpdate
+      "update": "SELECT 1",
+      "update": { "sql": "SELECT 1", "params": { "p1": 0, "p2": 1 } }
+    }
+  }
+
+Realtime Database
+~~~~~~~~~~~~~~~~~
+
+- https://firebase.google.com/products/realtime-database
+- `Client API <https://firebase.google.com/docs/reference/js/database.md#database_package>`__
+
+.. note:: **npm** i *firebase* && **npm** i *firebase-admin* (optional)
+
+.. code-block::
+
+  {
+    "selector": "h1",
+    "type": "text",
+    "dataSource": {
+      "source": "cloud",
+      "service": "gcp",
+      "product": "firebase",
+      "credential": {/* Authentication */},
+
+      "query": "path/to/ref", // rd.child
+      /* OR */
+      "query": "path/to/ref", // rd.query
+      "orderBy": [
+        ["orderByChild", "path/to/child"], // endBefore | endAt | equalTo | limitToFirst | limitToLast | orderByChild | orderByKey | orderByPriority | orderByValue | startAt | startAfter
+        ["startAfter", 5, "name"],
+        ["limitToFirst", 1]
+      ],
+
+      "viewEngine": "ejs",
+      "value": "<b><%= title %></b>: <%= description %>",
+
+      "update": {/* Document */}, // rd.update
+      "query": "path/to/ref" // Same as item being retrieved (rd.child)
+    }
+  }
+
+@pi-r/gcp
+=========
+
+.. versionadded:: 0.7.0
+
+  - **configBucket.tags** using *Metadata* was implemented.
+  - **configBucket.cors** using *Cors* was implemented.
+  - **configBucket.lifecycle** using *LifecycleRule* was implemented.
+
+.. versionadded:: 0.6.2
+
+  - *GoogleAuthOptions* properties **authClient** and **credentials** were not detected during credential validation.
+  - *Firestore* property **id** supports multiple document references.
+  - *Datastore* method **createQuery** with "namespace" and "kind" parameter is supported.
+
+.. deprecated:: 0.6.2
+
+  - *GCPStorageCredential* extending **CreateBucketRequest** will be removed in **0.7.0**.

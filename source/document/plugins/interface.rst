@@ -1,0 +1,51 @@
+Interface
+=========
+
+.. code-block:: typescript
+
+  interface TransformOutput {
+      pathname?: string;
+      filename?: string;
+      mimeType?: string;
+      sourceFile?: string;
+      sourcesRelativeTo?: string;
+      metadata?: unknown;
+      external?: PlainObject;
+  }
+
+.. code-block:: typescript
+
+  interface ITransformSeries extends Module, TransformOutput {
+      type: "html" | "css" | "js";
+      baseConfig: PlainObject;
+      outputConfig: PlainObject; // Same as baseConfig when using an inline transformer
+      sourceMap: SourceMap; // Primary sourceMap
+      code: string;
+      metadata: PlainObject; // Custom request values and modifiable per transformer
+      productionRelease: boolean;
+      supplementChunks: ChunkData[];
+      imported: boolean; // ESM detected
+      createSourceMap(code: string): SourceMap; // Use "nextMap" method for sourceMap (additional sourceMaps)
+      
+      /* ESM */
+      getMainFile?(code?: string, imports?: StringMap): Undef<SourceInput<string>>;
+      getSourceFiles?(imports?: StringMap): Undef<SourceInput<[string, string?, string?][]>>;
+      
+      /* Return values */
+      out: {
+          sourceFiles?: string[]; // ESM
+          ignoreCache?: boolean;
+          messageAppend?: string;
+          logAppend?: LogStatus[];
+          logQueued?: LogStatus[];
+      };
+      
+      version: string; // Requested version
+      
+      packageName: string;
+      packageVersion: string; // Context version
+      
+      /* Module */
+      host: IFileManager;
+      username: string;
+  }

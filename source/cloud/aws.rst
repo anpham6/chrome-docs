@@ -61,7 +61,7 @@ Authentication
         "accessKeyId": "**********",
         "secretAccessKey": "**********",
         "region": "ap-northeast-1",
-        "sessionToken": "" // Optional
+        "sessionToken": ""
       },
       /* OR */
       "credential": {
@@ -153,7 +153,7 @@ Example usage
           "ContentType": "text/html", // Primary object only
           "ACL": "private", // All objects
           "Metadata": {/* Record<string, string> */}, // All objects except when "metadata" is defined
-          "ExpectedBucketOwner": "" // Optional
+          "ExpectedBucketOwner": ""
         },
 
         /* Primary object only */
@@ -244,7 +244,7 @@ Example usage
       /* OR */      
       "query": [{ "name": { "S": "value" } }], // db.batchGet{BatchGetItemInput[RequestItems]}
       "query": "<empty>", // db.scan
-      "params": { // BatchGetItemInput | ScanInput (optional)
+      "params": { // BatchGetItemInput | ScanInput
         "ProjectionExpression": "name"
       },
       /* OR */

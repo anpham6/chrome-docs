@@ -62,7 +62,7 @@ Authentication
       "credential": {
         "connectString": "nodejs_high",
         "configDir": "/opt/oracle/config", // Location of user tnsnames.ora
-        "libDir": "/opt/oracle/instantclient_19_11" // Not recommended (optional)
+        "libDir": "/opt/oracle/instantclient_19_11" // Not recommended
       },
       /* OR */
       "credential": {
@@ -89,7 +89,7 @@ Example usage
       "query": "SELECT * FROM table WHERE id = :id AND value = :value",
       "query": "./path/to/statement.sql", // Extension ".sql" (settings.directory.sql + users/username/?)
 
-      "params": [1, "escaped"], // Optional
+      "params": [1, "escaped"],
 
       /* Result: { "ITEM_SRC": "oracle.png", "ITEM_ALT": "Oracle" } */
       "value": {
@@ -97,7 +97,7 @@ Example usage
         "alt": "ITEM_ALT"
       },
 
-      "usePool": true, // Optional
+      "usePool": true,
       "options": {
         "poolMin": 0,
         "poolMax": 10
@@ -117,9 +117,9 @@ Thick Mode
 
   NODE_ORACLEDB_DRIVER_MODE = "thick";
   NODE_ORACLEDB_CLIENT_LIB_DIR = "/opt/oracle/product/21c/dbhomeXE"; // libDir (overrides ORACLE_HOME)
-  NODE_ORACLEDB_CLIENT_CONFIG_DIR = ""; // configDir (optional)
-  NODE_ORACLEDB_CLIENT_DRIVER_NAME = ""; // driverName (optional)
-  NODE_ORACLEDB_CLIENT_ERROR_URL = ""; // errorUrl (optional)
+  NODE_ORACLEDB_CLIENT_CONFIG_DIR = ""; // configDir
+  NODE_ORACLEDB_CLIENT_DRIVER_NAME = ""; // driverName
+  NODE_ORACLEDB_CLIENT_ERROR_URL = ""; // errorUrl
 
 .. note:: These are not official Oracle environment variables and are used only to initialize the client when the module is first loaded.
 

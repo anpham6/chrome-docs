@@ -270,7 +270,7 @@ Firestore
         ],
         ["orderBy", "title", "asc"]
       ],
-      "orderBy": [ // Optional
+      "orderBy": [
         ["title", "asc"]
       ],
 
@@ -321,7 +321,7 @@ BigQuery
       "table": "demo", // Destination table (optional)
 
       "query": "SELECT name, count FROM `demo.names_2014` WHERE gender = 'M' ORDER BY count DESC LIMIT 10", // bq.getQueryResults
-      /* Optional */
+
       "params": { "name": "value" },
       "params": ["arg0" /* ? */, "arg1" /* ? */],
       "options": {/* IQuery */},
@@ -418,11 +418,11 @@ Bigtable
       "table": "demo",
 
       "id": "rowKey1", // bt.get
-      "columns": ["column1", "column2"], // Optional
+      "columns": ["column1", "column2"],
       /* OR */
       "id": "<empty>", // bt.createReadStream
 
-      "query": {/* Filter */}, // Overrides "filter" in GetRowOptions (optional)
+      "query": {/* Filter */}, // Overrides "filter" in GetRowOptions
       "options": {/* GetRowOptions */},
 
       "value": "{{if not expired}}<b>${title}</b>: ${description}{{else}}Expired{{end}}",
@@ -453,7 +453,7 @@ Spanner
       "name": "nodejs", // Instance
 
       "database": "sample", // Required
-      "options": { // Optional
+      "options": {
         "databasePool": {/* session-pool.SessionPoolOptions */},
         "databaseQuery": {/* protos.IQueryOptions */}
       },

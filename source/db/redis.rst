@@ -111,7 +111,7 @@ Authentication
       "credential": "main",
       /* OR */
       "credential": {
-        "protocol": "redis:", // Optional
+        "protocol": "redis:",
         "server": "localhost:6379",
         "username": "**********",
         "password": "**********",
@@ -152,7 +152,7 @@ Example usage
         "query": "@state:{CA}",
         "options": {
           "ON": "HASH", // JSON
-          "PREFIX": "noderedis:demo" // Optional
+          "PREFIX": "noderedis:demo"
         }
       },
 
@@ -162,7 +162,7 @@ Example usage
         "alt": "item_alt"
       },
 
-      "usePool": true, // Optional
+      "usePool": true,
       "options": {
         "client": {
           "isolationPoolOptions": {

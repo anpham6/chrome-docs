@@ -131,7 +131,7 @@ Authentication
       "credential": {
         "connectString": "nodejs_high",
         "configDir": "/opt/oracle/config", // Location of user tnsnames.ora
-        "libDir": "/opt/oracle/instantclient_19_11" // Not recommended (optional)
+        "libDir": "/opt/oracle/instantclient_19_11" // Not recommended
       }
     }
   }

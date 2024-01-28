@@ -261,7 +261,7 @@ Example usage
       /* OR */      
       "query": [{ "name": { "S": "value" } }], // db.BatchGetCommand{BatchGetCommandInput[RequestItems]}
       "query": "<empty>", // db.ScanCommand
-      "params": { // BatchGetCommandInput | ScanCommandInput (optional)
+      "params": { // BatchGetCommandInput | ScanCommandInput
         "ProjectionExpression": "name"
       },
       /* OR */

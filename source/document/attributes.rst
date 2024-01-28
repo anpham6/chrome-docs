@@ -14,16 +14,15 @@ There are possible scenarios when a transformation into another format will requ
     "type": "css",
     "filename": "prod.css",
     "download": true, // Required when rel="alternate"
-    "hash": "md5", // prod-8ba5cde2c04d6628dd6b0d62b0a3cac9.css (optional)
+    "hash": "md5", // prod-8ba5cde2c04d6628dd6b0d62b0a3cac9.css
     "attributes": {
       "rel": "stylesheet",
       "type": "text/css",
       "title": "",
       "disabled": null,
-
-      /* SRI (optional) */
+      /* SRI */
       "integrity": "sha512", // CORS required (sha256 | sha384 | sha512)
-      "crossorigin": "anonymous" // Optional
+      "crossorigin": "anonymous"
     },
     "process": ["compile"]
   }

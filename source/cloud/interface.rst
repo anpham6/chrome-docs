@@ -82,7 +82,6 @@ Storage
 
   {
     "cloudStorage": [{
-      /* Required */
       "service": "aws", // Built-in alias | NPM package name
       "bucket": "nodejs-001",
       "credential": {/* service-interface */}
@@ -157,7 +156,6 @@ Database
 
   {
     "dataSource": { // DbDataSource
-      /* Required */
       "source": "cloud",
       "service": "aws", // Built-in alias | NPM package name
       "credential": {/* service-interface */},

@@ -32,10 +32,10 @@ Authentication
     "credential": "main", // squared.cloud.json
     /* OR */
     "credential": {
-      "accessKey": "**********", // Required
-      "secretKey": "**********", // Required
+      "accessKey": "**********",
+      "secretKey": "**********",
       "endPoint": "127.0.0.1",
-      "port": 9000, // Required
+      "port": 9000,
       "useSSL": false, // Required with "http"
       "region": "us-west-1" // Default is "us-east-1"
     }

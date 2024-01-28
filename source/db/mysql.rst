@@ -83,7 +83,7 @@ Example usage
 
       "query": "SELECT * FROM table WHERE id = ? AND value = ?",
       "query": "./path/to/statement.sql", // Extension ".sql" (settings.directory.sql + users/username/?)
-      "params": [1, "escaped"], // Optional
+      "params": [1, "escaped"],
       /* OR */
       "query": "SELECT * FROM table WHERE id = :id AND value = :value",
       "params": { "id": 1, "value": "escaped" },
@@ -94,7 +94,7 @@ Example usage
         "alt": "item_alt"
       },
 
-      "usePool": true, // Optional
+      "usePool": true,
       "options": {
         "connectionLimit": 10,
         "waitForConnections": true

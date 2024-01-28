@@ -256,7 +256,7 @@ Example usage
 
       "update": {/* PatchRequestBody */}, // JSON Patch
       "id": "1", // Same as item being retrieved
-      "partitionKey": "Pictures" // Optional
+      "partitionKey": "Pictures"
     }
   }
 

@@ -177,9 +177,9 @@ Compression
     "compress": [
       {
         "format": "png", // png | jpeg | webp
-        "plugin": "tinify", // Optional
+        "plugin": "tinify",
         "options": {
-          "apiKey": "**********" // Overrides settings (optional)
+          "apiKey": "**********" // Overrides settings
         }
       }
     ]

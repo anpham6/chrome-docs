@@ -29,7 +29,7 @@ The equivalent command through a configuration file. [#]_
     {
       "selector": "title",
       "type": "append/script", // All tags except "html"
-      "textContent": "\\nwindow.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;\\nga('create', 'UA-XXXXX-Y', 'auto');\\nga('send', 'pageview');\\n" // YAML "|" operator preserves indentation (optional)
+      "textContent": "\\nwindow.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;\\nga('create', 'UA-XXXXX-Y', 'auto');\\nga('send', 'pageview');\\n"
     },
     {
       "selector": "title",

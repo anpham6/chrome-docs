@@ -126,13 +126,13 @@ Authentication
 
         "username": "**********", // basic
         "password": "**********",
-        "serviceName": "nodejs", // Default is "CLOUDANT" (required)
+        "serviceName": "nodejs", // Default is "CLOUDANT"
         /* OR */
         "apikey": "**********", // iam
         /* OR */
         "bearerToken": "**********", // bearertoken
         /* OR */
-        "authType": "couchdb", // Required
+        "authType": "couchdb",
         "username": "**********",
         "password": "**********",
         /* OR */
@@ -169,20 +169,20 @@ Example usage
         "selector": {
           "id": { "$eq": "1" }
         },
-        "partitionKey": "" // ibm.postPartitionFind (optional)
+        "partitionKey": "" // ibm.postPartitionFind
       },
       "query": { // ibm.postView
         "db": "demo",
         "ddoc": "demo-doc",
         "view": "demo-view", // 
-        "partitionKey": "" // ibm.postPartitionView (optional)
+        "partitionKey": "" // ibm.postPartitionView
       },
       "query": { // ibm.postSearch
         "db": "demo",
         "ddoc": "demo-doc",
         "index": "demo-index",
         "query": "id:'1' AND title:'Bristol'", // Lucene syntax
-        "partitionKey": "" // ibm.postPartitionSearch (optional)
+        "partitionKey": "" // ibm.postPartitionSearch
       },
       /* OR */
       "query": { // ibm.postViewQueries

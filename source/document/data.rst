@@ -136,7 +136,7 @@ Example usage
     "dataSource": {
       "source": "mongodb",
       "uri": "mongodb://localhost:27017",
-      "removeEmpty": true, // Includes invalid conditions (optional)
+      "removeEmpty": true, // Includes invalid conditions
 
       "value": "attr1", // Remove when: null or undefined
       "value": "-attr2", // Remove when: attr2=falsey
@@ -313,7 +313,7 @@ Using ``template`` (external) is the same as ``value`` (inline) except the reusa
       "dynamic": true, // element.innerXml? (with tags)
       "dynamic": false, // element.textContent? (plain text) || outerXml (parsed from source)
 
-      "encoding": "utf-8" // Optional
+      "encoding": "utf-8"
     }
   }
 

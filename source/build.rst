@@ -141,7 +141,7 @@ Example cloud storage
             credentials: {
               accessKeyId: "**********", // Only access key logins are supported with v3
               secretAccessKey: "**********",
-              sessionToken: "**********" // Optional
+              sessionToken: ""
             },
             region: "us-west-2"
           },

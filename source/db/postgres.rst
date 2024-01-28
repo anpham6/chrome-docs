@@ -76,7 +76,7 @@ Example usage
       "query": "SELECT * FROM table WHERE id = $1 AND value = $2",
       "query": "./path/to/statement.sql", // Extension ".sql" (settings.directory.sql + users/username/?)
 
-      "params": [1, "escaped"], // Optional
+      "params": [1, "escaped"],
 
       /* Result: { "item_src": "postgres.png", "item_alt": "PostgreSQL" } */
       "value": {
@@ -84,7 +84,7 @@ Example usage
         "alt": "item_alt"
       },
 
-      "usePool": true, // Optional
+      "usePool": true,
       "options": {
         "min": 0,
         "max": 10

@@ -149,7 +149,7 @@ Example usage
         "alt": "item_alt"
       },
 
-      "usePool": true, // Optional
+      "usePool": true,
       "options": {
         "minPoolSize": 0,
         "maxPoolSize": 10

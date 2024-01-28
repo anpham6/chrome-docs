@@ -122,8 +122,8 @@ Example usage
         "alt": "item_alt"
       },
 
-      "usePool": true, // Optional
-      "usePool": { // tedious-connection-pool
+      "usePool": true,
+      "usePool": { // tedious-connection-pool2
         "min": 0,
         "max": 10
       }

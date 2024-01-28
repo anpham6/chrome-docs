@@ -53,7 +53,9 @@ External plugins per package have to be pre-installed from NPM and are not avail
                 "transform": {
                   "plugins": [
                     ["posthtml-doctype", { "doctype": "HTML 5" }],
-                    ["posthtml-include", { "root": "./", "encoding": "utf-8" }]
+                    ["posthtml-include", { "root": "./", "encoding": "utf-8" }],
+                    "posthtml-attrs-sorter",
+                    ["htmlnano", { "collapseWhitespace": "conservative" }]
                   ]
                 },
                 "transform-output": {

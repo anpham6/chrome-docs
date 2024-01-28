@@ -73,7 +73,8 @@ Authentication
       },
       /* OR */
       "credential": {
-        "projectId": "nodejs" // When using GOOGLE_APPLICATION_CREDENTIALS
+        "projectId": "nodejs", // When using GOOGLE_APPLICATION_CREDENTIALS
+        "scopes": "https://www.googleapis.com/auth/cloud-platform" // Optional
       },
       /* OR */
       "credential": {
@@ -244,15 +245,29 @@ Firestore
       "credential": {/* Authentication */},
       "table": "demo",
 
-      "id": "1", // fs.collection(table).doc
+      "id": "8Qnt83DSNW0eNykpuzcQ", // fs.collection(table).doc
       /* OR */
-      "id": ["1", "2"], // fs.getAll (table/id)
+      "id": ["8Qnt83DSNW0eNykpuzcQ", "aahiEBE4qHM73JE7jom3"], // fs.getAll (table/id)
       "options": {/* ReadOptions */},
       /* OR */
       "query": [ // fs.collection(table)
-        ["where", "group", "==", "Firestore"], // endAt | endBefore | limit | limitToLast | offset | orderBy | select | startAfter | startAt | where | withConverter
-        ["where", "id", "==", "1"],
+        ["where", "group", "==", "Firestore"],
+        ["where", "id", "==", "8Qnt83DSNW0eNykpuzcQ"],
         ["limitToLast", 2],
+        ["orderBy", "title", "asc"]
+      ],
+      "query": [
+        ["whereAnd", // Unofficial
+          ["group", "==", "Firestore"],
+          ["id", "==", "8Qnt83DSNW0eNykpuzcQ"]
+        ],
+        ["limitToLast", 2]
+      ],
+      "query": [
+        ["whereOr", // Unofficial
+          ["id", "==", "8Qnt83DSNW0eNykpuzcQ"],
+          ["id", "==", "aahiEBE4qHM73JE7jom3"]
+        ],
         ["orderBy", "title", "asc"]
       ],
       "orderBy": [ // Optional
@@ -262,9 +277,26 @@ Firestore
       "value": "<b>${title}</b>: ${description}",
 
       "update": {/* Document */}, // fs.update
-      "id": "1" // Same as item being retrieved
+      "id": "8Qnt83DSNW0eNykpuzcQ" // Same as item being retrieved
     }
   }
+
+.. code-block:: none
+  :caption: **query**
+
+  - endAt
+  - endBefore
+  - limit
+  - limitToLast
+  - offset
+  - orderBy
+  - select
+  - startAfter
+  - startAt
+  - where
+    * whereAnd
+    * whereOr
+  - withConverter
 
 BigQuery
 ~~~~~~~~
@@ -288,7 +320,7 @@ BigQuery
       "database": "nodejs", // Dataset (optional)
       "table": "demo", // Destination table (optional)
 
-      "query": "SELECT name, count FROM `demo.names_2014` WHERE gender = 'M' ORDER BY count DESC LIMIT 10", // bq.getQueryResults (required)
+      "query": "SELECT name, count FROM `demo.names_2014` WHERE gender = 'M' ORDER BY count DESC LIMIT 10", // bq.getQueryResults
       /* Optional */
       "params": { "name": "value" },
       "params": ["arg0" /* ? */, "arg1" /* ? */],
@@ -334,7 +366,7 @@ Datastore
       "name": "<namespace>", // With "kind" (optional)
       "kind": "Task", // ds.runQuery (at least one parameter)
       "kind": ["Task1", "Task2"],
-      "query": [ // end | filter | groupBy | hasAncestor | limit | offset | order | select | start
+      "query": [
         ["filter", "done", "=", false],
         ["filter", "priority", ">=", 4],
         ["order", "priority", { "descending": true }]
@@ -350,6 +382,19 @@ Datastore
       "query": [/* Same */]
     }
   }
+
+.. code-block:: none
+  :caption: **query**
+
+  - end
+  - filter
+  - groupBy
+  - hasAncestor
+  - limit
+  - offset
+  - order
+  - select
+  - start
 
 Bigtable
 ~~~~~~~~~
@@ -466,7 +511,7 @@ Realtime Database
       /* OR */
       "query": "path/to/ref", // rd.query
       "orderBy": [
-        ["orderByChild", "path/to/child"], // endBefore | endAt | equalTo | limitToFirst | limitToLast | orderByChild | orderByKey | orderByPriority | orderByValue | startAt | startAfter
+        ["orderByChild", "path/to/child"],
         ["startAfter", 5, "name"],
         ["limitToFirst", 1]
       ],
@@ -479,6 +524,21 @@ Realtime Database
     }
   }
 
+.. code-block:: none
+  :caption: **query**
+
+  - endBefore
+  - endAt
+  - equalTo
+  - limitToFirst
+  - limitToLast
+  - orderByChild
+  - orderByKey
+  - orderByPriority
+  - orderByValue
+  - startAt
+  - startAfter
+
 @pi-r/gcp
 =========
 
@@ -487,11 +547,15 @@ Realtime Database
   - **configBucket.tags** using *Metadata* was implemented.
   - **configBucket.cors** using *Cors* was implemented.
   - **configBucket.lifecycle** using *LifecycleRule* was implemented.
+  - *Firestore* property **query** supports using *Filter* where groups.
+
+.. versionadded:: 0.6.3
+
+  - *Firestore* property **id** supports multiple document references.
 
 .. versionadded:: 0.6.2
 
   - *GoogleAuthOptions* properties **authClient** and **credentials** were not detected during credential validation.
-  - *Firestore* property **id** supports multiple document references.
   - *Datastore* method **createQuery** with "namespace" and "kind" parameter is supported.
 
 .. deprecated:: 0.6.2

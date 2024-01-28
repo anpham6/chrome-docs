@@ -249,12 +249,12 @@ Example usage
       },
       /* OR */
       "key": { // db.get{GetItemInput[Key]}
-        "a": { "S": "value" },
-        "b": { "N": "1" }
+        "a": "value",
+        "b": 1
       },
-
-      "key": "c", // "typeof" auto-detection
-      "id": 1, // { "c": { "N": "1" } }
+      /* OR */
+      "key": "c", // { "c": 1 }
+      "id": 1,
 
       "value": "<b>${title}</b>: ${description}", // See "/document/data.html"
 

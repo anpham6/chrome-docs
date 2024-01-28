@@ -31,7 +31,6 @@ Interface
 
   interface GCPStorageCredential extends StorageOptions, FirebaseOptions {
       product?: "firebase";
-      admin?: boolean; // firebase-admin
   }
 
 API
@@ -193,7 +192,7 @@ Interface
       id?: string | string[];
       params?: unknown[] | Document;
       database?: string;
-      updateType?: 0 | 1 | 2;
+      updateType?: 0 | 1 | 2 | 3;
       columns?: string[];
       keys?: DatastoreKey | DatastoreKey[];
       kind?: string | string[];
@@ -276,7 +275,14 @@ Firestore
 
       "value": "<b>${title}</b>: ${description}",
 
+      "updateType": 0, // 0 - update{exists} | 1 - create | 2 - set | 3 - set{merge}
       "update": {/* Document */}, // fs.update
+      "update": {
+        "key1": "__delete__", // FieldValue.delete()
+        "key2": "__increment__", // FieldValue.increment(1)
+        "key2": "__increment<number>__", // FieldValue.increment(number)
+        "key3": "__serverTimestamp__" // FieldValue.serverTimestamp()
+      },
       "id": "8Qnt83DSNW0eNykpuzcQ" // Same as item being retrieved
     }
   }
@@ -547,11 +553,13 @@ Realtime Database
   - **configBucket.tags** using *Metadata* was implemented.
   - **configBucket.cors** using *Cors* was implemented.
   - **configBucket.lifecycle** using *LifecycleRule* was implemented.
-  - *Firestore* property **query** supports using *Filter* where groups.
+  - *Firestore* property **update** supports using *FieldValue<"delete" | "increment" | "serverTimestamp">* methods.
+  - *Firestore* property **update** supports using property **updateType** enum values.
 
 .. versionadded:: 0.6.3
 
   - *Firestore* property **id** supports multiple document references.
+  - *Firestore* property **query** supports using *Filter<"and" | "or">* conditional groups for *where*.
 
 .. versionadded:: 0.6.2
 

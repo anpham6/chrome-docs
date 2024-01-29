@@ -19,6 +19,24 @@ Examples use **squared** 4/5 and **chrome** as the reference framework. These co
 
 .. note:: Using squared or squared-express is not required.
 
+NodeJS 14 LTS
+=============
+
+Optional fail safe dependencies in **E-mc 0.9** are going to be removed when NodeJS 22 starts development in April 2024. The code itself will still be ES2020 and will continue to work equivalently when these dependencies are self-installed.
+
+.. code-block:: sh
+  :caption: Minimum 15.4
+
+  npm i abort-controller
+  npm i event-target-shim
+
+.. code-block:: sh
+  :caption: Minimum 14.17 + 15.6
+
+  npm i uuid
+
+Release date for **E-mc 0.9** is April 29, 2024.
+
 License
 =======
 

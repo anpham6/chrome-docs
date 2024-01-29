@@ -48,7 +48,7 @@ Interface
 
       hash?: "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512"; // md5[8] will shorten hash to the first 8 characters
 
-      checksum?: string | { algorithm: string, value: string, digest?: string }; // Download URI + Default is "sha256"
+      checksum?: string | { algorithm: string; value: string; digest?: string }; // Download URI + Default is "sha256"
       checksumOutput?: string | {/* Same */}; // Expected locally transformed result
 
       incremental?: false | "none" | "staging" | "etag" | "exists"; // Will override batch request.incremental
@@ -59,7 +59,7 @@ Interface
 
       mergeType?: "none" | "over" | "under"; // Used when different selectors target same element
 
-      watch?: boolean | { interval?: number, expires?: string }; // type: js | css | image (expires: 1h 1m 1s)
+      watch?: boolean | { interval?: number; expires?: string }; // type: js | css | image (expires: 1h 1m 1s)
 
       cloudStorage?: CloudService[];
 
@@ -69,7 +69,7 @@ Interface
       type?: "text" | "attribute" | "display"; // dynamic is valid only with "text"
       dataSource?: CloudDatabase; // source: "cloud"
       dataSource?: {
-          source: "mongodb" | "redis" | "mysql" | "postgres" | "oracle" | "mssql" | "mariadb" | "uri" | "local" | "export";
+          source: "cloud" | "uri" | "local" | "export"; // DB providers: "mariadb" | "mongodb" | "mssql" | "mysql" | "oracle" | "postgres" | "redis"
           postQuery?: string;
           preRender?: string;
           whenEmpty?: string;

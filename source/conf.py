@@ -26,7 +26,7 @@ highlight_language = 'json'
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
-html_css_files = ['override.css']
+html_css_files = ['content.css', 'override.css']
 html_context = {
   "display_github": False,
   "commit": False,

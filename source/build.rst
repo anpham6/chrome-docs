@@ -123,7 +123,7 @@ The entire page can be transformed as a group using the *saveAs* attribute in op
     }
   });
 
-.. note:: ``inlineAction`` applies to the entire ``data-chrome-*`` namespace except ``data-chrome-file``.
+.. note:: ``inlineAction`` applies to the entire ``data-chrome-*`` namespace except ``data-chrome-[file|template]``.
 
 Example cloud storage
 ---------------------

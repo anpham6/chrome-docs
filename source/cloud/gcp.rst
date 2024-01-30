@@ -4,7 +4,7 @@ Google Cloud Platform
 
 - **npm** i *@pi-r/gcp*
 
-.. note:: The alias "gcloud" can be used in place of "gcp" for the **service** property.
+.. tip:: The alias "gcloud" can be used in place of "gcp" for the **service** property.
 
 Storage
 =======
@@ -93,7 +93,7 @@ Example usage
 - `Firebase Client API <https://firebase.google.com/docs/reference/node/firebase.storage>`_
 - `Class ACL <https://cloud.google.com/nodejs/docs/reference/storage/latest/storage/acl>`_
 
-.. note:: **Firebase** does not support any bucket operations except "emptyBucket" and "metadata".
+.. attention:: **Firebase** does not support any bucket operations except "emptyBucket" and "metadata".
 
 .. code-block::
 

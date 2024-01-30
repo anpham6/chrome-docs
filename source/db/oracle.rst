@@ -121,7 +121,7 @@ Thick Mode
   NODE_ORACLEDB_CLIENT_DRIVER_NAME = ""; // driverName
   NODE_ORACLEDB_CLIENT_ERROR_URL = ""; // errorUrl
 
-.. note:: These are not official Oracle environment variables and are used only to initialize the client when the module is first loaded.
+.. important:: These are not official Oracle environment variables and are used to initialize the client only when the module is first loaded.
 
 .. code-block:: typescript
 

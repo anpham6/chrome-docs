@@ -101,7 +101,7 @@ Using inline commands
 
   <script src="/common/util.js" data-chrome-watch='{ "interval": 100, "expires": "1w 1d 1h 1m 1s", "reload": { "port": 443, "secure": true } }'></script>
 
-.. note:: ``~`` can be used with ``::`` for default server value.
+.. tip:: ``~`` can be used with ``::`` for default server value.
 
 Options
 -------

@@ -22,7 +22,7 @@ Examples use **squared** 4/5 and **chrome** as the reference framework. These co
 NodeJS 14 LTS
 =============
 
-Optional fail safe dependencies in **E-mc 0.9** are going to be removed when *NodeJS 22* starts development in April 2024. The code itself will still be ES2020 and will continue to work equivalently when these dependencies are self-installed.
+Optional fail safe dependencies are going to be removed when *NodeJS 22* starts development in April 2024. The code itself will still be ES2020 and will continue to work equivalently when these dependencies are self-installed.
 
 .. code-block:: bash
   :caption: Minimum 15.4

@@ -54,7 +54,7 @@ Example configuration
     }
   }
 
-.. note:: To use Gulp in a user directory requires a global installation. [#]_
+.. important:: To use Gulp in a user directory requires a global installation. [#]_
 
 .. code-block::
 

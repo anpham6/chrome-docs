@@ -5,7 +5,7 @@ MongoDB Atlas
 - https://www.mongodb.com/cloud/atlas/register
 - **npm** i *@pi-r/atlas*
 
-.. note:: Atlas connections are compatible with the parallel :doc:`@pi-r/mongodb <../db/mongodb>` plugin.
+.. tip:: Atlas connections are compatible with the :doc:`@pi-r/mongodb <../db/mongodb>` plugin.
 
 Interface
 =========

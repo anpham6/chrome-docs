@@ -15,4 +15,4 @@ Document
    plugins/index
    finalize
 
-.. note:: **JSON/YAML** configuration is available to separate writing ``data-chrome`` command options in the HTML. Any assets inside the configuration file will override any settings either inline or from JavaScript.
+.. note:: **JSON/YAML** configuration is available due to the limitiations of writing inline commands through the ``data-chrome-`` dataset namespace. Any assets inside the configuration file will override any settings either inline or from JavaScript.

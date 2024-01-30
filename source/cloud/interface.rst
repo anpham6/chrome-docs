@@ -147,7 +147,7 @@ Storage
     }]
   }
 
-.. note:: **admin.configBucket.website**: Any properties set to **true** uses the upload HTML target (pathname + filename).
+.. tip:: Any properties in **admin.configBucket.website** set to **true** uses the upload HTML target element.
 
 Database
 ~~~~~~~~

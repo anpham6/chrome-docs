@@ -4,7 +4,7 @@ Microsoft Azure
 
 - **npm** i *@pi-r/azure*
 
-.. note:: The alias "az" can be used in place of "azure" for the **service** property.
+.. tip:: The alias "az" can be used in place of "azure" for the **service** property.
 
 Storage
 =======
@@ -77,7 +77,7 @@ Authentication
   AZURE_STORAGE_CONNECTION_STRING = "";
   AZURE_STORAGE_SAS_TOKEN = "";
 
-.. note:: These are not official Azure environment variables and require ``process.env.apply = true`` in *squared.json*.
+.. note:: |env-apply|
 
 Example usage
 -------------
@@ -211,7 +211,7 @@ Authentication
   AZURE_COSMOS_ENDPOINT = "";
   AZURE_COSMOS_KEY = "";
 
-.. note:: These are not official Azure environment variables and require ``process.env.apply = true`` in *squared.json*.
+.. note:: |env-apply|
 
 Example usage
 -------------
@@ -266,3 +266,5 @@ Example usage
 .. versionadded:: 0.6.2
 
   - Identity authentication with Azure AD (**aadCredentials**) was implemented.
+
+.. |env-apply| replace:: These are not official Azure environment variables and require ``process.env.apply = true`` in *squared.json*.

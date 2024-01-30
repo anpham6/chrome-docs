@@ -286,7 +286,7 @@ Example usage
     }
   }
 
-.. note:: Parenthesis where noted in "value" are required.
+.. important:: Parenthesis where noted in "value" are required.
 
 View Engine
 -----------
@@ -317,7 +317,7 @@ Using ``template`` (external) is the same as ``value`` (inline) except the reusa
     }
   }
 
-.. note:: Templating engines with a ``compile(string [, options]): string`` method are compatible.
+.. note:: Templating engines with a ``compile(string [, options]): (data?: Record<string, any>) => string`` method are compatible.
 
 Event callbacks
 ---------------
@@ -360,7 +360,7 @@ Only one function can be defined per ``<script type="text/template">`` element.
     }
   </script>
 
-.. note:: Using ``<script>`` templates require the setting ``eval.template = true``.
+.. warning:: Using ``<script>`` templates requires the setting ``eval.template = true``.
 
 Query expressions
 -----------------

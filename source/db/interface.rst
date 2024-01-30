@@ -74,6 +74,6 @@ Global
 
   type PlainObject = Record<string | number | symbol, unknown>;
 
-.. note:: Enabling usePool with a UUID key will also copy the value into credential.uuidKey [#]_.
+.. attention:: Enabling usePool with a UUID key will also copy the value into credential.uuidKey [#]_.
 
 .. [#] Does not override other existing uuidKey sessions.

@@ -78,14 +78,14 @@ Example usage
     }]
   }
 
-.. note:: OCI does not permit creating new *public* buckets through the :doc:`S3 <aws>` [#S3]_ compatibility layer.
+.. attention:: OCI does not permit creating new *public* buckets through the :doc:`S3 <aws>` [#S3]_ compatibility layer.
 
 Database
 ========
 
 - https://www.oracle.com/autonomous-database/autonomous-json-database
 
-.. note:: :any:`Thick mode <db-oracle-thick-mode>` is shared with :doc:`@pi/oracle <../db/oracle>` using the same environment variables.
+.. important:: :any:`Thick mode <db-oracle-thick-mode>` environment variables are shared with :doc:`@pi/oracle <../db/oracle>`.
 
 Interface
 ---------
@@ -136,7 +136,7 @@ Authentication
     }
   }
 
-.. note:: **libDir** is unavailable without the environment variable ``NODE_ORACLEDB_DRIVER_MODE = "thick"``.
+.. warning:: **libDir** is ignored without ``NODE_ORACLEDB_DRIVER_MODE = "thick"``. See :doc:`@pi-r/oracle <../db/oracle>`.
 
 Example usage
 -------------
@@ -145,7 +145,7 @@ Example usage
 - `Query <https://node-oracledb.readthedocs.io/en/latest/user_guide/sql_execution.html>`_
 - `Filter <https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/adsdi/soda-filter-specifications-reference.html>`_
 
-.. note:: SELECT queries are compatible with the parallel ``@pi-r/oracle <../db/oracle>`` plugin.
+.. tip:: SELECT queries are compatible with the :doc:`@pi-r/oracle <../db/oracle>` plugin.
 
 .. code-block::
 

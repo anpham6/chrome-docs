@@ -24,7 +24,7 @@ Image
     }
   }
 
-.. note:: Jimp rotation is counter-clockwise. Use {-45} to achieve a 45-degree clockwise rotation.
+.. tip:: Jimp rotation is counter-clockwise. Use {-45} to achieve a 45-degree clockwise rotation.
 
 Image conversion can be achieved using the ``commands`` array property in a FileAsset object.
 
@@ -53,6 +53,9 @@ gif    x x
 tiff   x 
 ====== = =
 
+WebP
+~~~~
+
 ======== = = ============
 Library  R W NPM package
 ======== = = ============
@@ -62,7 +65,7 @@ gif2webp   x gif2webp-bin
 webpmux  x x node-webpmux
 ======== = = ============
 
-There can be transparency issues for some WebP animated transformations due to the WebP compression algorithm. **node-webpmux** is only used to extract the raw data from the WebP image and to reconstruct the frames.
+There can be transparency issues for WebP animated transformations due to the WebP compression algorithm. **node-webpmux** is only used to extract the raw data from the WebP image and to reconstruct the frames.
 
 .. note:: libwebp [#webp]_ is supported locally for WebP transforms through ``settings.webp.path``.
 
@@ -105,7 +108,7 @@ Methods use simple bracket matching and does not fully check inside quoted strin
   webp~800w(800x600)
   webp~2x(1024x768)
 
-.. note:: The "~" is used to target the ``<img srcset>`` attribute.
+.. tip:: The ``~`` is used to target the ``<img srcset>`` attribute.
 
 Method aliases [#]_
 -------------------
@@ -226,7 +229,7 @@ You can use image commands with **saveTo** (directory) on any element where the 
        data-chrome-commands="png(10000,75000)(800x600[bezier]^contain[right|bottom])::webp|0.5|">
 
 
-.. note:: Multiple transformations use ``::`` as the separator.
+.. tip:: Multiple transformations use ``::`` as the separator.
 
 Transformations are given a UUID filename except when ``@`` or ``%`` are used. Leaving ``data-chrome-file`` empty will save the transformations to the current image directory.
 

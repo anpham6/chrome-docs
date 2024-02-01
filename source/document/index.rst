@@ -12,6 +12,7 @@ Document
    merge
    data
    watch
+   broadcast
    plugins/index
    finalize
 

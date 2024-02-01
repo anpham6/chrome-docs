@@ -1,6 +1,8 @@
 Interface
 =========
 
+- `Encoding <https://nodejs.org/api/buffer.html#buffers-and-character-encodings>`_
+
 .. code-block:: typescript
 
   interface DataSource {
@@ -9,7 +11,7 @@ Interface
       uri?: string; // Connection string
       limit?: number; // Max rows in result
       query?: unknown; // SELECT statement or equivalent syntax
-      encoding?: BufferEncoding; // Default is "utf-8" (https://nodejs.org/api/buffer.html#buffers-and-character-encodings)
+      encoding?: BufferEncoding;
 
       ignoreCache?: boolean; // Bypass cache without saving
       ignoreCache?: 0 | 1; // 0 - renew cache expiration | 1 - purge cache with saving

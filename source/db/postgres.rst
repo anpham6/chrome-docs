@@ -9,6 +9,7 @@ Interface
 
 .. code-block:: typescript
 
+  import type { DbDataSource } from "./interface";
   import type { QueryArrayConfig, PoolConfig } from "pg";
 
   interface PostgresDataSource extends DbDataSource {
@@ -23,7 +24,7 @@ Interface
   }
 
 Pool
-~~~~
+^^^^
 
 .. code-block:: typescript
 

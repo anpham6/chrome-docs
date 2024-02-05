@@ -107,7 +107,7 @@ Options
 -------
 
 useOriginalHtmlPage = true
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 HTML only has partial watch support since most local modifications will alter the original element index position stored on the server.
 

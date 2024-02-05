@@ -11,6 +11,7 @@ Interface
 
 .. code-block:: typescript
 
+  import type { DbDataSource } from "./interface";
   import type * as "m" from "mongodb";
 
   interface MongoDBDataSource extends DbDataSource {
@@ -48,7 +49,7 @@ Interface
   interface MongoDBCredential extends ServerAuth, m.MongoClientOptions {/* Empty */}
 
 Pool
-~~~~
+^^^^
 
 .. code-block:: typescript
 

@@ -76,7 +76,7 @@ Shared properties
 -----------------
 
 Storage
-~~~~~~~
+^^^^^^^
 
 .. code-block::
 
@@ -150,7 +150,7 @@ Storage
 .. tip:: Any properties in **admin.configBucket.website** set to **true** uses the upload HTML target element.
 
 Database
-~~~~~~~~
+^^^^^^^^
 
 .. code-block::
 

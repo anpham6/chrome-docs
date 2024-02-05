@@ -69,7 +69,7 @@ Remote file "uri"
   }
 
 Example usage
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 Reusing configuration templates is possible with URL search parameters. All parameters (excluding "value") from any source can be replaced using the {{**param**}} syntax.
 
@@ -105,7 +105,7 @@ Local file "local"
   }
 
 Example usage
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 .. code-block::
 
@@ -177,7 +177,7 @@ Custom functions or packages can be used to return any kind of dataset from any 
   }
 
 Example settings
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 .. code-block::
   :caption: squared.json
@@ -200,7 +200,7 @@ Example settings
   }
 
 Example file ".cjs"
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: javascript
   :caption: NPM package
@@ -227,7 +227,7 @@ Example file ".cjs"
   };
 
 Example file ".js"
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: javascript
   :caption: Inline function
@@ -260,7 +260,7 @@ Example file ".js"
 .. note:: Using this approach with databases is not recommended.
 
 Example usage
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 .. code-block::
 
@@ -294,7 +294,7 @@ View Engine
 `EJS <https://ejs.co/#docs>`_ [#]_ is used as the reference templating engine.
 
 Example usage
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 Using ``template`` (external) is the same as ``value`` (inline) except the reusable content is stored inside a cacheable template server directory.
 
@@ -333,7 +333,7 @@ You can create named callbacks for ``postQuery`` and ``preRender`` anywhere insi
   }
 
 Example usage
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 Only one function can be defined per ``<script type="text/template">`` element.
 

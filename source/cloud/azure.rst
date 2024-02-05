@@ -32,7 +32,7 @@ Interface
   }
 
 API
-~~~
+^^^
 .. code-block:: typescript
 
   type Metadata = Record<string, string>;

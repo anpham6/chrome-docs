@@ -9,6 +9,7 @@ Interface
 
 .. code-block:: typescript
 
+  import type { DbDataSource } from "./interface";
   import type { BindParameters, ConnectionAttributes, ExecuteOptions, InitialiseOptions, PoolAttributes } from "oracledb";
 
   interface OracleDataSource extends DbDataSource {
@@ -22,7 +23,7 @@ Interface
   interface OracleCredential extends ServerAuth, ConnectionAttributes, PoolAttributes, InitialiseOptions {/* Empty */}
 
 Pool
-~~~~
+^^^^
 
 .. code-block:: typescript
 

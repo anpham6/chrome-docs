@@ -54,7 +54,7 @@ tiff   x
 ====== = =
 
 WebP
-~~~~
+^^^^
 
 ======== = = ============
 Library  R W NPM package

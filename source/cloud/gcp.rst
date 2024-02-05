@@ -34,7 +34,7 @@ Interface
   }
 
 API
-~~~
+^^^
 .. code-block:: typescript
 
   type Document = Record<string, any>;
@@ -227,7 +227,7 @@ Example usage
 -------------
 
 Firestore
-~~~~~~~~~
+^^^^^^^^^
 
 - https://cloud.google.com/firestore
 - `Client API <https://googleapis.dev/nodejs/firestore/latest>`__
@@ -305,7 +305,7 @@ Firestore
   - withConverter
 
 BigQuery
-~~~~~~~~
+^^^^^^^^
 
 - https://cloud.google.com/bigquery
 - `Client API <https://googleapis.dev/nodejs/bigquery/latest>`__
@@ -343,7 +343,7 @@ BigQuery
   }
 
 Datastore
-~~~~~~~~~
+^^^^^^^^^
 
 - https://cloud.google.com/datastore
 - `Client API <https://googleapis.dev/nodejs/datastore/latest>`__
@@ -403,7 +403,7 @@ Datastore
   - start
 
 Bigtable
-~~~~~~~~~
+^^^^^^^^^
 
 - https://cloud.google.com/bigtable
 - `Client API <https://googleapis.dev/nodejs/bigtable/latest>`__
@@ -439,7 +439,7 @@ Bigtable
   }
 
 Spanner
-~~~~~~~~~
+^^^^^^^^^
 
 - https://cloud.google.com/spanner
 - `Client API <https://googleapis.dev/nodejs/spanner/latest>`__
@@ -495,7 +495,7 @@ Spanner
   }
 
 Realtime Database
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 - https://firebase.google.com/products/realtime-database
 - `Client API <https://firebase.google.com/docs/reference/js/database.md#database_package>`__

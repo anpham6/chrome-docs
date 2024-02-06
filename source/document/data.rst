@@ -360,7 +360,7 @@ Only one function can be defined per ``<script type="text/template">`` element.
     }
   </script>
 
-.. warning:: Using ``<script>`` templates requires the setting ``eval.template = true``.
+.. warning:: Using ``<script>`` templates requires the setting :code:`eval.template = true`.
 
 Query expressions
 -----------------

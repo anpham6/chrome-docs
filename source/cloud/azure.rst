@@ -267,4 +267,4 @@ Example usage
 
   - Identity authentication with Azure AD (**aadCredentials**) was implemented.
 
-.. |env-apply| replace:: These are not official Azure environment variables and require ``process.env.apply = true`` in *squared.json*.
+.. |env-apply| replace:: These are not official Azure environment variables and require :code:`process.env.apply = true` in *squared.json*.

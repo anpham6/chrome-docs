@@ -3,8 +3,8 @@ Plugins
 =======
 
 .. toctree::
-   :maxdepth: 2
+  :maxdepth: 2
 
-   interface
-   Built-In <built-in>
-   settings
+  interface
+  Built-In <built-in>
+  settings

@@ -49,7 +49,7 @@ Authentication
   MINIO_SESSION_TOKEN = "";
   MINIO_ENDPOINT = ""; // Default is "localhost"
 
-.. important:: These are not official MinIO environment variables and require ``process.env.apply = true`` in *squared.json*.
+.. important:: These are not official MinIO environment variables and require :code:`process.env.apply = true` in *squared.json*.
 
 Example usage
 =============

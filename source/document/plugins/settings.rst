@@ -231,7 +231,7 @@ The same concept can be used inline anywhere using a ``script`` tag with the *ty
     }
   </script>
 
-.. warning:: ``data-chrome-template`` usage requires the setting ``eval.template = true``.
+.. warning:: ``data-chrome-template`` usage requires the setting :code:`eval.template = true`.
 
 .. [#] this = NodeJS.process
 .. [#] https://babeljs.io/docs/en/options

@@ -36,7 +36,7 @@ Interface
 Authentication
 --------------
 
-+ `Credentials <https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/s3compatibleapi.htm>`_
+- `Credentials <https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/s3compatibleapi.htm>`_
 
 .. code-block::
 

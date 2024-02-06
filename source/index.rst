@@ -3,17 +3,17 @@ E-mc 0.8
 ========
 
 .. toctree::
-   :maxdepth: 1
+  :maxdepth: 1
 
-   features
-   document/index
-   image/index
-   cloud/index
-   db/index
-   task/index
-   build
-   versions
-   squared-functions <legacy>
+  features
+  document/index
+  image/index
+  cloud/index
+  db/index
+  task/index
+  build
+  versions
+  squared-functions <legacy>
 
 Examples use **squared** 4/5 and **chrome** as the reference framework. These concepts can be used with any NodeJS (>=14) application.
 

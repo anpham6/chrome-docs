@@ -43,51 +43,51 @@ data-chrome-options
 -------------------
 
 * preserve [#]_
-    + html
-    + css
+    - html
+    - css
 * inline
-    + js: Rendered inline with <script>
-    + css: Rendered inline with <style>
-    + image: Rendered as base64 from file
+    - js: Rendered inline with <script>
+    - css: Rendered inline with <style>
+    - image: Rendered as base64 from file
 * module [#]_
-    + js: ESM
-    + css: SASS
+    - js: ESM
+    - css: SASS
 * extract
-    + css: @import rules are inlined into parent file (same origin)
+    - css: @import rules are inlined into parent file (same origin)
 * blob
-    + image: HTML and CSS from base64
-    + font: CSS from base64
+    - image: HTML and CSS from base64
+    - font: CSS from base64
 * dynamic
-    + image: srcset uses query parameters with an image resizer
-    + element (non-void): mixed content which uses a view engine template (e.g. ejs)
+    - image: srcset uses query parameters with an image resizer
+    - element (non-void): mixed content which uses a view engine template (e.g. ejs)
 * compress (array)
-    + image: imagemin [#]_
-    + font: woff + woff2
-    + png: TinyPNG service (jpeg + webp)
-    + gz: Gzip + Zopfli
-    + br: Brotli
+    - image: imagemin [#]_
+    - font: woff + woff2
+    - png: TinyPNG service (jpeg + webp)
+    - gz: Gzip + Zopfli
+    - br: Brotli
 * static
-    + all: Remove query string from URL
+    - all: Remove query string from URL
 * crossorigin
-    + all: Same as preserveCrossOrigin [download: false]
+    - all: Same as preserveCrossOrigin [download: false]
 * download [#]_
-    + all: Source files that are not usually downloaded (e.g. link[rel=alternate])
+    - all: Source files that are not usually downloaded (e.g. link[rel=alternate])
 * hash [#]_ [#]_
-    + js
-    + css
-    + map
-    + img
-    + font
-    + audio
-    + video
+    - js
+    - css
+    - map
+    - img
+    - font
+    - audio
+    - video
 * remove
-    + all: Remove element during finalization
+    - all: Remove element during finalization
 * charset (string)
-    + utf-8 (default)
-    + utf-16
-    + utf-16le
-    + latin1
-    + utf-16be (unsupported)
+    - utf-8 (default)
+    - utf-16
+    - utf-16le
+    - latin1
+    - utf-16be (unsupported)
 
 .. code-block:: html
 

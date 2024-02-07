@@ -21,6 +21,7 @@ exclude_patterns = []
 
 primary_domain = 'js'
 highlight_language = 'json'
+pygments_style = 'abap'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -32,3 +33,4 @@ html_context = {
   "display_github": False,
   "commit": False,
 }
+html_show_copyright = False

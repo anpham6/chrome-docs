@@ -6,8 +6,8 @@ File watching is available with **copy** methods and uses HTTP HEAD requests to 
 
 Hot module replacement is only available for ``<link>`` and ``<img>`` elements. It is disabled by default due to possible conflicts with preloaded JavaScript.
 
-Using JSON/YAML config [#]_
-===========================
+Using JSON config [#]_
+======================
 
 .. code-block::
 
@@ -118,4 +118,4 @@ HTML only has partial watch support since most local modifications will alter th
 
 If you configure an ``<img>`` tag (or any tag group) then you cannot add or remove other ``<img>`` elements without adding an element "id" to every element in the group.
 
-.. [#] All watch attributes are optional.
+.. [#] YAML config is also available.

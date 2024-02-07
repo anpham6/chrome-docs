@@ -85,7 +85,7 @@ Database
 
 - https://www.oracle.com/autonomous-database/autonomous-json-database
 
-.. important:: :any:`Thick mode <db-oracle-thick-mode>` environment variables are shared with :doc:`@pi/oracle <../db/oracle>`.
+.. important:: :ref:`Thick mode <db-oracle-thick-mode>` environment variables are shared with :doc:`@pi/oracle <../db/oracle>`.
 
 Interface
 ---------

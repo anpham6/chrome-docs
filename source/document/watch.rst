@@ -91,8 +91,8 @@ Using JWT authentication
     }
   });
 
-Using inline commands
-=====================
+data-chrome-watch
+=================
 
 .. code-block:: html
 

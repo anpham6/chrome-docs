@@ -17,18 +17,29 @@ E-mc 0.8
 
 Examples use **squared** 4/5 and **chrome** as the reference framework. These concepts can be used with any NodeJS (>=14) application.
 
-.. note:: Using squared or squared-express is not required.
+.. note:: Using `squared <https://squared.readthedocs.io>`_ or squared-express is not required.
 
 NodeJS 14 LTS
 =============
 
 Optional fail safe dependencies are going to be removed when **NodeJS 22** starts development in April 2024. The code itself will still be **ES2020** and will continue to work equivalently if these dependencies are self-installed.
 
+Abort Controller
+----------------
+
 .. code-block:: bash
-  :caption: Minimum 15.4
+  :caption: Minimum 15.4 + 16.0
 
   npm i abort-controller
   npm i event-target-shim
+
+.. code-block:: bash
+  :caption: Minimum 14.17 + 15.0
+
+  node --experimental-abortcontroller serve.js
+
+UUID
+----
 
 .. code-block:: bash
   :caption: Minimum 14.17 + 15.6

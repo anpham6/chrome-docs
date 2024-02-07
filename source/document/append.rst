@@ -1,5 +1,5 @@
 ================
-Appending JS/CSS
+Appending source
 ================
 
 You can **append** or **prepend** a sibling element (not child) to be processed as a typical ``script`` or ``link`` element.

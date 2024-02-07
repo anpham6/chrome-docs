@@ -82,9 +82,7 @@ Interface
       document?: string | string[]; // Usually "chrome" by framework (override)
   }
 
-Global
-======
-
 .. code-block:: typescript
+  :caption: Global
 
   type PlainObject = Record<string | number | symbol, unknown>;

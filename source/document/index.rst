@@ -8,7 +8,7 @@ Document
   interface
   inline
   attributes
-  Append <append>
+  append
   merge
   data
   watch

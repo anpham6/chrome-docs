@@ -40,7 +40,7 @@ Image conversion can be achieved using the ``commands`` array property in a File
   }
 
 Supported formats
------------------
+=================
 
 ====== = =
 Format R W
@@ -54,7 +54,7 @@ tiff   x
 ====== = =
 
 WebP
-^^^^
+----
 
 ======== = = ============
 Library  R W NPM package
@@ -70,7 +70,7 @@ There can be transparency issues for WebP animated transformations due to the We
 .. note:: libwebp [#webp]_ is supported locally for WebP transforms through ``settings.webp.path``.
 
 Command syntax
---------------
+==============
 
 Placing an ``@`` symbol (png@) after the **format** will replace the original file inside the package. Using the ``%`` symbol (png%) will choose the smaller of the two files. 
 
@@ -93,8 +93,8 @@ All segments are optional except **format**. Outer groupings and inner brackets 
 * !method [#]_
 * !method(1, "string_arg2", [1, 2], true, { "a": 1, "b": "\\}" }, ...args?) [#]_
 
-Command examples
-----------------
+Example commands
+================
 
 Methods use simple bracket matching and does not fully check inside quoted strings. Unescaped "\\\\" with unpaired ("{}" or "[]") will fail to parse.
 
@@ -111,7 +111,7 @@ Methods use simple bracket matching and does not fully check inside quoted strin
 .. tip:: The ``~`` is used to target the ``<img srcset>`` attribute.
 
 Method aliases [#]_
--------------------
+===================
 
 - autocrop (au)
 - background (bg)
@@ -157,7 +157,7 @@ Method aliases [#]_
 - threshold (th)
 
 Compression
------------
+===========
 
 `Tinify <https://tinypng.com/developers>`_ web service is used for image compression [#]_. The first 500 images are free each month with a developer API key.
 
@@ -208,7 +208,7 @@ Other formats can be compressed similarly using `imagemin <https://github.com/im
 If no exact match is found with format then all plugins will be applied to the unknown image. Multiple plugins of the same format will be processed in a series.
 
 data-chrome-commands
---------------------
+====================
 
 .. code-block:: html
 

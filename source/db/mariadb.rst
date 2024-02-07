@@ -1,3 +1,4 @@
+=======
 MariaDB
 =======
 
@@ -5,7 +6,7 @@ MariaDB
 - **npm** i *@pi-r/mariadb*
 
 Interface
----------
+=========
 
 .. code-block:: typescript
 
@@ -25,7 +26,7 @@ Interface
   }
 
 Pool
-^^^^
+----
 
 .. code-block:: typescript
 
@@ -41,7 +42,7 @@ Pool
   }
 
 Authentication
---------------
+==============
 
 - `Connection <https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/master/documentation/promise-api.md#connection-options>`_
 
@@ -71,7 +72,7 @@ Authentication
   }
 
 Example usage
--------------
+=============
 
 - `Query <https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/master/documentation/promise-api.md#connection-api>`_
 
@@ -106,7 +107,7 @@ Example usage
   }
 
 @pi-r/mariadb
--------------
+=============
 
 .. versionadded:: 0.6.2
 

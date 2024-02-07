@@ -1,10 +1,11 @@
+=============
 Build Options
 =============
 
 General processing options use `squared-express <https://github.com/anpham6/squared-express#readme>`_ functionality. These options are specific to the *chrome* framework.
 
 Example usage
--------------
+=============
 
 .. code-block:: javascript
 
@@ -72,7 +73,7 @@ Example usage
 Import maps [#]_ for modular transformations are supported.
 
 Example "saveAs"
-----------------
+================
 
 The entire page can be transformed as a group using the *saveAs* attribute in options. [#]_
 
@@ -126,7 +127,7 @@ The entire page can be transformed as a group using the *saveAs* attribute in op
 .. note:: ``inlineAction`` applies to the entire ``data-chrome-*`` namespace except ``data-chrome-[file|template]``.
 
 Example cloud storage
----------------------
+=====================
 
 .. code-block:: javascript
 
@@ -166,7 +167,7 @@ Example cloud storage
   });
 
 Example remote configuration
-----------------------------
+============================
 
 .. code-block:: javascript
 
@@ -185,7 +186,7 @@ Example remote configuration
 TOML [#]_ and JSON5 [#]_ file formats are also supported.
 
 Using sqd.config
-----------------
+================
 
 The base folder level configuration file is a hash map of URL globs which can match multiple items.
 

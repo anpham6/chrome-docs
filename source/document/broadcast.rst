@@ -1,10 +1,11 @@
+=========
 Broadcast
 =========
 
 Console messages (stdout) can be sent to the browser console instead through the `DevTools <https://chromedevtools.github.io/devtools-protocol/>`_ protocol.
 
 Interface
----------
+=========
 
 - `Encoding <https://nodejs.org/api/buffer.html#buffers-and-character-encodings>`_
 
@@ -34,7 +35,7 @@ Interface
   }
 
 Example usage
--------------
+=============
 
 .. code-block:: javascript
 

@@ -1,3 +1,4 @@
+======
 Oracle
 ======
 
@@ -5,7 +6,7 @@ Oracle
 - **npm** i *@pi-r/oracle*
 
 Interface
----------
+=========
 
 .. code-block:: typescript
 
@@ -23,7 +24,7 @@ Interface
   interface OracleCredential extends ServerAuth, ConnectionAttributes, PoolAttributes, InitialiseOptions {/* Empty */}
 
 Pool
-^^^^
+----
 
 .. code-block:: typescript
 
@@ -39,7 +40,7 @@ Pool
   }
 
 Authentication
---------------
+==============
 
 - `Connection <https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connectionhandling>`_
 - `Service names <https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#net-service-names-for-connection-strings>`_
@@ -74,7 +75,7 @@ Authentication
   }
 
 Example usage
--------------
+=============
 
 - `Query <https://node-oracledb.readthedocs.io/en/latest/user_guide/installation.html#example-a-sql-select-statement-in-node-js>`_
 
@@ -109,7 +110,7 @@ Example usage
 .. _db-oracle-thick-mode:
 
 Thick Mode
-----------
+==========
 
 - `Initialization <https://node-oracledb.readthedocs.io/en/latest/user_guide/initialization.html>`_
 

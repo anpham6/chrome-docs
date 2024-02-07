@@ -1,8 +1,9 @@
+=================
 squared-functions
 =================
 
 squared-express
----------------
+===============
 
 .. code-block::
   :caption: squared.json
@@ -18,7 +19,7 @@ squared-express
 Command line options ``--compat-v4`` and ``--no-compat-v4`` are also available and will override the value in settings.
 
 @e-mc/compat-v4
----------------
+===============
 
 .. code-block::
   :caption: package.json

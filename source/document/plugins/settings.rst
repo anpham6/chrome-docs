@@ -1,3 +1,4 @@
+========
 Settings
 ========
 
@@ -37,7 +38,7 @@ Unsafe execution is disabled by default. ``eval`` is a global setting for all us
 All packages can be customized per authenticated username using the ``settings.users`` block. 
 
 Using built-in transformer
---------------------------
+==========================
 
 External plugins per package have to be pre-installed from NPM and are not available for auto-install.
 
@@ -89,7 +90,7 @@ External plugins per package have to be pre-installed from NPM and are not avail
   }
 
 Using inline function [#]_
---------------------------
+==========================
 
 The suffix "-output" is used to create the variable ``options.outputConfig``.
 
@@ -127,7 +128,7 @@ The suffix "-output" is used to create the variable ``options.outputConfig``.
   }
 
 Using local file
-----------------
+================
 
 .. code-block::
 
@@ -173,7 +174,7 @@ Using local file
   }
 
 Using custom package
---------------------
+====================
 
 You can create or use a package from NPM which will behave like a built-in transformer. The only difference is the context parameter being set to the Document module.
 
@@ -212,7 +213,7 @@ The name of the setting has to match the NPM name of the package.
   }
 
 Using page template
--------------------
+===================
 
 The same concept can be used inline anywhere using a ``script`` tag with the *type* attribute set to **text/template**. The script template will be completely removed from the final output.
 

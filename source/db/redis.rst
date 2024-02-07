@@ -1,3 +1,4 @@
+=====
 Redis
 =====
 
@@ -5,7 +6,7 @@ Redis
 - **npm** i *@pi-r/redis*
 
 Interface
----------
+=========
 
 .. code-block:: typescript
 
@@ -65,7 +66,7 @@ Interface
   type RedisCredential = ServerAuth;
 
 Pool
-^^^^
+----
 
 .. code-block:: typescript
 
@@ -81,7 +82,7 @@ Pool
   }
 
 Authentication
---------------
+==============
 
 .. code-block::
   :caption: squared.db.json
@@ -122,7 +123,7 @@ Authentication
   }
 
 Example usage
--------------
+=============
 
 - `Query <https://github.com/redis/node-redis/tree/master/packages/search>`_
 - `JSONPath <https://redis.io/docs/data-types/json/path>`_

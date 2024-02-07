@@ -1,3 +1,4 @@
+==========
 PostgreSQL
 ==========
 
@@ -5,7 +6,7 @@ PostgreSQL
 - **npm** i *@pi-r/postgres*
 
 Interface
----------
+=========
 
 .. code-block:: typescript
 
@@ -24,7 +25,7 @@ Interface
   }
 
 Pool
-^^^^
+----
 
 .. code-block:: typescript
 
@@ -38,7 +39,7 @@ Pool
   }
 
 Authentication
---------------
+==============
 
 - `Connection <https://node-postgres.com/features/connecting>`_
 
@@ -61,7 +62,7 @@ Authentication
   }
 
 Example usage
--------------
+=============
 
 - `Query <https://node-postgres.com/features/queries>`_
 

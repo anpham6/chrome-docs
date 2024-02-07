@@ -1,3 +1,4 @@
+=======
 MongoDB
 =======
 
@@ -7,7 +8,7 @@ MongoDB
 .. tip:: MongoDB Atlas installations can also use the "mongodb" source format.
 
 Interface
----------
+=========
 
 .. code-block:: typescript
 
@@ -49,7 +50,7 @@ Interface
   interface MongoDBCredential extends ServerAuth, m.MongoClientOptions {/* Empty */}
 
 Pool
-^^^^
+----
 
 .. code-block:: typescript
 
@@ -66,7 +67,7 @@ Pool
   }
 
 Authentication
---------------
+==============
 
 - `Connection <https://www.mongodb.com/docs/drivers/node/current/fundamentals/authentication/mechanisms>`__
 
@@ -111,7 +112,7 @@ Authentication
   }
 
 Example usage
--------------
+=============
 
 - `Query <https://www.mongodb.com/docs/compass/master/query/filter>`__
 

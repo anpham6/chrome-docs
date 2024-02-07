@@ -1,3 +1,4 @@
+==========
 SQL Server
 ==========
 
@@ -5,7 +6,7 @@ SQL Server
 - **npm** i *@pi-r/mssql*
 
 Interface
----------
+=========
 
 .. code-block:: typescript
 
@@ -39,7 +40,7 @@ Interface
   type MSSQLRequestParameters = MSSQLRequestParameterValue[] | ObjectMap<MSSQLRequestParameterValue>;
 
 Pool
-^^^^
+----
 
 .. code-block:: typescript
 
@@ -53,7 +54,7 @@ Pool
   }
 
 Authentication
---------------
+==============
 
 - `Connection <https://tediousjs.github.io/tedious/api-connection.html>`_
 
@@ -89,7 +90,7 @@ Authentication
   }
 
 Example usage
--------------
+=============
 
 - `Query <https://learn.microsoft.com/en-us/sql/t-sql/queries/select-transact-sql>`_
 - `Parameters <http://tediousjs.github.io/tedious/parameters.html>`_

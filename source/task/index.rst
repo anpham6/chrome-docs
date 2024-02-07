@@ -26,7 +26,7 @@ Task
 Tasks can be performed after the asset has been downloaded and also during finalization.
 
 Example configuration
----------------------
+=====================
 
 - `CLI <https://github.com/gulpjs/gulp-cli#flags>`_
 
@@ -76,7 +76,7 @@ Example configuration
   }
 
 Example gulpfile.js
--------------------
+===================
 
 Renaming files with Gulp is not recommended. It is better to use the **saveAs** or **filename** attributes when the asset is part of the HTML page.
 
@@ -96,7 +96,7 @@ Renaming files with Gulp is not recommended. It is better to use the **saveAs** 
 .. note:: ``src`` (temp) and ``dest`` (original) always read and write to the current directory.
 
 data-chrome-tasks
------------------
+=================
 
 .. code-block:: html
 

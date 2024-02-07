@@ -1,10 +1,11 @@
+============
 Data Sources
 ============
 
 Using the same concept from a database you can read from JSON/YAML/JSON5 [#]_/XML [#]_/TOML [#]_ files and external providers.
 
 Interface
----------
+=========
 
 .. code-block:: typescript
 
@@ -59,7 +60,7 @@ Interface
 .. note:: The output display properties also apply to :doc:`Cloud <../cloud/interface>` and :doc:`Db <../db/interface>` interfaces.
 
 Remote file "uri"
------------------
+=================
 
 .. code-block:: typescript
 
@@ -69,7 +70,7 @@ Remote file "uri"
   }
 
 Example usage
-^^^^^^^^^^^^^
+-------------
 
 Reusing configuration templates is possible with URL search parameters. All parameters (excluding "value") from any source can be replaced using the {{**param**}} syntax.
 
@@ -95,7 +96,7 @@ Reusing configuration templates is possible with URL search parameters. All para
   }
 
 Local file "local"
-------------------
+==================
 
 .. code-block:: typescript
 
@@ -105,7 +106,7 @@ Local file "local"
   }
 
 Example usage
-^^^^^^^^^^^^^
+-------------
 
 .. code-block::
 
@@ -157,7 +158,7 @@ To completely remove an element all *AND* conditions have to be **true** and one
 Returning an empty result or a blank string (view engine) is **false**.
 
 External source "export"
-------------------------
+========================
 
 Custom functions or packages can be used to return any kind of dataset from any source providing a temporary solution during development.
 
@@ -177,7 +178,7 @@ Custom functions or packages can be used to return any kind of dataset from any 
   }
 
 Example settings
-^^^^^^^^^^^^^^^^
+----------------
 
 .. code-block::
   :caption: squared.json
@@ -200,7 +201,7 @@ Example settings
   }
 
 Example file ".cjs"
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 .. code-block:: javascript
   :caption: NPM package
@@ -227,7 +228,7 @@ Example file ".cjs"
   };
 
 Example file ".js"
-^^^^^^^^^^^^^^^^^^
+------------------
 
 .. code-block:: javascript
   :caption: Inline function
@@ -260,7 +261,7 @@ Example file ".js"
 .. note:: Using this approach with databases is not recommended.
 
 Example usage
-^^^^^^^^^^^^^
+-------------
 
 .. code-block::
 
@@ -289,12 +290,12 @@ Example usage
 .. important:: Parenthesis where noted in "value" are required.
 
 View Engine
------------
+===========
 
 `EJS <https://ejs.co/#docs>`_ [#]_ is used as the reference templating engine.
 
 Example usage
-^^^^^^^^^^^^^
+-------------
 
 Using ``template`` (external) is the same as ``value`` (inline) except the reusable content is stored inside a cacheable template server directory.
 
@@ -320,7 +321,7 @@ Using ``template`` (external) is the same as ``value`` (inline) except the reusa
 .. note:: Templating engines with a ``compile(string [, options]): (data?: Record<string, any>) => string`` method are compatible.
 
 Event callbacks
----------------
+===============
 
 You can create named callbacks for ``postQuery`` and ``preRender`` anywhere inside the HTML. It is more readable than inside a configuration file and can be reused for similiar queries.
 
@@ -333,7 +334,7 @@ You can create named callbacks for ``postQuery`` and ``preRender`` anywhere insi
   }
 
 Example usage
-^^^^^^^^^^^^^
+-------------
 
 Only one function can be defined per ``<script type="text/template">`` element.
 
@@ -363,7 +364,7 @@ Only one function can be defined per ``<script type="text/template">`` element.
 .. warning:: Using ``<script>`` templates requires the setting :code:`eval.template = true`.
 
 Query expressions
------------------
+=================
 
 - `JSONPath <https://github.com/dchester/jsonpath>`_ [#]_
 - `JMESPath <https://jmespath.org>`_ [#]_

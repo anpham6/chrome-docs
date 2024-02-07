@@ -1,3 +1,4 @@
+=====
 Watch
 =====
 
@@ -6,7 +7,7 @@ File watching is available with **copy** methods and uses HTTP HEAD requests to 
 Hot module replacement is only available for ``<link>`` and ``<img>`` elements. It is disabled by default due to possible conflicts with preloaded JavaScript.
 
 Using JSON/YAML config [#]_
----------------------------
+===========================
 
 .. code-block::
 
@@ -38,7 +39,7 @@ Using JSON/YAML config [#]_
   }
 
 Using copyTo options
---------------------
+====================
 
 .. code-block:: javascript
 
@@ -59,7 +60,7 @@ Using copyTo options
   });
 
 Using JWT authentication
-------------------------
+========================
 
 .. code-block::
 
@@ -91,7 +92,7 @@ Using JWT authentication
   });
 
 Using inline commands
----------------------
+=====================
 
 .. code-block:: html
 
@@ -104,10 +105,10 @@ Using inline commands
 .. tip:: ``~`` can be used with ``::`` for default server value.
 
 Options
--------
+=======
 
 useOriginalHtmlPage = true
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 HTML only has partial watch support since most local modifications will alter the original element index position stored on the server.
 

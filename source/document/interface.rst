@@ -1,3 +1,4 @@
+=========
 Interface
 =========
 
@@ -82,7 +83,7 @@ Interface
   }
 
 Global
-------
+======
 
 .. code-block:: typescript
 

@@ -1,15 +1,16 @@
+========
 Features
 ========
 
 Protocols
----------
+=========
 
 - HTTP/2
 - FTP/SFTP/BitTorrent/Metalink [#]_ (using `aria2 <https://github.com/aria2/aria2/releases>`_)
 - Unix domain socket [#]_
 
 Encoding
---------
+========
 
 - Gzip
 - Deflate

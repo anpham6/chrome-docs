@@ -1,3 +1,4 @@
+========
 Built-In
 ========
 
@@ -15,7 +16,7 @@ JS and CSS files can be optimized further using these settings:
 You can define or undefine your own optimizations in ``squared.json``:
 
 HTML
-----
+====
 
 - `posthtml <https://github.com/postcss/postcss>`_ -> @pi-r/posthtml
 - `html-validate <https://gitlab.com/html-validate/html-validate>`_ -> @pi-r/html-validate
@@ -24,7 +25,7 @@ HTML
 - `svgo <https://github.com/svg/svgo>`_ -> @pi-r/svgo
 
 CSS
----
+===
 
 - `postcss <https://github.com/postcss/postcss>`_ -> @pi-r/postcss
 - `prettier <https://github.com/prettier/prettier>`_ -> @pi-r/prettier
@@ -34,7 +35,7 @@ CSS
 - `sass <https://github.com/sass/dart-sass>`_ -> @pi-r/sass
 
 JS
---
+==
 
 - `@babel/core <https://github.com/babel/babel>`_ -> @pi-r/babel
 - `eslint <https://github.com/eslint/eslint>`_ -> @pi-r/eslint

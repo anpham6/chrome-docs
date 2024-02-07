@@ -1,3 +1,4 @@
+===============
 Inline commands
 ===============
 
@@ -10,7 +11,7 @@ Bundles can be created with these HTML tag names.
 JS and CSS files with the same path and filename will automatically create a bundle when there are no conflicts in call ordering.
 
 data-chrome-file
----------------------
+================
 
 1. path/filename
     a. saveAs [#]_
@@ -40,7 +41,7 @@ These examples will both output one transformed stylesheet.
   <link rel="stylesheet" href="css/prod.css" />
 
 data-chrome-options
--------------------
+===================
 
 * preserve [#]_
     - html
@@ -103,7 +104,7 @@ data-chrome-options
   </style>
 
 data-chrome-metadata
---------------------
+====================
 
 * Any plain object
 

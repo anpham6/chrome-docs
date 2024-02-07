@@ -1,3 +1,4 @@
+=====
 MySQL
 =====
 
@@ -5,7 +6,7 @@ MySQL
 - **npm** i *@pi-r/mysql*
 
 Interface
----------
+=========
 
 .. code-block:: typescript
 
@@ -25,7 +26,7 @@ Interface
   }
 
 Pool
-^^^^
+----
 
 .. code-block:: typescript
 
@@ -39,7 +40,7 @@ Pool
   }
 
 Authentication
---------------
+==============
 
 - `Connection <https://sidorares.github.io/node-mysql2/docs/examples/connections/create-connection>`_
 
@@ -69,7 +70,7 @@ Authentication
   }
 
 Example usage
--------------
+=============
 
 - `Query <https://sidorares.github.io/node-mysql2/docs/examples/queries/simple-queries/select>`_
 

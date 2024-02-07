@@ -1,0 +1,44 @@
+.highlight .kd {
+    font-weight: 700;
+    color: steelblue;
+}
+
+.highlight .kt {
+    color: blue;
+}
+
+.highlight .nt {
+    color: darkred;
+}
+
+.highlight .s, .highlight .s2 {
+    color: seagreen;
+}
+
+.highlight .na {
+    color: crimson;
+}
+
+.highlight .p {
+    color: darkslateblue;
+}
+
+.highlight .mf {
+    color: blue;
+}
+
+.highlight .hll {
+    background-color: gainsboro;
+}
+
+.highlight-javascript .highlight .s {
+    color: blue;
+}
+
+.highlight-bash .highlight .m {
+    color: inherit;
+}
+
+.highlight-bash .highlight .nb {
+    color: darkmagenta;
+}

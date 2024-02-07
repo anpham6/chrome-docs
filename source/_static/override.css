@@ -2,3 +2,7 @@
     padding-top: 0;
     text-align: left;
 }
+
+.rst-content dl[class] > dt {
+    border-top-color: slategray !important;
+}

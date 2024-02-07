@@ -12,8 +12,12 @@ Example usage
   squared.saveAs("index.zip", {
     productionRelease: false | "/absolute/path/wwwroot/", // Ignore local url rewriting and use absolute paths
     productionIncremental: false, // Use cached data when processing transformed files
-    preserveCrossOrigin: false | URLData, // Ignore downloading a local copy of assets hosted on other domains
-    
+    preserveCrossOrigin: false, // Ignore downloading a local copy of assets hosted on other domains
+    preserveCrossOrigin: { // URLData
+      hostname: "docs.github.com",
+      pathname: "/repositories"
+    },
+  
     useOriginalHtmlPage: false | "textarea|code", // Ignore tags causing parsing errors
     useUnsafeReplace: "html", // Use when there are no element tags inside comments and <script>
     useUnsafeReplace: "css", // Use when there are no comments or block delimiters inside property values (e.g. "{" "}")

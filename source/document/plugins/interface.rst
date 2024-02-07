@@ -16,7 +16,7 @@ Interface
 
 .. code-block:: typescript
 
-  interface ITransformSeries extends Module, TransformOutput {
+  interface ITransformSeries extends IModule, TransformOutput {
       type: "html" | "css" | "js";
       baseConfig: PlainObject;
       outputConfig: PlainObject; // Same as baseConfig when using an inline transformer

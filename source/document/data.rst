@@ -17,7 +17,7 @@ Interface
       viewEngine?: ViewEngine;
       viewEngine?: string; // settings.view_engine[name]? + settings.users.username.view_engine[name]? (overlay)
       /* OR */
-      value?: StringOfArray | ObjectMap<unknown>; // Replace placeholders per row of results
+      value?: string | string[] | PlainObject; // Replace placeholders per row of results
       template?: string; // Will replace "value" from local file (string)
 
       dynamic?: boolean; // Uses element.innerXml rather than element.textContent

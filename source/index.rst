@@ -12,6 +12,7 @@ E-mc 0.8
   db/index
   task/index
   build
+  references
   versions
   squared-functions <legacy>
 

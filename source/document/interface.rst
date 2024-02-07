@@ -42,7 +42,7 @@ Interface
 
       attributes?: Record<string, string | null | undefined>;
       rewrite?: false; // Overrides preserveCrossOrigin
-      rewrite?: URLData; // Writable string properties in URL class
+      rewrite?: URLData;
 
       download?: boolean; // Forces processing for unknown types (implicitly is "true" for known types)
       dynamic?: boolean; // Will ignore misplaced child elements prerendered in the browser
@@ -82,7 +82,4 @@ Interface
       document?: string | string[]; // Usually "chrome" by framework (override)
   }
 
-.. code-block:: typescript
-  :caption: Global
-
-  type PlainObject = Record<string | number | symbol, unknown>;
+.. seealso:: For any non-browser named definitions check :doc:`References </references>`.

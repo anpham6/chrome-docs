@@ -73,6 +73,8 @@ Interface
       waitStatus?: boolean;
   }
 
+.. seealso:: For any non-browser named definitions check :doc:`References </references>`.
+
 Shared properties
 =================
 
@@ -163,14 +165,4 @@ Database
 
       // Excluding "parallel" | "withCommand" | "usePool"
     }
-  }
-
-Global
-======
-
-.. code-block:: typescript
-
-  interface AuthValue {
-      username?: string;
-      password?: string;
   }

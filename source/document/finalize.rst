@@ -17,6 +17,7 @@ You can exclude unnecessary processing files using the dataset attribute in ``<s
 There is a simpler way to exclude the same tags by using an HTML comment block when inside the ``<head>`` element. [#]_
 
 .. code-block:: html
+  :emphasize-lines: 3,17
 
   <head>
     <title></title>

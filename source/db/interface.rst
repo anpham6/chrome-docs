@@ -43,7 +43,7 @@ Interface
 
       parallel?: boolean; // Active with batched queries (implicit: true)
       streamRow?: boolean; // Read streaming when available
-      streamRow?: string | ((row: unknown) => Void<Error | false>); // Modify row + exclude (parseable)
+      streamRow?: string | ((row: unknown) => Error | false | void); // Modify row + exclude (parseable)
 
       update?: unknown; // Syntax by provider
       options?: PlainObject; // Used to configure get commands
@@ -60,6 +60,8 @@ Interface
       willAbort?: boolean; // Abort is called bypassing settings      
   }
 
+.. seealso:: For any non-browser named definitions check :doc:`References </references>`.
+
 Global
 ======
 
@@ -74,8 +76,6 @@ Global
       username?: string;
       password?: string;
   }
-
-  type PlainObject = Record<string | number | symbol, unknown>;
 
 .. attention:: Enabling usePool with a UUID key will also copy the value into credential.uuidKey [#]_.
 

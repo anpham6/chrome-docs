@@ -60,7 +60,7 @@ Interface
       willAbort?: boolean; // Abort is called bypassing settings      
   }
 
-.. seealso:: For any non-browser named definitions check :doc:`References </references>`.
+.. seealso:: For any non-standard named definitions check :doc:`References </references>`.
 
 Global
 ======

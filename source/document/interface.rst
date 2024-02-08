@@ -82,4 +82,4 @@ Interface
       document?: string | string[]; // Usually "chrome" by framework (override)
   }
 
-.. seealso:: For any non-browser named definitions check :doc:`References </references>`.
+.. seealso:: For any non-standard named definitions check :doc:`References </references>`.

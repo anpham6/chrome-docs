@@ -7,6 +7,13 @@ References
 squared
 =======
 
+.. _references-squared-type:
+.. rst-class:: block-list
+
+https://unpkg.com/squared/types/type.d.ts
+  | `PlainObject <search.html?q=PlainObject>`_
+  | `StringMap <search.html?q=StringMap>`_
+
 .. _references-squared-base-resource:
 .. rst-class:: block-list
 
@@ -50,18 +57,6 @@ https://unpkg.com/@e-mc/types/lib/db.d.ts
 
 https://unpkg.com/@e-mc/types/lib/http.d.ts
   | `AuthValue <search.html?q=AuthValue>`_
-
-.. _references-object:
-
-Object
-======
-
-.. _references-squared-type:
-.. rst-class:: block-list
-
-https://unpkg.com/squared/types/type.d.ts
-  | `PlainObject <search.html?q=PlainObject>`_
-  | `StringMap <search.html?q=StringMap>`_
 
 .. _references-nodejs:
 

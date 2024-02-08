@@ -73,7 +73,7 @@ Interface
       waitStatus?: boolean;
   }
 
-.. seealso:: For any non-browser named definitions check :doc:`References </references>`.
+.. seealso:: For any non-standard named definitions check :doc:`References </references>`.
 
 Shared properties
 =================

@@ -1,3 +1,7 @@
+.highlight .k {
+    color: darkblue;
+}
+
 .highlight .kd {
     font-weight: 700;
     color: steelblue;
@@ -23,7 +27,7 @@
     color: darkslateblue;
 }
 
-.highlight .mf {
+.highlight .mf, .highlight .mi {
     color: blue;
 }
 
@@ -31,8 +35,21 @@
     background-color: gainsboro;
 }
 
+.highlight-html .highlight .k {
+    color: crimson;
+}
+
 .highlight-javascript .highlight .s {
     color: blue;
+}
+
+.highlight-typescript .highlight .k {
+    font-weight: 700;
+    color: teal;
+}
+
+.highlight-typescript .highlight .kr {
+    color: #555555;
 }
 
 .highlight-bash .highlight .m {

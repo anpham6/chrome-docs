@@ -45,6 +45,7 @@ Interface
       pathname?: string;
       filename?: string;
       minStreamSize?: number | string;
+      chunkSize?: number; // Only GCP
       active?: boolean;
       overwrite?: boolean;
       admin?: CloudStorageAdmin;
@@ -72,6 +73,9 @@ Interface
       deleteObject?: unknown;
       waitStatus?: boolean;
   }
+
+.. versionadded:: 0.9.0
+  *CloudStorageAction* property chunkSize.
 
 .. seealso:: For any non-standard named definitions check :doc:`References </references>`.
 

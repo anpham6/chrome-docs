@@ -144,18 +144,17 @@ Example usage
         }
       },
       "upload": {
-        /* gcp.file.save */
         "publicRead": true, // Will not clobber existing ACLs
         "publicRead": 0, // Remove ACL without affecting other ACLs
         /* OR */
         "acl": "authenticatedRead", // "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead"
 
+        /* gcp.save */
         "options": { // UploadOptions
           "contentType": "text/html",
           "predefinedAcl": "publicRead", // Supplementary are public
-          "metadata": {/* UploadMetadata */} // All objects except when "metadata" is defined
+          "metadata": {/* UploadMetadata */}, // All objects except when "metadata" is defined
         },
-
         /* firebase.uploadBytes */
         "options": { // UploadMetadata
           "contentType": "text/html",
@@ -165,9 +164,23 @@ Example usage
         /* Primary object only */
         "metadata": {
           "contentType": "text/html"
-        }
+        },
+
+        /* gcp.uploadFileInChunks{chunkSizeBytes} */
+        "chunkSize": "32mb", // Minimum part size of a multipart operation
+        "chunkSize": 33554432, // 32 * 1024 * 1024
+        "options": {
+          "contentType": "image/png" // headers["Content-Type"] = contentType
+        },
+        "metadata": {/* Record<string, string> */} // gcp.uploadFileInChunks{headers}
       },
-      "download": {/* Same as interface - gcp.download | firebase.getDownloadURL */}
+      "download": {
+        /* gcp.downloadFileInChunks{chunkSizeBytes} */
+        "chunkSize": "32mb", // Part size of a multipart operation
+        "chunkSize": 33554432
+
+        /* Same as interface - gcp.download + firebase.getDownloadURL */
+      }
     }]
   }
 
@@ -550,9 +563,11 @@ Realtime Database
 
 .. versionadded:: 0.7.0
 
-  - **configBucket.tags** using *Metadata* was implemented.
-  - **configBucket.cors** using *Cors* was implemented.
-  - **configBucket.lifecycle** using *LifecycleRule* was implemented.
+  - Storage *upload* in multipart using property **chunkSize** was implemented.
+  - Storage *download* in multipart using property **chunkSize** was implemented.
+  - Storage **configBucket.tags** using *Metadata* was implemented.
+  - Storage **configBucket.cors** using *Cors* was implemented.
+  - Storage **configBucket.lifecycle** using *LifecycleRule* was implemented.
   - *Firestore* property **update** supports using *FieldValue<"delete" | "increment" | "serverTimestamp">* methods.
   - *Firestore* property **update** supports using property **updateType** enum values.
 

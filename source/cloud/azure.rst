@@ -19,7 +19,7 @@ Interface
   import type { CloudStorage } from "./interface";
 
   interface AzureStorage extends CloudStorage {
-      service: "azure";
+      service: "azure" | "az";
       credential: string | AzureStorageCredential;
       bucket: string;
   }
@@ -134,9 +134,18 @@ Example usage
 
         /* Primary object only */
         "metadata": {/* Metadata */},
-        "tags": {/* Tags */}
+        "tags": {/* Tags */},
+
+        /* azure.uploadFile{maxSingleShotSize} */
+        "chunkSize": "32mb" // Aligned to 4mb
       },
       "download": {
+        /* azure.downloadToFile */
+        "chunkSize": "2gb", // Set to at least 2gb
+        "versionId": "2011-03-09T01:42:34.9360000Z", // Alias for "snapshot" (optional)
+        /* azure.downloadToBuffer{blockSize} */
+        "chunkSize": "256mb", // Aligned to 4mb
+
         "deleteObject": {/* ContainerDeleteMethodOptions */} // azure.delete
       }
     }]
@@ -155,11 +164,11 @@ Interface
 .. code-block:: typescript
 
   import type { CloudDatabase } from "./interface";
-  import type { CosmosClientOptions, FeedOptions, PartitionKey, PatchRequestBody, RequestOptions, SqlQuerySpec } from '@azure/cosmos';
+  import type { CosmosClientOptions, FeedOptions, PartitionKey, PatchRequestBody, RequestOptions, SqlQuerySpec } from "@azure/cosmos";
 
   interface AzureDatabaseQuery extends CloudDatabase {
       source: "cloud";
-      service: "azure";
+      service: "azure" | "az";
       credential: string | AzureDatabaseCredential;
       name: string;
       table: string;
@@ -262,6 +271,11 @@ Example usage
 
 @pi-r/azure
 ===========
+
+.. versionadded:: 0.7.0
+
+  - Storage *upload* in parallel using property **chunkSize** was implemented.
+  - Storage *download* in parallel using property **chunkSize** was implemented.
 
 .. versionadded:: 0.6.2
 

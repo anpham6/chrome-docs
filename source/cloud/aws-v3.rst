@@ -15,8 +15,8 @@ Interface
 .. code-block:: typescript
 
   import type { CloudStorage } from "./interface";
-  import type { AwsAuthInputConfig } from '@aws-sdk/middleware-signing';
-  import type { S3ClientConfig } from '@aws-sdk/client-s3';
+  import type { AwsAuthInputConfig } from "@aws-sdk/middleware-signing";
+  import type { S3ClientConfig } from "@aws-sdk/client-s3";
 
   interface AWSStorage extends CloudStorage {
       service: "aws-v3";
@@ -203,8 +203,8 @@ Interface
 .. code-block:: typescript
 
   import type { CloudDatabase } from "./interface";
-  import type { DynamoDBClientConfig, QueryCommandInput, ScanCommandInput } from '@aws-sdk/client-dynamodb';
-  import type { BatchGetCommandInput, TranslateConfig, UpdateCommandInput } from '@aws-sdk/lib-dynamodb';
+  import type { DynamoDBClientConfig, QueryCommandInput, ScanCommandInput } from "@aws-sdk/client-dynamodb";
+  import type { BatchGetCommandInput, TranslateConfig, UpdateCommandInput } from "@aws-sdk/lib-dynamodb";
   import type { NativeAttributeValue } from "@aws-sdk/util-dynamodb";
 
   interface AWSDatabaseQuery extends CloudDatabase {

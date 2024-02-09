@@ -45,7 +45,8 @@ Interface
       pathname?: string;
       filename?: string;
       minStreamSize?: number | string;
-      chunkSize?: number; // Only GCP
+      chunkSize?: number | string; // Only Azure + GCP
+      flags?: number;
       active?: boolean;
       overwrite?: boolean;
       admin?: CloudStorageAdmin;
@@ -75,7 +76,7 @@ Interface
   }
 
 .. versionadded:: 0.9.0
-  *CloudStorageAction* property chunkSize.
+  *CloudStorageAction* property chunkSize for parallel operations.
 
 .. seealso:: For any non-standard named definitions check :doc:`References </references>`.
 
@@ -130,11 +131,17 @@ Storage
         "minStreamSize": 10485760, // File size to use read stream (not limited to 2gb)
         "minStreamSize": "10mb",
 
+        "chunkSize": "8mb", // Minimum part size of a parallel upload operation
+        "chunkSize": 33554432, // 8 * 1024 * 1024
+
         "endpoint": "http://hostname/nodejs-001" // Required when different from credential
       },
       "download": {
         "filename": "alternate.png", // Required
         "versionId": "12345", // Retrieve a previous file snapshot
+
+        "chunkSize": "32mb", // Minimum part size of a parallel download operation
+        "chunkSize": 33554432, // 32 * 1024 * 1024
 
         "active": false,
         "overwrite": false, // If local file exists then skip download

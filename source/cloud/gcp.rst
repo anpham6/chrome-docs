@@ -20,11 +20,11 @@ Interface
 .. code-block:: typescript
 
   import type { CloudStorage } from "./interface";
-  import type { StorageOptions } from '@google-cloud/storage';
-  import type { FirebaseOptions } from '@firebase/app';
+  import type { StorageOptions } from "@google-cloud/storage";
+  import type { FirebaseOptions } from "@firebase/app";
 
   interface GCPStorage extends CloudStorage {
-      service: "gcp | gcloud";
+      service: "gcp" | "gcloud";
       credential: string | GCPStorageCredential;
       bucket: string;
   }
@@ -167,8 +167,7 @@ Example usage
         },
 
         /* gcp.uploadFileInChunks{chunkSizeBytes} */
-        "chunkSize": "32mb", // Minimum part size of a multipart operation
-        "chunkSize": 33554432, // 32 * 1024 * 1024
+        "chunkSize": "8mb", // Aligned to 256kb
         "options": {
           "contentType": "image/png" // headers["Content-Type"] = contentType
         },
@@ -176,8 +175,7 @@ Example usage
       },
       "download": {
         /* gcp.downloadFileInChunks{chunkSizeBytes} */
-        "chunkSize": "32mb", // Part size of a multipart operation
-        "chunkSize": 33554432
+        "chunkSize": "32mb" // Aligned to 256kb
 
         /* Same as interface - gcp.download + firebase.getDownloadURL */
       }
@@ -563,8 +561,8 @@ Realtime Database
 
 .. versionadded:: 0.7.0
 
-  - Storage *upload* in multipart using property **chunkSize** was implemented.
-  - Storage *download* in multipart using property **chunkSize** was implemented.
+  - Storage *upload* in parallel using property **chunkSize** was implemented.
+  - Storage *download* in parallel using property **chunkSize** was implemented.
   - Storage **configBucket.tags** using *Metadata* was implemented.
   - Storage **configBucket.cors** using *Cors* was implemented.
   - Storage **configBucket.lifecycle** using *LifecycleRule* was implemented.

@@ -7,4 +7,5 @@ Plugins
 
   interface
   Built-In <built-in>
+  breakdown
   settings

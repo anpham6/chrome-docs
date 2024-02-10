@@ -28,13 +28,15 @@ Optional fail safe dependencies are going to be removed when **NodeJS 22** start
 Abort Controller
 ----------------
 
-.. code-block:: bash
+.. highlight:: bash
+
+::
   :caption: Minimum 15.4 + 16.0
 
   npm i abort-controller
   npm i event-target-shim
 
-.. code-block:: bash
+::
   :caption: Minimum 14.17 + 15.0
 
   node --experimental-abortcontroller serve.js
@@ -42,7 +44,7 @@ Abort Controller
 UUID
 ----
 
-.. code-block:: bash
+::
   :caption: Minimum 14.17 + 15.6
 
   npm i uuid

@@ -2,7 +2,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+::
 
   interface TransformOutput {
       pathname?: string;
@@ -14,7 +16,7 @@ Interface
       external?: PlainObject;
   }
 
-.. code-block:: typescript
+::
 
   interface ITransformSeries extends IModule, TransformOutput {
       type: "html" | "css" | "js";
@@ -27,25 +29,25 @@ Interface
       supplementChunks: ChunkData[];
       imported: boolean; // ESM detected
       createSourceMap(code: string): SourceMap; // Use "nextMap" method for sourceMap (additional sourceMaps)
-      
+    
       /* ESM */
       getMainFile?(code?: string, imports?: StringMap): Undef<SourceInput<string>>;
       getSourceFiles?(imports?: StringMap): Undef<SourceInput<[string, string?, string?][]>>;
-      
+    
       /* Return values */
       out: {
-          sourceFiles?: string[]; // ESM
+          sourceFiles?: string[]; // ESM (e.g. files to watch)
           ignoreCache?: boolean;
           messageAppend?: string;
           logAppend?: LogStatus[];
           logQueued?: LogStatus[];
       };
-      
+    
       version: string; // Requested version
-      
+    
       packageName: string;
       packageVersion: string; // Context version
-      
+    
       /* Module */
       host: IFileManager;
       username: string;

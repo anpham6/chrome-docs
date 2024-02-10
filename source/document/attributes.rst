@@ -4,11 +4,13 @@ Attributes
 
 There are possible scenarios when a transformation into another format will require new attribute values. [#]_
 
-.. code-block:: html
+.. highlight:: html
+
+::
 
   <link rel="alternate" type="text/plain" href="css/dev.sass" />
 
-::
+.. code-block:: json
 
   {
     "selector": "link[rel=alternate]",
@@ -30,13 +32,13 @@ There are possible scenarios when a transformation into another format will requ
 
 Or the equivalent inline command. [#]_
 
-.. code-block:: html
+::
 
   <link rel="alternate" type="text/plain" href="css/dev.sass" data-chrome-file='{ "saveAs": "css/prod.css", "process": ["compile"] }' data-chrome-attributes='{ "rel": "stylesheet", "type": "text/css", "title": "", "disabled": null, "integrity": "sha512", "crossorigin": "anonymous" }' data-chrome-options="download" />
 
 Which will produce this output.
 
-.. code-block:: html
+::
 
   <link rel="stylesheet" type="text/css" title="" disabled href="css/prod.css" integrity="sha512-365M9279XHmH5iUcnWAVLXbLCqmntex51g5yp+jrzci79PhUOZyK/ebMIzoR46y7okDgZYZhTImDt7/06IhxQw==" crossorigin="anonymous" />
 

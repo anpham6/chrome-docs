@@ -4,7 +4,9 @@ Interface
 
 - `Encoding <https://nodejs.org/api/buffer.html#buffers-and-character-encodings>`_
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+::
 
   interface DataSource {
       source: string;
@@ -30,7 +32,7 @@ Interface
       transactionFail?: boolean;
   }
 
-.. code-block:: typescript
+::
 
   interface DbDataSource extends DataSource {
       source: string; // Built-in alias | NPM package name
@@ -65,7 +67,7 @@ Interface
 Global
 ======
 
-.. code-block:: typescript
+::
 
   interface ServerAuth {
       protocol?: string;

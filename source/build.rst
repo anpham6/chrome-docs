@@ -7,7 +7,9 @@ General processing options use `squared-express <https://github.com/anpham6/squa
 Example usage
 =============
 
-.. code-block:: javascript
+.. highlight:: javascript
+
+::
 
   squared.saveAs("index.zip", {
     productionRelease: true, // Ignore local URL rewriting and use actual path
@@ -88,7 +90,7 @@ Example "saveAs"
 
 The entire page can be transformed as a group using the *saveAs* attribute in options. [#]_
 
-.. code-block:: javascript
+::
 
   squared.copyTo("/path/to/target", {    
     saveAs: {
@@ -140,7 +142,7 @@ The entire page can be transformed as a group using the *saveAs* attribute in op
 Example cloud storage
 =====================
 
-.. code-block:: javascript
+::
 
   squared.saveAs("index.zip", {
     config: "http://localhost:3000/chrome/bundle.yml",
@@ -180,13 +182,13 @@ Example cloud storage
 Example remote configuration
 ============================
 
-.. code-block:: javascript
+::
 
   squared.saveAs("bundle.zip", { config: { uri: "http://hostname/chrome/bundle.txt", mimeType: "text/yaml" } }); // "mimeType" is optional
   /* OR */
   squared.saveAs("bundle.zip", { config: "http://hostname/chrome/bundle.yml" }); // Detect by file extension (default is "json")
 
-.. code-block:: javascript
+::
 
   // http://hostname/example.html -to- http://hostname/example.html.json
 
@@ -201,8 +203,8 @@ Using sqd.config
 
 The base folder level configuration file is a hash map of URL globs which can match multiple items.
 
-.. code-block:: javascript
-  :caption: `http://hostname/directory/example.html` -to- `http://hostname/directory/sqd.config`
+.. code-block::
+  :caption: `http://hostname/path/layout/example.html` -to- `http://hostname/path/layout/sqd.config`
   
   squared.saveAs("example.zip", { config: true }); // Uses first match found
   /* OR */
@@ -212,6 +214,8 @@ The base folder level configuration file is a hash map of URL globs which can ma
       inherit: true | "append" // Globs are concatenated
     }
   });
+
+.. hint:: The filename ``sqd.config`` is configurable using **settings.outputConfigName**.
 
 The order of precedence when using **inherit** is resolved through the asset command property :doc:`mergeType <document/merge>`.
 

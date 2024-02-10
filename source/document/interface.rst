@@ -2,7 +2,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+::
 
   interface OutputModifiers {
       inline?: boolean; // type: js | css | image (base64) | font (base64)
@@ -17,7 +19,7 @@ Interface
       exclude?: boolean; // type: js | css (remove from HTML)
   }
 
-.. code-block:: typescript
+::
 
   import type { CloudDatabase, CloudService } from "../cloud/interface";
 

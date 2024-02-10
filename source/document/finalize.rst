@@ -10,7 +10,9 @@ You can exclude unnecessary processing files using the dataset attribute in thes
 
 Other elements can be excluded only through a configuration file.
 
-.. code-block:: html
+.. highlight:: html
+
+::
 
   <script src="/dist/squared.js" data-chrome-file="exclude"></script>
   <script src="/dist/squared.base.js" data-chrome-file="exclude"></script>
@@ -22,7 +24,7 @@ Other elements can be excluded only through a configuration file.
 
 There is a simpler way to exclude the same tags by using an HTML comment block when inside the ``<head>`` element. [#]_
 
-.. code-block:: html
+.. code-block::
   :emphasize-lines: 3,17
 
   <head>
@@ -47,7 +49,7 @@ There is a simpler way to exclude the same tags by using an HTML comment block w
 
 You can similarly prevent any element from being downloaded or transformed using the value *ignore*.
 
-.. code-block:: html
+::
 
   <iframe src="https://www.google.com/maps" data-chrome-file="ignore"></iframe>
 

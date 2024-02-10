@@ -19,13 +19,15 @@ data-chrome-file
 2. ``::``
 3. format... [#]_
 
-.. code-block:: html
+.. highlight:: html
+
+::
 
   <link rel="stylesheet" href="css/dev.css" data-chrome-file="saveAs:css/prod.css::minify" />
 
 Whitespace can be used between anything for readability. Outer JSON brackets are optional. [#]_
 
-.. code-block:: html
+::
 
   <style data-chrome-file='{ "exportAs": "css/prod.css", "process": ["lint", "beautify"] }'>
     body {
@@ -36,7 +38,7 @@ Whitespace can be used between anything for readability. Outer JSON brackets are
 
 These examples will both output one transformed stylesheet.
 
-.. code-block:: html
+::
 
   <link rel="stylesheet" href="css/prod.css" />
 
@@ -90,11 +92,11 @@ data-chrome-options
     - latin1
     - utf-16be (unsupported)
 
-.. code-block:: html
+::
 
   <link rel="stylesheet" href="css/dev.css" data-chrome-options="preserve|md5|compress[gz]|utf-16">
 
-.. code-block:: html
+::
 
   <style data-chrome-options='{ "preserve": true, "hash": "md5", "compress": [{ "format": "gz", "algorithm": "zopfli", "level": 15 }], "encoding": "utf-16" }'>
     body {
@@ -108,13 +110,13 @@ data-chrome-metadata
 
 * Any plain object
 
-.. code-block:: html
+::
 
   <script src="/dist/squared.js" data-chrome-metadata='{ "custom-rollup": { "import-maps": {} }, "custom-terser": { "config": {} } }'></script>
 
 Inline commands are usually sufficient for simple web pages. More advanced configurations are possible using a JSON/YAML external configuration file. [#]_
 
-::
+.. code-block:: json
 
   {
     "selector": "head > script:nth-of-type(2), head > script:nth-of-type(3)",
@@ -132,5 +134,5 @@ Inline commands are usually sufficient for simple web pages. More advanced confi
 .. [#] Optionally installed NPM plugins are required. (e.g. imagemin-pngquant)
 .. [#] "true" - explicit | "false"
 .. [#] filename + content hash (productionRelease=true)
-.. [#] Value can be limited to the starting prefix (e.g. md5[8] - Minimum is 4)
+.. [#] Value can be limited to the starting prefix. (e.g. md5[8] - Minimum is 4)
 .. [#] MIME (mimeType) is required when bundling torrents.

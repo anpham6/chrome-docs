@@ -89,7 +89,7 @@ Shared properties
 Storage
 -------
 
-.. code-block::
+::
 
   {
     "cloudStorage": [{
@@ -169,7 +169,7 @@ Storage
 Database
 --------
 
-.. code-block::
+::
 
   {
     "dataSource": { // DbDataSource

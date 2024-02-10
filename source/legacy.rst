@@ -26,10 +26,10 @@ Command line options ``--compat-v4`` and ``--no-compat-v4`` are also available a
 
   {
     "dependencies": {
-      "@e-mc/compat-v4": "^0.8.3"
+      "@e-mc/compat-v4": "^0.8.0"
     }
   }
 
 Include once in the main process before using ``require`` with packages that use or inherit from *squared-functions*.
 
-.. warning:: Deprecated settings from *squared-functions* were removed. Misplaced properties that are undetected will use the default unoptimized value.
+.. warning:: Deprecated settings from **squared-functions** were removed. Misplaced properties that are undetected will use the default unoptimized value.

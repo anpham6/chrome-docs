@@ -170,17 +170,35 @@ Example usage
         "chunkSize": "8mb", // Aligned to 256kb
         "options": {
           "contentType": "image/png" // headers["Content-Type"] = contentType
+          "maxQueueSize": 5,
+          "concurrencyLimit": 5
         },
         "metadata": {/* Record<string, string> */} // gcp.uploadFileInChunks{headers}
       },
       "download": {
         /* gcp.downloadFileInChunks{chunkSizeBytes} */
-        "chunkSize": "32mb" // Aligned to 256kb
-
+        "chunkSize": "32mb", // Aligned to 256kb
+        "options": {
+          "concurrencyLimit": 5
+        }
         /* Same as interface - gcp.download + firebase.getDownloadURL */
       }
     }]
   }
+
+Admin
+^^^^^
+
+Parallel transfers was enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and opens only one request per file.
+
+.. code-block:: javascript
+  :caption: Disable
+
+  const gcp = require("@pi-r/gcp");
+  gcp.CLOUD_UPLOAD_CHUNK = false;
+  gcp.CLOUD_DOWNLOAD_CHUNK = false;
+
+.. attention:: Chunking is only used when the upload file size is greater than **chunkSize**.
 
 Database
 ========

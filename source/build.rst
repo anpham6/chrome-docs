@@ -2,7 +2,7 @@
 Build Options
 =============
 
-General processing options use `squared-express <https://github.com/anpham6/squared-express#readme>`_ functionality. These options are specific to the *chrome* framework.
+General processing options use `squared-express <https://github.com/anpham6/squared-express#readme>`_ functionality. These options are specific to the **chrome** framework.
 
 Example usage
 =============
@@ -10,23 +10,30 @@ Example usage
 .. code-block:: javascript
 
   squared.saveAs("index.zip", {
-    productionRelease: false | "/absolute/path/wwwroot/", // Ignore local url rewriting and use absolute paths
-    productionIncremental: false, // Use cached data when processing transformed files
-    preserveCrossOrigin: false, // Ignore downloading a local copy of assets hosted on other domains
+    productionRelease: true, // Ignore local URL rewriting and use actual path
+    productionRelease: "/path/to/wwwroot/", Move non-local assets to server root directory
+    productionIncremental: true, // Use cached data when processing transformed files
+
+    preserveCrossOrigin: true, // Ignore downloading a local copy of assets hosted on other domains
     preserveCrossOrigin: { // URLData
       hostname: "docs.github.com",
       pathname: "/repositories"
     },
-  
-    useOriginalHtmlPage: false | "textarea|code", // Ignore tags causing parsing errors
+
+    useOriginalHtmlPage: false, // Use browser validated static page output for build
+    useOriginalHtmlPage: "textarea|code", // Ignore tags causing parsing errors
+
     useUnsafeReplace: "html", // Use when there are no element tags inside comments and <script>
     useUnsafeReplace: "css", // Use when there are no comments or block delimiters inside property values (e.g. "{" "}")
     useUnsafeReplace: true, // Alias for ["html", "css"]
-    stripCommentsAndCDATA: false | "script|picture", // Remove unused code from HTML + non-void tags
-    
+
+    stripCommentsAndCDATA: true, // Remove unused code from HTML + non-void tags
+    stripCommentsAndCDATA: "script|picture", // Additional tags to remove using RegExp group notation
+
     /* Use when there are parsing errors */
     normalizeHtmlOutput: true, // Escape illegal tags and remove unnecessary trailing spaces
     normalizeHtmlOutput: "?%", // Tags to ignore using RegExp negated characters (<?php ?> | <%= ejs %>) when escaping
+
     escapeReservedCharacters: true, // Escape reserved characters inside attributes (e.g. "<")
     ignoreServerCodeBlocks: ["<%", "%>", "<?php", ";", "<?php", "?>"], // May produce better results with dynamic content (<% %> | <?php ; | <?php ?>)
     
@@ -45,7 +52,7 @@ Example usage
     removeUnusedMedia: false, // @media
     removeUnusedContainer: false, // @container (not recommended)
     removeUnusedSupports: false, // @supports
-    
+
     /* Styles which are still being used */
     retainUsedStyles: {
       "selectors": [], // Same without separators
@@ -67,7 +74,7 @@ Example usage
       /* CSS @container (string enclosed within '|container:(min-width: 800px)|') */,
       /* CSS @supports (string enclosed within '|supports:(display: grid)|') */
     ],
-    
+
     imports: {
       "http://localhost:3000/build/": "./build", // Starts with "http"
       "http://localhost:3000/dist/chrome.framework.js": "/path/project/build/framework/chrome/src/main.js" // Full file path
@@ -128,7 +135,7 @@ The entire page can be transformed as a group using the *saveAs* attribute in op
     }
   });
 
-.. note:: ``inlineAction`` applies to the entire ``data-chrome-*`` namespace except ``data-chrome-[file|template]``.
+.. note:: ``inlineAction`` applies to the entire ``data-chrome-*`` namespace except **data-chrome-file** and **data-chrome-template**.
 
 Example cloud storage
 =====================

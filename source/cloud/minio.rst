@@ -150,11 +150,25 @@ Example usage
 
 .. note:: Some variations of functionality are more thoroughly documented in the :doc:`AWS <aws>` examples.
 
+Admin
+-----
+
+Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
+
+.. code-block:: javascript
+  :caption: Buffer
+
+  const minio = require("@pi-r/minio");
+  minio.CLOUD_UPLOAD_STREAM = false;
+
+.. warning:: Reading a buffer from disk has **2GB** file size limit.
+
 @pi-r/minio
 ===========
 
 .. versionadded:: 0.7.0
 
+  - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
   - **configBucket.tags** using *TagList* was implemented.
   - **configBucket.lifecycle** using *LifecycleConfig* was implemented.
   - **configBucket.create** functionality was implemented.

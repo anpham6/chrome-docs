@@ -143,8 +143,14 @@ Example usage
         /* azure.downloadToFile */
         "chunkSize": "2gb", // Set to at least 2gb
         "versionId": "2011-03-09T01:42:34.9360000Z", // Alias for "snapshot" (optional)
+
         /* azure.downloadToBuffer{blockSize} */
         "chunkSize": "256mb", // Aligned to 4mb
+
+        /* azure.download */
+        "options": { // BlobDownloadToBufferOptions
+          "maxRetryRequestsPerBlock": 5
+        },
 
         "deleteObject": {/* ContainerDeleteMethodOptions */} // azure.delete
       }
@@ -152,6 +158,20 @@ Example usage
   }
 
 .. note:: **azure** is *BlobServiceClient*.getContainerClient(bucket).
+
+Admin
+^^^^^
+
+Parallel transfers was enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and opens only one request per file.
+
+.. code-block:: javascript
+  :caption: Disable
+
+  const azure = require("@pi-r/azure");
+  azure.CLOUD_UPLOAD_CHUNK = false;
+  azure.CLOUD_DOWNLOAD_CHUNK = false;
+
+.. attention:: Chunking is only used when the upload file size is greater than **chunkSize**.
 
 Database
 ========

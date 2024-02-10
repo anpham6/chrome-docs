@@ -71,12 +71,15 @@ Interface
 
   interface CloudStorageDownload extends CloudStorageAction {
       versionId?: string;
+      options?: unknown;
       deleteObject?: unknown;
       waitStatus?: boolean;
   }
 
 .. versionadded:: 0.9.0
-  *CloudStorageAction* property chunkSize for parallel operations.
+
+  - *CloudStorageAction* property **chunkSize** for parallel operations.
+  - *CloudStorageDownload* property **options** for to customize the download method.
 
 .. seealso:: For any non-standard named definitions check :doc:`References </references>`.
 
@@ -128,7 +131,7 @@ Storage
         "overwrite": true, // Always use current filename
 
         "contentType": "image/png", // Metadata has higher precedence (default is "application/octet-stream")
-        "minStreamSize": 10485760, // File size to use read stream (not limited to 2gb)
+        "minStreamSize": 10485760, // Detect when to use readable stream (not limited to 2gb)
         "minStreamSize": "10mb",
 
         "chunkSize": "8mb", // Minimum part size of a parallel upload operation
@@ -161,7 +164,7 @@ Storage
     }]
   }
 
-.. tip:: Any properties in **admin.configBucket.website** set to **true** uses the upload HTML target element.
+.. tip:: Any properties in **admin.configBucket.website** set to **true** uses the upload HTML page element.
 
 Database
 --------

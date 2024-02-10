@@ -5,7 +5,7 @@ Task
 - https://gulpjs.com/docs/en/getting-started/quick-start
 - **npm** i *@pi-r/gulp*
 
-**Gulp** is used as the reference implementation for a Task module.
+.. note:: **Gulp** is used as the reference implementation for a *Task* module.
 
 .. code-block::
   :caption: squared.json

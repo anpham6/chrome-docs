@@ -169,7 +169,14 @@ Example usage
         "tags": {}, // s3.deleteObjectTagging
         "tags": false
       },
-      "download": {/* Same as interface - s3.getObject */}
+      "download": {
+        /* s3.getObject */
+        "options": { // GetObjectRequest
+          "ExpectedBucketOwner": "",
+          "IfMatch": ""
+        }
+        /* Same as interface */
+      }
     }]
   }
 

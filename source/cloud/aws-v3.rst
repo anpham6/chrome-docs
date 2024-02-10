@@ -192,6 +192,19 @@ Example usage
     }]
   }
 
+Admin
+-----
+
+Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
+
+.. code-block:: javascript
+  :caption: Buffer
+
+  const aws = require("@pi-r/aws-v3");
+  aws.CLOUD_UPLOAD_STREAM = false;
+
+.. warning:: Reading a buffer from disk has **2GB** file size limit.
+
 Database
 ========
 
@@ -287,7 +300,7 @@ Example usage
 ============
 
 .. versionadded:: 0.7.0
-
+  - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
   - **configBucket.tags** using *PutBucketTaggingRequest* was implemented.
   - **configBucket.cors** using *CORSConfiguration* was implemented.
   - **configBucket.lifecycle** using *BucketLifecycleConfiguration* was implemented.

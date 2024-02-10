@@ -92,7 +92,7 @@ JS
     - @pi-r/uglify-js
     - 8
 
-These plugins can be configured using a plain object ``settings.transform[html|css|js]``. Import maps [#]_ are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.
+These plugins can be configured using a plain object in ``settings.transform``. Import maps [#]_ are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.
 
 - NPM custom package
 - Local file using module.exports (e.g. ".cjs")

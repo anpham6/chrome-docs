@@ -95,7 +95,7 @@ Example usage
 - `Query <https://learn.microsoft.com/en-us/sql/t-sql/queries/select-transact-sql>`_
 - `Parameters <http://tediousjs.github.io/tedious/parameters.html>`_
 
-.. code-block::
+::
 
   {
     "selector": "img",

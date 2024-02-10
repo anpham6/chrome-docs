@@ -4,7 +4,7 @@ Settings
 
 Unsafe execution is disabled by default. ``eval`` is a global setting for all users.
 
-.. code-block::
+::
 
   {
     "document": {
@@ -42,7 +42,7 @@ Using built-in transformer
 
 External plugins per package have to be pre-installed from NPM and are not available for auto-install.
 
-.. code-block::
+::
 
   {
     "document": {
@@ -94,7 +94,7 @@ Using inline function [#]_
 
 The suffix "-output" is used to create the variable ``options.outputConfig``.
 
-.. code-block::
+::
 
   {
     "document": {
@@ -130,7 +130,7 @@ The suffix "-output" is used to create the variable ``options.outputConfig``.
 Using local file
 ================
 
-.. code-block::
+::
 
   {
     "document": {
@@ -180,7 +180,7 @@ You can create or use a package from NPM which will behave like a built-in trans
 
 The name of the setting has to match the NPM name of the package.
 
-.. code-block::
+::
 
   {
     "document": {
@@ -215,7 +215,7 @@ The name of the setting has to match the NPM name of the package.
 Using page template
 ===================
 
-The same concept can be used inline anywhere using a ``script`` tag with the *type* attribute set to **text/template**. The script template will be completely removed from the final output.
+The same concept can be used inline anywhere using a ``script`` tag with the **type** attribute set to "text/template". The script template will be completely removed from the final output.
 
 .. code-block:: html
 

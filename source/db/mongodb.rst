@@ -71,7 +71,7 @@ Authentication
 
 - `Connection <https://www.mongodb.com/docs/drivers/node/current/fundamentals/authentication/mechanisms>`__
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -116,7 +116,7 @@ Example usage
 
 - `Query <https://www.mongodb.com/docs/compass/master/query/filter>`__
 
-.. code-block::
+::
 
   {
     "selector": "img",

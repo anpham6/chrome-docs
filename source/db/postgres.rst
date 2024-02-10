@@ -43,7 +43,7 @@ Authentication
 
 - `Connection <https://node-postgres.com/features/connecting>`_
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -66,7 +66,7 @@ Example usage
 
 - `Query <https://node-postgres.com/features/queries>`_
 
-.. code-block::
+::
 
   {
     "selector": "img",

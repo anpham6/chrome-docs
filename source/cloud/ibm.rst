@@ -37,7 +37,7 @@ Authentication
 
 - `Credentials <https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials>`_
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -59,7 +59,7 @@ Example usage
 - https://cloud.ibm.com/apidocs/cos/cos-compatibility?code=node
 - :doc:`AWS S3 v2 <aws>`
 
-.. code-block::
+::
 
   {
     "selector": "html", // Any resource
@@ -115,7 +115,7 @@ Authentication
 
 - `Connection <https://github.com/IBM/node-sdk-core/blob/main/Authentication.md>`_
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -149,7 +149,7 @@ Example usage
 - `Cloudant Client API <https://ibm.github.io/cloudant-node-sdk/docs/latest/modules/cloudant_v1.html>`_
 - `Query <https://cloud.ibm.com/apidocs/cloudant?code=node#postfind>`_
 
-.. code-block::
+::
 
   {
     "selector": "h1",

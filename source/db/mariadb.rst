@@ -46,7 +46,7 @@ Authentication
 
 - `Connection <https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/master/documentation/promise-api.md#connection-options>`_
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -76,7 +76,7 @@ Example usage
 
 - `Query <https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/master/documentation/promise-api.md#connection-api>`_
 
-.. code-block::
+::
 
   {
     "selector": "img",

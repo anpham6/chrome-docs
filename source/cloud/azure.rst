@@ -50,7 +50,7 @@ Authentication
   AZURE_CLIENT_ID = "";
   AZURE_CLIENT_SECRET = "";
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -84,7 +84,7 @@ Example usage
 
 - `Storage Blob Client API <https://learn.microsoft.com/en-us/javascript/api/@azure/storage-blob>`_
 
-.. code-block::
+::
 
   {
     "selector": "html", // Any resource
@@ -160,18 +160,18 @@ Example usage
 .. note:: **azure** is *BlobServiceClient*.getContainerClient(bucket).
 
 Admin
-^^^^^
+-----
 
 Parallel transfers was enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and opens only one request per file.
 
 .. code-block:: javascript
-  :caption: Disable
+  :caption: Sequential
 
   const azure = require("@pi-r/azure");
   azure.CLOUD_UPLOAD_CHUNK = false;
   azure.CLOUD_DOWNLOAD_CHUNK = false;
 
-.. attention:: Chunking is only used when the upload file size is greater than **chunkSize**.
+.. attention:: Chunking is only active when the upload file size is greater than **chunkSize**.
 
 Database
 ========
@@ -213,7 +213,7 @@ Authentication
 - `Connection <https://www.npmjs.com/package/@azure/cosmos#get-account-credentials>`_
 - `Azure AD <https://learn.microsoft.com/en-us/dotnet/api/azure.identity.usernamepasswordcredential.-ctor?view=azure-dotnet#azure-identity-usernamepasswordcredential-ctor(system-string-system-string-system-string-system-string)>`_
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -249,7 +249,7 @@ Example usage
 - `Query <https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query>`_
 - `JSON Patch <http://jsonpatch.com>`_
 
-.. code-block::
+::
 
   {
     "selector": "h1",

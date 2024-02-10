@@ -2,7 +2,13 @@
 Finalize
 ========
 
-You can exclude unnecessary processing files using the dataset attribute in ``<script|link|style>`` tags. Other elements can be excluded only through a configuration file.
+You can exclude unnecessary processing files using the dataset attribute in these tags:
+
+- script
+- link
+- style
+
+Other elements can be excluded only through a configuration file.
 
 .. code-block:: html
 

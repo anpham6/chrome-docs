@@ -24,11 +24,11 @@ Image
     }
   }
 
-.. tip:: Jimp rotation is counter-clockwise. Use {-45} to achieve a 45-degree clockwise rotation.
+.. tip:: Jimp rotation is counter-clockwise. Use **{-45}** to achieve a *45-degree* clockwise rotation.
 
 Image conversion can be achieved using the ``commands`` array property in a FileAsset object.
 
-.. code-block::
+::
 
   {
     "selector": "p > img",
@@ -67,12 +67,12 @@ webpmux  x x node-webpmux
 
 There can be transparency issues for WebP animated transformations due to the WebP compression algorithm. **node-webpmux** is only used to extract the raw data from the WebP image and to reconstruct the frames.
 
-.. note:: libwebp [#webp]_ is supported locally for WebP transforms through ``settings.webp.path``.
+.. note:: **libwebp** [#webp]_ is supported locally for WebP transforms through ``settings.webp.path``.
 
 Command syntax
 ==============
 
-Placing an ``@`` symbol (png@) after the **format** will replace the original file inside the package. Using the ``%`` symbol (png%) will choose the smaller of the two files. 
+Placing an "**@**" symbol (png@) after the **format** will replace the original file inside the package. Using the "**%**" symbol (png%) will choose the smaller of the two files. 
 
 All segments are optional except **format**. Outer groupings and inner brackets are required.
 
@@ -96,7 +96,7 @@ All segments are optional except **format**. Outer groupings and inner brackets 
 Example commands
 ================
 
-Methods use simple bracket matching and does not fully check inside quoted strings. Unescaped "\\\\" with unpaired ("{}" or "[]") will fail to parse.
+Methods use simple bracket matching and does not fully check inside quoted strings. Unescaped "**\\\\**" with unpaired ("**{}**" or "**[]**") will fail to parse.
 
 .. code-block:: none
 
@@ -108,7 +108,7 @@ Methods use simple bracket matching and does not fully check inside quoted strin
   webp~800w(800x600)
   webp~2x(1024x768)
 
-.. tip:: The ``~`` is used to target the ``<img srcset>`` attribute.
+.. tip:: The "**~**" is used to target the ``<img srcset>`` attribute.
 
 Method aliases [#]_
 ===================
@@ -173,7 +173,7 @@ Compression
     }
   }
 
-.. code-block::
+::
 
   {
     "selector": "p > img",
@@ -190,7 +190,7 @@ Compression
 
 Other formats can be compressed similarly using `imagemin <https://github.com/imagemin/imagemin#readme>`_.
 
-.. code-block::
+::
 
   {
     "selector": "p > img",
@@ -229,9 +229,9 @@ You can use image commands with **saveTo** (directory) on any element where the 
        data-chrome-commands="png(10000,75000)(800x600[bezier]^contain[right|bottom])::webp|0.5|">
 
 
-.. tip:: Multiple transformations use ``::`` as the separator.
+.. tip:: Multiple transformations use "**::**" as the separator.
 
-Transformations are given a UUID filename except when ``@`` or ``%`` are used. Leaving **data-chrome-file** empty will save the transformations to the current image directory.
+Transformations are given a UUID filename except when "**@**" or "**%**" are used. Leaving **data-chrome-file** empty will save the transformations to the current image directory.
 
 .. [#webp] https://developers.google.com/speed/webp/download
 .. [#] cwebp options: -q -preset -near_lossless

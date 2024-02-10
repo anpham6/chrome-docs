@@ -45,7 +45,7 @@ Authentication
 - `Connection <https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connectionhandling>`_
 - `Service names <https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#net-service-names-for-connection-strings>`_
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -79,7 +79,7 @@ Example usage
 
 - `Query <https://node-oracledb.readthedocs.io/en/latest/user_guide/installation.html#example-a-sql-select-statement-in-node-js>`_
 
-.. code-block::
+::
 
   {
     "selector": "img",

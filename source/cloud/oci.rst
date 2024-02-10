@@ -38,7 +38,7 @@ Authentication
 
 - `Credentials <https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/s3compatibleapi.htm>`_
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -61,7 +61,7 @@ Example usage
 
 - :doc:`AWS S3 v2 <aws>`
 
-.. code-block::
+::
 
   {
     "selector": "html", // Any resource
@@ -114,7 +114,7 @@ Authentication
 
 - `Connection <https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connection-strings>`_
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -147,7 +147,7 @@ Example usage
 
 .. tip:: SELECT queries are compatible with the :doc:`@pi-r/oracle <../db/oracle>` plugin.
 
-.. code-block::
+::
 
   {
     "selector": "h1",

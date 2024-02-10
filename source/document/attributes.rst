@@ -8,7 +8,7 @@ There are possible scenarios when a transformation into another format will requ
 
   <link rel="alternate" type="text/plain" href="css/dev.sass" />
 
-.. code-block::
+::
 
   {
     "selector": "link[rel=alternate]",

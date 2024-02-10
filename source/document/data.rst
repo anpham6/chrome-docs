@@ -2,7 +2,13 @@
 Data Sources
 ============
 
-Using the same concept from a database you can read from JSON/YAML/JSON5 [#]_/XML [#]_/TOML [#]_ files and external providers.
+Using the same concept as a database you can read from these files:
+
+- **JSON**
+- **YAML**
+- JSON5 [#]_
+- XML [#]_
+- TOML [#]_
 
 Interface
 =========
@@ -53,7 +59,7 @@ Interface
   }
 
   interface DataObject {
-      format: string; // json | yaml | json5 | xml | toml
+      format: "json" | "yaml" | "json5" | "xml" | "toml";
       options?: PlainObject; // Parser options (yaml + xml)
   }
 
@@ -108,7 +114,7 @@ Local file "local"
 Example usage
 -------------
 
-.. code-block::
+::
 
   {
     "selector": "main img",
@@ -263,7 +269,7 @@ Example file ".js"
 Example usage
 -------------
 
-.. code-block::
+::
 
   {
     "selector": "main p",
@@ -299,7 +305,7 @@ Example usage
 
 Using ``template`` (external) is the same as ``value`` (inline) except the reusable content is stored inside a cacheable template server directory.
 
-.. code-block::
+::
 
   {
     "selector": "main",
@@ -323,7 +329,7 @@ Using ``template`` (external) is the same as ``value`` (inline) except the reusa
 Event callbacks
 ===============
 
-You can create named callbacks for ``postQuery`` and ``preRender`` anywhere inside the HTML. It is more readable than inside a configuration file and can be reused for similiar queries.
+You can create named callbacks for **postQuery** and **preRender** anywhere inside the HTML. It is more readable than inside a configuration file and can be reused for similiar queries.
 
 .. code-block:: typescript
 

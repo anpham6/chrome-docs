@@ -50,7 +50,7 @@ Authentication
 
   GOOGLE_APPLICATION_CREDENTIALS = "";
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -95,7 +95,7 @@ Example usage
 
 .. attention:: **Firebase** does not support any bucket operations except "emptyBucket" and "metadata".
 
-.. code-block::
+::
 
   {
     "selector": "html", // Any resource
@@ -187,18 +187,18 @@ Example usage
   }
 
 Admin
-^^^^^
+-----
 
 Parallel transfers was enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and opens only one request per file.
 
 .. code-block:: javascript
-  :caption: Disable
+  :caption: Sequential
 
   const gcp = require("@pi-r/gcp");
   gcp.CLOUD_UPLOAD_CHUNK = false;
   gcp.CLOUD_DOWNLOAD_CHUNK = false;
 
-.. attention:: Chunking is only used when the upload file size is greater than **chunkSize**.
+.. attention:: Chunking is only active when the upload file size is greater than **chunkSize**.
 
 Database
 ========
@@ -235,7 +235,7 @@ Interface
 Authentication
 --------------
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -261,7 +261,7 @@ Firestore
 - https://cloud.google.com/firestore
 - `Client API <https://googleapis.dev/nodejs/firestore/latest>`__
 
-.. code-block::
+::
 
   {
     "selector": "h1",
@@ -341,7 +341,7 @@ BigQuery
 
 .. note:: **npm** i *@google-cloud/bigquery*
 
-.. code-block::
+::
 
   {
     "selector": "h1",
@@ -379,7 +379,7 @@ Datastore
 
 .. note:: **npm** i *@google-cloud/datastore*
 
-.. code-block::
+::
 
   {
     "selector": "h1",
@@ -439,7 +439,7 @@ Bigtable
 
 .. note:: **npm** i *@google-cloud/bigtable*
 
-.. code-block::
+::
 
   {
     "selector": "h1",
@@ -475,7 +475,7 @@ Spanner
 
 .. note:: **npm** i *@google-cloud/spanner*
 
-.. code-block::
+::
 
   {
     "selector": "h1",
@@ -531,7 +531,7 @@ Realtime Database
 
 .. note:: **npm** i *firebase* && **npm** i *firebase-admin* (optional)
 
-.. code-block::
+::
 
   {
     "selector": "h1",

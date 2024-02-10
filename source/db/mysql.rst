@@ -44,7 +44,7 @@ Authentication
 
 - `Connection <https://sidorares.github.io/node-mysql2/docs/examples/connections/create-connection>`_
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -74,7 +74,7 @@ Example usage
 
 - `Query <https://sidorares.github.io/node-mysql2/docs/examples/queries/simple-queries/select>`_
 
-.. code-block::
+::
 
   {
     "selector": "img",

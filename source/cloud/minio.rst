@@ -26,7 +26,7 @@ Authentication
 
 - `Credentials <https://min.io/docs/minio/linux/developers/javascript/minio-javascript.html>`_
 
-.. code-block::
+::
 
   {
     "credential": "main", // squared.cloud.json
@@ -57,7 +57,7 @@ Example usage
 - `Client API <https://min.io/docs/minio/linux/developers/javascript/API.html>`_
 - `Policy <https://min.io/docs/minio/linux/administration/identity-access-management/policy-based-access-control.html>`_
 
-.. code-block::
+::
 
   {
     "selector": "img",
@@ -151,7 +151,7 @@ Example usage
 .. note:: Some variations of functionality are more thoroughly documented in the :doc:`AWS <aws>` examples.
 
 Admin
------
+=====
 
 Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
 

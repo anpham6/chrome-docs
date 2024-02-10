@@ -9,7 +9,7 @@ Hot module replacement is only available for ``<link>`` and ``<img>`` elements. 
 Using JSON config [#]_
 ======================
 
-.. code-block::
+::
 
   {
     "selector": "link",
@@ -62,7 +62,7 @@ Using copyTo options
 Using JWT authentication
 ========================
 
-.. code-block::
+::
 
   {
     "watch": {
@@ -102,7 +102,7 @@ data-chrome-watch
 
   <script src="/common/util.js" data-chrome-watch='{ "interval": 100, "expires": "1w 1d 1h 1m 1s", "reload": { "port": 443, "secure": true } }'></script>
 
-.. tip:: ``~`` can be used with ``::`` for default server value.
+.. tip:: "**~**" can be used with "**::**" for default server value.
 
 Options
 =======
@@ -116,6 +116,6 @@ HTML only has partial watch support since most local modifications will alter th
 - script + style (inline) -> Unbundled
 - elements (configured + data source) -> Uneditable
 
-If you configure an ``<img>`` tag (or any tag group) then you cannot add or remove other ``<img>`` elements without adding an element "id" to every element in the group.
+If you configure an ``<img>`` tag (or any tag group) then you cannot add or remove other ``<img>`` elements without adding an element "**id**" to every element in the group.
 
 .. [#] YAML config is also available.

@@ -64,7 +64,7 @@ Authentication
   AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE = "";
   AWS_CONTAINER_AUTHORIZATION_TOKEN = "";
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -129,7 +129,7 @@ Example usage
 - `S3 Client API <https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/s3>`_
 - `Canned ACL <https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl>`_
 
-.. code-block::
+::
 
   {
     "selector": "html", // Any resource
@@ -239,7 +239,7 @@ Interface
 Authentication
 --------------
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -255,7 +255,7 @@ Example usage
 - `DynamoDB Client API <https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/dynamodb>`_
 - `Query <https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/dynamodb-example-query-scan.html>`_
 
-.. code-block::
+::
 
   {
     "selector": "h1",
@@ -300,6 +300,7 @@ Example usage
 ============
 
 .. versionadded:: 0.7.0
+
   - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
   - **configBucket.tags** using *PutBucketTaggingRequest* was implemented.
   - **configBucket.cors** using *CORSConfiguration* was implemented.

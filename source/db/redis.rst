@@ -100,7 +100,7 @@ Authentication
     }
   }
 
-.. code-block::
+::
 
   {
     "dataSource": {
@@ -128,7 +128,7 @@ Example usage
 - `Query <https://github.com/redis/node-redis/tree/master/packages/search>`_
 - `JSONPath <https://redis.io/docs/data-types/json/path>`_
 
-.. code-block::
+::
 
   {
     "selector": "img",
@@ -176,6 +176,6 @@ Example usage
     }
   }
 
-.. note:: Search will only return the **value** object with the id field appended as ``__id__``.
+.. note:: Search will only return the **value** object with the **id** field appended as ``__id__``.
 
 .. [#] https://redis.com/try-free

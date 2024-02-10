@@ -114,7 +114,7 @@ data-chrome-metadata
 
 Inline commands are usually sufficient for simple web pages. More advanced configurations are possible using a JSON/YAML external configuration file. [#]_
 
-.. code-block::
+::
 
   {
     "selector": "head > script:nth-of-type(2), head > script:nth-of-type(3)",

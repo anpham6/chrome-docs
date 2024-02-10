@@ -28,7 +28,7 @@ Interface
 
       saveAs?: string; // js | css | image
       exportAs?: string; // js | css
-      saveTo?: string; // image | video | audio (transforms create multiple files and are given generated filename)
+      saveTo?: string; // image | video | audio (transforms are given auto-generated filename)
       pathname?: string; // alias for "saveTo"
       filename?: string; // pathname + filename = "saveAs"
 
@@ -40,11 +40,11 @@ Interface
       };
 
       commands?: string[]; // image
-      tasks?: string[]; // All assets
+      tasks?: string[]; // All
 
       attributes?: Record<string, string | null | undefined>;
       rewrite?: false; // Overrides preserveCrossOrigin
-      rewrite?: URLData;
+      rewrite?: URLData; // Replace certain URL components (e.g. hostname)
 
       download?: boolean; // Forces processing for unknown types (default is "true" for known types)
       dynamic?: boolean; // Will ignore misplaced child elements prerendered in the browser
@@ -55,8 +55,8 @@ Interface
       checksum?: string | { algorithm: string; value: string; digest?: string }; // Download URI (default is "sha256")
       checksumOutput?: string | {/* Same */}; // Expected locally transformed result
 
-      incremental?: false | "none" | "staging" | "etag" | "exists"; // Will override batch request.incremental
-      incremental?: true; // Will override request.incremental = false
+      incremental?: false | "none" | "staging" | "etag" | "exists"; // Will override parent.incremental
+      incremental?: true; // Will override parent.incremental = false
 
       metadata?: PlainObject; // Custom values passed to transformers
       metadata?: { "__sourcemap__": "inline" }; // System post processing command

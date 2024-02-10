@@ -21,25 +21,27 @@ Only one command per element is supported (except data sources) when using ``sqd
 .. code-block::
   :caption: "ordinal": 2 | \*\*/\*.html?output=prod
 
-  {
-    "selector": "img",
-    "mergeType": "under",
-    "hash": "sha256", // Merged
-    "commands": ["jpeg@"] // No effect
-  }
-  /* OR */
-  {
-    "selector": "img",
-    "mergeType": "over",
-    "hash": "sha256", // Merged
-    "commands": ["jpeg@"] // All images will be JPEG
-  }
-  /* OR */
-  {
-    "selector": "img",
-    "mergeType": "none",
-    "hash": "sha256", // No effect when "dev" is present
-    "commands": ["jpeg@"] // Same
-  }
+  [
+    {
+      "selector": "img",
+      "mergeType": "under",
+      "hash": "sha256", // Merged
+      "commands": ["jpeg@"] // No effect
+    },
+    /* OR */
+    {
+      "selector": "img",
+      "mergeType": "over",
+      "hash": "sha256", // Merged
+      "commands": ["jpeg@"] // All images will be JPEG
+    },
+    /* OR */
+    {
+      "selector": "img",
+      "mergeType": "none",
+      "hash": "sha256", // No effect when "dev" is present
+      "commands": ["jpeg@"] // Same
+    }
+  ]
 
 .. [#] When using server hosted directory based sqd.config.

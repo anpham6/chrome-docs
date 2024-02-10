@@ -36,7 +36,7 @@ Code
       }
   }
 
-.. note:: There are only three lines of relevant TypeScript being used to check for upgrade compatibility. Local file ".cjs" transformers offer the same functionality.
+.. hint:: There are only three lines of relevant TypeScript being used to check for upgrade compatibility. Local file ".cjs" transformers offer the same functionality.
 
 Comments
 ========
@@ -62,3 +62,5 @@ Comments
 #. Pass *sourceMap* output values to ``sourceMap.nextMap`` chain method
 #. *none*
 #. Return modified transformed *source code*
+
+.. important:: Some plugins have a two-step transformation process (e.g. rollup) and use **outputConfig** separately. It is generally used for inline transformers as their **baseConfig**.

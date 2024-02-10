@@ -35,12 +35,12 @@ All packages can be customized per authenticated username using the ``settings.u
     }
   }
 
-.. warning:: ``eval`` is a global setting for all users. Unsafe execution is disabled by default.
+.. warning:: ``eval`` is a global setting for all users. Any unsafe execution is disabled by default.
 
 Using built-in transformer
 ==========================
 
-External plugins per package have to be pre-installed from NPM and are not available for auto-install.
+External plugins per package have to be pre-installed from NPM and may not be available for auto-install.
 
 ::
 
@@ -103,18 +103,16 @@ The suffix "-output" is used to create the variable ``options.outputConfig``.
         "settings": {
           "transform": {
             "js": {
-              /* asynchronous */
               "terser": { // npm i @pi-r/terser
-                "minify-example": "async (terser, value, options, require) => await terser.minify(value, options.outputConfig).code;",
+                "minify-example": "async (terser, value, options, require) => await terser.minify(value, options.outputConfig).code;", // Asynchronous
                 "minify-example-output": {
                   "keep_classnames": true // "minify-example-output" 
                 }
               }
             },
             "css": {
-              /* synchronous */
               "sass": { // npm i @pi-r/sass
-                "sass-example": "(sass, value, options, resolve, require) => resolve(sass.renderSync({ ...options.outputConfig, data: value }).css);",
+                "sass-example": "(sass, value, options, resolve, require) => resolve(sass.renderSync({ ...options.outputConfig, data: value }).css);", // Synchronous
                 "sass-example-output": {
                   "outputStyle": "compressed",
                   "sourceMap": true,
@@ -141,7 +139,7 @@ Using local file
         "settings": {
           "transform": {
             "js": {
-              "@babel/core": {
+              "@babel/core": { // npm i @pi-r/babel
                 "es5-example": "./es5.js", // JS extension uses Function constructor
                 "es5-example-output": {
                   "presets": ["@babel/preset-env"]
@@ -193,12 +191,13 @@ You can create or use a package from NPM which will behave like a built-in trans
             "js": {
               /* Override built-in transformer */
               "@babel/core": {
-                "npm-example": "npm:babel-custom", // function(Document, value, options) (npm i babel-custom)
-                "npm-example-output": "npm:babel-custom-output", // Configuration object (npm i babel-custom-output)
-                /* OR */
+                /* npm i babel-custom */
+                "npm-example": "npm:babel-custom", // function(Document, value, options) { const context = require("babel-custom"); }
                 "npm-example-output": {
                   "presets": ["@babel/preset-env"]
-                }
+                },
+                /* OR */
+                "npm-example-output": "npm:babel-custom-output" // Not recommended (npm i babel-custom-output)
               }
             },
             "css": {

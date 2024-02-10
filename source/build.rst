@@ -15,7 +15,7 @@ Example usage
 
   squared.saveAs("index.zip", {
     productionRelease: true, // Ignore local URL rewriting and use actual path
-    productionRelease: "/path/to/wwwroot/", Move assets outside base directory to server root directory
+    productionRelease: "/path/to/wwwroot/", // Move assets outside base directory to server root directory
     productionIncremental: true, // Use cached data when processing transformed files
 
     preserveCrossOrigin: true, // Ignore locally integrating assets hosted on other domains

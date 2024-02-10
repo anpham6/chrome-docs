@@ -2,7 +2,9 @@
 Build Options
 =============
 
-General processing options use `squared-express <https://github.com/anpham6/squared-express#readme>`_ functionality. These options are specific to the **chrome** framework.
+General processing options use *E-mc* functionality with `squared-express <https://squared.readthedocs.io/en/latest/document/build.html>`_.
+
+These examples are available only when using **chrome** framework.
 
 Example usage
 =============
@@ -13,46 +15,46 @@ Example usage
 
   squared.saveAs("index.zip", {
     productionRelease: true, // Ignore local URL rewriting and use actual path
-    productionRelease: "/path/to/wwwroot/", Move non-local assets to server root directory
+    productionRelease: "/path/to/wwwroot/", Move assets outside base directory to server root directory
     productionIncremental: true, // Use cached data when processing transformed files
 
-    preserveCrossOrigin: true, // Ignore downloading a local copy of assets hosted on other domains
+    preserveCrossOrigin: true, // Ignore locally integrating assets hosted on other domains
     preserveCrossOrigin: { // URLData
       hostname: "docs.github.com",
       pathname: "/repositories"
     },
 
-    useOriginalHtmlPage: false, // Use browser validated static page output for build
+    useOriginalHtmlPage: false, // Use browser validated in memory static page DOM for build
     useOriginalHtmlPage: "textarea|code", // Ignore tags causing parsing errors
 
     useUnsafeReplace: "html", // Use when there are no element tags inside comments and <script>
     useUnsafeReplace: "css", // Use when there are no comments or block delimiters inside property values (e.g. "{" "}")
     useUnsafeReplace: true, // Alias for ["html", "css"]
 
-    stripCommentsAndCDATA: true, // Remove unused code from HTML + non-void tags
+    stripCommentsAndCDATA: true, // Remove unused code and non-void tags from HTML
     stripCommentsAndCDATA: "script|picture", // Additional tags to remove using RegExp group notation
 
     /* Use when there are parsing errors */
     normalizeHtmlOutput: true, // Escape illegal tags and remove unnecessary trailing spaces
-    normalizeHtmlOutput: "?%", // Tags to ignore using RegExp negated characters (<?php ?> | <%= ejs %>) when escaping
+    normalizeHtmlOutput: "?%", // Tags to ignore using RegExp negated characters when escaping (e.g. <?php ?> | <%= ejs %>)
 
     escapeReservedCharacters: true, // Escape reserved characters inside attributes (e.g. "<")
     ignoreServerCodeBlocks: ["<%", "%>", "<?php", ";", "<?php", "?>"], // May produce better results with dynamic content (<% %> | <?php ; | <?php ?>)
-    
-    incremental: false, // No cache is used (implicitly is "true")
+
+    incremental: false, // No cache is used ("true" is implicit)
     incremental: "none", // Will rebuild all assets and use available cache
     incremental: "staging", // Same as "none" but does not use cache
     incremental: "etag", // Will use current file if the ETag is still the same
     incremental: "exists", // Will always use current file if found
-    
+
     removeInlineStyles: false, // Strip style="" attribute from all elements (useOriginalHtmlPage=false)
     removeUnusedClasses: false, // Selectors without :pseudo-class
-    removeUnusedPseudoClasses: false, // Selectors with :pseudo-class (not recommended with forms :valid and active states :hover) (lowercase only)
+    removeUnusedPseudoClasses: false, // Selectors with :pseudo-class (lowercase only)
     removeUnusedVariables: false, // --custom-variables
     removeUnusedFontFace: false, // @font-face
     removeUnusedKeyframes: false, // @keyframes
     removeUnusedMedia: false, // @media
-    removeUnusedContainer: false, // @container (not recommended)
+    removeUnusedContainer: false, // @container
     removeUnusedSupports: false, // @supports
 
     /* Styles which are still being used */
@@ -83,14 +85,15 @@ Example usage
     }
   });
 
-Import maps [#]_ for modular transformations are supported.
+.. caution:: Import maps [#]_ are only partially supported.
 
 Example "saveAs"
 ================
 
-The entire page can be transformed as a group using the *saveAs* attribute in options. [#]_
+The entire page can be transformed as a group with the same functionality as JSON/YAML configuration.
 
-::
+.. code-block::
+  :emphasize-lines: 2
 
   squared.copyTo("/path/to/target", {    
     saveAs: {
@@ -188,15 +191,14 @@ Example remote configuration
   /* OR */
   squared.saveAs("bundle.zip", { config: "http://hostname/chrome/bundle.yml" }); // Detect by file extension (default is "json")
 
-::
-
-  // http://hostname/example.html -to- http://hostname/example.html.json
+.. code-block::
+  :caption: `http://hostname/pathname/example.html` -to- `http://hostname/pathname/example.html.json`
 
   squared.saveAs("example.zip", { config: { mimeType: "json" } });
   /* OR */
   squared.saveAs("example.zip", { config: "json" }); // json | yml | yaml
 
-TOML [#]_ and JSON5 [#]_ file formats are also supported.
+.. tip:: JSON5 [#]_ and TOML [#]_ file formats are also supported.
 
 Using sqd.config
 ================
@@ -204,7 +206,7 @@ Using sqd.config
 The base folder level configuration file is a hash map of URL globs which can match multiple items.
 
 .. code-block::
-  :caption: `http://hostname/path/layout/example.html` -to- `http://hostname/path/layout/sqd.config`
+  :caption: `http://hostname/pathname/example.html` -to- `http://hostname/pathname/sqd.config`
   
   squared.saveAs("example.zip", { config: true }); // Uses first match found
   /* OR */
@@ -215,11 +217,10 @@ The base folder level configuration file is a hash map of URL globs which can ma
     }
   });
 
-.. hint:: The filename ``sqd.config`` is configurable using **settings.outputConfigName**.
+.. tip:: The filename ``sqd.config`` is configurable using **settings.outputConfigName**.
 
 The order of precedence when using **inherit** is resolved through the asset command property :doc:`mergeType <document/merge>`.
 
 .. [#] https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap
-.. [#] All attributes are optional.
-.. [#] npm i toml
 .. [#] npm i json5
+.. [#] npm i toml

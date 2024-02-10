@@ -2,7 +2,7 @@
 Settings
 ========
 
-Unsafe execution is disabled by default. ``eval`` is a global setting for all users.
+All packages can be customized per authenticated username using the ``settings.users`` block and defaults to the base settings when not defined.
 
 ::
 
@@ -35,7 +35,7 @@ Unsafe execution is disabled by default. ``eval`` is a global setting for all us
     }
   }
 
-All packages can be customized per authenticated username using the ``settings.users`` block. 
+.. warning:: ``eval`` is a global setting for all users. Unsafe execution is disabled by default.
 
 Using built-in transformer
 ==========================
@@ -50,7 +50,7 @@ External plugins per package have to be pre-installed from NPM and are not avail
         "settings": {
           "transform": {
             "html": {
-              "posthtml": {
+              "posthtml": { // npm i @pi-r/posthtml
                 "transform": {
                   "plugins": [
                     ["posthtml-doctype", { "doctype": "HTML 5" }],
@@ -65,7 +65,7 @@ External plugins per package have to be pre-installed from NPM and are not avail
                   ]
                 }
               },
-              "prettier": {
+              "prettier": { // npm i @pi-r/prettier
                 "beautify": {
                   "parser": "html",
                   "printWidth": 120,
@@ -74,7 +74,7 @@ External plugins per package have to be pre-installed from NPM and are not avail
               }
             },
             "css": {
-              "postcss": {
+              "postcss": { // npm i @pi-r/postcss
                 "transform": {
                   "plugins": [
                     "autoprefixer",
@@ -94,7 +94,8 @@ Using inline function [#]_
 
 The suffix "-output" is used to create the variable ``options.outputConfig``.
 
-::
+.. code-block::
+  :emphasize-lines: 9,18
 
   {
     "document": {
@@ -127,6 +128,8 @@ The suffix "-output" is used to create the variable ``options.outputConfig``.
     }
   }
 
+.. caution:: Arrow functions are supported for convenience. Explicit **function** use is recommended.
+
 Using local file
 ================
 
@@ -139,11 +142,11 @@ Using local file
           "transform": {
             "js": {
               "@babel/core": {
-                "es5-example": "./es5.js" // Local file - startsWith("./ | ../")
+                "es5-example": "./es5.js", // JS extension uses Function constructor
                 "es5-example-output": {
                   "presets": ["@babel/preset-env"]
                 },
-                "es5-debug": "./es5-debug.cjs" // CJS extension
+                "es5-debug": "./es5-debug.cjs", // CJS extension loaded using "require"
                 "es5-debug-output": {
                   "presets": ["@babel/preset-env"]
                 }
@@ -156,29 +159,29 @@ Using local file
   }
 
 .. code-block:: javascript
+  :caption: es5.js (function only)
 
-  // es5.js
   function (context, value, options, resolve, require) {
+    const path = require("path");
     context.transform(value, options.outputConfig, function (err, result) {
       resolve(!err && result ? result.code : "");
     });
   }
 
 .. code-block:: javascript
+  :caption: es5-debug.cjs
 
-  // es5-debug.cjs
-  const path = require('path');
-  
+  const path = require("path");
+  let ID = 0;
+
   module.exports = async function (context, value, options) {
-    return await context.transform(value, options.outputConfig).code;
+    return await context.transform(`/* ${ID++} */` + value, options.outputConfig).code;
   }
 
 Using custom package
 ====================
 
-You can create or use a package from NPM which will behave like a built-in transformer. The only difference is the context parameter being set to the Document module.
-
-The name of the setting has to match the NPM name of the package.
+You can create or use a package from NPM which will behave like a built-in transformer. The only difference is the context parameter being set to the *Document* module.
 
 ::
 
@@ -212,12 +215,15 @@ The name of the setting has to match the NPM name of the package.
     }
   }
 
+.. attention:: The setting name has to match the NPM package name.
+
 Using page template
 ===================
 
 The same concept can be used inline anywhere using a ``script`` tag with the **type** attribute set to "text/template". The script template will be completely removed from the final output.
 
 .. code-block:: html
+  :emphasize-lines: 1
 
   <script type="text/template" data-chrome-template="js::@babel/core::es5-example">
     async function (context, value, options, require) {
@@ -232,7 +238,7 @@ The same concept can be used inline anywhere using a ``script`` tag with the **t
     }
   </script>
 
-.. warning:: **data-chrome-template** usage requires the setting :code:`eval.template = true`.
+.. attention:: **data-chrome-template** usage requires the setting :code:`eval.template = true`.
 
 .. [#] this = NodeJS.process
 .. [#] https://babeljs.io/docs/en/options

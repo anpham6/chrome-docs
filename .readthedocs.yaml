@@ -22,15 +22,16 @@ python:
 search:
   ranking:
     document/data.html: 10
-    image/index.html: 9
-    task/index.html: 9
-    document/*: 8
-    cloud/*: 7
-    db/*: 7
+    document/*: 9
+    db/*: 8
+    cloud/*: 8
+    image/index.html: 7
+    task/index.html: 7
     build.html: 6
     document/plugins/*: 5
-    "*/interface.html": -9
-    legacy.html: -10
+    references.html: 5
+    "*/interface.html": -1
+    legacy.html: -2
   ignore:
   - index.html
   - versions.html

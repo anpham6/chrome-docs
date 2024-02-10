@@ -93,7 +93,7 @@ Renaming files with Gulp is not recommended. It is better to use the **saveAs** 
   
   gulp.task("default", gulp.series("minify"));
 
-.. note:: ``src`` (*temp*) and ``dest`` (*original*) always read and write to the current directory.
+.. caution:: ``src`` (*temp*) and ``dest`` (*original*) always read and write to the current directory.
 
 data-chrome-tasks
 =================

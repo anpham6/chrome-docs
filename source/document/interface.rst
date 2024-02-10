@@ -16,7 +16,7 @@ Interface
       static?: boolean; // Removes URL search params
       remove?: boolean; // Removes element from HTML page
       ignore?: boolean;
-      exclude?: boolean; // type: js | css (remove from HTML)
+      exclude?: boolean; // type: js | css (ignore + remove)
   }
 
 ::
@@ -34,7 +34,7 @@ Interface
 
       process?: string[]; // html | js | css
       template?: {
-          module: string; // Document > Plugins > Settings > Using page template
+          module: string; // Inline transformer
           identifier?: string;
           value?: string;
       };
@@ -46,12 +46,13 @@ Interface
       rewrite?: false; // Overrides preserveCrossOrigin
       rewrite?: URLData;
 
-      download?: boolean; // Forces processing for unknown types (implicitly is "true" for known types)
+      download?: boolean; // Forces processing for unknown types (default is "true" for known types)
       dynamic?: boolean; // Will ignore misplaced child elements prerendered in the browser
 
-      hash?: "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512"; // md5[8] will shorten hash to the first 8 characters
+      hash?: "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512";
+      hash?: "md5[8]" // Will shorten hash to the first 8 characters
 
-      checksum?: string | { algorithm: string; value: string; digest?: string }; // Download URI + Default is "sha256"
+      checksum?: string | { algorithm: string; value: string; digest?: string }; // Download URI (default is "sha256")
       checksumOutput?: string | {/* Same */}; // Expected locally transformed result
 
       incremental?: false | "none" | "staging" | "etag" | "exists"; // Will override batch request.incremental
@@ -62,17 +63,18 @@ Interface
 
       mergeType?: "none" | "over" | "under"; // Used when different selectors target same element
 
-      watch?: boolean | { interval?: number; expires?: string }; // type: js | css | image (expires: 1h 1m 1s)
+      watch?: boolean | { interval?: number; expires?: string }; // js | css | image
 
+      dataSource?: CloudDatabase; // source: "cloud"
       cloudStorage?: CloudService[];
 
       type?: "html" | "js" | "css" | "data"; // Script templates
       type?: "append/js" | "append/css" | "append/[tagName]"; // Includes "prepend"
 
       type?: "text" | "attribute" | "display"; // dynamic is valid only with "text"
-      dataSource?: CloudDatabase; // source: "cloud"
       dataSource?: {
-          source: "cloud" | "uri" | "local" | "export"; // DB providers: "mariadb" | "mongodb" | "mssql" | "mysql" | "oracle" | "postgres" | "redis"
+          source: "cloud" | "uri" | "local" | "export";
+          source: "mariadb" | "mongodb" | "mssql" | "mysql" | "oracle" | "postgres" | "redis"; // DB providers
           postQuery?: string;
           preRender?: string;
           whenEmpty?: string;

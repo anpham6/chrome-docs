@@ -12,9 +12,9 @@ Code
   :linenos:
   :emphasize-lines: 5,16
 
-  import type { ITransformSeries, RawSourceMap } from '@e-mc/types/lib/document';
+  import type { ITransformSeries, RawSourceMap } from "@e-mc/types/lib/document";
 
-  import type * as cc from 'clean-css';
+  import type * as cc from "clean-css";
 
   export default function transform(context: typeof cc, value: string, options: ITransformSeries<cc.OptionsOutput>) {
       context = options.upgrade(context, __dirname);
@@ -24,13 +24,13 @@ Code
       if (baseConfig.sourceMap === false) {
           sourceMap.reset();
       }
-      else if (map = sourceMap.map as RawSourceMap<string>) {
+      else if (map = sourceMap.map) {
           baseConfig.sourceMap = true;
       }
-      const result = new context(baseConfig).minify(value, map!);
+      const result = new context(baseConfig).minify(value, map);
       if (result) {
           if (result.sourceMap) {
-              sourceMap.nextMap('clean-css', result.styles, result.sourceMap.toString());
+              sourceMap.nextMap("clean-css", result.styles, result.sourceMap.toString());
           }
           return result.styles;
       }
@@ -50,7 +50,7 @@ Comments
 #. Main *sourceMap* from previous consumer
 #. Applies **options.external** AND **options.outputConfig** to **options.baseConfig** (optional)
 #. *none*
-#. Delete current *sourceMap* as requested using ``sourceMap.reset()``
+#. Delete current *sourceMap* as requested using ``sourceMap.reset``
 #. *none*
 #. *none*
 #. Check if there is an existing sourceMap and pass it through

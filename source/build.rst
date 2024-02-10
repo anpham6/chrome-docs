@@ -4,7 +4,7 @@ Build Options
 
 General processing options use *E-mc* functionality with `squared-express <https://squared.readthedocs.io/en/latest/document/build.html>`_.
 
-These examples are available only when using **chrome** framework.
+.. attention:: These examples are only relevant to the **chrome** framework.
 
 Example usage
 =============
@@ -85,15 +85,15 @@ Example usage
     }
   });
 
-.. caution:: Import maps [#]_ are only partially supported.
+.. caution:: Import maps [#]_ are supported from a file system perspective.
 
 Example "saveAs"
 ================
 
-The entire page can be transformed as a group with the same functionality as JSON/YAML configuration.
+The entire page can be transformed as a group with the same functionality as JSON/YAML configuration except where highlighted.
 
 .. code-block::
-  :emphasize-lines: 2
+  :emphasize-lines: 2,8,9,33
 
   squared.copyTo("/path/to/target", {    
     saveAs: {
@@ -182,6 +182,8 @@ Example cloud storage
     }
   });
 
+.. tip:: Use "endpoint" when your uploaded files are not used by other buckets or web pages.
+
 Example remote configuration
 ============================
 
@@ -197,7 +199,7 @@ Example remote configuration
   squared.saveAs("example.zip", { config: { mimeType: "json" } });
   /* OR */
   squared.saveAs("example.zip", { config: "json" }); // json | yml | yaml
-
+ 
 .. tip:: JSON5 [#]_ and TOML [#]_ file formats are also supported.
 
 Using sqd.config

@@ -31,8 +31,8 @@ Interface
       createSourceMap(code: string): SourceMap; // Use "nextMap" method for sourceMap (additional sourceMaps)
     
       /* ESM */
-      getMainFile?(code?: string, imports?: StringMap): Undef<SourceInput<string>>;
-      getSourceFiles?(imports?: StringMap): Undef<SourceInput<[string, string?, string?][]>>;
+      getMainFile?(code?: string, imports?: StringMap): SourceInput<string> | undefined;
+      getSourceFiles?(imports?: StringMap): SourceInput<[string, string?, string?][]> | undefined;
     
       /* Return values */
       out: {

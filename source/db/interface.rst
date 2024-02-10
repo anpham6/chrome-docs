@@ -23,9 +23,9 @@ Interface
       /* Module: Document */
       index?: number; // Pick one specific row
       removeEmpty?: boolean; // Remove element when rows equals 0
-      postQuery?: string | ((result: unknown[], item: DataSource) => Void<unknown[]>); // Modify arguments or logging (parseable)
-      preRender?: string | ((output: string, item: DataSource) => Void<string>);
-      whenEmpty?: string | ((result: unknown[], item: DataSource) => Void<unknown[]>);
+      postQuery?: string | ((result: unknown[], item: DataSource) => unknown[] | void); // Modify arguments or logging (parseable)
+      preRender?: string | ((output: string, item: DataSource) => string | void);
+      whenEmpty?: string | ((result: unknown[], item: DataSource) => unknown[] | void);
 
       /* Internal */
       transactionState?: number;

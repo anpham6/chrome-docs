@@ -334,9 +334,9 @@ You can create named callbacks for **postQuery** and **preRender** anywhere insi
 .. code-block:: typescript
 
   interface DataSource {
-      postQuery?: string | ((result: unknown[], item: DataSource) => Void<unknown[]>);
-      preRender?: string | ((output: string, item: DataSource) => Void<string>);
-      whenEmpty?: string | ((result: unknown[], item: DataSource) => Void<unknown[]>);
+      postQuery?: string | ((result: unknown[], item: DataSource) => unknown[] | void);
+      preRender?: string | ((output: string, item: DataSource) => string | void);
+      whenEmpty?: string | ((result: unknown[], item: DataSource) => unknown[] | void);
   }
 
 Example usage

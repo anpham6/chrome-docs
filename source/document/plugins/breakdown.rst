@@ -19,8 +19,8 @@ Code
   export default function transform(context: typeof cc, value: string, options: ITransformSeries<cc.OptionsOutput>) {
       context = options.upgrade(context, __dirname);
       const sourceMap = options.sourceMap;
-      const baseConfig = options.toBaseConfig();
-      let map: Undef<RawSourceMap<string>>;
+      const baseConfig = options.toBaseConfig(/* true */); // Use "false" for only outputConfig
+      let map: RawSourceMap<string> | undefined;
       if (baseConfig.sourceMap === false) {
           sourceMap.reset();
       }
@@ -48,7 +48,7 @@ Comments
 #. **context** = require("clean-css"), **value** = source code, **options** = *TransformSeries* instance
 #. When base installation (process.cwd()) uses a different major package version (optional)
 #. Main *sourceMap* from previous consumer
-#. Applies **options.external** AND **options.outputConfig** values to raw **options.baseConfig** (optional)
+#. Applies **options.external** AND **options.outputConfig** to **options.baseConfig** (optional)
 #. *none*
 #. Delete current *sourceMap* as requested using ``sourceMap.reset()``
 #. *none*

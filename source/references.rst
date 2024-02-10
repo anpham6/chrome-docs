@@ -43,8 +43,11 @@ https://unpkg.com/@e-mc/types/lib/index.d.ts
 
 https://unpkg.com/@e-mc/types/lib/document.d.ts
   | `ChunkData <search.html?q=ChunkData>`_
+  | `ITransformSeries <search.html?q=ITransformSeries>`_
+  | `RawSourceMap <search.html?q=RawSourceMap>`_
   | `SourceInput <search.html?q=SourceInput>`_
   | `SourceMap <search.html?q=SourceMap>`_
+  | `TransformOutput <search.html?q=TransformOutput>`_
 
 .. _references-e-mc-types-lib-db:
 .. rst-class:: block-list

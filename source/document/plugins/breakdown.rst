@@ -42,23 +42,23 @@ Comments
 ========
 
 #. Typings (optional)
-#.
-#.
-#.
+#. *none*
+#. *none*
+#. *none*
 #. **context** = require("clean-css"), **value** = source code, **options** = *TransformSeries* instance
 #. When base installation (process.cwd()) uses a different major package version (optional)
 #. Main *sourceMap* from previous consumer
 #. Applies **options.external** AND **options.outputConfig** values to raw **options.baseConfig** (optional)
-#.
+#. *none*
 #. Delete current *sourceMap* as requested using ``sourceMap.reset()``
-#.
-#.
+#. *none*
+#. *none*
 #. Check if there is an existing sourceMap and pass it through
-#.
-#.
+#. *none*
+#. *none*
 #. Call package transform method with **baseConfig** and **value**
 #. Check if method succeeded
 #. Check if a *sourceMap* was generated
 #. Pass *sourceMap* output values to ``sourceMap.nextMap`` chain method
-#.
+#. *none*
 #. Return modified transformed *source code*

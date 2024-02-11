@@ -17,7 +17,7 @@ Using JSON config
     "watch": {
       "interval": 100, // Time between HTTP requests (ms)
       "interval": "1m",
-      "start": "Dec 7, 2023 5:00:00 PM", // Empty is immediate
+      "start": "Apr 29, 2024 5:00:00 PM", // Empty is immediate
       "expires": "1w 1d 1h 1m 1s", // Empty is never (includes "start")
       "main": false // Will rebuild the entire bundle
       "id": "watch1", // Resets an existing watch when it is the first active socket

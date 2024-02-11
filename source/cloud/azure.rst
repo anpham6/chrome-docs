@@ -157,8 +157,6 @@ Example usage
     }]
   }
 
-.. note:: **azure** is *BlobServiceClient*.getContainerClient(bucket).
-
 Admin
 -----
 
@@ -310,7 +308,7 @@ Example usage
 
 .. versionadded:: 0.7.0
 
- - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
+  - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
   - Storage *upload* in parallel using property **chunkSize** was implemented.
   - Storage *download* in parallel using property **chunkSize** was implemented.
 

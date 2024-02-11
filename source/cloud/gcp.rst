@@ -189,6 +189,8 @@ Example usage
 Admin
 -----
 
+These optional features are not relevant to Firebase.
+
 Stream
 ^^^^^^
 
@@ -595,7 +597,7 @@ Realtime Database
 
 .. versionadded:: 0.7.0
 
- - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
+  - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
   - Storage *upload* in parallel using property **chunkSize** was implemented.
   - Storage *download* in parallel using property **chunkSize** was implemented.
   - Storage **configBucket.tags** using *Metadata* was implemented.

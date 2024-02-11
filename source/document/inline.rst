@@ -34,9 +34,9 @@ data-chrome-file
 .. tip:: Outer brackets are optional. [#]_
 
 .. code-block::
-  :caption: Whitespace
+  :caption: Inline
 
-  <link rel="stylesheet" href="css/dev.css" data-chrome-file="saveAs : css/prod.css :: lint + minify" />
+  <link rel="stylesheet" href="css/dev.css" data-chrome-file="saveAs:css/prod.css::lint+beautify" />
 
 .. code-block::
   :caption: Output
@@ -93,11 +93,8 @@ data-chrome-options
     - latin1
     - utf-16be (unsupported)
 
-::
-
-  <link rel="stylesheet" href="css/dev.css" data-chrome-options="preserve|md5|compress[gz]|utf-16">
-
-::
+.. code-block::
+  :caption: JSON
 
   <style data-chrome-options='{ "preserve": true, "hash": "md5", "compress": [{ "format": "gz", "algorithm": "zopfli", "level": 15 }], "encoding": "utf-16" }'>
     body {
@@ -105,6 +102,13 @@ data-chrome-options
       background-color: #fafafa;
     }
   </style>
+
+.. code-block::
+  :caption: Inline
+
+  <link rel="stylesheet" href="css/dev.css" data-chrome-options="preserve|md5|compress[gz]|utf-16">
+
+.. tip:: Whitespace can be used between anything for readability.
 
 data-chrome-metadata
 ====================

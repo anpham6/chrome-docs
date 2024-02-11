@@ -28,7 +28,7 @@ pygments_style = 'abap'
 
 html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
-    'style_nav_header_background': 'slategray',
+    'style_nav_header_background': 'url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);',
     'navigation_depth': 3,
     'includehidden': False,
 }

@@ -21,13 +21,8 @@ data-chrome-file
 
 .. highlight:: html
 
-::
-
-  <link rel="stylesheet" href="css/dev.css" data-chrome-file="saveAs:css/prod.css::minify" />
-
-Whitespace can be used between anything for readability. Outer JSON brackets are optional. [#]_
-
-::
+.. code-block::
+  :caption: JSON
 
   <style data-chrome-file='{ "exportAs": "css/prod.css", "process": ["lint", "beautify"] }'>
     body {
@@ -36,9 +31,15 @@ Whitespace can be used between anything for readability. Outer JSON brackets are
     }
   </style>
 
-These examples will both output one transformed stylesheet.
+.. tip:: Outer brackets are optional. [#]_
 
-::
+.. code-block::
+  :caption: Whitespace
+
+  <link rel="stylesheet" href="css/dev.css" data-chrome-file="saveAs : css/prod.css :: lint + minify" />
+
+.. code-block::
+  :caption: Output
 
   <link rel="stylesheet" href="css/prod.css" />
 
@@ -108,9 +109,8 @@ data-chrome-options
 data-chrome-metadata
 ====================
 
-* Any plain object
-
-::
+.. code-block::
+  :caption: Any plain object
 
   <script src="/dist/squared.js" data-chrome-metadata='{ "custom-rollup": { "import-maps": {} }, "custom-terser": { "config": {} } }'></script>
 

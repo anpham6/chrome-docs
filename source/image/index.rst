@@ -72,7 +72,7 @@ There can be transparency issues for WebP animated transformations due to the We
 Command syntax
 ==============
 
-Placing an "**@**" symbol (png@) after the **format** will replace the original file inside the package. Using the "**%**" symbol (png%) will choose the smaller of the two files. 
+Placing an "**@**" symbol (e.g. png@) after the **format** will replace the original file inside the package. Using the "**%**" symbol (e.g. png%) will choose the smaller of the two files. 
 
 All segments are optional except **format**. Outer groupings and inner brackets are required.
 
@@ -211,23 +211,20 @@ data-chrome-commands
 ====================
 
 .. code-block:: html
-
-  <!-- img | video | audio | source | track | object | embed | iframe -->
+  :caption: img | video | audio | source | track | object | embed | iframe
 
   <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/harbour1.jpg"
        data-chrome-file="saveAs:images/harbour.webp"
-       data-chrome-options="inline"> <!-- jpg to webp (images only) -->
+       data-chrome-options="inline"> <!-- data:image/webp;base64 -->
 
 You can use image commands with **saveTo** (directory) on any element where the image is the primary display output.
 
 .. code-block:: html
-
-  <!-- img | object | embed | iframe -->
+  :caption: img | object | embed | iframe
 
   <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/harbour1.jpg"
        data-chrome-file="saveTo:../images/harbour"
        data-chrome-commands="png(10000,75000)(800x600[bezier]^contain[right|bottom])::webp|0.5|">
-
 
 .. tip:: Multiple transformations use "**::**" as the separator.
 

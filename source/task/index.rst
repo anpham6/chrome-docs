@@ -81,6 +81,7 @@ Example gulpfile.js
 Renaming files with Gulp is not recommended. It is better to use the **saveAs** or **filename** attributes when the asset is part of the HTML page.
 
 .. code-block:: javascript
+  :emphasize-lines: 5,7
 
   const gulp = require("gulp");
   const uglify = require("gulp-uglify");

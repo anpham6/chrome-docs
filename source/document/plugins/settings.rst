@@ -95,7 +95,7 @@ Using inline function [#]_
 The suffix "-output" is used to create the variable ``options.outputConfig``.
 
 .. code-block::
-  :emphasize-lines: 9,18
+  :emphasize-lines: 8,16
 
   {
     "document": {
@@ -240,4 +240,4 @@ The same concept can be used inline anywhere using a ``script`` tag with the **t
 .. attention:: **data-chrome-template** usage requires the setting :code:`eval.template = true`.
 
 .. [#] this = NodeJS.process
-.. [#] https://babeljs.io/docs/en/options
+.. [#] https://babeljs.io/docs/options

@@ -6,21 +6,6 @@ Interface
 
 ::
 
-  interface OutputModifiers {
-      inline?: boolean; // type: js | css | image (base64) | font (base64)
-      blob?: boolean; // format: base64
-      preserve?: boolean; // type: html | css | append/js (cross-origin) | append/css (cross-origin)
-      extract?: boolean; // type: css
-      module?: boolean; // type: js (esm) | css
-      dynamic?: boolean; // type: image (srcset) | element (non-void)
-      static?: boolean; // Removes URL search params
-      remove?: boolean; // Removes element from HTML page
-      ignore?: boolean;
-      exclude?: boolean; // type: js | css (ignore + remove)
-  }
-
-::
-
   import type { CloudDatabase, CloudService } from "../cloud/interface";
 
   interface AssetCommand extends OutputModifiers {
@@ -84,6 +69,22 @@ Interface
       textContent?: string; // Replace element.innerHTML
 
       document?: string | string[]; // Usually "chrome" by framework (override)
+  }
+
+.. code-block::
+  :caption: type
+
+  interface OutputModifiers {
+      inline?: boolean; // js | css | image (base64) | font (base64)
+      blob?: boolean; // format: base64
+      preserve?: boolean; // html | css | append/js (cross-origin) | append/css (cross-origin)
+      extract?: boolean; // css (@import)
+      module?: boolean; // js (esm) | css
+      dynamic?: boolean; // image (srcset) | element (non-void)
+      static?: boolean; // Removes URL search params
+      remove?: boolean; // Removes element from HTML page
+      ignore?: boolean;
+      exclude?: boolean; // js | css (ignore + remove)
   }
 
 .. seealso:: For any non-standard named definitions check :doc:`References </references>`.

@@ -36,7 +36,7 @@ Code
       }
   }
 
-.. hint:: There are only three lines of relevant TypeScript being used to check for upgrade compatibility. Local file ".cjs" transformers offer the same functionality.
+.. hint:: There are only three lines of relevant TypeScript being used to check for upgrade compatibility. Local file ".cjs" transformers offer the same exact functionality.
 
 Comments
 ========

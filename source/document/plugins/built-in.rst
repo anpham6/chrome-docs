@@ -99,6 +99,6 @@ These plugins can be configured using a plain object in ``settings.transform``. 
 - Local plain file with single function (e.g. ".js")
 - Inline function
 
-.. note:: More advanced plugins can be written when installed through NPM.
+.. tip:: More advanced plugins can be written when installed through NPM.
 
 .. [#] settings.transform.imports

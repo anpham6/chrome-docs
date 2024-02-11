@@ -189,6 +189,22 @@ Example usage
 Admin
 -----
 
+Stream
+^^^^^^
+
+Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
+
+.. code-block:: javascript
+  :caption: Buffer
+
+  const gcp = require("@pi-r/gcp");
+  gcp.CLOUD_UPLOAD_STREAM = false;
+
+.. warning:: Reading a buffer from disk has **2GB** file size limit.
+
+Chunk
+^^^^^
+
 Parallel transfers was enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and opens only one request per file.
 
 .. code-block:: javascript
@@ -198,7 +214,7 @@ Parallel transfers was enabled by default to accommodate large files. The old be
   gcp.CLOUD_UPLOAD_CHUNK = false;
   gcp.CLOUD_DOWNLOAD_CHUNK = false;
 
-.. attention:: Chunking is only active when the upload file size is greater than **chunkSize**.
+.. note:: Chunking is only active when the upload file size is greater than **chunkSize**.
 
 Database
 ========
@@ -579,6 +595,7 @@ Realtime Database
 
 .. versionadded:: 0.7.0
 
+ - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
   - Storage *upload* in parallel using property **chunkSize** was implemented.
   - Storage *download* in parallel using property **chunkSize** was implemented.
   - Storage **configBucket.tags** using *Metadata* was implemented.

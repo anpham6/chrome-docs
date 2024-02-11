@@ -31,13 +31,13 @@ Abort Controller
 .. highlight:: bash
 
 .. code-block::
-  :caption: Minimum 15.4 + 16.0
+  :caption: Under 15.4 + 16.0
 
   npm i abort-controller
   npm i event-target-shim
 
 .. code-block::
-  :caption: Minimum 14.17 + 15.0
+  :caption: Under 14.17 + 15.0
 
   node --experimental-abortcontroller serve.js
 
@@ -45,7 +45,7 @@ UUID
 ----
 
 .. code-block::
-  :caption: Minimum 14.17 + 15.6
+  :caption: Under 14.17 + 15.6
 
   npm i uuid
 

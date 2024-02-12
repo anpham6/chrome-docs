@@ -188,7 +188,10 @@ Example usage
         }
       },
       "upload": {/* Same as AWS */},
-      "download": {/* Same as AWS */}
+      "download": {
+        /* Same as AWS */
+        "minStreamSize": -1 // No effect
+      }
     }]
   }
 

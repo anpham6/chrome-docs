@@ -155,6 +155,8 @@ Admin
 
 Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
 
+Setting the storage property :code:`upload.minStreamSize = -1` will also disable streaming for the current request.
+
 .. code-block:: javascript
   :caption: Buffer
 

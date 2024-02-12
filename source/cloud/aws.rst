@@ -180,6 +180,38 @@ Example usage
     }]
   }
 
+Admin
+-----
+
+Any changes made to ``@pi-r/aws`` are inherited by :doc:`@pi-r/ibm <ibm>` and :doc:`@pi-r/oci <oci>`.
+
+Stream
+^^^^^^
+
+Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
+
+.. code-block:: javascript
+  :caption: Buffer
+
+  const aws = require("@pi-r/aws");
+  aws.CLOUD_UPLOAD_STREAM = false;
+
+.. warning:: Reading a buffer from disk has **2GB** file size limit.
+
+Chunk
+^^^^^
+
+Parallel transfers was enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and opens only one request per file.
+
+.. code-block:: javascript
+  :caption: Sequential
+
+  const aws = require("@pi-r/aws");
+  aws.CLOUD_UPLOAD_CHUNK = false;
+  aws.CLOUD_DOWNLOAD_CHUNK = false;
+
+.. note:: Chunking is only active when the upload file size is greater than **chunkSize**.
+
 Database
 ========
 
@@ -278,6 +310,8 @@ Example usage
 
 .. versionadded:: 0.7.0
 
+  - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
+  - **CLOUD_UPLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
   - **configBucket.tags** using *PutBucketTaggingRequest* was implemented.
   - **configBucket.cors** using *CORSConfiguration* was implemented.
   - **configBucket.lifecycle** using *LifecycleConfiguration* was implemented.

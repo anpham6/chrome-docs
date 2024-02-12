@@ -45,7 +45,7 @@ Interface
       pathname?: string;
       filename?: string;
       minStreamSize?: number | string;
-      chunkSize?: number | string; // Only Azure + GCP
+      chunkSize?: number | string; // Except "aws-v3" and "minio"
       flags?: number;
       active?: boolean;
       overwrite?: boolean;
@@ -133,6 +133,7 @@ Storage
         "contentType": "image/png", // Metadata has higher precedence (default is "application/octet-stream")
         "minStreamSize": 10485760, // Detect when to use readable stream (not limited to 2gb)
         "minStreamSize": "10mb",
+        "minStreamSize": -1, // Request transfer using Buffer (small files)
 
         "chunkSize": "8mb", // Minimum part size of a parallel upload operation
         "chunkSize": 33554432, // 8 * 1024 * 1024

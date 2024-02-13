@@ -34,9 +34,9 @@ Interface
       readTLSCert(value: unknown, cache?: boolean): string;
       readTLSConfig(options: SecureContextOptions, cache?: boolean): void;
       settingsOf(source: string, name: keyof Omit<DbSourceOptions, "coerce">): unknown;
-      settingsOf(source: string, name: "coerce", component: keyof X): unknown;
+      settingsOf(source: string, name: "coerce", component: keyof DbCoerceSettings): unknown;
       settingsKey(source: string, name: keyof Omit<DbSourceOptions, "coerce">): unknown;
-      settingsKey(source: string, name: "coerce", component: keyof X): unknown;
+      settingsKey(source: string, name: "coerce", component: keyof DbCoerceSettings): unknown;
       getPoolConfig(source: string, uuidKey?: string): Required<PoolConfig> | undefined;
       get sourceType(): DB_TYPE;
       get commandType(): SQL_COMMAND;

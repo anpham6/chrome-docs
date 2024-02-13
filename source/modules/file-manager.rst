@@ -192,6 +192,10 @@ Interface
       new(baseDirectory: string, config: RequestData, permission?: IPermission, postFinalize?: PostFinalizeCallback): IFileManager;
   }
 
+.. versionadded:: 0.9.0
+
+  *IFileManager* methods **scheduleTask** | **setTaskLimit** | **updateProgress** was created.
+
 References
 ==========
 

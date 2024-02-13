@@ -165,6 +165,11 @@ Interface
       get uncWrite(): boolean;
   }
 
+.. versionadded:: 0.9.0
+
+  - *IHost* methods **pauseLog** | **resumeLog** | **hasLog** | **delayMessage** | **updateProgress** was created.
+  - *IHost* property **logState** was created.
+
 References
 ==========
 

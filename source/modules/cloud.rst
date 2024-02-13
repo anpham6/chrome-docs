@@ -65,7 +65,7 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  - *ICloud* method **setBucketTagging** was created.
+  *ICloud* method **setBucketTagging** was created.
 
 References
 ==========

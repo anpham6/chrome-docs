@@ -8,3 +8,7 @@ Modules
   cloud
   compress
   core
+  document
+  file-manager
+  image
+  module

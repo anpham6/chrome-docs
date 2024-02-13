@@ -12,7 +12,7 @@ Interface
   import type { DataSource, LogStatus } from "./squared";
 
   import type { IHost, IModule, ModuleConstructor } from "./index";
-  import type { CacheOptions, HostInitConfig, JoinQueueOptions, PermissionReadWrite, ResumeThreadOptions, StoreResultOptions, ThreadCountStat } from "./core'
+  import type { CacheOptions, HostInitConfig, JoinQueueOptions, PermissionReadWrite, ResumeThreadOptions, StoreResultOptions, ThreadCountStat } from "./core";
   import type { QueryResult, TimeoutAction } from "./db";
   import type { AddEventListenerOptions } from "./dom";
   import type { LogState, StatusType } from "./logger";

@@ -14,7 +14,7 @@ Interface
   import type { IClient, IPermission } from "./core";
   import type { FinalizeResult, PostFinalizeCallback } from "./filemanager";
   import type { WatchModule } from "./settings";
-  import type { IFileGroup, ModifiedPostFinalizeListener, SecureOptions, WatchInitResult } from "./watch";
+  import type { IFileGroup, ModifiedPostFinalizeListener, SecureOptions } from "./watch";
 
   import type * as ws from "ws";
 

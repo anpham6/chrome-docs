@@ -18,8 +18,8 @@ Interface
   import type { ExecCommand } from "./logger";
   import type { CopyFileOptions, CreateDirOptions, DeleteFileOptions, MoveFileOptions, ReadFileOptions, RemoveDirOptions, WriteFileOptions } from "./module";
   import type { RequestData, Settings } from "./node";
-  import type { Aria2Options, BufferFormat, DataEncodedResult, OpenOptions } from "./request";
-  import type { CloudModule, CompressModule, DbModule, DbSourceOptions, DnsLookupSettings, DocumentModule, HttpConnectSettings, HttpMemorySettings, ImageModule, RequestModule, TaskModule, WatchModule } from "./settings";
+  import type { Aria2Options, BufferFormat, OpenOptions } from "./request";
+  import type { CloudModule, CompressModule, DbModule, DocumentModule, HttpConnectSettings, HttpMemorySettings, ImageModule, RequestModule, TaskModule, WatchModule } from "./settings";
 
   import type { NoParamCallback } from "fs";
   import type { SpawnOptions } from "child_process";
@@ -194,7 +194,7 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  *IFileManager* methods **scheduleTask** | **setTaskLimit** | **updateProgress** was created.
+  *IFileManager* methods **scheduleTask** | **setTaskLimit** | **updateProgress** were created.
 
 References
 ==========

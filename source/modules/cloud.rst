@@ -15,10 +15,10 @@ Interface
   import type { ClientDbConstructor, IClientDb } from "./core";
   import type { BatchQueryResult, QueryResult } from "./db";
   import type { LogMessageOptions } from "./logger";
-  import type { ClientModule, CloudServiceAuthSettings, CloudModule, CloudServiceOptions, CloudSettings, DbCoerceSettings } from "./settings";
+  import type { CloudServiceAuthSettings, CloudModule, CloudServiceOptions, CloudSettings, DbCoerceSettings } from "./settings";
 
   interface ICloud extends IClientDb<IHost, CloudModule, CloudDatabase, CloudServiceOptions, DbCoerceSettings & CloudServiceAuthSettings> {
-      module: ClientModule;
+      module: CloudModule;
       readonly uploaded: string[];
       readonly downloaded: string[];
       createBucket(service: string, credential: unknown, bucket: string, acl?: unknown, options?: unknown): Promise<boolean>;

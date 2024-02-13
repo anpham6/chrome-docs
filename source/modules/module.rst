@@ -76,7 +76,7 @@ Interface
       removeDir(src: string, options: RemoveDirOptions, promises: true): Promise<boolean>;
       removeDir(src: string, callback: NoParamCallback): void;
       removeDir(src: string, options: RemoveDirOptions, callback: NoParamCallback): void;
-      allSettled(values: readonly (unknown | PromiseLike<unknown>)[], rejected?: LogValue, options?: LogFailOptions | LogType): Promise<PromiseFulfilledResult<unknown>[]>;
+      allSettled(values: readonly PromiseLike<unknown>[], rejected?: LogValue, options?: LogFailOptions | LogType): Promise<PromiseFulfilledResult<unknown>[]>;
       formatMessage(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogMessageOptions): void;
       formatFail(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogFailOptions): void;
       writeFail(value: LogValue, message?: unknown, options?: LogFailOptions | LogType): void;

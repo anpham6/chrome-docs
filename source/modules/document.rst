@@ -17,10 +17,10 @@ Interface
   import type { AsSourceFileOptions, ConfigOrTransformer, CustomizeOptions, GenerateLintTableOptions, LintMessage, PluginConfig, SourceCode, SourceInput, SourceMap, SourceMapOptions, TransformAction, TransformCallback, TransformOutput, TransformResult, UpdateGradleOptions } from "./document";
   import type { PostFinalizeCallback } from "./filemanager";
   import type { LogComponent } from "./logger";
-  import type { ClientModule, DocumentComponent, DocumentComponentOption, DocumentModule } from "./settings";
+  import type { DocumentComponent, DocumentComponentOption, DocumentModule } from "./settings";
   import type { IFileGroup, WatchInitResult } from "./watch";
 
-  interface IDocument extends IClient<IFileManager, ClientModule, TransformCallback<IFileManager, ExternalAsset>> {
+  interface IDocument extends IClient<IFileManager, DocumentModule, TransformCallback<IFileManager, ExternalAsset>> {
       Db: IDb | null;
       assets: ExternalAsset[];
       config: Record<string, any>;
@@ -74,10 +74,10 @@ Interface
       cleanup?(this: IFileManager, instance: DocumentInstance): Promise<unknown>;
       sanitizeAssets?(assets: ExternalAsset[], exclusions?: ExternalAsset[]): ExternalAsset[];
       readonly prototype: DocumentInstance;
-      new(module?: ClientModule, ...args: unknown[]): DocumentInstance;
+      new(module?: DocumentModule, ...args: unknown[]): DocumentInstance;
   }
 
-  type DocumentInstance = IDocument<IFileManager, ExternalAsset, ClientModule, DocumentComponent, DocumentComponentOption, ICloud>;
+  type DocumentInstance = IDocument<IFileManager, ExternalAsset, DocumentModule, DocumentComponent, DocumentComponentOption, ICloud>;
 
 References
 ==========

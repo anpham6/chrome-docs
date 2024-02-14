@@ -45,8 +45,8 @@ Interface
   interface DbConstructor extends ClientDbConstructor<IHost> {
       setPoolConfig(value: Record<string, PoolConfig>): void;
       getPoolConfig(source: string): Required<PoolConfig> | undefined;
-      readonly prototype: IDb<IHost, DbModule, DbDataSource>;
-      new(module?: DbModule, database?: DbDataSource[], ...args: unknown[]): IDb<IHost, DbModule, DbDataSource>;
+      readonly prototype: IDb;
+      new(module?: DbModule, database?: DbDataSource[], ...args: unknown[]): IDb;
   }
 
   interface IDbSourceClient {
@@ -85,8 +85,8 @@ Interface
       findKey(pools: Record<string, IDbPool>, uuidKey: unknown, poolKey: string | undefined, ...items: DbDataSource[]): Record<string, IDbPool> | null;
       validateKey(pools: Record<string, IDbPool>, username: string, uuidKey: unknown): [string, Record<string, IDbPool> | null];
       checkTimeout(pools: Record<string, IDbPool>, value: number, limit?: number): Promise<number>;
-      readonly prototype: IDbPool<DbDataSource, unknown, unknown>;
-      new(pool: unknown, poolKey: string, uuidKey?: AuthValue | null): IDbPool<DbDataSource, unknown, unknown>;
+      readonly prototype: IDbPool;
+      new(pool: unknown, poolKey: string, uuidKey?: AuthValue | null): IDbPool;
   }
 
 References

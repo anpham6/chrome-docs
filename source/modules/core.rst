@@ -81,8 +81,8 @@ Interface
   }
 
   interface ClientConstructor extends ModuleConstructor {
-      readonly prototype: IClient<IHost, ClientModule>;
-      new(module?: ClientModule): IClient<IHost, ClientModule>;
+      readonly prototype: IClient;
+      new(module?: ClientModule): IClient;
   }
 
   interface IClientDb extends IClient<IHost, ClientModule<ClientDbSettings>> {
@@ -130,8 +130,8 @@ Interface
       setPoolConfig(value: unknown): void;
       getPoolConfig(source: string): unknown;
       keyOfResult(source: string, credential: unknown, uuidOnly?: boolean): string;
-      readonly prototype: IClientDb<IHost, ClientModule, DataSource>;
-      new(module?: ClientModule, database?: DataSource[]): IClientDb<IHost, ClientModule, DataSource>;
+      readonly prototype: IClientDb;
+      new(module?: ClientModule, database?: DataSource[]): IClientDb;
   }
 
   interface IAbortComponent extends AbortController {

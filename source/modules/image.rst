@@ -40,8 +40,8 @@ Interface
       clamp(value: unknown, min?: number, max?: number): number;
       isBinary(mime: unknown): mime is string;
       toABGR(buffer: Uint8Array | Buffer): Buffer;
-      readonly prototype: IImage<IHost, ImageModule>;
-      new(module?: ImageModule): IImage<IHost, ImageModule>;
+      readonly prototype: IImage;
+      new(module?: ImageModule): IImage;
   }
 
 References

@@ -72,8 +72,8 @@ Interface
       defineHttpAgent(options: HttpAgentSettings): void;
       defineDnsLookup(options: DnsLookupSettings, clear?: boolean): void;
       getAria2Path(): string;
-      readonly prototype: IRequest<RequestModule, RequestSettings>;
-      new(module?: RequestModule): IRequest<RequestModule, RequestSettings>;
+      readonly prototype: IRequest;
+      new(module?: RequestModule): IRequest;
   }
 
 .. versionadded:: 0.8.2

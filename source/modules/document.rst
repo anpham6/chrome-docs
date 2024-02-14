@@ -65,19 +65,17 @@ Interface
   }
 
   interface DocumentConstructor extends ModuleConstructor {
-      finalize(this: IFileManager, instance: DocumentInstance): Promise<unknown>;
+      finalize(this: IFileManager, instance: IDocument): Promise<unknown>;
       createSourceMap(code: string, remove: boolean): SourceMap;
       createSourceMap(code: string, uri?: string, remove?: boolean): SourceMap;
       writeSourceMap(uri: string, data: SourceCode, options?: SourceMapOptions): string | undefined;
       updateGradle(source: string, namespaces: string[], value: string, options?: UpdateGradleOptions | boolean): string;
       generateLintTable(messages: LintMessage[], options: GenerateLintTableOptions): LogComponent[];
-      cleanup?(this: IFileManager, instance: DocumentInstance): Promise<unknown>;
+      cleanup?(this: IFileManager, instance: IDocument): Promise<unknown>;
       sanitizeAssets?(assets: ExternalAsset[], exclusions?: ExternalAsset[]): ExternalAsset[];
-      readonly prototype: DocumentInstance;
-      new(module?: DocumentModule, ...args: unknown[]): DocumentInstance;
+      readonly prototype: IDocument;
+      new(module?: DocumentModule, ...args: unknown[]): IDocument;
   }
-
-  type DocumentInstance = IDocument<IFileManager, ExternalAsset, DocumentModule, DocumentComponent, DocumentComponentOption, ICloud>;
 
 References
 ==========

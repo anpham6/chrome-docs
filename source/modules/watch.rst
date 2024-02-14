@@ -46,11 +46,9 @@ Interface
       shutdown(): void;
       setTimeout(value: number | string): void;
       checkTimeout(client: ws): boolean;
-      readonly prototype: WatchInstance;
-      new(module?: WatchModule): WatchInstance;
+      readonly prototype: IWatch;
+      new(module?: WatchModule): IWatch;
   }
-
-  type WatchInstance = IWatch<IFileManager, ExternalAsset, WatchModule, ModifiedPostFinalizeListener>;
 
 .. deprecated:: 0.8.4
 

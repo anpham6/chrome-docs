@@ -39,9 +39,9 @@ Interface
   }
 
   interface CompressConstructor extends ModuleConstructor {
-      singleton(): ICompress<CompressModule>;
-      readonly prototype: ICompress<CompressModule, CompressSettings>;
-      new(module?: CompressModule): ICompress<CompressModule, CompressSettings>;
+      singleton(): ICompress;
+      readonly prototype: ICompress;
+      new(module?: CompressModule): ICompress;
   }
 
 References

@@ -55,12 +55,12 @@ Interface
       LOG_CLOUD_DOWNLOAD: LogMessageOptions;
       LOG_CLOUD_DELETE: LogMessageOptions;
       LOG_CLOUD_DELAYED: LogMessageOptions;
-      finalize(this: IHost, instance: ICloud<IHost, CloudModule, CloudDatabase>): Promise<unknown>;
+      finalize(this: IHost, instance: ICloud): Promise<unknown>;
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud<IFileManager>>, file: ExternalAsset, ignoreProcess: boolean): Promise<unknown>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud<IFileManager>>, file: ExternalAsset, contentType?: string, ignoreProcess?: boolean): Promise<unknown>[];
       sanitizeAssets(assets: ExternalAsset[]): ExternalAsset[];
-      readonly prototype: ICloud<IHost, CloudModule, CloudDatabase>;
-      new(module?: CloudModule, database?: CloudDatabase[], ...args: unknown[]): ICloud<IHost, CloudModule, CloudDatabase>;
+      readonly prototype: ICloud;
+      new(module?: CloudModule, database?: CloudDatabase[], ...args: unknown[]): ICloud;
   }
 
 .. versionadded:: 0.9.0

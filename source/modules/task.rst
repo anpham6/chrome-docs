@@ -26,9 +26,9 @@ Interface
   }
 
   interface TaskConstructor extends ModuleConstructor {
-      finalize(this: IHost, instance: ITask<IHost, TaskModule>, assets: ExternalAsset[]): Promise<unknown>;
-      readonly prototype: ITask<IHost, TaskModule>;
-      new(module?: TaskModule, ...args: unknown[]): ITask<IHost, TaskModule>;
+      finalize(this: IHost, instance: ITask, assets: ExternalAsset[]): Promise<unknown>;
+      readonly prototype: ITask;
+      new(module?: TaskModule, ...args: unknown[]): ITask;
   }
 
 References

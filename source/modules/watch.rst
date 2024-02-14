@@ -11,7 +11,7 @@ Interface
 
   import type { IFileManager, ModuleConstructor } from "./index";
   import type { ExternalAsset } from "./asset";
-  import type { IClient, IPermission } from "./core";
+  import type { HostInitConfig, IClient, IPermission } from "./core";
   import type { FinalizeResult, PostFinalizeCallback } from "./filemanager";
   import type { WatchModule } from "./settings";
   import type { IFileGroup, ModifiedPostFinalizeListener, SecureOptions } from "./watch";
@@ -20,6 +20,7 @@ Interface
 
   interface IWatch extends IClient<IFileManager, WatchModule, ModifiedPostFinalizeListener> {
       connectTimeout: number;
+      init(config?: HostInitConfig): this; 
       start(assets: ExternalAsset[], permission?: IPermission): void;
       modified(watch: IFileGroup<ExternalAsset>): Promise<FinalizeResult | void>;
       configureServer(options: SecureOptions): boolean;
@@ -47,10 +48,13 @@ Interface
       checkTimeout(client: ws): boolean;
       readonly prototype: WatchInstance;
       new(module?: WatchModule): WatchInstance;
-      new(interval?: number, port?: number, securePort?: number, extensions?: unknown[]): WatchInstance;
   }
 
   type WatchInstance = IWatch<IFileManager, ExternalAsset, WatchModule, ModifiedPostFinalizeListener>;
+
+.. deprecated:: 0.8.4
+
+  Constructor **new(interval?: number, port?: number, ...)** does not conform with ``Module.init()`` and will be removed in **0.9.0**. 
 
 References
 ==========

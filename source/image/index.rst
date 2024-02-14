@@ -9,7 +9,7 @@ Image
 
 .. code-block::
   :caption: squared.json
-  
+
   {
     "image": {
       "handler": "@pi-r/jimp",
@@ -113,48 +113,92 @@ Methods use simple bracket matching and does not fully check inside quoted strin
 Method aliases [#]_
 ===================
 
-- autocrop (au)
-- background (bg)
-- backgroundQuiet (bq)
-- blit (bt)
-- blur (bl)
-- brightness (br)
-- circle (ci)
-- color (co)
-- colorType (ce)
-- composite (cp) [#]_
-- contain (ct) [#]_
-- contrast (cn)
-- convolute (cl)
-- cover (cv)
-- crop (cr)
-- cropQuiet (cq)
-- deflateLevel (dl)
-- deflateStrategy (ds)
-- displace (dp)
-- dither565 (dt)
-- fade (fa)
-- filterType (ft)
-- fishEye (fe)
-- flip (fl)
-- gaussian (ga)
-- greyscale (gr)
-- invert (in)
-- mask (ma)
-- mirror (mi)
-- normalize (no)
-- opacity (op)
-- opaque (oq)
-- pixelate (px)
-- posterize (po)
-- resize (re)
-- rgba (rg)
-- rotate (ro)
-- scale (sc)
-- scaleToFit (sf)
-- sepia (se)
-- shadow (sh)
-- threshold (th)
+.. list-table::
+
+  * - autocrop
+    - au
+  * - background
+    - bg
+  * - backgroundQuie
+    - bq
+  * - blit
+    - bt
+  * - blur
+    - bl
+  * - brightness
+    - br
+  * - circle
+    - ci
+  * - color
+    - co
+  * - colorType
+    - ce
+  * - composite [#]_
+    - cp
+  * - contain [#]_
+    - ct
+  * - contrast
+    - cn
+  * - convolute
+    - cl
+  * - cover
+    - cv
+  * - crop
+    - cr
+  * - cropQuiet
+    - cq
+  * - deflateLevel
+    - dl
+  * - deflateStrategy
+    - ds
+  * - displace
+    - dp
+  * - dither565
+    - dt
+  * - fade
+    - fa
+  * - filterType
+    - ft
+  * - fishEye
+    - fe
+  * - flip
+    - fl
+  * - gaussian
+    - ga
+  * - greyscale
+    - gr
+  * - invert
+    - in
+  * - mask
+    - ma
+  * - mirror
+    - mi
+  * - normalize
+    - no
+  * - opacity
+    - op
+  * - opaque
+    - oq 
+  * - pixelate
+    - px
+  * - posterize
+    - po
+  * - resize
+    - re
+  * - rgba
+    - rg
+  * - rotate
+    - ro
+  * - scale
+    - sc
+  * - scaleToFit
+    - sf
+  * - sepia
+    - se
+  * - shadow
+    - sh
+  * - threshold
+    - th
 
 Compression
 ===========

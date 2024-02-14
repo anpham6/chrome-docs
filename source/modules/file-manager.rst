@@ -88,7 +88,7 @@ Interface
       scheduleTask(url: string | URL, data: unknown, thenCallback?: ((...args: unknown[]) => unknown) | number, catchCallback?: (...args: unknown[]) => unknown, priority?: number): Promise<unknown>;
       setTaskLimit(value: number): void;
       addDownload(value: number | Buffer | string, encoding: BufferEncoding): number;
-      addDownload(value: number | Buffer | string, type?: number, encoding?: BufferEncoding): number;
+      addDownload(value: number | Buffer | string, type?: number | BufferEncoding, encoding?: BufferEncoding): number;
       getDownload(type?: number): [number, number];
       transformAsset(data: IFileThread, parent?: ExternalAsset): Promise<void>;
       addCopy(data: FileCommand<ExternalAsset>, saveAs?: string, replace?: boolean): string | undefined;

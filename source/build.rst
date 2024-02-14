@@ -199,7 +199,7 @@ Example remote configuration
   squared.saveAs("example.zip", { config: { mimeType: "json" } });
   /* OR */
   squared.saveAs("example.zip", { config: "json" }); // json | yml | yaml
- 
+
 .. tip:: JSON5 [#]_ and TOML [#]_ file formats are also supported.
 
 Using sqd.config
@@ -209,7 +209,7 @@ The base folder level configuration file is a hash map of URL globs which can ma
 
 .. code-block::
   :caption: `http://hostname/pathname/example.html` -to- `http://hostname/pathname/sqd.config`
-  
+
   squared.saveAs("example.zip", { config: true }); // Uses first match found
   /* OR */
   squared.saveAs("example.zip", {

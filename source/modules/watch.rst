@@ -28,7 +28,7 @@ Interface
       setSSLKey(value: string): boolean;
       setSSLCert(value: string): boolean;
       hasSecureProtocol(): boolean;
-      whenModified?(assets: ExternalAsset[], postFinalize: PostFinalizeCallback): IFileManager<U>;
+      whenModified?(assets: ExternalAsset[], postFinalize: PostFinalizeCallback): IFileManager;
       whenModified?(assets: ExternalAsset[], sanitize?: boolean | PostFinalizeCallback, postFinalize?: PostFinalizeCallback): IFileManager;
       set assets(value: ExternalAsset[]);
       get assets(): ExternalAsset[];

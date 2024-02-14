@@ -28,6 +28,7 @@ Interface
       customize(options?: CustomizeOptions): void;
       findConfig(data: object, name: string, type?: string): PluginConfig;
       loadConfig(data: object, name: string): ConfigOrTransformer | null | undefined;
+      asSourceFile(value: string, cache: boolean): unknown;
       asSourceFile(value: string, options?: AsSourceFileOptions | boolean): unknown;
       findVersion(name: string | string[], fallback?: string): string;
       findSourceScope(uri: string, imports: Record<string, unknown>): Record<string, string | undefined>[];
@@ -41,7 +42,8 @@ Interface
       settingsOf(name: keyof DocumentComponent, option: keyof DocumentComponentOption): unknown;
       parseTemplate(viewEngine: ViewEngine | string, template: string, data: unknown[]): Promise<string | null>;
       transform(type: string, code: string, format: string | string[], options?: TransformOutput & TransformAction): Promise<TransformResult | void>;
-      abort(name?: keyof DocumentComponent | Error, reason?: unknown): void;
+      abort(name: keyof DocumentComponent, reason?: unknown): void;
+      abort(err?: Error | keyof DocumentComponent, reason?: unknown): void;
       restart(): void;
       using?(data: IFileThread): Promise<unknown>;
       setLocalUri?(file: ExternalAsset, replace?: boolean): void;
@@ -69,6 +71,7 @@ Interface
       createSourceMap(code: string, remove: boolean): SourceMap;
       createSourceMap(code: string, uri?: string, remove?: boolean): SourceMap;
       writeSourceMap(uri: string, data: SourceCode, options?: SourceMapOptions): string | undefined;
+      updateGradle(source: string, namespaces: string[], value: string, upgrade: boolean): string;
       updateGradle(source: string, namespaces: string[], value: string, options?: UpdateGradleOptions | boolean): string;
       generateLintTable(messages: LintMessage[], options: GenerateLintTableOptions): LogComponent[];
       cleanup?(this: IFileManager, instance: IDocument): Promise<unknown>;

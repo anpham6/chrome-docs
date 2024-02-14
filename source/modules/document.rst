@@ -33,8 +33,8 @@ Interface
       findSourceScope(uri: string, imports: Record<string, unknown>): Record<string, string | undefined>[];
       findSourceRoot(uri: string, imports?: Record<string, string | undefined>): string | undefined;
       resolveDir(name: string, ...paths: string[]): string | undefined;
-      locateSourceFiles(file: ExternalAsset, code?: string, bundleContent?: string[]): (imports?: Record<string, string | undefined>) => SourceInput | undefined;
-      resolveSourceFile(file: ExternalAsset): (code?: string, imports?: Record<string, string | undefined>) => SourceInput<string> | undefined;
+      locateSourceFiles(file: ExternalAsset, code?: string, bundleContent?: string[]): ((imports?: Record<string, string | undefined>) => SourceInput | undefined);
+      resolveSourceFile(file: ExternalAsset): ((code?: string, imports?: Record<string, string | undefined>) => SourceInput<string> | undefined);
       tryParse(source: string, format: string, options?: Record<string | number | symbol, unknown>): unknown;
       forDb(item: DataSource): boolean;
       hasEval(name: string): boolean;

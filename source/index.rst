@@ -38,7 +38,7 @@ Abort Controller
   npm i event-target-shim
 
 .. code-block::
-  :caption: Under 14.17 + 15.0
+  :caption: Minimum 14.17 + 15.0
 
   node --experimental-abortcontroller serve.js
 

@@ -210,7 +210,6 @@ Parallel transfers was enabled by default to accommodate large files. The old be
 
   const aws = require("@pi-r/aws");
   aws.CLOUD_UPLOAD_CHUNK = false;
-  aws.CLOUD_DOWNLOAD_CHUNK = false;
 
 .. note:: Chunking is only active when the upload file size is greater than **chunkSize**.
 

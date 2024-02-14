@@ -13,6 +13,7 @@ Interface
   import type { CloneObjectOptions } from "./lib/module";
 
   import type { BinaryLike, CipherGCMTypes, Encoding } from "crypto";
+  import type { HighResolutionTime } from "perf_hooks";
 
   import type { BytesOptions } from "bytes";
 
@@ -40,7 +41,6 @@ Interface
   function parseExpires(value: number | string, start?: number): number;
   function formatTime(value: number, char: string): string;
   function formatTime(value: number, elapsed?: boolean, char?: string): string;
-  function convertTime(value: number | string): number;
   function convertTime(value: HighResolutionTime, format: true): string;
   function convertTime(value: HighResolutionTime, format?: boolean): number;
   function hasGlob(value: string): boolean;
@@ -199,5 +199,4 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/module.d.ts
 
-* https://nodejs.org/api/perf_hooks.html
 * https://www.npmjs.com/package/@types/bytes

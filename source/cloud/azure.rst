@@ -16,8 +16,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { CloudStorage } from "./interface";
-
   interface AzureStorage extends CloudStorage {
       service: "azure" | "az";
       credential: string | AzureStorageCredential;
@@ -168,7 +166,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { CloudDatabase } from "./interface";
   import type { CosmosClientOptions, FeedOptions, PartitionKey, PatchRequestBody, RequestOptions, SqlQuerySpec } from "@azure/cosmos";
 
   interface AzureDatabaseQuery extends CloudDatabase {

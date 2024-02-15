@@ -10,7 +10,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { DbDataSource } from "./interface";
   import type { ConnectionConfig, ParameterOptions, TediousType, TediousTypes } from "tedious";
   import type { PoolConfig } from "tedious-connection-pool";
 

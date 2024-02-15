@@ -5,9 +5,7 @@ Interface
 .. highlight:: typescript
 
 .. code-block::
-  :emphasize-lines: 52
-
-  import type { CloudDatabase, CloudService } from "../cloud/interface";
+  :emphasize-lines: 50
 
   interface AssetCommand extends OutputModifiers {
       selector: string;

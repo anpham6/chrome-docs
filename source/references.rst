@@ -24,6 +24,7 @@ https://unpkg.com/squared/types/base/resource.d.ts
 .. rst-class:: block-list
 
 https://unpkg.com/squared/types/base/file.d.ts
+  | `DbDataSource <search.html?q=DbDataSource>`_
   | `LogStatus <search.html?q=LogStatus>`_
 
 .. _references-e-mc:
@@ -54,6 +55,14 @@ https://unpkg.com/@e-mc/types/lib/document.d.ts
 
 https://unpkg.com/@e-mc/types/lib/db.d.ts
   | `ServerAuth <search.html?q=ServerAuth>`_
+
+.. _references-e-mc-types-lib-cloud:
+.. rst-class:: block-list
+
+https://unpkg.com/@e-mc/types/lib/cloud.d.ts
+  | `CloudDatabase <search.html?q=CloudDatabase>`_
+  | `CloudService <search.html?q=CloudService>`_
+  | `CloudStorage <search.html?q=CloudStorage>`_
 
 .. _references-e-mc-types-lib-http:
 .. rst-class:: block-list

@@ -10,7 +10,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { CloudStorage } from "./interface";
   import type { ClientOptions } from "minio";
 
   interface MinIOStorage extends CloudStorage {

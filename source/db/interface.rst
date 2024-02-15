@@ -57,7 +57,7 @@ Interface
       usePool?: string; // UUIDv1-5 shared session key (db.settings.user_key: username@server/database)
 
       /* Module: Document */
-      willAbort?: boolean; // Abort is called bypassing settings      
+      willAbort?: boolean; // Abort is called bypassing settings
   }
 
 .. seealso:: For any non-standard named definitions check :doc:`References </references>`.

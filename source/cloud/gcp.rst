@@ -19,7 +19,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { CloudStorage } from "./interface";
   import type { StorageOptions } from "@google-cloud/storage";
   import type { FirebaseOptions } from "@firebase/app";
 
@@ -196,7 +195,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { CloudDatabase } from "./interface";
   import type { GoogleAuthOptions } from "google-auth-library";
   import type { PathType } from "@google-cloud/datastore";
   import type { entity } from "@google-cloud/datastore/build/src/entity";

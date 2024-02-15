@@ -16,7 +16,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { CloudStorage } from "./interface";
   import type { ConfigurationOptions } from "aws-sdk/lib/core";
 
   interface OCIStorage extends CloudStorage {
@@ -92,7 +91,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { CloudDatabase } from "./interface";
   import type { BindParameters, ConnectionAttributes, ExecuteOptions, InitialiseOptions } from "oracledb";
 
   interface OCIDatabaseQuery extends CloudDatabase {

@@ -10,7 +10,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { DbDataSource } from "./interface";
   import type { CommandOptions } from "@redis/client/dist/lib/command-options";
   import type { ClientCommandOptions } from "@redis/client/dist/lib/client";
   import type { RedisClientOptions } from "@redis/client";

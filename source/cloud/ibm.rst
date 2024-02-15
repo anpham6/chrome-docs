@@ -16,7 +16,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { CloudStorage } from "./interface";
   import type { ConfigurationOptions } from "ibm-cos-sdk/lib/config-base";
 
   interface IBMStorage extends CloudStorage {
@@ -86,7 +85,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { CloudDatabase } from "./interface";
   import type { PostAll, PostFind, PostSearch, PostView } from "@pi-r/ibm/types";
   import type { UserOptions } from "ibm-cloud-sdk-core";
   import type { PostDocumentParams } from "@ibm-cloud/cloudant/cloudant/v1";

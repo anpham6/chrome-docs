@@ -12,7 +12,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { DbDataSource } from "./interface";
   import type * as "m" from "mongodb";
 
   interface MongoDBDataSource extends DbDataSource {

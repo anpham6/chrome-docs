@@ -10,7 +10,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { DbDataSource } from "./interface";
   import type { SecureContextOptions } from "tls";
   import type { PoolConfig, QueryConfig } from "mariadb";
 

@@ -14,7 +14,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { CloudStorage } from "./interface";
   import type { ConfigurationOptions } from "aws-sdk/lib/core";
 
   interface AWSStorage extends CloudStorage {
@@ -193,7 +192,6 @@ Interface
 
 .. code-block:: typescript
 
-  import type { CloudDatabase } from "./interface";
   import type { ServiceConfigurationOptions } from "aws-sdk/lib/service";
   import type { BatchGetItemInput, Key, QueryInput, ScanInput, UpdateItemInput } from "aws-sdk/clients/dynamodb";
 

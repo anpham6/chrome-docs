@@ -4,7 +4,8 @@ Interface
 
 .. highlight:: typescript
 
-::
+.. code-block::
+  :emphasize-lines: 52
 
   import type { CloudDatabase, CloudService } from "../cloud/interface";
 
@@ -57,6 +58,7 @@ Interface
       type?: "append/js" | "append/css" | "append/[tagName]"; // Includes "prepend"
 
       type?: "text" | "attribute" | "display"; // dynamic is valid only with "text"
+      type?: "markdown"; // Same as "text" with MD to HTML output
       dataSource?: {
           source: "cloud" | "uri" | "local" | "export";
           source: "mariadb" | "mongodb" | "mssql" | "mysql" | "oracle" | "postgres" | "redis"; // DB providers
@@ -70,6 +72,10 @@ Interface
 
       document?: string | string[]; // Usually "chrome" by framework (override)
   }
+
+.. versionadded:: 0.9.0
+
+   *DataSource* type "**text**" to "**markdown**" was optionally [#]_ implemented.
 
 .. code-block::
   :caption: type
@@ -88,3 +94,5 @@ Interface
   }
 
 .. seealso:: For any non-standard named definitions check :doc:`References </references>`.
+
+.. [#] npm i marked

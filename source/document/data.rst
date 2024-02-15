@@ -311,6 +311,10 @@ Using ``template`` (external) is the same as ``value`` (inline) except the reusa
     "selector": "main",
     "type": "text",
     "dataSource": {
+      "source": "local",
+      "format": "json",
+      "pathname": "./path/to/data.json",
+
       "viewEngine": "ejs", // NPM package name
 
       "value": "<b><%= title %></b>: <%= description %>",
@@ -325,6 +329,38 @@ Using ``template`` (external) is the same as ``value`` (inline) except the reusa
   }
 
 .. note:: Templating engines with a ``compile(string [, options]): (data?: Record<string, any>) => string`` method are compatible.
+
+Markdown
+========
+
+- **npm** i *marked* [#]_
+
+Example usage
+-------------
+
+::
+
+  {
+    "selector": "main",
+    "type": "markdown", // Same as "text"
+    "dataSource": {
+      "source": "local",
+      "format": "json",
+      "pathname": "./path/to/data.json",
+
+      "value": "**${title}**: ${description}" // Markdown syntax
+    },
+    "metadata": {
+      "__marked__": { // https://marked.js.org/using_advanced#options
+        "gfm": true,
+        "breaks": false,
+        "pedantic": false,
+        "silent": false
+      }
+    }
+  }
+
+.. tip:: Any "**text**" value or template methods can be used to generate the Markdown which is processsed separately.
 
 Event callbacks
 ===============
@@ -379,5 +415,6 @@ Query expressions
 .. [#] npm i fast-xml-parser
 .. [#] npm i toml
 .. [#] npm i ejs
+.. [#] https://marked.js.org
 .. [#] npm i jsonpath
 .. [#] npm i jmespath

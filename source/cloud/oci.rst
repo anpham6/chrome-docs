@@ -167,11 +167,11 @@ Example usage
       "params": [1, "escaped"],
       "options": {/* ExecuteOptions */},
       /* OR */
-      "query": "SELECT d.* from demo NESTED json_document COLUMNS(id, title, description) d WHERE d.id = :id", // SODA.execute (required - "thick" mode)
+      "query": "SELECT d.* from demo NESTED json_document COLUMNS(id, title, description) d WHERE d.id = :id", // SODA.execute ("thick" mode)
       "params": [1],
       "options": {/* ExecuteOptions */},
 
-      "value": "<b>${title}</b>: ${description}", // See "/document/data.html"
+      "value": "<b>${title}</b>: ${description}",
 
       "update": {/* Record<string, any> */}, // SODA.replaceOne
       "id": "1" // Same as item being retrieved

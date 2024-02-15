@@ -14,6 +14,7 @@ Interface
   }
 
 .. code-block:: typescript
+  :emphasize-lines: 31,32,58
 
   interface CloudStorage {
       service: string;
@@ -45,7 +46,8 @@ Interface
       pathname?: string;
       filename?: string;
       minStreamSize?: number | string;
-      chunkSize?: number | string; // Except "aws-v3" and "minio"
+      chunkSize?: number | string;
+      chunkLimit?: number;
       flags?: number;
       active?: boolean;
       overwrite?: boolean;
@@ -78,7 +80,7 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  - *CloudStorageAction* property **chunkSize** for parallel operations.
+  - *CloudStorageAction* property **chunkSize** | **chunkLimit** for parallel multipart operations.
   - *CloudStorageDownload* property **options** for to customize the download method.
 
 .. seealso:: For any non-standard named definitions check :doc:`References </references>`.
@@ -131,12 +133,13 @@ Storage
         "overwrite": true, // Always use current filename
 
         "contentType": "image/png", // Metadata has higher precedence (default is "application/octet-stream")
-        "minStreamSize": 10485760, // Detect when to use readable stream (not limited to 2gb)
-        "minStreamSize": "10mb",
-        "minStreamSize": -1, // Request transfer using Buffer (small files)
+        
+        "minStreamSize": 0, // Always use readable stream
+        "minStreamSize": "512mb", // Detect when to use readable stream (not limited to 2gb)
+        "minStreamSize": -1, // Prefer transfer by Buffer (small files)
 
-        "chunkSize": "8mb", // Minimum part size of a parallel upload operation
-        "chunkSize": 33554432, // 8 * 1024 * 1024
+        "chunkSize": "8mb", // Part size of a parallel upload operation
+        "chunkLimit": 4, // Concurrent parts uploading
 
         "endpoint": "http://hostname/nodejs-001" // Required when different from credential
       },
@@ -144,8 +147,9 @@ Storage
         "filename": "alternate.png", // Required
         "versionId": "12345", // Retrieve a previous file snapshot
 
-        "chunkSize": "32mb", // Minimum part size of a parallel download operation
+        "chunkSize": "32mb", // Part size of a parallel download operation
         "chunkSize": 33554432, // 32 * 1024 * 1024
+        "chunkLimit": 4, // Concurrent parts downloading
 
         "active": false,
         "overwrite": false, // If local file exists then skip download

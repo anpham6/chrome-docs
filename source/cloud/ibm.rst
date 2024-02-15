@@ -210,7 +210,7 @@ Example usage
         "queries": [{ "key": "1" }] // AllDocsQuery[]
       },
 
-      "value": "<b>${title}</b>: ${description}", // See "/document/data.html"
+      "value": "<b>${title}</b>: ${description}",
 
       "update": { // ibm.postDocument{PostDocumentParams}
         "document": {/* Record<string, any> */}

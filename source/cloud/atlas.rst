@@ -88,7 +88,7 @@ Example usage
         "$where": "function() { return this.name == 'mongodb.com'; }" // async is supported
       },
 
-      "value": "<b>${title}</b>: ${description}", // See "/document/data.html"
+      "value": "<b>${title}</b>: ${description}",
 
       /* Update */
       "id": "1", // Same as item above

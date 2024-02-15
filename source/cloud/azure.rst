@@ -138,7 +138,8 @@ Example usage
         "tags": {/* Tags */},
 
         /* azure.uploadFile{maxSingleShotSize} */
-        "chunkSize": "32mb" // Aligned to 4mb
+        "chunkSize": "32mb", // Aligned to 1mb
+        "chunkLimit": 4 // Same as "concurrency"
       },
       "download": {
         /* azure.downloadToFile */
@@ -146,11 +147,10 @@ Example usage
         "versionId": "2011-03-09T01:42:34.9360000Z", // Alias for "snapshot" (optional)
 
         /* azure.downloadToBuffer{blockSize} */
-        "chunkSize": "256mb", // Aligned to 4mb
-
-        /* azure.download */
+        "chunkSize": "256mb", // Aligned to 1mb
+        "chunkLimit": 4, // Same as "concurrency"
         "options": { // BlobDownloadToBufferOptions
-          "maxRetryRequestsPerBlock": 5
+          "concurrency": 4
         },
 
         "deleteObject": {/* ContainerDeleteMethodOptions */} // azure.delete
@@ -166,7 +166,7 @@ Stream
 
 Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
 
-Setting the storage property :code:`upload.minStreamSize = -1` will also disable streaming for the current request.
+.. tip:: Setting :code:`upload.minStreamSize = -1` will also disable streaming for the current request.
 
 .. code-block:: javascript
   :caption: Buffer
@@ -174,12 +174,12 @@ Setting the storage property :code:`upload.minStreamSize = -1` will also disable
   const azure = require("@pi-r/azure");
   azure.CLOUD_UPLOAD_STREAM = false;
 
-.. warning:: Reading a buffer from disk has **2GB** file size limit.
+.. warning:: Reading a buffer from disk has **2gb** file size limit.
 
 Chunk
 ^^^^^
 
-Parallel transfers was enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and opens only one request per file.
+Parallel transfers were enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and will open one request per file.
 
 .. code-block:: javascript
   :caption: Sequential
@@ -188,7 +188,7 @@ Parallel transfers was enabled by default to accommodate large files. The old be
   azure.CLOUD_UPLOAD_CHUNK = false;
   azure.CLOUD_DOWNLOAD_CHUNK = false;
 
-.. note:: Chunking is only active when the upload file size is greater than **chunkSize**.
+.. note:: Chunking is only active when the upload file size is greater than **chunkSize** (*minimum 8mb*).
 
 Database
 ========
@@ -298,7 +298,7 @@ Example usage
       },
       "options": {/* FeedOptions */},
 
-      "value": "<b>${title}</b>: ${description}", // See "/document/data.html"
+      "value": "<b>${title}</b>: ${description}",
 
       "update": {/* PatchRequestBody */}, // JSON Patch
       "id": "1", // Same as item being retrieved
@@ -314,6 +314,8 @@ Example usage
   - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
   - **CLOUD_UPLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
   - **CLOUD_DOWNLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
+  - **chunkSize** | **chunkLimit** in *CloudStorageUpload* were implemented.
+  - **chunkSize** | **chunkLimit** in *CloudStorageDownload* were implemented.
 
 .. versionadded:: 0.6.2
 

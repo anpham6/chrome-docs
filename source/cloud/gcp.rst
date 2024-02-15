@@ -167,7 +167,8 @@ Example usage
         },
 
         /* gcp.uploadFileInChunks{chunkSizeBytes} */
-        "chunkSize": "8mb", // Aligned to 256kb
+        "chunkSize": "8mb", // Aligned to 1mb
+        "chunkLimit": 5, // Same as "concurrencyLimit"
         "options": {
           "contentType": "image/png" // headers["Content-Type"] = contentType
           "maxQueueSize": 5,
@@ -177,7 +178,8 @@ Example usage
       },
       "download": {
         /* gcp.downloadFileInChunks{chunkSizeBytes} */
-        "chunkSize": "32mb", // Aligned to 256kb
+        "chunkSize": "32mb", // Aligned to 1mb
+        "chunkLimit": 5, // Same as "concurrencyLimit"
         "options": {
           "concurrencyLimit": 5
         }
@@ -196,7 +198,7 @@ Stream
 
 Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
 
-Setting the storage property :code:`upload.minStreamSize = -1` will also disable streaming for the current request.
+.. tip:: Setting :code:`upload.minStreamSize = -1` will also disable streaming for the current request.
 
 .. code-block:: javascript
   :caption: Buffer
@@ -204,12 +206,12 @@ Setting the storage property :code:`upload.minStreamSize = -1` will also disable
   const gcp = require("@pi-r/gcp");
   gcp.CLOUD_UPLOAD_STREAM = false;
 
-.. warning:: Reading a buffer from disk has **2GB** file size limit.
+.. warning:: Reading a buffer from disk has **2gb** file size limit.
 
 Chunk
 ^^^^^
 
-Parallel transfers was enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and opens only one request per file.
+Parallel transfers were enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and will open one request per file.
 
 .. code-block:: javascript
   :caption: Sequential
@@ -218,7 +220,7 @@ Parallel transfers was enabled by default to accommodate large files. The old be
   gcp.CLOUD_UPLOAD_CHUNK = false;
   gcp.CLOUD_DOWNLOAD_CHUNK = false;
 
-.. note:: Chunking is only active when the upload file size is greater than **chunkSize**.
+.. note:: Chunking is only active when the upload file size is greater than **chunkSize** (*minimum 8mb*).
 
 Database
 ========
@@ -602,6 +604,8 @@ Realtime Database
   - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
   - **CLOUD_UPLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
   - **CLOUD_DOWNLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
+  - **chunkSize** | **chunkLimit** in *CloudStorageUpload* were implemented.
+  - **chunkSize** | **chunkLimit** in *CloudStorageDownload* were implemented.
   - Storage **configBucket.tags** using *Metadata* was implemented.
   - Storage **configBucket.cors** using *Cors* was implemented.
   - Storage **configBucket.lifecycle** using *LifecycleRule* was implemented.

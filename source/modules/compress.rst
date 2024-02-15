@@ -12,9 +12,10 @@ Interface
   import type { CompressLevel } from "./squared";
 
   import type { IModule, ModuleConstructor } from "./index";
-  import type { BufferResult, CompressFormat, TryFileCompressor, TryFileResult, TryImageResult } from "./compress";   
+  import type { BufferResult, CompressFormat, TryFileCompressor, TryFileResult, TryImageResult } from "./compress";
   import type { CompressModule, CompressSettings } from "./settings";
 
+  import type { WriteStream } from "fs";
   import type { Readable } from "stream";
   import type { BrotliCompress, Gzip } from "zlib";
 

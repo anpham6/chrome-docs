@@ -198,15 +198,18 @@ Example usage
 Admin
 -----
 
-Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
+Chunk
+^^^^^
+
+Multipart transfers were enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and will open one request per file.
 
 .. code-block:: javascript
-  :caption: Buffer
+  :caption: Sequential
 
   const aws = require("@pi-r/aws-v3");
-  aws.CLOUD_UPLOAD_STREAM = false;
+  aws.CLOUD_UPLOAD_CHUNK = false;
 
-.. warning:: Reading a buffer from disk has **2GB** file size limit.
+.. note:: Chunking is only active when the upload file size is greater than **chunkSize** (*minimum 5mb*).
 
 Database
 ========
@@ -289,7 +292,7 @@ Example usage
       "key": "c", // { "c": 1 }
       "id": 1,
 
-      "value": "<b>${title}</b>: ${description}", // See "/document/data.html"
+      "value": "<b>${title}</b>: ${description}",
 
       "update": { // db.UpdateCommand
         "TableName": "<table>",
@@ -305,6 +308,8 @@ Example usage
 .. versionadded:: 0.7.0
 
   - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
+  - **CLOUD_UPLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
+  - **chunkSize** | **chunkLimit** in *CloudStorageUpload* were implemented.
   - **configBucket.tags** using *PutBucketTaggingRequest* was implemented.
   - **configBucket.cors** using *CORSConfiguration* was implemented.
   - **configBucket.lifecycle** using *BucketLifecycleConfiguration* was implemented.

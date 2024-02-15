@@ -24,8 +24,6 @@ Interface
   import type { NoParamCallback } from "fs";
   import type { SpawnOptions } from "child_process";
 
-  import type * as EventEmitter from "events";
-
   interface IFileManager extends IHost, Set<string> {
       processTimeout: number;
       cacheToDisk: IHttpDiskCache<ExternalAsset>;

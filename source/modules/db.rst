@@ -78,7 +78,7 @@ Interface
       get persist(): boolean;
       get closed(): boolean;
       get closeable(): boolean;
-      set parent(value: Record<string, IDbPool<DbDataSource>>);
+      set parent(value: Record<string, IDbPool>);
   }
 
   interface DbPoolConstructor {

@@ -150,21 +150,6 @@ Example usage
 
 .. note:: Some variations of functionality are more thoroughly documented in the :doc:`AWS <aws>` examples.
 
-Admin
-=====
-
-Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
-
-Setting the property :code:`upload.minStreamSize = -1` will also disable streaming for the current request.
-
-.. code-block:: javascript
-  :caption: Buffer
-
-  const minio = require("@pi-r/minio");
-  minio.CLOUD_UPLOAD_STREAM = false;
-
-.. warning:: Reading a buffer from disk has **2gb** file size limit.
-
 @pi-r/minio
 ===========
 

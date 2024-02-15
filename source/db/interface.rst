@@ -2,8 +2,6 @@
 Interface
 =========
 
-- `Encoding <https://nodejs.org/api/buffer.html#buffers-and-character-encodings>`_
-
 .. highlight:: typescript
 
 ::

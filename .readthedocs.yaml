@@ -27,8 +27,9 @@ search:
     cloud/*: 8
     image/index.html: 7
     task/index.html: 7
+    document/plugins/*: 6
+    modules/*: 6
     build.html: 6
-    document/plugins/*: 5
     references.html: 5
     "*/interface.html": -1
     legacy.html: -2
@@ -39,3 +40,4 @@ search:
   - db/index.html
   - document/index.html
   - document/plugins/index.html
+  - modules/index.html

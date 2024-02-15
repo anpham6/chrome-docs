@@ -15,9 +15,9 @@ Interface
   import type { ClientDbConstructor, IClientDb } from "./core";
   import type { BatchQueryResult, QueryResult } from "./db";
   import type { LogMessageOptions } from "./logger";
-  import type { CloudServiceAuthSettings, CloudModule, CloudServiceOptions, CloudSettings, DbCoerceSettings } from "./settings";
+  import type { CloudAuthSettings, CloudModule, CloudServiceOptions, CloudSettings, DbCoerceSettings } from "./settings";
 
-  interface ICloud extends IClientDb<IHost, CloudModule, CloudDatabase, CloudServiceOptions, DbCoerceSettings & CloudServiceAuthSettings> {
+  interface ICloud extends IClientDb<IHost, CloudModule, CloudDatabase, CloudServiceOptions, DbCoerceSettings & CloudAuthSettings> {
       module: CloudModule;
       readonly uploaded: string[];
       readonly downloaded: string[];
@@ -39,7 +39,7 @@ Interface
       getCredential(item: CloudService, unused?: boolean): Record<string | number | symbol, unknown>;
       getSettings(service: string): Record<string, unknown> | undefined;
       settingsOf(service: string, name: "coerce", component: keyof DbCoerceSettings): unknown;
-      settingsOf(service: string, name: "auth", component: keyof CloudServiceAuthSettings): unknown;
+      settingsOf(service: string, name: "auth", component: keyof CloudAuthSettings): unknown;
       getUploadHandler(service: string, credential: unknown): (...args: unknown[]) => void;
       getDownloadHandler(service: string, credential: unknown): (...args: unknown[]) => void;
       resolveService(service: string, folder?: string): string;
@@ -56,8 +56,8 @@ Interface
       LOG_CLOUD_DELETE: LogMessageOptions;
       LOG_CLOUD_DELAYED: LogMessageOptions;
       finalize(this: IHost, instance: ICloud): Promise<unknown>;
-      uploadAsset(state: IScopeOrigin<IFileManager, ICloud<IFileManager>>, file: ExternalAsset, ignoreProcess: boolean): Promise<unknown>[];
-      uploadAsset(state: IScopeOrigin<IFileManager, ICloud<IFileManager>>, file: ExternalAsset, contentType?: string, ignoreProcess?: boolean): Promise<unknown>[];
+      uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, ignoreProcess: boolean): Promise<unknown>[];
+      uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, contentType?: string, ignoreProcess?: boolean): Promise<unknown>[];
       sanitizeAssets(assets: ExternalAsset[]): ExternalAsset[];
       readonly prototype: ICloud;
       new(module?: CloudModule, database?: CloudDatabase[], ...args: unknown[]): ICloud;

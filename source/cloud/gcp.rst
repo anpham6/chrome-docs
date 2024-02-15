@@ -188,40 +188,6 @@ Example usage
     }]
   }
 
-Admin
------
-
-These optional features are not relevant to Firebase.
-
-Stream
-^^^^^^
-
-Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
-
-.. tip:: Setting :code:`upload.minStreamSize = -1` will also disable streaming for the current request.
-
-.. code-block:: javascript
-  :caption: Buffer
-
-  const gcp = require("@pi-r/gcp");
-  gcp.CLOUD_UPLOAD_STREAM = false;
-
-.. warning:: Reading a buffer from disk has **2gb** file size limit.
-
-Chunk
-^^^^^
-
-Parallel transfers were enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and will open one request per file.
-
-.. code-block:: javascript
-  :caption: Sequential
-
-  const gcp = require("@pi-r/gcp");
-  gcp.CLOUD_UPLOAD_CHUNK = false;
-  gcp.CLOUD_DOWNLOAD_CHUNK = false;
-
-.. note:: Chunking is only active when the upload file size is greater than **chunkSize** (*minimum 8mb*).
-
 Database
 ========
 

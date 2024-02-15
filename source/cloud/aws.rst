@@ -183,39 +183,6 @@ Example usage
     }]
   }
 
-Admin
------
-
-Any changes made to ``@pi-r/aws`` are inherited by :doc:`@pi-r/ibm <ibm>` and :doc:`@pi-r/oci <oci>`.
-
-Stream
-^^^^^^
-
-Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
-
-.. tip:: Setting :code:`upload.minStreamSize = -1` will also disable streaming for the current request.
-
-.. code-block:: javascript
-  :caption: Buffer
-
-  const aws = require("@pi-r/aws");
-  aws.CLOUD_UPLOAD_STREAM = false;
-
-.. warning:: Reading a buffer from disk has **2gb** file size limit.
-
-Chunk
-^^^^^
-
-Multipart transfers were enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and will open one request per file.
-
-.. code-block:: javascript
-  :caption: Sequential
-
-  const aws = require("@pi-r/aws");
-  aws.CLOUD_UPLOAD_CHUNK = false;
-
-.. note:: Chunking is only active when the upload file size is greater than **chunkSize** (*minimum 5mb*).
-
 Database
 ========
 

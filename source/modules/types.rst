@@ -48,7 +48,7 @@ Interface
   function renameExt(value: string, ext: string, when?: string): string;
   function formatSize(value: string): number;
   function formatSize(value: number, options?: BytesOptions): string;
-  function convertSize(value: unknown, alignKb?: number, factor?: number): number;
+  function alignSize(value: unknown, kb?: number, factor?: number): number;
   function cascadeObject(data: object, query: string, fallback?: unknown): unknown;
   function cloneObject(data: unknown, deep: boolean): unknown;
   function cloneObject(data: unknown, deepIgnore: WeakSet<object>): unknown;
@@ -189,7 +189,7 @@ Interface
 
 .. versionadded:: 0.8.4
 
-  Method **convertSize** was created.
+  Method **alignSize** was created.
 
 References
 ==========

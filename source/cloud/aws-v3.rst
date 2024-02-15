@@ -195,22 +195,6 @@ Example usage
     }]
   }
 
-Admin
------
-
-Chunk
-^^^^^
-
-Multipart transfers were enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and will open one request per file.
-
-.. code-block:: javascript
-  :caption: Sequential
-
-  const aws = require("@pi-r/aws-v3");
-  aws.CLOUD_UPLOAD_CHUNK = false;
-
-.. note:: Chunking is only active when the upload file size is greater than **chunkSize** (*minimum 5mb*).
-
 Database
 ========
 

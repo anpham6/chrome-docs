@@ -1,12 +1,29 @@
-.table-right th.head {
+table.table-right th.head {
     min-width: 75px;
     text-align: right;
 }
 
-.table-right th.head:nth-child(1) {
+table.table-right th.head:nth-child(1) {
     text-align: center;
 }
 
-.table-right td {
+table.table-center th.head {
+    padding: 8px;
+}
+
+table.table-center th.head:nth-child(1) {
+    text-align: center;
+    padding: 8px 16px;
+}
+
+table.table-right td {
     text-align: right;
+}
+
+table.table-center td {
+    text-align: center;
+}
+
+table.table-center td:nth-child(n+2) {
+    font-weight: 700;
 }

@@ -185,3 +185,54 @@ Database
       // Excluding "parallel" | "withCommand" | "usePool"
     }
   }
+
+Admin
+=====
+
+Storage
+-------
+
+.. rst-class:: table-center
+
+=========== =================== ================== ====================
+Service     CLOUD_UPLOAD_STREAM CLOUD_UPLOAD_CHUNK CLOUD_DOWNLOAD_CHUNK 
+=========== =================== ================== ====================
+aws                  X                  X
+aws-v3               X                  X
+azure                X                  X                    X
+gcp                  X                  X                    X
+ibm                  X                  X
+minio                X
+oci                  X                  X
+=========== =================== ================== ====================
+
+.. caution:: :code:`process.env.EMC_CLOUD_UPLOAD_BUFFER = "true"` will globally upload using the legacy behavior.
+
+Stream
+^^^^^^
+
+Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.
+
+.. tip:: Setting :code:`upload.minStreamSize = -1` will disable streaming for the current request.
+
+.. code-block:: javascript
+  :caption: Buffer
+
+  const aws = require("@pi-r/aws");
+  aws.CLOUD_UPLOAD_STREAM = false;
+
+.. warning:: Reading a buffer from disk has **2gb** file size limit.
+
+Chunk
+^^^^^
+
+Parallel transfers were enabled by default to accommodate large files. The old behavior is used when **chunkSize** is empty and will open one request per file.
+
+.. code-block:: javascript
+  :caption: Sequential
+
+  const azure = require("@pi-r/azure");
+  azure.CLOUD_UPLOAD_CHUNK = false;
+  azure.CLOUD_DOWNLOAD_CHUNK = false;
+
+.. note:: Chunking is only active when the upload file size is greater than **chunkSize**.

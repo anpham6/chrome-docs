@@ -195,7 +195,7 @@ Storage
 .. rst-class:: table-center
 
 =========== =================== ================== ====================
-Service     CLOUD_UPLOAD_STREAM CLOUD_UPLOAD_CHUNK CLOUD_DOWNLOAD_CHUNK 
+Service     CLOUD_UPLOAD_STREAM CLOUD_UPLOAD_CHUNK CLOUD_DOWNLOAD_CHUNK
 =========== =================== ================== ====================
 aws                  X                  X
 aws-v3               X                  X
@@ -206,7 +206,7 @@ minio                X
 oci                  X                  X
 =========== =================== ================== ====================
 
-.. caution:: :code:`process.env.EMC_CLOUD_UPLOAD_BUFFER = "true"` will globally upload using the legacy behavior.
+.. caution:: Setting :code:`process.env.EMC_CLOUD_UPLOAD_BUFFER = "true"` will enable the legacy behavior for :doc:`Document </document/index>` based uploads.
 
 Stream
 ^^^^^^

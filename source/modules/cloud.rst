@@ -56,6 +56,7 @@ Interface
       LOG_CLOUD_DELETE: LogMessageOptions;
       LOG_CLOUD_DELAYED: LogMessageOptions;
       finalize(this: IHost, instance: ICloud): Promise<unknown>;
+      uploadAsset(state: IScopeOrigin<IFileManager, ICloud<IFileManager>>, file: ExternalAsset, options: UploadAssetOptions): Promise<unknown>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, ignoreProcess: boolean): Promise<unknown>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, contentType?: string, ignoreProcess?: boolean): Promise<unknown>[];
       sanitizeAssets(assets: ExternalAsset[]): ExternalAsset[];

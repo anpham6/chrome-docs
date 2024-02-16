@@ -2,10 +2,14 @@
 Interface
 =========
 
+squared
+=======
+
 .. highlight:: typescript
 
 .. code-block::
-  :emphasize-lines: 50
+  :caption: chrome
+  :emphasize-lines: 49,51
 
   interface AssetCommand extends OutputModifiers {
       selector: string;
@@ -24,7 +28,8 @@ Interface
       };
 
       commands?: string[]; // image
-      tasks?: string[]; // All
+      tasks?: string[];
+      cloudStorage?: CloudService[];
 
       attributes?: Record<string, string | null | undefined>;
       rewrite?: false; // Overrides preserveCrossOrigin
@@ -49,31 +54,23 @@ Interface
 
       watch?: boolean | { interval?: number; expires?: string }; // js | css | image
 
-      dataSource?: CloudDatabase; // source: "cloud"
-      cloudStorage?: CloudService[];
+      document?: string | string[]; // Usually "chrome" by framework (override)
 
-      type?: "html" | "js" | "css" | "data"; // Script templates
-      type?: "append/js" | "append/css" | "append/[tagName]"; // Includes "prepend"
+      type: "html" | "js" | "css" | "data"; // Script templates
+      type: "append/js" | "append/css" | "append/[tagName]"; // Includes "prepend"
 
-      type?: "text" | "attribute" | "display"; // dynamic is valid only with "text"
-      type?: "markdown"; // Same as "text" with MD to HTML output
-      dataSource?: {
-          source: "cloud" | "uri" | "local" | "export";
+      type: "text" | "markdown" | "attribute" | "display"; // dynamic is valid only with "text" and "markdown"
+      dataSource: {
+          source: "cloud" | "uri" | "local" | "json" | "export";
           source: "mariadb" | "mongodb" | "mssql" | "mysql" | "oracle" | "postgres" | "redis"; // DB providers
           postQuery?: string;
           preRender?: string;
           whenEmpty?: string;
       };
 
-      type?: "replace";
-      textContent?: string; // Replace element.innerHTML
-
-      document?: string | string[]; // Usually "chrome" by framework (override)
+      type: "replace";
+      textContent: string; // Replace element.innerHTML
   }
-
-.. versionadded:: 0.9.0
-
-   *DataSource* type "**text**" to "**markdown**" was optionally [#]_ implemented.
 
 .. code-block::
   :caption: type
@@ -90,6 +87,58 @@ Interface
       ignore?: boolean;
       exclude?: boolean; // js | css (ignore + remove)
   }
+
+@pi-r/chrome
+============
+
+.. code-block::
+  :caption: dataSource
+  :emphasize-lines: 5,27,28,29,30
+
+  import type { DataSource as IDataSource } from "../db/interface";
+
+  interface DataSource extends IDataSource {
+      source: "cloud" | "uri" | "local" | "json" | "export" | string;
+      type?: "text" | "markdown" | "attribute" | "display";
+      query?: string;
+      value?: string | string[] | Record<string, unknown>;
+      template?: string;
+      viewEngine?: ViewEngine | string;
+      dynamic?: boolean;
+      ignoreEmpty?: boolean;
+  }
+
+  interface UriDataSource extends DataSource, CascadeAction {
+      source: "uri";
+      format?: string;
+      options?: PlainObject;
+  }
+
+  interface LocalDataSource extends DataSource, CascadeAction {
+      source: "local";
+      format?: string;
+      pathname?: string;
+      options?: PlainObject;
+  }
+
+  interface JSONDataSource extends DataSource, CascadeAction {
+      source: "json";
+      items?: Record<string, unknown>[];
+  }
+
+  interface ExportDataSource extends DataSource, CascadeAction {
+      source: "export";
+      execute?: (...args: unknown[]) => unknown;
+      pathname?: string;
+      settings?: string;
+      params?: unknown;
+      persist?: boolean;
+  }
+
+.. versionadded:: 0.7.0
+
+  - *AssetCommand* property *type* option "**markdown**" was optionally [#]_ implemented.
+  - *DataSource* property *source* option "**json**" as *JSONDataSource* was implemented.
 
 .. seealso:: For any non-standard named definitions check :doc:`References </references>`.
 

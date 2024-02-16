@@ -14,7 +14,7 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 43,44
+  :emphasize-lines: 24,29,30
 
   import type { DataSource as IDataSource } from "../db/interface";
 
@@ -22,21 +22,30 @@ Interface
       source: "uri" | "local" | "export" | "json";
       type: "text" | "attribute" | "display"; // Element action
 
-      viewEngine?: ViewEngine;
-      viewEngine?: string; // settings.view_engine[name]? + settings.users.username.view_engine[name]? (overlay)
+      viewEngine?: {
+          name: string; // NPM package name
+          singleRow?: boolean;
+      };
+      viewEngine?: string; // settings.view_engine[name]? + settings.users[username].view_engine[name]? (overlay)
       /* OR */
-      value?: string | string[] | PlainObject; // Replace placeholders per row of results
-      template?: string; // Will replace "value" from local file (string)
+      value?: string | string[] | Record<string, unknown>; // Replace placeholders per row of results
+      /* OR */
+      template?: string; // Will replace "value" from local file
       /* OR */
       dynamic?: boolean; // Uses element.innerXml rather than element.textContent
 
-      ignoreEmpty?: boolean; // Will not modify anything when there are no results
-
-      /* Override */
-      query?: string; // if startsWith("$") Uses JSONPath else Uses JMESPath
+      query?: string; // startsWith("$") JSONPath otherwise JMESPath
 
       ignoreCache?: boolean; // Bypass cache without saving
       ignoreCache?: 1; // purge cache with saving
+      ignoreEmpty?: boolean; // Will not modify anything when there are no results
+      ignoreCoerce?: boolean; // Will not convert inline constructors to native objects
+  }
+
+  interface TextDataSource extends DataSource {
+      type: "text";
+      leadingText?: string;
+      trailingText?: string;
   }
 
   interface DataObject {
@@ -52,14 +61,8 @@ Interface
         When key has dot operator  { a: { "b.c": 1 } } then a[b\\.c] == 1
         Invalid usage a[0][1][2] instead use a.0.1.0 or a[0].1[2] (max is 1 consequetive bracket)
       */
-      cascade?: string; // root.row1 + root.row1.row2[index] + root.row1[index].row2 = object (called before "query")
+      cascade?: string; // Called before "query"
       fallback?: object; // Used when there are missing fields
-  }
-
-  interface TextDataSource extends DataSource {
-      type: "text";
-      leadingText?: string;
-      trailingText?: string;
   }
 
 .. note:: The output display properties also apply to :doc:`Cloud </cloud/interface>` and :doc:`Db </db/interface>` interfaces.
@@ -246,9 +249,7 @@ Example file ".cjs"
 -------------------
 
 .. code-block:: javascript
-  :caption: NPM package
-
-  // postgres.cjs
+  :caption: /path/to/postgres.cjs
 
   const pg = require("pg");
 
@@ -273,9 +274,7 @@ Example file ".js"
 ------------------
 
 .. code-block:: javascript
-  :caption: Inline function
-
-  // mysql.js 
+  :caption: /path/to/mysql.js
 
   function (params, resolve, require) { // async function (params, require)
     const mysql = require("mysql");
@@ -313,10 +312,9 @@ Example usage
     "dataSource": {
       "source": "export",
 
-      "pathname": "npm:custom-postgres",
-      "pathname": "./path/to/postgres.cjs", // settings.directory.export + users/username/?
+      "pathname": "npm:postgres-custom", // npm i postgres-custom
       /* OR */
-      "pathname": "/absolute/to/postgres.cjs", // Use "./" for relative paths (permission)
+      "pathname": "./path/to/postgres.cjs", // settings.directory.export + users/username/?
       /* OR */
       "settings": "data-example", // settings.export
 
@@ -346,7 +344,7 @@ View Engine
       };
   }
 
-.. note:: Templating engines with a ``compile(string [, options]): (data?: Record<string, any>) => string`` method are compatible.
+.. note:: Templating engines with a ``compile(string[, options]): (data?: Record<string, any>) => string`` method are compatible.
 
 Example usage
 -------------
@@ -450,6 +448,7 @@ Query expressions
 .. versionadded:: 0.7.0
 
   - *DataSource* property ``source`` option "**json**" as *JSONDataSource* was implemented.
+  - *DataSource* property **ignoreCoerce** was created.
   - *TextDataSource* property **leadingText** | **trailingText** were created.
 
 .. [#] npm i json5

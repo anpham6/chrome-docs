@@ -93,7 +93,7 @@ Example "saveAs"
 The entire page can be transformed as a group with the same functionality as JSON/YAML configuration except where highlighted.
 
 .. code-block::
-  :emphasize-lines: 2,8,9,33
+  :emphasize-lines: 2,8,9,32
 
   squared.copyTo("/path/to/target", {    
     saveAs: {
@@ -111,13 +111,12 @@ The entire page can be transformed as a group with the same functionality as JSO
         inline: true,
         preserve: true,
         attributes: { rel: "stylesheet", media: "all" },
-
         inlineAction: true, // merge + override
         inlineAction: "merge", // { "media": "screen" } -> { "rel": "stylesheet", "media": "screen" }
         inlineAction: "override" // { "rel": "alternate" } -> { "rel": "alternate" }
       },
       image: {
-        attributes: { loading: "lazy", width: "detect", height: "detect" }, // npm i probe-image-size
+        attributes: { loading: "lazy", width: "detect", height: "detect" },
         commands: ["webp(480x300)"], // Only valid for binary images
         process: ["minify-svg"] // Only valid for text based images (e.g. SVG)
       },
@@ -221,7 +220,7 @@ The base folder level configuration file is a hash map of URL globs which can ma
 
 .. tip:: The filename ``sqd.config`` is configurable using **settings.outputConfigName**.
 
-The order of precedence when using **inherit** is resolved through the asset command property :doc:`mergeType <document/merge>`.
+The order of precedence when using **inherit** is resolved through the asset command property :ref:`mergeType <document-miscellaneous-merge-conflicts>`.
 
 .. [#] https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap
 .. [#] npm i json5

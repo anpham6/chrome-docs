@@ -1,4 +1,9 @@
-===============
+=============
+Miscellaneous
+=============
+
+.. _document-miscellaneous-merge-conflicts:
+
 Merge conflicts
 ===============
 
@@ -43,5 +48,28 @@ Only one command per element is supported (except data sources) when using ``sqd
       "commands": ["jpeg@"] // Same
     }
   ]
+
+.. _document-miscellaneous-image-dimensions:
+
+Image dimensions
+================
+
+- **npm** i *probe-image-size*
+
+::
+
+  {
+    "selector": "img",
+    "filename": "probe.png",
+    /* OR */
+    "mimeType": "image/png", // "image/unknown"
+    "attributes": {
+      "width": "detect",
+      "height": "detect", 
+      "loading": "lazy" // Optional
+    }
+  }
+
+.. note:: :doc:`Jimp </image/index>` is also used to detect image dimensions but with limited file type support.
 
 .. [#] When using server hosted directory based sqd.config.

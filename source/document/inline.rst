@@ -116,7 +116,7 @@ data-chrome-metadata
 .. code-block::
   :caption: Any plain object
 
-  <script src="/dist/squared.js" data-chrome-metadata='{ "custom-rollup": { "import-maps": {} }, "custom-terser": { "config": {} } }'></script>
+  <script src="/dist/squared.js" data-chrome-metadata='{ "rollup-custom": { "import-maps": {} }, "terser-custom": { "config": {} } }'></script>
 
 Inline commands are usually sufficient for simple web pages. More advanced configurations are possible using a JSON/YAML external configuration file. [#]_
 

@@ -403,6 +403,18 @@ Only one function can be defined per ``<script type="text/template">`` element.
     }
   </script>
 
+.. code-block::
+  :caption: Alternate
+
+  {
+    "selector": "",
+    "type": "data",
+    "template": {
+      "identifier": "postQuery-example",
+      "value": "async function (result, dataSource) {/* Same */}" // Arrow functions not supported
+    }
+  }
+
 .. warning:: Using ``<script>`` templates requires the setting :code:`eval.template = true`.
 
 Query expressions

@@ -9,9 +9,9 @@ squared
 
 .. code-block::
   :caption: chrome
-  :emphasize-lines: 49,51
+  :emphasize-lines: 60,62
 
-  interface AssetCommand extends OutputModifiers {
+  interface AssetCommand {
       selector: string;
 
       saveAs?: string; // js | css | image
@@ -21,15 +21,20 @@ squared
       filename?: string; // pathname + filename = "saveAs"
 
       process?: string[]; // html | js | css
-      template?: {
-          module: string; // Inline transformer
-          identifier?: string;
-          value?: string;
-      };
-
       commands?: string[]; // image
       tasks?: string[];
       cloudStorage?: CloudService[];
+
+      inline?: boolean; // js | css | image (base64) | font (base64)
+      blob?: boolean; // format: base64
+      preserve?: boolean; // html | css | append/js (cross-origin) | append/css (cross-origin)
+      extract?: boolean; // css (@import)
+      module?: boolean; // js (esm) | css
+      dynamic?: boolean; // image (srcset) | element (non-void)
+      static?: boolean; // Removes URL search params
+      remove?: boolean; // Removes element from HTML page
+      ignore?: boolean;
+      exclude?: boolean; // js | css (ignore + remove)
 
       attributes?: Record<string, string | null | undefined>;
       rewrite?: false; // Overrides preserveCrossOrigin
@@ -57,6 +62,12 @@ squared
       document?: string | string[]; // Usually "chrome" by framework (override)
 
       type: "html" | "js" | "css" | "data"; // Script templates
+      template: {
+          module: string; // Inline transformer
+          identifier?: string;
+          value?: string;
+      };
+
       type: "append/js" | "append/css" | "append/[tagName]"; // Includes "prepend"
 
       type: "text" | "markdown" | "attribute" | "display"; // dynamic is valid only with "text" and "markdown"
@@ -70,22 +81,6 @@ squared
 
       type: "replace";
       textContent: string; // Replace element.innerHTML
-  }
-
-.. code-block::
-  :caption: type
-
-  interface OutputModifiers {
-      inline?: boolean; // js | css | image (base64) | font (base64)
-      blob?: boolean; // format: base64
-      preserve?: boolean; // html | css | append/js (cross-origin) | append/css (cross-origin)
-      extract?: boolean; // css (@import)
-      module?: boolean; // js (esm) | css
-      dynamic?: boolean; // image (srcset) | element (non-void)
-      static?: boolean; // Removes URL search params
-      remove?: boolean; // Removes element from HTML page
-      ignore?: boolean;
-      exclude?: boolean; // js | css (ignore + remove)
   }
 
 @pi-r/chrome

@@ -2,7 +2,7 @@
 Settings
 ========
 
-All packages can be customized per authenticated username using the ``settings.users`` block and defaults to the base settings when not defined.
+All packages can be customized per authenticated username using the ``settings.users`` block. The base settings are then searched until something is found.
 
 ::
 
@@ -225,8 +225,8 @@ The same concept can be used inline anywhere using a ``script`` tag with the **t
   :emphasize-lines: 1
 
   <script type="text/template" data-chrome-template="js::@babel/core::es5-example">
-    async function (context, value, options, require) {
-      const options = { ...options.outputConfig, presets: ["@babel/preset-env"], sourceMaps: true };
+    async function (context, value, options) {
+      const options = { ...options.toBaseConfig(), presets: ["@babel/preset-env"], sourceMaps: true };
       const result = await context.transform(value, options);
       if (result) {
         if (result.map) {
@@ -237,7 +237,20 @@ The same concept can be used inline anywhere using a ``script`` tag with the **t
     }
   </script>
 
-.. attention:: **data-chrome-template** usage requires the setting :code:`eval.template = true`.
+.. code-block::
+  :caption: Alternate
+
+  {
+    "selector": "",
+    "type": "js",
+    "template": {
+      "module": "@babel/core",
+      "identifier": "es5-example",
+      "value": "async function (context, value, options) {/* Same */}" // Arrow functions not supported
+    }
+  }
+
+.. attention:: Using **data-chrome-template** requires the setting :code:`eval.template = true`.
 
 .. [#] this = NodeJS.process
 .. [#] https://babeljs.io/docs/options

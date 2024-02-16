@@ -14,6 +14,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :emphasize-lines: 43,44
 
   import type { DataSource as IDataSource } from "../db/interface";
 
@@ -55,7 +56,50 @@ Interface
       fallback?: object; // Used when there are missing fields
   }
 
-.. note:: The output display properties also apply to :doc:`Cloud <../cloud/interface>` and :doc:`Db <../db/interface>` interfaces.
+  interface TextDataSource extends DataSource {
+      type: "text";
+      leadingText?: string;
+      trailingText?: string;
+  }
+
+.. note:: The output display properties also apply to :doc:`Cloud </cloud/interface>` and :doc:`Db </db/interface>` interfaces.
+
+JSON
+====
+
+.. code-block:: typescript
+
+  interface JSONDataSource extends DataSource, CascadeAction {
+      source: "json";
+      items?: unknown;
+  }
+
+Example usage
+-------------
+
+::
+
+  {
+    "selector": "main",
+    "type": "text",
+    "dataSource": {
+      "source": "json",
+
+      "items": [
+        { "title": "1", "description": "first item" },
+        { "title": "2", "description": "second item" }
+      ],
+      "leadingText": "<ul>",
+      "value": "<li><b>${title}</b>: ${description}</li>", // <ul><li><b>1</b>: first item</li><li><b>2</b>: second item</li></ul>
+      "trailingText": "</ul>",
+
+      "items": { "title": "1", "description": "first item" },
+      "value": "<b>${title}</b>: ${description}", // <b>1</b>: first item
+      /* OR */
+      "items": {},
+      "value": "<b>1</b>: first item"
+    }
+  }
 
 Remote file "uri"
 =================
@@ -339,41 +383,6 @@ Using ``template`` (external) is the same as ``value`` (inline) except the reusa
 
 .. hint:: `EJS <https://ejs.co/#docs>`_ [#]_ is used as the reference templating engine.
 
-JSON
-====
-
-.. code-block:: typescript
-
-  interface JSONDataSource extends DataSource, CascadeAction {
-      source: "json";
-      items?: unknown;
-  }
-
-Example usage
--------------
-
-::
-
-  {
-    "selector": "main",
-    "type": "text",
-    "dataSource": {
-      "source": "json",
-
-      "items": [
-        { "title": "1", "description": "first item" },
-        { "title": "2", "description": "second item" }
-      ],
-      "value": "<b>${title}</b>: ${description}<br />", // <b>1</b>: first item<br /><b>2</b>: second item<br />
-
-      "items": { "title": "1", "description": "first item" },
-      "value": "<b>${title}</b>: ${description}", // <b>1</b>: first item
-      /* OR */
-      "items": {},
-      "value": "<b>1</b>: first item"
-    }
-  }
-
 Event callbacks
 ===============
 
@@ -434,6 +443,14 @@ Query expressions
 
 - `JSONPath <https://github.com/dchester/jsonpath>`_ [#]_
 - `JMESPath <https://jmespath.org>`_ [#]_
+
+@pi-r/chrome
+============
+
+.. versionadded:: 0.7.0
+
+  - *DataSource* property ``source`` option "**json**" as *JSONDataSource* was implemented.
+  - *TextDataSource* property **leadingText** | **trailingText** were created.
 
 .. [#] npm i json5
 .. [#] npm i fast-xml-parser

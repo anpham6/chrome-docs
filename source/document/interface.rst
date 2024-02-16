@@ -3,7 +3,6 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 60
 
   interface AssetCommand {
       selector: string;
@@ -77,10 +76,3 @@ Interface
   }
 
 .. seealso:: For any non-standard named definitions check :doc:`References </references>`.
-
-@pi-r/chrome
-============
-
-.. versionadded:: 0.7.0
-
-  *DataSource* property ``source`` option "**json**" as *JSONDataSource* was implemented.

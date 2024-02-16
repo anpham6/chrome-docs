@@ -18,6 +18,7 @@ Interface
   import type { DataSource as IDataSource } from "../db/interface";
 
   interface DataSource extends IDataSource {
+      source: "uri" | "local" | "export" | "json";
       type: "text" | "attribute" | "display"; // Element action
 
       viewEngine?: ViewEngine;
@@ -25,8 +26,9 @@ Interface
       /* OR */
       value?: string | string[] | PlainObject; // Replace placeholders per row of results
       template?: string; // Will replace "value" from local file (string)
-
+      /* OR */
       dynamic?: boolean; // Uses element.innerXml rather than element.textContent
+
       ignoreEmpty?: boolean; // Will not modify anything when there are no results
 
       /* Override */
@@ -36,14 +38,9 @@ Interface
       ignoreCache?: 1; // purge cache with saving
   }
 
-  interface ViewEngine {
-      name: string; // NPM package name
-      singleRow?: boolean; // Template data is sent in one pass using an Array[]
-      outputEmpty?: boolean; // Pass empty results to template engine
-      options?: {
-          compile?: PlainObject; // template = engine.compile(value, options)
-          output?: PlainObject; // template({ ...options, ...result[index] })
-      };
+  interface DataObject {
+      format: "json" | "yaml" | "json5" | "xml" | "toml";
+      options?: PlainObject; // Parser options (yaml + xml)
   }
 
   interface CascadeAction {
@@ -56,11 +53,6 @@ Interface
       */
       cascade?: string; // root.row1 + root.row1.row2[index] + root.row1[index].row2 = object (called before "query")
       fallback?: object; // Used when there are missing fields
-  }
-
-  interface DataObject {
-      format: "json" | "yaml" | "json5" | "xml" | "toml";
-      options?: PlainObject; // Parser options (yaml + xml)
   }
 
 .. note:: The output display properties also apply to :doc:`Cloud <../cloud/interface>` and :doc:`Db <../db/interface>` interfaces.
@@ -178,7 +170,7 @@ Custom functions or packages can be used to return any kind of dataset from any 
       /* OR */
       settings?: string;
       /* OR */
-      execute?: FunctionType;
+      execute?: (...args: unknown[]) => unknown;
 
       persist?: boolean; // Default is "true"
   }
@@ -298,7 +290,19 @@ Example usage
 View Engine
 ===========
 
-`EJS <https://ejs.co/#docs>`_ [#]_ is used as the reference templating engine.
+.. code-block:: typescript
+
+  interface ViewEngine {
+      name: string; // NPM package name
+      singleRow?: boolean; // Template data is sent in one pass using an Array[]
+      outputEmpty?: boolean; // Pass empty results to template engine
+      options?: {
+          compile?: PlainObject; // template = engine.compile(value, options)
+          output?: PlainObject; // template({ ...options, ...result[index] })
+      };
+  }
+
+.. note:: Templating engines with a ``compile(string [, options]): (data?: Record<string, any>) => string`` method are compatible.
 
 Example usage
 -------------
@@ -315,7 +319,12 @@ Using ``template`` (external) is the same as ``value`` (inline) except the reusa
       "format": "json",
       "pathname": "./path/to/data.json",
 
-      "viewEngine": "ejs", // NPM package name
+      "viewEngine": "main-ejs", // settings.view_engine[viewEngine]
+      /* OR */
+      "viewEngine": {
+        "name": "ejs", // NPM package name
+        "singleRow": true
+      },
 
       "value": "<b><%= title %></b>: <%= description %>",
       /* OR */
@@ -328,7 +337,42 @@ Using ``template`` (external) is the same as ``value`` (inline) except the reusa
     }
   }
 
-.. note:: Templating engines with a ``compile(string [, options]): (data?: Record<string, any>) => string`` method are compatible.
+.. hint:: `EJS <https://ejs.co/#docs>`_ [#]_ is used as the reference templating engine.
+
+JSON
+====
+
+.. code-block:: typescript
+
+  interface JSONDataSource extends DataSource, CascadeAction {
+      source: "json";
+      items?: unknown;
+  }
+
+Example usage
+-------------
+
+::
+
+  {
+    "selector": "main",
+    "type": "text",
+    "dataSource": {
+      "source": "json",
+
+      "items": [
+        { "title": "1", "description": "first item" },
+        { "title": "2", "description": "second item" }
+      ],
+      "value": "<b>${title}</b>: ${description}<br />", // <b>1</b>: first item<br /><b>2</b>: second item<br />
+
+      "items": { "title": "1", "description": "first item" },
+      "value": "<b>${title}</b>: ${description}", // <b>1</b>: first item
+      /* OR */
+      "items": {},
+      "value": "<b>1</b>: first item"
+    }
+  }
 
 Event callbacks
 ===============
@@ -395,6 +439,5 @@ Query expressions
 .. [#] npm i fast-xml-parser
 .. [#] npm i toml
 .. [#] npm i ejs
-.. [#] https://marked.js.org
 .. [#] npm i jsonpath
 .. [#] npm i jmespath

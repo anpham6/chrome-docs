@@ -2,14 +2,8 @@
 Interface
 =========
 
-squared
-=======
-
-.. highlight:: typescript
-
-.. code-block::
-  :caption: chrome
-  :emphasize-lines: 60,62
+.. code-block:: typescript
+  :emphasize-lines: 60
 
   interface AssetCommand {
       selector: string;
@@ -39,9 +33,7 @@ squared
       attributes?: Record<string, string | null | undefined>;
       rewrite?: false; // Overrides preserveCrossOrigin
       rewrite?: URLData; // Replace certain URL components (e.g. hostname)
-
       download?: boolean; // Forces processing for unknown types (default is "true" for known types)
-      dynamic?: boolean; // Will ignore misplaced child elements prerendered in the browser
 
       hash?: "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512";
       hash?: "md5[8]" // Will shorten hash to the first 8 characters
@@ -63,7 +55,7 @@ squared
 
       type: "html" | "js" | "css" | "data"; // Script templates
       template: {
-          module: string; // Inline transformer
+          module?: string;
           identifier?: string;
           value?: string;
       };
@@ -72,8 +64,9 @@ squared
 
       type: "text" | "attribute" | "display"; // dynamic is valid only with "text"
       dataSource: {
-          source: "cloud" | "uri" | "local" | "json" | "export";
-          source: "mariadb" | "mongodb" | "mssql" | "mysql" | "oracle" | "postgres" | "redis"; // DB providers
+          source: "uri" | "local" | "export" | "json";
+          source: "cloud";
+          source: "mariadb" | "mongodb" | "mssql" | "mysql" | "oracle" | "postgres" | "redis";
           postQuery?: string;
           preRender?: string;
           whenEmpty?: string;
@@ -83,55 +76,11 @@ squared
       textContent: string; // Replace element.innerHTML
   }
 
+.. seealso:: For any non-standard named definitions check :doc:`References </references>`.
+
 @pi-r/chrome
 ============
 
-.. code-block::
-  :caption: dataSource
-  :emphasize-lines: 5,27,28,29,30
-
-  import type { DataSource as IDataSource } from "../db/interface";
-
-  interface DataSource extends IDataSource {
-      source: "cloud" | "uri" | "local" | "json" | "export" | string;
-      type?: "text" | "attribute" | "display";
-      query?: string;
-      value?: string | string[] | Record<string, unknown>;
-      template?: string;
-      viewEngine?: ViewEngine | string;
-      dynamic?: boolean;
-      ignoreEmpty?: boolean;
-  }
-
-  interface UriDataSource extends DataSource, CascadeAction {
-      source: "uri";
-      format?: string;
-      options?: PlainObject;
-  }
-
-  interface LocalDataSource extends DataSource, CascadeAction {
-      source: "local";
-      format?: string;
-      pathname?: string;
-      options?: PlainObject;
-  }
-
-  interface JSONDataSource extends DataSource, CascadeAction {
-      source: "json";
-      items?: Record<string, unknown>[];
-  }
-
-  interface ExportDataSource extends DataSource, CascadeAction {
-      source: "export";
-      execute?: (...args: unknown[]) => unknown;
-      pathname?: string;
-      settings?: string;
-      params?: unknown;
-      persist?: boolean;
-  }
-
 .. versionadded:: 0.7.0
 
-  - *DataSource* property *source* option "**json**" as *JSONDataSource* was implemented.
-
-.. seealso:: For any non-standard named definitions check :doc:`References </references>`.
+  *DataSource* property ``source`` option "**json**" as *JSONDataSource* was implemented.

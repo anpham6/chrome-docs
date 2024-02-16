@@ -70,7 +70,7 @@ squared
 
       type: "append/js" | "append/css" | "append/[tagName]"; // Includes "prepend"
 
-      type: "text" | "markdown" | "attribute" | "display"; // dynamic is valid only with "text" and "markdown"
+      type: "text" | "attribute" | "display"; // dynamic is valid only with "text"
       dataSource: {
           source: "cloud" | "uri" | "local" | "json" | "export";
           source: "mariadb" | "mongodb" | "mssql" | "mysql" | "oracle" | "postgres" | "redis"; // DB providers
@@ -94,7 +94,7 @@ squared
 
   interface DataSource extends IDataSource {
       source: "cloud" | "uri" | "local" | "json" | "export" | string;
-      type?: "text" | "markdown" | "attribute" | "display";
+      type?: "text" | "attribute" | "display";
       query?: string;
       value?: string | string[] | Record<string, unknown>;
       template?: string;
@@ -132,9 +132,6 @@ squared
 
 .. versionadded:: 0.7.0
 
-  - *AssetCommand* property *type* option "**markdown**" was optionally [#]_ implemented.
   - *DataSource* property *source* option "**json**" as *JSONDataSource* was implemented.
 
 .. seealso:: For any non-standard named definitions check :doc:`References </references>`.
-
-.. [#] npm i marked

@@ -70,6 +70,22 @@ Image dimensions
     }
   }
 
-.. note:: :doc:`Jimp </image/index>` is also used to detect image dimensions but with limited file type support.
+.. note:: :doc:`Jimp </image/index>` is used secondarily to detect dimensions but with limited file type support.
+
+.. _document-miscellaneous-element-content:
+
+Element content
+===============
+
+::
+
+  {
+    "selector": "p.inactive",
+    "type": "replace",
+    "textContent": "<b>content</b>", // <p class="active"><b>content</b></p>
+    "attributes": {
+      "class": "active"
+    }
+  }
 
 .. [#] When using server hosted directory based sqd.config.

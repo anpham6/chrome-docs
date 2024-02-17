@@ -2,7 +2,7 @@
 Versions
 ========
 
-.. rst-class:: table-right
+.. rst-class:: versions
 
 ======== ======== ======== ========
   Date       Docs     E-mc     Pi-r

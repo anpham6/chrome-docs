@@ -192,7 +192,7 @@ Admin
 Storage
 -------
 
-.. rst-class:: table-center
+.. rst-class:: cloud-service
 
 =========== =================== ================== ====================
 Service     CLOUD_UPLOAD_STREAM CLOUD_UPLOAD_CHUNK CLOUD_DOWNLOAD_CHUNK

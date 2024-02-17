@@ -67,8 +67,8 @@ Interface
 
 .. note:: The output display properties also apply to :doc:`Cloud </cloud/interface>` and :doc:`Db </db/interface>` interfaces.
 
-JSON
-====
+Inline "json"
+=============
 
 .. code-block:: typescript
 
@@ -447,8 +447,11 @@ Query expressions
 
 .. versionadded:: 0.7.0
 
-  - *DataSource* property ``source`` option "**json**" as *JSONDataSource* was implemented.
   - *DataSource* property **ignoreCoerce** was created.
+
+.. versionadded:: 0.6.4
+
+  - *DataSource* property ``source`` option "**json**" as *JSONDataSource* was implemented.
   - *TextDataSource* property **leadingText** | **trailingText** were created.
 
 .. [#] npm i json5

@@ -59,8 +59,6 @@ Interface
           value?: string;
       };
 
-      type: "append/js" | "append/css" | "append/[tagName]"; // Includes "prepend"
-
       type: "text" | "attribute" | "display"; // dynamic is valid only with "text"
       dataSource: {
           source: "uri" | "local" | "export" | "json";
@@ -70,6 +68,8 @@ Interface
           preRender?: string;
           whenEmpty?: string;
       };
+
+      type: "append/js" | "append/css" | "append/<tagName>"; // Includes "prepend"
 
       type: "replace";
       textContent: string; // Replace element.innerHTML

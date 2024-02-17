@@ -6,3 +6,8 @@
 .rst-content dl[class] > dt {
     border-top-color: slategray !important;
 }
+
+.hlist ul.simple li, .hlist ul.simple p {
+    line-height: 20px;
+    font-size: 12px;
+}

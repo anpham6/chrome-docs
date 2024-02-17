@@ -152,8 +152,20 @@ Example usage
         "options": { // UploadOptions
           "contentType": "text/html",
           "predefinedAcl": "publicRead", // Supplementary are public
-          "metadata": {/* UploadMetadata */}, // All objects except when "metadata" is defined
+          "metadata": {/* Metadata */} // All objects except when "metadata" is defined
         },
+
+        /* gcp.uploadFileInChunks{chunkSizeBytes} */
+        "chunkSize": "8mb", // Aligned to 1mb
+        "chunkLimit": 5, // Same as "concurrencyLimit"
+        "options": {
+          "contentType": "image/png",
+          "metadata": {/* Metadata */},
+          /* UploadFileInChunksOptions - shared */
+          "maxQueueSize": 5,
+          "concurrencyLimit": 5
+        },
+
         /* firebase.uploadBytes */
         "options": { // UploadMetadata
           "contentType": "text/html",
@@ -162,18 +174,9 @@ Example usage
 
         /* Primary object only */
         "metadata": {
-          "contentType": "text/html"
-        },
-
-        /* gcp.uploadFileInChunks{chunkSizeBytes} */
-        "chunkSize": "8mb", // Aligned to 1mb
-        "chunkLimit": 5, // Same as "concurrencyLimit"
-        "options": {
-          "contentType": "image/png" // headers["Content-Type"] = contentType
-          "maxQueueSize": 5,
-          "concurrencyLimit": 5
-        },
-        "metadata": {/* Record<string, string> */} // gcp.uploadFileInChunks{headers}
+          "key": "value",
+          "key_delete": null
+        }
       },
       "download": {
         /* gcp.downloadFileInChunks{chunkSizeBytes} */
@@ -302,8 +305,8 @@ Firestore
     }
   }
 
-.. code-block:: none
-  :caption: **query**
+.. hlist::
+  :columns: 4
 
   - endAt
   - endBefore
@@ -315,8 +318,8 @@ Firestore
   - startAfter
   - startAt
   - where
-    * whereAnd
-    * whereOr
+  - **whereAnd**
+  - **whereOr**
   - withConverter
 
 BigQuery
@@ -404,8 +407,8 @@ Datastore
     }
   }
 
-.. code-block:: none
-  :caption: **query**
+.. hlist::
+  :columns: 4
 
   - end
   - filter
@@ -545,8 +548,8 @@ Realtime Database
     }
   }
 
-.. code-block:: none
-  :caption: **query**
+.. hlist::
+  :columns: 4
 
   - endBefore
   - endAt

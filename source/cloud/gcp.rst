@@ -162,6 +162,10 @@ Example usage
           "contentType": "image/png",
           "metadata": {/* Metadata */},
           /* UploadFileInChunksOptions - shared */
+          "headers": {
+            "Authorization": "",
+            "x-goog-user-project": ""
+          },
           "maxQueueSize": 5,
           "concurrencyLimit": 5
         },

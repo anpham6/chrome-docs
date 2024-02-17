@@ -113,8 +113,8 @@ data-chrome-watch
 
 .. tip:: "**~**" can be used between "**::**" for default server value.
 
-Options
-=======
+Build Options
+=============
 
 useOriginalHtmlPage = true
 --------------------------

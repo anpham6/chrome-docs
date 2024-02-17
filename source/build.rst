@@ -201,6 +201,8 @@ Example remote configuration
 
 .. tip:: JSON5 [#]_ and TOML [#]_ file formats are also supported.
 
+.. _build-using-sqd-config:
+
 Using sqd.config
 ================
 

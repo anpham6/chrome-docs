@@ -540,7 +540,7 @@ Realtime Database
         ["limitToFirst", 1]
       ],
 
-      "viewEngine": "ejs",
+      "viewEngine": { "name": "ejs" },
       "value": "<b><%= title %></b>: <%= description %>",
 
       "update": {/* Document */}, // rd.update

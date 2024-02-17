@@ -10,6 +10,11 @@ Using the same concept as a database you can read from these files:
 - XML [#]_
 - TOML [#]_
 
+Then optionally select nested objects with these **query** expressions:
+
+- `JSONPath <https://github.com/dchester/jsonpath>`_ [#]_
+- `JMESPath <https://jmespath.org>`_ [#]_
+
 Interface
 =========
 
@@ -344,7 +349,7 @@ View Engine
       };
   }
 
-.. note:: Templating engines with a ``compile(string[, options]): (data?: Record<string, any>) => string`` method are compatible.
+.. note:: `Template engines <https://js.libhunt.com/libs/templating-engines>`_ with a ``compile(string[, options]): (data?: Record<string, any>) => string`` method are compatible.
 
 Example usage
 -------------
@@ -436,12 +441,6 @@ Only one function can be defined per ``<script type="text/template">`` element.
 
 .. warning:: Using ``<script>`` templates requires the setting :code:`eval.template = true`.
 
-Query expressions
-=================
-
-- `JSONPath <https://github.com/dchester/jsonpath>`_ [#]_
-- `JMESPath <https://jmespath.org>`_ [#]_
-
 @pi-r/chrome
 ============
 
@@ -451,12 +450,12 @@ Query expressions
 
 .. versionadded:: 0.6.4
 
-  - *DataSource* property ``source`` option "**json**" as *JSONDataSource* was implemented.
+  - *DataSource* property **source** option "**json**" as *JSONDataSource* was implemented.
   - *TextDataSource* property **leadingText** | **trailingText** were created.
 
 .. [#] npm i json5
 .. [#] npm i fast-xml-parser
 .. [#] npm i toml
-.. [#] npm i ejs
 .. [#] npm i jsonpath
 .. [#] npm i jmespath
+.. [#] npm i ejs

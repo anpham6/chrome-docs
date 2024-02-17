@@ -24,6 +24,7 @@ https://unpkg.com/squared/types/base/resource.d.ts
 .. rst-class:: block-list
 
 https://unpkg.com/squared/types/base/file.d.ts
+  | `BroadcastResponse <search.html?q=BroadcastResponse>`_
   | `DbDataSource <search.html?q=DbDataSource>`_
   | `LogStatus <search.html?q=LogStatus>`_
 

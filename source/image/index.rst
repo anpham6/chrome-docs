@@ -42,6 +42,8 @@ Image conversion can be achieved using the ``commands`` array property in a File
 Supported formats
 =================
 
+.. rst-class:: image-format
+
 ====== = =
 Format R W
 ====== = =
@@ -56,8 +58,10 @@ tiff   x
 WebP
 ----
 
+.. rst-class:: image-format
+
 ======== = = ============
-Library  R W NPM package
+Library  R W     NPM
 ======== = = ============
 dwebp    x   dwebp-bin [#webp]_
 cwebp      x cwebp-bin [#webp]_

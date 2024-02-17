@@ -84,7 +84,7 @@ Database
 
 - https://www.oracle.com/autonomous-database/autonomous-json-database
 
-.. important:: :ref:`Thick mode <db-oracle-thick-mode>` environment variables are shared with :doc:`@pi/oracle <../db/oracle>`.
+.. important:: :ref:`Thick mode <db-oracle-thick-mode>` environment variables are shared with :doc:`@pi/oracle </db/oracle>`.
 
 Interface
 ---------
@@ -134,7 +134,7 @@ Authentication
     }
   }
 
-.. warning:: **libDir** is ignored without ``NODE_ORACLEDB_DRIVER_MODE = "thick"``. See :doc:`@pi-r/oracle <../db/oracle>`.
+.. warning:: **libDir** is ignored without ``NODE_ORACLEDB_DRIVER_MODE = "thick"``. See :doc:`@pi-r/oracle </db/oracle>`.
 
 Example usage
 -------------
@@ -143,7 +143,7 @@ Example usage
 - `Query <https://node-oracledb.readthedocs.io/en/latest/user_guide/sql_execution.html>`_
 - `Filter <https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/adsdi/soda-filter-specifications-reference.html>`_
 
-.. tip:: SELECT queries are compatible with the :doc:`@pi-r/oracle <../db/oracle>` plugin.
+.. tip:: SELECT queries are compatible with the :doc:`@pi-r/oracle </db/oracle>` plugin.
 
 ::
 

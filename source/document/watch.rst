@@ -95,14 +95,23 @@ data-chrome-watch
 =================
 
 .. code-block:: html
-
-  <link rel="stylesheet" href="/common/util.css" data-chrome-watch="1000::1h 30m::111-111-111:8080[module|secure|always]">
-  <!-- OR -->
-  <link rel="stylesheet" href="/common/util.css" data-chrome-watch="~::~::[secure|always]">
+  :caption: JSON
 
   <script src="/common/util.js" data-chrome-watch='{ "interval": 100, "expires": "1w 1d 1h 1m 1s", "reload": { "port": 443, "secure": true } }'></script>
 
-.. tip:: "**~**" can be used with "**::**" for default server value.
+.. code-block:: html
+  :caption: interval `::` expires `::` reload
+
+  <link rel="stylesheet" href="/common/util.css" data-chrome-watch="1000::1h 30m::111-111-111:8080[module|secure|always]">
+
+.. code-block:: html
+  :caption: Settings
+
+  <link rel="stylesheet" href="/common/util.css" data-chrome-watch="~">
+  <!-- OR -->
+  <link rel="stylesheet" href="/common/util.css" data-chrome-watch="~::~::[secure|always]">
+
+.. tip:: "**~**" can be used between "**::**" for default server value.
 
 Options
 =======
@@ -110,10 +119,37 @@ Options
 useOriginalHtmlPage = true
 --------------------------
 
-HTML only has partial watch support since most local modifications will alter the original element index position stored on the server.
+HTML only has partial watch support since most local modifications will alter the original element index position stored in memory. Inline source ``<script>`` and ``<style>`` cannot be edited when they are part of a bundle.
 
-- script + link -> Inside source file
-- script + style (inline) -> Unbundled
-- elements (configured + data source) -> Uneditable
+Elements that are configured (e.g. dataSource) are not editable as the original request values will be used on a reload.
 
-If you configure an ``<img>`` tag (or any tag group) then you cannot add or remove other ``<img>`` elements without adding an element "**id**" to every element in the group.
+::
+
+  {
+    "selector": "p",
+    "attributes": {
+      "class": "active"
+    }
+  }
+
+.. code-block:: html
+  :caption: Source
+
+  <p>content</p>
+
+.. code-block:: html
+  :caption: Build output
+
+  <p class="active">content</p>
+
+.. code-block:: html
+  :caption: Edit source
+
+  <p class="inactive" style="display: none;">content</p>
+
+.. code-block:: html
+  :caption: Watch output
+
+  <p class="active" style="display: none;">content</p>
+
+.. attention:: If you configure an ``<img>`` tag (or any tag group) then you cannot add or remove other ``<img>`` elements without adding an element "**id**" to every element in the group.

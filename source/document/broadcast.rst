@@ -7,8 +7,6 @@ Console messages (*stdout*) can be sent to the browser console instead through t
 Interface
 =========
 
-- `Encoding <https://nodejs.org/api/buffer.html#buffers-and-character-encodings>`_
-
 .. code-block:: typescript
 
   interface LogStatus {

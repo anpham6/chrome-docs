@@ -21,7 +21,7 @@ Interface
 
   interface IDb extends IClientDb<IHost, DbModule, DbDataSource, DbSourceOptions, DbCoerceSettings> {
       setCredential(item: DbDataSource): Promise<void>;
-      getCredential(item: DbDataSource): Record<string | number | symbol, unknown>;
+      getCredential(item: DbDataSource): PlainObject;
       hasSource(source: string, ...type: number[]): boolean;
       applyCommand(...items: DbDataSource[]): void;
       executeQuery(item: DbDataSource, sessionKey: string): Promise<QueryResult>;

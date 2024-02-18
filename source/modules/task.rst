@@ -21,8 +21,8 @@ Interface
       map?(tasks: Command[]): Promise<SpawnResult | undefined>[];
       series?(tasks: Command[]): Promise<unknown>;
       parallel?(tasks: Command[]): Promise<unknown>;
-      spawn?(task: Record<string | number | symbol, unknown>, callback: (result?: SpawnResult) => void): void;
-      execute?(manager: IFileManager, task: Record<string | number | symbol, unknown>, callback: (value?: unknown) => void): void;
+      spawn?(task: PlainObject, callback: (result?: SpawnResult) => void): void;
+      execute?(manager: IFileManager, task: PlainObject, callback: (value?: unknown) => void): void;
   }
 
   interface TaskConstructor extends ModuleConstructor {

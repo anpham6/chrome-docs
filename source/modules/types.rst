@@ -185,7 +185,7 @@ Interface
       WATCH_CHANGE: number;
   }
 
-  const IMPORT_MAP: Record<string, string | undefined>;
+  const IMPORT_MAP: StringMap;
 
 .. versionadded:: 0.8.4
 

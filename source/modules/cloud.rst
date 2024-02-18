@@ -36,7 +36,7 @@ Interface
       getDatabaseBatchRows(batch: CloudDatabase[], ignoreErrors: boolean, sessionKey?: string): Promise<BatchQueryResult>;
       getDatabaseBatchRows(batch: CloudDatabase[], sessionKey?: string): Promise<BatchQueryResult>;
       hasCredential(feature: CloudFeatures, data: CloudService, credential?: unknown): boolean;
-      getCredential(item: CloudService, unused?: boolean): Record<string | number | symbol, unknown>;
+      getCredential(item: CloudService, unused?: boolean): PlainObject;
       getSettings(service: string): Record<string, unknown> | undefined;
       settingsOf(service: string, name: "coerce", component: keyof DbCoerceSettings): unknown;
       settingsOf(service: string, name: "auth", component: keyof CloudAuthSettings): unknown;

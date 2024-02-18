@@ -29,14 +29,14 @@ Interface
       findConfig(data: object, name: string, type?: string): PluginConfig;
       loadConfig(data: object, name: string): ConfigOrTransformer | null | undefined;
       asSourceFile(value: string, cache: boolean): unknown;
-      asSourceFile(value: string, options?: AsSourceFileOptions | boolean): unknown;
+      asSourceFile(value: string, options?: AsSourceFileOptions): unknown;
       findVersion(name: string | string[], fallback?: string): string;
       findSourceScope(uri: string, imports: Record<string, unknown>): Record<string, string | undefined>[];
       findSourceRoot(uri: string, imports?: Record<string, string | undefined>): string | undefined;
       resolveDir(name: string, ...paths: string[]): string | undefined;
       locateSourceFiles(file: ExternalAsset, code?: string, bundleContent?: string[]): ((imports?: Record<string, string | undefined>) => SourceInput | undefined);
       resolveSourceFile(file: ExternalAsset): ((code?: string, imports?: Record<string, string | undefined>) => SourceInput<string> | undefined);
-      tryParse(source: string, format: string, options?: Record<string | number | symbol, unknown>): unknown;
+      tryParse(source: string, format: string, options?: PlainObject): unknown;
       forDb(item: DataSource): boolean;
       hasEval(name: string): boolean;
       settingsOf(name: keyof DocumentComponent, option: keyof DocumentComponentOption): unknown;
@@ -72,7 +72,7 @@ Interface
       createSourceMap(code: string, uri?: string, remove?: boolean): SourceMap;
       writeSourceMap(uri: string, data: SourceCode, options?: SourceMapOptions): string | undefined;
       updateGradle(source: string, namespaces: string[], value: string, upgrade: boolean): string;
-      updateGradle(source: string, namespaces: string[], value: string, options?: UpdateGradleOptions | boolean): string;
+      updateGradle(source: string, namespaces: string[], value: string, options?: UpdateGradleOptions): string;
       generateLintTable(messages: LintMessage[], options: GenerateLintTableOptions): LogComponent[];
       cleanup?(this: IFileManager, instance: IDocument): Promise<unknown>;
       sanitizeAssets?(assets: ExternalAsset[], exclusions?: ExternalAsset[]): ExternalAsset[];

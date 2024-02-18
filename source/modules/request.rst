@@ -29,7 +29,7 @@ Interface
       init(config?: RequestInit): this;
       apply(options: ApplyOptions): this;
       addDns(hostname: string, address: string, timeout: number): void;
-      addDns(hostname: string, address: string, family?: number | string, timeout?: number): void;
+      addDns(hostname: string, address: string, family?: string | number, timeout?: number): void;
       lookupDns(hostname: string): LookupFunction;
       proxyOf(uri: string, localhost?: boolean): ProxySettings | undefined;
       statusOn(name: number | number[], callback: StatusOnCallback): void;

@@ -34,8 +34,7 @@ Abort Controller
 .. code-block::
   :caption: Under 15.4 + 16.0
 
-  npm i abort-controller
-  npm i event-target-shim
+  npm i abort-controller event-target-shim
 
 .. code-block::
   :caption: Minimum 14.17 + 15.0

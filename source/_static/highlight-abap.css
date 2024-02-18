@@ -52,6 +52,11 @@
     color: #555555;
 }
 
+.highlight-bash .highlight {
+    color: chartreuse;
+    background-color: #222222;
+}
+
 .highlight-bash .highlight .m {
     color: inherit;
 }

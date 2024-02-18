@@ -10,10 +10,12 @@ Using the same concept as a database you can read from these files:
 - XML [#]_
 - TOML [#]_
 
-Then optionally select nested objects with these **query** expressions:
+Then optionally select nested objects with these "**query**" expressions:
 
 - `JSONPath <https://github.com/dchester/jsonpath>`_ [#]_
 - `JMESPath <https://jmespath.org>`_ [#]_
+
+.. tip:: These examples can also be used with :doc:`Cloud </cloud/interface>` and :doc:`Db </db/interface>` data sources except every provider has a different way to "**query**" their data.
 
 Interface
 =========
@@ -70,8 +72,6 @@ Interface
       fallback?: object; // Used when there are missing fields
   }
 
-.. note:: The output display properties also apply to :doc:`Cloud </cloud/interface>` and :doc:`Db </db/interface>` interfaces.
-
 Inline "json"
 =============
 
@@ -113,10 +113,14 @@ Remote file "uri"
 =================
 
 .. code-block:: typescript
+  :emphasize-lines: 5,6
 
   interface UriDataSource extends DataSource, DataObject, CascadeAction {
       source: "uri";
       uri: string; // Will perform a fetch request
+      /* Method "POST" */
+      body?: unknown; // Required
+      contentType?: string;
   }
 
 Example usage
@@ -132,8 +136,8 @@ Reusing configuration templates is possible with URL search parameters. All para
     "type": "attribute",
     "dataSource": {
       "source": "uri",
-      "format": "{{format}}",
-      "uri": "http://hostname/project/{{file}}.{{format}}", // Local files require read permissions (demo.json)
+      "format": "{{format}}", // json
+      "uri": "http://hostname/project/{{file}}.{{format}}", // http://hostname/project/demo.json
 
       "query": "$[1]", // Row #2 in result array (JSONPath)
 
@@ -144,6 +148,29 @@ Reusing configuration templates is possible with URL search parameters. All para
       }
     }
   }
+
+.. caution:: Query parameters will also replace {{*values*}} inside the **attributes** property.
+
+.. code-block::
+  :caption: POST
+
+  {
+    "selector": "h1",
+    "type": "text",
+    "dataSource": {
+      "source": "uri",
+      "uri": "https://hostname/api/v1/items", // Perform secure API request
+      "body": {
+        "id": "1"
+      },
+      "format": "json", // Response headers["Accept"] (generated)
+      "contentType": "application/json", // Request headers["Content-Type"] (optional)
+
+      "value": "<b>${title}</b>: ${description}"
+    }
+  }
+
+.. note:: JSON will be sent by default for *POST* when both **format** and **contentType** are empty.
 
 Local file "local"
 ==================
@@ -167,9 +194,9 @@ Example usage
       "source": "local",
       "format": "xml",
 
-      "pathname": "./path/to/data.xml", // yaml + json5 + toml + xml + cjs (settings.directory.data + users/username/?)
+      "pathname": "./path/data.xml", // yaml + json5 + toml + xml + cjs (settings.directory.data + users/username/?)
       /* OR */
-      "pathname": "/absolute/to/data.xml", // Use "./" for relative paths (required: permission)
+      "pathname": "/path/to/data.xml", // Local files require read permissions
 
       "query": "$.root.row[1]", // Second item in "row" array (JSONPath)
 
@@ -450,6 +477,7 @@ Only one function can be defined per ``<script type="text/template">`` element.
 
 .. versionadded:: 0.6.4
 
+  - *UriDataSource* property **contentType** | **body** for HTTP method *POST* was implemented.
   - *DataSource* property **source** option "**json**" as *JSONDataSource* was implemented.
   - *TextDataSource* property **leadingText** | **trailingText** were created.
 

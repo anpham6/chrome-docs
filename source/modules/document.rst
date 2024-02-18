@@ -31,11 +31,11 @@ Interface
       asSourceFile(value: string, cache: boolean): unknown;
       asSourceFile(value: string, options?: AsSourceFileOptions): unknown;
       findVersion(name: string | string[], fallback?: string): string;
-      findSourceScope(uri: string, imports: Record<string, unknown>): Record<string, string | undefined>[];
-      findSourceRoot(uri: string, imports?: Record<string, string | undefined>): string | undefined;
+      findSourceScope(uri: string, imports: Record<string, unknown>): StringMap[];
+      findSourceRoot(uri: string, imports?: StringMap): string | undefined;
       resolveDir(name: string, ...paths: string[]): string | undefined;
-      locateSourceFiles(file: ExternalAsset, code?: string, bundleContent?: string[]): ((imports?: Record<string, string | undefined>) => SourceInput | undefined);
-      resolveSourceFile(file: ExternalAsset): ((code?: string, imports?: Record<string, string | undefined>) => SourceInput<string> | undefined);
+      locateSourceFiles(file: ExternalAsset, code?: string, bundleContent?: string[]): ((imports?: StringMap) => SourceInput | undefined);
+      resolveSourceFile(file: ExternalAsset): ((code?: string, imports?: StringMap) => SourceInput<string> | undefined);
       tryParse(source: string, format: string, options?: PlainObject): unknown;
       forDb(item: DataSource): boolean;
       hasEval(name: string): boolean;
@@ -62,7 +62,7 @@ Interface
       set dataSource(value: DataSource[]);
       get dataSource(): DataSource[];
       set imports(value);
-      get imports(): Record<string, string | undefined>;
+      get imports(): StringMap;
       get watching(): boolean;
   }
 

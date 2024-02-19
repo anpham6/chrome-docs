@@ -100,11 +100,16 @@ data-chrome-tasks
 =================
 
 .. code-block:: html
+  :caption: JSON
 
-  <script src="/common/util.js" data-chrome-tasks="gulp:minify+gulp:beautify:true"></script>
+  <script
+    src="/common/util.js"
+    data-chrome-tasks='[{ handler: "gulp", task: "minify" }, { handler: "gulp", task: "beautify", preceding: "true" }]'>
+  </script>
 
 .. code-block:: html
-  
-  <script src="/common/util.js" data-chrome-tasks='[{ handler: "gulp", task: "minify" }, { handler: "gulp", task: "beautify", preceding: "true" }]'></script>
+  :caption: handler `:` task `:` preceding? ...+
+
+  <script src="/common/util.js" data-chrome-tasks="gulp:minify + gulp:beautify:true"></script>
 
 .. [#] npm i -g gulp && cd /path/to/username && npm link gulp

@@ -1,6 +1,7 @@
 .rst-content .code-block-caption {
-    padding-top: 0;
+    font-size: 90%;
     text-align: left;
+    padding-top: 0;
 }
 
 .rst-content dl[class] > dt {

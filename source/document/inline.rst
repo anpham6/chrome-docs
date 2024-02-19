@@ -92,9 +92,9 @@ data-chrome-options
     - utf-16be (unsupported)
 
 .. code-block::
-  :caption: JSON
+  :caption: JSON [#]_
 
-  <style data-chrome-options='{ "preserve": true, "hash": "md5", "compress": [{ "format": "gz", "algorithm": "zopfli", "level": 15 }], "encoding": "utf-16" }'>
+  <style data-chrome-options='{ "preserve": true, "hash": "md5", "compress": [{ "format": "gz" }], "encoding": "utf-16" }'>
     body {
       font: 1em/1.4 Helvetica, Arial, sans-serif;
       background-color: #fafafa;
@@ -112,9 +112,12 @@ data-chrome-metadata
 ====================
 
 .. code-block::
-  :caption: Any plain object
+  :caption: Any plain object [#]_
 
-  <script src="/dist/squared.js" data-chrome-metadata='{ "rollup-custom": { "import-maps": {} }, "terser-custom": { "config": {} } }'></script>
+  <script
+    src="/common/util.js"
+    data-chrome-metadata='{ "rollup-custom": { "import-maps": {} }, "terser-custom": { "config": {} } }'>
+  </script>
 
 Inline commands are usually sufficient for simple web pages. More advanced configurations are possible using a JSON/YAML external configuration file.
 
@@ -131,10 +134,12 @@ Inline commands are usually sufficient for simple web pages. More advanced confi
 .. [#] MIME (mimeType) is required when bundling torrents.
 .. [#] Use "~" for current path and filename. 
 .. [#] Multiple transformations per bundle can be chained using the "+" symbol.
-.. [#] <style data-chrome-file='"exportAs": "css/prod.css", "process": ["lint", "beautify"]'></style>
+.. [#] data-chrome-file='*"exportAs": "css/prod.css", "process": ["lint", "beautify"]*'
 .. [#] Do not use the built-in transformers per document.
 .. [#] "true" | "false" - config | "no-module" - inline
 .. [#] Optionally installed NPM plugins are required. (e.g. imagemin-pngquant)
 .. [#] "true" - explicit | "false"
 .. [#] filename + content hash (productionRelease=true)
 .. [#] Value can be limited to the starting prefix. (e.g. md5[8] - Minimum is 4)
+.. [#] data-chrome-options='*"preserve": true, "hash": "md5", "compress": [{ "format": "gz" }], "encoding": "utf-16"*'
+.. [#] data-chrome-metadata='*"rollup-custom": { "import-maps": {} }, "terser-custom": { "config": {} }*'

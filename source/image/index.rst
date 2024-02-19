@@ -7,18 +7,23 @@ Image
 
 .. note:: **Jimp** is used as the reference implementation for an *Image* module.
 
+Example configuration
+=====================
+
 .. code-block::
   :caption: squared.json
 
   {
     "image": {
       "handler": "@pi-r/jimp",
+      "webp": "webp-custom", // IImage handler for "image/webp" (npm i webp-custom)
+      "avif": "avif-custom", // IImage handler for "image/avif" (npm i avif-custom)
       "settings": {
         "jimp": {
           "rotate_clockwise": false
         },
         "webp": {
-          "path": ""
+          "path": "/path/to/libwebp" // Optional
         }
       }
     }
@@ -282,7 +287,7 @@ Transformations are given a UUID filename except when "**@**" or "**%**" are use
 
 .. [#webp] https://developers.google.com/speed/webp/download
 .. [#] cwebp options: -q -preset -near_lossless
-.. [#] Method with no arguments (e.g. sepia).
+.. [#] Method with no arguments. (e.g. sepia)
 .. [#] No expressions or native objects.
 .. [#] https://github.com/jimp-dev/jimp/tree/main/packages/jimp#methods
 .. [#] srcOver | dstOver | multiply | add | screen | overlay | darken | lighten | hardLight | difference | exclusion

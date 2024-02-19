@@ -7,24 +7,6 @@ Task
 
 .. note:: **Gulp** is used as the reference implementation for a *Task* module.
 
-.. code-block::
-  :caption: squared.json
-
-  {
-    "task": {
-      "gulp": {
-        "handler": "@pi-r/gulp",
-        "settings": {
-          "users": {
-            "username": {}
-          }
-        }
-      }
-    }
-  }
-
-Tasks can be performed after the asset has been downloaded and also during finalization.
-
 Example configuration
 =====================
 
@@ -99,17 +81,19 @@ Renaming files with Gulp is not recommended. It is better to use the **saveAs** 
 data-chrome-tasks
 =================
 
+Tasks can be performed immediately after the asset has been downloaded (preceding) and during finalization.
+
 .. code-block:: html
   :caption: JSON
 
   <script
     src="/common/util.js"
-    data-chrome-tasks='[{ handler: "gulp", task: "minify" }, { handler: "gulp", task: "beautify", preceding: "true" }]'>
+    data-chrome-tasks='[{ handler: "gulp", task: "minify" }, { handler: "gulp", task: "lint", preceding: "true" }]'>
   </script>
 
 .. code-block:: html
   :caption: handler `:` task `:` preceding? ...+
 
-  <script src="/common/util.js" data-chrome-tasks="gulp:minify + gulp:beautify:true"></script>
+  <script src="/common/util.js" data-chrome-tasks="gulp:minify+gulp:lint:true"></script>
 
 .. [#] npm i -g gulp && cd /path/to/username && npm link gulp

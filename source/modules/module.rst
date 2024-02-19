@@ -8,6 +8,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { LogStatus } from "./squared";
 
@@ -230,8 +231,6 @@ Interface
 
 References
 ==========
-
-* https://www.unpkg.com/@e-mc/types/lib/index.d.ts
 
 - https://www.unpkg.com/@e-mc/types/lib/core.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts

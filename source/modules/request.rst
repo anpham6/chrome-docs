@@ -8,6 +8,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
@@ -86,8 +87,6 @@ Interface
 
 References
 ==========
-
-* https://www.unpkg.com/@e-mc/types/lib/index.d.ts
 
 - https://www.unpkg.com/@e-mc/types/lib/http.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/request.d.ts

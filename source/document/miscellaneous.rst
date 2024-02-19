@@ -64,6 +64,8 @@ probe-image-size [#]_         x   x   x    x   x    x   x   x    x    x    x
 :doc:`jimp </image/index>`    x   x   x        x    x
 =========================== ==== === === ==== === ==== === === ==== ==== ====
 
+.. attention:: Element **width** or **height** including **max-width** or **max-height** being set will not be processed due to the likeliness of distortion.
+
 ::
 
   {
@@ -81,12 +83,12 @@ probe-image-size [#]_         x   x   x    x   x    x   x   x    x    x    x
 .. code-block:: html
   :caption: Source
 
-  <img src="image.png" />
+  <img src="probe.png" />
 
 .. code-block:: html
   :caption: Output
 
-  <img src="image.png" width="800" height="600" loading="lazy" />
+  <img src="probe.png" width="800" height="600" loading="lazy" />
 
 .. _document-miscellaneous-element-content:
 
@@ -121,7 +123,7 @@ Element content
   <p>paragraph 2</p>
   <p class="active"><b>content</b></p>
 
-.. caution:: Editing complex layouts with :ref:`nested tag content <document-append-build-options>` is not recommended. Try using an element "**id**" when there are errors building.
+.. caution:: Editing local files with complex :ref:`nested tag content <document-append-build-options>` is not recommended. Try using an element "**id**" when there are errors building.
 
 @pi-r/chrome
 ============

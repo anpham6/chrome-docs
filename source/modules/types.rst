@@ -8,6 +8,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
 
   import type { LogArguments } from "./lib/logger";
   import type { CloneObjectOptions } from "./lib/module";
@@ -193,8 +194,6 @@ Interface
 
 References
 ==========
-
-* https://www.unpkg.com/@e-mc/types/index.d.ts
 
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/module.d.ts

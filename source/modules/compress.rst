@@ -8,6 +8,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { CompressLevel } from "./squared";
 
@@ -47,8 +48,6 @@ Interface
 
 References
 ==========
-
-* https://www.unpkg.com/@e-mc/types/lib/index.d.ts
 
 - https://www.unpkg.com/@e-mc/types/lib/squared.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/compress.d.ts

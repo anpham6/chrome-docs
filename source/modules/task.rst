@@ -8,6 +8,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { IFileManager, IHost, ModuleConstructor } from "./index";
   import type { ExternalAsset, IFileThread } from "./asset";
@@ -33,8 +34,6 @@ Interface
 
 References
 ==========
-
-* https://www.unpkg.com/@e-mc/types/lib/index.d.ts
 
 - https://www.unpkg.com/@e-mc/types/lib/asset.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/core.d.ts

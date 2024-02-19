@@ -8,6 +8,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { DbDataSource } from "./squared";
 
@@ -91,8 +92,6 @@ Interface
 
 References
 ==========
-
-* https://www.unpkg.com/@e-mc/types/lib/index.d.ts
 
 - https://www.unpkg.com/@e-mc/types/lib/squared.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/core.d.ts

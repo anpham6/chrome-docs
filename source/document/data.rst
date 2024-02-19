@@ -15,7 +15,7 @@ Then optionally select nested objects with these "**query**" expressions:
 - `JSONPath <https://github.com/dchester/jsonpath>`_ [#]_
 - `JMESPath <https://jmespath.org>`_ [#]_
 
-.. tip:: These examples can also be used with :doc:`Cloud </cloud/interface>` and :doc:`Db </db/interface>` data sources except every provider has a different way to "**query**" their data.
+.. tip:: These examples can also be used with :doc:`Cloud </cloud/interface>` and :doc:`DB </db/interface>` data sources except every provider has a different way to "**query**" their data.
 
 Interface
 =========

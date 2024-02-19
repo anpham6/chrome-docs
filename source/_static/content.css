@@ -46,3 +46,11 @@ table.miscellaneous-image td:nth-child(n+2) {
     font-weight: 700;
     text-align: center;
 }
+
+ul.compressed dl dt {
+    margin-bottom: 0px;
+}
+
+ul.compressed dl dd {
+    margin-bottom: 8px;
+}

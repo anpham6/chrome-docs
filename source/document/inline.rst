@@ -8,7 +8,7 @@ Bundles can be created with these HTML tag names.
 - **exportAs**: script + style
 - **exclude**: script + link + style
 
-JS and CSS files with the same path and filename will automatically create a bundle when there are no conflicts in call ordering.
+JS and CSS files with the same path and filename will automatically create a bundle when there are no conflicts in call ordering. [#]_
 
 data-chrome-file
 ================
@@ -22,7 +22,7 @@ data-chrome-file
 .. highlight:: html
 
 .. code-block::
-  :caption: JSON
+  :caption: JSON [#]_
 
   <style data-chrome-file='{ "exportAs": "css/prod.css", "process": ["lint", "beautify"] }'>
     body {
@@ -30,8 +30,6 @@ data-chrome-file
       background-color: #fafafa;
     }
   </style>
-
-.. tip:: Outer brackets are optional. [#]_
 
 .. code-block::
   :caption: Inline
@@ -62,7 +60,7 @@ data-chrome-options
     - image: HTML and CSS from base64
     - font: CSS from base64
 * dynamic
-    - image: srcset uses query parameters with an image resizer
+    - image: "srcset" uses query parameters with an image resizer
     - element (non-void): mixed content which uses a view engine template (e.g. ejs)
 * compress (array)
     - image: imagemin [#]_
@@ -118,7 +116,7 @@ data-chrome-metadata
 
   <script src="/dist/squared.js" data-chrome-metadata='{ "rollup-custom": { "import-maps": {} }, "terser-custom": { "config": {} } }'></script>
 
-Inline commands are usually sufficient for simple web pages. More advanced configurations are possible using a JSON/YAML external configuration file. [#]_
+Inline commands are usually sufficient for simple web pages. More advanced configurations are possible using a JSON/YAML external configuration file.
 
 .. code-block:: json
 
@@ -130,6 +128,7 @@ Inline commands are usually sufficient for simple web pages. More advanced confi
     "metadata": { "custom-prop": true }
   }
 
+.. [#] MIME (mimeType) is required when bundling torrents.
 .. [#] Use "~" for current path and filename. 
 .. [#] Multiple transformations per bundle can be chained using the "+" symbol.
 .. [#] <style data-chrome-file='"exportAs": "css/prod.css", "process": ["lint", "beautify"]'></style>
@@ -139,4 +138,3 @@ Inline commands are usually sufficient for simple web pages. More advanced confi
 .. [#] "true" - explicit | "false"
 .. [#] filename + content hash (productionRelease=true)
 .. [#] Value can be limited to the starting prefix. (e.g. md5[8] - Minimum is 4)
-.. [#] MIME (mimeType) is required when bundling torrents.

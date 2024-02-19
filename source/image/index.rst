@@ -76,11 +76,13 @@ There can be transparency issues for WebP animated transformations due to the We
 Command syntax
 ==============
 
-Placing an "**@**" symbol (e.g. png@) after the **format** will replace the original file inside the package. Using the "**%**" symbol (e.g. png%) will choose the smaller of the two files. 
+Placing an "**@**" symbol after the **format** will replace the original file inside the package. Using the "**%**" symbol will choose the smaller of the two files. (e.g. png@)
 
 All segments are optional except **format**. Outer groupings and inner brackets are required.
 
 - <format>
+
+.. rst-class:: compressed
 
 * \| *choose one* \|
     * **@**

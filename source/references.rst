@@ -38,6 +38,7 @@ E-mc
 
 https://unpkg.com/@e-mc/types/lib/index.d.ts
   | `IFileManager <search.html?q=IFileManager>`_
+  | `IHost <search.html?q=IHost>`_
   | `IModule <search.html?q=IModule>`_
 
 .. _references-e-mc-types-lib-document:

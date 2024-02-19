@@ -56,13 +56,13 @@ Image dimensions
 
 .. rst-class:: miscellaneous-image
 
-=========================== ==== === === ==== === ==== === === ==== ==== ====
- NPM                        JPEG GIF PNG WebP BMP TIFF PSD ICO AVIF HEIC HEIF
-=========================== ==== === === ==== === ==== === === ==== ==== ====
-image-size [#]_               x   x   x    x   x    x   x   x    x    x    x
-probe-image-size [#]_         x   x   x    x   x    x   x   x    x    x    x
-:doc:`jimp </image/index>`    x   x   x        x    x
-=========================== ==== === === ==== === ==== === === ==== ==== ====
+=============================== ==== === === ==== === ==== === === ==== ==== ====
+ NPM                            JPEG GIF PNG WebP BMP TIFF PSD ICO AVIF HEIC HEIF
+=============================== ==== === === ==== === ==== === === ==== ==== ====
+image-size [#]_                   x   x   x    x   x    x   x   x    x    x    x
+probe-image-size [#]_             x   x   x    x   x    x   x   x    x    x    x
+:doc:`jimp </image/index>` [#]_   x   x   x        x    x
+=============================== ==== === === ==== === ==== === === ==== ==== ====
 
 .. attention:: Element **width** or **height** including **max-width** or **max-height** being set will not be processed due to the likeliness of distortion.
 

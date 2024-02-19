@@ -11,6 +11,7 @@ There are possible scenarios when a transformation into another format will requ
   <link rel="alternate" type="text/plain" href="css/dev.sass" />
 
 .. code-block:: json
+  :caption: JSON
 
   {
     "selector": "link[rel=alternate]",
@@ -30,15 +31,13 @@ There are possible scenarios when a transformation into another format will requ
     "process": ["compile"]
   }
 
-Or the equivalent inline command. [#]_
-
-::
+.. code-block::
+  :caption: Inline
 
   <link rel="alternate" type="text/plain" href="css/dev.sass" data-chrome-file='{ "saveAs": "css/prod.css", "process": ["compile"] }' data-chrome-attributes='{ "rel": "stylesheet", "type": "text/css", "title": "", "disabled": null, "integrity": "sha512", "crossorigin": "anonymous" }' data-chrome-options="download" />
 
-Which will produce this output.
-
-::
+.. code-block::
+  :caption: Output
 
   <link rel="stylesheet" type="text/css" title="" disabled href="css/prod.css" integrity="sha512-365M9279XHmH5iUcnWAVLXbLCqmntex51g5yp+jrzci79PhUOZyK/ebMIzoR46y7okDgZYZhTImDt7/06IhxQw==" crossorigin="anonymous" />
 

@@ -43,8 +43,8 @@ Interface
       settingsOf(name: keyof DocumentComponent, option: keyof DocumentComponentOption): unknown;
       parseTemplate(viewEngine: ViewEngine | string, template: string, data: unknown[]): Promise<string | null>;
       transform(type: string, code: string, format: string | string[], options?: TransformOutput & TransformAction): Promise<TransformResult | void>;
-      abort(name: keyof DocumentComponent, reason?: unknown): void;
-      abort(err?: Error | keyof DocumentComponent, reason?: unknown): void;
+      abort(err: Error): void;
+      abort(name?: keyof DocumentComponent, reason?: unknown): void;
       restart(): void;
       using?(data: IFileThread): Promise<unknown>;
       setLocalUri?(file: ExternalAsset, replace?: boolean): void;
@@ -80,6 +80,10 @@ Interface
       readonly prototype: IDocument;
       new(module?: DocumentModule, ...args: unknown[]): IDocument;
   }
+
+.. versionadded:: 0.9.0
+
+  *IDocument* property **config** was made abstract.
 
 References
 ==========

@@ -105,7 +105,7 @@ Interface
       fetchBuffer(uri: string | URL, options?: OpenOptions): Promise<Buffer | string | null>;
       fetchFiles(uri: string | URL, pathname: string): Promise<string[]>;
       fetchFiles(uri: string | URL, options?: Aria2Options | string): Promise<string[]>;
-      updateProgress(name: "request", id: number | string, receivedBytes: number, totalBytes: number, finished?: boolean): void;
+      updateProgress(name: "request", id: number | string, receivedBytes: number, totalBytes: number, dataTime?: HighResolutionTime): void;
       start(emptyDir?: boolean): Promise<FinalizeResult>;
       processAssets(emptyDir?: boolean, using?: ExternalAsset[]): void;
       deleteFile(src: string, promises: boolean): Promise<void>;

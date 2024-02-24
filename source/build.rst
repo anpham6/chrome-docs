@@ -41,12 +41,6 @@ Example usage
     escapeReservedCharacters: true, // Escape reserved characters inside attributes (e.g. "<")
     ignoreServerCodeBlocks: ["<%", "%>", "<?php", ";", "<?php", "?>"], // May produce better results with dynamic content (<% %> | <?php ; | <?php ?>)
 
-    incremental: false, // No cache is used ("true" is implicit)
-    incremental: "none", // Will rebuild all assets and use available cache
-    incremental: "staging", // Same as "none" but does not use cache
-    incremental: "etag", // Will use current file if the ETag is still the same
-    incremental: "exists", // Will always use current file if found
-
     removeInlineStyles: false, // Strip style="" attribute from all elements (useOriginalHtmlPage=false)
     removeUnusedClasses: false, // Selectors without :pseudo-class
     removeUnusedPseudoClasses: false, // Selectors with :pseudo-class (lowercase only)
@@ -197,32 +191,132 @@ Example remote configuration
 
   squared.saveAs("example.zip", { config: { mimeType: "json" } });
   /* OR */
-  squared.saveAs("example.zip", { config: "json" }); // json | yml | yaml
+  squared.saveAs("example.zip", { config: "json" }); // json | yaml
 
 .. tip:: JSON5 [#]_ and TOML [#]_ file formats are also supported.
+
+Example incremental
+===================
+
+Build time during development can be optimized at the global and asset level.
+
+::
+
+  squared.saveAs("example.zip", {
+    incremental: false, // Cache is not used (explicit)
+    incremental: "none", // Will rebuild all assets and use available cache
+    incremental: "staging", // Same as "none" but does not use cache (archive)
+    incremental: "etag", // Will use current file found only if the ETag is still the same
+    incremental: "exists", // Will always use current file if found at destination
+
+    incrementalMap: {
+      pathname: {
+        "images/": "exists", // Not recursive
+        "js/**": "etag" // Glob is supported
+      },
+      extension: {
+        js: "etag",
+        mjs: false
+      },
+      mime: {
+        "image/png": "exists", // First match will quit search
+        "image/*": "etag"
+      },
+      overwrite: false // Only when undefined
+    }
+  });
 
 .. _build-using-sqd-config:
 
 Using sqd.config
 ================
 
-The base folder level configuration file is a hash map of URL globs which can match multiple items.
+The base folder level configuration file is a hash map of URL globs which can match multiple items. Given these two configurations:
+
+.. code-block:: none
+  :caption: `http://hostname/path/sqd.config`
+
+  http://hostname/path/example1.html
+  http://hostname/path/example2.html
+
+.. code-block:: none
+  :caption: `http://hostname/path/sub/sqd.config`
+
+  http://hostname/path/sub/example3.html
+  http://hostname/path/sub/example4.html
+
+The hash key :code:`**/example*\\.html` will only match either 1 and 2 or 3 and 4.
+
+.. code-block:: json
+  :caption: sqd.config
+
+  {
+    "111-111-111": [{ "selector": "html", "type": "html" }], // Key
+
+    "/project/example.html*": { // Glob
+      "ordinal": 1,
+      "useOriginalHtmlPage": true
+      "elements": [{
+        "selector": "html",
+        "type": "html",
+        "attributes": { "lang": "en" }
+      }]
+    },
+    "/project/example.html?id=1": {
+      "ordinal": 2,
+      "elements": [{
+        "selector": "html",
+        "type": "html",
+        "hash": "sha256",
+        "attributes": { "lang": "ja", "class": "main" },
+        "mergeType": "none", // lang=en
+        "mergeType": "under", // hash=sha256,lang=en
+        "mergeType": "preserve", // hash=sha256,lang=en,class=main
+        "mergeType": "over" // hash=sha256,lang=ja,class=main
+      }]
+    },
+
+    "example.html?id=1": [{ "selector": "html", "type": "html" }], // "elements"
+    "example.html": [{ "selector": "html", "type": "html" }], // Does not match "?id=1"
+
+    "**/*\\.html*": [{ "selector": "html", "type": "html" }], // Glob
+    "**/*\\.html\\?id=1": [{ "selector": "html", "type": "html" }] // Ignored without "ordinal" or "inherit"
+  }
+
+.. attention:: Escaping **RegExp** special characters is required except when using key match. (e.g. `-|{}()[]^$+\*?.`)
+
+Example usage
+-------------
+
+The order of precedence when using **inherit** is resolved through the asset command property :ref:`mergeType <document-miscellaneous-merge-conflicts>`.
 
 .. code-block::
-  :caption: `http://hostname/pathname/example.html` -to- `http://hostname/pathname/sqd.config`
+  :caption: First glob match
 
-  squared.saveAs("example.zip", { config: true }); // Uses first match found
-  /* OR */
-  squared.saveAs("example.zip", {
+  squared.copyTo("/path/output", { config: true }); // inherit is "false"
+
+.. code-block::
+  :caption: Globs are concatenated
+
+  squared.saveAs("/path/output", {
     config: {
       uri: true,
-      inherit: true | "append" // Globs are concatenated
+      inherit: true, // Duplicate selectors are replaced
+      inherit: "append" // Resolve duplicates with "mergeType"
+    }
+  });
+
+.. code-block::
+  :caption: Hash key
+
+  squared.copyTo("/path/output", {
+    config: {
+      uri: true,
+      key: "111-111-111"
     }
   });
 
 .. tip:: The filename ``sqd.config`` is configurable using **settings.outputConfigName**.
-
-The order of precedence when using **inherit** is resolved through the asset command property :ref:`mergeType <document-miscellaneous-merge-conflicts>`.
 
 .. [#] https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap
 .. [#] npm i json5

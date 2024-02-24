@@ -15,22 +15,34 @@ Only one command per element is supported (except data sources) when using :ref:
   [
     {
       "selector": "img#picture1",
+      "attributes": { "alt": "Picture 1" },
       "commands": ["png@"]
     },
     {
       "selector": "img#picture2",
+      "attributes": { "loading": "lazy", "alt": "Picture 2" },
       "commands": ["webp%"]
     }
   ]
 
 .. code-block::
   :caption: "ordinal": 2 | \*\*/\*.html?output=prod
+  :emphasize-lines: 4,12,20,28
 
   [
     {
       "selector": "img",
       "mergeType": "under",
       "hash": "sha256", // Merged
+      "attributes": { "alt": "Picture 1" }, // No effect
+      "commands": ["jpeg@"] // No effect
+    },
+    /* OR */
+    {
+      "selector": "img",
+      "mergeType": "preserve",
+      "hash": "sha256", // Merged
+      "attributes": { "loading": "lazy", "alt": "Picture 1" }, // Merged as "Picture 1"
       "commands": ["jpeg@"] // No effect
     },
     /* OR */
@@ -38,6 +50,7 @@ Only one command per element is supported (except data sources) when using :ref:
       "selector": "img",
       "mergeType": "over",
       "hash": "sha256", // Merged
+      "attributes": { "loading": "lazy", "alt": "Picture 2" }, // Merged as "Picture 2"
       "commands": ["jpeg@"] // All images will be JPEG
     },
     /* OR */
@@ -45,6 +58,7 @@ Only one command per element is supported (except data sources) when using :ref:
       "selector": "img",
       "mergeType": "none",
       "hash": "sha256", // No effect
+      "attributes": { "alt": "Picture 1" }, // No effect
       "commands": ["jpeg@"] // No effect
     }
   ]
@@ -96,7 +110,7 @@ Element content
 ===============
 
 .. code-block::
-  :caption: `http://localhost:3000/project/index.html?className=active` [#]_
+  :caption: `http://localhost:3000/project/index.html?className=active`
 
   {
     "selector": "p.inactive",
@@ -125,6 +139,17 @@ Element content
 
 .. caution:: Editing local files with complex :ref:`nested tag content <document-append-build-options>` is not recommended. Try using an element "**id**" when there are errors building.
 
+squared
+=======
+
+.. versionadded:: 5.2.0
+
+  *AssetCommand* property **mergeType** option value "*preserve*" was created.
+
+.. versionadded:: 5.1.5
+
+  *AssetCommand* property **attributes** hash map values can be replaced using search {{params}} syntax.
+
 @pi-r/chrome
 ============
 
@@ -136,4 +161,3 @@ Element content
 .. [#] npm i image-size
 .. [#] npm i probe-image-size
 .. [#] Jimp is not recommended for detecting image dimensions.
-.. [#] Attibute value replacement. (squared 5.1.5)

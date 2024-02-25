@@ -17,7 +17,7 @@ E-mc 0.8
   versions
   squared-functions <legacy>
 
-Examples use **squared** 4/5 and **chrome** as the reference framework. These concepts can be used with any NodeJS (>=14) application.
+Examples use **squared** 4/5 and **chrome** as the reference framework. These concepts can be used with any NodeJS :alt:`(>=14)` application.
 
 .. note:: Using `squared <https://squared.readthedocs.io>`_ or squared-express is not required.
 

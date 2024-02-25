@@ -5,7 +5,7 @@ MongoDB
 - `MongoDB Community Server <https://www.mongodb.com/try/download/community>`_
 - **npm** i *@pi-r/mongodb*
 
-.. tip:: MongoDB Atlas installations can also use the "mongodb" source format.
+.. tip:: MongoDB Atlas installations can also use the ``mongodb`` source format.
 
 Interface
 =========

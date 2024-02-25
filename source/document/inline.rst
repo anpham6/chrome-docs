@@ -119,7 +119,7 @@ data-chrome-metadata
     data-chrome-metadata='{ "rollup-custom": { "import-maps": {} }, "terser-custom": { "config": {} } }'>
   </script>
 
-Inline commands are usually sufficient for simple web pages. More advanced configurations are possible using a JSON/YAML external configuration file.
+Inline commands are usually sufficient for simple web pages. More advanced configurations are possible using a JSON :alt:`(yaml)` external configuration file.
 
 .. code-block:: json
 

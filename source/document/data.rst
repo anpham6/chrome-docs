@@ -10,12 +10,12 @@ Using the same concept as a database you can read from these files:
 - XML [#]_
 - TOML [#]_
 
-Then optionally select nested objects with these "**query**" expressions:
+Then optionally select nested objects with these :target:`query` expressions:
 
 - `JSONPath <https://github.com/dchester/jsonpath>`_ [#]_
 - `JMESPath <https://jmespath.org>`_ [#]_
 
-.. tip:: These examples can also be used with :doc:`Cloud </cloud/interface>` and :doc:`DB </db/interface>` data sources except every provider has a different way to "**query**" their data.
+.. tip:: These examples can also be used with :doc:`Cloud </cloud/interface>` and :doc:`DB </db/interface>` data sources except every provider has a different way to *query* their data.
 
 Interface
 =========
@@ -149,7 +149,7 @@ Reusing configuration templates is possible with URL search parameters. All para
     }
   }
 
-.. caution:: Query parameters will also replace {{*values*}} inside the **attributes** property.
+.. caution:: Query parameters will also replace values inside the **attributes** property.
 
 .. code-block::
   :caption: POST
@@ -230,9 +230,9 @@ Example usage
     }
   }
 
-To completely remove an element all *AND* conditions have to be **true** and one *OR* per group is **true**. Using a view engine is recommended if you require a more advanced statement.
+To completely remove an element all *AND* conditions have to be ``true`` and one *OR* per group is ``true``. Using a view engine is recommended if you require a more advanced statement.
 
-Returning an empty result or a blank string (view engine) is **false**.
+Returning an empty result or a blank string (view engine) is ``false``.
 
 External source "export"
 ========================
@@ -376,7 +376,7 @@ View Engine
       };
   }
 
-.. note:: `Template engines <https://js.libhunt.com/libs/templating-engines>`_ with a ``compile(string[, options]): (data?: Record<string, any>) => string`` method are compatible.
+.. note:: `Template engines <https://js.libhunt.com/libs/templating-engines>`_ with a :code:`compile(string[, options]): (data?: Record<string, any>) => string` method are compatible.
 
 Example usage
 -------------

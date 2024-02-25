@@ -2,9 +2,9 @@
 Build Options
 =============
 
-General processing options use *E-mc* functionality with `squared-express <https://squared.readthedocs.io/en/latest/document/build.html>`_.
+General processing options use **E-mc** functionality with `squared-express <https://squared.readthedocs.io/en/latest/document/build.html>`_.
 
-.. attention:: These examples are only relevant to the **chrome** framework.
+.. attention:: These examples are only relevant to the :target:`chrome` framework.
 
 Example usage
 =============
@@ -84,7 +84,7 @@ Example usage
 Example "saveAs"
 ================
 
-The entire page can be transformed as a group with the same functionality as JSON/YAML configuration except where highlighted.
+The entire page can be transformed as a group with the same functionality as JSON :alt:`(yaml)` configuration except where highlighted.
 
 .. code-block::
   :emphasize-lines: 2,8,9,32
@@ -245,7 +245,7 @@ The base folder level configuration file is a hash map of URL globs which can ma
   http://hostname/path/sub/example3.html
   http://hostname/path/sub/example4.html
 
-The hash key :code:`**/example*\\.html` will only match either 1 and 2 or 3 and 4.
+The hash key ``**/example*\\.html`` will only match either 1 and 2 or 3 and 4.
 
 .. code-block:: json
   :caption: sqd.config
@@ -283,12 +283,12 @@ The hash key :code:`**/example*\\.html` will only match either 1 and 2 or 3 and 
     "**/*\\.html\\?id=1": [{ "selector": "html", "type": "html" }] // Ignored without "ordinal" or "inherit"
   }
 
-.. attention:: Escaping **RegExp** special characters is required except when using key match. (e.g. `-|{}()[]^$+\*?.`)
+.. attention:: Escaping **RegExp** special characters :alt:`(e.g. `-|{}()[]^$+\*?.)` is required except when using key match.
 
 Example usage
 -------------
 
-The order of precedence when using **inherit** is resolved through the asset command property :ref:`mergeType <document-miscellaneous-merge-conflicts>`.
+The order of precedence when using :target:`inherit` is resolved through the asset command property :ref:`mergeType <document-miscellaneous-merge-conflicts>`.
 
 .. code-block::
   :caption: First glob match

@@ -2,7 +2,7 @@
 Broadcast
 =========
 
-Console messages (*stdout*) can be sent to the browser console instead through the `DevTools <https://chromedevtools.github.io/devtools-protocol/>`_ protocol.
+Console messages (:target:`stdout`) can be sent to the browser console instead through the `DevTools <https://chromedevtools.github.io/devtools-protocol/>`_ protocol.
 
 Interface
 =========

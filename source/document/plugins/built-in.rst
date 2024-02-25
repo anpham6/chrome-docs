@@ -95,8 +95,8 @@ JS
 These plugins can be configured using a plain object in ``settings.transform``. Import maps [#]_ are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.
 
 - NPM custom package
-- Local file using module.exports (e.g. ".cjs")
-- Local plain file with single function (e.g. ".js")
+- Local file using module.exports :alt:`(e.g. ".cjs")`
+- Local plain file with single function :alt:`(e.g. ".js")`
 - Inline function
 
 .. tip:: More advanced plugins can be written when installed through NPM.

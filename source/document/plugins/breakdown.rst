@@ -2,7 +2,7 @@
 Breakdown
 =========
 
-Plugins are simply *options* pass-through calls to a *context* wrapper method. The only part which might not be intuitive is consuming an existing source map and then saving it for further processing.
+Plugins are simply ``options`` pass-through calls to a ``context`` wrapper method. The only part which might not be intuitive is consuming an existing source map and then saving it for further processing.
 
 Code
 ====
@@ -36,7 +36,7 @@ Code
       }
   }
 
-.. hint:: There are only three lines of relevant TypeScript being used to check for upgrade compatibility. Local file ".cjs" transformers offer the same exact functionality.
+.. hint:: There are only three lines of relevant *TypeScript* being used to check for upgrade compatibility. Local file ".cjs" transformers offer the same exact functionality.
 
 Comments
 ========
@@ -46,7 +46,7 @@ Comments
 #. *none*
 #. *none*
 #. **context** = require("clean-css"), **value** = source code, **options** = *TransformSeries* instance
-#. When base installation (process.cwd()) uses a different major package version (optional)
+#. When calling process :alt:`(cwd)` uses a different major package version (optional)
 #. Main *sourceMap* from previous consumer
 #. Applies **options.external** AND **options.outputConfig** to **options.baseConfig** (optional)
 #. *none*
@@ -61,6 +61,6 @@ Comments
 #. Check if a *sourceMap* was generated
 #. Pass *sourceMap* output values to ``sourceMap.nextMap`` chain method
 #. *none*
-#. Return modified transformed *source code*
+#. Return modified transformed :target:`source code`
 
-.. important:: Some plugins have a two-step transformation process (e.g. rollup) and use **outputConfig** separately. It is generally used for inline transformers as their **baseConfig**.
+.. important:: Some plugins have a two-step transformation process :alt:`(e.g. rollup)` and use **outputConfig** separately. It is generally used for inline transformers as their **baseConfig**.

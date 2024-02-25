@@ -92,7 +92,7 @@ External plugins per package have to be pre-installed from NPM and may not be av
 Using inline function [#]_
 ==========================
 
-The suffix "-output" is used to create the variable ``options.outputConfig``.
+The suffix "**-output**" is used to create the variable ``options.outputConfig``.
 
 .. code-block::
   :emphasize-lines: 8,16

@@ -47,7 +47,7 @@ There is a simpler way to exclude the same tags by using an HTML comment block w
     <link rel="stylesheet" href="/common/util.css">
   </head>
 
-You can similarly prevent any element from being downloaded or transformed using the value *ignore*.
+You can similarly prevent any element from being downloaded or transformed using the value "**ignore**".
 
 ::
 

@@ -189,6 +189,31 @@ Database
 Admin
 =====
 
+Auth
+----
+
+Internal use of these libraries that do not require credentials validation during service client API initialization can disable this behavior through settings. There are also cases where an unsupported authorization scheme is necessary which has not been implemented.
+
+.. caution:: These are global settings and affect every connection per service.
+
+.. code-block::
+  :caption: squared.cloud.json
+
+  {
+    "settings": {
+      "aws": {
+        "auth": {
+          "storage": true, // Default behavior
+          "database": false // Explicit to disable
+        }
+      }
+    }
+  }
+
+.. versionadded:: 0.9.0
+
+  Credentials validation bypass settings in **squared.cloud.json** :alt:`(1.4.0)` were created.
+
 Storage
 -------
 

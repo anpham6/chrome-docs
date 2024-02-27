@@ -168,7 +168,17 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  - *IHost* methods **pauseLog** | **resumeLog** | **hasLog** | **delayMessage** | **updateProgress** were created.
+  - *IHost* methods were created:
+
+    .. hlist::
+      :columns: 3
+
+      - pauseLog
+      - resumeLog
+      - hasLog
+      - delayMessage
+      - updateProgress
+
   - *IHost* property **logState** was created.
 
 References

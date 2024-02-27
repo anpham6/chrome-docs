@@ -194,7 +194,14 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  *IFileManager* methods **scheduleTask** | **setTaskLimit** | **updateProgress** were created.
+  *IFileManager* methods were created:
+
+    .. hlist::
+      :columns: 3
+
+      - scheduleTask
+      - setTaskLimit
+      - updateProgress
 
 References
 ==========

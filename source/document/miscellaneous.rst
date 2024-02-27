@@ -78,7 +78,7 @@ probe-image-size [#]_             x   x   x    x   x    x   x   x    x    x    x
 :doc:`jimp </image/index>` [#]_   x   x   x        x    x
 =============================== ==== === === ==== === ==== === === ==== ==== ====
 
-.. attention:: Element **width** or **height** including **max-width** or **max-height** being set will not be processed due to the likeliness of distortion.
+.. attention:: Element **width** OR **height** including **max-width** :alt:`(px)` AND **max-height** :alt:`(px)` being set will not be processed due to the likeliness of distortion.
 
 ::
 
@@ -139,6 +139,33 @@ Element content
 
 .. caution:: Editing local files with complex :ref:`nested tag content <document-append-build-options>` is not recommended. Try using an element "**id**" when there are errors building.
 
+Manifest
+========
+
+The web app manifest [#]_ is downloaded by default and possibly modified when searching for embedded image assets::
+
+  {
+    "icons": [],
+    "shortcuts": [{ "icons": [] }],
+    "screenshots": []
+  }
+
+.. tip:: Image compression is supported.
+
+It is not integrated with the NodeJS build system and the images might not appear as expected due to URL rewriting. You can disable this behavior by using either command::
+
+  {
+    "selector": "link[rel=manifest]",
+    "download": false
+  }
+
+.. code-block:: html
+  :caption: Inline
+
+  <head>
+    <link rel="manifest" href="/manifest.json" data-chrome-file="ignore">
+  </head>
+
 squared
 =======
 
@@ -161,3 +188,4 @@ squared
 .. [#] npm i image-size
 .. [#] npm i probe-image-size
 .. [#] Jimp is not recommended for detecting image dimensions.
+.. [#] https://web.dev/articles/add-manifest

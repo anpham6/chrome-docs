@@ -14,8 +14,8 @@ Encoding
 
 - Gzip
 - Deflate
-- Brotli (br)
-- Zstandard (zstd) [#]_
+- Brotli :alt:`(br)`
+- Zstandard :alt:`(zstd)` [#]_
 
 .. [#] apt/brew install aria2
 .. [#] { socketPath: "/tmp/static0.sock", uri: "file:///path/filename" }

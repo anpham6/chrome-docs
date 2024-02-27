@@ -12,7 +12,8 @@ Other elements can be excluded only through a configuration file.
 
 .. highlight:: html
 
-::
+.. code-block::
+  :caption: Inline
 
   <script src="/dist/squared.js" data-chrome-file="exclude"></script>
   <script src="/dist/squared.base.js" data-chrome-file="exclude"></script>
@@ -25,6 +26,7 @@ Other elements can be excluded only through a configuration file.
 There is a simpler way to exclude the same tags by using an HTML comment block when inside the ``<head>`` element. [#]_
 
 .. code-block::
+  :caption: Comment block
   :emphasize-lines: 3,17
 
   <head>

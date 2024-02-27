@@ -14,9 +14,10 @@ Interface
 
   import type { IHost } from "./index";
   import type { IAbortComponent, IPermission } from "./core";
-  import type { ExecCommand, LOG_TYPE, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, STATUS_TYPE, StatusType } from "./logger";
+  import type { LOG_TYPE, STATUS_TYPE, ExecCommand, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, LoggerFormat, StatusType } from "./logger";
   import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, GetTempDirOptions, MoveFileOptions, NormalizeFlags, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
   import type { Settings } from "./node";
+  import type { LoggerFormatSettings } from "/settings";
 
   import type { NoParamCallback } from "fs";
   import type { SpawnOptions } from "child_process";
@@ -161,6 +162,7 @@ Interface
       LOG_STYLE_REVERSE: LogMessageOptions;
       readonly VERSION: string;
       readonly LOG_TYPE: LOG_TYPE;
+      readonly LOG_FORMAT: LoggerFormatSettings<LoggerFormat<number>>;
       readonly STATUS_TYPE: STATUS_TYPE;
       readonly MAX_TIMEOUT: number;
       readonly TEMP_DIR: string;
@@ -229,6 +231,10 @@ Interface
       new(): IModule<IHost>;
   }
 
+.. versionadded:: 0.9.0
+
+  *IModule* static property **LOG_FORMAT** was created.
+
 References
 ==========
 
@@ -236,3 +242,4 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/module.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/node.d.ts
+- https://www.unpkg.com/@e-mc/types/lib/settings.d.ts

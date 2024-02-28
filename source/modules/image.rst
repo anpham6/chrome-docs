@@ -7,7 +7,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+.. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { IHost, ModuleConstructor } from "./index";
@@ -43,6 +45,37 @@ Interface
       toABGR(buffer: Uint8Array | Buffer): Buffer;
       readonly prototype: IImage;
       new(module?: ImageModule): IImage;
+  }
+
+Settings
+========
+
+.. code-block::
+  :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+
+  import type { PermittedDirectories } from "./core";
+
+  interface ImageModule {
+      handler: "@pi-r/jimp";
+      webp?: string;
+      settings?: {
+          broadcast_id?: string | string[];
+          cache?: boolean;
+          jimp?: {
+              exec?: {
+                  uid?: number;
+                  gid?: number;
+              };
+              cache_expires?: number | string;
+              rotate_clockwise?: boolean;
+          };
+          webp?: {
+              path?: string;
+              cwebp?: string[];
+              gif2webp?: string[];
+          };
+      };
+      permission: PermittedDirectories;
   }
 
 References

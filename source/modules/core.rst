@@ -7,7 +7,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+.. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { DataSource, LogStatus } from "./squared";
@@ -61,7 +63,7 @@ Interface
       isPermission(value: unknown): value is IPermission;
       createPermission(all?: boolean, freeze?: boolean): IPermission;
       kill(username: string, iv: BinaryLike, all: true): number;
-      kill(username: string, iv: BinaryLike, pid: number | number[] | boolean): number;
+      kill(username: string, iv: BinaryLike, pid: number | number[]): number;
       getThreadCount(full: true): ThreadCountStat;
       getThreadCount(username: string, iv?: BinaryLike): ThreadCountStat;
       getThreadCount(username?: string | boolean, iv?: BinaryLike): number;
@@ -181,6 +183,49 @@ Interface
 
   - *IHost* property **logState** was created.
 
+Settings
+========
+
+.. code-block::
+  :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+
+  import type { ExecOptions } from "./settings";
+
+  import type { MinimatchOptions } from "minimatch";
+  import type { PicomatchOptions } from "picomatch";
+
+  interface ProcessModule {
+      thread?: {
+          admin: {
+              users?: string[];
+              private?: boolean;
+          };
+          queue?: {
+              limit?: number;
+              expires?: number | string;
+              priority: {
+                  bypass?: number;
+                  min?: number;
+                  max?: number;
+              };
+          };
+          limit?: number;
+          expires?: number | string;
+      };
+  }
+
+  interface PermissionModule {
+      disk_read?: string | string[];
+      disk_write?: string | string[];
+      unc_read?: string | string[];
+      unc_write?: string | string[];
+      settings?: {
+          broadcast_id?: string | string[];
+          picomatch?: PicomatchOptions | null;
+          minimatch?: MinimatchOptions | null;
+      };
+  }
+
 References
 ==========
 
@@ -191,3 +236,6 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/node.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
+
+* https://www.npmjs.com/package/minimatch
+* https://www.npmjs.com/package/picomatch

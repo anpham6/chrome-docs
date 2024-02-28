@@ -73,7 +73,7 @@ data-chrome-options
 * crossorigin
     - all: Same as preserveCrossOrigin [download: false]
 * download [#]_
-    - all: Source files that are not usually downloaded (e.g. link[rel=alternate])
+    - all: Source files that are not usually downloaded :alt:`(e.g. link[rel=alternate])`
 * hash [#]_ [#]_
     - js
     - css

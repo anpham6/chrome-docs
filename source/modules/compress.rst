@@ -7,7 +7,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+.. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { CompressLevel } from "./squared";
@@ -46,9 +48,40 @@ Interface
       new(module?: CompressModule): ICompress;
   }
 
+Settings
+========
+
+.. code-block::
+  :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+
+  import type { BrotliOptions, ZlibOptions } from "zlib";
+  import type { Options as ZopfliOptions } from "node-zopfli";
+
+  interface CompressModule {
+      gzip?: ZlibOptions;
+      brotli?: BrotliOptions;
+      zopfli?: ZopfliOptions;
+      tinify?: {
+          api_key?: string;
+          proxy?: string;
+      };
+      settings?: {
+          broadcast_id?: string | string[];
+          cache?: boolean;
+          cache_expires?: number | string;
+          gzip_level?: number;
+          brotli_quality?: number;
+          zopfli_iterations?: number;
+          chunk_size?: number | string;
+      };
+  }
+
 References
 ==========
 
 - https://www.unpkg.com/@e-mc/types/lib/squared.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/compress.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
+
+* https://www.npmjs.com/package/@types/node
+* https://www.npmjs.com/package/@types/node-zopfli

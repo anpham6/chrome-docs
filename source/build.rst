@@ -175,7 +175,7 @@ Example cloud storage
     }
   });
 
-.. tip:: Use "endpoint" when your uploaded files are not used by other buckets or web pages.
+.. tip:: Use "**endpoint**" when your uploaded files are not used by other buckets or web pages.
 
 Example remote configuration
 ============================

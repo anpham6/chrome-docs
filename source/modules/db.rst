@@ -7,7 +7,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+.. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { DbDataSource } from "./squared";
@@ -90,6 +92,43 @@ Interface
       new(pool: unknown, poolKey: string, uuidKey?: AuthValue | null): IDbPool;
   }
 
+Settings
+========
+
+.. code-block::
+  :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.db.json>`_
+
+  import type { DbSourceOptions, PurgeComponent } from "./settings";
+
+  interface DbModule {
+      handler: "@e-mc/db";
+      mariadb?: DbStoredCredentials;
+      mongodb?: DbStoredCredentials;
+      mssql?: DbStoredCredentials;
+      mysql?: DbStoredCredentials;
+      oracle?: DbStoredCredentials;
+      postgres?: DbStoredCredentials;
+      redis?: DbStoredCredentials;
+      settings?: {
+          broadcast_id?: string | string[];
+          users?: Record<string, Record<string, unknown>>;
+          cache_dir?: string;
+          session_expires?: number;
+          user_key?: Record<string, DbSourceOptions>;
+          imports?: StringMap;
+          purge?: PurgeComponent;
+          mariadb?: DbSourceOptions;
+          mongodb?: DbSourceOptions;
+          mssql?: DbSourceOptions;
+          mysql?: DbSourceOptions;
+          oracle?: DbSourceOptions;
+          postgres?: DbSourceOptions;
+          redis?: DbSourceOptions;
+      };
+  }
+
+  type DbStoredCredentials = Record<string, Record<string, unknown>>;
+
 References
 ==========
 
@@ -98,3 +137,5 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/db.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/http.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
+
+* https://www.npmjs.com/package/@types/node

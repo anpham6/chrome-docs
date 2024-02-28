@@ -7,7 +7,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+.. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { IModule, ModuleConstructor } from "./index";
@@ -15,9 +17,9 @@ Interface
   import type { ApplyOptions, Aria2Options, FormDataPart, HeadersOnCallback, HostConfig, OpenOptions, PostOptions, ProxySettings, ReadExpectType, RequestInit, StatusOnCallback } from "./request";
   import type { DnsLookupSettings, RequestModule, RequestSettings } from "./settings";
 
-  import type { Writable } from "stream";
-  import type { LookupFunction } from "net";
   import type { ClientRequest, OutgoingHttpHeaders } from "http";
+  import type { LookupFunction } from "net";
+  import type { Writable } from "stream";
 
   interface IRequest extends IModule {
       module: RequestModule;
@@ -30,7 +32,7 @@ Interface
       init(config?: RequestInit): this;
       apply(options: ApplyOptions): this;
       addDns(hostname: string, address: string, timeout: number): void;
-      addDns(hostname: string, address: string, family?: string | number, timeout?: number): void;
+      addDns(hostname: string, address: string, family?: string, timeout?: number): void;
       lookupDns(hostname: string): LookupFunction;
       proxyOf(uri: string, localhost?: boolean): ProxySettings | undefined;
       statusOn(name: number | number[], callback: StatusOnCallback): void;
@@ -85,9 +87,89 @@ Interface
 
   *IRequest* method **headersOn** was created.
 
+Settings
+========
+
+.. code-block::
+  :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+
+  import type { PermittedDirectories } from "./core";
+  import type { SecureConfig } from "./http";
+  import type { PurgeComponent } from "./settings";
+
+  import type { LookupAddress } from "dns";
+  import type { OutgoingHttpHeaders } from "http";
+
+  interface RequestModule {
+      handler: "@e-mc/request";
+      timeout?: number | string;
+      read_timeout?: number | string;
+      agent?: {
+          keep_alive?: boolean;
+          timeout?: number | string;
+      };
+      dns?: {
+          family?: number;
+          expires?: number | string;
+          resolve?: Record<string, Partial<LookupAddress>>;
+      };
+      use?: {
+          http_version?: 1 | 2;
+          accept_encoding?: boolean;
+      };
+      proxy?: {
+          address?: string;
+          port?: number;
+          username?: string;
+          password?: string;
+          include?: string[];
+          exclude?: string[];
+          keep_alive?: boolean;
+      };
+      headers: Record<string, OutgoingHttpHeaders>;
+      certs?: Record<string, SecureConfig<string | string[]>>;
+      localhost?: string[];
+      protocol?: {
+          "http/1.1"?: string[];
+          h2c?: string[];
+          h2?: string[];
+      };
+      post_limit?: number | string;
+      settings?: {
+          broadcast_id?: string | string[];
+          time_format?: "readable" | "relative" | "none";
+          purge?: PurgeComponent;
+      }
+  }
+
+  interface DownloadModule {
+      expires?: number | string;
+      aria2?: {
+          bin?: string | false;
+          exec?: {
+              uid?: number;
+              gid?: number;
+          };
+          update_status?: number | { interval?: number; broadcast_only?: boolean };
+          max_concurrent_downloads?: number;
+          max_connection_per_server?: number;
+          bt_stop_timeout?: number;
+          bt_tracker_connect_timeout?: number;
+          bt_tracker_timeout?: number;
+          min_split_size?: string;
+          disk_cache?: number | string;
+          lowest_speed_limit?: number | string;
+          always_resume?: boolean;
+          file_allocation?: "none" | "prealloc" | "trunc" | "falloc";
+          conf_path?: string;
+      };
+  }
+
 References
 ==========
 
 - https://www.unpkg.com/@e-mc/types/lib/http.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/request.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
+
+* https://www.npmjs.com/package/@types/node

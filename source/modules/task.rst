@@ -7,7 +7,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+.. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { IFileManager, IHost, ModuleConstructor } from "./index";
@@ -19,7 +21,7 @@ Interface
   interface ITask extends IClient<IHost, TaskModule> {
       using?(data: IFileThread): Promise<unknown>;
       collect?(items: unknown[], preceding?: boolean): Promise<SpawnResult>[];
-      map?(tasks: Command[]): Promise<SpawnResult | undefined>[];
+      map?(tasks: Command[]): Promise<SpawnResult | void>[];
       series?(tasks: Command[]): Promise<unknown>;
       parallel?(tasks: Command[]): Promise<unknown>;
       spawn?(task: PlainObject, callback: (result?: SpawnResult) => void): void;
@@ -30,6 +32,27 @@ Interface
       finalize(this: IHost, instance: ITask, assets: ExternalAsset[]): Promise<unknown>;
       readonly prototype: ITask;
       new(module?: TaskModule, ...args: unknown[]): ITask;
+  }
+
+Settings
+========
+
+.. code-block::
+  :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+
+  import type { PermittedDirectories } from "./core";
+
+  interface TaskModule {
+      handler: "@pi-r/gulp";
+      settings?: {
+          broadcast_id?: string | string[];
+          users?: Record<string, Record<string, unknown>>;
+          exec?: {
+              uid?: number;
+              gid?: number;
+          };
+      };
+      permission: PermittedDirectories;
   }
 
 References

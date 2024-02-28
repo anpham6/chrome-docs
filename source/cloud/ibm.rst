@@ -86,6 +86,7 @@ Interface
 .. code-block:: typescript
 
   import type { PostAll, PostFind, PostSearch, PostView } from "@pi-r/ibm/types";
+
   import type { UserOptions } from "ibm-cloud-sdk-core";
   import type { PostDocumentParams } from "@ibm-cloud/cloudant/cloudant/v1";
   import type { Options as BearerTokenOptions } from "ibm-cloud-sdk-core/auth/authenticators/bearer-token-authenticator";

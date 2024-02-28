@@ -42,6 +42,12 @@ https://unpkg.com/@e-mc/types/lib/index.d.ts
   | `IImage <search.html?q=IImage>`_
   | `IModule <search.html?q=IModule>`_
 
+.. _references-e-mc-types-lib-core:
+.. rst-class:: block-list
+
+https://unpkg.com/@e-mc/types/lib/core.d.ts
+  | `PermittedDirectories <search.html?q=PermittedDirectories>`_
+
 .. _references-e-mc-types-lib-document:
 .. rst-class:: block-list
 
@@ -73,14 +79,34 @@ https://unpkg.com/@e-mc/types/lib/cloud.d.ts
 
 https://unpkg.com/@e-mc/types/lib/http.d.ts
   | `AuthValue <search.html?q=AuthValue>`_
+  | `SecureConfig <search.html?q=SecureConfig>`_
 
 .. _references-nodejs:
 
 NodeJS
 ======
 
+.. _references-nodejs-modules:
+.. rst-class:: block-list
+
+https://nodejs.org/api/modules.html
+  | `NodeRequire <search.html?q=NodeRequire>`_
+
 .. _references-nodejs-buffer:
 .. rst-class:: block-list
 
 https://nodejs.org/api/buffer.html
   | `BufferEncoding <search.html?q=BufferEncoding>`_
+
+.. _references-nodejs-crypto:
+.. rst-class:: block-list
+
+https://nodejs.org/api/crypto.html
+  | `BinaryLike <search.html?q=BinaryLike>`_
+  | `CipherGCMTypes <search.html?q=CipherGCMTypes>`_
+
+.. _references-nodejs-tls:
+.. rst-class:: block-list
+
+https://nodejs.org/api/tls.html
+  | `SecureVersion <search.html?q=SecureVersion>`_

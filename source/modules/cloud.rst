@@ -7,7 +7,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+.. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { IHost, IScopeOrigin } from "./index";
@@ -68,6 +70,48 @@ Interface
 .. versionadded:: 0.9.0
 
   *ICloud* method **setBucketTagging** was created.
+
+Settings
+========
+
+.. code-block::
+  :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.cloud.json>`_
+
+  import type { PermittedDirectories } from "./core";
+  import type { CloudServiceOptions, DbSourceOptions, PurgeComponent } from "./settings";
+
+  interface CloudModule {
+      handler: "@e-mc/cloud";
+      extensions?: string[];
+      atlas?: CloudStoredCredentials;
+      aws?: CloudStoredCredentials;
+      "aws-v3"?: CloudStoredCredentials;
+      azure?: CloudStoredCredentials; // az
+      gcp?: CloudStoredCredentials; // gcloud
+      ibm?: CloudStoredCredentials;
+      oci?: CloudStoredCredentials;
+      minio?: CloudStoredCredentials;
+      settings?: {
+          broadcast_id?: string | string[];
+          users?: Record<string, Record<string, unknown>>;
+          cache_dir?: string;
+          session_expires?: number;
+          user_key?: Record<string, DbSourceOptions>;
+          imports?: StringMap;
+          purge?: PurgeComponent;
+          atlas?: CloudServiceOptions;
+          aws?: CloudServiceOptions;
+          "aws-v3"?: CloudServiceOptions;
+          azure?: CloudServiceOptions;
+          gcp?: CloudServiceOptions;
+          ibm?: CloudServiceOptions;
+          oci?: CloudServiceOptions;
+          minio?: CloudServiceOptions;
+      };
+      permission: PermittedDirectories;
+  }
+
+  type CloudStoredCredentials = Record<string, Record<string, unknown>>;
 
 References
 ==========

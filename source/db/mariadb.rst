@@ -10,8 +10,8 @@ Interface
 
 .. code-block:: typescript
 
-  import type { SecureContextOptions } from "tls";
   import type { PoolConfig, QueryConfig } from "mariadb";
+  import type { SecureContextOptions } from "tls";
 
   interface MariaDBDataSource extends DbDataSource {
       source: "mariadb";

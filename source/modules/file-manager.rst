@@ -7,7 +7,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+.. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { DataSource, IncrementalMatch, TaskAction } from "./squared";
@@ -22,8 +24,8 @@ Interface
   import type { Aria2Options, BufferFormat, OpenOptions } from "./request";
   import type { CloudModule, CompressModule, DbModule, DocumentModule, HttpConnectSettings, HttpMemorySettings, ImageModule, RequestModule, TaskModule, WatchModule } from "./settings";
 
-  import type { NoParamCallback } from "fs";
   import type { SpawnOptions } from "child_process";
+  import type { NoParamCallback } from "fs";
 
   interface IFileManager extends IHost, Set<string> {
       processTimeout: number;
@@ -60,9 +62,10 @@ Interface
       install(name: "compress", module?: CompressModule): ICompress<CompressModule> | undefined;
       install(name: string, ...args: unknown[]): IModule | undefined;
       using(...items: ExternalAsset[] | [boolean, ...ExternalAsset[]]): this;
-      contains(item: ExternalAsset, condition?: (...args: [ExternalAsset]) => boolean): boolean;
+      contains(item: ExternalAsset, condition?: (target: ExternalAsset) => boolean): boolean;
       removeCwd(value: unknown): string;
-      findAsset(value: string | URL, instance?: IModule | FindAssetOptions<ExternalAsset>): ExternalAsset | undefined;
+      findAsset(value: string | URL, instance: IModule | null): ExternalAsset | undefined;
+      findAsset(value: string | URL, options?: FindAssetOptions<ExternalAsset>): ExternalAsset | undefined;
       removeAsset(file: ExternalAsset): boolean;
       replace(file: ExternalAsset, replaceWith: string, options: ReplaceOptions): boolean;
       replace(file: ExternalAsset, replaceWith: string, mimeType?: string | ReplaceOptions): boolean;
@@ -72,8 +75,8 @@ Interface
       completeAsyncTask(err?: unknown, uri?: string, parent?: ExternalAsset, type?: number): void;
       performFinalize(override?: boolean): void;
       hasDocument(instance: IModule, document: string | string[] | undefined): boolean;
-      getDocumentAssets(instance: IModule, condition?: (...args: [ExternalAsset]) => boolean): ExternalAsset[];
-      getDataSourceItems(instance: IModule, condition?: (...args: [DataSource]) => boolean): DataSource[];
+      getDocumentAssets(instance: IModule, condition?: (target: ExternalAsset) => boolean): ExternalAsset[];
+      getDataSourceItems(instance: IModule, condition?: (target: DataSource) => boolean): DataSource[];
       setLocalUri(file: ExternalAsset, replace?: boolean): FileOutput;
       getLocalUri(data: FileData<ExternalAsset>): string;
       getMimeType(data: FileData<ExternalAsset>): string;
@@ -83,8 +86,8 @@ Interface
       removeProcessTimeout(instance: IModule, file: ExternalAsset): void;
       getProcessTimeout(handler: InstallData): number;
       clearProcessTimeout(): void;
-      scheduleTask(url: string | URL, data: unknown, priority: number): Promise<unknown> | void;
-      scheduleTask(url: string | URL, data: unknown, thenCallback?: ((...args: unknown[]) => unknown) | number, catchCallback?: (...args: unknown[]) => unknown, priority?: number): Promise<unknown>;
+      scheduleTask(url: string | URL, data: unknown, priority: number): Promise<unknown>;
+      scheduleTask(url: string | URL, data: unknown, thenCallback?: (...args: unknown[]) => unknown, catchCallback?: (...args: unknown[]) => unknown, priority?: number): Promise<unknown>;
       setTaskLimit(value: number): void;
       addDownload(value: number | Buffer | string, encoding: BufferEncoding): number;
       addDownload(value: number | Buffer | string, type?: number | BufferEncoding, encoding?: BufferEncoding): number;
@@ -104,7 +107,7 @@ Interface
       fetchObject(uri: string | URL, options?: OpenOptions | BufferFormat): Promise<object | null>;
       fetchBuffer(uri: string | URL, options?: OpenOptions): Promise<Buffer | string | null>;
       fetchFiles(uri: string | URL, pathname: string): Promise<string[]>;
-      fetchFiles(uri: string | URL, options?: Aria2Options | string): Promise<string[]>;
+      fetchFiles(uri: string | URL, options?: Aria2Options): Promise<string[]>;
       updateProgress(name: "request", id: number | string, receivedBytes: number, totalBytes: number, dataTime?: HighResolutionTime): void;
       start(emptyDir?: boolean): Promise<FinalizeResult>;
       processAssets(emptyDir?: boolean, using?: ExternalAsset[]): void;
@@ -177,19 +180,17 @@ Interface
       loadSettings(settings: Settings, password?: string): boolean;
       loadSettings(settings: Settings, permission?: PermissionReadWrite, password?: string): boolean;
       sanitizeAssets(assets: ExternalAsset[], exclusions?: string[]): ExternalAsset[];
-      writeChecksum(root: string, options?: ChecksumOptions): Promise<string[]>;
-      writeChecksum(root: string, to: string | undefined, options?: ChecksumOptions): Promise<string[] | null>;
-      writeChecksum(root: string, to?: string | ChecksumOptions, options?: ChecksumOptions): Promise<string[] | null>;
-      verifyChecksum(root: string, options?: ChecksumOptions): Promise<[string[], string[]] | null>;
-      verifyChecksum(root: string, from: string | undefined, options?: ChecksumOptions): Promise<[string[], string[]] | null>;
-      verifyChecksum(root: string, from?: string | ChecksumOptions, options?: ChecksumOptions): Promise<[string[], string[]] | null>;
+      writeChecksum(root: string, options: ChecksumOptions): Promise<string[]>;
+      writeChecksum(root: string, to?: string, options?: ChecksumOptions): Promise<string[] | null>;
+      verifyChecksum(root: string, options: ChecksumOptions): Promise<[string[], string[], number] | null>;
+      verifyChecksum(root: string, from?: string, options?: ChecksumOptions): Promise<[string[], string[], number] | null>;
       createFileThread(host: IFileManager, file: ExternalAsset): IFileThread;
       setTimeout(options: Record<string, number | string>): void;
       defineHttpCache(options: HttpMemorySettings, disk?: boolean): void;
       defineHttpConnect(options: HttpConnectSettings): void;
       readonly prototype: IFileManager;
       new(baseDirectory: string, config: RequestData, postFinalize?: PostFinalizeCallback): IFileManager;
-      new(baseDirectory: string, config: RequestData, permission?: IPermission, postFinalize?: PostFinalizeCallback): IFileManager;
+      new(baseDirectory: string, config: RequestData, permission?: IPermission | null, postFinalize?: PostFinalizeCallback): IFileManager;
   }
 
 .. versionadded:: 0.9.0
@@ -203,6 +204,54 @@ Interface
       - setTaskLimit
       - updateProgress
 
+Settings
+========
+
+.. code-block::
+  :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+
+  interface ProcessModule {
+      thread?: {
+          sub_limit?: number;
+      };
+  }
+
+  interface RequestModule {
+      timeout?: number | string;
+      disk?: {
+          enabled?: boolean;
+          expires?: number | string;
+          limit?: number | string;
+          include?: string[];
+          exclude?: string[];
+      };
+      buffer?: {
+          enabled?: boolean;
+          expires?: number | string;
+          limit?: number | string;
+          include?: string[];
+          exclude?: string[];
+          limit_all?: number | string;
+          purge_amount?: number | string;
+          to_disk?: number | string | [number | string, (number | string)?];
+      };
+      connect?: {
+          timeout?: number | string;
+          retry_wait?: number | string;
+          retry_after?: number | string;
+          retry_limit?: number;
+          redirect_limit?: number;
+      };
+  }
+
+  interface ErrorModule {
+      recursion_limit?: number;
+  }
+
+  interface LoggerModule {
+      session_id?: boolean | number;
+  }
+
 References
 ==========
 
@@ -215,3 +264,5 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/node.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/request.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
+
+* https://www.npmjs.com/package/@types/node

@@ -13,10 +13,9 @@ Interface
   import type { LogArguments } from "./lib/logger";
   import type { CloneObjectOptions } from "./lib/module";
 
+  import type { BytesOptions } from "bytes";
   import type { BinaryLike, CipherGCMTypes, Encoding } from "crypto";
   import type { HighResolutionTime } from "perf_hooks";
-
-  import type { BytesOptions } from "bytes";
 
   function createAbortError(): Error;
   function hasBit(value: unknown, flags: number): boolean;
@@ -42,6 +41,7 @@ Interface
   function parseExpires(value: number | string, start?: number): number;
   function formatTime(value: number, char: string): string;
   function formatTime(value: number, elapsed?: boolean, char?: string): string;
+  function convertTime(value: number | string): number;
   function convertTime(value: HighResolutionTime, format: true): string;
   function convertTime(value: HighResolutionTime, format?: boolean): number;
   function hasGlob(value: string): boolean;
@@ -187,6 +187,14 @@ Interface
   }
 
   const IMPORT_MAP: StringMap;
+
+.. deprecated:: 0.9.0
+
+  - :alt:`type` StringOfArray was renamed *ArrayOf<string>*.
+  - :alt:`type` BufferContent was renamed *Bufferable*.
+  - :alt:`interface` PoolConfig in "**db**" was relocated to "**settings**".
+  - :alt:`interface` LoggerFormat in "**logger**" was relocated to "**settings**".
+  - :alt:`interface` AddEventListenerOptions in "**dom**" was relocated to "**core**".
 
 .. versionadded:: 0.8.4
 

@@ -7,7 +7,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+.. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { DataSource, ViewEngine } from "./squared";
@@ -84,6 +86,66 @@ Interface
 .. versionadded:: 0.9.0
 
   *IDocument* property **config** was made abstract.
+
+Settings
+========
+
+.. code-block::
+  :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+
+  import type { PermittedDirectories } from "./core";
+  import type { DbModule, DbSettings, DocumentComponentOptions, PurgeComponent } from "./settings";
+
+  interface DocumentModule {
+      handler: "@pi-r/chrome";
+      extensions?: string[];
+      db?: DbModule<DbSettings>;
+      eval?: {
+          function?: boolean;
+          absolute?: boolean;
+          template?: boolean;
+          userconfig?: boolean;
+      };
+      format?: {
+          uuid?: {
+              dictionary?: string;
+              pathname?: string;
+              filename?: string;
+          };
+      };
+      imports?: StringMap;
+      settings?: {
+        broadcast_id?: string | string[];
+        users?: Record<string, {
+            extensions?: string[] | null;
+            imports?: StringMap;
+            imports_strict?: boolean;
+            pages?: unknown;
+            transform?: unknown;
+            view_engine?: unknown;
+        }>;
+        cache_dir?: string;
+        imports_strict?: boolean;
+        directory?: {
+            template?: string;
+            data?: string;
+            export?: string;
+            schema?: string;
+            package?: string;
+        };
+        purge?: PurgeComponent;
+        options?: DocumentComponentOptions<boolean | number>;
+        pages?: Record<string, Record<string, unknown>>;
+        transform?: {
+            html?: Record<string, Record<string, unknown>>;
+            css?: Record<string, Record<string, unknown>>;
+            js?: Record<string, Record<string, unknown>>;
+        };
+        view_engine?: Record<string, Record<string, unknown>>;
+        export?: Record<string, string | (...args: unknown[]) => unknown>;
+      };
+      permission: PermittedDirectories;
+  }
 
 References
 ==========

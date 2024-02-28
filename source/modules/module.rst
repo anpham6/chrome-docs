@@ -7,7 +7,9 @@
 Interface
 =========
 
-.. code-block:: typescript
+.. highlight:: typescript
+
+.. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
   import type { LogStatus } from "./squared";
@@ -19,13 +21,12 @@ Interface
   import type { Settings } from "./node";
   import type { LoggerFormatSettings } from "/settings";
 
-  import type { NoParamCallback } from "fs";
   import type { SpawnOptions } from "child_process";
   import type { BinaryLike } from "crypto";
+  import type { FileTypeResult } from "file-type";
+  import type { NoParamCallback } from "fs";
 
   import type * as EventEmitter from "events";
-
-  import type { FileTypeResult } from "file-type";
 
   type BufferView = Buffer | string | NodeJS.ArrayBufferView;
   type CpuUsage = NodeJS.CpuUsage;
@@ -173,9 +174,10 @@ Interface
       parseFunction(value: unknown, options?: ParseFunctionOptions): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
       parseFunction(value: unknown, absolute: boolean, sync?: boolean): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
       asString(value: unknown, cacheKey?: boolean | "throws"): string;
-      asHash(data: BinaryLike, options: AsHashOptions): string;
       asHash(data: BinaryLike, minLength: number): string;
-      asHash(data: BinaryLike, algorithm?: number | string | AsHashOptions, minLength?: number | AsHashOptions): string;
+      asHash(data: BinaryLike, algorithm: string, minLength?: number): string;
+      asHash(data: BinaryLike, algorithm?: string, options?: AsHashOptions): string;
+      asHash(data: BinaryLike, options?: AsHashOptions): string;
       readHash(value: string | URL, options?: ReadHashOptions): Promise<string>;
       toPosix(value: unknown, normalize: boolean): string;
       toPosix(value: unknown, filename?: string, normalize?: boolean): string;
@@ -195,17 +197,17 @@ Interface
       createDir(value: string | URL, overwrite?: boolean): boolean;
       removeDir(value: string | URL, sinceCreated: number, recursive?: boolean): boolean;
       removeDir(value: string | URL, empty?: boolean, recursive?: boolean): boolean;
-      copyDir(src: string | URL, dest: string | URL, options: CopyDirOptions): Promise<CopyDirResult>;
       copyDir(src: string | URL, dest: string | URL, move?: boolean, recursive?: boolean): Promise<CopyDirResult>;
+      copyDir(src: string | URL, dest: string | URL, options?: CopyDirOptions): Promise<CopyDirResult>;
       renameFile(src: string | URL, dest: string | URL, throws?: boolean): boolean;
       streamFile(src: string, cache: boolean): Promise<Buffer | string>;
       streamFile(src: string, options: ReadBufferOptions): Promise<Buffer | string>;
       streamFile(src: string, cache?: boolean | ReadBufferOptions, options?: ReadBufferOptions): Promise<Buffer | string>;
       readText(value: string | URL, cache: boolean): string;
       readText(value: string | URL, options: ReadTextOptions): Promise<string> | string;
-      readText(value: string | URL, encoding?: BufferEncoding | boolean | ReadTextOptions, cache?: boolean): string;
+      readText(value: string | URL, encoding?: BufferEncoding | ReadTextOptions, cache?: boolean): string;
       readBuffer(value: string | URL, options: ReadBufferOptions): Promise<Buffer | null> | Buffer | null;
-      readBuffer(value: string | URL, cache?: boolean): Buffer | null;
+      readBuffer(value: string | URL, cache?: boolean | ReadBufferOptions): Buffer | null;
       resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer): Promise<FileTypeResult | undefined>;
       lookupMime(value: string, extension?: boolean): string;
       initCpuUsage(instance?: IModule): CpuUsage;
@@ -217,8 +219,8 @@ Interface
       getPackageVersion(name: string | [string, string], startDir: string): string;
       getPackageVersion(name: string | [string, string], unstable?: boolean, startDir?: string): string;
       checkSemVer(name: string | [string, string], options: CheckSemVerOptions): boolean;
-      checkSemVer(name: string | [string, string], min: number | string, max: number | string, options: CheckSemVerOptions): boolean;
       checkSemVer(name: string | [string, string], min: number | string, max?: number | string, unstable?: boolean, startDir?: string): boolean;
+      checkSemVer(name: string | [string, string], min: number | string, max: number | string, options?: CheckSemVerOptions): boolean;
       sanitizeCmd(value: string): string;
       sanitizeArgs(value: string, doubleQuote?: boolean): string;
       sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
@@ -235,6 +237,164 @@ Interface
 
   *IModule* static property **LOG_FORMAT** was created.
 
+Settings
+========
+
+.. code-block::
+  :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+
+  import type { LogMessageOptions, LogTypeValue, LoggerStatus } from "./logger";
+  import type { LoggerProcessSettings } from "./settings";
+
+  import type { BackgroundColor as IBackgroundColor, ForegroundColor as IForegroundColor } from "chalk";
+  import type { BinaryLike, CipherGCMTypes } from "crypto";
+  import type { SecureVersion } from "tls";
+
+  interface NodeModule {
+      process?: {
+          cpu_usage?: boolean;
+          memory_usage?: boolean;
+          inline?: boolean;
+      };
+      require?: {
+          ext?: string | string[] | boolean;
+          npm?: boolean;
+          inline?: boolean;
+      };
+  }
+
+  interface ProcessModule {
+      env?: {
+          apply?: boolean;
+      };
+      cipher?: {
+          algorithm?: CipherGCMTypes;
+          key?: BinaryLike;
+          iv?: BinaryLike;
+      };
+      password?: string;
+  }
+
+  interface MemoryModule {
+      settings?: {
+          users?: boolean | string[];
+          cache_disk?: {
+              enabled?: boolean;
+              min_size?: number | string;
+              max_size?: number | string;
+              include?: string[];
+              exclude?: string[];
+              expires?: number | string;
+          };
+      };
+  }
+
+  interface PermissionModule {
+      home_read?: boolean;
+      home_write?: boolean;
+      process_exec?: (string | ExecOptions)[];
+  }
+
+  interface ErrorModule {
+      out?: string | (err: Error, data: LogTypeValue, require?: NodeRequire) => void;
+      fatal?: boolean;
+  }
+
+  interface TempModule {
+      dir?: string;
+      write?: boolean;
+  }
+
+  interface LoggerModule {
+      enabled?: boolean;
+      level?: number,
+      production?: string[];
+      format?: {
+          title?: {
+              width?: number;
+              color?: ForegroundColor;
+              bg_color?: BackgroundColor;
+              bold?: boolean;
+              justify?: "left" | "center" | "right";
+              as?: StringMap;
+          };
+          value?: {
+              width?: number;
+              color?: ForegroundColor;
+              bg_color?: BackgroundColor;
+              bold?: boolean;
+              justify?: "left" | "center" | "right";
+          },
+          hint?: {
+              width?: number;
+              color?: ForegroundColor;
+              bg_color?: BackgroundColor;
+              bold?: boolean;
+              as?: StringMap;
+              unit?: "auto" | "s" | "ms";
+          };
+          message?: {
+              width?: number;
+              color?: ForegroundColor;
+              bg_color?: BackgroundColor;
+              bold?: boolean;
+          };
+          meter?: {
+              color?: ForegroundColor;
+              bg_color?: BackgroundColor;
+              bg_alt_color?: BackgroundColor;
+              bold?: boolean;
+          };
+      };
+      meter?: {
+          http?: number;
+          image?: number;
+          compress?: number;
+          process?: number;
+      };
+      broadcast?: {
+          enabled?: boolean;
+          out?: string | (value: string, options: LogMessageOptions, require?: NodeRequire) => void;
+          color?: boolean;
+          port?: number | number[];
+          secure?: {
+              port?: number | number[];
+              ca?: string;
+              key?: string;
+              cert?: string;
+              version?: SecureVersion
+          };
+      };
+      color?: boolean;
+      message?: boolean;
+      stdout?: boolean;
+      abort?: boolean;
+      status?: boolean | LoggerStatus;
+      unknown?: boolean | LoggerColor;
+      system?: boolean | LoggerColor;
+      process?: boolean | LoggerProcessSettings;
+      image?: boolean | LoggerColor;
+      compress?: boolean | LoggerColor;
+      watch?: boolean | LoggerColor;
+      file?: boolean | LoggerColor;
+      cloud?: boolean | LoggerColor;
+      db?: boolean | LoggerColor;
+      time_elapsed?: boolean | LoggerColor;
+      time_process?: boolean | LoggerColor;
+      exec?: boolean | LoggerColor;
+      http?: boolean | LoggerColor;
+      node?: boolean | LoggerColor;
+      session_id?: boolean | number;
+      stack_trace?: boolean | number;
+  }
+
+  type BackgroundColor = typeof IBackgroundColor | `#${string}`;
+  type ForegroundColor = typeof IForegroundColor | `#${string}`;
+
+.. versionadded:: 0.8.5
+
+  *PermissionModule* properties **home_read** | **home_write** were implemented.
+
 References
 ==========
 
@@ -243,3 +403,6 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/module.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/node.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
+
+* https://www.npmjs.com/package/@types/node
+* https://www.npmjs.com/package/chalk

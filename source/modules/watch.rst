@@ -68,7 +68,7 @@ Settings
   import type { SecureVersion } from "tls";
 
   interface WatchModule {
-      handler: "@e-mc/watch";
+      // handler: "@e-mc/watch";
       extensions?: string[];
       timeout?: number | string;
       interval?: number | string;
@@ -85,8 +85,29 @@ Settings
           broadcast_id?: string | string[];
           users?: Record<string, Record<string, unknown>>;
       };
-      permission: PermittedDirectories;
+      permission?: PermittedDirectories;
   }
+
+Example usage
+-------------
+
+.. code-block:: javascript
+
+  const Watch = require("@e-mc/watch");
+
+  const instance = new Watch({ interval: 100, port: 8080 });
+  instance.init();
+
+  instance.whenModified = (assets) => {
+    assets.forEach(item => console.log(item.uri));
+  };
+
+  const assets = [
+    { localUri: "/path/workspace/output/image1.png", uri: "http://hostname/path/document1.png", watch: true },
+    { localUri: "/path/workspace/output/image2.png", uri: "http://hostname/path/document2.png", watch: true }
+  ];
+
+  instance.start(assets, { disk_read: ["/path/workspace/output/**"] });
 
 References
 ==========

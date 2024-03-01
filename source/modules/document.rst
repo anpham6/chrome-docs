@@ -97,7 +97,7 @@ Settings
   import type { DbModule, DbSettings, DocumentComponentOptions, PurgeComponent } from "./settings";
 
   interface DocumentModule {
-      handler: "@pi-r/chrome";
+      // handler: "@pi-r/chrome";
       extensions?: string[];
       db?: DbModule<DbSettings>;
       eval?: {
@@ -115,37 +115,78 @@ Settings
       };
       imports?: StringMap;
       settings?: {
-        broadcast_id?: string | string[];
-        users?: Record<string, {
-            extensions?: string[] | null;
-            imports?: StringMap;
-            imports_strict?: boolean;
-            pages?: unknown;
-            transform?: unknown;
-            view_engine?: unknown;
-        }>;
-        cache_dir?: string;
-        imports_strict?: boolean;
-        directory?: {
-            template?: string;
-            data?: string;
-            export?: string;
-            schema?: string;
-            package?: string;
-        };
-        purge?: PurgeComponent;
-        options?: DocumentComponentOptions<boolean | number>;
-        pages?: Record<string, Record<string, unknown>>;
-        transform?: {
-            html?: Record<string, Record<string, unknown>>;
-            css?: Record<string, Record<string, unknown>>;
-            js?: Record<string, Record<string, unknown>>;
-        };
-        view_engine?: Record<string, Record<string, unknown>>;
-        export?: Record<string, string | (...args: unknown[]) => unknown>;
+          broadcast_id?: string | string[];
+          users?: Record<string, {
+              extensions?: string[] | null;
+              imports?: StringMap;
+              imports_strict?: boolean;
+              pages?: unknown;
+              transform?: unknown;
+              view_engine?: unknown;
+          }>;
+          cache_dir?: string;
+          imports_strict?: boolean;
+          directory?: {
+              template?: string;
+              data?: string;
+              export?: string;
+              schema?: string;
+              package?: string;
+          };
+          purge?: PurgeComponent;
+          options?: DocumentComponentOptions<boolean | number>;
+          pages?: Record<string, Record<string, unknown>>;
+          transform?: {
+              html?: Record<string, Record<string, unknown>>;
+              css?: Record<string, Record<string, unknown>>;
+              js?: Record<string, Record<string, unknown>>;
+          };
+          view_engine?: Record<string, Record<string, unknown>>;
+          export?: Record<string, string | (...args: unknown[]) => unknown>;
       };
-      permission: PermittedDirectories;
+      permission?: PermittedDirectories;
   }
+
+Example usage
+-------------
+
+.. code-block:: javascript
+  :caption: Abstract class
+
+  const Document = require("@e-mc/document"); // @pi-r/chrome
+
+  const assets = [
+    { pathname: "output", filename: "image1.png", uri: "http://hostname/path/document1.png" },
+    { pathname: "output", filename: "image2.png", uri: "http://hostname/path/document2.png" }
+  ];
+
+  const instance = new Document({
+    eval: {
+      function: true,
+      template: true
+    },
+    imports: {
+      "http://hostname/path/": "build/"
+    },
+    settings: {
+      imports_strict: true,
+      users: {
+        "nodejs-001": {
+          imports_strict: false,
+          imports: {
+            "http://hostname/path": "build"
+          }
+        }
+      },
+      directory: {
+        template: "../chrome/template" // ../chrome/template/users/nodejs-001
+      }
+    }
+  });
+  // instance.host = new Host();
+  instance.init(assets);
+
+.. attention:: **@e-mc/document** is an abstract base class and cannot be instantiated. :target:`Document` is more commonly called through :doc:`@pi-r/chrome </document/index>`.
 
 References
 ==========

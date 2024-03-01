@@ -305,5 +305,5 @@ Example usage
 .. deprecated:: 0.6.2
 
   - **AWS_DEFAULT_REGION** is not recognized in *AWS NodeJS SDK* and will be removed in **0.7.0**.
-  - Unofficial credential properties from V2 (e.g. profile) will be removed in **0.7.0**.
+  - Unofficial credential properties from V2 :alt:`(e.g. profile)` will be removed in **0.7.0**.
   - *AWSDatabaseQuery* property **partitionKey** is a duplicate of **key** will be removed in **0.7.0**.

@@ -36,9 +36,9 @@ Interface
       lookupDns(hostname: string): LookupFunction;
       proxyOf(uri: string, localhost?: boolean): ProxySettings | undefined;
       statusOn(name: number | number[], callback: StatusOnCallback): void;
-      statusOn(name: number | number[], patternUrl: string, callback: StatusOnCallback): void;
+      statusOn(name: number | number[], globUrl: string, callback: StatusOnCallback): void;
       headersOn(name: string | string[], callback: HeadersOnCallback): void;
-      headersOn(name: string | string[], patternUrl: string, callback: HeadersOnCallback): void;
+      headersOn(name: string | string[], globUrl: string, callback: HeadersOnCallback): void;
       headersOf(uri: string): OutgoingHttpHeaders | undefined;
       aria2c(uri: string | URL, pathname: string): Promise<string[]>;
       aria2c(uri: string | URL, options?: Aria2Options): Promise<string[]>;
@@ -79,6 +79,10 @@ Interface
       new(module?: RequestModule): IRequest;
   }
 
+.. deprecated:: 0.8.5
+
+  *RequestInit* property **requestTimeout** was renamed **readTimeout** and will be removed in **0.9.0**.
+
 .. versionadded:: 0.8.2
 
   *IRequest* method **statusOn** was created.
@@ -107,6 +111,13 @@ Settings
       agent?: {
           keep_alive?: boolean;
           timeout?: number | string;
+      };
+      connect?: {
+          timeout?: number | string;
+          retry_wait?: number | string;
+          retry_after?: number | string;
+          retry_limit?: number;
+          redirect_limit?: number;
       };
       dns?: {
           family?: number;
@@ -164,6 +175,43 @@ Settings
           conf_path?: string;
       };
   }
+
+Example usage
+-------------
+
+.. code-block:: javascript
+
+  const Request = require("@e-mc/request");
+
+  const instance = new Request({
+    read_timeout: 30,
+    connect: {
+      timeout: 20, // Seconds
+      retry_wait: 1,
+      retry_after: 30,
+      retry_limit: 3, // Max attempts
+      redirect_limit: 10
+    },
+    use: {
+      http_version: 2,
+      accept_encoding: true
+    },
+    dns: {
+      family: 4 // ipVersion
+    },
+    agent: { keep_alive: true }
+  });
+  request.init({ ipVersion: 6 });
+
+  const options = {
+    format: "yaml",
+    httpVersion: 1,
+    silent: true,
+    headers: { "x-goog-user-project": "project-1" }
+  };
+  instance.get("http://hostname/path/config.yml", options).then(data => {
+    console.log(data.property);
+  });
 
 References
 ==========

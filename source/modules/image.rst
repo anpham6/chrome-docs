@@ -39,7 +39,8 @@ Interface
 
   interface ImageConstructor extends ModuleConstructor {
       readonly REGEXP_SIZERANGE: RegExp;
-      transform(file: string, command: string, options?: TransformOptions): Promise<Buffer | string | null>;
+      transform(file: string | Buffer, command: string, options: { tempFile: true }): Promise<string>;
+      transform(file: string | Buffer, command: string, options?: TransformOptions): Promise<Buffer | null>;
       clamp(value: unknown, min?: number, max?: number): number;
       isBinary(mime: unknown): mime is string;
       toABGR(buffer: Uint8Array | Buffer): Buffer;
@@ -56,7 +57,7 @@ Settings
   import type { PermittedDirectories } from "./core";
 
   interface ImageModule {
-      handler: "@pi-r/jimp";
+      // handler: "@pi-r/jimp";
       webp?: string;
       settings?: {
           broadcast_id?: string | string[];
@@ -75,8 +76,15 @@ Settings
               gif2webp?: string[];
           };
       };
-      permission: PermittedDirectories;
+      permission?: PermittedDirectories;
   }
+
+Example usage
+-------------
+
+- :doc:`@pi-r/jimp </image/index>`
+
+.. note:: Usage without a **Host** is conducted through static methods. The **using** class method is called by the **Host** to perform the transformation.
 
 References
 ==========

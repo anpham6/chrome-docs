@@ -27,3 +27,7 @@
     line-height: 20px;
     font-size: 12px;
 }
+
+.versionadded  blockquote .hlist ul.simple {
+    margin-bottom: 0px;
+}

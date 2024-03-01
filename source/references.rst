@@ -74,6 +74,12 @@ https://unpkg.com/@e-mc/types/lib/cloud.d.ts
   | `CloudService <search.html?q=CloudService>`_
   | `CloudStorage <search.html?q=CloudStorage>`_
 
+.. _references-e-mc-types-lib-node:
+.. rst-class:: block-list
+
+https://unpkg.com/@e-mc/types/lib/node.d.ts
+  | `Settings <search.html?q=Settings>`_
+
 .. _references-e-mc-types-lib-http:
 .. rst-class:: block-list
 

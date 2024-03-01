@@ -76,6 +76,48 @@ Settings
       };
   }
 
+Example usage
+-------------
+
+.. code-block:: javascript
+
+  const Compress = require("@e-mc/compress");
+
+  const instance = new Compress({
+    gzip: {
+      memLevel: 1,
+      windowBits: 16
+    },
+    tinify: {
+      api_key: "**********"
+    },
+    settings: {
+      gzip_level: 9, // Lowest priority
+      brotli_quality: 11,
+      chunk_size: "16kb" // All compression types
+    }
+  });
+  instance.init();
+
+  const stream = instance.createWriteStreamAsGzip("/tmp/archive.tar", "/path/output/archive.tar.gz", { level: 5, chunkSize: 4 * 1024 }); // Override settings
+  stream
+    .on("finish", () => console.log("finish"))
+    .on("error", err => console.error(err));
+
+  const options = {
+    plugin: "tinify",
+    format: "png", // Optional with extension
+    timeout: 60 * 1000, // 1m
+    options: {
+      apiKey: "**********" // Override settings
+    }
+  };
+  instance.tryImage("/tmp/image.png", "/path/output/compressed.png", options, (err, data) => {
+    if (!err) {
+      console.log(Buffer.byteLength(data));
+    }
+  });
+
 References
 ==========
 

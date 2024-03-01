@@ -16,7 +16,7 @@ Interface
 
   import type { IHost } from "./index";
   import type { ClientDbConstructor, IClientDb } from "./core";
-  import type { BatchQueryResult, DB_TYPE, ExecuteBatchQueryOptions, ExecuteQueryOptions, HandleFailOptions, ProcessRowsOptions, QueryResult, SQL_COMMAND } from "./db";
+  import type { BatchQueryResult, DB_TYPE, ErrorQueryCallback, ExecuteBatchQueryOptions, ExecuteQueryOptions, HandleFailOptions, ProcessRowsOptions, QueryResult, SQL_COMMAND } from "./db";
   import type { AuthValue } from "./http";
   import type { DbCoerceSettings, DbModule, DbSourceOptions, PoolConfig } from "./settings";
 
@@ -27,8 +27,10 @@ Interface
       getCredential(item: DbDataSource): PlainObject;
       hasSource(source: string, ...type: number[]): boolean;
       applyCommand(...items: DbDataSource[]): void;
+      executeQuery(item: DbDataSource, callback: ErrorQueryCallback): Promise<QueryResult>;
       executeQuery(item: DbDataSource, sessionKey: string): Promise<QueryResult>;
       executeQuery(item: DbDataSource, options?: ExecuteQueryOptions | string): Promise<QueryResult>;
+      executeBatchQuery(batch: DbDataSource[], callback: ErrorQueryCallback, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       executeBatchQuery(batch: DbDataSource[], sessionKey: string, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       executeBatchQuery(batch: DbDataSource[], options?: ExecuteBatchQueryOptions | string, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       processRows(batch: DbDataSource[], tasks: Promise<QueryResult | null>[], parallel: boolean): Promise<BatchQueryResult>;
@@ -92,6 +94,10 @@ Interface
       new(pool: unknown, poolKey: string, uuidKey?: AuthValue | null): IDbPool;
   }
 
+.. versionadded:: 0.9.0
+
+  *IDb* methods **executeQuery** | **executeBatchQuery** call with parameter :target:`callback` as :alt:`ErrorQueryCallback`.
+
 Settings
 ========
 
@@ -101,7 +107,7 @@ Settings
   import type { DbSourceOptions, PurgeComponent } from "./settings";
 
   interface DbModule {
-      handler: "@e-mc/db";
+      // handler: "@e-mc/db";
       mariadb?: DbStoredCredentials;
       mongodb?: DbStoredCredentials;
       mssql?: DbStoredCredentials;
@@ -128,6 +134,76 @@ Settings
   }
 
   type DbStoredCredentials = Record<string, Record<string, unknown>>;
+
+Example usage
+-------------
+
+.. code-block:: javascript
+  :caption: Using @pi-r/mongodb
+
+  const Db = require("@e-mc/db");
+
+  const instance = new Db({
+    mongodb: {
+      main: {
+        server: "localhost:27017",
+        auth: {
+          username: "**********",
+          password: "**********"
+        },
+        authMechanism: "SCRAM-SHA-1"
+      }
+    },
+    settings: {
+      mongodb: {
+        pool: {
+          max: 10,
+          idle: 60 * 1000,
+          queue_max: 4,
+          queue_idle: 30 * 1000,
+          timeout: 10 * 1000
+        },
+        cache: {
+          timeout: "1d",
+          when_empty: false
+        },
+        coerce: {
+          credential: false,
+          options: true
+        }
+      }
+    }
+  });
+  // instance.host = new Host();
+  instance.init();
+
+  const item = {
+    source: "mongodb",
+    credential: "main",
+    table: "demo",
+    name: "nodejs",
+    query: {
+      id: {
+        "$eq": "1"
+      }
+    },
+    willAbort: true
+  };
+  await instance.setCredential(item);
+
+  const rows = await instance.executeQuery(item, (err, item) => {
+    if (err.code === "E11000") {
+      return true; // throw err;
+    }
+    return false; // return [];
+  });
+
+  const [rows1, rows2] = await instance.executeBatchQuery([
+      { ...item, usePool: true },
+      { ...item, query: { id: { "$eq": "2" } } }
+    ],
+    { parallel: true, connectOnce: true }
+  );
 
 References
 ==========

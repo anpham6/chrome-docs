@@ -81,7 +81,7 @@ Settings
   import type { CloudServiceOptions, DbSourceOptions, PurgeComponent } from "./settings";
 
   interface CloudModule {
-      handler: "@e-mc/cloud";
+      // handler: "@e-mc/cloud";
       extensions?: string[];
       atlas?: CloudStoredCredentials;
       aws?: CloudStoredCredentials;
@@ -108,10 +108,56 @@ Settings
           oci?: CloudServiceOptions;
           minio?: CloudServiceOptions;
       };
-      permission: PermittedDirectories;
+      permission?: PermittedDirectories;
   }
 
   type CloudStoredCredentials = Record<string, Record<string, unknown>>;
+
+Example usage
+-------------
+
+.. code-block:: javascript
+  :caption: Using @pi-r/aws
+
+  const Cloud = require("@e-mc/cloud");
+
+  const instance = new Cloud({
+    aws: {
+      main: {
+        accessKeyId: "**********",
+        secretAccessKey: "**********"
+      }
+    },
+    "aws-v3": {
+      main: {
+        credentials: {
+          accessKeyId: "**********",
+          secretAccessKey: "**********",
+          region: "ap-northeast-1"
+        }
+      }
+    }
+  });
+  // instance.host = new Host();
+  instance.init();
+
+  const options = {
+    contentType: "application/tar",
+    acl: "authenticated-read",
+    chunkSize: "8mb",
+    overwrite: false, // Default
+    tags: { key_1: "value", key_2: "value" }
+  };
+  Promise.all([
+    // nodejs-001/archive.tar
+    instance.uploadObject("aws", "main", "nodejs-001", options, "/tmp/archive.tar"),
+    // nodejs-001/2024/01-01.tar
+    instance.uploadObject("aws", "main", "nodejs-001", { ...options, publicRead: true, pathname: "2024", filename: "01-01.tar" }, "/tmp/archive.tar"),
+    // nodejs-001/archive_1.tar
+    instance.uploadObject("aws", { accessKeyId: "*****", secretAccessKey: "*****" }, "nodejs-001", { overwrite: false }, "/tmp/archive.tar")
+  ]);
+
+  const rows = await instance.getDatabaseRows({ service: "aws-v3", credential: "main", table: "demo", key: { id: 1 } });
 
 References
 ==========

@@ -14,7 +14,7 @@ Interface
   }
 
 .. code-block:: typescript
-  :emphasize-lines: 31,32,58
+  :emphasize-lines: 31,32,57,59
 
   interface CloudStorage {
       service: string;
@@ -72,6 +72,7 @@ Interface
   }
 
   interface CloudStorageDownload extends CloudStorageAction {
+      keyname?: string;
       versionId?: string;
       options?: unknown;
       deleteObject?: unknown;
@@ -81,7 +82,8 @@ Interface
 .. versionadded:: 0.9.0
 
   - *CloudStorageAction* property **chunkSize** | **chunkLimit** for parallel multipart operations.
-  - *CloudStorageDownload* property **options** for to customize the download method.
+  - *CloudStorageDownload* property **options** to customize the provider download client.
+  - *CloudStorageDownload* property **keyname** for file to be downloaded and subsequently renamed to **filename**.
 
 .. seealso:: For any non-standard named definitions check :doc:`References </references>`.
 
@@ -127,8 +129,9 @@ Storage
 
         "all": true, // Include descendants + transforms + torrents
 
+        "pathname": "2024", // nodejs-001/2024/picture.png
         "filename": "picture.png", // Choose a different filename for bucket
-        "overwrite": false, // If exists then picture{1,2,3}.png
+        "overwrite": false, // If exists then picture_{1,2,3}.png
         /* OR */
         "overwrite": true, // Always use current filename
 
@@ -162,6 +165,9 @@ Storage
         /* OR */
         "preservePath": false, // Use base directory
         "preservePath": true, // Use asset directory
+
+        "keyname": "", // bucket/alternate.png to download/images/alternate.png
+        "keyname": "picture.png", // bucket/picture.png to download/images/alternate.png
 
         "deleteObject": true, // Delete from bucket after successful download
         "deleteObject": {/* service-interface */}

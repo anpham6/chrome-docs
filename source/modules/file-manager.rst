@@ -57,6 +57,7 @@ Interface
       install(name: "cloud", module?: CloudModule): ICloud | undefined;
       install(name: "db", module?: DbModule): IDb | undefined;
       install(name: "image", targets: Map<string, ImageConstructor>, module?: ImageModule): void;
+      install(name: "image", target: ImageConstructor, module?: ImageModule): void;
       install(name: "watch", module: WatchModule): WatchInstance<ExternalAsset> | undefined;
       install(name: "watch", interval?: number | string, port?: number | string, securePort?: number | string, extensions?: unknown[]): WatchInstance<ExternalAsset> | undefined;
       install(name: "compress", module?: CompressModule): ICompress<CompressModule> | undefined;
@@ -195,7 +196,9 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  *IFileManager* methods were created:
+  - *IFileManager* method **install** with **name** :alt:`"image"` and **target** as :alt:`ImageConstructor`.
+  - *IFileManager* method **fetchObject** will *throw* errors rather than return *null*.
+  - *IFileManager* methods were created:
 
     .. hlist::
       :columns: 3
@@ -251,6 +254,49 @@ Settings
   interface LoggerModule {
       session_id?: boolean | number;
   }
+
+Example usage
+-------------
+
+.. code-block:: javascript
+
+  const FileManager = require("@e-mc/file-manager");
+
+  FileManager.loadSettings({ // Global
+    process: {
+      thread: { sub_limit: 16 }
+    },
+    request: {
+      timeout: "15s",
+      disk: {
+        enabled: true,
+        limit: "1gb", // Content-Length
+        expires: "1d",
+        exclude: ["https://github.com", "zip"]
+      },
+      buffer: {
+        enabled: true,
+        limit: "64mb",
+        limit_all: "512mb",
+        expires: "1h",
+        purge_amount: 0.25 // When limit_all exceeded
+      }
+    },
+    permission: {
+      disk_read: ["**/*"],
+      disk_write: ["/tmp/**"]
+    }
+  });
+
+  const assets = [
+    { pathname: "output", filename: "image1.png", uri: "http://hostname/path/document1.png" },
+    { pathname: "output", filename: "image2.png", uri: "http://hostname/path/document2.png" }
+  ];
+
+  const instance = new FileManager("/path/workspace", { assets, incremental: "etag" }, { disk_write: ["/path/workspace/output/**"] });
+  await instance.start();
+
+.. caution:: :target:`FileManager` is a sub-class of :doc:`Host <core>` and :doc:`Module <module>`. Their ``loadSettings`` will be called as well which uses a combined :ref:`Settings <references-e-mc-types-lib-node>` object.
 
 References
 ==========

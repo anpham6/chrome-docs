@@ -391,7 +391,7 @@ Settings
   type BackgroundColor = typeof IBackgroundColor | `#${string}`;
   type ForegroundColor = typeof IForegroundColor | `#${string}`;
 
-.. versionadded:: 0.8.5
+.. versionadded:: 0.9.0
 
   *PermissionModule* properties **home_read** | **home_write** were implemented.
 

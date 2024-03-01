@@ -226,6 +226,26 @@ Settings
       };
   }
 
+Example usage
+-------------
+
+.. code-block:: javascript
+  :caption: Abstract class
+
+  const { Host } = require("@e-mc/core");
+
+  Host.loadSettings({ // Global
+    process: {
+      thread: { limit: 8 }
+    },
+    permission: {
+      disk_read: ["**/*"],
+      disk_write: ["/tmp/**"]
+    }
+  });
+
+.. attention:: **@e-mc/core** is mostly a collection of abstract base classes which cannot be instantiated. :target:`Host` is more commonly called through :doc:`@e-mc/file-manager <file-manager>`.
+
 References
 ==========
 

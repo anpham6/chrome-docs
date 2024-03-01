@@ -43,7 +43,7 @@ Settings
   import type { PermittedDirectories } from "./core";
 
   interface TaskModule {
-      handler: "@pi-r/gulp";
+      // handler: "@pi-r/gulp";
       settings?: {
           broadcast_id?: string | string[];
           users?: Record<string, Record<string, unknown>>;
@@ -52,8 +52,15 @@ Settings
               gid?: number;
           };
       };
-      permission: PermittedDirectories;
+      permission?: PermittedDirectories;
   }
+
+Example usage
+-------------
+
+- :doc:`@pi-r/gulp </task/index>`
+
+.. note:: Usage without a **Host** is conducted through static methods. The **using** class method is called by the **Host** to perform the transformation.
 
 References
 ==========

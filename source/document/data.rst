@@ -359,7 +359,7 @@ Example usage
     }
   }
 
-.. important:: Parenthesis where noted in "value" are required.
+.. important:: Parenthesis where noted in ``value`` are required.
 
 View Engine
 ===========

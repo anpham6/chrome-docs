@@ -59,7 +59,7 @@ Interface
       LOG_CLOUD_DELETE: LogMessageOptions;
       LOG_CLOUD_DELAYED: LogMessageOptions;
       finalize(this: IHost, instance: ICloud): Promise<unknown>;
-      uploadAsset(state: IScopeOrigin<IFileManager, ICloud<IFileManager>>, file: ExternalAsset, options: UploadAssetOptions): Promise<unknown>[];
+      uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, options: UploadAssetOptions): Promise<unknown>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, ignoreProcess: boolean): Promise<unknown>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, contentType?: string, ignoreProcess?: boolean): Promise<unknown>[];
       sanitizeAssets(assets: ExternalAsset[]): ExternalAsset[];
@@ -67,9 +67,31 @@ Interface
       new(module?: CloudModule, database?: CloudDatabase[], ...args: unknown[]): ICloud;
   }
 
+  interface ICloudServiceClient {
+      CLOUD_SERVICE_NAME: string;
+      CLOUD_UPLOAD_DISK?: boolean;
+      CLOUD_UPLOAD_STREAM?: boolean;
+      CLOUD_UPLOAD_CHUNK?: boolean;
+      CLOUD_DOWNLOAD_CHUNK?: boolean;
+      validateStorage?(credential: unknown, data?: CloudService): boolean;
+      validateDatabase?(credential: unknown, data?: CloudService): boolean;
+      createStorageClient?(this: IModule, credential: unknown, service?: string): unknown;
+      createDatabaseClient?(this: IModule, credential: unknown, data?: CloudService): unknown;
+      createBucket?(this: IModule, credential: unknown, bucket: string, publicRead?: boolean, service?: string, sdk?: string): Promise<boolean>;
+      createBucketV2?(this: IModule, credential: unknown, bucket: string, acl?: unknown, options?: unknown, service?: string, sdk?: string): Promise<boolean>;
+      setBucketPolicy?(this: IModule, credential: unknown, bucket: string, options: unknown, service?: string, sdk?: string): Promise<boolean>;
+      setBucketTagging?(this: IModule, credential: unknown, bucket: string, options: unknown, service?: string, sdk?: string): Promise<boolean>;
+      setBucketWebsite?(this: IModule, credential: unknown, bucket: string, options: BucketWebsiteOptions, service?: string, sdk?: string): Promise<boolean>;
+      deleteObjects?(this: IModule, credential: unknown, bucket: string, service?: string, sdk?: string, recursive?: boolean): Promise<void>;
+      deleteObjectsV2?(this: IModule, credential: unknown, bucket: string, recursive?: boolean, service?: string, sdk?: string): Promise<void>;
+      executeQuery?(this: ICloud, credential: unknown, data: CloudDatabase, sessionKey?: string): Promise<QueryResult>;
+      executeBatchQuery?(this: ICloud, credential: unknown, batch: CloudDatabase[], sessionKey?: string): Promise<BatchQueryResult>;
+  }
+
 .. versionadded:: 0.9.0
 
-  *ICloud* method **setBucketTagging** was created.
+  - *ICloud* method **setBucketTagging** was created.
+  - *ICloudServiceClient* static property **CLOUD_UPLOAD_FROMDISK** was renamed **CLOUD_UPLOAD_DISK** and will be removed in **0.9.0**.
 
 Settings
 ========

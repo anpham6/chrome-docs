@@ -288,15 +288,20 @@ Example usage
     }
   });
 
-  const assets = [
-    { pathname: "output", filename: "image1.png", uri: "http://hostname/path/document1.png" },
-    { pathname: "output", filename: "image2.png", uri: "http://hostname/path/document2.png" }
-  ];
+  const requestData = {
+    assets: [
+      { pathname: "output", filename: "image1.png", uri: "http://hostname/path/document1.png" },
+      { pathname: "output", filename: "image2.png", uri: "http://hostname/path/document2.png" }
+    ],
+    incremental: "etag",
+    threads: 8,
+    log: { showSize: true, showProgress: true }
+  };
 
-  const instance = new FileManager("/path/workspace", { assets, incremental: "etag" }, { disk_write: ["/path/workspace/output/**"] });
+  const instance = new FileManager("/path/workspace", requestData, { disk_write: ["/path/workspace/output/**"] });
   await instance.start();
 
-.. caution:: :target:`FileManager` is a sub-class of :doc:`Host <core>` and :doc:`Module <module>`. Their ``loadSettings`` will be called as well which uses a combined :ref:`Settings <references-e-mc-types-lib-node>` object.
+.. caution:: :target:`FileManager` is a sub-class of :doc:`Host <core>` and :doc:`Module <module>`. Their ``loadSettings`` will be called as well which forms a combined :ref:`Settings <references-e-mc-types-lib-node>` object.
 
 References
 ==========

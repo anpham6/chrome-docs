@@ -46,7 +46,6 @@ Interface
       getUploadHandler(service: string, credential: unknown): (...args: unknown[]) => void;
       getDownloadHandler(service: string, credential: unknown): (...args: unknown[]) => void;
       resolveService(service: string, folder?: string): string;
-      getUserSettings(): unknown;
       get settings(): CloudSettings;
   }
 
@@ -90,8 +89,11 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  - *ICloud* method **setBucketTagging** was created.
-  - *ICloudServiceClient* static property **CLOUD_UPLOAD_FROMDISK** was renamed **CLOUD_UPLOAD_DISK** and will be removed in **0.9.0**.
+  *ICloud* method **setBucketTagging** was created.
+
+.. deprecated:: 0.9.0
+
+  *ICloudServiceClient* static property **CLOUD_UPLOAD_FROMDISK** was renamed **CLOUD_UPLOAD_DISK**.
 
 Settings
 ========

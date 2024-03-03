@@ -35,6 +35,8 @@ Interface
       createBrotliCompress(file: string | Buffer, options?: CompressLevel): BrotliCompress;
       createWriteStreamAsGzip(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
       createWriteStreamAsBrotli(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
+      writeGzip(file: string | Buffer, output: string, options?: CompressLevel): Promise<void>;
+      writeBrotli(file: string | Buffer, output: string, options?: CompressLevel): Promise<void>;
       tryFile(file: string | Buffer, config: CompressFormat, callback?: TryFileResult): Promise<BufferResult>;
       tryFile(file: string | Buffer, output: string, config: CompressFormat, callback?: TryFileResult): Promise<BufferResult>;
       tryImage(file: string, config: CompressFormat, callback?: TryImageResult): Promise<BufferResult>;
@@ -47,6 +49,10 @@ Interface
       readonly prototype: ICompress;
       new(module?: CompressModule): ICompress;
   }
+
+.. versionadded:: 0.9.0
+
+  *ICompress* methods **writeGzip** | **writeBrotli** were created.
 
 Settings
 ========

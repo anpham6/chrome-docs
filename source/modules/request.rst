@@ -79,9 +79,9 @@ Interface
       new(module?: RequestModule): IRequest;
   }
 
-.. deprecated:: 0.8.5
+.. deprecated:: 0.9.0
 
-  *RequestInit* property **requestTimeout** was renamed **readTimeout** and will be removed in **0.9.0**.
+  *RequestInit* property **requestTimeout** was renamed **readTimeout**.
 
 .. versionadded:: 0.8.2
 

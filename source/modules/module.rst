@@ -41,51 +41,54 @@ Interface
       getTempDir(pathname: string, createDir?: boolean): string;
       getTempDir(uuidDir: boolean, filename: string, createDir?: boolean): string;
       getTempDir(pathname?: string, filename?: string, createDir?: boolean): string;
-      canRead(uri: string, options?: PermissionOptions): boolean;
-      canWrite(uri: string, options?: PermissionOptions): boolean;
-      readFile(src: string): Buffer | undefined;
-      readFile(src: string, options?: ReadFileOptions): Promise<Buffer | string> | Buffer | string | undefined;
-      readFile(src: string, promises: true): Promise<Buffer | undefined>;
-      readFile(src: string, options: ReadFileOptions, promises: true): Promise<Buffer | string | undefined>;
-      readFile(src: string, callback: ReadFileCallback<Buffer>): Buffer | undefined;
-      readFile(src: string, options: ReadFileOptions, callback: ReadFileCallback<Buffer | string>): Buffer | string | undefined;
-      writeFile(src: string, data: BufferView, options?: WriteFileOptions): boolean;
-      writeFile(src: string, data: BufferView, promises: true): Promise<boolean>;
-      writeFile(src: string, data: BufferView, options: WriteFileOptions, promises: true): Promise<boolean>;
-      writeFile(src: string, data: BufferView, callback: NoParamCallback): void;
-      writeFile(src: string, data: BufferView, options: WriteFileOptions, callback: NoParamCallback): void;
-      deleteFile(src: string, options?: DeleteFileOptions): boolean;
-      deleteFile(src: string, promises: true): Promise<boolean>;
-      deleteFile(src: string, options: DeleteFileOptions, promises: true): Promise<boolean>;
-      deleteFile(src: string, callback: NoParamCallback): void;
-      deleteFile(src: string, options: DeleteFileOptions, callback: NoParamCallback): void;
-      copyFile(src: string, dest: string, options?: CopyFileOptions): boolean;
-      copyFile(src: string, dest: string, promises: true): Promise<boolean>;
-      copyFile(src: string, dest: string, options: CopyFileOptions, promises: true): Promise<boolean>;
-      copyFile(src: string, dest: string, callback: NoParamCallback): void;
-      copyFile(src: string, dest: string, options: CopyFileOptions, callback: NoParamCallback): void;
-      moveFile(src: string, dest: string, options?: MoveFileOptions): boolean;
-      moveFile(src: string, dest: string, promises: true): Promise<boolean>;
-      moveFile(src: string, dest: string, options: MoveFileOptions, promises: true): Promise<boolean>;
-      moveFile(src: string, dest: string, callback: NoParamCallback): void;
-      moveFile(src: string, dest: string, options: MoveFileOptions, callback: NoParamCallback): void;
-      createDir(src: string, options?: CreateDirOptions): boolean;
-      createDir(src: string, promises: true): Promise<boolean>;
-      createDir(src: string, options: CreateDirOptions, promises: true): Promise<boolean>;
-      createDir(src: string, callback: NoParamCallback): void;
-      createDir(src: string, options: CreateDirOptions, callback: NoParamCallback): void;
-      removeDir(src: string, options?: RemoveDirOptions): boolean;
-      removeDir(src: string, promises: true): Promise<boolean>;
-      removeDir(src: string, options: RemoveDirOptions, promises: true): Promise<boolean>;
-      removeDir(src: string, callback: NoParamCallback): void;
-      removeDir(src: string, options: RemoveDirOptions, callback: NoParamCallback): void;
-      allSettled(values: readonly PromiseLike<unknown>[], rejected?: LogValue, options?: LogFailOptions | LogType): Promise<PromiseFulfilledResult<unknown>[]>;
+      canRead(uri: string | URL, options?: PermissionOptions): boolean;
+      canWrite(uri: string | URL, options?: PermissionOptions): boolean;
+      readFile(src: string | URL): Buffer | undefined;
+      readFile(src: string | URL, options?: ReadFileOptions): Promise<Buffer | string> | Buffer | string | undefined;
+      readFile(src: string | URL, promises: true): Promise<Buffer | undefined>;
+      readFile(src: string | URL, options: ReadFileOptions, promises: true): Promise<Buffer | string | undefined>;
+      readFile(src: string | URL, callback: ReadFileCallback<Buffer>): Buffer | undefined;
+      readFile(src: string | URL, options: ReadFileOptions, callback: ReadFileCallback<Buffer | string>): Buffer | string | undefined;
+      writeFile(src: string | URL, data: BufferView, options?: WriteFileOptions): boolean;
+      writeFile(src: string | URL, data: BufferView, promises: true): Promise<boolean>;
+      writeFile(src: string | URL, data: BufferView, options: WriteFileOptions, promises: true): Promise<boolean>;
+      writeFile(src: string | URL, data: BufferView, callback: NoParamCallback): void;
+      writeFile(src: string | URL, data: BufferView, options: WriteFileOptions, callback: NoParamCallback): void;
+      deleteFile(src: string | URL, options?: DeleteFileOptions): boolean;
+      deleteFile(src: string | URL, promises: true): Promise<boolean>;
+      deleteFile(src: string | URL, options: DeleteFileOptions, promises: true): Promise<boolean>;
+      deleteFile(src: string | URL, callback: NoParamCallback): void;
+      deleteFile(src: string | URL, options: DeleteFileOptions, callback: NoParamCallback): void;
+      copyFile(src: string | URL, dest: string | URL, options?: CopyFileOptions): boolean;
+      copyFile(src: string | URL, dest: string | URL, promises: true): Promise<boolean>;
+      copyFile(src: string | URL, dest: string | URL, options: CopyFileOptions, promises: true): Promise<boolean>;
+      copyFile(src: string | URL, dest: string | URL, callback: NoParamCallback): void;
+      copyFile(src: string | URL, dest: string | URL, options: CopyFileOptions, callback: NoParamCallback): void;
+      moveFile(src: string | URL, dest: string | URL, options?: MoveFileOptions): boolean;
+      moveFile(src: string | URL, dest: string | URL, promises: true): Promise<boolean>;
+      moveFile(src: string | URL, dest: string | URL, options: MoveFileOptions, promises: true): Promise<boolean>;
+      moveFile(src: string | URL, dest: string | URL, callback: NoParamCallback): void;
+      moveFile(src: string | URL, dest: string | URL, options: MoveFileOptions, callback: NoParamCallback): void;
+      createDir(src: string | URL, options?: CreateDirOptions): boolean;
+      createDir(src: string | URL, promises: true): Promise<boolean>;
+      createDir(src: string | URL, options: CreateDirOptions, promises: true): Promise<boolean>;
+      createDir(src: string | URL, callback: NoParamCallback): void;
+      createDir(src: string | URL, options: CreateDirOptions, callback: NoParamCallback): void;
+      removeDir(src: string | URL, options?: RemoveDirOptions): boolean;
+      removeDir(src: string | URL, promises: true): Promise<boolean>;
+      removeDir(src: string | URL, options: RemoveDirOptions, promises: true): Promise<boolean>;
+      removeDir(src: string | URL, callback: NoParamCallback): void;
+      removeDir(src: string | URL, options: RemoveDirOptions, callback: NoParamCallback): void;
+      allSettled(values: readonly PromiseLike<unknown>[], rejected?: LogValue, type: LogType): Promise<PromiseFulfilledResult<unknown>[]>;
+      allSettled(values: readonly PromiseLike<unknown>[], rejected?: LogValue, options?: LogFailOptions): Promise<PromiseFulfilledResult<unknown>[]>;
       formatMessage(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogMessageOptions): void;
       formatFail(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogFailOptions): void;
-      writeFail(value: LogValue, message?: unknown, options?: LogFailOptions | LogType): void;
+      writeFail(value: LogValue, message?: unknown, type: LogType): void;
+      writeFail(value: LogValue, message?: unknown, options?: LogFailOptions): void;
       writeTimeProcess(title: string, value: string, startTime: LogTime, options?: LogProcessOptions): void;
       writeTimeElapsed(title: string, value: LogValue, startTime: LogTime, options?: LogMessageOptions): void;
-      checkPackage(err: unknown, name: string | undefined, options?: LogFailOptions | LogType): boolean;
+      checkPackage(err: unknown, name: string | undefined, options: LogType): boolean;
+      checkPackage(err: unknown, name: string | undefined, options: LogFailOptions): boolean;
       checkPackage(err: unknown, name: string | undefined, value?: LogValue, options?: LogFailOptions | LogType): boolean;
       checkFail(message: unknown, options: LogFailOptions): LogArguments | false | undefined;
       writeLog(component: LogComponent, queue?: boolean): void;
@@ -200,9 +203,9 @@ Interface
       copyDir(src: string | URL, dest: string | URL, move?: boolean, recursive?: boolean): Promise<CopyDirResult>;
       copyDir(src: string | URL, dest: string | URL, options?: CopyDirOptions): Promise<CopyDirResult>;
       renameFile(src: string | URL, dest: string | URL, throws?: boolean): boolean;
-      streamFile(src: string, cache: boolean): Promise<Buffer | string>;
-      streamFile(src: string, options: ReadBufferOptions): Promise<Buffer | string>;
-      streamFile(src: string, cache?: boolean | ReadBufferOptions, options?: ReadBufferOptions): Promise<Buffer | string>;
+      streamFile(value: string | URL, cache: boolean): Promise<Buffer | string>;
+      streamFile(value: string | URL, options: ReadBufferOptions): Promise<Buffer | string>;
+      streamFile(value: string | URL, cache?: boolean | ReadBufferOptions, options?: ReadBufferOptions): Promise<Buffer | string>;
       readText(value: string | URL, cache: boolean): string;
       readText(value: string | URL, options: ReadTextOptions): Promise<string> | string;
       readText(value: string | URL, encoding?: BufferEncoding | ReadTextOptions, cache?: boolean): string;
@@ -235,7 +238,22 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  *IModule* static property **LOG_FORMAT** was created.
+  - *IModule* static property **LOG_FORMAT** was created.
+  - *IModule* method **src** and **dest** arguments can accept :ref:`URL <references-nodejs-url>` object:
+
+    .. hlist::
+      :columns: 4
+
+      - canRead       
+      - canWrite
+      - readFile
+      - writeFile
+      - deleteFile
+      - copyFile
+      - moveFile
+      - createDir
+      - removeDir
+      - streamFile :alt:`(static)`
 
 Settings
 ========

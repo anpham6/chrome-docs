@@ -51,13 +51,15 @@ Interface
       readonly fetchedAssets: ExternalAsset[];
       readonly copiedAssets: ExternalAsset[];
       readonly emptyDir: Set<string>;
-      install(name: "document", target: DocumentConstructor<IFileManager, ExternalAsset>, module?: DocumentModule): IDocument<IFileManager, ExternalAsset> | undefined;
-      install(name: "task", target: TaskConstructor, module?: TaskModule): ITask | undefined;
-      install(name: "cloud", handler: string, module?: CloudModule): ICloud | undefined;
-      install(name: "cloud", module?: CloudModule): ICloud | undefined;
-      install(name: "db", module?: DbModule): IDb | undefined;
+      install(name: "document", handler: string, module?: DocumentModule, ...args: unknown[]): IDocument | undefined;
+      install(name: "document", target: DocumentConstructor, module?: DocumentModule, ...args: unknown[]): IDocument | undefined;
+      install(name: "task", handler: string, module?: TaskModule, ...args: unknown[]): ITask | undefined;
+      install(name: "task", target: TaskConstructor, module?: TaskModule, ...args: unknown[]): ITask | undefined;
+      install(name: "cloud", handler: string, module?: CloudModule, ...args: unknown[]): ICloud | undefined;
+      install(name: "cloud", module?: CloudModule, ...args: unknown[]): ICloud | undefined;
+      install(name: "image", handler: string, module?: ImageModule, ...args: unknown[]): IImage | undefined;
+      install(name: "image", target: ImageConstructor, module?: ImageModule, ...args: unknown[]): IImage | undefined;
       install(name: "image", targets: Map<string, ImageConstructor>, module?: ImageModule): void;
-      install(name: "image", target: ImageConstructor, module?: ImageModule): void;
       install(name: "watch", module: WatchModule): WatchInstance<ExternalAsset> | undefined;
       install(name: "watch", interval?: number | string, port?: number | string, securePort?: number | string, extensions?: unknown[]): WatchInstance<ExternalAsset> | undefined;
       install(name: "compress", module?: CompressModule): ICompress<CompressModule> | undefined;
@@ -197,6 +199,7 @@ Interface
 .. versionadded:: 0.9.0
 
   - *IFileManager* method **install** with **name** :alt:`"image"` and **target** as :alt:`ImageConstructor`.
+  - *IFileManager* method **install** with **name** :alt:`"document" | "image" | "task"` and **handler** as :alt:`string`.
   - *IFileManager* method **fetchObject** will *throw* errors rather than return *null*.
   - *IFileManager* methods were created:
 

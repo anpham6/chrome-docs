@@ -116,3 +116,9 @@ https://nodejs.org/api/crypto.html
 
 https://nodejs.org/api/tls.html
   | `SecureVersion <search.html?q=SecureVersion>`_
+
+.. _references-nodejs-url:
+.. rst-class:: block-list
+
+https://nodejs.org/api/url.html
+  | `URL <search.html?q=URL>`_

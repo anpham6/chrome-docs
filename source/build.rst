@@ -2,7 +2,7 @@
 Build Options
 =============
 
-General processing options use **E-mc** functionality with `squared-express <https://squared.readthedocs.io/en/latest/document/build.html>`_.
+General processing options use **E-mc** functionality with :external+android:doc:`squared-express <document/build>`.
 
 .. attention:: These examples are only relevant to the :target:`chrome` framework.
 

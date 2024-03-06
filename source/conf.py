@@ -14,7 +14,11 @@ release = '0.8.4'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ['sphinx.ext.intersphinx']
+
+intersphinx_mapping = {
+  'android': ('https://squared.readthedocs.io/en/latest', ('../../android-docs/build/html/objects.inv', None)),
+}
 
 templates_path = ['_templates']
 exclude_patterns = []

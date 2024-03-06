@@ -19,7 +19,7 @@ E-mc 0.8
 
 Examples use **squared** :alt:`5` and **chrome** as the reference framework. These concepts can be used with any NodeJS :alt:`14+` application.
 
-.. note:: Using `squared <https://squared.readthedocs.io>`_ or squared-express is not required.
+.. note:: Using :external+android:doc:`squared <index>` or squared-express is not required.
 
 NodeJS 14 LTS
 =============

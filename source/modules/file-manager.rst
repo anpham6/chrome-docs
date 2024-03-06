@@ -201,7 +201,7 @@ Interface
   - *IFileManager* method **install** with **name** :alt:`"image"` and **target** as :alt:`ImageConstructor`.
   - *IFileManager* method **install** with **name** :alt:`"document" | "image" | "task"` and **handler** as :alt:`string`.
   - *IFileManager* method **transformAsset** *optional* argument **override** as :alt:`boolean` was created.
-  - *IFileManager* method **transformAsset** return value **Promise<void>** was modified to **Promise<boolean>**.
+  - *IFileManager* method **transformAsset** return value **Promise<void>** was modified to :target:`Promise<boolean>`.
   - *IFileManager* methods were created:
 
     .. hlist::

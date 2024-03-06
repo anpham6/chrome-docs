@@ -5,7 +5,7 @@ Task
 - https://gulpjs.com/docs/en/getting-started/quick-start
 - **npm** i *@pi-r/gulp*
 
-.. note:: **Gulp** is used as the reference implementation for a *Task* module.
+.. note:: *Gulp* is used as the reference implementation for a **Task** module.
 
 Example configuration
 =====================
@@ -36,7 +36,7 @@ Example configuration
     }
   }
 
-.. important:: To use Gulp in a user directory requires a global installation. [#]_
+.. important:: To use *Gulp* in a user directory requires a global installation. [#]_
 
 ::
 
@@ -60,7 +60,7 @@ Example configuration
 Example gulpfile.js
 ===================
 
-Renaming files with Gulp is not recommended. It is better to use the **saveAs** or **filename** properties when the asset is part of the HTML page.
+Renaming files with *Gulp* is not recommended. It is better to use the **saveAs** or **filename** properties when the asset is part of the HTML page.
 
 .. code-block:: javascript
   :emphasize-lines: 5,7

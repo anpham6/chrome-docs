@@ -5,7 +5,7 @@ Image
 - https://github.com/jimp-dev/jimp#readme
 - **npm** i *@pi-r/jimp*
 
-.. note:: **Jimp** is used as the reference implementation for an *Image* module.
+.. note:: *Jimp* is used as the reference implementation for an **Image** module.
 
 Example configuration
 =====================
@@ -74,9 +74,9 @@ gif2webp   x gif2webp-bin
 webpmux  x x node-webpmux
 ======== = = ============
 
-There can be transparency issues for WebP animated transformations due to the WebP compression algorithm. **node-webpmux** is only used to extract the raw data from the WebP image and to reconstruct the frames.
+There can be transparency issues for *WebP* animated transformations due to the *WebP* compression algorithm. **node-webpmux** is only used to extract the raw data from the *WebP* image and to reconstruct the frames.
 
-.. note:: **libwebp** [#webp]_ is supported locally for WebP transforms through ``settings.webp.path``.
+.. note:: **libwebp** [#webp]_ is supported locally for *WebP* transforms through ``settings.webp.path``.
 
 Command syntax
 ==============
@@ -283,7 +283,7 @@ You can use image commands with **saveTo** (directory) on any element where the 
 
 .. tip:: Multiple transformations use "**::**" as the separator.
 
-Transformations are given a UUID filename except when "**@**" or "**%**" are used. Leaving **data-chrome-file** empty will save the transformations to the current image directory.
+Transformations are given a *UUID* filename except when "**@**" or "**%**" are used. Leaving **data-chrome-file** empty will save the transformations to the current image directory.
 
 .. [#webp] https://developers.google.com/speed/webp/download
 .. [#] cwebp options: -q -preset -near_lossless

@@ -77,7 +77,7 @@ Example usage
     }]
   }
 
-.. attention:: OCI does not permit creating new *public* buckets through the :doc:`S3 <aws>` [#S3]_ compatibility layer.
+.. attention:: *OCI* does not permit creating new :target:`public` buckets through the :doc:`S3 <aws>` [#S3]_ compatibility layer.
 
 Database
 ========
@@ -134,7 +134,7 @@ Authentication
     }
   }
 
-.. warning:: **libDir** is ignored without ``NODE_ORACLEDB_DRIVER_MODE = "thick"``. See :doc:`@pi-r/oracle </db/oracle>`.
+.. warning:: Property **libDir** is ignored without ``NODE_ORACLEDB_DRIVER_MODE = "thick"``. See :doc:`@pi-r/oracle </db/oracle>`.
 
 Example usage
 -------------

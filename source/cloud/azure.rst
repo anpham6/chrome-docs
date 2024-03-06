@@ -4,7 +4,7 @@ Microsoft Azure
 
 - **npm** i *@pi-r/azure*
 
-.. tip:: The alias "az" can be used in place of "azure" for the **service** property.
+.. tip:: The alias :target:`az` can be used in place of "*azure*" for the **service** property.
 
 Storage
 =======
@@ -286,4 +286,4 @@ Example usage
 
   - Identity authentication with Azure AD (**aadCredentials**) was implemented.
 
-.. |env-apply| replace:: These are not official Azure environment variables and require :code:`process.env.apply = true` in *squared.json*.
+.. |env-apply| replace:: These are not official *Azure* environment variables and require :code:`process.env.apply = true` in :target:`squared.json`.

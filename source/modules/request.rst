@@ -81,7 +81,7 @@ Interface
 
 .. deprecated:: 0.9.0
 
-  *RequestInit* property **requestTimeout** was renamed **readTimeout**.
+  *RequestInit* property **requestTimeout** was renamed :target:`readTimeout`.
 
 .. versionadded:: 0.8.2
 

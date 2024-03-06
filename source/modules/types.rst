@@ -191,8 +191,8 @@ Interface
 
 .. deprecated:: 0.9.0
 
-  - :alt:`type` StringOfArray was renamed *ArrayOf<string>*.
-  - :alt:`type` BufferContent was renamed *Bufferable*.
+  - :alt:`type` StringOfArray was renamed :target:`ArrayOf<string>`.
+  - :alt:`type` BufferContent was renamed :target:`Bufferable`.
   - :alt:`interface` PoolConfig in "**db**" was relocated to "**settings**".
   - :alt:`interface` LoggerFormat in "**logger**" was relocated to "**settings**".
   - :alt:`interface` AddEventListenerOptions in "**dom**" was relocated to "**core**".

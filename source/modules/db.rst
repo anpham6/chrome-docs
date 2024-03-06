@@ -16,7 +16,7 @@ Interface
 
   import type { IHost } from "./index";
   import type { ClientDbConstructor, IClientDb } from "./core";
-  import type { BatchQueryResult, DB_TYPE, ErrorQueryCallback, ExecuteBatchQueryOptions, ExecuteQueryOptions, HandleFailOptions, ProcessRowsOptions, QueryResult, SQL_COMMAND } from "./db";
+  import type { DB_TYPE, SQL_COMMAND, BatchQueryResult, ErrorQueryCallback, ExecuteBatchQueryOptions, ExecuteQueryOptions, HandleFailOptions, ProcessRowsOptions, QueryResult } from "./db";
   import type { AuthValue } from "./http";
   import type { DbCoerceSettings, DbModule, DbSourceOptions, PoolConfig } from "./settings";
 

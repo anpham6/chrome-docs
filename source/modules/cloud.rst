@@ -93,7 +93,7 @@ Interface
 
 .. deprecated:: 0.9.0
 
-  *ICloudServiceClient* static property **CLOUD_UPLOAD_FROMDISK** was renamed **CLOUD_UPLOAD_DISK**.
+  *ICloudServiceClient* static property **CLOUD_UPLOAD_FROMDISK** was renamed :target:`CLOUD_UPLOAD_DISK`.
 
 Settings
 ========

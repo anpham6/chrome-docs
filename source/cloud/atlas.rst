@@ -5,8 +5,6 @@ MongoDB Atlas
 - https://www.mongodb.com/cloud/atlas/register
 - **npm** i *@pi-r/atlas*
 
-.. tip:: Atlas connections are compatible with the :doc:`@pi-r/mongodb </db/mongodb>` plugin.
-
 Interface
 =========
 
@@ -56,6 +54,8 @@ Authentication
       }
     }
   }
+
+.. tip:: *Atlas* connections are compatible with the :doc:`@pi-r/mongodb </db/mongodb>` plugin.
 
 Example usage
 =============

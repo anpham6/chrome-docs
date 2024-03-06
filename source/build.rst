@@ -193,7 +193,7 @@ Example remote configuration
   /* OR */
   squared.saveAs("example.zip", { config: "json" }); // json | yaml
 
-.. tip:: JSON5 [#]_ and TOML [#]_ file formats are also supported.
+.. tip:: **JSON5** [#]_ and **TOML** [#]_ file formats are also supported.
 
 Example incremental
 ===================

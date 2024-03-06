@@ -76,12 +76,12 @@ Renaming files with *Gulp* is not recommended. It is better to use the **saveAs*
   
   gulp.task("default", gulp.series("minify"));
 
-.. caution:: ``src`` (*temp*) and ``dest`` (*original*) always read and write to the current directory.
+.. caution:: ``src`` :lower:`(temp)` and ``dest`` :lower:`(original)` always read and write to the current directory.
 
 data-chrome-tasks
 =================
 
-Tasks can be performed immediately after the asset has been downloaded (preceding) and during finalization.
+Tasks can be performed immediately after the asset has been downloaded :lower:`(preceding)` and during finalization.
 
 .. code-block:: html
   :caption: JSON

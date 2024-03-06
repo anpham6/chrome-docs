@@ -6,3 +6,7 @@ em.alt {
 em.target {
     font-weight: 700;
 }
+
+em.lower {
+    font-size: 90%;
+}

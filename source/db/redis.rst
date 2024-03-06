@@ -2,7 +2,7 @@
 Redis
 =====
 
-- `Redis Stable <https://redis.io/download>`_ [#]_
+- `Redis Stable <https://redis.io/download>`_
 - **npm** i *@pi-r/redis*
 
 Interface
@@ -176,5 +176,3 @@ Example usage
   }
 
 .. note:: Search will only return the **value** object with the **id** field appended as ``__id__``.
-
-.. [#] https://redis.com/try-free

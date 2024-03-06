@@ -26,6 +26,7 @@ pygments_style = 'abap'
 rst_prolog = """
 .. role:: alt(emphasis)
 .. role:: target(emphasis)
+.. role:: lower(emphasis)
 """
 
 # -- Options for HTML output -------------------------------------------------

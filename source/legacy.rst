@@ -18,7 +18,7 @@ squared-express
 
 Command line options ``--compat-v4`` and ``--no-compat-v4`` are also available and will override the value in settings.
 
-.. attention:: ``node.compat.v4`` will be disabled by default when using `squared-express` **3.2.0**.
+.. attention:: ``node.compat.v4`` will be disabled by default when using `squared-express` **3.2.0**. The module is no longer directly supported as of *sqd-serve* **0.14.0**.
 
 @e-mc/compat-v4
 ===============

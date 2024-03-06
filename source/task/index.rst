@@ -96,4 +96,4 @@ Tasks can be performed immediately after the asset has been downloaded :lower:`(
 
   <script src="/common/util.js" data-chrome-tasks="gulp:minify+gulp:lint:true"></script>
 
-.. [#] npm i -g gulp && cd /path/to/username && npm link gulp
+.. [#] npm i -g gulp && cd /path/users/username && npm link gulp

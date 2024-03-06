@@ -125,91 +125,92 @@ Method aliases [#]_
 ===================
 
 .. list-table::
+  :widths: 25 8 25 8 25 8
 
   * - autocrop
-    - au
-  * - background
-    - bg
-  * - backgroundQuie
-    - bq
+    - **au**
+    - background
+    - **bg**
+    - backgroundQuiet
+    - **bq**
   * - blit
-    - bt
-  * - blur
-    - bl
-  * - brightness
-    - br
+    - **bt**
+    - blur
+    - **bl**
+    - brightness
+    - **br**
   * - circle
-    - ci
-  * - color
-    - co
-  * - colorType
-    - ce
+    - **ci**
+    - color
+    - **co**
+    - colorType
+    - **ce**
   * - composite [#]_
-    - cp
-  * - contain [#]_
-    - ct
-  * - contrast
-    - cn
+    - **cp**
+    - contain [#]_
+    - **ct**
+    - contrast
+    - **cn**
   * - convolute
-    - cl
-  * - cover
-    - cv
-  * - crop
-    - cr
+    - **cl**
+    - cover
+    - **cv**
+    - crop
+    - **cr**
   * - cropQuiet
-    - cq
-  * - deflateLevel
-    - dl
-  * - deflateStrategy
-    - ds
+    - **cq**
+    - deflateLevel
+    - **dl**
+    - deflateStrategy
+    - **ds**
   * - displace
-    - dp
-  * - dither565
-    - dt
-  * - fade
-    - fa
+    - **dp**
+    - dither565
+    - **dt**
+    - fade
+    - **fa**
   * - filterType
-    - ft
-  * - fishEye
-    - fe
-  * - flip
-    - fl
+    - **ft**
+    - fishEye
+    - **fe**
+    - flip
+    - **fl**
   * - gaussian
-    - ga
-  * - greyscale
-    - gr
-  * - invert
-    - in
+    - **ga**
+    - greyscale
+    - **gr**
+    - invert
+    - **in**
   * - mask
-    - ma
-  * - mirror
-    - mi
-  * - normalize
-    - no
+    - **ma**
+    - mirror
+    - **mi**
+    - normalize
+    - **no**
   * - opacity
-    - op
-  * - opaque
-    - oq 
-  * - pixelate
-    - px
+    - **op**
+    - opaque
+    - **oq**
+    - pixelate
+    - **px**
   * - posterize
-    - po
-  * - resize
-    - re
-  * - rgba
-    - rg
+    - **po**
+    - resize
+    - **re**
+    - rgba
+    - **rg**
   * - rotate
-    - ro
-  * - scale
-    - sc
-  * - scaleToFit
-    - sf
+    - **ro**
+    - scale
+    - **sc**
+    - scaleToFit
+    - **sf**
   * - sepia
-    - se
-  * - shadow
-    - sh
-  * - threshold
-    - th
+    - **se**
+    - shadow
+    - **sh**
+    - threshold
+    - **th**
 
 Compression
 ===========

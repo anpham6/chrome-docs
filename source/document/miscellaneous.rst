@@ -139,6 +139,8 @@ Element content
 
 .. caution:: Editing local files with complex :ref:`nested tag content <document-append-build-options>` is not recommended. Try using an element "**id**" when there are errors building.
 
+.. _document-miscellaneous-manifest:
+
 Manifest
 ========
 
@@ -152,7 +154,7 @@ The web app manifest [#]_ is downloaded by default and possibly modified when se
 
 .. tip:: Image compression is supported.
 
-It is not integrated with the NodeJS build system and the images might not appear as expected due to URL rewriting. You can disable this behavior by using either command::
+It is not integrated with the *NodeJS* build system and the images might not appear as expected due to URL rewriting. You can disable this behavior by using either command::
 
   {
     "selector": "link[rel=manifest]",

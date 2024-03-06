@@ -87,6 +87,12 @@ https://unpkg.com/@e-mc/types/lib/http.d.ts
   | `AuthValue <search.html?q=AuthValue>`_
   | `SecureConfig <search.html?q=SecureConfig>`_
 
+.. _references-e-mc-types-lib-asset:
+.. rst-class:: block-list
+
+https://unpkg.com/@e-mc/types/lib/asset.d.ts
+  | `ExternalAsset <search.html?q=ExternalAsset>`_
+
 .. _references-nodejs:
 
 NodeJS

@@ -47,7 +47,7 @@ Interface
       readFile(src: string | URL, options?: ReadFileOptions): Promise<Buffer | string> | Buffer | string | undefined;
       readFile(src: string | URL, promises: true): Promise<Buffer | undefined>;
       readFile(src: string | URL, options: ReadFileOptions, promises: true): Promise<Buffer | string | undefined>;
-      readFile(src: string | URL, callback: ReadFileCallback<Buffer>): Buffer | undefined;
+      readFile(src: string | URL, callback: ReadFileCallback<Buffer | string>): Buffer | string | undefined;
       readFile(src: string | URL, options: ReadFileOptions, callback: ReadFileCallback<Buffer | string>): Buffer | string | undefined;
       writeFile(src: string | URL, data: BufferView, options?: WriteFileOptions): boolean;
       writeFile(src: string | URL, data: BufferView, promises: true): Promise<boolean>;
@@ -79,11 +79,11 @@ Interface
       removeDir(src: string | URL, options: RemoveDirOptions, promises: true): Promise<boolean>;
       removeDir(src: string | URL, callback: NoParamCallback): void;
       removeDir(src: string | URL, options: RemoveDirOptions, callback: NoParamCallback): void;
-      allSettled(values: readonly PromiseLike<unknown>[], rejected?: LogValue, type: LogType): Promise<PromiseFulfilledResult<unknown>[]>;
+      allSettled(values: readonly PromiseLike<unknown>[], rejected?: LogValue, type?: LogType): Promise<PromiseFulfilledResult<unknown>[]>;
       allSettled(values: readonly PromiseLike<unknown>[], rejected?: LogValue, options?: LogFailOptions): Promise<PromiseFulfilledResult<unknown>[]>;
       formatMessage(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogMessageOptions): void;
       formatFail(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogFailOptions): void;
-      writeFail(value: LogValue, message?: unknown, type: LogType): void;
+      writeFail(value: LogValue, message?: unknown, type?: LogType): void;
       writeFail(value: LogValue, message?: unknown, options?: LogFailOptions): void;
       writeTimeProcess(title: string, value: string, startTime: LogTime, options?: LogProcessOptions): void;
       writeTimeElapsed(title: string, value: LogValue, startTime: LogTime, options?: LogMessageOptions): void;
@@ -409,7 +409,7 @@ Settings
   type BackgroundColor = typeof IBackgroundColor | `#${string}`;
   type ForegroundColor = typeof IForegroundColor | `#${string}`;
 
-.. versionadded:: 0.9.0
+.. versionadded:: 0.8.6
 
   *PermissionModule* properties **home_read** | **home_write** were implemented.
 

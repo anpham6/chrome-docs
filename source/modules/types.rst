@@ -17,7 +17,7 @@ Interface
   import type { BinaryLike, CipherGCMTypes, Encoding } from "crypto";
   import type { HighResolutionTime } from "perf_hooks";
 
-  function createAbortError(reject: true): Promise<Error>;
+  function createAbortError(reject: true): Promise<never>;
   function createAbortError(): Error;
   function hasBit(value: unknown, flags: number): boolean;
   function ignoreFlag(value: unknown): boolean;

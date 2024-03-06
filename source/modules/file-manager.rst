@@ -95,7 +95,7 @@ Interface
       addDownload(value: number | Buffer | string, encoding: BufferEncoding): number;
       addDownload(value: number | Buffer | string, type?: number | BufferEncoding, encoding?: BufferEncoding): number;
       getDownload(type?: number): [number, number];
-      transformAsset(data: IFileThread, parent?: ExternalAsset): Promise<void>;
+      transformAsset(data: IFileThread, parent?: ExternalAsset, override?: boolean): Promise<boolean>;
       addCopy(data: FileCommand<ExternalAsset>, saveAs?: string, replace?: boolean): string | undefined;
       findMime(file: ExternalAsset, rename?: boolean): Promise<string>;
       getUTF8String(file: ExternalAsset, uri?: string): string;
@@ -200,7 +200,8 @@ Interface
 
   - *IFileManager* method **install** with **name** :alt:`"image"` and **target** as :alt:`ImageConstructor`.
   - *IFileManager* method **install** with **name** :alt:`"document" | "image" | "task"` and **handler** as :alt:`string`.
-  - *IFileManager* method **fetchObject** will *throw* errors rather than return *null*.
+  - *IFileManager* method **transformAsset** *optional* argument **override** as :alt:`boolean` was created.
+  - *IFileManager* method **transformAsset** return value **Promise<void>** was modified to **Promise<boolean>**.
   - *IFileManager* methods were created:
 
     .. hlist::
@@ -257,6 +258,10 @@ Settings
   interface LoggerModule {
       session_id?: boolean | number;
   }
+
+.. versionadded:: 0.9.0
+
+  *ProcessModule* setting **thread.sub_limit** for maximum simultaneous downloads was created.
 
 Example usage
 -------------

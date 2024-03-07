@@ -64,3 +64,11 @@
 .highlight-bash .highlight .nb {
     color: darkmagenta;
 }
+
+.highlight-bash .highlight .nv {
+    color: seagreen;
+}
+
+.highlight-bash .highlight .hll {
+    background-color: darkslategrey;
+}

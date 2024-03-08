@@ -53,9 +53,9 @@ Interface
       new(module?: WatchModule): IWatch;
   }
 
-.. deprecated:: 0.8.4
+.. deprecated:: 0.9.0
 
-  Constructor **new(interval, port, securePort, extensions)** does not conform with ``Module.init()`` and will be removed in **0.9.0**. 
+  Constructor **new(interval, port, securePort, extensions)** does not conform with ``Module.init()`` and was removed. 
 
 Settings
 ========

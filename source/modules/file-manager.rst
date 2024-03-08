@@ -70,8 +70,8 @@ Interface
       findAsset(value: string | URL, instance: IModule | null): ExternalAsset | undefined;
       findAsset(value: string | URL, options?: FindAssetOptions<ExternalAsset>): ExternalAsset | undefined;
       removeAsset(file: ExternalAsset): boolean;
-      replace(file: ExternalAsset, replaceWith: string, options: ReplaceOptions): boolean;
-      replace(file: ExternalAsset, replaceWith: string, mimeType?: string | ReplaceOptions): boolean;
+      replace(file: ExternalAsset, replaceWith: string, mimeType: string | undefined): boolean;
+      replace(file: ExternalAsset, replaceWith: string, options?: ReplaceOptions): boolean;
       rename(file: ExternalAsset, value: string): boolean;
       performAsyncTask(): void;
       removeAsyncTask(): void;
@@ -99,7 +99,7 @@ Interface
       addCopy(data: FileCommand<ExternalAsset>, saveAs?: string, replace?: boolean): string | undefined;
       findMime(file: ExternalAsset, rename?: boolean): Promise<string>;
       getUTF8String(file: ExternalAsset, uri?: string): string;
-      getBuffer(file: ExternalAsset, minStreamSize?: number): Promise<Buffer> | Buffer | null;
+      getBuffer(file: ExternalAsset, minStreamSize?: number): Promise<Buffer | null> | Buffer | null;
       getCacheDir(url: string | URL, createDir?: boolean): string;
       setAssetContent(file: ExternalAsset, content: string, options?: AssetContentOptions): string;
       getAssetContent(file: ExternalAsset, content?: string): string | undefined;
@@ -107,7 +107,7 @@ Interface
       writeImage(document: string | string[], output: OutputFinalize<ExternalAsset>): boolean;
       compressFile(file: ExternalAsset, overwrite?: boolean): Promise<unknown>;
       fetchObject(uri: string | URL, format: BufferFormat): Promise<object | null>;
-      fetchObject(uri: string | URL, options?: OpenOptions | BufferFormat): Promise<object | null>;
+      fetchObject(uri: string | URL, options?: OpenOptions): Promise<object | null>;
       fetchBuffer(uri: string | URL, options?: OpenOptions): Promise<Buffer | string | null>;
       fetchFiles(uri: string | URL, pathname: string): Promise<string[]>;
       fetchFiles(uri: string | URL, options?: Aria2Options): Promise<string[]>;

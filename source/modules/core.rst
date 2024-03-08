@@ -92,15 +92,14 @@ Interface
       database: DataSource[];
       cacheExpires: number;
       add(item: DataSource, state?: number): void;
-      hasCache(source: string, sessionKey?: string, override?: DbCacheValue): boolean;
+      hasCache(source: string, sessionKey?: string): boolean;
       hasCoerce(source: string, component: keyof DbCoerceSettings, uuidKey: string | undefined): boolean;
-      hasCoerce(source: string, component: keyof DbCoerceSettings, override: DbCoerceValue | null | undefined, credential?: unknown): boolean;
       hasCoerce(source: string, component: keyof DbCoerceSettings, credential?: unknown): boolean;
       getQueryResult(source: string, credential: unknown, queryString: string, renewCache: boolean): QueryResult | undefined;
-      getQueryResult(source: string, credential: unknown, queryString: string, sessionKey: string, renewCache?: boolean): QueryResult | undefined;
-      getQueryResult(source: string, credential: unknown, queryString: string, options?: CacheOptions | string, renewCache?: boolean): QueryResult | undefined;
+      getQueryResult(source: string, credential: unknown, queryString: string, sessionKey: string | undefined, renewCache?: boolean): QueryResult | undefined;
+      getQueryResult(source: string, credential: unknown, queryString: string, options?: CacheOptions, renewCache?: boolean): QueryResult | undefined;
       setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, sessionKey: string | undefined): QueryResult;
-      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, options?: CacheOptions | string): QueryResult;
+      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, options?: CacheOptions): QueryResult;
       applyState(items: DataSource | DataSource[], value: number, as?: boolean): void;
       commit(items?: DataSource[]): Promise<boolean>;
       valueOfKey(credential: unknown, name: keyof DbSourceOptions, component?: keyof DbCoerceSettings): unknown;
@@ -125,9 +124,9 @@ Interface
       convertTime(value: number | string): number;
       findResult(source: string, credential: unknown, queryString: string, timeout: number, sessionKey?: string | boolean, renewCache?: boolean): QueryResult | undefined;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, options: StoreResultOptions): QueryResult;
-      storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, sessionKey: string, sessionExpires: number): QueryResult;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, cache: DbCacheValue): QueryResult;
-      storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, cache: DbCacheValue | undefined, options: StoreResultOptions): QueryResult;
+      storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, cache: DbCacheValue | undefined, options?: StoreResultOptions): QueryResult;
+      storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, sessionKey?: string, sessionExpires?: number): QueryResult;
       purgeResult(prefix?: string): Promise<number>;
       extractUUID(credential: unknown): string;
       setPoolConfig(value: unknown): void;
@@ -182,6 +181,11 @@ Interface
       - updateProgress
 
   - *IHost* property **logState** was created.
+
+.. deprecated:: 0.9.0
+
+  - *IClientDb* method **hasCache** *optional* argument **override** as :alt:`DbCacheValue` was removed.
+  - *IClientDb* method **hasCoerce** *optional* argument **override** as :alt:`DbCoerceValue` was removed.
 
 Settings
 ========

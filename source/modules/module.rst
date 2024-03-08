@@ -37,9 +37,9 @@ Interface
       supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
       supports(name: string, value?: boolean): boolean;
       getTempDir(options: GetTempDirOptions): string;
-      getTempDir(uuidDir: boolean, createDir?: boolean): string;
-      getTempDir(pathname: string, createDir?: boolean): string;
-      getTempDir(uuidDir: boolean, filename: string, createDir?: boolean): string;
+      getTempDir(uuidDir: boolean, createDir: boolean): string;
+      getTempDir(pathname: string, createDir: boolean): string;
+      getTempDir(uuidDir: boolean, filename?: string, createDir?: boolean): string;
       getTempDir(pathname?: string, filename?: string, createDir?: boolean): string;
       canRead(uri: string | URL, options?: PermissionOptions): boolean;
       canWrite(uri: string | URL, options?: PermissionOptions): boolean;
@@ -219,8 +219,8 @@ Interface
       getMemUsage(format: true): string;
       getMemUsage(format?: boolean): number;
       formatCpuMem(start: CpuUsage, all?: boolean): string;
-      getPackageVersion(name: string | [string, string], startDir: string): string;
-      getPackageVersion(name: string | [string, string], unstable?: boolean, startDir?: string): string;
+      getPackageVersion(name: string | [string, string], startDir: string, baseDir?: string): string;
+      getPackageVersion(name: string | [string, string], unstable?: boolean, startDir?: string, baseDir?: string): string;
       checkSemVer(name: string | [string, string], options: CheckSemVerOptions): boolean;
       checkSemVer(name: string | [string, string], min: number | string, max?: number | string, unstable?: boolean, startDir?: string): boolean;
       checkSemVer(name: string | [string, string], min: number | string, max: number | string, options?: CheckSemVerOptions): boolean;

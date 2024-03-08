@@ -48,30 +48,30 @@ data-chrome-options
     - html
     - css
 * inline
-    - js: Rendered inline with <script>
-    - css: Rendered inline with <style>
+    - js: Rendered inline with **<script>**
+    - css: Rendered inline with **<style>**
     - image: Rendered as base64 from file
 * module [#]_
     - js: ESM
     - css: SASS
 * extract
-    - css: @import rules are inlined into parent file (same origin)
+    - css: @import rules are inlined into parent file :lower:`(same origin)`
 * blob
-    - image: HTML and CSS from base64
-    - font: CSS from base64
+    - image: HTML and CSS from **base64**
+    - font: CSS from **base64**
 * dynamic
     - image: "srcset" uses query parameters with an image resizer
-    - element (non-void): mixed content which uses a view engine template (e.g. ejs)
+    - element :lower:`(non-void)`: mixed content which uses a view engine template :alt:`(e.g. ejs)`
 * compress (array)
     - image: imagemin [#]_
     - font: woff + woff2
-    - png: TinyPNG service (jpeg + webp)
-    - gz: Gzip + Zopfli
+    - png: TinyPNG service [#]_
+    - gz: Gzip + *Zopfli* [#]_
     - br: Brotli
 * static
     - all: Remove query string from URL
 * crossorigin
-    - all: Same as preserveCrossOrigin [download: false]
+    - all: Same as preserveCrossOrigin :lower:`[download: false]`
 * download [#]_
     - all: Source files that are not usually downloaded :alt:`(e.g. link[rel=alternate])`
 * hash [#]_ [#]_
@@ -84,12 +84,12 @@ data-chrome-options
     - video
 * remove
     - all: Remove element during finalization
-* charset (string)
-    - utf-8 (default)
+* charset :lower:`(string)`
+    - utf-8 :lower:`(default)`
     - utf-16
     - utf-16le
     - latin1
-    - utf-16be (unsupported)
+    - utf-16be :lower:`(unsupported)`
 
 .. code-block::
   :caption: JSON [#]_
@@ -138,6 +138,8 @@ Inline commands are usually sufficient for simple web pages. More advanced confi
 .. [#] Do not use the built-in transformers per document.
 .. [#] "true" | "false" - config | "no-module" - inline
 .. [#] Optionally installed NPM plugins are required. (e.g. imagemin-pngquant)
+.. [#] png | jpeg | webp
+.. [#] npm i node-zopfli
 .. [#] "true" - explicit | "false"
 .. [#] filename + content hash (productionRelease=true)
 .. [#] Value can be limited to the starting prefix. (e.g. md5[8] - Minimum is 4)

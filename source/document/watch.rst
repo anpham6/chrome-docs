@@ -155,6 +155,6 @@ Elements that are configured :alt:`(e.g. dataSource)` are not editable as the or
 
   <p class="active" style="display: none;">content</p>
 
-.. attention:: If you configure an ``<img>`` tag (or any tag group) then you cannot add or remove other ``<img>`` elements without adding an element "**id**" to every element in the group.
+.. attention:: If you configure an ``<img>`` tag :lower:`(or any tag group)` then you cannot add or remove other ``<img>`` elements without adding an element "**id**" to every element in the group.
 
 .. [#] data-chrome-watch='*"interval": 100, "expires": "1w 1d 1h 1m 1s", "reload": { "port": 443, "secure": true }*'

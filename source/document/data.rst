@@ -126,7 +126,7 @@ Remote file "uri"
 Example usage
 -------------
 
-Reusing configuration templates is possible with URL search parameters. All parameters (excluding "value") from any source can be replaced using the {{**param**}} syntax.
+Reusing configuration templates is possible with URL search parameters. All parameters :lower:`(excluding "value")` from any source can be replaced using the **{{param}}** syntax.
 
 .. code-block::
   :caption: `http://localhost:3000/project/index.html?file=demo&format=json`
@@ -232,7 +232,7 @@ Example usage
 
 To completely remove an element all *AND* conditions have to be ``true`` and one *OR* per group is ``true``. Using a view engine is recommended if you require a more advanced statement.
 
-Returning an empty result or a blank string (view engine) is ``false``.
+Returning an empty result or a blank string :lower:`(view engine)` is ``false``.
 
 External source "export"
 ========================
@@ -381,7 +381,7 @@ View Engine
 Example usage
 -------------
 
-Using ``template`` (external) is the same as ``value`` (inline) except the reusable content is stored inside a cacheable template server directory.
+Using ``template`` :lower:`(external)` is the same as ``value`` :lower:`(inline)` except the reusable content is stored inside a cacheable template server directory.
 
 ::
 

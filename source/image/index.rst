@@ -29,9 +29,9 @@ Example configuration
     }
   }
 
-.. tip:: Jimp rotation is counter-clockwise. Use **{-45}** to achieve a *45-degree* clockwise rotation.
+.. tip:: *Jimp* rotation is counter-clockwise. Use **{-45}** to achieve a *45-degree* clockwise rotation.
 
-Image conversion can be achieved using the ``commands`` array property in a FileAsset object.
+Image conversion can be achieved using the ``commands`` array property in a :ref:`FileAsset <references-squared-base-file>` object.
 
 ::
 
@@ -83,26 +83,26 @@ Command syntax
 
 Placing an "**@**" symbol after the **format** :alt:`(e.g. png@)` will replace the original file inside the package. Using the "**%**" symbol will choose the smaller of the two files.
 
-All segments are optional except **format**. Outer groupings and inner brackets are required.
+All segments are optional except :target:`format`. Outer groupings and inner brackets are required.
 
-- <format>
+- :target:`format`
 
 .. rst-class:: compressed
 
 * \| *choose one* \|
     * **@**
     * **%**
-* ~size(n)(w|x) // chrome only
-* ( minSize(n,0) , maxSize(n,*)? )
-* ( width(n|auto) x height(n|auto) [bilinear|bicubic|hermite|bezier]? ^(cover|contain|scale)?[left|center|right|top|middle|bottom]? #background-color? )
-* ( left(+|-n) , top(+|-n) | cropWidth(n) x cropHeight(n) )
-* { ...rotate(n|-n) #background-color? }
+* ~size(:lower:`n`)(:lower:`w|x`) :alt:`(chrome only)`
+* ( minSize(:lower:`n,0`) , maxSize(:lower:`n,*`)? )
+* ( width(:lower:`n|auto`) x height(:lower:`n|auto`) [:lower:`bilinear|bicubic|hermite|bezier`]? ^(:lower:`cover|contain|scale`)?[:lower:`left|center|right|top|middle|bottom`]? #background-color? )
+* ( left(:lower:`+|-n`) , top(:lower:`+|-n`) | cropWidth(:lower:`n`) x cropHeight(:lower:`n`) )
+* { ...rotate(:lower:`n|-n`) #background-color? }
 * \| *choose one* \|
-    * opacity(0.0-1.0)
-    * jpeg_quality(0-100)
-    * webp_quality(0-100?[photo|picture|drawing|icon|text]?[0-100]?) [#]_
+    * opacity(:lower:`0.0-1.0`)
+    * jpeg_quality(:lower:`0-100`)
+    * webp_quality(:lower:`0-100?[photo|picture|drawing|icon|text]?[0-100]?`) [#]_
 * !method [#]_
-* !method(1, "string_arg2", [1, 2], true, { "a": 1, "b": "\\}" }, ...args?) [#]_
+* !method(:lower:`1, "string_arg2", [1, 2], true, { "a": 1, "b": "\\}" }, ...args?`) [#]_
 
 Example commands
 ================

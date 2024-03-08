@@ -7,7 +7,7 @@ Miscellaneous
 Merge conflicts
 ===============
 
-Only one command per element is supported (except data sources) when using :ref:`sqd.config <build-using-sqd-config>`. The last selector always takes precedence except when **mergeType** is defined. [#]_
+Only one command per element is supported :lower:`(except data sources)` when using :ref:`sqd.config <build-using-sqd-config>`. The last selector always takes precedence except when **mergeType** is defined. [#]_
 
 .. code-block::
   :caption: "ordinal": 1 | index.html*
@@ -177,7 +177,7 @@ squared
 
 .. versionadded:: 5.1.5
 
-  *AssetCommand* property **attributes** hash map values can be replaced using search {{params}} syntax.
+  *AssetCommand* property **attributes** hash map values can be replaced using search **{{params}}** syntax.
 
 @pi-r/chrome
 ============

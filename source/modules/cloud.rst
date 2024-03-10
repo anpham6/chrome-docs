@@ -11,6 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 57,58
 
   import type { IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -68,6 +69,7 @@ Interface
 
   interface ICloudServiceClient {
       CLOUD_SERVICE_NAME: string;
+      CLOUD_UPLOAD_FROMDISK?: boolean;
       CLOUD_UPLOAD_DISK?: boolean;
       CLOUD_UPLOAD_STREAM?: boolean;
       CLOUD_UPLOAD_CHUNK?: boolean;

@@ -15,7 +15,7 @@ E-mc 0.8
   modules/index
   references
   versions
-  squared-functions <legacy>
+  legacy
 
 Examples use **squared** :alt:`5` and **chrome** as the reference framework. These concepts can be used with any NodeJS :alt:`14+` application.
 

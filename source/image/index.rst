@@ -81,9 +81,9 @@ There can be transparency issues for *WebP* animated transformations due to the 
 Command syntax
 ==============
 
-Placing an "**@**" symbol after the **format** :alt:`(e.g. png@)` will replace the original file inside the package. Using the "**%**" symbol will choose the smaller of the two files.
+Placing an "**@**" symbol after the **format** :alt:`(e.g. png@)` will replace the original file inside the project. Using the "**%**" symbol will choose the smaller of the two files.
 
-All segments are optional except :target:`format`. Outer groupings and inner brackets are required.
+All segments are optional except **format**. Outer groupings and inner brackets are required.
 
 - :target:`format`
 

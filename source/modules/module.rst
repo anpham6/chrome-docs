@@ -255,6 +255,10 @@ Interface
       - removeDir
       - streamFile :alt:`(static)`
 
+.. versionadded:: 0.8.7
+
+  *IModule* method **getPackageVersion** *optional* argument **baseDir** as :alt:`string` was created.
+
 Settings
 ========
 

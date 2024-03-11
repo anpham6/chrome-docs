@@ -92,7 +92,7 @@ Tasks can be performed immediately after the asset has been downloaded :lower:`(
   </script>
 
 .. code-block:: html
-  :caption: handler `:` task `:` preceding? ...+
+  :caption: handler \: task \: preceding? ...+
 
   <script src="/common/util.js" data-chrome-tasks="gulp:minify+gulp:lint:true"></script>
 

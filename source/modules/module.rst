@@ -92,11 +92,11 @@ Interface
       checkPackage(err: unknown, name: string | undefined, value?: LogValue, options?: LogFailOptions | LogType): boolean;
       checkFail(message: unknown, options: LogFailOptions): LogArguments | false | undefined;
       writeLog(component: LogComponent, queue?: boolean): void;
-      writeLog(type: StatusType, value: unknown, options?: LogOptions): void;
+      writeLog(type: StatusType, value: unknown, options: LogOptions): void;
       writeLog(type: StatusType, value: unknown, timeStamp?: LogDate, duration?: number): void;
       addLog(component: LogComponent, queue?: boolean): void;
+      addLog(type: StatusType, value: unknown, options: LogOptions): void;
       addLog(type: StatusType, value: unknown, from: string, source?: string): void;
-      addLog(type: StatusType, value: unknown, options?: LogOptions): void;
       addLog(type: StatusType, value: unknown, timeStamp?: LogDate, from?: string, source?: string): void;
       addLog(type: StatusType, value: unknown, timeStamp?: LogDate, duration?: number, from?: string, source?: string): void;
       getLog(...type: StatusType[]): LogStatus<StatusType>[];

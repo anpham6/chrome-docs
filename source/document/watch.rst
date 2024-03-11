@@ -103,7 +103,7 @@ data-chrome-watch
   </script>
 
 .. code-block:: html
-  :caption: interval `::` expires `::` reload
+  :caption: interval \:\: expires \:\: reload
 
   <link rel="stylesheet" href="/common/util.css" data-chrome-watch="1000::1h 30m::111-111-111:8080[module|secure|always]">
 

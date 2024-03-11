@@ -187,7 +187,7 @@ Example remote configuration
   squared.saveAs("bundle.zip", { config: "http://hostname/chrome/bundle.yml" }); // Detect by file extension (default is "json")
 
 .. code-block::
-  :caption: `http://hostname/pathname/example.html` -to- `http://hostname/pathname/example.html.json`
+  :caption: *http://hostname/pathname/example.html -to- http://hostname/pathname/example.html.json*
 
   squared.saveAs("example.zip", { config: { mimeType: "json" } });
   /* OR */
@@ -234,13 +234,13 @@ Using sqd.config
 The base folder level configuration file is a hash map of URL globs which can match multiple items. Given these two configurations:
 
 .. code-block:: none
-  :caption: `http://hostname/path/sqd.config`
+  :caption: *http://hostname/path/sqd.config*
 
   http://hostname/path/example1.html
   http://hostname/path/example2.html
 
 .. code-block:: none
-  :caption: `http://hostname/path/sub/sqd.config`
+  :caption: *http://hostname/path/sub/sqd.config*
 
   http://hostname/path/sub/example3.html
   http://hostname/path/sub/example4.html

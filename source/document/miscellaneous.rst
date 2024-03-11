@@ -110,7 +110,7 @@ Element content
 ===============
 
 .. code-block::
-  :caption: `http://localhost:3000/project/index.html?className=active`
+  :caption: *http://localhost:3000/project/index.html?className=active*
 
   {
     "selector": "p.inactive",

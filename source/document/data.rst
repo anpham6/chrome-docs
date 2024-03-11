@@ -129,7 +129,7 @@ Example usage
 Reusing configuration templates is possible with URL search parameters. All parameters :lower:`(excluding "value")` from any source can be replaced using the **{{param}}** syntax.
 
 .. code-block::
-  :caption: `http://localhost:3000/project/index.html?file=demo&format=json`
+  :caption: *http://localhost:3000/project/index.html?file=demo&format=json*
 
   {
     "selector": "main img",

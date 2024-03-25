@@ -10,8 +10,9 @@ Interface
 
 .. code-block:: typescript
 
-  import type { ConnectionConfig, ParameterOptions, TediousType, TediousTypes } from "tedious";
-  import type { PoolConfig } from "tedious-connection-pool";
+  import type { ConnectionConfiguration } from 'tedious';
+  import type { DataType, ParameterData } from "tedious/lib/data-type";
+  import type { PoolConfig } from "@e-mc/mssql/types/pool"; // From "@types/tedious-connection-pool"
 
   interface MSSQLDataSource extends DbDataSource {
       source: "mssql";
@@ -22,7 +23,7 @@ Interface
       usePool?: boolean | string | PoolConfig; // External pool provider configurable options
   }
 
-  interface MSSQLCredential extends ServerAuth, ConnectionConfig {/* Empty */}
+  interface MSSQLCredential extends ServerAuth, ConnectionConfiguration {/* Empty */}
 
   interface MSSQLRequestWithOutputParameters {
       input?: MSSQLRequestParameters;
@@ -32,8 +33,8 @@ Interface
   interface MSSQLRequestParameterValue {
       name?: string;
       value?: unknown;
-      type?: keyof TediousTypes | TediousType;
-      options?: ParameterOptions;
+      type?: DataType;
+      options?: ParameterData;
   }
 
   type MSSQLRequestParameters = MSSQLRequestParameterValue[] | ObjectMap<MSSQLRequestParameterValue>;
@@ -43,7 +44,7 @@ Pool
 
 .. code-block:: typescript
 
-  import type { PoolConfig } from "tedious-connection-pool";
+  import type { PoolConfig } from "@e-mc/mssql/types/pool";
 
   interface PoolConfig {
       min?: number; // min

@@ -29,11 +29,11 @@ squared-express
 Settings
 --------
 
-Deprecated settings from *squared-functions* were removed. Misplaced properties that are undetected will use the default :target:`E-mc` value.
+Deprecated settings from *squared-functions* were removed. Misplaced properties that are undetected will use the default **E-mc** value.
 
 .. option:: --migrations
 
-  Will be required as of :target:`squared-express 3.2.0` for those who still have not to made the suggested conversions. [#]_
+  Will be required as of :target:`squared-express 3.2.0` for those who have not made the suggested conversions. [#]_
 
 .. option:: --no-migrations
 
@@ -41,6 +41,8 @@ Deprecated settings from *squared-functions* were removed. Misplaced properties 
 
 @e-mc/compat-v4
 ===============
+
+It is not installed by default [#]_ as of :target:`squared 5.2.0` and will be removed from **E-mc** when the :target:`squared 4.5.0` branch is no longer maintained.
 
 .. code-block::
   :caption: package.json
@@ -53,12 +55,10 @@ Deprecated settings from *squared-functions* were removed. Misplaced properties 
 
 Include once in the main process before using ``require`` with packages that use or inherit from *squared-functions*.
 
-.. attention:: It is not a dependency [#]_ as of :target:`squared 5.2.0` and will be removed from :target:`E-mc` once the API is stable.
-
 sqd-serve
 ---------
 
-The module is no longer directly loadable as of **0.14.0**. Migration for settings are still available using **node.compat.v4** or command line options.
+The module is no longer directly loadable as of **0.14.0**. Migration for settings are still available through **node.compat.v4** or command line options.
 
 .. [#] squared-express 3.2 + sqd-serve 0.14 (alternative \-\-compat-v4)
 .. [#] squared-express 3.1 + sqd-serve 0.13

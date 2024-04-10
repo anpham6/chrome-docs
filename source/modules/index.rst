@@ -42,7 +42,7 @@ The ``default`` convention for all packages was removed in **E-mc 0.9**. It is a
   Module.default.isPath("/path/file"); // FAIL
   Module.isPath("/path/file"); // OK
 
-Besides static methods there is an additional utility library with these modules:
+Besides static methods there is an additional utility library within these modules:
 
 - `@e-mc/cloud/util <https://www.unpkg.com/@e-mc/cloud/util.d.ts>`_
 - `@e-mc/db/util <https://www.unpkg.com/@e-mc/db/util.d.ts>`_

@@ -15,7 +15,7 @@ Interface
   import type { CompressLevel } from "./squared";
 
   import type { IModule, ModuleConstructor } from "./index";
-  import type { BufferResult, CompressFormat, TryFileCompressor, TryFileResult, TryImageResult } from "./compress";
+  import type { BufferResult, CompressFormat, TryFileCompressor } from "./compress";
   import type { CompressModule, CompressSettings } from "./settings";
 
   import type { WriteStream } from "fs";
@@ -37,10 +37,10 @@ Interface
       createWriteStreamAsBrotli(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
       writeGzip(file: string | Buffer, output: string, options?: CompressLevel): Promise<void>;
       writeBrotli(file: string | Buffer, output: string, options?: CompressLevel): Promise<void>;
-      tryFile(file: string | Buffer, config: CompressFormat, callback?: TryFileResult): Promise<BufferResult>;
-      tryFile(file: string | Buffer, output: string, config: CompressFormat, callback?: TryFileResult): Promise<BufferResult>;
-      tryImage(file: string, config: CompressFormat, callback?: TryImageResult): Promise<BufferResult>;
-      tryImage(file: string | Buffer, output: string, config: CompressFormat, callback?: TryImageResult): Promise<BufferResult>;
+      tryFile(file: string | Buffer, options: CompressFormat): Promise<BufferResult>;
+      tryFile(file: string | Buffer, output: string, options?: CompressFormat): Promise<BufferResult>;
+      tryImage(file: string, options: CompressFormat): Promise<BufferResult>;
+      tryImage(file: string | Buffer, output: string, options?: CompressFormat): Promise<BufferResult>;
       get settings(): CompressSettings;
   }
 
@@ -53,6 +53,10 @@ Interface
 .. versionadded:: 0.9.0
 
   *ICompress* methods **writeGzip** | **writeBrotli** were created.
+
+.. deprecated:: 0.9.0
+
+  *ICompress* methods **tryFile** | **tryImage** *optional* argument **callback** as :alt:`function` was removed.
 
 Settings
 ========
@@ -118,11 +122,11 @@ Example usage
       apiKey: "**********" // Override settings
     }
   };
-  instance.tryImage("/tmp/image.png", "/path/output/compressed.png", options, (err, data) => {
-    if (!err) {
+  instance.tryImage("/tmp/image.png", "/path/output/compressed.png", options)
+    .then(data => {
       console.log(Buffer.byteLength(data));
-    }
-  });
+    })
+    .catch(err => console.error(err));
 
 References
 ==========

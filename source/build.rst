@@ -11,7 +11,8 @@ Example usage
 
 .. highlight:: javascript
 
-::
+.. code-block::
+  :emphasize-lines: 38,50,61
 
   squared.saveAs("index.zip", {
     productionRelease: true, // Ignore local URL rewriting and use actual path
@@ -48,8 +49,9 @@ Example usage
     removeUnusedFontFace: false, // @font-face
     removeUnusedKeyframes: false, // @keyframes
     removeUnusedMedia: false, // @media
-    removeUnusedContainer: false, // @container
     removeUnusedSupports: false, // @supports
+    removeUnusedContainer: false, // @container
+    removeUnusedScope: false, // @scope
 
     /* Styles which are still being used */
     retainUsedStyles: {
@@ -59,8 +61,9 @@ Example usage
       "@font-face": [],
       "@keyframes": [],
       "@media": [],
+      "@supports": [],
       "@container": [],
-      "@supports": []
+      "@scope": []
     },
     /* OR */
     retainUsedStyles: [
@@ -69,8 +72,9 @@ Example usage
       /* CSS @font-face (string enclosed within '|font-face:Times New Roman|') */,
       /* CSS @keyframes (string enclosed within '|keyframes:animationName|') */,
       /* CSS @media (string enclosed within '|media:only screen and (min-width: 800px)|') */,
+      /* CSS @supports (string enclosed within '|supports:(display: grid)|') */,
       /* CSS @container (string enclosed within '|container:(min-width: 800px)|') */,
-      /* CSS @supports (string enclosed within '|supports:(display: grid)|') */
+      /* CSS @scope (string enclosed within '|scope:selector-start|') */
     ],
 
     imports: {
@@ -87,7 +91,7 @@ Example "saveAs"
 The entire page can be transformed as a group with the same functionality as JSON :alt:`(yaml)` configuration except where highlighted.
 
 .. code-block::
-  :emphasize-lines: 2,8,9,32
+  :emphasize-lines: 8,9,32
 
   squared.copyTo("/path/to/target", {    
     saveAs: {
@@ -317,6 +321,13 @@ The order of precedence when using :target:`inherit` is resolved through the ass
   });
 
 .. tip:: The filename ``sqd.config`` is configurable using **settings.outputConfigName**.
+
+squared
+=======
+
+.. versionadded:: 5.2.0
+
+  *DocumentOutput* property **removeUnusedScope** was created.
 
 .. [#] https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap
 .. [#] npm i json5

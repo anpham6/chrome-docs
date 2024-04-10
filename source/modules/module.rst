@@ -19,7 +19,7 @@ Interface
   import type { LOG_TYPE, STATUS_TYPE, ExecCommand, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, LoggerFormat, StatusType } from "./logger";
   import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, GetTempDirOptions, MoveFileOptions, NormalizeFlags, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
   import type { Settings } from "./node";
-  import type { LoggerFormatSettings } from "/settings";
+  import type { LoggerFormatSettings } from "./settings";
 
   import type { SpawnOptions } from "child_process";
   import type { BinaryLike } from "crypto";

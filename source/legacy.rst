@@ -24,7 +24,7 @@ squared-express
 
   Override **node.compat.v4** and disable compatibility with *squared-functions*.
 
-.. attention:: **node.compat.v4** will be disabled as of :target:`squared 5.2.0` in *squared.json*.
+.. attention:: It will be disabled as of :target:`squared 5.2.0` in *squared.json*.
 
 Settings
 --------
@@ -42,7 +42,7 @@ Deprecated settings from *squared-functions* were removed. Misplaced properties 
 @e-mc/compat-v4
 ===============
 
-It is not installed by default [#]_ as of :target:`squared 5.2.0` and will be removed from **E-mc** when the :target:`squared 4.5.0` branch is no longer maintained.
+When not using squared-express you will have to include it in the main process before using ``require`` with packages that use or inherit from *squared-functions*.
 
 .. code-block::
   :caption: package.json
@@ -53,7 +53,7 @@ It is not installed by default [#]_ as of :target:`squared 5.2.0` and will be re
     }
   }
 
-Include once in the main process before using ``require`` with packages that use or inherit from *squared-functions*.
+.. attention:: It will not installed by default [#]_ as of :target:`squared 5.2.0` in *package.json*.
 
 sqd-serve
 ---------

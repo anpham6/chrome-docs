@@ -14,7 +14,7 @@ Interface
   }
 
 .. code-block:: typescript
-  :emphasize-lines: 31,32,57,59
+  :emphasize-lines: 31-32,57,59
 
   interface CloudStorage {
       service: string;

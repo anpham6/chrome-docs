@@ -21,7 +21,7 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 24,29,30
+  :emphasize-lines: 24,29-30
 
   import type { DataSource as IDataSource } from "../db/interface";
 

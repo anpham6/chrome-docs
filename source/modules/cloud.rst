@@ -11,7 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 57,58
+  :emphasize-lines: 57-58
 
   import type { IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";

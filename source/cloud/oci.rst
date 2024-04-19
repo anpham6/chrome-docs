@@ -187,8 +187,8 @@ Example usage
   - **CLOUD_UPLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
   - **configBucket.tags** using *PutBucketTaggingRequest* was implemented.
 
-.. deprecated:: 0.7.0
+.. versionremoved:: 0.7.0
 
-  - *OCIDatabaseCredential* property **username** is a duplicate of **user** was removed.
+  - *OCIDatabaseCredential* property **username** is a duplicate of property **user**.
 
 .. [#s3] https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/s3compatibleapi.htm

@@ -54,9 +54,9 @@ Interface
 
   *ICompress* methods **writeGzip** | **writeBrotli** were created.
 
-.. deprecated:: 0.9.0
+.. versionremoved:: 0.9.0
 
-  *ICompress* methods **tryFile** | **tryImage** *optional* argument **callback** as :alt:`function` was removed.
+  *ICompress* methods **tryFile** | **tryImage** *optional* argument **callback** as :alt:`function`.
 
 Settings
 ========

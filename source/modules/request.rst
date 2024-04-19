@@ -79,7 +79,7 @@ Interface
       new(module?: RequestModule): IRequest;
   }
 
-.. deprecated:: 0.9.0
+.. versionremoved:: 0.9.0
 
   *RequestInit* property **requestTimeout** was renamed :target:`readTimeout`.
 

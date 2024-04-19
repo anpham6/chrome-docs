@@ -297,11 +297,11 @@ Example usage
   - **configBucket.lifecycle** using *BucketLifecycleConfiguration* was implemented.
   - NPM dependency **@pi-r/aws** was replaced with **@pi-r/aws-lib**.
 
-.. deprecated:: 0.7.0
+.. versionremoved:: 0.7.0
 
-  - **AWS_DEFAULT_REGION** is not recognized in *AWS NodeJS SDK* and was removed.
-  - Unofficial credential properties from V2 :alt:`(e.g. profile)` were removed.
-  - *AWSDatabaseQuery* property **partitionKey** is a duplicate of **key** and was removed.
+  - **AWS_DEFAULT_REGION** is not recognized in *AWS NodeJS SDK*.
+  - Unofficial credential properties from V2 :alt:`(e.g. profile)`.
+  - *AWSDatabaseQuery* property **partitionKey** is a duplicate of property **key**.
 
 .. versionadded:: 0.6.2
 

@@ -583,9 +583,9 @@ Realtime Database
   - *Firestore* property **update** supports using *FieldValue<"delete" | "increment" | "serverTimestamp">* methods.
   - *Firestore* property **update** supports using property **updateType** enum values.
 
-.. deprecated:: 0.7.0
+.. versionremoved:: 0.7.0
 
-  - *GCPStorageCredential* extending **CreateBucketRequest** was removed.
+  - *GCPStorageCredential* no longer extends **CreateBucketRequest**.
 
 .. versionadded:: 0.6.3
 

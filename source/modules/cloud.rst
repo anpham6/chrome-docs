@@ -11,7 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 57-58
+  :emphasize-lines: 57
 
   import type { IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -69,7 +69,6 @@ Interface
 
   interface ICloudServiceClient {
       CLOUD_SERVICE_NAME: string;
-      CLOUD_UPLOAD_FROMDISK?: boolean;
       CLOUD_UPLOAD_DISK?: boolean;
       CLOUD_UPLOAD_STREAM?: boolean;
       CLOUD_UPLOAD_CHUNK?: boolean;
@@ -91,11 +90,12 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  *ICloud* method **setBucketTagging** was created.
+  - *ICloud* method **setBucketTagging** was created.
+  - *ICloudServiceClient* global **CLOUD_UPLOAD_DISK** replaces *CLOUD_UPLOAD_FROMDISK*.
 
-.. deprecated:: 0.9.0
+.. versionremoved:: 0.9.0
 
-  *ICloudServiceClient* static property **CLOUD_UPLOAD_FROMDISK** was renamed :target:`CLOUD_UPLOAD_DISK`.
+  *ICloudServiceClient* global **CLOUD_UPLOAD_FROMDISK** was renamed.
 
 Settings
 ========

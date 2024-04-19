@@ -286,11 +286,11 @@ Example usage
   - **configBucket.cors** using *CORSConfiguration* was implemented.
   - **configBucket.lifecycle** using *LifecycleConfiguration* was implemented.
 
-.. deprecated:: 0.7.0
+.. versionremoved:: 0.7.0
 
-  - **AWS_SESSION_TOKEN** is not used when validating credentials and was removed.
-  - **AWS_DEFAULT_REGION** is not recognized in *AWS NodeJS SDK* and was removed.
-  - *AWSDatabaseQuery* property **partitionKey** is a duplicate of **key** and was removed.
+  - **AWS_SESSION_TOKEN** is not used when validating credentials.
+  - **AWS_DEFAULT_REGION** is not recognized in *AWS NodeJS SDK*.
+  - *AWSDatabaseQuery* property **partitionKey** is a duplicate of **key**.
 
 .. versionadded:: 0.6.2
 

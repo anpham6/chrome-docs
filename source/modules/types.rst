@@ -189,7 +189,7 @@ Interface
 
   const IMPORT_MAP: StringMap;
 
-.. deprecated:: 0.9.0
+.. versionremoved:: 0.9.0
 
   - :alt:`type` StringOfArray was renamed :target:`ArrayOf<string>`.
   - :alt:`type` BufferContent was renamed :target:`Bufferable`.

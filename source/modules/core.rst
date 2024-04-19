@@ -183,10 +183,10 @@ Interface
 
   - *IHost* property **logState** was created.
 
-.. deprecated:: 0.9.0
+.. versionremoved:: 0.9.0
 
-  - *IClientDb* method **hasCache** *optional* argument **override** as :alt:`DbCacheValue` was removed.
-  - *IClientDb* method **hasCoerce** *optional* argument **override** as :alt:`DbCoerceValue` was removed.
+  - *IClientDb* method **hasCache** *optional* argument **override** as :alt:`DbCacheValue`.
+  - *IClientDb* method **hasCoerce** *optional* argument **override** as :alt:`DbCoerceValue`.
 
 Settings
 ========

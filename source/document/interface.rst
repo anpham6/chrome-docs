@@ -74,5 +74,3 @@ Interface
       type: "replace";
       textContent: string; // Replace element.innerHTML
   }
-
-.. seealso:: For any non-standard named definitions check :doc:`References </references>`.

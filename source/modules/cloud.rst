@@ -91,7 +91,7 @@ Interface
 .. versionadded:: 0.9.0
 
   - *ICloud* method **setBucketTagging** was created.
-  - *ICloudServiceClient* global **CLOUD_UPLOAD_DISK** replaces *CLOUD_UPLOAD_FROMDISK*.
+  - *ICloudServiceClient* global **CLOUD_UPLOAD_DISK** replaced *CLOUD_UPLOAD_FROMDISK*.
 
 .. versionremoved:: 0.9.0
 

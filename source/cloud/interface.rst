@@ -85,8 +85,6 @@ Interface
   - *CloudStorageDownload* property **options** to customize the provider download client.
   - *CloudStorageDownload* property **keyname** for file to be downloaded and subsequently renamed to **filename**.
 
-.. seealso:: For any non-standard named definitions check :doc:`References </references>`.
-
 Shared properties
 =================
 

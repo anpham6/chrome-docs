@@ -81,15 +81,15 @@ Interface
 
 .. versionremoved:: 0.9.0
 
-  *RequestInit* property **requestTimeout** was renamed :target:`readTimeout`.
+  - *RequestInit* property **requestTimeout** was renamed :target:`readTimeout`.
 
 .. versionadded:: 0.8.2
 
-  *IRequest* method **statusOn** was created.
+  - *IRequest* method **statusOn** was created.
 
 .. versionadded:: 0.8.1
 
-  *IRequest* method **headersOn** was created.
+  - *IRequest* method **headersOn** was created.
 
 Settings
 ========

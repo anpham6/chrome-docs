@@ -96,7 +96,7 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  *IDb* methods **executeQuery** | **executeBatchQuery** call with parameter :target:`callback` as :alt:`ErrorQueryCallback`.
+  - *IDb* methods **executeQuery** | **executeBatchQuery** call with parameter :target:`callback` as :alt:`ErrorQueryCallback`.
 
 Settings
 ========

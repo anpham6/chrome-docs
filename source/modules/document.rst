@@ -85,7 +85,7 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  *IDocument* property **config** was made abstract.
+  - *IDocument* property **config** was made abstract.
 
 Settings
 ========

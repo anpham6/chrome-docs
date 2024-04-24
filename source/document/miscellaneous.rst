@@ -173,18 +173,18 @@ squared
 
 .. versionadded:: 5.2.0
 
-  *AssetCommand* property **mergeType** option value "*preserve*" was created.
+  - *AssetCommand* property **mergeType** option value "*preserve*" was created.
 
 .. versionadded:: 5.1.5
 
-  *AssetCommand* property **attributes** hash map values can be replaced using search **{{params}}** syntax.
+  - *AssetCommand* property **attributes** hash map values can be replaced using search **{{params}}** syntax.
 
 @pi-r/chrome
 ============
 
 .. versionadded:: 0.6.4
 
-  *NPM* package **image-size** is optionally supported for image dimensions.
+  - *NPM* package **image-size** is optionally supported for image dimensions.
 
 .. [#] When using server hosted directory based sqd.config.
 .. [#] npm i image-size

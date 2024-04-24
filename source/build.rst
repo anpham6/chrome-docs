@@ -327,7 +327,7 @@ squared
 
 .. versionadded:: 5.2.0
 
-  *DocumentOutput* property **removeUnusedScope** was created.
+  - *DocumentOutput* property **removeUnusedScope** was created.
 
 .. [#] https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap
 .. [#] npm i json5

@@ -257,7 +257,7 @@ Interface
 
 .. versionadded:: 0.8.7
 
-  *IModule* method **getPackageVersion** *optional* argument **baseDir** as :alt:`string` was created.
+  - *IModule* method **getPackageVersion** *optional* argument **baseDir** as :alt:`string` was created.
 
 Settings
 ========
@@ -415,7 +415,7 @@ Settings
 
 .. versionadded:: 0.8.6
 
-  *PermissionModule* properties **home_read** | **home_write** were implemented.
+  - *PermissionModule* properties **home_read** | **home_write** were implemented.
 
 References
 ==========

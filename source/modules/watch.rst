@@ -55,7 +55,7 @@ Interface
 
 .. versionremoved:: 0.9.0
 
-  Constructor **new(interval, port, securePort, extensions)** did not conform with ``Module.init()``. 
+  - Constructor **new(interval, port, securePort, extensions)** did not conform with ``Module.init()``. 
 
 Settings
 ========

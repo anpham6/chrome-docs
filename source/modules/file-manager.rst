@@ -261,7 +261,7 @@ Settings
 
 .. versionadded:: 0.9.0
 
-  *ProcessModule* setting **thread.sub_limit** for maximum simultaneous downloads was created.
+  - *ProcessModule* setting **thread.sub_limit** for maximum simultaneous downloads was created.
 
 Example usage
 -------------

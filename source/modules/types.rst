@@ -199,7 +199,7 @@ Interface
 
 .. versionadded:: 0.8.4
 
-  Method **alignSize** was created.
+  - Method **alignSize** was created.
 
 References
 ==========

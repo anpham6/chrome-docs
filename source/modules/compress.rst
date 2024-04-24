@@ -52,11 +52,11 @@ Interface
 
 .. versionadded:: 0.9.0
 
-  *ICompress* methods **writeGzip** | **writeBrotli** were created.
+  - *ICompress* methods **writeGzip** | **writeBrotli** were created.
 
 .. versionremoved:: 0.9.0
 
-  *ICompress* methods **tryFile** | **tryImage** *optional* argument **callback** as :alt:`function`.
+  - *ICompress* methods **tryFile** | **tryImage** *optional* argument **callback** as :alt:`function`.
 
 Settings
 ========

@@ -49,7 +49,7 @@ When not using squared-express you will have to include it in the main process b
 
   {
     "dependencies": {
-      "@e-mc/compat-v4": "^0.8.0"
+      "@e-mc/compat-v4": "^0.9.0"
     }
   }
 

@@ -28,16 +28,26 @@ The ``default`` convention for all packages was removed in **E-mc 0.9**. It is a
 .. code-block::
   :caption: 0.8.0
 
-  const Module = require("@e-mc/module");
+  import Module from "@e-mc/module"; // OK
+  const Module = require("@e-mc/module"); // OK
+
+  let Module;
+  import("@e-mc/module").then(res => Module = res.default); // OK
+  import("@e-mc/module").then(res => Module = res); // OK
 
   Module.default.isPath("/path/file"); // OK
   Module.isPath("/path/file"); // OK
 
 .. code-block::
   :caption: 0.9.0
-  :emphasize-lines: 3
+  :emphasize-lines: 5,8
 
-  const Module = require("@e-mc/module");
+  import Module from "@e-mc/module"; // OK
+  const Module = require("@e-mc/module"); // OK
+
+  let Module;
+  import("@e-mc/module").then(res => Module = res.default); // FAIL
+  import("@e-mc/module").then(res => Module = res); // OK
 
   Module.default.isPath("/path/file"); // FAIL
   Module.isPath("/path/file"); // OK

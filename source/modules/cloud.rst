@@ -95,7 +95,7 @@ Interface
 
 .. versionremoved:: 0.9.0
 
-  *ICloudServiceClient* global **CLOUD_UPLOAD_FROMDISK** was renamed.
+  - *ICloudServiceClient* global **CLOUD_UPLOAD_FROMDISK** was renamed.
 
 Settings
 ========

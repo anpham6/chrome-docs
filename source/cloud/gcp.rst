@@ -181,6 +181,10 @@ Example usage
         }
       },
       "download": {
+        /* gcp.createReadStream */
+        "chunkSize": "", // Empty
+        "chunkLimit": 1, // Will only stream when value is 1
+
         /* gcp.downloadFileInChunks{chunkSizeBytes} */
         "chunkSize": "32mb", // Aligned to 1mb
         "chunkLimit": 5, // Same as "concurrencyLimit"
@@ -212,7 +216,7 @@ Interface
       credential: string | GCPDatabaseCredential;
       product?: "firestore" | "bigquery" | "bigtable" | "datastore" | "spanner" | "firebase";
       id?: string | string[];
-      params?: unknown[] | Document;
+      params?: string | unknown[] | Document;
       database?: string;
       updateType?: 0 | 1 | 2 | 3;
       columns?: string[];
@@ -271,9 +275,17 @@ Firestore
       "id": ["8Qnt83DSNW0eNykpuzcQ", "aahiEBE4qHM73JE7jom3"], // fs.getAll (table/id)
       "options": {/* ReadOptions */},
       /* OR */
+      "params": ["column", "column.sub"], // fs.collection(table).findNearest
+      "query": [1, 2],
+      "options": {
+        "limit": 1000, // Optional
+        "distanceMeasure": "EUCLIDEAN"
+      },
+      /* OR */
       "query": [ // fs.collection(table)
         ["where", "group", "==", "Firestore"],
         ["where", "id", "==", "8Qnt83DSNW0eNykpuzcQ"],
+        ["findNearest", "column", [1, 2], { "limit": 1000, "distanceMeasure": "EUCLIDEAN" }],
         ["limitToLast", 2],
         ["orderBy", "title", "asc"]
       ],
@@ -569,6 +581,15 @@ Realtime Database
 
 @pi-r/gcp
 =========
+
+.. versionadded:: 0.8.0
+
+  - Storage action **download** using **createReadStream** with :alt:`chunkLimit` was implemented.
+  - *Firestore* method **findNearest** as a *VectorQuery* and *Query* is supported.
+
+.. versionadded:: 0.7.1
+
+  - *Firestore* methods **where** | **orderBy** | **select** supports using *FieldPath* params.
 
 .. versionadded:: 0.7.0
 

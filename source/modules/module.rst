@@ -264,6 +264,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 74,89,98,106-111
 
   import type { LogMessageOptions, LogTypeValue, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -338,6 +339,7 @@ Settings
               bg_color?: BackgroundColor;
               bold?: boolean;
               justify?: "left" | "center" | "right";
+              braces?: string;
               as?: StringMap;
           };
           value?: {
@@ -352,6 +354,7 @@ Settings
               color?: ForegroundColor;
               bg_color?: BackgroundColor;
               bold?: boolean;
+              braces?: [string, string];
               as?: StringMap;
               unit?: "auto" | "s" | "ms";
           };
@@ -360,12 +363,19 @@ Settings
               color?: ForegroundColor;
               bg_color?: BackgroundColor;
               bold?: boolean;
+              braces?: [string, string];
           };
           meter?: {
               color?: ForegroundColor;
               bg_color?: BackgroundColor;
               bg_alt_color?: BackgroundColor;
               bold?: boolean;
+          };
+          error?: {
+              color?: ForegroundColor;
+              alt_color?: ForegroundColor;
+              bg_color?: BackgroundColor;
+              braces?: [string, string];
           };
       };
       meter?: {
@@ -412,6 +422,11 @@ Settings
 
   type BackgroundColor = typeof IBackgroundColor | `#${string}`;
   type ForegroundColor = typeof IForegroundColor | `#${string}`;
+
+.. versionadded:: 0.10.0
+
+  - *LoggerModule* group **format** block :target:`error` was created.
+  - *LoggerModule* group **format** property **braces** were implemented.
 
 .. versionadded:: 0.8.6
 

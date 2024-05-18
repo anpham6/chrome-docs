@@ -11,6 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 30,31
 
   import type { CompressLevel } from "./squared";
 
@@ -26,7 +27,6 @@ Interface
       module: CompressModule;
       level: Record<string, number>;
       compressors: Record<string, TryFileCompressor>;
-      chunkSize?: number;
       init(...args: unknown[]): this;
       register(format: string, callback: TryFileCompressor): void;
       getLevel(value: string, fallback?: number): number | undefined;
@@ -41,6 +41,8 @@ Interface
       tryFile(file: string | Buffer, output: string, options?: CompressFormat): Promise<BufferResult>;
       tryImage(file: string, options: CompressFormat): Promise<BufferResult>;
       tryImage(file: string | Buffer, output: string, options?: CompressFormat): Promise<BufferResult>;
+      set chunkSize(value: number | string | undefined): void;
+      get chunkSize(): number | undefined;
       get settings(): CompressSettings;
   }
 
@@ -49,6 +51,10 @@ Interface
       readonly prototype: ICompress;
       new(module?: CompressModule): ICompress;
   }
+
+.. versionadded:: 0.10.0
+
+  - *ICompress* property **chunkSize** was converted into a 1KB aligned accessor.
 
 .. versionadded:: 0.9.0
 

@@ -11,7 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 57
+  :emphasize-lines: 46,57
 
   import type { IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -58,7 +58,7 @@ Interface
       LOG_CLOUD_DOWNLOAD: LogMessageOptions;
       LOG_CLOUD_DELETE: LogMessageOptions;
       LOG_CLOUD_DELAYED: LogMessageOptions;
-      finalize(this: IHost, instance: ICloud): Promise<unknown>;
+      finalize(this: IHost, instance: ICloud): Promise<void>;
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, options: UploadAssetOptions): Promise<unknown>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, ignoreProcess: boolean): Promise<unknown>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, contentType?: string, ignoreProcess?: boolean): Promise<unknown>[];
@@ -87,6 +87,10 @@ Interface
       executeQuery?(this: ICloud, credential: unknown, data: CloudDatabase, sessionKey?: string): Promise<QueryResult>;
       executeBatchQuery?(this: ICloud, credential: unknown, batch: CloudDatabase[], sessionKey?: string): Promise<BatchQueryResult>;
   }
+
+.. versionadded:: 0.10.0
+
+  - *CloudConstructor* method **finalize** return value was modified to :target:`Promise<boolean>`.
 
 .. versionadded:: 0.9.0
 

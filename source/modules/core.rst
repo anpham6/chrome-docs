@@ -11,7 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 81-83
+  :emphasize-lines: 81-83,89
 
   import type { DataSource, LogStatus } from "./squared";
 
@@ -101,6 +101,7 @@ Interface
       getQueryResult(source: string, credential: unknown, queryString: string, options?: CacheOptions, renewCache?: boolean): QueryResult | undefined;
       setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, sessionKey: string | undefined): QueryResult;
       setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, options?: CacheOptions): QueryResult;
+      getCacheResult(source: string, credential: unknown, queryString: string, cacheValue: CacheOptions, ignoreCache?: unknown): QueryResult | undefined;
       applyState(items: DataSource | DataSource[], value: number, as?: boolean): void;
       commit(items?: DataSource[]): Promise<boolean>;
       valueOfKey(credential: unknown, name: keyof DbSourceOptions, component?: keyof DbCoerceSettings): unknown;
@@ -167,6 +168,10 @@ Interface
       get uncRead(): boolean;
       get uncWrite(): boolean;
   }
+
+.. versionadded:: 0.10.0
+
+  - *IClientDb* method **getCacheResult** was created.
 
 .. versionadded:: 0.9.0
 

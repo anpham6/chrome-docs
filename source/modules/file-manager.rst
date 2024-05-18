@@ -11,6 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 109-114
 
   import type { DataSource, IncrementalMatch, TaskAction } from "./squared";
 
@@ -120,11 +121,11 @@ Interface
       deleteFile(src: string, options: DeleteFileOptions & DeleteFileAddendum, callback?: NoParamCallback): unknown;
       restart(recursive?: boolean | "abort", emptyDir?: boolean): void;
       restart(recursive?: boolean | "abort", exclusions?: string[], emptyDir?: boolean): void;
-      finalizeCompress(assets: ExternalAsset[]): Promise<unknown>;
-      finalizeDocument(): Promise<unknown>;
-      finalizeTask(assets: (ExternalAsset & Required<TaskAction>)[]): Promise<unknown>;
-      finalizeCloud(): Promise<unknown>;
-      finalizeCleanup(): Promise<unknown>;
+      finalizeCompress(assets: ExternalAsset[]): Promise<void>;
+      finalizeDocument(): Promise<void>;
+      finalizeTask(assets: (ExternalAsset & Required<TaskAction>)[]): Promise<void>;
+      finalizeCloud(): Promise<void>;
+      finalizeCleanup(): Promise<void>;
       finalize(): Promise<void>;
       close(): void;
       reset(): boolean;
@@ -196,12 +197,26 @@ Interface
       new(baseDirectory: string, config: RequestData, permission?: IPermission | null, postFinalize?: PostFinalizeCallback): IFileManager;
   }
 
+.. versionadded:: 0.10.0
+
+  - *IFileManager* methods return value was modified to :target:`Promise<void>`:
+
+    .. hlist::
+      :columns: 3
+
+      - finalize
+      - finalizeCompress
+      - finalizeCleanup
+      - finalizeCloud
+      - finalizeDocument
+      - finalizeTask
+
 .. versionadded:: 0.9.0
 
   - *IFileManager* method **install** with **name** :alt:`"image"` and **target** as :alt:`ImageConstructor`.
   - *IFileManager* method **install** with **name** :alt:`"document" | "image" | "task"` and **handler** as :alt:`string`.
   - *IFileManager* method **transformAsset** *optional* argument **override** as :alt:`boolean` was created.
-  - *IFileManager* method **transformAsset** return value **Promise<void>** was modified to :target:`Promise<boolean>`.
+  - *IFileManager* method **transformAsset** return value was modified to :target:`Promise<boolean>`.
   - *IFileManager* methods were created:
 
     .. hlist::

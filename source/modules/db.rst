@@ -11,6 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 76-79
 
   import type { DbDataSource } from "./squared";
 
@@ -87,6 +88,10 @@ Interface
   }
 
   interface DbPoolConstructor {
+      CACHE_UNUSED: readonly string[];
+      asString(credential: unknown): string;
+      sanitize(credential: unknown): unknown;
+      removeUUIDKey(credential: unknown): unknown;
       findKey(pools: Record<string, IDbPool>, uuidKey: unknown, poolKey: string | undefined, ...items: DbDataSource[]): Record<string, IDbPool> | null;
       validateKey(pools: Record<string, IDbPool>, username: string, uuidKey: unknown): [string, Record<string, IDbPool> | null];
       checkTimeout(pools: Record<string, IDbPool>, value: number, limit?: number): Promise<number>;
@@ -94,9 +99,14 @@ Interface
       new(pool: unknown, poolKey: string, uuidKey?: AuthValue | null): IDbPool;
   }
 
+.. versionadded:: 0.10.0
+
+  - *DbPoolConstructor* static property **CACHE_UNUSED** for unused pool attributes was created.
+  - *DbPoolConstructor* static methods **asString** | **sanitize** | **removeUUIDKey** for pool keys were created.
+
 .. versionadded:: 0.9.0
 
-  - *IDb* methods **executeQuery** | **executeBatchQuery** call with parameter :target:`callback` as :alt:`ErrorQueryCallback`.
+  - *IDb* methods **executeQuery** | **executeBatchQuery** with parameter :target:`callback` as :alt:`ErrorQueryCallback`.
 
 Settings
 ========

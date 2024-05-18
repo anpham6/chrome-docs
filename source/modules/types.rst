@@ -9,12 +9,13 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
+  :emphasize-lines: 51
 
   import type { LogArguments } from "./lib/logger";
   import type { CloneObjectOptions } from "./lib/module";
 
   import type { BytesOptions } from "bytes";
-  import type { BinaryLike, CipherGCMTypes, Encoding } from "crypto";
+  import type { BinaryLike, CipherGCMTypes, Encoding, RandomUUIDOptions } from 'crypto';
   import type { HighResolutionTime } from "perf_hooks";
 
   function createAbortError(reject: true): Promise<never>;
@@ -60,7 +61,7 @@ Interface
   function getEncoding(value: unknown, fallback?: BufferEncoding): BufferEncoding;
   function encryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
   function decryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
-  function generateUUID(): string;
+  function generateUUID(options?: RandomUUIDOptions): string;
   function incrementUUID(restart?: boolean): string;
   function validateUUID(value: unknown): boolean;
   function randomString(format: string, dictionary?: string): string;
@@ -189,13 +190,18 @@ Interface
 
   const IMPORT_MAP: StringMap;
 
+.. deprecated:: 0.9.2
+
+  - Method **generateUUID** is the same as :target:`crypto.randomUUID`.
+  - :alt:`type` **NumString** will be removed in the next major.
+
 .. versionremoved:: 0.9.0
 
-  - :alt:`type` StringOfArray was renamed :target:`ArrayOf<string>`.
-  - :alt:`type` BufferContent was renamed :target:`Bufferable`.
-  - :alt:`interface` PoolConfig in "**db**" was relocated to "**settings**".
-  - :alt:`interface` LoggerFormat in "**logger**" was relocated to "**settings**".
-  - :alt:`interface` AddEventListenerOptions in "**dom**" was relocated to "**core**".
+  - :alt:`type` **StringOfArray** was renamed :target:`ArrayOf<string>`.
+  - :alt:`type` **BufferContent** was renamed :target:`Bufferable`.
+  - :alt:`interface` **PoolConfig** in **db** was relocated to :target:`settings`.
+  - :alt:`interface` **LoggerFormat** in **logger** was relocated to :target:`settings`.
+  - :alt:`interface` **AddEventListenerOptions** in **dom** was relocated to :target:`core`.
 
 .. versionadded:: 0.8.4
 

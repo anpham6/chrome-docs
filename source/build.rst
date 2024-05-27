@@ -325,6 +325,17 @@ The order of precedence when using :target:`inherit` is resolved through the ass
 squared
 =======
 
+.. versionadded:: 5.3.0
+
+  - *DocumentOutput* property **saveAs** with sub-properties as :alt:`SaveAsOptions` was amended:
+
+    .. hlist::
+      :columns: 3
+
+      - audio
+      - video
+      - raw
+
 .. versionadded:: 5.2.0
 
   - *DocumentOutput* property **removeUnusedScope** was created.

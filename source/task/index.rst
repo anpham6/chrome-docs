@@ -60,7 +60,7 @@ Example configuration
 Example gulpfile.js
 ===================
 
-Renaming files with *Gulp* is not recommended. It is better to use the **saveAs** or **filename** properties when the asset is part of the HTML page.
+Renaming files with *Gulp* is not recommended. It is better to use the **saveAs** or **filename** properties when the asset is part of the *HTML* page.
 
 .. code-block:: javascript
   :emphasize-lines: 5,7

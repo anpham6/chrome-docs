@@ -122,7 +122,7 @@ Build Options
 useOriginalHtmlPage = true
 --------------------------
 
-HTML only has partial watch support since most local modifications will alter the original element index position stored in memory. Inline source ``<script>`` and ``<style>`` cannot be edited when they are part of a bundle.
+*HTML* only has partial watch support since most local modifications will alter the original element index position stored in memory. Inline source ``<script>`` and ``<style>`` cannot be edited when they are part of a bundle.
 
 Elements that are configured :alt:`(e.g. dataSource)` are not editable as the original request values will be used on a reload.
 

@@ -416,7 +416,7 @@ Using ``template`` :lower:`(external)` is the same as ``value`` :lower:`(inline)
 Event callbacks
 ===============
 
-You can create named callbacks for **postQuery** and **preRender** anywhere inside the HTML. It is more readable than inside a configuration file and can be reused for similiar queries.
+You can create named callbacks for **postQuery** and **preRender** anywhere inside the *HTML*. It is more readable than inside a configuration file and can be reused for similiar queries.
 
 .. code-block:: typescript
 

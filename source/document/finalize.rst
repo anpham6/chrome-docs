@@ -23,7 +23,7 @@ Other elements can be excluded only through a configuration file.
     squared.save();
   </script>
 
-There is a simpler way to exclude the same tags by using an HTML comment block when inside the ``<head>`` element. [#]_
+There is a simpler way to exclude the same tags by using an *HTML* comment block when inside the ``<head>`` element. [#]_
 
 .. code-block::
   :caption: Comment block

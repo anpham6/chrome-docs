@@ -2,7 +2,7 @@
 Built-In
 ========
 
-JS and CSS files can be optimized further using these settings:
+*JS* and *CSS* files can be optimized further using these settings:
 
 #. compile
 #. bundle[-es6]

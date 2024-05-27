@@ -51,7 +51,7 @@ Build Options
 useOriginalHtmlPage = false
 ---------------------------
 
-The current state of the DOM is sent including any updates made with JavaScript. Every element being modified will have an auto-generated locator **UUID**.
+The current state of the *DOM* is sent including any updates made with JavaScript. Every element being modified will have an auto-generated locator **UUID**.
 
 useOriginalHtmlPage = true 
 --------------------------

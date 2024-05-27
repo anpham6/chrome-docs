@@ -2,13 +2,13 @@
 Inline commands
 ===============
 
-Bundles can be created with these HTML tag names.
+Bundles can be created with these *HTML* tag names.
 
 - **saveAs**: html + script + link + raw assets
 - **exportAs**: script + style
 - **exclude**: script + link + style
 
-JS and CSS files with the same path and filename will automatically create a bundle when there are no conflicts in call ordering. [#]_
+*JS* and *CSS* files with the same path and filename will automatically create a bundle when there are no conflicts in call ordering. [#]_
 
 data-chrome-file
 ================

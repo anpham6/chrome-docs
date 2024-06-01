@@ -11,13 +11,14 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 158
 
   import type { LogStatus } from "./squared";
 
   import type { IHost } from "./index";
   import type { IAbortComponent, IPermission } from "./core";
   import type { LOG_TYPE, STATUS_TYPE, ExecCommand, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, LoggerFormat, StatusType } from "./logger";
-  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, GetTempDirOptions, MoveFileOptions, NormalizeFlags, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
+  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, GetTempDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
   import type { Settings } from "./node";
   import type { LoggerFormatSettings } from "./settings";
 
@@ -34,6 +35,7 @@ Interface
   interface IModule extends EventEmitter, IAbortComponent {
       readonly status: LogStatus<StatusType>[];
       readonly errors: unknown[];
+      /* @deprecated */
       supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
       supports(name: string, value?: boolean): boolean;
       getTempDir(options: GetTempDirOptions): string;
@@ -168,6 +170,7 @@ Interface
       readonly LOG_TYPE: LOG_TYPE;
       readonly LOG_FORMAT: LoggerFormatSettings<LoggerFormat<number>>;
       readonly STATUS_TYPE: STATUS_TYPE;
+      readonly PLATFORM_WIN32: boolean;
       readonly MAX_TIMEOUT: number;
       readonly TEMP_DIR: string;
       supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
@@ -196,7 +199,7 @@ Interface
       resolvePath(value: string, base: string | URL): string;
       joinPath(...values: [...paths: unknown[], normalize: boolean][]): string;
       joinPath(...values: unknown[]): string;
-      normalizePath(value: unknown, flags?: boolean | NormalizeFlags): string;
+      normalizePath(value: unknown, flags?: boolean | number): string;
       createDir(value: string | URL, overwrite?: boolean): boolean;
       removeDir(value: string | URL, sinceCreated: number, recursive?: boolean): boolean;
       removeDir(value: string | URL, empty?: boolean, recursive?: boolean): boolean;
@@ -236,9 +239,17 @@ Interface
       new(): IModule<IHost>;
   }
 
+.. versionadded:: 0.10.0
+
+  - *ModuleConstructor* static property **PLATFORM_WIN32** was created.
+
+.. deprecated:: 0.10.0
+
+  - *IModule* method **supported** is a wrapper for :target:`ModuleConstructor.supported`.
+
 .. versionadded:: 0.9.0
 
-  - *IModule* static property **LOG_FORMAT** was created.
+  - *ModuleConstructor* static property **LOG_FORMAT** was created.
   - *IModule* method **src** and **dest** arguments can accept :ref:`URL <references-nodejs-url>` object:
 
     .. hlist::

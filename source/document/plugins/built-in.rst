@@ -94,21 +94,23 @@ Deprecated
   :widths: 40 50 10
 
   * - `html-minifier <https://github.com/kangax/html-minifier>`_
-    - @pi-r/html-minifier
+    - @pi-r/html-minifier [#]_
     - 0.7.1
   * - `uglify-js <https://github.com/mishoo/UglifyJS>`_
-    - @pi-r/uglify-js
+    - @pi-r/uglify-js [#]_
     - 0.7.1
 
 These plugins can be configured using a plain object in ``settings.transform``. Import maps [#]_ are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.
 
 - NPM custom package
 - Local file using module.exports :alt:`(e.g. ".cjs")`
-- Local file using export default :alt:`(e.g. ".mjs")` [#v530]_
+- Local file using export default :alt:`(e.g. ".mjs")` [#v010]_
 - Local plain file with single function :alt:`(e.g. ".js")`
 - Inline function
 
-.. tip:: More advanced plugins can be written when installed through NPM.
+.. tip:: More advanced plugins can be written when installed through **NPM**.
 
 .. [#] settings.transform.imports
-.. [#v530] squared 5.3.0 (minimum)
+.. [#] Alias to: @pi-r/html-minifier-terser
+.. [#] Alias to: @pi-r/terser
+.. [#v010] e-mc 0.10 (minimum)

@@ -178,16 +178,16 @@ Using local file
   }
 
 .. code-block:: javascript
-  :caption: es6.mjs [#v530]_
+  :caption: es6.mjs [#v010]_
 
   import path from "node:path";
   let ID = 0;
 
   export default async function (context, value, options) {
     return await context.transform(`/* ${ID++} */` + value, options.outputConfig).code;
-  }
+  }``.mjs``.
 
-.. caution:: The ``.js`` extension uses the "**type**" value in your *package.json* to determine which module loader to use. It is better to be explicit using either ``.cjs`` or ``.mjs``.
+.. caution:: The ``.js`` extension uses the "**type**" value in your *package.json* to determine which module loader to use. It is better to be explicit using either ``.cjs`` or 
 
 Using custom package
 ====================
@@ -227,7 +227,7 @@ You can create or use a package from NPM which will behave like a built-in trans
     }
   }
 
-.. attention:: The setting name has to match the NPM package name.
+.. attention:: The setting name has to match the **NPM** package name.
 
 Using page template
 ===================
@@ -266,5 +266,4 @@ The same concept can be used inline anywhere using a ``script`` tag with the **t
 .. attention:: Using **data-chrome-template** requires the setting :code:`eval.template = true`.
 
 .. [#] this = NodeJS.process
-.. [#] https://babeljs.io/docs/options
-.. [#v530] squared 5.3.0 (minimum)
+.. [#v010] e-mc 0.10 (minimum)

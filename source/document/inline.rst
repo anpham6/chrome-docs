@@ -32,7 +32,12 @@ data-chrome-file
   </style>
 
 .. code-block::
-  :caption: Inline
+  :caption: Key-Value [#v523]_
+
+  <link rel="stylesheet" href="css/dev.css" data-chrome-file='saveAs: css/prod.css; process: ["lint", "beautify"]' />
+
+.. code-block::
+  :caption: Inline (legacy)
 
   <link rel="stylesheet" href="css/dev.css" data-chrome-file="saveAs:css/prod.css::lint+beautify" />
 
@@ -54,6 +59,12 @@ data-chrome-options
 * module [#]_
     - js: ESM
     - css: SASS
+* incremental [#v523]_
+    - boolean
+    - none
+    - staging
+    - etag
+    - exist
 * extract
     - css: @import rules are inlined into parent file :lower:`(same origin)`
 * blob
@@ -94,7 +105,7 @@ data-chrome-options
 .. code-block::
   :caption: JSON [#]_
 
-  <style data-chrome-options='{ "preserve": true, "hash": "md5", "compress": [{ "format": "gz" }], "encoding": "utf-16" }'>
+  <style data-chrome-options='{ "preserve": true, "hash": "md5", "compress": [{ "format": "gz" }], "incremental": "etag", "encoding": "utf-16" }'>
     body {
       font: 1em/1.4 Helvetica, Arial, sans-serif;
       background-color: #fafafa;
@@ -102,9 +113,14 @@ data-chrome-options
   </style>
 
 .. code-block::
-  :caption: Inline
+  :caption: Key-Value [#]_
 
-  <link rel="stylesheet" href="css/dev.css" data-chrome-options="preserve|md5|compress[gz]|utf-16">
+  <link rel="stylesheet" href="css/dev.css" data-chrome-options='preserve: true; hash: md5; compress: [{ "format": "gz" }]; incremental: etag; encoding: utf-16; }' />
+
+.. code-block::
+  :caption: Inline (legacy)
+
+  <link rel="stylesheet" href="css/dev.css" data-chrome-options="preserve|md5|compress[gz]|incremental[etag]|utf-16">
 
 .. tip:: Whitespace can be used between anything for readability.
 
@@ -136,7 +152,7 @@ Inline commands are usually sufficient for simple web pages. More advanced confi
 .. [#] Multiple transformations per bundle can be chained using the "+" symbol.
 .. [#] data-chrome-file='*"exportAs": "css/prod.css", "process": ["lint", "beautify"]*'
 .. [#] Do not use the built-in transformers per document.
-.. [#] "true" | "false" - config | "no-module" - inline
+.. [#] boolean - config | "no-module" - inline
 .. [#] Optionally installed NPM plugins are required. (e.g. imagemin-pngquant)
 .. [#] png | jpeg | webp
 .. [#] npm i node-zopfli
@@ -144,4 +160,6 @@ Inline commands are usually sufficient for simple web pages. More advanced confi
 .. [#] filename + content hash (productionRelease=true)
 .. [#] Value can be limited to the starting prefix. (e.g. md5[8] - Minimum is 4)
 .. [#] data-chrome-options='*"preserve": true, "hash": "md5", "compress": [{ "format": "gz" }], "encoding": "utf-16"*'
+.. [#] Nested objects and arrays use strict JSON formatted attributes and strings.
 .. [#] data-chrome-metadata='*"rollup-custom": { "import-maps": {} }, "terser-custom": { "config": {} }*'
+.. [#v523] squared 5.2.3 (minimum)

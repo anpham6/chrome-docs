@@ -20,10 +20,10 @@ Example configuration
       "gulp": {
         "handler": "@pi-r/gulp",
         "settings": {
-          "minify": "./gulpfile.js", // Will execute "minify" task
+          "minify": "./gulpfile.js", // Executes task named "minify"
           "users": {
             "username": {
-              "minify": "./username/gulpfile.js" // Will override parent "minify"
+              "minify": "./username/gulpfile.js" // Overrides parent task "minify"
             }
           },
           "minify-css": {
@@ -44,8 +44,8 @@ Example configuration
     "selector": "head > script:nth-of-type(1)",
     "type": "js",
     "tasks": [
-      { "handler": "gulp", "task": "minify" },
-      { "handler": "gulp", "task": "beautify", "preceding": "true" }, // Execute tasks before transformations
+      { "handler": "gulp", "task": "minify" }, // Execute tasks last before writing to destination
+      { "handler": "gulp", "task": "beautify", "preceding": "true" }, // Execute tasks first before transformations
       {
         "handler": "gulp",
         "task": {
@@ -60,7 +60,7 @@ Example configuration
 Example gulpfile.js
 ===================
 
-Renaming files with *Gulp* is not recommended. It is better to use the **saveAs** or **filename** properties when the asset is part of the *HTML* page.
+Renaming files with *Gulp* is not recommended since it will not appear in the output manifest. It is better to use the **saveAs** or **filename** properties in order for the references to be found when the asset is part of the document.
 
 .. code-block:: javascript
   :emphasize-lines: 5,7
@@ -96,4 +96,4 @@ Tasks can be performed immediately after the asset has been downloaded :lower:`(
 
   <script src="/common/util.js" data-chrome-tasks="gulp:minify+gulp:lint:true"></script>
 
-.. [#] npm i -g gulp && cd /path/users/username && npm link gulp
+.. [#] npm i -g gulp && cd /path/to/users/username && npm link gulp

@@ -12,11 +12,15 @@ Example usage
 .. highlight:: javascript
 
 .. code-block::
-  :emphasize-lines: 38,50,61
+  :emphasize-lines: 4-7,33,44,56,67
 
   squared.saveAs("index.zip", {
     productionRelease: true, // Ignore local URL rewriting and use actual path
     productionRelease: "/path/to/wwwroot/", // Move assets outside base directory to server root directory
+    serverRootMapping: {
+      "images/png": "main/images" // baseDirectory/images/png -> /path/to/wwwroot/main/images
+      "images/": "common/images/" // baseDirectory/images -> /path/to/wwwroot/common/images
+    },
     productionIncremental: true, // Use cached data when processing transformed files
 
     preserveCrossOrigin: true, // Ignore locally integrating assets hosted on other domains
@@ -41,6 +45,8 @@ Example usage
 
     escapeReservedCharacters: true, // Escape reserved characters inside attributes (e.g. "<")
     ignoreServerCodeBlocks: ["<%", "%>", "<?php", ";", "<?php", "?>"], // May produce better results with dynamic content (<% %> | <?php ; | <?php ?>)
+
+    removeBinaries: false, // Remove all script tags with src="squared.js"
 
     removeInlineStyles: false, // Strip style="" attribute from all elements (useOriginalHtmlPage=false)
     removeUnusedClasses: false, // Selectors without :pseudo-class
@@ -327,6 +333,8 @@ squared
 
 .. versionadded:: 5.3.0
 
+  - *DocumentOutput* property **serverRootMapping** for local path rewriting in :alt:`productionRelease` was created.
+  - *DocumentOutput* property **removeBinaries** for :alt:`squared.js` element exclusion was created.
   - *DocumentOutput* property **saveAs** with sub-properties as :alt:`SaveAsOptions` was amended:
 
     .. hlist::
@@ -338,7 +346,7 @@ squared
 
 .. versionadded:: 5.2.0
 
-  - *DocumentOutput* property **removeUnusedScope** was created.
+  - *DocumentOutput* property **removeUnusedScope** for CSS minification was created.
 
 .. [#] https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap
 .. [#] npm i json5

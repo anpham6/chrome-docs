@@ -29,10 +29,14 @@ Interface
   }
 
   interface TaskConstructor extends ModuleConstructor {
-      finalize(this: IHost, instance: ITask, assets: ExternalAsset[]): Promise<unknown>;
+      finalize(this: IHost, instance: ITask, assets: ExternalAsset[]): Promise<void>;
       readonly prototype: ITask;
       new(module?: TaskModule, ...args: unknown[]): ITask;
   }
+
+.. versionadded:: 0.10.0
+
+  - *TaskConstructor* method **finalize** return value was modified to :target:`Promise<void>`:
 
 Settings
 ========

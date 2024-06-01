@@ -9,7 +9,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 51
+  :emphasize-lines: 52
 
   import type { LogArguments } from "./lib/logger";
   import type { CloneObjectOptions } from "./lib/module";
@@ -61,6 +61,7 @@ Interface
   function getEncoding(value: unknown, fallback?: BufferEncoding): BufferEncoding;
   function encryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
   function decryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
+  /* @deprecated */
   function generateUUID(options?: RandomUUIDOptions): string;
   function incrementUUID(restart?: boolean): string;
   function validateUUID(value: unknown): boolean;
@@ -190,10 +191,16 @@ Interface
 
   const IMPORT_MAP: StringMap;
 
+.. versionremoved:: 0.10.0
+
+  - :alt:`type` **Writeable** was renamed :target:`Writable`.
+  - :alt:`interface` **GetTempDirOptions** in **module** was renamed :target:`TempDirOptions`.
+  - :alt:`type` **NormalizeFlags** in **module** was removed.
+
 .. deprecated:: 0.9.2
 
-  - Method **generateUUID** is the same as :target:`crypto.randomUUID`.
-  - :alt:`type` **NumString** will be removed in the next major.
+  - Method **generateUUID** is a reference to :target:`crypto.randomUUID`.
+  - :alt:`type` **NumString** is an alias for :target:`number | string`.
 
 .. versionremoved:: 0.9.0
 

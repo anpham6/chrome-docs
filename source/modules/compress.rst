@@ -13,10 +13,8 @@ Interface
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
   :emphasize-lines: 30,31
 
-  import type { CompressLevel } from "./squared";
-
   import type { IModule, ModuleConstructor } from "./index";
-  import type { BufferResult, CompressFormat, TryFileCompressor } from "./compress";
+  import type { BufferResult, CompressFormat, CompressLevel, TryFileCompressor } from "./compress";
   import type { CompressModule, CompressSettings } from "./settings";
 
   import type { WriteStream } from "fs";

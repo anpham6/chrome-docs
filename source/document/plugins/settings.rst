@@ -147,7 +147,8 @@ Using local file
                 "es5-debug": "./es5-debug.cjs", // CJS extension loaded using "require"
                 "es5-debug-output": {
                   "presets": ["@babel/preset-env"]
-                }
+                },
+                "es6-example": "./es6.mjs", // MJS extension loaded using dynamic "import"
               }
             }
           }
@@ -175,6 +176,18 @@ Using local file
   module.exports = async function (context, value, options) {
     return await context.transform(`/* ${ID++} */` + value, options.outputConfig).code;
   }
+
+.. code-block:: javascript
+  :caption: es6.mjs [#v530]_
+
+  import path from "node:path";
+  let ID = 0;
+
+  export default async function (context, value, options) {
+    return await context.transform(`/* ${ID++} */` + value, options.outputConfig).code;
+  }
+
+.. caution:: The ``.js`` extension uses the "**type**" value in your *package.json* to determine which module loader to use. It is better to be explicit using either ``.cjs`` or ``.mjs``.
 
 Using custom package
 ====================
@@ -254,3 +267,4 @@ The same concept can be used inline anywhere using a ``script`` tag with the **t
 
 .. [#] this = NodeJS.process
 .. [#] https://babeljs.io/docs/options
+.. [#v530] squared 5.3.0 (minimum)

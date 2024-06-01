@@ -152,6 +152,10 @@ Example usage
 @pi-r/minio
 ===========
 
+.. versionremoved:: 0.8.0
+
+  - Package is no longer supported due to the poor quality of typings.
+
 .. versionadded:: 0.7.0
 
   - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.

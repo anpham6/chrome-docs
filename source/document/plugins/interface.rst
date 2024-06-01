@@ -16,7 +16,8 @@ Interface
       external?: PlainObject;
   }
 
-::
+.. code-block::
+  :emphasize-lines: 17
 
   interface ITransformSeries extends IModule, TransformOutput {
       type: "html" | "css" | "js";
@@ -29,11 +30,13 @@ Interface
       supplementChunks: ChunkData[];
       imported: boolean; // ESM detected
       createSourceMap(code: string): SourceMap; // Use "nextMap" method for sourceMap (additional sourceMaps)
-    
+      upgrade(context: unknown, dirname?: string, pkgname?: string): unknown; // Use exact dependency installed with package
+
       /* ESM */
-      getMainFile?(code?: string, imports?: StringMap): SourceInput<string> | undefined;
-      getSourceFiles?(imports?: StringMap): SourceInput<[string, string?, string?][]> | undefined;
-    
+      getMainFile(code?: string, imports?: StringMap): SourceInput<string> | undefined;
+      getSourceFiles(imports?: StringMap): SourceInput<[string, string?, string?][]> | undefined;
+      upgradeESM(context: unknown, dirname?: string, pkgname?: string): Promise<unknown>; // Dynamic import with "require" fallback
+
       /* Return values */
       out: {
           sourceFiles?: string[]; // ESM (e.g. files to watch)
@@ -42,13 +45,17 @@ Interface
           logAppend?: LogStatus[];
           logQueued?: LogStatus[];
       };
-    
+
       version: string; // Requested version
-    
+
       packageName: string;
       packageVersion: string; // Context version
-    
+
       /* Module */
       host: IFileManager;
       username: string;
   }
+
+.. versionadded:: 0.10.0
+
+  - *ITransformSeries* method **upgradeESM** for using internal dependencies was created.

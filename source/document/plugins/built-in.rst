@@ -36,9 +36,6 @@ HTML
   * - `html-minifier-terser <https://github.com/DanielRuf/html-minifier-terser>`_
     - @pi-r/html-minifier-terser
     - 7
-  * - `html-minifier <https://github.com/kangax/html-minifier>`_
-    - @pi-r/html-minifier
-    - 7
   * - `svgo <https://github.com/svg/svgo>`_
     - @pi-r/svgo
     - 9
@@ -88,17 +85,30 @@ JS
   * - `terser <https://github.com/terser/terser>`_ 
     - @pi-r/terser
     - 7
+
+Deprecated
+==========
+
+.. list-table::
+  :width: 400px
+  :widths: 40 50 10
+
+  * - `html-minifier <https://github.com/kangax/html-minifier>`_
+    - @pi-r/html-minifier
+    - 0.7.1
   * - `uglify-js <https://github.com/mishoo/UglifyJS>`_
     - @pi-r/uglify-js
-    - 8
+    - 0.7.1
 
 These plugins can be configured using a plain object in ``settings.transform``. Import maps [#]_ are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.
 
 - NPM custom package
 - Local file using module.exports :alt:`(e.g. ".cjs")`
+- Local file using export default :alt:`(e.g. ".mjs")` [#v530]_
 - Local plain file with single function :alt:`(e.g. ".js")`
 - Inline function
 
 .. tip:: More advanced plugins can be written when installed through NPM.
 
 .. [#] settings.transform.imports
+.. [#v530] squared 5.3.0 (minimum)

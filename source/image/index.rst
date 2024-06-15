@@ -4,6 +4,7 @@ Image
 
 - https://github.com/jimp-dev/jimp#readme
 - **npm** i *@pi-r/jimp*
+- **npm** i *@pi-r/tinify* :alt:`(Optional)`
 
 .. note:: *Jimp* is used as the reference implementation for an **Image** module.
 
@@ -261,7 +262,7 @@ Other formats can be compressed similarly using `imagemin <https://github.com/im
     ]
   }
 
-If no exact match is found with format then all plugins will be applied to the unknown image. Multiple plugins of the same format will be processed in a series.
+If no exact match is found using *format* then all plugins will be applied to the unknown image. Multiple plugins of the same MIME will be processed in a series.
 
 data-chrome-commands
 ====================

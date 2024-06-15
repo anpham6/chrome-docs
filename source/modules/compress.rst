@@ -11,7 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 30,31
+  :emphasize-lines: 27-28
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { BufferResult, CompressFormat, CompressLevel, TryFileCompressor } from "./compress";
@@ -75,10 +75,6 @@ Settings
       gzip?: ZlibOptions;
       brotli?: BrotliOptions;
       zopfli?: ZopfliOptions;
-      tinify?: {
-          api_key?: string;
-          proxy?: string;
-      };
       settings?: {
           broadcast_id?: string | string[];
           cache?: boolean;
@@ -89,6 +85,19 @@ Settings
           chunk_size?: number | string;
       };
   }
+
+.. versionremoved:: 0.10.0
+
+  - *Tinify* was converted into an optional plugin named **@pi-r/tinify**.
+
+  ::
+
+    interface CompressModule {
+        tinify?: {
+            api_key?: string;
+            proxy?: string;
+        };
+    }
 
 Example usage
 -------------

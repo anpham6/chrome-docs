@@ -128,7 +128,7 @@ Example usage
     .on("error", err => console.error(err));
 
   const options = {
-    plugin: "tinify",
+    plugin: "@pi-r/tinify",
     format: "png", // Optional with extension
     timeout: 60 * 1000, // 1m
     options: {

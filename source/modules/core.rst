@@ -11,7 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 81-83,89
+  :emphasize-lines: 23-24,81-83,89
 
   import type { DataSource, LogStatus } from "./squared";
 
@@ -35,8 +35,8 @@ Interface
       willLog(name: string): boolean;
       ignoreLog(values: boolean | string | string[]): void;
       collectLog(level?: boolean): LogStatus<StatusType>[];
-      pauseLog(): void;
-      resumeLog(): void;
+      pauseLog(type?: string): void;
+      resumeLog(type?: string): void;
       hasLog(type: string): boolean;
       delayMessage(...args: unknown[]): void;
       willAbort(value: string | IModule): boolean;
@@ -172,6 +172,7 @@ Interface
 .. versionadded:: 0.10.0
 
   - *IClientDb* method **getCacheResult** was created.
+  - *IHost* methods **pauseLog** | **resumeLog** *optional* argument **type** as :alt:`string` was implemented.
 
 .. versionadded:: 0.9.0
 

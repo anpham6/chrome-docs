@@ -12,18 +12,18 @@ Example usage
 .. highlight:: javascript
 
 .. code-block::
-  :emphasize-lines: 4-7,33,44,56,67
+  :emphasize-lines: 4-9,35,46,58,69
 
   squared.saveAs("index.zip", {
     productionRelease: true, // Ignore local URL rewriting and use actual path
     productionRelease: "/path/to/wwwroot/", // Move assets outside base directory to server root directory
     serverRootMapping: {
-      "images/png": "main/images" // baseDirectory/images/png -> /path/to/wwwroot/main/images
-      "images/": "common/images/" // baseDirectory/images -> /path/to/wwwroot/common/images
+      "images/": "common/images", // output/images/ -> /path/to/wwwroot/common/images/ (move - no trailing slash)
+      "images/png/": "main/data/" // output/images/png/ -> /path/to/wwwroot/main/data/images/png/ (append)
     },
     productionIncremental: true, // Use cached data when processing transformed files
 
-    preserveCrossOrigin: true, // Ignore locally integrating assets hosted on other domains
+    preserveCrossOrigin: true, // Ignore local assets hosted on other domains
     preserveCrossOrigin: { // URLData
       hostname: "docs.github.com",
       pathname: "/repositories"
@@ -333,8 +333,7 @@ squared
 
 .. versionadded:: 5.3.0
 
-  - *DocumentOutput* property **serverRootMapping** for local path rewriting in :alt:`productionRelease` was created.
-  - *DocumentOutput* property **removeBinaries** for :alt:`squared.js` element exclusion was created.
+  - *DocumentOutput* property **removeBinaries** for :alt:`squared.js` <script> exclusion was created.
   - *DocumentOutput* property **saveAs** with sub-properties as :alt:`SaveAsOptions` was amended:
 
     .. hlist::
@@ -347,6 +346,13 @@ squared
 .. versionadded:: 5.2.0
 
   - *DocumentOutput* property **removeUnusedScope** for CSS minification was created.
+
+@pi-r/chrome
+============
+
+.. versionadded:: 0.8.0
+
+  - *DocumentOutput* property **serverRootMapping** for local path rewriting in :alt:`productionRelease` was created.
 
 .. [#] https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap
 .. [#] npm i json5

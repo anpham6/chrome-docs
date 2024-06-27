@@ -78,7 +78,7 @@ Interface
       updateGradle(source: string, namespaces: string[], value: string, options?: UpdateGradleOptions): string;
       generateLintTable(messages: LintMessage[], options: GenerateLintTableOptions): LogComponent[];
       cleanup?(this: IFileManager, instance: IDocument): Promise<unknown>;
-      sanitizeAssets?(assets: ExternalAsset[], exclusions?: ExternalAsset[]): ExternalAsset[];
+      sanitizeAssets?(assets: ExternalAsset[], exclusions?: unknown[]): ExternalAsset[];
       readonly prototype: IDocument;
       new(module?: DocumentModule, ...args: unknown[]): IDocument;
   }

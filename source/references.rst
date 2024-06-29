@@ -81,6 +81,13 @@ https://unpkg.com/@e-mc/types/lib/cloud.d.ts
 https://unpkg.com/@e-mc/types/lib/node.d.ts
   | `Settings <search.html?q=Settings>`_
 
+.. _references-e-mc-types-lib-logger:
+.. rst-class:: block-list
+
+https://unpkg.com/@e-mc/types/lib/logger.d.ts
+  | `BackgroundColor <search.html?q=BackgroundColor>`_
+  | `ForegroundColor <search.html?q=ForegroundColor>`_
+
 .. _references-e-mc-types-lib-http:
 .. rst-class:: block-list
 

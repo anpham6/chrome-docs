@@ -231,6 +231,9 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 43-45
+
+  import type { BackgroundColor, ForegroundColor } from "./logger";
 
   interface ProcessModule {
       thread?: {
@@ -271,8 +274,17 @@ Settings
   }
 
   interface LoggerModule {
+      scroll?: {
+          buffer?: number | string;
+          color?: ForegroundColor;
+          bg_color?: BackgroundColor;
+      };
       session_id?: boolean | number;
   }
+
+.. versionadded:: 0.10.0
+
+  - *LoggerModule* **scroll** property group was implemented.
 
 .. versionadded:: 0.9.0
 

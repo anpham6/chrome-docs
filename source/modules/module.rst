@@ -275,12 +275,11 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 74,89,98,106-111
+  :emphasize-lines: 73,88,97,106-110,136-138
 
-  import type { LogMessageOptions, LogTypeValue, LoggerStatus } from "./logger";
+  import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
 
-  import type { BackgroundColor as IBackgroundColor, ForegroundColor as IForegroundColor } from "chalk";
   import type { BinaryLike, CipherGCMTypes } from "crypto";
   import type { SecureVersion } from "tls";
 
@@ -412,6 +411,11 @@ Settings
       message?: boolean;
       stdout?: boolean;
       abort?: boolean;
+      scroll?: {
+          buffer?: number | string;
+          color?: ForegroundColor;
+          bg_color?: BackgroundColor;
+      };
       status?: boolean | LoggerStatus;
       unknown?: boolean | LoggerColor;
       system?: boolean | LoggerColor;
@@ -431,13 +435,11 @@ Settings
       stack_trace?: boolean | number;
   }
 
-  type BackgroundColor = typeof IBackgroundColor | `#${string}`;
-  type ForegroundColor = typeof IForegroundColor | `#${string}`;
-
 .. versionadded:: 0.10.0
 
   - *LoggerModule* group **format** block :target:`error` was created.
   - *LoggerModule* group **format** property **braces** were implemented.
+  - *LoggerModule* **scroll** property group was implemented.
 
 .. versionadded:: 0.8.6
 
@@ -453,4 +455,3 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
 
 * https://www.npmjs.com/package/@types/node
-* https://www.npmjs.com/package/chalk

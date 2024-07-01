@@ -91,6 +91,12 @@ Interface
       DB: 65536;
   }
 
+  interface LOG_STATE {
+      STDIN: 0;
+      STDOUT: 1;
+      STDERR: 2;
+  }
+
   interface STATUS_TYPE {
       UNKNOWN: 0;
       FATAL: 1;
@@ -196,11 +202,24 @@ Interface
   - :alt:`type` **Writeable** was renamed :target:`Writable`.
   - :alt:`interface` **GetTempDirOptions** in **module** was renamed :target:`TempDirOptions`.
   - :alt:`type` **NormalizeFlags** in **module** was removed.
+  - :alt:`export` definitions in **squared** were deleted:
+
+    .. hlist::
+      :columns: 4
+
+      - FinalizedElement
+      - ConditionProperty
+      - CssConditionData
+      - ControllerSettingsDirectoryUI
 
 .. deprecated:: 0.9.2
 
   - Method **generateUUID** is a reference to :target:`crypto.randomUUID`.
   - :alt:`type` **NumString** is an alias for :target:`number | string`.
+
+.. versionadded:: 0.9.0
+
+  - :alt:`enum` **LOG_STATE** for queuing console output was created.
 
 .. versionremoved:: 0.9.0
 

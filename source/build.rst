@@ -12,7 +12,7 @@ Example usage
 .. highlight:: javascript
 
 .. code-block::
-  :emphasize-lines: 4-9,35,46,58,69
+  :emphasize-lines: 4-7,33,44,56,67
 
   squared.saveAs("index.zip", {
     productionRelease: true, // Ignore local URL rewriting and use actual path

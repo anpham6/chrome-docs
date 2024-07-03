@@ -13,7 +13,22 @@ Other elements can be excluded only through a configuration file.
 .. highlight:: html
 
 .. code-block::
+  :caption: Options [#]_
+  :emphasize-lines: 1-3,6
+
+  <script src="/dist/squared.js"></script>
+  <script src="/dist/squared.base.js"></script>
+  <script src="/dist/chrome.framework.js"></script>
+  <script>
+    squared.setFramework(chrome);
+    squared.saveAs("output.zip", { removeBinaries: true });
+  </script>
+
+.. note:: The executing ``<script>`` block is not removed.
+
+.. code-block::
   :caption: Inline
+  :emphasize-lines: 1-4
 
   <script src="/dist/squared.js" data-chrome-file="exclude"></script>
   <script src="/dist/squared.base.js" data-chrome-file="exclude"></script>
@@ -55,4 +70,5 @@ You can similarly prevent any element from being downloaded or transformed using
 
   <iframe src="https://www.google.com/maps" data-chrome-file="ignore"></iframe>
 
+.. [#] squared 5.3
 .. [#] Cannot be used with "stripCommentsAndCDATA = true".

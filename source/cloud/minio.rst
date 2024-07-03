@@ -154,7 +154,7 @@ Example usage
 
 .. versionremoved:: 0.8.0
 
-  - Package is no longer supported due to the poor quality of typings.
+  - Package is no longer supported due to the lack of feedback and future longevity.
 
 .. versionadded:: 0.7.0
 

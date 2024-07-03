@@ -231,7 +231,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 42-48
+  :emphasize-lines: 42-47
 
   import type { BackgroundColor, ForegroundColor } from "./logger";
 
@@ -275,9 +275,8 @@ Settings
 
   interface LoggerModule {
       scroll?: {
-          min?: number | string;
-          max?: number | string;
-          grow?: number | string;
+          buffer?: number | string;
+          use_color?: boolean;
           color?: ForegroundColor;
           bg_color?: BackgroundColor;
       };
@@ -290,7 +289,7 @@ Settings
 
 .. versionadded:: 0.9.0
 
-  - *ProcessModule* setting **thread.sub_limit** for maximum simultaneous downloads was created.
+  - *ProcessModule* setting **thread.sub_limit** for maximum simultaneous downloads was implemented.
 
 Example usage
 -------------

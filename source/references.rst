@@ -101,6 +101,12 @@ https://unpkg.com/@e-mc/types/lib/http.d.ts
 https://unpkg.com/@e-mc/types/lib/asset.d.ts
   | `ExternalAsset <search.html?q=ExternalAsset>`_
 
+.. _references-e-mc-types-lib-object:
+.. rst-class:: block-list
+
+https://unpkg.com/@e-mc/types/lib/object.d.ts
+  | `HighResolutionTime <search.html?q=HighResolutionTime>`_
+
 .. _references-nodejs:
 
 NodeJS

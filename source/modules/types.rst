@@ -9,14 +9,13 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 52
+  :emphasize-lines: 51
 
   import type { LogArguments } from "./lib/logger";
   import type { CloneObjectOptions } from "./lib/module";
 
   import type { BytesOptions } from "bytes";
   import type { BinaryLike, CipherGCMTypes, Encoding, RandomUUIDOptions } from 'crypto';
-  import type { HighResolutionTime } from "perf_hooks";
 
   function createAbortError(reject: true): Promise<never>;
   function createAbortError(): Error;

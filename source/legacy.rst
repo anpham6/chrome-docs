@@ -33,7 +33,7 @@ Deprecated settings from *squared-functions* were removed. Misplaced properties 
 
 .. option:: --migrations
 
-  Will be required as of :target:`squared-express 3.2.0` for those who have not made the suggested conversions. [#]_
+  Will be required as of :target:`squared-express 3.2.0` for projects which have not made the suggested conversions. [#]_
 
 .. option:: --no-migrations
 
@@ -42,7 +42,7 @@ Deprecated settings from *squared-functions* were removed. Misplaced properties 
 @e-mc/compat-v4
 ===============
 
-When not using squared-express you will have to include it in the main process before using ``require`` with packages that use or inherit from *squared-functions*.
+When not using *squared-express* you will have to include it in the main process before using ``require`` with packages that use or inherit from *squared-functions*.
 
 .. code-block::
   :caption: package.json

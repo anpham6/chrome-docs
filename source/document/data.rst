@@ -21,7 +21,6 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 24,29-30
 
   import type { DataSource as IDataSource } from "../db/interface";
 
@@ -113,7 +112,6 @@ Remote file "uri"
 =================
 
 .. code-block:: typescript
-  :emphasize-lines: 5,6
 
   interface UriDataSource extends DataSource, DataObject, CascadeAction {
       source: "uri";

@@ -96,6 +96,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 68
 
   import type { PermittedDirectories } from "./core";
   import type { SecureConfig } from "./http";
@@ -164,6 +165,7 @@ Settings
           update_status?: number | { interval?: number; broadcast_only?: boolean };
           max_concurrent_downloads?: number;
           max_connection_per_server?: number;
+          check_integrity?: boolean;
           bt_stop_timeout?: number;
           bt_tracker_connect_timeout?: number;
           bt_tracker_timeout?: number;
@@ -175,6 +177,10 @@ Settings
           conf_path?: string;
       };
   }
+
+.. versionadded:: 0.10.0
+
+  - *DownloadModule* property **check_integrity** in :alt:`aria2` for hash validation was implemented.
 
 Example usage
 -------------

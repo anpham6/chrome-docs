@@ -11,7 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 109-114
+  :emphasize-lines: 69,110-115
 
   import type { DataSource, IncrementalMatch, TaskAction } from "./squared";
 
@@ -81,6 +81,7 @@ Interface
       hasDocument(instance: IModule, document: string | string[] | undefined): boolean;
       getDocumentAssets(instance: IModule, condition?: (target: ExternalAsset) => boolean): ExternalAsset[];
       getDataSourceItems(instance: IModule, condition?: (target: DataSource) => boolean): DataSource[];
+      checkFilename(file: ExternalAsset, pathname?: string): string;
       setLocalUri(file: ExternalAsset, replace?: boolean): FileOutput;
       getLocalUri(data: FileData<ExternalAsset>): string;
       getMimeType(data: FileData<ExternalAsset>): string;
@@ -199,6 +200,7 @@ Interface
 
 .. versionadded:: 0.10.0
 
+  - *IFileManager* method **checkFilename** for duplicate destination renames was created.
   - *IFileManager* methods return value was modified to :target:`Promise<void>`:
 
     .. hlist::

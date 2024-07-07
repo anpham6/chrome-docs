@@ -275,7 +275,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 73,88,97,105-110,132-137
+  :emphasize-lines: 73,88,97,105-110,132-138
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -411,6 +411,7 @@ Settings
       scroll?: {
           buffer?: number | string;
           use_color?: boolean;
+          text_wrap?: "ellipsis" | "nowrap";
           color?: ForegroundColor;
           bg_color?: BackgroundColor;
       };

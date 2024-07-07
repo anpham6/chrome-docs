@@ -411,7 +411,7 @@ Settings
       scroll?: {
           buffer?: number | string;
           use_color?: boolean;
-          text_wrap?: "ellipsis" | "nowrap";
+          text_wrap?: "ellipsis" | "nowrap" | "ellipsis-end" | "nowrap-end";
           color?: ForegroundColor;
           bg_color?: BackgroundColor;
       };

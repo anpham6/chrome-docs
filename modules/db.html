@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@e-mc/db &mdash; E-mc 0.9.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59d4ba9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=a1372e3e" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=61b282d3"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="@e-mc/document" href="document.html" />
+    <link rel="prev" title="@e-mc/core" href="core.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            E-mc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../document/index.html">Document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../image/index.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cloud.html">&#64;e-mc/cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compress.html">&#64;e-mc/compress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">&#64;e-mc/core</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">&#64;e-mc/db</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="document.html">&#64;e-mc/document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-manager.html">&#64;e-mc/file-manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image.html">&#64;e-mc/image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html">&#64;e-mc/module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request.html">&#64;e-mc/request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task.html">&#64;e-mc/task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">&#64;e-mc/types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="watch.html">&#64;e-mc/watch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#esm-imports">ESM imports</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy.html">squared-functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E-mc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Modules</a></li>
+      <li class="breadcrumb-item active">&#64;e-mc/db</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/db.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="e-mc-db">
+<h1>&#64;e-mc/db<a class="headerlink" href="#e-mc-db" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><strong>npm</strong> i <em>&#64;e-mc/db</em></p></li>
+</ul>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/index.d.ts">View Source</a></span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./squared&quot;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IHost</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./index&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ClientDbConstructor</span><span class="p">,</span><span class="w"> </span><span class="nx">IClientDb</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./core&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DB_TYPE</span><span class="p">,</span><span class="w"> </span><span class="nx">SQL_COMMAND</span><span class="p">,</span><span class="w"> </span><span class="nx">BatchQueryResult</span><span class="p">,</span><span class="w"> </span><span class="nx">ErrorQueryCallback</span><span class="p">,</span><span class="w"> </span><span class="nx">ExecuteBatchQueryOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">ExecuteQueryOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">HandleFailOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">ProcessRowsOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">QueryResult</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./db&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AuthValue</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./http&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DbCoerceSettings</span><span class="p">,</span><span class="w"> </span><span class="nx">DbModule</span><span class="p">,</span><span class="w"> </span><span class="nx">DbSourceOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./settings&quot;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">SecureContextOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;tls&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">IDb</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">IClientDb</span><span class="o">&lt;</span><span class="nx">IHost</span><span class="p">,</span><span class="w"> </span><span class="nx">DbModule</span><span class="p">,</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">DbSourceOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">DbCoerceSettings</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setCredential</span><span class="p">(</span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">getCredential</span><span class="p">(</span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">PlainObject</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">hasSource</span><span class="p">(</span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">...type</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">applyCommand</span><span class="p">(</span><span class="nx">...items</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">executeQuery</span><span class="p">(</span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="o">:</span><span class="w"> </span><span class="kt">ErrorQueryCallback</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">QueryResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">executeQuery</span><span class="p">(</span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">sessionKey</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">QueryResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">executeQuery</span><span class="p">(</span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ExecuteQueryOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">QueryResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">executeBatchQuery</span><span class="p">(</span><span class="nx">batch</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">callback</span><span class="o">:</span><span class="w"> </span><span class="kt">ErrorQueryCallback</span><span class="p">,</span><span class="w"> </span><span class="nx">outResult?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchQueryResult</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">BatchQueryResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">executeBatchQuery</span><span class="p">(</span><span class="nx">batch</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">sessionKey</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">outResult?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchQueryResult</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">BatchQueryResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">executeBatchQuery</span><span class="p">(</span><span class="nx">batch</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ExecuteBatchQueryOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">outResult?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchQueryResult</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">BatchQueryResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">processRows</span><span class="p">(</span><span class="nx">batch</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">tasks</span><span class="o">:</span><span class="w"> </span><span class="kt">Promise</span><span class="o">&lt;</span><span class="nx">QueryResult</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">[],</span><span class="w"> </span><span class="nx">parallel</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">BatchQueryResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">processRows</span><span class="p">(</span><span class="nx">batch</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">tasks</span><span class="o">:</span><span class="w"> </span><span class="kt">Promise</span><span class="o">&lt;</span><span class="nx">QueryResult</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">[],</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ProcessRowsOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">outResult?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchQueryResult</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">BatchQueryResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">handleFail</span><span class="p">(</span><span class="nx">err</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">HandleFailOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">readTLSCert</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">cache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">readTLSConfig</span><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">SecureContextOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">cache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">settingsOf</span><span class="p">(</span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">keyof</span><span class="w"> </span><span class="nx">Omit</span><span class="o">&lt;</span><span class="nx">DbSourceOptions</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;coerce&quot;</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">settingsOf</span><span class="p">(</span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;coerce&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">keyof</span><span class="w"> </span><span class="nx">DbCoerceSettings</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">settingsKey</span><span class="p">(</span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">keyof</span><span class="w"> </span><span class="nx">Omit</span><span class="o">&lt;</span><span class="nx">DbSourceOptions</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;coerce&quot;</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">settingsKey</span><span class="p">(</span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;coerce&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">keyof</span><span class="w"> </span><span class="nx">DbCoerceSettings</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">getPoolConfig</span><span class="p">(</span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">uuidKey?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Required</span><span class="o">&lt;</span><span class="nx">PoolConfig</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">sourceType</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">DB_TYPE</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">commandType</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">SQL_COMMAND</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">DbConstructor</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">ClientDbConstructor</span><span class="o">&lt;</span><span class="nx">IHost</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setPoolConfig</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">getPoolConfig</span><span class="p">(</span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Required</span><span class="o">&lt;</span><span class="nx">PoolConfig</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IDb</span><span class="p">;</span>
+<span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="kr">module</span><span class="nx">?</span><span class="o">:</span><span class="w"> </span><span class="nx">DbModule</span><span class="p">,</span><span class="w"> </span><span class="nx">database?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nx">IDb</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">IDbSourceClient</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">DB_SOURCE_NAME</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">DB_SOURCE_CLIENT</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">DB_SOURCE_TYPE</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">setCredential</span><span class="p">(</span><span class="nx">this</span><span class="o">:</span><span class="w"> </span><span class="kt">IDb</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">executeQuery</span><span class="p">(</span><span class="nx">this</span><span class="o">:</span><span class="w"> </span><span class="kt">IDb</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ExecuteQueryOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">QueryResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">executeBatchQuery</span><span class="p">(</span><span class="nx">this</span><span class="o">:</span><span class="w"> </span><span class="kt">IDb</span><span class="p">,</span><span class="w"> </span><span class="nx">batch</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ExecuteBatchQueryOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">outResult?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchQueryResult</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">BatchQueryResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">checkTimeout</span><span class="o">?</span><span class="p">(</span><span class="nx">this</span><span class="o">:</span><span class="w"> </span><span class="kt">IDbSourceClient</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">limit?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">IDbPool</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">lastAccessed</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">failed</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">poolKey</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">uuidKey</span><span class="o">:</span><span class="w"> </span><span class="kt">AuthValue</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">add</span><span class="p">(</span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">uuidKey?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">has</span><span class="p">(</span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">getConnection</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">remove</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">detach</span><span class="p">(</span><span class="nx">force?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">close</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">isIdle</span><span class="p">(</span><span class="nx">timeout</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">isEmpty</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">connected</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">persist</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">closed</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">closeable</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">parent</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">IDbPool</span><span class="o">&gt;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">DbPoolConstructor</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="nx">CACHE_UNUSED</span><span class="o">:</span><span class="w"> </span><span class="kt">readonly</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">asString</span><span class="p">(</span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">sanitize</span><span class="p">(</span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">removeUUIDKey</span><span class="p">(</span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">findKey</span><span class="p">(</span><span class="nx">pools</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">IDbPool</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">uuidKey</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">poolKey</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="nx">...items</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">IDbPool</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">validateKey</span><span class="p">(</span><span class="nx">pools</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">IDbPool</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">uuidKey</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">IDbPool</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">];</span>
+<span class="w">    </span><span class="nx">checkTimeout</span><span class="p">(</span><span class="nx">pools</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">IDbPool</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">limit?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IDbPool</span><span class="p">;</span>
+<span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="nx">pool</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">poolKey</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">uuidKey?</span><span class="o">:</span><span class="w"> </span><span class="kt">AuthValue</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IDbPool</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.0: </span></p>
+<ul class="simple">
+<li><p><em>DbPoolConstructor</em> static property <strong>CACHE_UNUSED</strong> for unused pool attributes was created.</p></li>
+<li><p><em>DbPoolConstructor</em> static methods <strong>asString</strong> | <strong>sanitize</strong> | <strong>removeUUIDKey</strong> for pool keys were created.</p></li>
+</ul>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.9.0: </span></p>
+<ul class="simple">
+<li><p><em>IDb</em> methods <strong>executeQuery</strong> | <strong>executeBatchQuery</strong> with parameter <em class="target">callback</em> as <em class="alt">ErrorQueryCallback</em>.</p></li>
+</ul>
+</div>
+</section>
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/squared-express/dist/squared.db.json">View JSON</a></span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DbSourceOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">PurgeComponent</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./settings&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">DbModule</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// handler: &quot;@e-mc/db&quot;;</span>
+<span class="w">    </span><span class="nx">mariadb?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbStoredCredentials</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">mongodb?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbStoredCredentials</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">mssql?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbStoredCredentials</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">mysql?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbStoredCredentials</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">oracle?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbStoredCredentials</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">postgres?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbStoredCredentials</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">redis?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbStoredCredentials</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">settings</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">broadcast_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+<span class="w">        </span><span class="nx">users?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">unknown</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">cache_dir?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">session_expires?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">user_key?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">DbSourceOptions</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">imports?</span><span class="o">:</span><span class="w"> </span><span class="kt">StringMap</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">purge?</span><span class="o">:</span><span class="w"> </span><span class="kt">PurgeComponent</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">mariadb?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbSourceOptions</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">mongodb?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbSourceOptions</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">mssql?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbSourceOptions</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">mysql?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbSourceOptions</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">oracle?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbSourceOptions</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">postgres?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbSourceOptions</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">redis?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbSourceOptions</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">DbStoredCredentials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">unknown</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<section id="example-usage">
+<h3>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h3>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Using &#64;pi-r/mongodb</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/db&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Db</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">mongodb</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">main</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">server</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;localhost:27017&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">authMechanism</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SCRAM-SHA-1&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">mongodb</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">pool</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">idle</span><span class="o">:</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">queue_max</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">queue_idle</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">timeout</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">cache</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">timeout</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1d&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">when_empty</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">coerce</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+<span class="c1">// instance.host = new Host();</span>
+<span class="nx">instance</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mongodb&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">table</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;$eq&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">willAbort</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">};</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">.</span><span class="nx">setCredential</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">.</span><span class="nx">executeQuery</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;E11000&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// throw err;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// return [];</span>
+<span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">rows1</span><span class="p">,</span><span class="w"> </span><span class="nx">rows2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">.</span><span class="nx">executeBatchQuery</span><span class="p">([</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="nx">usePool</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;$eq&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">parallel</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">connectOnce</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/squared.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/squared.d.ts</a></p></li>
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/core.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/core.d.ts</a></p></li>
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/db.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/db.d.ts</a></p></li>
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/http.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/http.d.ts</a></p></li>
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/settings.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/settings.d.ts</a></p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.npmjs.com/package/&#64;types/node">https://www.npmjs.com/package/&#64;types/node</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="core.html" class="btn btn-neutral float-left" title="@e-mc/core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="document.html" class="btn btn-neutral float-right" title="@e-mc/document" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

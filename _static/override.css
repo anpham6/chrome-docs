@@ -1,0 +1,33 @@
+.rst-content .code-block-caption {
+    font-size: 90%;
+    text-align: left;
+    padding-top: 0;
+}
+
+.rst-content dl[class] > dt {
+    border-top-color: slategray !important;
+}
+
+.rst-content code.literal:not(.xref) {
+    color: mediumblue;
+    border-color: lightsteelblue;
+}
+
+.rst-content code.xref {
+    color: darkred;
+    border: none;
+}
+
+.rst-content a.reference code.xref {
+    color: #444444;
+    border: 1px solid gainsboro;
+}
+
+.hlist ul.simple li, .hlist ul.simple p {
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.versionadded  blockquote .hlist ul.simple {
+    margin-bottom: 0px;
+}

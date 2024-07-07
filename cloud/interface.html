@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interface &mdash; E-mc 0.9.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59d4ba9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=a1372e3e" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=61b282d3"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Amazon Web Services" href="aws.html" />
+    <link rel="prev" title="Cloud" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            E-mc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../document/index.html">Document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../image/index.html">Image</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Cloud</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shared-properties">Shared properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#admin">Admin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aws.html">AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws-v3.html">AWS (v3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="azure.html">Azure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcp.html">Google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ibm.html">IBM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="minio.html">MinIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atlas.html">MongoDB Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oci.html">Oracle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy.html">squared-functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E-mc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Cloud</a></li>
+      <li class="breadcrumb-item active">Interface</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cloud/interface.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="interface">
+<h1>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h1>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../db/interface&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">CloudDatabase</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Omit</span><span class="o">&lt;</span><span class="nx">DbDataSource</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;parallel&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;withCommand&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;usePool&quot;</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">bucket?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">admin?</span><span class="o">:</span><span class="w"> </span><span class="kt">CloudStorageAdmin</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">upload?</span><span class="o">:</span><span class="w"> </span><span class="kt">CloudStorageUpload</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">download?</span><span class="o">:</span><span class="w"> </span><span class="kt">CloudStorageDownload</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorageAdmin</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorageACL</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">emptyBucket?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">configBucket</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">create?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">policy?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">website</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">indexPage?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">errorPage?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">indexPath?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">errorPath?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">        </span><span class="nx">retentionPolicy?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">recursive?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">preservePath?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorageAction</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pathname?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">filename?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">minStreamSize?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">chunkSize?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">chunkLimit?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">flags?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">active?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">overwrite?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">admin?</span><span class="o">:</span><span class="w"> </span><span class="kt">CloudStorageAdmin</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorageUpload</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorageACL</span><span class="p">,</span><span class="w"> </span><span class="nx">CloudStorageAction</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">buffer?</span><span class="o">:</span><span class="w"> </span><span class="kt">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">contentType?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">metadata?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">tags?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">fileGroup</span><span class="o">?:</span><span class="w"> </span><span class="p">[</span><span class="nx">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">?</span><span class="p">][];</span>
+<span class="w">    </span><span class="nx">localStorage?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">endpoint?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">all?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorageACL</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">publicRead?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">acl?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorageDownload</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorageAction</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">keyname?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">versionId?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">deleteObject?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">waitStatus?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.9.0: </span></p>
+<ul class="simple">
+<li><p><em>CloudStorageAction</em> property <strong>chunkSize</strong> | <strong>chunkLimit</strong> for parallel multipart operations.</p></li>
+<li><p><em>CloudStorageDownload</em> property <strong>options</strong> to customize the provider download client.</p></li>
+<li><p><em>CloudStorageDownload</em> property <strong>keyname</strong> for file to be downloaded and subsequently renamed to <strong>filename</strong>.</p></li>
+</ul>
+</div>
+<section id="shared-properties">
+<h2>Shared properties<a class="headerlink" href="#shared-properties" title="Link to this heading"></a></h2>
+<section id="storage">
+<h3>Storage<a class="headerlink" href="#storage" title="Link to this heading"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;cloudStorage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Built-in alias | NPM package name</span>
+<span class="w">    </span><span class="nt">&quot;bucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs-001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">}</span>
+
+<span class="w">    </span><span class="nt">&quot;admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;publicRead&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Public access (before upload #3)</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;service-value&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// ACL access permissions</span>
+
+<span class="w">      </span><span class="nt">&quot;emptyBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Delete all objects (before upload #1)</span>
+<span class="w">      </span><span class="nt">&quot;recursive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Default is &quot;true&quot; (emptyBucket)</span>
+
+<span class="w">      </span><span class="nt">&quot;configBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span><span class="w"> </span><span class="c1">// New bucket (before upload #2)</span>
+<span class="w">        </span><span class="nt">&quot;retentionPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Bucket initialization (before upload #4)</span>
+<span class="w">        </span><span class="nt">&quot;policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Modify policy (after upload)</span>
+
+<span class="w">        </span><span class="nt">&quot;website&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Main HTML page only</span>
+<span class="w">           </span><span class="nt">&quot;indexPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Usage varies by service</span>
+<span class="w">           </span><span class="nt">&quot;errorPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;404.html&quot;</span><span class="p">,</span>
+<span class="w">           </span><span class="nt">&quot;indexPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;home.html&quot;</span><span class="p">,</span>
+<span class="w">           </span><span class="nt">&quot;errorPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;errors/404.html&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;upload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will not overwrite ACL</span>
+<span class="w">      </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Rewrites &quot;src&quot; to storage location + Will overwrite ACL (public-read)</span>
+<span class="w">      </span><span class="nt">&quot;localStorage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove current file from archive or local disk</span>
+
+<span class="w">      </span><span class="nt">&quot;all&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Include descendants + transforms + torrents</span>
+
+<span class="w">      </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-001/2024/picture.png</span>
+<span class="w">      </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;picture.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Choose a different filename for bucket</span>
+<span class="w">      </span><span class="nt">&quot;overwrite&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// If exists then picture_{1,2,3}.png</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="nt">&quot;overwrite&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Always use current filename</span>
+
+<span class="w">      </span><span class="nt">&quot;contentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Metadata has higher precedence (default is &quot;application/octet-stream&quot;)</span>
+
+<span class="w">      </span><span class="nt">&quot;minStreamSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// Always use readable stream</span>
+<span class="w">      </span><span class="nt">&quot;minStreamSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;512mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Detect when to use readable stream (not limited to 2gb)</span>
+<span class="w">      </span><span class="nt">&quot;minStreamSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="c1">// Prefer transfer by Buffer (small files)</span>
+
+<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Part size of a parallel upload operation</span>
+<span class="w">      </span><span class="nt">&quot;chunkLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="c1">// Concurrent parts uploading</span>
+
+<span class="w">      </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://hostname/nodejs-001&quot;</span><span class="w"> </span><span class="c1">// Required when different from credential</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;download&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;alternate.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
+<span class="w">      </span><span class="nt">&quot;versionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Retrieve a previous file snapshot</span>
+
+<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;32mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Part size of a parallel download operation</span>
+<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">33554432</span><span class="p">,</span><span class="w"> </span><span class="c1">// 32 * 1024 * 1024</span>
+<span class="w">      </span><span class="nt">&quot;chunkLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="c1">// Concurrent parts downloading</span>
+
+<span class="w">      </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;overwrite&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// If local file exists then skip download</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Always write file or replace local file when same extension</span>
+
+<span class="w">      </span><span class="nt">&quot;waitStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Delay build until file is completely downloaded</span>
+
+<span class="w">      </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;download/images&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Relative only (base directory/pathname)</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="nt">&quot;preservePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use base directory</span>
+<span class="w">      </span><span class="nt">&quot;preservePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use asset directory</span>
+
+<span class="w">      </span><span class="nt">&quot;keyname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// bucket/alternate.png to download/images/alternate.png</span>
+<span class="w">      </span><span class="nt">&quot;keyname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;picture.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// bucket/picture.png to download/images/alternate.png</span>
+
+<span class="w">      </span><span class="nt">&quot;deleteObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Delete from bucket after successful download</span>
+<span class="w">      </span><span class="nt">&quot;deleteObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Any properties in <strong>admin.configBucket.website</strong> set to <code class="docutils literal notranslate"><span class="pre">true</span></code> uses the upload <em>HTML</em> page element.</p>
+</div>
+</section>
+<section id="database">
+<h3>Database<a class="headerlink" href="#database" title="Link to this heading"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// DbDataSource</span>
+<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Built-in alias | NPM package name</span>
+<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span>
+
+<span class="w">    </span><span class="c1">// Excluding &quot;parallel&quot; | &quot;withCommand&quot; | &quot;usePool&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="admin">
+<h2>Admin<a class="headerlink" href="#admin" title="Link to this heading"></a></h2>
+<section id="auth">
+<h3>Auth<a class="headerlink" href="#auth" title="Link to this heading"></a></h3>
+<p>Internal use of these libraries that do not require credentials validation during service client API initialization can disable this behavior through settings. There are also cases where an unsupported authorization scheme is necessary which has not been implemented.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>These are global settings and affect every connection per service.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">squared.cloud.json</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;aws&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Default behavior</span>
+<span class="w">        </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// Explicit to disable</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.9.0: </span></p>
+<ul class="simple">
+<li><p>Credentials validation bypass settings in <strong>squared.cloud.json</strong> <em class="alt">(1.4.0)</em> were created.</p></li>
+</ul>
+</div>
+</section>
+<section id="id1">
+<h3>Storage<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<table class="cloud-service docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Service</p></th>
+<th class="head"><p>CLOUD_UPLOAD_STREAM</p></th>
+<th class="head"><p>CLOUD_UPLOAD_CHUNK</p></th>
+<th class="head"><p>CLOUD_DOWNLOAD_CHUNK</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>aws</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>aws-v3</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>azure</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>gcp</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>ibm</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>minio</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>oci</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Setting <code class="code docutils literal notranslate"><span class="pre">process.env.EMC_CLOUD_UPLOAD_BUFFER</span> <span class="pre">=</span> <span class="pre">&quot;true&quot;</span></code> will enable the legacy behavior for <a class="reference internal" href="../document/index.html"><span class="doc">Document</span></a> based uploads.</p>
+</div>
+<section id="stream">
+<h4>Stream<a class="headerlink" href="#stream" title="Link to this heading"></a></h4>
+<p>Streaming was enabled by default due to its lower memory usage requirements. It is slower for small file transfers which is typical for a static web page.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Setting <code class="code docutils literal notranslate"><span class="pre">upload.minStreamSize</span> <span class="pre">=</span> <span class="pre">-1</span></code> will disable streaming for the current request.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Buffer</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">aws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@pi-r/aws&quot;</span><span class="p">);</span>
+<span class="nx">aws</span><span class="p">.</span><span class="nx">CLOUD_UPLOAD_STREAM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Reading a buffer from disk has <strong>2gb</strong> file size limit.</p>
+</div>
+</section>
+<section id="chunk">
+<h4>Chunk<a class="headerlink" href="#chunk" title="Link to this heading"></a></h4>
+<p>Parallel transfers were enabled by default to accommodate large files. The old behavior is used when <strong>chunkSize</strong> is empty and will open one request per file.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Sequential</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">azure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@pi-r/azure&quot;</span><span class="p">);</span>
+<span class="nx">azure</span><span class="p">.</span><span class="nx">CLOUD_UPLOAD_CHUNK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="nx">azure</span><span class="p">.</span><span class="nx">CLOUD_DOWNLOAD_CHUNK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Chunking is only active when the upload file size is greater than <strong>chunkSize</strong>.</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Cloud" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="aws.html" class="btn btn-neutral float-right" title="Amazon Web Services" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

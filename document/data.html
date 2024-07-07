@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Sources &mdash; E-mc 0.9.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59d4ba9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=a1372e3e" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=61b282d3"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plugins" href="plugins/index.html" />
+    <link rel="prev" title="Attributes" href="attributes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            E-mc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Document</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="interface.html">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inline.html">Inline commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html">Attributes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Sources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inline-json">Inline “json”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remote-file-uri">Remote file “uri”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local-file-local">Local file “local”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-source-export">External source “export”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#view-engine">View Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#event-callbacks">Event callbacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pi-r-chrome">&#64;pi-r/chrome</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/index.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="append.html">Appending source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="watch.html">Watch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="broadcast.html">Broadcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finalize.html">Finalize</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../image/index.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy.html">squared-functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E-mc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Document</a></li>
+      <li class="breadcrumb-item active">Data Sources</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/document/data.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="data-sources">
+<h1>Data Sources<a class="headerlink" href="#data-sources" title="Link to this heading"></a></h1>
+<p>Using the same concept as a database you can read from these files:</p>
+<ul class="simple">
+<li><p><strong>JSON</strong></p></li>
+<li><p><strong>YAML</strong></p></li>
+<li><p>JSON5 <a class="footnote-reference brackets" href="#id12" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p>XML <a class="footnote-reference brackets" href="#id13" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+<li><p>TOML <a class="footnote-reference brackets" href="#id14" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
+</ul>
+<p>Then optionally select nested objects with these <em class="target">query</em> expressions:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/dchester/jsonpath">JSONPath</a> <a class="footnote-reference brackets" href="#id15" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://jmespath.org">JMESPath</a> <a class="footnote-reference brackets" href="#id16" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>These examples can also be used with <a class="reference internal" href="../cloud/interface.html"><span class="doc">Cloud</span></a> and <a class="reference internal" href="../db/interface.html"><span class="doc">DB</span></a> data sources except every provider has a different way to <em>query</em> their data.</p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DataSource</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">IDataSource</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../db/interface&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">DataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">IDataSource</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;uri&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;export&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;attribute&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;display&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Element action</span>
+
+<span class="w">    </span><span class="nx">viewEngine</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// NPM package name</span>
+<span class="w">        </span><span class="nx">singleRow?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">viewEngine?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// settings.view_engine[name]? + settings.users[username].view_engine[name]? (overlay)</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nx">value?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace placeholders per row of results</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nx">template?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Will replace &quot;value&quot; from local file</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nx">dynamic?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Uses element.innerXml rather than element.textContent</span>
+
+<span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// startsWith(&quot;$&quot;) JSONPath otherwise JMESPath</span>
+
+<span class="w">    </span><span class="nx">ignoreCache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Bypass cache without saving</span>
+<span class="w">    </span><span class="nx">ignoreCache?</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// purge cache with saving</span>
+<span class="w">    </span><span class="nx">ignoreEmpty?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Will not modify anything when there are no results</span>
+<span class="w">    </span><span class="nx">ignoreCoerce?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Will not convert inline constructors to native objects</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">TextDataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DataSource</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">leadingText?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">trailingText?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">DataObject</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;yaml&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;json5&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;xml&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;toml&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">;</span><span class="w"> </span><span class="c1">// Parser options (yaml + xml)</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">CascadeAction</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">      When array [{ a: 1 }, { b: 2 }] then &quot;0.a == 1&quot; OR &quot;1.b == 2&quot; (leading only)</span>
+<span class="cm">      When multi-dimensional array { a: [[1], [2,3]] } then &quot;a[0].0 == 1&quot; OR &quot;a.1.1 == 3&quot; (brackets are optional)</span>
+<span class="cm">      When key has spaces { &quot; a &quot;: { &quot;b &quot;: { c: 1 } } } then &quot; a &quot;[&quot;b &quot;].c OR &quot; a &quot;.&quot;b &quot;[c] == 1 (quotes are optional)</span>
+<span class="cm">      When key has dot operator  { a: { &quot;b.c&quot;: 1 } } then a[b\\.c] == 1</span>
+<span class="cm">      Invalid usage a[0][1][2] instead use a.0.1.0 or a[0].1[2] (max is 1 consequetive bracket)</span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="nx">cascade?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Called before &quot;query&quot;</span>
+<span class="w">    </span><span class="nx">fallback?</span><span class="o">:</span><span class="w"> </span><span class="kt">object</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used when there are missing fields</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="inline-json">
+<h2>Inline “json”<a class="headerlink" href="#inline-json" title="Link to this heading"></a></h2>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">JSONDataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">CascadeAction</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">items?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="example-usage">
+<h3>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;first item&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;second item&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;leadingText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;ul&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;li&gt;&lt;b&gt;${title}&lt;/b&gt;: ${description}&lt;/li&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// &lt;ul&gt;&lt;li&gt;&lt;b&gt;1&lt;/b&gt;: first item&lt;/li&gt;&lt;li&gt;&lt;b&gt;2&lt;/b&gt;: second item&lt;/li&gt;&lt;/ul&gt;</span>
+<span class="w">    </span><span class="nt">&quot;trailingText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;/ul&gt;&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;first item&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;b&gt;${title}&lt;/b&gt;: ${description}&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// &lt;b&gt;1&lt;/b&gt;: first item</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;b&gt;1&lt;/b&gt;: first item&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="remote-file-uri">
+<h2>Remote file “uri”<a class="headerlink" href="#remote-file-uri" title="Link to this heading"></a></h2>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">UriDataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">DataObject</span><span class="p">,</span><span class="w"> </span><span class="nx">CascadeAction</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;uri&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Will perform a fetch request</span>
+<span class="w">    </span><span class="cm">/* Method &quot;POST&quot; */</span>
+<span class="w">    </span><span class="nx">body?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span><span class="w"> </span><span class="c1">// Required</span>
+<span class="w">    </span><span class="nx">contentType?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="id6">
+<h3>Example usage<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<p>Reusing configuration templates is possible with URL search parameters. All parameters <em class="lower">(excluding “value”)</em> from any source can be replaced using the <strong>{{param}}</strong> syntax.</p>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text"><em>http://localhost:3000/project/index.html?file=demo&amp;format=json</em></span><a class="headerlink" href="#id18" title="Link to this code"></a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main img&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attribute&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uri&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{format}}&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// json</span>
+<span class="w">    </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://hostname/project/{{file}}.{{format}}&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// http://hostname/project/demo.json</span>
+
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$[1]&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Row #2 in result array (JSONPath)</span>
+
+<span class="w">    </span><span class="cm">/* Result: { &quot;src&quot;: &quot;image.png&quot;, &quot;other&quot;: { &quot;alt&quot;: &quot;description&quot; } } */</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;other.alt&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Query parameters will also replace values inside the <strong>attributes</strong> property.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">POST</span><a class="headerlink" href="#id19" title="Link to this code"></a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uri&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://hostname/api/v1/items&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Perform secure API request</span>
+<span class="w">    </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Response headers[&quot;Accept&quot;] (generated)</span>
+<span class="w">    </span><span class="nt">&quot;contentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Request headers[&quot;Content-Type&quot;] (optional)</span>
+
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;b&gt;${title}&lt;/b&gt;: ${description}&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>JSON will be sent by default for <em>POST</em> when both <strong>format</strong> and <strong>contentType</strong> are empty.</p>
+</div>
+</section>
+</section>
+<section id="local-file-local">
+<h2>Local file “local”<a class="headerlink" href="#local-file-local" title="Link to this heading"></a></h2>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">LocalDataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">DataObject</span><span class="p">,</span><span class="w"> </span><span class="nx">CascadeAction</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="id7">
+<h3>Example usage<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main img&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attribute&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xml&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./path/data.xml&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// yaml + json5 + toml + xml + cjs (settings.directory.data + users/username/?)</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/data.xml&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Local files require read permissions</span>
+
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$.root.row[1]&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Second item in &quot;row&quot; array (JSONPath)</span>
+
+<span class="w">    </span><span class="cm">/* Result: { &quot;title&quot;: &quot;Tokyo&quot;, &quot;description&quot;: &quot;Japan&quot; } */</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;b&gt;${__index__}. ${title}&lt;/b&gt;: ${description}&quot;</span><span class="w"> </span><span class="c1">// &quot;__index__&quot;: Row index value</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">Conditional statement</span><a class="headerlink" href="#id20" title="Link to this code"></a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main div&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;display&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mongodb&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mongodb://localhost:27017&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;removeEmpty&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Includes invalid conditions</span>
+
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attr1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove when: null or undefined</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-attr2&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove when: attr2=falsey</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;+attr3&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove when: attr3=truthy</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;attr1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// AND</span>
+<span class="w">      </span><span class="s2">&quot;:is(OR)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;-attr2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-attr3&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// OR</span>
+<span class="w">      </span><span class="s2">&quot;:is(AND)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;+attr4&quot;</span><span class="w"> </span><span class="c1">// Remove when: attr1=null + attr2|attr3=falsey + attr4=truthy</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>To completely remove an element all <em>AND</em> conditions have to be <code class="docutils literal notranslate"><span class="pre">true</span></code> and one <em>OR</em> per group is <code class="docutils literal notranslate"><span class="pre">true</span></code>. Using a view engine is recommended if you require a more advanced statement.</p>
+<p>Returning an empty result or a blank string <em class="lower">(view engine)</em> is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</section>
+</section>
+<section id="external-source-export">
+<h2>External source “export”<a class="headerlink" href="#external-source-export" title="Link to this heading"></a></h2>
+<p>Custom functions or packages can be used to return any kind of dataset from any source providing a temporary solution during development.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">ExportDataSource</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;export&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span><span class="w"> </span><span class="c1">// Passed into custom function (required)</span>
+
+<span class="w">    </span><span class="nx">pathname?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Module file (.cjs) | Local file (.js) | inline function | NPM package</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nx">settings?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nx">execute</span><span class="o">?:</span><span class="w"> </span><span class="p">(</span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nx">persist?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Default is &quot;true&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="example-settings">
+<h3>Example settings<a class="headerlink" href="#example-settings" title="Link to this heading"></a></h3>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id21" title="Link to this code"></a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;document&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;chrome&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;handler&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/chrome&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;eval&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;function&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Enable inline functions</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;export&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;data-example&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;(params, resolve, require) =&gt; { const fs = require(&#39;fs&#39;); resolve(JSON.parse(fs.readFileSync(params.uri))); }&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;async-example&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;async (params, require) =&gt; { const fs = require(&#39;fs&#39;); const result = await fs.promises.readFile(params.uri); return JSON.parse(result); }&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="example-file-cjs">
+<h3>Example file “.cjs”<a class="headerlink" href="#example-file-cjs" title="Link to this heading"></a></h3>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">/path/to/postgres.cjs</span><a class="headerlink" href="#id22" title="Link to this code"></a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">pg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;pg&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">database</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;squared&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="mf">5432</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">ssl</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">params</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">pg</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">rows</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM demo WHERE id = $1&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">]);</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">rows</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="example-file-js">
+<h3>Example file “.js”<a class="headerlink" href="#example-file-js" title="Link to this heading"></a></h3>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text">/path/to/mysql.js</span><a class="headerlink" href="#id23" title="Link to this code"></a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">params</span><span class="p">,</span><span class="w"> </span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">require</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// async function (params, require)</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">mysql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;mysql&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">database</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;squared&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="mf">3306</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">ssl</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">conn</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM demo WHERE id = ?&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">],</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">resolve</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">conn</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using this approach with databases is not recommended.</p>
+</div>
+</section>
+<section id="id8">
+<h3>Example usage<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main p&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;export&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npm:postgres-custom&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// npm i postgres-custom</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./path/to/postgres.cjs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// settings.directory.export + users/username/?</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data-example&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// settings.export</span>
+
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;`&lt;b&gt;${this.title}&lt;/b&gt;: ${this.description} (${this.total * 2})`&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Function template literal (settings.eval.function)</span>
+
+<span class="w">    </span><span class="cm">/* golang template syntax - partial support */</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{if !expired}}&lt;b&gt;${title}&lt;/b&gt;: ${description}{{else}}Expired{{end}}&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Non-nested single conditional truthy property checks</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{if not expired}}&lt;b&gt;${title}&lt;/b&gt;: ${description}{{else}}Expired{{end}}&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Case sensitive</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{if and (user.total) (ge user.total postMin) (lt user.total postMax)}}&lt;b&gt;${title}&lt;/b&gt;: ${description}{{else if (eq user.total 0)}}Expired{{end}}&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Parenthesis where noted in <code class="docutils literal notranslate"><span class="pre">value</span></code> are required.</p>
+</div>
+</section>
+</section>
+<section id="view-engine">
+<h2>View Engine<a class="headerlink" href="#view-engine" title="Link to this heading"></a></h2>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">ViewEngine</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// NPM package name</span>
+<span class="w">    </span><span class="nx">singleRow?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Template data is sent in one pass using an Array[]</span>
+<span class="w">    </span><span class="nx">outputEmpty?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pass empty results to template engine</span>
+<span class="w">    </span><span class="nx">options</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">compile?</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">;</span><span class="w"> </span><span class="c1">// template = engine.compile(value, options)</span>
+<span class="w">        </span><span class="nx">output?</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">;</span><span class="w"> </span><span class="c1">// template({ ...options, ...result[index] })</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://js.libhunt.com/libs/templating-engines">Template engines</a> with a <code class="code docutils literal notranslate"><span class="pre">compile(string[,</span> <span class="pre">options]):</span> <span class="pre">(data?:</span> <span class="pre">Record&lt;string,</span> <span class="pre">any&gt;)</span> <span class="pre">=&gt;</span> <span class="pre">string</span></code> method are compatible.</p>
+</div>
+<section id="id9">
+<h3>Example usage<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<p>Using <code class="docutils literal notranslate"><span class="pre">template</span></code> <em class="lower">(external)</em> is the same as <code class="docutils literal notranslate"><span class="pre">value</span></code> <em class="lower">(inline)</em> except the reusable content is stored inside a cacheable template server directory.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./path/to/data.json&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;viewEngine&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main-ejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// settings.view_engine[viewEngine]</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;viewEngine&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// NPM package name</span>
+<span class="w">      </span><span class="nt">&quot;singleRow&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;b&gt;&lt;%= title %&gt;&lt;/b&gt;: &lt;%= description %&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;template&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./path/to/content.ejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// settings.directory.template + users/username/?</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;dynamic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// element.innerXml? (with tags)</span>
+<span class="w">    </span><span class="nt">&quot;dynamic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// element.textContent? (plain text) || outerXml (parsed from source)</span>
+
+<span class="w">    </span><span class="nt">&quot;encoding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;utf-8&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><a class="reference external" href="https://ejs.co/#docs">EJS</a> <a class="footnote-reference brackets" href="#id17" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> is used as the reference templating engine.</p>
+</div>
+</section>
+</section>
+<section id="event-callbacks">
+<h2>Event callbacks<a class="headerlink" href="#event-callbacks" title="Link to this heading"></a></h2>
+<p>You can create named callbacks for <strong>postQuery</strong> and <strong>preRender</strong> anywhere inside the <em>HTML</em>. It is more readable than inside a configuration file and can be reused for similiar queries.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">DataSource</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">postQuery?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="nx">result</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[],</span><span class="w"> </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DataSource</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">unknown</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="ow">void</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">preRender?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="nx">output</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DataSource</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="ow">void</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">whenEmpty?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="nx">result</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[],</span><span class="w"> </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DataSource</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">unknown</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="ow">void</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="id11">
+<h3>Example usage<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<p>Only one function can be defined per <code class="docutils literal notranslate"><span class="pre">&lt;script</span> <span class="pre">type=&quot;text/template&quot;&gt;</span></code> element.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/template&quot;</span> <span class="na">data-chrome-template</span><span class="o">=</span><span class="s">&quot;data::postQuery-example&quot;</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="cm">/* PlainObject[] */</span><span class="p">,</span><span class="w"> </span><span class="nx">dataSource</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;/db/url&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="p">})));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// &quot;result&quot; will display unmodified when not an array</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/template&quot;</span> <span class="na">data-chrome-template</span><span class="o">=</span><span class="s">&quot;data::preRender-example&quot;</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="cm">/* string */</span><span class="p">,</span><span class="w"> </span><span class="nx">dataSource</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">value</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s2">&quot;&lt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&amp;lt;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/template&quot;</span> <span class="na">data-chrome-template</span><span class="o">=</span><span class="s">&quot;data::whenEmpty-example&quot;</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="cm">/* PlainObject[] */</span><span class="p">,</span><span class="w"> </span><span class="nx">dataSource</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">result</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Empty&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// result.length is 0</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text">Alternate</span><a class="headerlink" href="#id24" title="Link to this code"></a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;postQuery-example&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;async function (result, dataSource) {/* Same */}&quot;</span><span class="w"> </span><span class="c1">// Arrow functions not supported</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> templates requires the setting <code class="code docutils literal notranslate"><span class="pre">eval.template</span> <span class="pre">=</span> <span class="pre">true</span></code>.</p>
+</div>
+</section>
+</section>
+<section id="pi-r-chrome">
+<h2>&#64;pi-r/chrome<a class="headerlink" href="#pi-r-chrome" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.7.0: </span></p>
+<ul class="simple">
+<li><p><em>DataSource</em> property <strong>ignoreCoerce</strong> was created.</p></li>
+</ul>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.6.4: </span></p>
+<ul class="simple">
+<li><p><em>UriDataSource</em> property <strong>contentType</strong> | <strong>body</strong> for HTTP method <em>POST</em> was implemented.</p></li>
+<li><p><em>DataSource</em> property <strong>source</strong> option “<strong>json</strong>” as <em>JSONDataSource</em> was implemented.</p></li>
+<li><p><em>TextDataSource</em> property <strong>leadingText</strong> | <strong>trailingText</strong> were created.</p></li>
+</ul>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id12" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>npm i json5</p>
+</aside>
+<aside class="footnote brackets" id="id13" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>npm i fast-xml-parser</p>
+</aside>
+<aside class="footnote brackets" id="id14" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>npm i toml</p>
+</aside>
+<aside class="footnote brackets" id="id15" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>npm i jsonpath</p>
+</aside>
+<aside class="footnote brackets" id="id16" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>npm i jmespath</p>
+</aside>
+<aside class="footnote brackets" id="id17" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">6</a><span class="fn-bracket">]</span></span>
+<p>npm i ejs</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="attributes.html" class="btn btn-neutral float-left" title="Attributes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plugins/index.html" class="btn btn-neutral float-right" title="Plugins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@e-mc/watch &mdash; E-mc 0.9.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59d4ba9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=a1372e3e" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=61b282d3"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="References" href="../references.html" />
+    <link rel="prev" title="@e-mc/types" href="types.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            E-mc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../document/index.html">Document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../image/index.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cloud.html">&#64;e-mc/cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compress.html">&#64;e-mc/compress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">&#64;e-mc/core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db.html">&#64;e-mc/db</a></li>
+<li class="toctree-l2"><a class="reference internal" href="document.html">&#64;e-mc/document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-manager.html">&#64;e-mc/file-manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image.html">&#64;e-mc/image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html">&#64;e-mc/module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request.html">&#64;e-mc/request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task.html">&#64;e-mc/task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">&#64;e-mc/types</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">&#64;e-mc/watch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#esm-imports">ESM imports</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy.html">squared-functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E-mc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Modules</a></li>
+      <li class="breadcrumb-item active">&#64;e-mc/watch</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/watch.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="e-mc-watch">
+<h1>&#64;e-mc/watch<a class="headerlink" href="#e-mc-watch" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><strong>npm</strong> i <em>&#64;e-mc/watch</em></p></li>
+</ul>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/index.d.ts">View Source</a></span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IFileManager</span><span class="p">,</span><span class="w"> </span><span class="nx">ModuleConstructor</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./index&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ExternalAsset</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./asset&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">HostInitConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">IClient</span><span class="p">,</span><span class="w"> </span><span class="nx">IPermission</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./core&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FinalizeResult</span><span class="p">,</span><span class="w"> </span><span class="nx">PostFinalizeCallback</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./filemanager&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">WatchModule</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./settings&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IFileGroup</span><span class="p">,</span><span class="w"> </span><span class="nx">ModifiedPostFinalizeListener</span><span class="p">,</span><span class="w"> </span><span class="nx">SecureOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./watch&quot;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;ws&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">IWatch</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">IClient</span><span class="o">&lt;</span><span class="nx">IFileManager</span><span class="p">,</span><span class="w"> </span><span class="nx">WatchModule</span><span class="p">,</span><span class="w"> </span><span class="nx">ModifiedPostFinalizeListener</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">connectTimeout</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">init</span><span class="p">(</span><span class="nx">config?</span><span class="o">:</span><span class="w"> </span><span class="kt">HostInitConfig</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">start</span><span class="p">(</span><span class="nx">assets</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">[],</span><span class="w"> </span><span class="nx">permission?</span><span class="o">:</span><span class="w"> </span><span class="kt">IPermission</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">modified</span><span class="p">(</span><span class="nx">watch</span><span class="o">:</span><span class="w"> </span><span class="kt">IFileGroup</span><span class="o">&lt;</span><span class="nx">ExternalAsset</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">FinalizeResult</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="ow">void</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">configureServer</span><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">SecureOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">setCA</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">setSSLKey</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">setSSLCert</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">hasSecureProtocol</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">whenModified</span><span class="o">?</span><span class="p">(</span><span class="nx">assets</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">[],</span><span class="w"> </span><span class="nx">postFinalize</span><span class="o">:</span><span class="w"> </span><span class="kt">PostFinalizeCallback</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IFileManager</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">whenModified</span><span class="o">?</span><span class="p">(</span><span class="nx">assets</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">[],</span><span class="w"> </span><span class="nx">sanitize?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span><span class="w"> </span><span class="nx">postFinalize?</span><span class="o">:</span><span class="w"> </span><span class="kt">PostFinalizeCallback</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IFileManager</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">assets</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">[]);</span>
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">assets</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">ExternalAsset</span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">interval</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">interval</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">port</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">port</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">securePort</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">securePort</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">WatchConstructor</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">ModuleConstructor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">createServer</span><span class="p">(</span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">active</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">ws</span><span class="p">.</span><span class="nx">Server</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">createServer</span><span class="p">(</span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">secure?</span><span class="o">:</span><span class="w"> </span><span class="kt">SecureOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">active?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">ws</span><span class="p">.</span><span class="nx">Server</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">shutdown</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">checkTimeout</span><span class="p">(</span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="kt">ws</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IWatch</span><span class="p">;</span>
+<span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="kr">module</span><span class="nx">?</span><span class="o">:</span><span class="w"> </span><span class="nx">WatchModule</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IWatch</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 0.9.0: </span></p>
+<ul class="simple">
+<li><p>Constructor <strong>new(interval, port, securePort, extensions)</strong> did not conform with <code class="docutils literal notranslate"><span class="pre">Module.init()</span></code>.</p></li>
+</ul>
+</div>
+</section>
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/squared-express/dist/squared.json">View JSON</a></span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PermittedDirectories</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./core&quot;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">SecureVersion</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;tls&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">WatchModule</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// handler: &quot;@e-mc/watch&quot;;</span>
+<span class="w">    </span><span class="nx">extensions?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">timeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">interval?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">port?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">secure</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">port?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">ca?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">key?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">cert?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">passphrase?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">version?</span><span class="o">:</span><span class="w"> </span><span class="kt">SecureVersion</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">settings</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">broadcast_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+<span class="w">        </span><span class="nx">users?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">unknown</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">permission?</span><span class="o">:</span><span class="w"> </span><span class="kt">PermittedDirectories</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<section id="example-usage">
+<h3>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Watch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/watch&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Watch</span><span class="p">({</span><span class="w"> </span><span class="nx">interval</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="mf">8080</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">instance</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+
+<span class="nx">instance</span><span class="p">.</span><span class="nx">whenModified</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">assets</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">assets</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">uri</span><span class="p">));</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">assets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">localUri</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/path/workspace/output/image1.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;http://hostname/path/document1.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">watch</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">localUri</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/path/workspace/output/image2.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;http://hostname/path/document2.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">watch</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
+
+<span class="nx">instance</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="nx">assets</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">disk_read</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/path/workspace/output/**&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/asset.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/asset.d.ts</a></p></li>
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/core.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/core.d.ts</a></p></li>
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/filemanager.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/filemanager.d.ts</a></p></li>
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/settings.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/settings.d.ts</a></p></li>
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/watch.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/watch.d.ts</a></p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.npmjs.com/package/&#64;types/node">https://www.npmjs.com/package/&#64;types/node</a></p></li>
+<li><p><a class="reference external" href="https://www.npmjs.com/package/&#64;types/ws">https://www.npmjs.com/package/&#64;types/ws</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="types.html" class="btn btn-neutral float-left" title="@e-mc/types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../references.html" class="btn btn-neutral float-right" title="References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

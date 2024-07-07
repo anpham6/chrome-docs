@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breakdown &mdash; E-mc 0.9.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=983eb2ed" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../../_static/content.css?v=59d4ba9d" />
+      <link rel="stylesheet" type="text/css" href="../../_static/highlight-abap.css?v=0a013c1c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/override.css?v=a1372e3e" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=61b282d3"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Settings" href="settings.html" />
+    <link rel="prev" title="Built-In" href="built-in.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            E-mc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Document</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../interface.html">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inline.html">Inline commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../attributes.html">Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data.html">Data Sources</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="interface.html">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="built-in.html">Built-In</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Breakdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="settings.html">Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../append.html">Appending source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../watch.html">Watch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../broadcast.html">Broadcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../finalize.html">Finalize</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../image/index.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloud/index.html">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html">Build Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../versions.html">Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../legacy.html">squared-functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">E-mc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Document</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Plugins</a></li>
+      <li class="breadcrumb-item active">Breakdown</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/document/plugins/breakdown.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="breakdown">
+<h1>Breakdown<a class="headerlink" href="#breakdown" title="Link to this heading"></a></h1>
+<p>Plugins are simply <code class="docutils literal notranslate"><span class="pre">options</span></code> pass-through calls to a <code class="docutils literal notranslate"><span class="pre">context</span></code> wrapper method. The only part which might not be intuitive is consuming an existing source map and then saving it for further processing.</p>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">&#64;pi-r/clean-css</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ITransformSeries</span><span class="p">,</span><span class="w"> </span><span class="nx">RawSourceMap</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@e-mc/types/lib/document&quot;</span><span class="p">;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">cc</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;clean-css&quot;</span><span class="p">;</span>
+<span class="linenos"> 4</span>
+<span class="hll"><span class="linenos"> 5</span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">transform</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">typeof</span><span class="w"> </span><span class="nx">cc</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">ITransformSeries</span><span class="o">&lt;</span><span class="nx">cc</span><span class="p">.</span><span class="nx">OptionsOutput</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="linenos"> 6</span><span class="w">    </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">upgrade</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">__dirname</span><span class="p">);</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sourceMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">sourceMap</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">baseConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">toBaseConfig</span><span class="p">(</span><span class="cm">/* true */</span><span class="p">);</span><span class="w"> </span><span class="c1">// Use &quot;false&quot; for only outputConfig</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">map</span><span class="o">:</span><span class="w"> </span><span class="kt">RawSourceMap</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="linenos">10</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">baseConfig</span><span class="p">.</span><span class="nx">sourceMap</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">11</span><span class="w">        </span><span class="nx">sourceMap</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
+<span class="linenos">12</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">13</span><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceMap</span><span class="p">.</span><span class="nx">map</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">        </span><span class="nx">baseConfig</span><span class="p">.</span><span class="nx">sourceMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="p">}</span>
+<span class="hll"><span class="linenos">16</span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">context</span><span class="p">(</span><span class="nx">baseConfig</span><span class="p">).</span><span class="nx">minify</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">map</span><span class="p">);</span>
+</span><span class="linenos">17</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">sourceMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">19</span><span class="w">            </span><span class="nx">sourceMap</span><span class="p">.</span><span class="nx">nextMap</span><span class="p">(</span><span class="s2">&quot;clean-css&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">styles</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">sourceMap</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+<span class="linenos">20</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">21</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">styles</span><span class="p">;</span>
+<span class="linenos">22</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">23</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>There are only three lines of relevant <em>TypeScript</em> being used to check for upgrade compatibility. Local file “.cjs” transformers offer the same exact functionality.</p>
+</div>
+</section>
+<section id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Typings (optional)</p></li>
+<li><p><em>none</em></p></li>
+<li><p><em>none</em></p></li>
+<li><p><em>none</em></p></li>
+<li><p><strong>context</strong> = require(“clean-css”), <strong>value</strong> = source code, <strong>options</strong> = <em>TransformSeries</em> instance</p></li>
+<li><p>When calling process <em class="alt">(cwd)</em> uses a different major package version (optional)</p></li>
+<li><p>Main <em>sourceMap</em> from previous consumer</p></li>
+<li><p>Applies <strong>options.external</strong> AND <strong>options.outputConfig</strong> to <strong>options.baseConfig</strong> (optional)</p></li>
+<li><p><em>none</em></p></li>
+<li><p>Delete current <em>sourceMap</em> as requested using <code class="docutils literal notranslate"><span class="pre">sourceMap.reset</span></code></p></li>
+<li><p><em>none</em></p></li>
+<li><p><em>none</em></p></li>
+<li><p>Check if there is an existing sourceMap and pass it through</p></li>
+<li><p><em>none</em></p></li>
+<li><p><em>none</em></p></li>
+<li><p>Call package transform method with <strong>baseConfig</strong> and <strong>value</strong></p></li>
+<li><p>Check if method succeeded</p></li>
+<li><p>Check if a <em>sourceMap</em> was generated</p></li>
+<li><p>Pass <em>sourceMap</em> output values to <code class="docutils literal notranslate"><span class="pre">sourceMap.nextMap</span></code> chain method</p></li>
+<li><p><em>none</em></p></li>
+<li><p>Return modified transformed <em class="target">source code</em></p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some plugins have a two-step transformation process <em class="alt">(e.g. rollup)</em> and use <strong>outputConfig</strong> separately. It is generally used for inline transformers as their <strong>baseConfig</strong>.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="built-in.html" class="btn btn-neutral float-left" title="Built-In" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="settings.html" class="btn btn-neutral float-right" title="Settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

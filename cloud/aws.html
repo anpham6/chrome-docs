@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Web Services &mdash; E-mc 0.9.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59d4ba9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=a1372e3e" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=61b282d3"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Amazon Web Services" href="aws-v3.html" />
+    <link rel="prev" title="Interface" href="interface.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            E-mc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../document/index.html">Document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../image/index.html">Image</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="interface.html">Interface</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AWS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#storage">Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pi-r-aws">&#64;pi-r/aws</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aws-v3.html">AWS (v3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="azure.html">Azure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcp.html">Google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ibm.html">IBM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="minio.html">MinIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atlas.html">MongoDB Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oci.html">Oracle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy.html">squared-functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E-mc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Cloud</a></li>
+      <li class="breadcrumb-item active">Amazon Web Services</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cloud/aws.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="amazon-web-services">
+<h1>Amazon Web Services<a class="headerlink" href="#amazon-web-services" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><strong>npm</strong> i <em>&#64;pi-r/aws</em></p></li>
+</ul>
+<section id="storage">
+<h2>Storage<a class="headerlink" href="#storage" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a></p></li>
+</ul>
+<section id="interface">
+<h3>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h3>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConfigurationOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;aws-sdk/lib/core&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">AWSStorage</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorage</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">AWSStorageCredential</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">bucket</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">AWSStorageCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">ConfigurationOptions</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">profile?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">fromPath?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="authentication">
+<h3>Authentication<a class="headerlink" href="#authentication" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html">Credentials</a></p></li>
+<li><p><a class="reference external" href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-static-credentials.html">Access Keys</a></p></li>
+<li><p><a class="reference external" href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CredentialProviderChain.html">Provider Chain</a></p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">using process.env</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">AWS_ACCESS_KEY_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nx">AWS_SECRET_ACCESS_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nx">AWS_SESSION_TOKEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Optional</span>
+
+<span class="nx">AWS_SDK_LOAD_CONFIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;any&gt;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// AWS.SharedIniFileCredentials</span>
+<span class="nx">AWS_SHARED_CREDENTIALS_FILE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;default&gt;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Default is &quot;~/.aws/credentials&quot;</span>
+<span class="nx">AWS_PROFILE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;default&gt;&quot;</span><span class="p">;</span>
+
+<span class="nx">AWS_WEB_IDENTITY_TOKEN_FILE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// AWS.TokenFileWebIdentityCredentials</span>
+
+<span class="nx">AWS_CONTAINER_CREDENTIALS_RELATIVE_URI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// AWS.RemoteCredentials</span>
+<span class="nx">AWS_CONTAINER_CREDENTIALS_FULL_URI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;accessKeyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;secretAccessKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;region&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ap-northeast-1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sessionToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;work-account&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;fromPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./config.json&quot;</span><span class="w"> </span><span class="c1">// Current request only (read permission)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-usage">
+<h3>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html">S3 Client API</a></p></li>
+<li><p><a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned ACL</a></p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Any resource</span>
+<span class="w">  </span><span class="nt">&quot;cloudStorage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs-001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;publicRead&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Bucket + uploaded objects</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="nt">&quot;publicRead&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// Bucket only (s3::ListBucket*)</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="cm">/* Will modify existing bucket (equivalent policy) + uploaded objects */</span>
+<span class="w">      </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;private&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Canned ACL - Bucket</span>
+
+<span class="w">      </span><span class="nt">&quot;configBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;Policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// s3.putBucketPolicy</span>
+<span class="w">          </span><span class="cm">/* OR */</span>
+<span class="w">          </span><span class="nt">&quot;ACL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authenticated-read&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// s3.putBucketAcl</span>
+<span class="w">          </span><span class="cm">/* OR */</span>
+<span class="w">          </span><span class="nt">&quot;PublicAccessBlockConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// s3.putPublicAccessBlock</span>
+<span class="w">            </span><span class="nt">&quot;BlockPublicAcls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;BlockPublicPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;IgnorePublicAcls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;RestrictPublicBuckets&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// s3.putBucketTagging</span>
+<span class="w">          </span><span class="nt">&quot;Tagging&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;TagSet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">              </span><span class="nt">&quot;Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;key_1&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value_1&quot;</span>
+<span class="w">            </span><span class="p">}]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// s3.deleteBucketTagging</span>
+<span class="w">          </span><span class="nt">&quot;Tagging&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;TagSet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;website&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// s3.putBucketWebsite</span>
+<span class="w">          </span><span class="nt">&quot;indexPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// IndexDocument</span>
+<span class="w">          </span><span class="nt">&quot;errorPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;404.html&quot;</span><span class="w"> </span><span class="c1">// ErrorDocument</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="cm">/* During call to &quot;upload&quot; */</span>
+<span class="w">        </span><span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// s3.createBucket</span>
+<span class="w">          </span><span class="nt">&quot;ACL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;public-read&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;CreateBucketConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;LocationConstraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ap-northeast-3&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;cors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;CORSRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* Rule */</span><span class="p">],</span><span class="w"> </span><span class="c1">// s3.putBucketCors{CORSConfiguration}</span>
+<span class="w">          </span><span class="nt">&quot;CORSRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="c1">// s3.deleteBucketCors</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* Rule */</span><span class="p">],</span><span class="w"> </span><span class="c1">// s3.putBucketLifecycleConfiguration{LifecycleConfiguration}</span>
+<span class="w">          </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="c1">// s3.deleteBucketLifecycle</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;retentionPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* DefaultRetention */</span><span class="p">}</span><span class="w"> </span><span class="c1">// s3.putObjectLockConfiguration{ObjectLockConfiguration[Rule]}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;upload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// s3.upload</span>
+<span class="w">      </span><span class="nt">&quot;publicRead&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will overwrite primary options.ACL</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;private&quot;</span><span class="w"> </span><span class="c1">// Canned ACL - Object</span>
+
+<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// PutObjectRequest</span>
+<span class="w">        </span><span class="nt">&quot;ContentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Primary object only</span>
+<span class="w">        </span><span class="nt">&quot;ACL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;private&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// All objects</span>
+<span class="w">        </span><span class="nt">&quot;Metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Record&lt;string, string&gt; */</span><span class="p">},</span><span class="w"> </span><span class="c1">// All objects except when &quot;metadata&quot; is defined</span>
+<span class="w">        </span><span class="nt">&quot;ExpectedBucketOwner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+
+<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as &quot;partSize&quot;</span>
+<span class="w">      </span><span class="nt">&quot;chunkLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as &quot;queueSize&quot;</span>
+
+<span class="w">      </span><span class="cm">/* Primary object only */</span>
+<span class="w">      </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Content-Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html; charset=UTF-8&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Content-Encoding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gzip&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Expires&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wed, 21 Oct 2015 07:28:00 GMT&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// s3.putObjectTagging{TagSet}</span>
+<span class="w">        </span><span class="nt">&quot;key_1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;key_2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="c1">// s3.deleteObjectTagging</span>
+<span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;download&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="cm">/* s3.getObject */</span>
+<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// GetObjectRequest</span>
+<span class="w">        </span><span class="nt">&quot;ExpectedBucketOwner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;IfMatch&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="cm">/* Same as interface */</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="database">
+<h2>Database<a class="headerlink" href="#database" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://aws.amazon.com/dynamodb">https://aws.amazon.com/dynamodb</a></p></li>
+</ul>
+<section id="id1">
+<h3>Interface<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ServiceConfigurationOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;aws-sdk/lib/service&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BatchGetItemInput</span><span class="p">,</span><span class="w"> </span><span class="nx">Key</span><span class="p">,</span><span class="w"> </span><span class="nx">QueryInput</span><span class="p">,</span><span class="w"> </span><span class="nx">ScanInput</span><span class="p">,</span><span class="w"> </span><span class="nx">UpdateItemInput</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;aws-sdk/clients/dynamodb&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">AWSDatabaseQuery</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudDatabase</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">AWSDatabaseCredential</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">key?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Key</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">QueryInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Key</span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchGetItemInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ScanInput</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">UpdateItemInput</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">AWSDatabaseCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">AWSStorageCredential</span><span class="p">,</span><span class="w"> </span><span class="nx">ServiceConfigurationOptions</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Empty */</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>Authentication<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Same as Storge */</span>
+
+<span class="nx">AWS_REGION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same as Storage */</span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>Example usage<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html">DynamoDB Client API</a></p></li>
+<li><p><a class="reference external" href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/dynamodb-example-query-scan.html">Query</a></p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// db.query</span>
+<span class="w">      </span><span class="nt">&quot;KeyConditionExpression&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#name = :value&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ExpressionAttributeNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;#name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;ExpressionAttributeValues&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;:value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;S&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="c1">// db.batchGet{BatchGetItemInput[RequestItems]}</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;empty&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.scan</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// BatchGetItemInput | ScanInput</span>
+<span class="w">      </span><span class="nt">&quot;ProjectionExpression&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;name&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// db.get{GetItemInput[Key]}</span>
+<span class="w">      </span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// { &quot;c&quot;: 1 }</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;b&gt;${title}&lt;/b&gt;: ${description}&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// db.update</span>
+<span class="w">      </span><span class="nt">&quot;TableName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;table&gt;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;key&gt;&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pi-r-aws">
+<h2>&#64;pi-r/aws<a class="headerlink" href="#pi-r-aws" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.7.0: </span></p>
+<ul class="simple">
+<li><p><strong>CLOUD_UPLOAD_STREAM</strong> attribute in <em>ICloudServiceClient</em> was enabled.</p></li>
+<li><p><strong>CLOUD_UPLOAD_CHUNK</strong> attribute in <em>ICloudServiceClient</em> was enabled.</p></li>
+<li><p><strong>chunkSize</strong> | <strong>chunkLimit</strong> in <em>CloudStorageUpload</em> were implemented.</p></li>
+<li><p><strong>configBucket.tags</strong> using <em>PutBucketTaggingRequest</em> was implemented.</p></li>
+<li><p><strong>configBucket.cors</strong> using <em>CORSConfiguration</em> was implemented.</p></li>
+<li><p><strong>configBucket.lifecycle</strong> using <em>LifecycleConfiguration</em> was implemented.</p></li>
+</ul>
+</div>
+<div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 0.7.0: </span></p>
+<ul class="simple">
+<li><p><strong>AWS_SESSION_TOKEN</strong> is not used when validating credentials.</p></li>
+<li><p><strong>AWS_DEFAULT_REGION</strong> is not recognized in <em>AWS NodeJS SDK</em>.</p></li>
+<li><p><em>AWSDatabaseQuery</em> property <strong>partitionKey</strong> is a duplicate of <strong>key</strong>.</p></li>
+</ul>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.6.2: </span></p>
+<ul class="simple">
+<li><p>Default providers <em>web identity token</em> and <em>remote credentials</em> environment variables are detected.</p></li>
+<li><p><strong>AWS_SDK_LOAD_CONFIG</strong> is enabled with any non empty value.</p></li>
+</ul>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 0.6.2: </span></p>
+<ul class="simple">
+<li><p>DynamoDB using <em>AWS.config.loadFromPath</em> to parse <strong>fromPath</strong> will be revised in <strong>0.7.0</strong>.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="interface.html" class="btn btn-neutral float-left" title="Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="aws-v3.html" class="btn btn-neutral float-right" title="Amazon Web Services" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inline commands &mdash; E-mc 0.9.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59d4ba9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=a1372e3e" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=61b282d3"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Attributes" href="attributes.html" />
+    <link rel="prev" title="Interface" href="interface.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            E-mc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Document</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="interface.html">Interface</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Inline commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-chrome-file">data-chrome-file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-chrome-options">data-chrome-options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-chrome-metadata">data-chrome-metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html">Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">Data Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/index.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="append.html">Appending source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="watch.html">Watch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="broadcast.html">Broadcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finalize.html">Finalize</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../image/index.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy.html">squared-functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E-mc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Document</a></li>
+      <li class="breadcrumb-item active">Inline commands</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/document/inline.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="inline-commands">
+<h1>Inline commands<a class="headerlink" href="#inline-commands" title="Link to this heading"></a></h1>
+<p>Bundles can be created with these <em>HTML</em> tag names.</p>
+<ul class="simple">
+<li><p><strong>saveAs</strong>: html + script + link + raw assets</p></li>
+<li><p><strong>exportAs</strong>: script + style</p></li>
+<li><p><strong>exclude</strong>: script + link + style</p></li>
+</ul>
+<p><em>JS</em> and <em>CSS</em> files with the same path and filename will automatically create a bundle when there are no conflicts in call ordering. <a class="footnote-reference brackets" href="#id18" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<section id="data-chrome-file">
+<h2>data-chrome-file<a class="headerlink" href="#data-chrome-file" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>path/filename</dt><dd><ol class="loweralpha simple">
+<li><p>saveAs <a class="footnote-reference brackets" href="#id19" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+<li><p>exportAs</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">::</span></code></p></li>
+<li><p>format… <a class="footnote-reference brackets" href="#id20" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-text">JSON <a class="footnote-reference brackets" href="#id21" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id33" title="Link to this code"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span> <span class="na">data-chrome-file</span><span class="o">=</span><span class="s">&#39;{ &quot;exportAs&quot;: &quot;css/prod.css&quot;, &quot;process&quot;: [&quot;lint&quot;, &quot;beautify&quot;] }&#39;</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="o">/</span><span class="mf">1.4</span><span class="w"> </span><span class="n">Helvetica</span><span class="p">,</span><span class="w"> </span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#fafafa</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-text">Key-Value <a class="footnote-reference brackets" href="#v523" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id34" title="Link to this code"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/dev.css&quot;</span> <span class="na">data-chrome-file</span><span class="o">=</span><span class="s">&#39;saveAs: css/prod.css; process: [&quot;lint&quot;, &quot;beautify&quot;]&#39;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-text">Inline (legacy)</span><a class="headerlink" href="#id35" title="Link to this code"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/dev.css&quot;</span> <span class="na">data-chrome-file</span><span class="o">=</span><span class="s">&quot;saveAs:css/prod.css::lint+beautify&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-text">Output</span><a class="headerlink" href="#id36" title="Link to this code"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/prod.css&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="data-chrome-options">
+<h2>data-chrome-options<a class="headerlink" href="#data-chrome-options" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>preserve <a class="footnote-reference brackets" href="#id22" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></dt><dd><ul>
+<li><p>html</p></li>
+<li><p>css</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>inline</dt><dd><ul>
+<li><p>js: Rendered inline with <strong>&lt;script&gt;</strong></p></li>
+<li><p>css: Rendered inline with <strong>&lt;style&gt;</strong></p></li>
+<li><p>image: Rendered as base64 from file</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>module <a class="footnote-reference brackets" href="#id23" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></dt><dd><ul>
+<li><p>js: ESM</p></li>
+<li><p>css: SASS</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>incremental <a class="footnote-reference brackets" href="#v523" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a></dt><dd><ul>
+<li><p>boolean</p></li>
+<li><p>none</p></li>
+<li><p>staging</p></li>
+<li><p>etag</p></li>
+<li><p>exist</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>extract</dt><dd><ul>
+<li><p>css: &#64;import rules are inlined into parent file <em class="lower">(same origin)</em></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>blob</dt><dd><ul>
+<li><p>image: HTML and CSS from <strong>base64</strong></p></li>
+<li><p>font: CSS from <strong>base64</strong></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>dynamic</dt><dd><ul>
+<li><p>image: “srcset” uses query parameters with an image resizer</p></li>
+<li><p>element <em class="lower">(non-void)</em>: mixed content which uses a view engine template <em class="alt">(e.g. ejs)</em></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>compress (array)</dt><dd><ul>
+<li><p>image: imagemin <a class="footnote-reference brackets" href="#id24" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p></li>
+<li><p>font: woff + woff2</p></li>
+<li><p>png: TinyPNG service <a class="footnote-reference brackets" href="#id25" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p></li>
+<li><p>gz: Gzip + <em>Zopfli</em> <a class="footnote-reference brackets" href="#id26" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p></li>
+<li><p>br: Brotli</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>static</dt><dd><ul>
+<li><p>all: Remove query string from URL</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>crossorigin</dt><dd><ul>
+<li><p>all: Same as preserveCrossOrigin <em class="lower">[download: false]</em></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>download <a class="footnote-reference brackets" href="#id27" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></dt><dd><ul>
+<li><p>all: Source files that are not usually downloaded <em class="alt">(e.g. link[rel=alternate])</em></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>hash <a class="footnote-reference brackets" href="#id28" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id29" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a></dt><dd><ul>
+<li><p>js</p></li>
+<li><p>css</p></li>
+<li><p>map</p></li>
+<li><p>img</p></li>
+<li><p>font</p></li>
+<li><p>audio</p></li>
+<li><p>video</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>remove</dt><dd><ul>
+<li><p>all: Remove element during finalization</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>charset <em class="lower">(string)</em></dt><dd><ul>
+<li><p>utf-8 <em class="lower">(default)</em></p></li>
+<li><p>utf-16</p></li>
+<li><p>utf-16le</p></li>
+<li><p>latin1</p></li>
+<li><p>utf-16be <em class="lower">(unsupported)</em></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-text">JSON <a class="footnote-reference brackets" href="#id30" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id37" title="Link to this code"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span> <span class="na">data-chrome-options</span><span class="o">=</span><span class="s">&#39;{ &quot;preserve&quot;: true, &quot;hash&quot;: &quot;md5&quot;, &quot;compress&quot;: [{ &quot;format&quot;: &quot;gz&quot; }], &quot;incremental&quot;: &quot;etag&quot;, &quot;encoding&quot;: &quot;utf-16&quot; }&#39;</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="o">/</span><span class="mf">1.4</span><span class="w"> </span><span class="n">Helvetica</span><span class="p">,</span><span class="w"> </span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#fafafa</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-text">Key-Value <a class="footnote-reference brackets" href="#id31" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id38" title="Link to this code"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/dev.css&quot;</span> <span class="na">data-chrome-options</span><span class="o">=</span><span class="s">&#39;preserve: true; hash: md5; compress: [{ &quot;format&quot;: &quot;gz&quot; }]; incremental: etag; encoding: utf-16; }&#39;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id39">
+<div class="code-block-caption"><span class="caption-text">Inline (legacy)</span><a class="headerlink" href="#id39" title="Link to this code"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/dev.css&quot;</span> <span class="na">data-chrome-options</span><span class="o">=</span><span class="s">&quot;preserve|md5|compress[gz]|incremental[etag]|utf-16&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Whitespace can be used between anything for readability.</p>
+</div>
+</section>
+<section id="data-chrome-metadata">
+<h2>data-chrome-metadata<a class="headerlink" href="#data-chrome-metadata" title="Link to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id40">
+<div class="code-block-caption"><span class="caption-text">Any plain object <a class="footnote-reference brackets" href="#id32" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id40" title="Link to this code"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;/common/util.js&quot;</span>
+  <span class="na">data-chrome-metadata</span><span class="o">=</span><span class="s">&#39;{ &quot;rollup-custom&quot;: { &quot;import-maps&quot;: {} }, &quot;terser-custom&quot;: { &quot;config&quot;: {} } }&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>Inline commands are usually sufficient for simple web pages. More advanced configurations are possible using a JSON <em class="alt">(yaml)</em> external configuration file.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;head &gt; script:nth-of-type(2), head &gt; script:nth-of-type(3)&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;js&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;saveAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;js/modules2.js&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;process&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;minify&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;custom-prop&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id18" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>MIME (mimeType) is required when bundling torrents.</p>
+</aside>
+<aside class="footnote brackets" id="id19" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Use “~” for current path and filename.</p>
+</aside>
+<aside class="footnote brackets" id="id20" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Multiple transformations per bundle can be chained using the “+” symbol.</p>
+</aside>
+<aside class="footnote brackets" id="id21" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>data-chrome-file=’<em>”exportAs”: “css/prod.css”, “process”: [“lint”, “beautify”]</em>’</p>
+</aside>
+<aside class="footnote brackets" id="id22" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">5</a><span class="fn-bracket">]</span></span>
+<p>Do not use the built-in transformers per document.</p>
+</aside>
+<aside class="footnote brackets" id="id23" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">6</a><span class="fn-bracket">]</span></span>
+<p>boolean - config | “no-module” - inline</p>
+</aside>
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">7</a><span class="fn-bracket">]</span></span>
+<p>Optionally installed NPM plugins are required. (e.g. imagemin-pngquant)</p>
+</aside>
+<aside class="footnote brackets" id="id25" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">8</a><span class="fn-bracket">]</span></span>
+<p>png | jpeg | webp</p>
+</aside>
+<aside class="footnote brackets" id="id26" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">9</a><span class="fn-bracket">]</span></span>
+<p>npm i node-zopfli</p>
+</aside>
+<aside class="footnote brackets" id="id27" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">10</a><span class="fn-bracket">]</span></span>
+<p>“true” - explicit | “false”</p>
+</aside>
+<aside class="footnote brackets" id="id28" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">11</a><span class="fn-bracket">]</span></span>
+<p>filename + content hash (productionRelease=true)</p>
+</aside>
+<aside class="footnote brackets" id="id29" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">12</a><span class="fn-bracket">]</span></span>
+<p>Value can be limited to the starting prefix. (e.g. md5[8] - Minimum is 4)</p>
+</aside>
+<aside class="footnote brackets" id="id30" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">13</a><span class="fn-bracket">]</span></span>
+<p>data-chrome-options=’<em>”preserve”: true, “hash”: “md5”, “compress”: [{ “format”: “gz” }], “encoding”: “utf-16”</em>’</p>
+</aside>
+<aside class="footnote brackets" id="id31" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">14</a><span class="fn-bracket">]</span></span>
+<p>Nested objects and arrays use strict JSON formatted attributes and strings.</p>
+</aside>
+<aside class="footnote brackets" id="id32" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">15</a><span class="fn-bracket">]</span></span>
+<p>data-chrome-metadata=’<em>”rollup-custom”: { “import-maps”: {} }, “terser-custom”: { “config”: {} }</em>’</p>
+</aside>
+<aside class="footnote brackets" id="v523" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id5">1</a>,<a role="doc-backlink" href="#id8">2</a>)</span>
+<p>squared 5.2.3 (minimum)</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="interface.html" class="btn btn-neutral float-left" title="Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="attributes.html" class="btn btn-neutral float-right" title="Attributes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

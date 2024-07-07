@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.rst linguist-detectable=true
+*.rst linguist-documentation=false
+*.rst linguist-language=reStructuredText

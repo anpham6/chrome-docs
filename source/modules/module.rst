@@ -275,9 +275,9 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 73,88,97,105-110,132-138
+  :emphasize-lines: 73,88,97,105-110,132
 
-  import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerStatus } from "./logger";
+  import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
 
   import type { BinaryLike, CipherGCMTypes } from "crypto";
@@ -408,13 +408,7 @@ Settings
           };
       };
       status?: boolean | LoggerStatus;
-      scroll?: {
-          buffer?: number | string;
-          use_color?: boolean;
-          text_wrap?: "ellipsis" | "nowrap" | "ellipsis-end" | "nowrap-end";
-          color?: ForegroundColor;
-          bg_color?: BackgroundColor;
-      };
+      progress?: LoggerProgress;
       color?: boolean;
       message?: boolean;
       stdout?: boolean;
@@ -439,9 +433,9 @@ Settings
 
 .. versionadded:: 0.10.0
 
-  - *LoggerModule* group **format** block :target:`error` was created.
+  - *LoggerModule* group **format** block :target:`error` for output display was created.
   - *LoggerModule* group **format** property **braces** were implemented.
-  - *LoggerModule* **scroll** property group was implemented.
+  - *LoggerModule* group **progress** for summary data was created.
 
 .. versionadded:: 0.8.6
 

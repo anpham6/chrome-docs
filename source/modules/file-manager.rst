@@ -233,9 +233,9 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 42-48
+  :emphasize-lines: 42
 
-  import type { BackgroundColor, ForegroundColor } from "./logger";
+  import type { BackgroundColor, ForegroundColor, LoggerProgress } from "./logger";
 
   interface ProcessModule {
       thread?: {
@@ -276,19 +276,13 @@ Settings
   }
 
   interface LoggerModule {
-      scroll?: {
-          buffer?: number | string;
-          use_color?: boolean;
-          text_wrap?: "ellipsis" | "nowrap" | "ellipsis-end" | "nowrap-end";
-          color?: ForegroundColor;
-          bg_color?: BackgroundColor;
-      };
+      progress?: LoggerProgress;
       session_id?: boolean | number;
   }
 
 .. versionadded:: 0.10.0
 
-  - *LoggerModule* **scroll** property group was implemented.
+  - *LoggerModule* property group **progress** for summary data was implemented.
 
 .. versionadded:: 0.9.0
 

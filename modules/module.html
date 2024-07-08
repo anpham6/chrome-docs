@@ -394,7 +394,7 @@
 <h2>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h2>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/squared-express/dist/squared.json">View JSON</a></span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BackgroundColor</span><span class="p">,</span><span class="w"> </span><span class="nx">ForegroundColor</span><span class="p">,</span><span class="w"> </span><span class="nx">LogMessageOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">LogTypeValue</span><span class="p">,</span><span class="w"> </span><span class="nx">LoggerStatus</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./logger&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BackgroundColor</span><span class="p">,</span><span class="w"> </span><span class="nx">ForegroundColor</span><span class="p">,</span><span class="w"> </span><span class="nx">LogMessageOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">LogTypeValue</span><span class="p">,</span><span class="w"> </span><span class="nx">LoggerProgress</span><span class="p">,</span><span class="w"> </span><span class="nx">LoggerStatus</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./logger&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LoggerProcessSettings</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./settings&quot;</span><span class="p">;</span>
 
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">CipherGCMTypes</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;crypto&quot;</span><span class="p">;</span>
@@ -525,13 +525,7 @@
 <span class="w">        </span><span class="p">};</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="w">    </span><span class="nx">status?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">LoggerStatus</span><span class="p">;</span>
-<span class="hll"><span class="w">    </span><span class="nx">scroll</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">        </span><span class="nx">buffer?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-</span><span class="hll"><span class="w">        </span><span class="nx">use_color?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
-</span><span class="hll"><span class="w">        </span><span class="nx">text_wrap</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;ellipsis&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;nowrap&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;ellipsis-end&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;nowrap-end&quot;</span><span class="p">;</span>
-</span><span class="hll"><span class="w">        </span><span class="nx">color?</span><span class="o">:</span><span class="w"> </span><span class="kt">ForegroundColor</span><span class="p">;</span>
-</span><span class="hll"><span class="w">        </span><span class="nx">bg_color?</span><span class="o">:</span><span class="w"> </span><span class="kt">BackgroundColor</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="p">};</span>
+<span class="hll"><span class="w">    </span><span class="nx">progress?</span><span class="o">:</span><span class="w"> </span><span class="kt">LoggerProgress</span><span class="p">;</span>
 </span><span class="w">    </span><span class="nx">color?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">message?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">stdout?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
@@ -559,9 +553,9 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>LoggerModule</em> group <strong>format</strong> block <em class="target">error</em> was created.</p></li>
+<li><p><em>LoggerModule</em> group <strong>format</strong> block <em class="target">error</em> for output display was created.</p></li>
 <li><p><em>LoggerModule</em> group <strong>format</strong> property <strong>braces</strong> were implemented.</p></li>
-<li><p><em>LoggerModule</em> <strong>scroll</strong> property group was implemented.</p></li>
+<li><p><em>LoggerModule</em> group <strong>progress</strong> for summary data was created.</p></li>
 </ul>
 </div>
 <div class="versionadded">

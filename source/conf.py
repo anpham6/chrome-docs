@@ -17,7 +17,7 @@ release = '0.9.5'
 extensions = ['sphinx.ext.intersphinx']
 
 intersphinx_mapping = {
-  'android': ('https://squared.readthedocs.io/en/latest', ('../../android-docs/build/html/objects.inv', None)),
+  'android': ('https://squared.readthedocs.io/en/latest', None),
 }
 
 templates_path = ['_templates']

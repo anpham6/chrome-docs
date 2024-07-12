@@ -323,7 +323,7 @@ Example usage
 
   const requestData = {
     assets: [
-      { pathname: "output", filename: "image1.png", uri: "http://hostname/path/document1.png" },
+      { pathname: "output", uri: "http://hostname/path/document1.png" }, // filename is "document1.png"
       { pathname: "output", filename: "image2.png", uri: "http://hostname/path/document2.png" }
     ],
     incremental: "etag",

@@ -198,6 +198,7 @@ Interface
 
 .. versionremoved:: 0.10.0
 
+  - Method **formatTime** with argument :alt:`char` as "**:**" displays using digital clock format.
   - :alt:`type` **Writeable** was renamed :target:`Writable`.
   - :alt:`interface` **GetTempDirOptions** in **module** was renamed :target:`TempDirOptions`.
   - :alt:`type` **NormalizeFlags** in **module** was removed.

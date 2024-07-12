@@ -224,7 +224,9 @@
 <span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">sessionId</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">broadcastId</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">broadcastId</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
-<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">logType</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">LOG_TYPE</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">silent</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">silent</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">logType</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">LOG_TYPE</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">logLevel</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">logLevel</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">statusType</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">STATUS_TYPE</span><span class="p">;</span>
@@ -348,6 +350,7 @@
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">
 <li><p><em>ModuleConstructor</em> static property <strong>PLATFORM_WIN32</strong> was created.</p></li>
+<li><p><em>IModule</em> property <strong>silent</strong> for console messages was created.</p></li>
 </ul>
 </div>
 <div class="deprecated">

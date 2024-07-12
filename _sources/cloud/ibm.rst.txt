@@ -204,6 +204,14 @@ Example usage
         "db": "demo",
         "docs": [{ "id": "1" }] // BulkGetQueryDocument[]
       },
+      "params": { // ibm.postExplain
+        "db": "demo",
+        "selector": { // [ExplainResult]
+          "year": {
+            "$gt": "2024"
+          }
+        }
+      },
       "params": { // ibm.postAllDocsQueries
         "db": "demo",
         "queries": [{ "key": "1" }] // AllDocsQuery[]
@@ -217,6 +225,10 @@ Example usage
       "id": "1" // Same as item being retrieved
     }
   }
+
+.. versionadded:: 0.8.0
+
+  - *Cloudant* method **postExplain** as a single *ExplainResult* is supported.
 
 .. versionadded:: 0.7.0
 

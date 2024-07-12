@@ -11,7 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 158
+  :emphasize-lines: 109-110,160
 
   import type { LogStatus } from "./squared";
 
@@ -121,6 +121,8 @@ Interface
       get sessionId(): string;
       set broadcastId(value);
       get broadcastId(): string | string[];
+      set silent(value);
+      get silent(): boolean;
       get logType(): LOG_TYPE;
       set logLevel(value: number | string);
       get logLevel(): number;
@@ -242,6 +244,7 @@ Interface
 .. versionadded:: 0.10.0
 
   - *ModuleConstructor* static property **PLATFORM_WIN32** was created.
+  - *IModule* property **silent** for console messages was created.
 
 .. deprecated:: 0.10.0
 
@@ -275,7 +278,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 73,88,97,105-110,132
+  :emphasize-lines: 59,74,89,98,106-111,133
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -335,6 +338,7 @@ Settings
 
   interface TempModule {
       dir?: string;
+      env?: string;
       write?: boolean;
   }
 
@@ -434,8 +438,9 @@ Settings
 .. versionadded:: 0.10.0
 
   - *LoggerModule* group **format** block :target:`error` for output display was created.
-  - *LoggerModule* group **format** property **braces** were implemented.
+  - *LoggerModule* group **format** property **braces** for text separation was implemented.
   - *LoggerModule* group **progress** for summary data was created.
+  - *TempModule* property **env** for system user local temp directory was implemented.
 
 .. versionadded:: 0.8.6
 

@@ -455,7 +455,8 @@
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">TempModule</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">dir?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">write?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">env?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">write?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">LoggerModule</span><span class="w"> </span><span class="p">{</span>
@@ -557,8 +558,9 @@
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">
 <li><p><em>LoggerModule</em> group <strong>format</strong> block <em class="target">error</em> for output display was created.</p></li>
-<li><p><em>LoggerModule</em> group <strong>format</strong> property <strong>braces</strong> were implemented.</p></li>
+<li><p><em>LoggerModule</em> group <strong>format</strong> property <strong>braces</strong> for text separation was implemented.</p></li>
 <li><p><em>LoggerModule</em> group <strong>progress</strong> for summary data was created.</p></li>
+<li><p><em>TempModule</em> property <strong>env</strong> for system user local temp directory was implemented.</p></li>
 </ul>
 </div>
 <div class="versionadded">

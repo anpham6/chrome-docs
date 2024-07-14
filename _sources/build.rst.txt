@@ -328,6 +328,83 @@ The order of precedence when using :target:`inherit` is resolved through the ass
 
 .. tip:: The filename ``sqd.config`` is configurable using **settings.outputConfigName**.
 
+Example data source
+-------------------
+
+There is no difference between using a data source for a web page and for configuration. JSON stored in ``key-value`` document format is the same as unstructured JSON stored in a file.
+
+.. code-block::
+  :caption: DB
+
+  squared.copyTo("/path/output", {
+    config: {
+      inherit: "preserve", // Data source only (optional)
+      document: "chrome", // Required with DB
+      dataSource: [{
+        "source": "redis",
+        "uri": "redis://redis-6379.c60.us-west-1-2.ec2.cloud.redislabs.com:6379",
+        "username": "squared",
+        "password": "************",
+        "key": "config:1",
+        "format": "JSON"
+      },
+      {
+        "source": "redis",
+        "uri": "redis://redis-6379.c60.us-west-1-2.ec2.cloud.redislabs.com:6379",
+        "username": "squared",
+        "password": "************",
+        "key": "config:2",
+        "format": "JSON"
+      }]
+    }
+  });
+
+.. tip:: When using "**preserve**" the last config is parsed first and each subsequent config in reverse order only adds new properties without overwriting. Any other value is merged using the same rules as ``sqd.config``.
+
+.. code-block::
+  :caption: Cloud
+
+  squared.copyTo("/path/output", {
+    config: {
+      dataSource: [{
+        "source": "cloud",
+        "service": "aws-v3",
+        "credential": {
+          "credentials": {
+            "accessKeyId": "************",
+            "secretAccessKey": "************"
+          }
+        },
+        "table": "demo",
+        "query": {
+          "KeyConditionExpression": "#name = :value",
+          "ExpressionAttributeNames": {
+            "#name": "id"
+          },
+          "ExpressionAttributeValues": {
+            ":value": 1
+          }
+        },
+        "limit": 1
+      },
+      {
+        "source": "cloud",
+        "service": "gcp",
+        "credential": "firestore-config",
+        "query": "demo",
+        "orderBy": [
+          [
+            "orderByKey"
+          ],
+          [
+            "limitToFirst",
+            1
+          ]
+        ]
+      }]
+    }
+  });
+
 .. [#] https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap
 .. [#] npm i json5
 .. [#] npm i toml

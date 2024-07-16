@@ -3,6 +3,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :emphasize-lines: 31
 
   interface AssetCommand {
       selector: string;
@@ -34,7 +35,7 @@ Interface
       rewrite?: URLData; // Replace certain URL components (e.g. hostname)
       download?: boolean; // Forces processing for unknown types (default is "true" for known types)
 
-      hash?: "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512";
+      hash?: "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512" | "ripemd";
       hash?: "md5[8]" // Will shorten hash to the first 8 characters
 
       checksum?: string | { algorithm: string; value: string; digest?: string }; // Download URI (default is "sha256")
@@ -74,3 +75,7 @@ Interface
       type: "replace";
       textContent: string; // Replace element.innerHTML
   }
+
+.. versionadded:: 0.10.0
+
+  - *AssetCommand* property **hash** with value as :alt:`ripemd` was implemented.

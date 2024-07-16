@@ -62,6 +62,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 17
 
   import type { PermittedDirectories } from "./core";
 
@@ -79,6 +80,7 @@ Settings
           key?: string;
           cert?: string;
           passphrase?: string;
+          ciphers?: string;
           version?: SecureVersion;
       };
       settings?: {
@@ -87,6 +89,10 @@ Settings
       };
       permission?: PermittedDirectories;
   }
+
+.. versionadded:: 0.10.0
+
+  - *WatchModule* group **secure** property **ciphers** was implemented.
 
 Example usage
 -------------

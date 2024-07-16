@@ -262,7 +262,7 @@ Other formats can be compressed similarly using `imagemin <https://github.com/im
     ]
   }
 
-If no exact match is found using *format* then all plugins will be applied to the unknown image. Multiple plugins of the same MIME will be processed in a series.
+When *format* is not defined the plugin will be applied to all images. [#]_ Multiple plugins of the same MIME will be processed in a series.
 
 data-chrome-commands
 ====================
@@ -295,3 +295,4 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 .. [#] srcOver | dstOver | multiply | add | screen | overlay | darken | lighten | hardLight | difference | exclusion
 .. [#] left - 1 | center - 2 | right - 4 | top - 8 | middle - 16 | bottom - 32
 .. [#] png | jpeg | webp
+.. [#] e-mc 0.10

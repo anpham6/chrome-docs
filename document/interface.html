@@ -131,8 +131,8 @@
 <span class="w">    </span><span class="nx">rewrite?</span><span class="o">:</span><span class="w"> </span><span class="kt">URLData</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace certain URL components (e.g. hostname)</span>
 <span class="w">    </span><span class="nx">download?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Forces processing for unknown types (default is &quot;true&quot; for known types)</span>
 
-<span class="w">    </span><span class="nx">hash</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;md5&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;sha1&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;sha224&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;sha256&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;sha384&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;sha512&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">hash</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;md5[8]&quot;</span><span class="w"> </span><span class="c1">// Will shorten hash to the first 8 characters</span>
+<span class="hll"><span class="w">    </span><span class="nx">hash</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;md5&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;sha1&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;sha224&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;sha256&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;sha384&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;sha512&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;ripemd&quot;</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">hash</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;md5[8]&quot;</span><span class="w"> </span><span class="c1">// Will shorten hash to the first 8 characters</span>
 
 <span class="w">    </span><span class="nx">checksum?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">algorithm</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="nx">digest?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// Download URI (default is &quot;sha256&quot;)</span>
 <span class="w">    </span><span class="nx">checksumOutput?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">};</span><span class="w"> </span><span class="c1">// Expected locally transformed result</span>
@@ -172,6 +172,12 @@
 <span class="w">    </span><span class="nx">textContent</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace element.innerHTML</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.0: </span></p>
+<ul class="simple">
+<li><p><em>AssetCommand</em> property <strong>hash</strong> with value as <em class="alt">ripemd</em> was implemented.</p></li>
+</ul>
 </div>
 </section>
 

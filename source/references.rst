@@ -28,11 +28,18 @@ https://unpkg.com/squared/types/base/file.d.ts
   | `DbDataSource <search.html?q=DbDataSource>`_
   | `FileAsset <search.html?q=FileAsset>`_
   | `LogStatus <search.html?q=LogStatus>`_
+  | `RequestData <search.html?q=RequestData>`_
 
 .. _references-e-mc:
 
 E-mc
 ====
+
+.. _references-e-mc-types:
+.. rst-class:: block-list
+
+https://unpkg.com/@e-mc/types/index.d.ts
+  | `CloneObjectOptions <search.html?q=CloneObjectOptions>`_
 
 .. _references-e-mc-types-lib-main:
 .. rst-class:: block-list
@@ -142,3 +149,14 @@ https://nodejs.org/api/tls.html
 
 https://nodejs.org/api/url.html
   | `URL <search.html?q=URL>`_
+
+.. _references-mdn:
+
+MDN
+===
+
+.. _references-mdn-dom-exception:
+.. rst-class:: block-list
+
+https://developer.mozilla.org/en-US/docs/Web/API/DOMException
+  | `DOMException <search.html?q=DOMException>`_

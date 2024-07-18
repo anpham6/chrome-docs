@@ -9,16 +9,15 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 51
+  :emphasize-lines: 7,50
 
   import type { LogArguments } from "./lib/logger";
-  import type { CloneObjectOptions } from "./lib/module";
 
   import type { BytesOptions } from "bytes";
   import type { BinaryLike, CipherGCMTypes, Encoding, RandomUUIDOptions } from 'crypto';
 
   function createAbortError(reject: true): Promise<never>;
-  function createAbortError(): Error;
+  function createAbortError(): DOMException;
   function hasBit(value: unknown, flags: number): boolean;
   function ignoreFlag(value: unknown): boolean;
   function cloneFlag(value: unknown): boolean;
@@ -198,7 +197,9 @@ Interface
 
 .. versionremoved:: 0.10.0
 
+  - Method **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name "**AbortError**" and code **20**.
   - Method **formatTime** with argument :alt:`char` as "**:**" displays using digital clock format.
+  - :alt:`interface` **CloneObjectOptions** in :target:`module` was relocated to **types**.
   - :alt:`type` **Writeable** was renamed :target:`Writable`.
   - :alt:`interface` **GetTempDirOptions** in **module** was renamed :target:`TempDirOptions`.
   - :alt:`type` **NormalizeFlags** in **module** was removed.
@@ -236,6 +237,7 @@ Interface
 References
 ==========
 
+- https://www.unpkg.com/@e-mc/types/index.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/module.d.ts
 

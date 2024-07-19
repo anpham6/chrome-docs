@@ -116,14 +116,13 @@
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/index.d.ts">View Source</a></span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LogArguments</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./lib/logger&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CloneObjectOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./lib/module&quot;</span><span class="p">;</span>
 
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BytesOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;bytes&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">Encoding</span><span class="p">,</span><span class="w"> </span><span class="nx">RandomUUIDOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;crypto&#39;</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">createAbortError</span><span class="p">(</span><span class="nx">reject</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">never</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">createAbortError</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">hasBit</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">flags</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">createAbortError</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">DOMException</span><span class="p">;</span>
+</span><span class="kd">function</span><span class="w"> </span><span class="nx">hasBit</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">flags</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">ignoreFlag</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">cloneFlag</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">usingFlag</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
@@ -305,7 +304,9 @@
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.10.0: </span></p>
 <ul>
+<li><p>Method <strong>createAbortError</strong> uses built-in <em>DOMException</em> <em class="alt">(NodeJS 17)</em> with name “<strong>AbortError</strong>” and code <strong>20</strong>.</p></li>
 <li><p>Method <strong>formatTime</strong> with argument <em class="alt">char</em> as “<strong>:</strong>” displays using digital clock format.</p></li>
+<li><p><em class="alt">interface</em> <strong>CloneObjectOptions</strong> in <em class="target">module</em> was relocated to <strong>types</strong>.</p></li>
 <li><p><em class="alt">type</em> <strong>Writeable</strong> was renamed <em class="target">Writable</em>.</p></li>
 <li><p><em class="alt">interface</em> <strong>GetTempDirOptions</strong> in <strong>module</strong> was renamed <em class="target">TempDirOptions</em>.</p></li>
 <li><p><em class="alt">type</em> <strong>NormalizeFlags</strong> in <strong>module</strong> was removed.</p></li>
@@ -359,6 +360,7 @@
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
 <ul class="simple">
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/index.d.ts">https://www.unpkg.com/&#64;e-mc/types/index.d.ts</a></p></li>
 <li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/logger.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/logger.d.ts</a></p></li>
 <li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/module.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/module.d.ts</a></p></li>
 </ul>

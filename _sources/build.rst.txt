@@ -338,11 +338,15 @@ There is no difference between using a data source for a web page and for config
 
   squared.copyTo("/path/output", {
     config: {
-      inherit: "preserve", // Data source only (optional)
+      inherit: {
+        preserve: true, // Cascade into all object properties
+        append: true, // Concatenate arrays
+        depth: 1 // Nested arrays (e.g. "elements")
+      },
       document: "chrome", // Required with DB
       dataSource: [{
         "source": "redis",
-        "uri": "redis://redis-6379.c60.us-west-1-2.ec2.cloud.redislabs.com:6379",
+        "uri": "redis://redis-6379.redislabs.com:6379",
         "username": "squared",
         "password": "************",
         "key": "config:1",
@@ -350,7 +354,7 @@ There is no difference between using a data source for a web page and for config
       },
       {
         "source": "redis",
-        "uri": "redis://redis-6379.c60.us-west-1-2.ec2.cloud.redislabs.com:6379",
+        "uri": "redis://redis-6379.redislabs.com:6379",
         "username": "squared",
         "password": "************",
         "key": "config:2",
@@ -359,7 +363,7 @@ There is no difference between using a data source for a web page and for config
     }
   });
 
-.. tip:: When using "**preserve**" the last config is parsed first and each subsequent config in reverse order only adds new properties without overwriting. Any other value is merged using the same rules as ``sqd.config``.
+.. tip:: When using "**preserve**" the first config is used as the base. Each subsequent config adds missing properties to existing objects and creates any missing objects.
 
 .. code-block::
   :caption: Cloud

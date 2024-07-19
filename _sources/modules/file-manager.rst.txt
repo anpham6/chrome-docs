@@ -11,7 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 69,110-115
+  :emphasize-lines: 69,110-116
 
   import type { DataSource, IncrementalMatch, TaskAction } from "./squared";
 
@@ -126,6 +126,7 @@ Interface
       finalizeDocument(): Promise<void>;
       finalizeTask(assets: (ExternalAsset & Required<TaskAction>)[]): Promise<void>;
       finalizeCloud(): Promise<void>;
+      finalizeChecksum(): Promise<void>;
       finalizeCleanup(): Promise<void>;
       finalize(): Promise<void>;
       close(): void;
@@ -201,6 +202,7 @@ Interface
 .. versionadded:: 0.10.0
 
   - *IFileManager* method **checkFilename** for duplicate destination renames was created.
+  - *IFileManager* method **finalizeChecksum** for directory hash validation was created.
   - *IFileManager* methods return value was modified to :target:`Promise<void>`:
 
     .. hlist::
@@ -323,12 +325,13 @@ Example usage
 
   const requestData = {
     assets: [
-      { pathname: "output", uri: "http://hostname/path/document1.png" }, // filename is "document1.png"
-      { pathname: "output", filename: "image2.png", uri: "http://hostname/path/document2.png" }
+      { uri: "http://hostname/path/document1.png" }, // /path/workspace/document1.png
+      { pathname: "output", uri: "http://hostname/path/unknown", mimeType: "image/png" }, // /path/workspace/output/unknown.png
+      { pathname: "output", filename: "image2.png", uri: "http://hostname/path/document2.png" } // /path/workspace/output/image2.png
     ],
     incremental: "etag",
     threads: 8,
-    log: { showSize: true, showProgress: true }
+    log: { showSize: true, showProgress: true, showDiff: ["text/css", "javascript"] }
   };
 
   const instance = new FileManager("/path/workspace", requestData, { disk_write: ["/path/workspace/output/**"] });

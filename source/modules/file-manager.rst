@@ -231,7 +231,6 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 42-48
 
   import type { BackgroundColor, ForegroundColor } from "./logger";
 
@@ -274,13 +273,6 @@ Settings
   }
 
   interface LoggerModule {
-      scroll?: {
-          min?: number | string;
-          max?: number | string;
-          grow?: number | string;
-          color?: ForegroundColor;
-          bg_color?: BackgroundColor;
-      };
       session_id?: boolean | number;
   }
 

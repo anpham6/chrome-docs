@@ -6,7 +6,7 @@ Built-In
 
 #. compile
 #. bundle[-es6]
-#. lint
+#. lint[-v9]
 #. es5
 #. transform
 #. beautify
@@ -76,6 +76,9 @@ JS
   * - `eslint <https://github.com/eslint/eslint>`_
     - @pi-r/eslint
     - 3
+  * - `eslint-v9 <https://github.com/eslint/eslint>`_
+    - @pi-r/eslint-v9
+    - 3
   * - `prettier <https://github.com/prettier/prettier>`_
     - @pi-r/prettier
     - 6
@@ -95,10 +98,10 @@ Deprecated
 
   * - `html-minifier <https://github.com/kangax/html-minifier>`_
     - @pi-r/html-minifier [#]_
-    - 0.7.1
+    - 0.7.3
   * - `uglify-js <https://github.com/mishoo/UglifyJS>`_
     - @pi-r/uglify-js [#]_
-    - 0.7.1
+    - 0.7.3
 
 These plugins can be configured using a plain object in ``settings.transform``. Import maps [#]_ are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.
 

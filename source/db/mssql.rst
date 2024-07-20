@@ -131,3 +131,10 @@ Example usage
       }
     }
   }
+
+@pi-r/mssql
+===========
+
+.. versionadded:: 0.8.0
+
+  - NPM package **tedious** was upgraded from **16.7** to :target:`18.3` with minimum :alt:`NodeJS 20` requirement.

@@ -16,7 +16,6 @@ Interface
 
   import type { BytesOptions } from "bytes";
   import type { BinaryLike, CipherGCMTypes, Encoding, RandomUUIDOptions } from 'crypto';
-  import type { HighResolutionTime } from "perf_hooks";
 
   function createAbortError(reject: true): Promise<never>;
   function createAbortError(): Error;
@@ -236,6 +235,7 @@ Interface
 References
 ==========
 
+- https://www.unpkg.com/@e-mc/types/lib/object.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/module.d.ts
 

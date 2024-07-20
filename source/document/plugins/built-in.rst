@@ -95,10 +95,10 @@ Deprecated
 
   * - `html-minifier <https://github.com/kangax/html-minifier>`_
     - @pi-r/html-minifier [#]_
-    - 0.7.1
+    - 0.7.3
   * - `uglify-js <https://github.com/mishoo/UglifyJS>`_
     - @pi-r/uglify-js [#]_
-    - 0.7.1
+    - 0.7.3
 
 These plugins can be configured using a plain object in ``settings.transform``. Import maps [#]_ are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.
 

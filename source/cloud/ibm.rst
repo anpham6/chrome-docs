@@ -218,6 +218,9 @@ Example usage
     }
   }
 
+@pi-r/ibm
+=========
+
 .. versionadded:: 0.7.0
 
   - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.

@@ -53,6 +53,9 @@ Interface
       new(module?: WatchModule): IWatch;
   }
 
+Changelog
+=========
+
 .. versionremoved:: 0.9.0
 
   - Constructor **new(interval, port, securePort, extensions)** did not conform with ``Module.init()``. 

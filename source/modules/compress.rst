@@ -50,6 +50,9 @@ Interface
       new(module?: CompressModule): ICompress;
   }
 
+Changelog
+=========
+
 .. versionadded:: 0.10.0
 
   - *ICompress* property **chunkSize** was converted into a 1KB aligned accessor.

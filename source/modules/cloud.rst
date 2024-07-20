@@ -88,6 +88,9 @@ Interface
       executeBatchQuery?(this: ICloud, credential: unknown, batch: CloudDatabase[], sessionKey?: string): Promise<BatchQueryResult>;
   }
 
+Changelog
+=========
+
 .. versionadded:: 0.10.0
 
   - *CloudConstructor* method **finalize** return value was modified to :target:`Promise<boolean>`.

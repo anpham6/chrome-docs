@@ -55,6 +55,9 @@ Interface
       username: string;
   }
 
+Changelog
+=========
+
 .. versionadded:: 0.10.0
 
   - *ITransformSeries* method **upgradeESM** for using internal dependencies was created.

@@ -195,6 +195,9 @@ Interface
 
   const IMPORT_MAP: StringMap;
 
+Changelog
+=========
+
 .. versionremoved:: 0.10.0
 
   - Method **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name "**AbortError**" and code **20**.

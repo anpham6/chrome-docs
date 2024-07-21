@@ -76,9 +76,6 @@ JS
   * - `eslint <https://github.com/eslint/eslint>`_
     - @pi-r/eslint
     - 3
-  * - `eslint-v9 <https://github.com/eslint/eslint>`_
-    - @pi-r/eslint-v9
-    - 3
   * - `prettier <https://github.com/prettier/prettier>`_
     - @pi-r/prettier
     - 6

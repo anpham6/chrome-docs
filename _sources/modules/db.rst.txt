@@ -99,6 +99,9 @@ Interface
       new(pool: unknown, poolKey: string, uuidKey?: AuthValue | null): IDbPool;
   }
 
+Changelog
+=========
+
 .. versionadded:: 0.10.0
 
   - *DbPoolConstructor* static property **CACHE_UNUSED** for unused pool attributes was created.

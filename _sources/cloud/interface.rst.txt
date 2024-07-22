@@ -78,6 +78,9 @@ Interface
       waitStatus?: boolean;
   }
 
+Changelog
+=========
+
 .. versionadded:: 0.9.0
 
   - *CloudStorageAction* property **chunkSize** | **chunkLimit** for parallel multipart operations.
@@ -212,10 +215,6 @@ Internal use of these libraries that do not require credentials validation durin
       }
     }
   }
-
-.. versionadded:: 0.9.0
-
-  - Credentials validation bypass settings in **squared.cloud.json** :alt:`(1.4.0)` were created.
 
 Storage
 -------

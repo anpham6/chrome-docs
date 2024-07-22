@@ -169,6 +169,9 @@ Interface
       get uncWrite(): boolean;
   }
 
+Changelog
+=========
+
 .. versionadded:: 0.10.0
 
   - *IClientDb* method **getCacheResult** was created.

@@ -199,6 +199,9 @@ Interface
       new(baseDirectory: string, config: RequestData, permission?: IPermission | null, postFinalize?: PostFinalizeCallback): IFileManager;
   }
 
+Changelog
+=========
+
 .. versionadded:: 0.10.0
 
   - *IFileManager* method **checkFilename** for duplicate destination renames was created.

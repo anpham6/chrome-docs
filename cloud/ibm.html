@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59d4ba9d" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=a1372e3e" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=c0ca9ac3" />
 
   
   <!--[if lt IE 9]>
@@ -61,6 +61,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">IBM</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#storage">Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pi-r-ibm">&#64;pi-r/ibm</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="minio.html">MinIO</a></li>
@@ -94,7 +95,6 @@
           <li class="breadcrumb-item"><a href="index.html">Cloud</a></li>
       <li class="breadcrumb-item active">IBM Cloud</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/cloud/ibm.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -329,9 +329,33 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+</section>
+</section>
+<section id="pi-r-ibm">
+<h2>&#64;pi-r/ibm<a class="headerlink" href="#pi-r-ibm" title="Link to this heading"></a></h2>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.0: </span></p>
-<ul class="simple">
+<ul>
+<li><p>NPM packages upgraded with a minimum <em class="alt">NodeJS 18</em> requirement:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Package</p></th>
+<th class="head"><p>From</p></th>
+<th class="head"><p>To</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>&#64;ibm-cloud/cloudant</strong></p></td>
+<td><p>0.9</p></td>
+<td><p>0.10</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ibm-cloud-sdk-core</strong></p></td>
+<td><p>4.3</p></td>
+<td><p>5.0</p></td>
+</tr>
+</tbody>
+</table>
+</li>
 <li><p><em>Cloudant</em> method <strong>postExplain</strong> as a single <em>ExplainResult</em> is supported.</p></li>
 </ul>
 </div>
@@ -344,13 +368,13 @@
 <li><p><strong>configBucket.lifecycle</strong> using <em>LifecycleConfiguration</em> was implemented.</p></li>
 </ul>
 </div>
+<p>ibm-cloud-sdk-core</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-compatibility-api">https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-compatibility-api</a></p>
 </aside>
 </aside>
-</section>
 </section>
 </section>
 

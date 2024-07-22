@@ -76,6 +76,9 @@ Interface
       textContent: string; // Replace element.innerHTML
   }
 
+Changelog
+=========
+
 .. versionadded:: 0.10.0
 
   - *AssetCommand* property **hash** with value as :alt:`ripemd` was implemented.

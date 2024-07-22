@@ -466,8 +466,11 @@ Only one function can be defined per ``<script type="text/template">`` element.
 
 .. warning:: Using ``<script>`` templates requires the setting :code:`eval.template = true`.
 
+Changelog
+=========
+
 @pi-r/chrome
-============
+------------
 
 .. versionadded:: 0.7.0
 

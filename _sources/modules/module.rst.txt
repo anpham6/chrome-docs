@@ -241,6 +241,9 @@ Interface
       new(): IModule<IHost>;
   }
 
+Changelog
+=========
+
 .. versionadded:: 0.10.0
 
   - *ModuleConstructor* static property **PLATFORM_WIN32** was created.

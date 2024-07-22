@@ -168,8 +168,11 @@ It is not integrated with the *NodeJS* build system and the images might not app
     <link rel="manifest" href="/manifest.json" data-chrome-file="ignore">
   </head>
 
+Changelog
+=========
+
 squared
-=======
+-------
 
 .. versionadded:: 5.2.0
 
@@ -180,7 +183,7 @@ squared
   - *AssetCommand* property **attributes** hash map values can be replaced using search **{{params}}** syntax.
 
 @pi-r/chrome
-============
+------------
 
 .. versionadded:: 0.6.4
 

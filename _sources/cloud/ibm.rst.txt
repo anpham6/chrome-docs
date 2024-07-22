@@ -226,7 +226,19 @@ Example usage
     }
   }
 
+@pi-r/ibm
+=========
+
 .. versionadded:: 0.8.0
+
+  - NPM packages upgraded with a minimum :alt:`NodeJS 18` requirement:
+
+    ======================= ====== =====
+            Package           From    To
+    ======================= ====== =====
+    **@ibm-cloud/cloudant**    0.9  0.10
+    **ibm-cloud-sdk-core**     4.3   5.0
+    ======================= ====== =====
 
   - *Cloudant* method **postExplain** as a single *ExplainResult* is supported.
 
@@ -236,5 +248,7 @@ Example usage
   - **CLOUD_UPLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
   - **configBucket.cors** using *CORSConfiguration* was implemented.
   - **configBucket.lifecycle** using *LifecycleConfiguration* was implemented.
+
+ibm-cloud-sdk-core
 
 .. [#] https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-compatibility-api

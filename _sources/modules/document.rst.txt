@@ -83,6 +83,9 @@ Interface
       new(module?: DocumentModule, ...args: unknown[]): IDocument;
   }
 
+Changelog
+=========
+
 .. versionadded:: 0.9.0
 
   - *IDocument* property **config** was made abstract.

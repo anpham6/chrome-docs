@@ -150,3 +150,10 @@ Thick Mode
        */
       libDir?: string | undefined;
   }
+
+@pi-r/oracle
+============
+
+.. versionadded:: 0.8.0
+
+  - *OracleCredential* property **connectString** | **connectionString** with `Centralized Configuration Providers <https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connecting-using-centralized-configuration-providers>`_ is supported.

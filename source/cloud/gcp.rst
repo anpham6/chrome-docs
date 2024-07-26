@@ -315,7 +315,10 @@ Firestore
         "key1": "__delete__", // FieldValue.delete()
         "key2": "__increment__", // FieldValue.increment(1)
         "key2": "__increment<number>__", // FieldValue.increment(number)
-        "key3": "__serverTimestamp__" // FieldValue.serverTimestamp()
+        "key3": "__serverTimestamp__", // FieldValue.serverTimestamp()
+        "key4": "__vector<1, 2, 3>__", // FieldValue.vector([1, 2, 3])
+        "key4": "__arrayUnion<a, b, c>__", // FieldValue.arrayUnion("a", "b", "c")
+        "key4": "__arrayRemove<1, [2\\, 3\\, 4], 5>__" // FieldValue.arrayRemove(1, [2, 3, 4], 5)
       },
       "id": "8Qnt83DSNW0eNykpuzcQ" // Same as item being retrieved
     }
@@ -437,7 +440,7 @@ Datastore
   - start
 
 Bigtable
-^^^^^^^^^
+^^^^^^^^
 
 - https://cloud.google.com/bigtable
 - `Client API <https://googleapis.dev/nodejs/bigtable/latest>`__
@@ -473,7 +476,7 @@ Bigtable
   }
 
 Spanner
-^^^^^^^^^
+^^^^^^^
 
 - https://cloud.google.com/spanner
 - `Client API <https://googleapis.dev/nodejs/spanner/latest>`__
@@ -586,6 +589,7 @@ Realtime Database
 
   - Storage action **download** using **createReadStream** with :alt:`chunkLimit` was implemented.
   - *Firestore* method **findNearest** as a *VectorQuery* and *Query* is supported.
+  - *Firestore* property **update** supports using *FieldValue<"vector" | "arrayUnion" | "arrayRemove">* methods.
 
 .. versionadded:: 0.7.1
 

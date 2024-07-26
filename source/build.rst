@@ -331,7 +331,7 @@ The order of precedence when using :target:`inherit` is resolved through the ass
 Example data source
 -------------------
 
-There is no difference between using a data source for a web page and for configuration. JSON stored in ``key-value`` document format is the same as unstructured JSON stored in a file.
+There is no difference between using a data source for a web page and for configuration. *JSON* stored in ``key-value`` document format is the same as unstructured *JSON* stored in a file.
 
 .. code-block::
   :caption: DB

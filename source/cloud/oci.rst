@@ -181,6 +181,10 @@ Example usage
 @pi-r/oci
 =========
 
+.. versionadded:: 0.8.0
+
+  - *OCIDatabaseCredential* property **connectString** | **connectionString** with `Centralized Configuration Providers <https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connecting-using-centralized-configuration-providers>`_ is supported.
+
 .. versionadded:: 0.7.0
 
   - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.

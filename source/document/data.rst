@@ -168,7 +168,7 @@ Reusing configuration templates is possible with URL search parameters. All para
     }
   }
 
-.. note:: JSON will be sent by default for *POST* when both **format** and **contentType** are empty.
+.. note:: *JSON* will be sent by default for *POST* when both **format** and **contentType** are empty.
 
 Local file "local"
 ==================

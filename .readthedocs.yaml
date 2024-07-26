@@ -30,9 +30,10 @@ search:
     document/plugins/*: 6
     modules/*: 6
     build.html: 6
-    references.html: 5
-    "*/interface.html": -1
-    legacy.html: -2
+    references.html: 3
+    "*/settings.html": 2
+    "*/interface.html": 0
+    legacy.html: -1
   ignore:
   - index.html
   - versions.html

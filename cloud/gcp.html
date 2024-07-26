@@ -419,7 +419,10 @@
 <span class="w">      </span><span class="nt">&quot;key1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__delete__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.delete()</span>
 <span class="w">      </span><span class="nt">&quot;key2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__increment__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.increment(1)</span>
 <span class="w">      </span><span class="nt">&quot;key2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__increment&lt;number&gt;__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.increment(number)</span>
-<span class="w">      </span><span class="nt">&quot;key3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__serverTimestamp__&quot;</span><span class="w"> </span><span class="c1">// FieldValue.serverTimestamp()</span>
+<span class="w">      </span><span class="nt">&quot;key3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__serverTimestamp__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.serverTimestamp()</span>
+<span class="w">      </span><span class="nt">&quot;key4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__vector&lt;1, 2, 3&gt;__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.vector([1, 2, 3])</span>
+<span class="w">      </span><span class="nt">&quot;key4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__arrayUnion&lt;a, b, c&gt;__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.arrayUnion(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</span>
+<span class="w">      </span><span class="nt">&quot;key4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__arrayRemove&lt;1, [2\\, 3\\, 4], 5&gt;__&quot;</span><span class="w"> </span><span class="c1">// FieldValue.arrayRemove(1, [2, 3, 4], 5)</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
 <span class="w">  </span><span class="p">}</span>
@@ -719,6 +722,7 @@
 <ul class="simple">
 <li><p>Storage action <strong>download</strong> using <strong>createReadStream</strong> with <em class="alt">chunkLimit</em> was implemented.</p></li>
 <li><p><em>Firestore</em> method <strong>findNearest</strong> as a <em>VectorQuery</em> and <em>Query</em> is supported.</p></li>
+<li><p><em>Firestore</em> property <strong>update</strong> supports using <em>FieldValue&lt;”vector” | “arrayUnion” | “arrayRemove”&gt;</em> methods.</p></li>
 </ul>
 </div>
 <div class="versionadded">

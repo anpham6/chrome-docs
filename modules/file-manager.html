@@ -452,7 +452,15 @@
 <span class="w">  </span><span class="p">],</span>
 <span class="w">  </span><span class="nx">incremental</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;etag&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">threads</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">log</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">showSize</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">showProgress</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">showDiff</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text/css&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;javascript&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">log</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">showSize</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">showProgress</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">showDiff</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;**/assets/*.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Local path</span>
+<span class="w">      </span><span class="s2">&quot;javascript&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// application/javascript | text/javascript</span>
+<span class="w">      </span><span class="s2">&quot;text/css&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">};</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FileManager</span><span class="p">(</span><span class="s2">&quot;/path/workspace&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">requestData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">disk_write</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/path/workspace/output/**&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">});</span>

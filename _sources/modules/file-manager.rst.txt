@@ -334,7 +334,15 @@ Example usage
     ],
     incremental: "etag",
     threads: 8,
-    log: { showSize: true, showProgress: true, showDiff: ["text/css", "javascript"] }
+    log: {
+      showSize: true,
+      showProgress: true,
+      showDiff: [
+        "**/assets/*.js", // Local path
+        "javascript", // application/javascript | text/javascript
+        "text/css"
+      ]
+    }
   };
 
   const instance = new FileManager("/path/workspace", requestData, { disk_write: ["/path/workspace/output/**"] });

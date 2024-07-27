@@ -86,8 +86,16 @@ JS
     - @pi-r/terser
     - 7
 
+These plugins can be configured using a plain object in ``settings.transform``. Import maps [#]_ are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.
+
+- NPM custom package
+- Local file using module.exports :alt:`(e.g. ".cjs")`
+- Local file using export default :alt:`(e.g. ".mjs")` [#v010]_
+- Local plain file with single function :alt:`(e.g. ".js")`
+- Inline function
+
 Deprecated
-==========
+----------
 
 .. list-table::
   :width: 400px
@@ -100,15 +108,16 @@ Deprecated
     - @pi-r/uglify-js [#]_
     - 0.7.3
 
-These plugins can be configured using a plain object in ``settings.transform``. Import maps [#]_ are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.
+Environment Variables
+=====================
 
-- NPM custom package
-- Local file using module.exports :alt:`(e.g. ".cjs")`
-- Local file using export default :alt:`(e.g. ".mjs")` [#v010]_
-- Local plain file with single function :alt:`(e.g. ".js")`
-- Inline function
-
-.. tip:: More advanced plugins can be written when installed through **NPM**.
+========== ====================== ======== ========
+  Plugin    Name                   Value    Default
+========== ====================== ======== ========
+eslint     ESLINT_USE_FLAT_CONFIG true     false
+eslint     ESLINT_FORMATTER_NAME  any      none
+stylelint  STYLELINT_OPTIONS_FIX  true     false
+========== ====================== ======== ========
 
 .. [#] settings.transform.imports
 .. [#] Alias to: @pi-r/html-minifier-terser

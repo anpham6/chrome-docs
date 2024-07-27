@@ -9,9 +9,11 @@
     padding-bottom: 8px;
 }
 
-.rst-content section > section:nth-of-type(n+2) h2 {
+.rst-content section > section:nth-of-type(n+2) h2, .rst-content section > :not(h1) + section h2 {
     border-top: 1px dashed lightslategray;
+    border-bottom: none !important;
     padding-top: 8px;
+    padding-bottom: 0px !important;
 }
 
 .rst-content .code-block-caption {

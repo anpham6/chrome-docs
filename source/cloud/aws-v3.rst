@@ -205,7 +205,7 @@ Interface
 .. code-block:: typescript
 
   import type { DynamoDBClientConfig, QueryCommandInput, ScanCommandInput } from "@aws-sdk/client-dynamodb";
-  import type { BatchGetCommandInput, TranslateConfig, UpdateCommandInput } from "@aws-sdk/lib-dynamodb";
+  import type { BatchGetCommandInput, NativeAttributeValue, TranslateConfig, UpdateCommandInput } from "@aws-sdk/lib-dynamodb";
   import type { NativeAttributeValue } from "@aws-sdk/util-dynamodb";
 
   interface AWSDatabaseQuery extends CloudDatabase {
@@ -213,8 +213,8 @@ Interface
       service: "aws-v3";
       credential: string | AWSDatabaseCredential;
       key?: string | AttributeKey;
-      query?: QueryCommandInput | ObjectMap<NativeAttributeValue>[];
-      params?: BatchGetCommandInput | ScanCommandInput;
+      query?: QueryCommandInput | ObjectMap<NativeAttributeValue>[] | string;
+      params?: BatchGetCommandInput | ScanCommandInput | NativeAttributeValue[];
       update?: UpdateCommandInput;
   }
 
@@ -259,7 +259,7 @@ Example usage
         "ExpressionAttributeNames": { "#name": "id" },
         "ExpressionAttributeValues": { ":value": "1" }
       },
-      /* OR */      
+      /* OR */
       "query": [{ "name": { "S": "value" } }], // db.BatchGetCommand{BatchGetCommandInput[RequestItems]}
       "query": "<empty>", // db.ScanCommand
       "params": { // BatchGetCommandInput | ScanCommandInput
@@ -280,12 +280,24 @@ Example usage
         "TableName": "<table>",
         "Key": "<key>"
       },
-      "key": "c" // Same as item being retrieved
+      "key": "c", // Same as item being retrieved
+
+      /* PartiQL */
+      "table": "",
+      "query": "SELECT * FROM demo WHERE ID = ?", // db.ExecuteStatementCommand{Statement,Parameters?,Limit?}
+      "params": [1],
+      "limit": 10,
+      "update": "INSERT INTO demo value {'ID':'1','Name':'AWS'}" // db.ExecuteStatementCommand{Statement}
     }
   }
 
 @pi-r/aws-v3
 ============
+
+.. versionadded:: 0.8.0
+
+  - DynamoDB **PartiQL** using *ExecuteStatementCommand* performing one **SELECT** statement is supported.
+  - DynamoDB **PartiQL** using *ExecuteStatementCommand* performing one **INSERT** | **DELETE** | **UPDATE** statement without *parameters* is supported.
 
 .. versionadded:: 0.7.0
 

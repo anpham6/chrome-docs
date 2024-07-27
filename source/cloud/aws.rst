@@ -192,21 +192,20 @@ Interface
 
 .. code-block:: typescript
 
-  import type { ServiceConfigurationOptions } from "aws-sdk/lib/service";
-  import type { BatchGetItemInput, Key, QueryInput, ScanInput, UpdateItemInput } from "aws-sdk/clients/dynamodb";
+  import type { DocumentClient, Types } from "aws-sdk/clients/dynamodb";
 
   interface AWSDatabaseQuery extends CloudDatabase {
       source: "cloud";
       service: "aws";
       credential: string | AWSDatabaseCredential;
-      key?: string | Key;
-      query?: QueryInput | Key[];
-      params?: BatchGetItemInput | ScanInput;
+      key?: string | DocumentClient.Key;
+      query?: DocumentClient.QueryInput | Key[];
+      params?: DocumentClient.BatchGetItemInput | DocumentClient.ScanInput;
       options?: Record<string, unknown>;
-      update?: UpdateItemInput;
+      update?: DocumentClient.UpdateItemInput;
   }
 
-  interface AWSDatabaseCredential extends AWSStorageCredential, ServiceConfigurationOptions {/* Empty */}
+  interface AWSDatabaseCredential extends AWSStorageCredential, Types.ClientConfiguration, DocumentClient.DocumentClientOptions {/* Empty */}
 
 Authentication
 --------------

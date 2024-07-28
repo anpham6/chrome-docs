@@ -89,6 +89,9 @@ Settings
       };
   }
 
+Changelog
+---------
+
 .. versionremoved:: 0.10.0
 
   - *Tinify* was converted into an optional plugin named **@pi-r/tinify**.

@@ -181,6 +181,9 @@ Settings
       };
   }
 
+Changelog
+---------
+
 .. versionadded:: 0.10.0
 
   - *DownloadModule* property **check_integrity** in :alt:`aria2` for hash validation was implemented.

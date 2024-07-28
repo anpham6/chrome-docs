@@ -9,12 +9,12 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 7,50
+  :emphasize-lines: 7,49,51,57
 
   import type { LogArguments } from "./lib/logger";
 
   import type { BytesOptions } from "bytes";
-  import type { BinaryLike, CipherGCMTypes, Encoding, RandomUUIDOptions } from 'crypto';
+  import type { BinaryLike, BinaryToTextEncoding, CipherGCMTypes, Encoding, RandomUUIDOptions } from 'crypto';
 
   function createAbortError(reject: true): Promise<never>;
   function createAbortError(): DOMException;
@@ -59,13 +59,15 @@ Interface
   function getEncoding(value: unknown, fallback?: BufferEncoding): BufferEncoding;
   function encryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
   function decryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
-  /* @deprecated */
+  function hashKey(data: BinaryLike, algorithm?: string, encoding?: BinaryToTextEncoding): string;
+  /** @deprecated - crypto.randomUUID */
   function generateUUID(options?: RandomUUIDOptions): string;
   function incrementUUID(restart?: boolean): string;
   function validateUUID(value: unknown): boolean;
   function randomString(format: string, dictionary?: string): string;
   function errorValue(value: string, hint?: string): Error;
   function errorMessage(title: number | string, value: string, hint?: string): Error;
+  function supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
   function purgeMemory(percent?: number): number;
 
   interface LOG_TYPE {
@@ -198,11 +200,17 @@ Interface
 Changelog
 =========
 
-.. versionremoved:: 0.10.0
-
+.. versionadded:: 0.10.0
+  
+  - Method **hashKey** for single-pass encoding was created.
+  - Method **supported** for NodeJS versioning :alt:`(from Module)` was implemented.
   - Method **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name "**AbortError**" and code **20**.
   - Method **formatTime** with argument :alt:`char` as "**:**" displays using digital clock format.
+
+.. versionremoved:: 0.10.0
+
   - :alt:`interface` **CloneObjectOptions** in :target:`module` was relocated to **types**.
+  - :alt:`interface` **AsHashOptions** property **minLength** in :target:`module` was deleted.
   - :alt:`type` **Writeable** was renamed :target:`Writable`.
   - :alt:`interface` **GetTempDirOptions** in **module** was renamed :target:`TempDirOptions`.
   - :alt:`type` **NormalizeFlags** in **module** was removed.

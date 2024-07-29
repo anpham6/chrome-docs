@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59d4ba9d" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=c0ca9ac3" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=9e12782c" />
 
   
   <!--[if lt IE 9]>
@@ -293,21 +293,20 @@
 </ul>
 <section id="id1">
 <h3>Interface<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ServiceConfigurationOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;aws-sdk/lib/service&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BatchGetItemInput</span><span class="p">,</span><span class="w"> </span><span class="nx">Key</span><span class="p">,</span><span class="w"> </span><span class="nx">QueryInput</span><span class="p">,</span><span class="w"> </span><span class="nx">ScanInput</span><span class="p">,</span><span class="w"> </span><span class="nx">UpdateItemInput</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;aws-sdk/clients/dynamodb&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DocumentClient</span><span class="p">,</span><span class="w"> </span><span class="nx">Types</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;aws-sdk/clients/dynamodb&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">AWSDatabaseQuery</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudDatabase</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">AWSDatabaseCredential</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">key?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Key</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">QueryInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Key</span><span class="p">[];</span>
-<span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchGetItemInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ScanInput</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">key?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">DocumentClient</span><span class="p">.</span><span class="nx">Key</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">DocumentClient.QueryInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Key</span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">DocumentClient.BatchGetItemInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">DocumentClient</span><span class="p">.</span><span class="nx">ScanInput</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">UpdateItemInput</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">DocumentClient.UpdateItemInput</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">AWSDatabaseCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">AWSStorageCredential</span><span class="p">,</span><span class="w"> </span><span class="nx">ServiceConfigurationOptions</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Empty */</span><span class="p">}</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">AWSDatabaseCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">AWSStorageCredential</span><span class="p">,</span><span class="w"> </span><span class="nx">Types</span><span class="p">.</span><span class="nx">ClientConfiguration</span><span class="p">,</span><span class="w"> </span><span class="nx">DocumentClient</span><span class="p">.</span><span class="nx">DocumentClientOptions</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Empty */</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>

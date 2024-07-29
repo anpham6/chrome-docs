@@ -102,3 +102,13 @@ Example usage
       }
     }
   }
+
+@pi-r/mysql
+===========
+
+.. versionadded:: 0.8.0
+
+  - *DbPool* interface with static property **CACHE_UNUSED** through :target:`@pi-r/mysql/client/pool` as :alt:`string[]` was implemented.
+  - *SslOptions* property **ca** with Amazon RDS CA [#]_ cert for *host* :alt:`rds.amazonaws.com` is attached when installed.
+
+.. [#] npm i aws-ssl-profiles

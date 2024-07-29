@@ -2,6 +2,8 @@
 squared-functions
 =================
 
+The library :alt:`(4.13)` has reached **End-of-Life** with the final squared 4 :alt:`(4.8)` maintenance release on August 6, 2024. Compatibility with **E-mc** is due to be completely removed when **NodeJS 22** :alt:`(LTS)` goes into maintenance.
+
 squared-express
 ===============
 

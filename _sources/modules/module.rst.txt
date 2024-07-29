@@ -11,7 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 109-110,160
+  :emphasize-lines: 108-109,159,170-172
 
   import type { LogStatus } from "./squared";
 
@@ -35,7 +35,6 @@ Interface
   interface IModule extends EventEmitter, IAbortComponent {
       readonly status: LogStatus<StatusType>[];
       readonly errors: unknown[];
-      /* @deprecated */
       supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
       supports(name: string, value?: boolean): boolean;
       getTempDir(options: GetTempDirOptions): string;
@@ -175,6 +174,7 @@ Interface
       readonly PLATFORM_WIN32: boolean;
       readonly MAX_TIMEOUT: number;
       readonly TEMP_DIR: string;
+      /** @deprecated Types.supported */
       supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
       formatMessage(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogMessageOptions): void;
       writeFail(value: LogValue, message?: unknown, options?: LogFailOptions | LogType): void;
@@ -182,10 +182,9 @@ Interface
       parseFunction(value: unknown, options?: ParseFunctionOptions): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
       parseFunction(value: unknown, absolute: boolean, sync?: boolean): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
       asString(value: unknown, cacheKey?: boolean | "throws"): string;
-      asHash(data: BinaryLike, minLength: number): string;
-      asHash(data: BinaryLike, algorithm: string, minLength?: number): string;
-      asHash(data: BinaryLike, algorithm?: string, options?: AsHashOptions): string;
       asHash(data: BinaryLike, options?: AsHashOptions): string;
+      asHash(data: BinaryLike, algorithm?: string, options?: AsHashOptions): string;
+      asHash(data: BinaryLike, algorithm?: string, digest?: BinaryToTextEncoding): string;
       readHash(value: string | URL, options?: ReadHashOptions): Promise<string>;
       toPosix(value: unknown, normalize: boolean): string;
       toPosix(value: unknown, filename?: string, normalize?: boolean): string;
@@ -247,11 +246,15 @@ Changelog
 .. versionadded:: 0.10.0
 
   - *ModuleConstructor* static property **PLATFORM_WIN32** was created.
-  - *IModule* property **silent** for console messages was created.
+  - *IModule* property accessor **silent** for console messages was created.
+
+.. versionremoved:: 0.10.0
+  
+  - *ModuleConstructor* static method **asHash** argument :target:`minLength` was replaced with :target:`digest` as :alt:`BinaryToTextEncoding`.
 
 .. deprecated:: 0.10.0
 
-  - *IModule* method **supported** is a wrapper for :target:`ModuleConstructor.supported`.
+  - *ModuleConstructor* static method **supported** is a wrapper for :target:`Types.supported`.
 
 .. versionadded:: 0.9.0
 
@@ -437,6 +440,9 @@ Settings
       session_id?: boolean | number;
       stack_trace?: boolean | number;
   }
+
+Changelog
+---------
 
 .. versionadded:: 0.10.0
 

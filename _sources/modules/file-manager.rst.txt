@@ -285,6 +285,9 @@ Settings
       session_id?: boolean | number;
   }
 
+Changelog
+---------
+
 .. versionadded:: 0.10.0
 
   - *LoggerModule* property group **progress** for summary data was implemented.

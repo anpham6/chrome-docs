@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59d4ba9d" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=c0ca9ac3" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=9e12782c" />
 
   
   <!--[if lt IE 9]>
@@ -114,8 +114,8 @@
 </ul>
 <section id="interface">
 <h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/index.d.ts">View Source</a></span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/index.d.ts">View Source</a></span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">IncrementalMatch</span><span class="p">,</span><span class="w"> </span><span class="nx">TaskAction</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./squared&quot;</span><span class="p">;</span>
 
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DocumentConstructor</span><span class="p">,</span><span class="w"> </span><span class="nx">HostConstructor</span><span class="p">,</span><span class="w"> </span><span class="nx">ICloud</span><span class="p">,</span><span class="w"> </span><span class="nx">ICompress</span><span class="p">,</span><span class="w"> </span><span class="nx">IDocument</span><span class="p">,</span><span class="w"> </span><span class="nx">IHost</span><span class="p">,</span><span class="w"> </span><span class="nx">IImage</span><span class="p">,</span><span class="w"> </span><span class="nx">IModule</span><span class="p">,</span><span class="w"> </span><span class="nx">IRequest</span><span class="p">,</span><span class="w"> </span><span class="nx">ITask</span><span class="p">,</span><span class="w"> </span><span class="nx">ImageConstructor</span><span class="p">,</span><span class="w"> </span><span class="nx">TaskConstructor</span><span class="p">,</span><span class="w"> </span><span class="nx">WatchInstance</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./index&quot;</span><span class="p">;</span>
@@ -353,8 +353,8 @@
 </section>
 <section id="settings">
 <h2>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h2>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/squared-express/dist/squared.json">View JSON</a></span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/squared-express/dist/squared.json">View JSON</a></span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BackgroundColor</span><span class="p">,</span><span class="w"> </span><span class="nx">ForegroundColor</span><span class="p">,</span><span class="w"> </span><span class="nx">LoggerProgress</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./logger&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">ProcessModule</span><span class="w"> </span><span class="p">{</span>
@@ -402,6 +402,8 @@
 </pre></div>
 </div>
 </div>
+<section id="id1">
+<h3>Changelog<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">
@@ -414,6 +416,7 @@
 <li><p><em>ProcessModule</em> setting <strong>thread.sub_limit</strong> for maximum simultaneous downloads was implemented.</p></li>
 </ul>
 </div>
+</section>
 <section id="example-usage">
 <h3>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">FileManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/file-manager&quot;</span><span class="p">);</span>

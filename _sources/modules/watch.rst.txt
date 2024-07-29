@@ -93,6 +93,9 @@ Settings
       permission?: PermittedDirectories;
   }
 
+Changelog
+---------
+
 .. versionadded:: 0.10.0
 
   - *WatchModule* group **secure** property **ciphers** was implemented.

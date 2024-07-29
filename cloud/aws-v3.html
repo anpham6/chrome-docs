@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59d4ba9d" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=c0ca9ac3" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=9e12782c" />
 
   
   <!--[if lt IE 9]>
@@ -306,7 +306,7 @@
 <section id="id1">
 <h3>Interface<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DynamoDBClientConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">QueryCommandInput</span><span class="p">,</span><span class="w"> </span><span class="nx">ScanCommandInput</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@aws-sdk/client-dynamodb&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BatchGetCommandInput</span><span class="p">,</span><span class="w"> </span><span class="nx">TranslateConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">UpdateCommandInput</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@aws-sdk/lib-dynamodb&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BatchGetCommandInput</span><span class="p">,</span><span class="w"> </span><span class="nx">NativeAttributeValue</span><span class="p">,</span><span class="w"> </span><span class="nx">TranslateConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">UpdateCommandInput</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@aws-sdk/lib-dynamodb&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">NativeAttributeValue</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@aws-sdk/util-dynamodb&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">AWSDatabaseQuery</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudDatabase</span><span class="w"> </span><span class="p">{</span>
@@ -314,8 +314,8 @@
 <span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;aws-v3&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">AWSDatabaseCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">key?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">AttributeKey</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">QueryCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ObjectMap</span><span class="o">&lt;</span><span class="nx">NativeAttributeValue</span><span class="o">&gt;</span><span class="p">[];</span>
-<span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchGetCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ScanCommandInput</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">QueryCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ObjectMap</span><span class="o">&lt;</span><span class="nx">NativeAttributeValue</span><span class="o">&gt;</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchGetCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ScanCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">NativeAttributeValue</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">UpdateCommandInput</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -380,7 +380,14 @@
 <span class="w">      </span><span class="nt">&quot;TableName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;table&gt;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;key&gt;&quot;</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
+<span class="w">    </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
+
+<span class="w">    </span><span class="cm">/* PartiQL */</span>
+<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM demo WHERE ID = ?&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.ExecuteStatementCommand{Statement,Parameters?,Limit?}</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INSERT INTO demo value {&#39;ID&#39;:&#39;1&#39;,&#39;Name&#39;:&#39;AWS&#39;}&quot;</span><span class="w"> </span><span class="c1">// db.ExecuteStatementCommand{Statement}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -389,6 +396,13 @@
 </section>
 <section id="pi-r-aws-v3">
 <h2>&#64;pi-r/aws-v3<a class="headerlink" href="#pi-r-aws-v3" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.8.0: </span></p>
+<ul class="simple">
+<li><p>DynamoDB <strong>PartiQL</strong> using <em>ExecuteStatementCommand</em> performing one <strong>SELECT</strong> statement is supported.</p></li>
+<li><p>DynamoDB <strong>PartiQL</strong> using <em>ExecuteStatementCommand</em> performing one <strong>INSERT</strong> | <strong>DELETE</strong> | <strong>UPDATE</strong> statement without <em>parameters</em> is supported.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.7.0: </span></p>
 <ul class="simple">

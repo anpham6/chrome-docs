@@ -9,7 +9,7 @@
 project = 'E-mc'
 copyright = 'squared 2024'
 author = 'An Pham'
-release = '0.9.5'
+release = '0.9.6'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -43,6 +43,10 @@ html_theme_options = {
   'includehidden': False,
 }
 html_static_path = ['_static']
+html_extra_path = [
+  '_static/places/001.png',
+  '_static/places/002.png'
+]
 html_css_files = ['role.css', 'content.css', 'highlight-abap.css', 'override.css']
 html_context = {
   'display_github': False,

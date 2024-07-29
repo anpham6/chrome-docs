@@ -99,7 +99,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 68
+  :emphasize-lines: 49,69
 
   import type { PermittedDirectories } from "./core";
   import type { SecureConfig } from "./http";
@@ -149,6 +149,7 @@ Settings
           h2c?: string[];
           h2?: string[];
       };
+      write_stream?: Record<string, number | string>;
       post_limit?: number | string;
       settings?: {
           broadcast_id?: string | string[];
@@ -187,6 +188,7 @@ Changelog
 .. versionadded:: 0.10.0
 
   - *DownloadModule* property **check_integrity** in :alt:`aria2` for hash validation was implemented.
+  - *RequestModule* property **write_stream** for stream size :alt:`(kb)` configuration by host was implemented.
 
 Example usage
 -------------

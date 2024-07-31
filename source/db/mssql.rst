@@ -2,7 +2,7 @@
 SQL Server
 ==========
 
-- `SQL Server 2022 Express <https://www.microsoft.com/en-us/sql-server/sql-server-downloads>`_
+- `SQL Server 2022 <https://www.microsoft.com/en-us/sql-server/sql-server-downloads>`_
 - **npm** i *@pi-r/mssql*
 
 Interface
@@ -37,7 +37,7 @@ Interface
       options?: ParameterData;
   }
 
-  type MSSQLRequestParameters = MSSQLRequestParameterValue[] | ObjectMap<MSSQLRequestParameterValue>;
+  type MSSQLRequestParameters = MSSQLRequestParameterValue[] | Record<string, MSSQLRequestParameterValue>;
 
 Pool
 ----
@@ -81,8 +81,41 @@ Authentication
         "authentication": {
           "type": "default",
           "options": {
-            "userName": "**********",
-            "password": "**********"
+            "userName": "",
+            "password": ""
+          },
+          /* OR */
+          "type": "ntlm",
+          "options": {
+            "domain": "",
+            "workstation": "",
+            "userName": "",
+            "password": ""
+          },
+          /* OR */
+          "type": "token-credential", // @azure/core-auth
+          "options": {
+            "credential": {
+              "getToken": async function (scopes, options) {
+                return "**********";
+              }
+            }
+          },
+          /* OR */
+          "type": "azure-active-directory-default",
+          "type": "azure-active-directory-password",
+          "type": "azure-active-directory-access-token",
+          "type": "azure-active-directory-msi-vm",
+          "type": "azure-active-directory-msi-app-service",
+          "type": "azure-active-directory-service-principal-secret",
+          "options": {
+            "userName": "",
+            "password": "",
+            "clientId": "",
+            "tenantId": "",
+            "token": "",
+            "msiEndpoint": "",
+            "msiSecret": ""
           }
         }
       }
@@ -137,4 +170,16 @@ Example usage
 
 .. versionadded:: 0.8.0
 
-  - NPM package **tedious** was upgraded from **16.7** to :target:`18.3` with minimum :alt:`NodeJS 20` requirement.
+  - NPM package **tedious** was upgraded from *16.7* to :target:`18.3` with a :alt:`NodeJS 18` requirement.
+  - Azure authentication validation was implemented:
+
+    .. hlist::
+      :columns: 2
+
+      - azure-active-directory-default
+      - azure-active-directory-password
+      - azure-active-directory-access-token
+      - azure-active-directory-msi-vm
+      - azure-active-directory-msi-app-service
+      - azure-active-directory-service-principal-secret
+      - token-credential

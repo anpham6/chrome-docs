@@ -114,12 +114,12 @@ Environment Variables
 ========== ====================== ======== ========
   Plugin    Name                   Value    Default
 ========== ====================== ======== ========
-eslint     ESLINT_USE_FLAT_CONFIG true     false
-eslint     ESLINT_FORMATTER_NAME  any      none
-stylelint  STYLELINT_OPTIONS_FIX  true     false
+eslint     ESLINT_USE_FLAT_CONFIG  boolean     none
+eslint     ESLINT_FORMATTER_NAME       any     none
+stylelint  STYLELINT_OPTIONS_FIX   boolean    false
 ========== ====================== ======== ========
 
 .. [#] settings.transform.imports
-.. [#] Alias to: @pi-r/html-minifier-terser
-.. [#] Alias to: @pi-r/terser
+.. [#] Substitute: @pi-r/html-minifier-terser
+.. [#] Substitute: @pi-r/terser
 .. [#v010] e-mc 0.10 (minimum)

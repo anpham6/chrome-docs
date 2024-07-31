@@ -2,19 +2,23 @@
 Redis
 =====
 
-- `Redis Stable <https://redis.io/download>`_
+- `Redis Stack <https://redis.io/downloads/#redis-stack-downloads>`_
 - **npm** i *@pi-r/redis*
 
 Interface
 =========
 
 .. code-block:: typescript
+  :emphasize-lines: 19,24-25,42
 
   import type { CommandOptions } from "@redis/client/dist/lib/command-options";
   import type { ClientCommandOptions } from "@redis/client/dist/lib/client";
+  import type { ScanOptions } from '@redis/client/dist/lib/commands/generic-transformers';
   import type { RedisClientOptions } from "@redis/client";
+  import type { RediSearchSchema, SearchOptions } from "redis";
+
   import type { CreateOptions } from "@redis/search/dist/commands/CREATE"; // Internal
-  import type { AggregateOptions, RediSearchSchema, SearchOptions } from "redis";
+  import type { AggregateOptions } from '@redis/search/dist/commands/AGGREGATE';
 
   interface RedisDataSource extends DbDataSource {
       source: "redis";
@@ -25,10 +29,13 @@ Interface
       credential?: string | ServerAuth;
       database?: number;
 
-      format?: "HASH" | "JSON" | "HKEYS" | "HVALS"; // Default is "HASH"
+      format?: "HASH" | "JSON" | "HKEYS" | "HVALS" | "HSCAN"; // Default is "HASH"
       key?: string | Buffer | (string | Buffer)[];
       field?: string | Buffer;
       path?: string; // JSONPath
+
+      cursor?: number | number[]; // Scan
+      iterations?: number | number[];
 
       search?: {
           index: string; // Preexisting schema
@@ -45,6 +52,7 @@ Interface
           get?: PlainObject;
           search?: SearchOptions;
           aggregate?: AggregateOptions;
+          scan?: ScanOptions;
       };
 
       update?: RedisSetValue | RedisSetValue[] | RedisJSONValue | RedisJSONValue[]; // @pi-r/redis/types
@@ -137,6 +145,7 @@ Example usage
       "credential": {/* Authentication */},
 
       "key": "demo:1",
+      "format": "JSON",
       /* OR */
       "search": {
         "schema": {
@@ -176,3 +185,10 @@ Example usage
   }
 
 .. note:: Search will only return the **value** object with the **id** field appended as ``__id__``.
+
+@pi-r/redis
+===========
+
+.. versionadded:: 0.8.0
+
+  - *RedisDataSource* property **format** with type "**HSCAN**" and optional argument :target:`cursor` | :target:`iterations` was implemented.

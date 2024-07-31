@@ -12,7 +12,7 @@ Example usage
 .. highlight:: javascript
 
 .. code-block::
-  :emphasize-lines: 4-7,33
+  :emphasize-lines: 4-7,32,34
 
   squared.saveAs("index.zip", {
     productionRelease: true, // Ignore local URL rewriting and use actual path
@@ -45,6 +45,7 @@ Example usage
 
     escapeReservedCharacters: true, // Escape reserved characters inside attributes (e.g. "<")
     ignoreServerCodeBlocks: ["<%", "%>", "<?php", ";", "<?php", "?>"], // May produce better results with dynamic content (<% %> | <?php ; | <?php ?>)
+    sanitizeFramework: ["*", "android"], // Remove global and android dataset UI attributes
 
     removeBinaries: false, // Remove all script tags with src="squared.js"
 

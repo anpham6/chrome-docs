@@ -213,7 +213,7 @@ Interface
       service: "aws-v3";
       credential: string | AWSDatabaseCredential;
       key?: string | AttributeKey;
-      query?: QueryCommandInput | ObjectMap<NativeAttributeValue>[] | string;
+      query?: QueryCommandInput | Record<string, NativeAttributeValue>[] | string;
       params?: BatchGetCommandInput | ScanCommandInput | NativeAttributeValue[];
       update?: UpdateCommandInput;
   }

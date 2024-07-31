@@ -262,7 +262,7 @@ Other formats can be compressed similarly using `imagemin <https://github.com/im
     ]
   }
 
-When *format* is not defined the plugin will be applied to all images. [#]_ Multiple plugins of the same MIME will be processed in a series.
+When *format* is not defined the plugin will be applied to all images. [#]_ Multiple plugins of the same *MIME* will be processed in a series.
 
 data-chrome-commands
 ====================

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SQL Server &mdash; E-mc 0.9.5 documentation</title>
+  <title>SQL Server &mdash; E-mc 0.9.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -19,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=61b282d3"></script>
+        <script src="../_static/documentation_options.js?v=564a08b9"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -106,7 +106,7 @@
   <section id="sql-server">
 <h1>SQL Server<a class="headerlink" href="#sql-server" title="Link to this heading"></a></h1>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">SQL Server 2022 Express</a></p></li>
+<li><p><a class="reference external" href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">SQL Server 2022</a></p></li>
 <li><p><strong>npm</strong> i <em>&#64;pi-r/mssql</em></p></li>
 </ul>
 <section id="interface">
@@ -181,8 +181,41 @@
 <span class="w">      </span><span class="s2">&quot;authentication&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="s2">&quot;userName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span>
+<span class="w">          </span><span class="s2">&quot;userName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="cm">/* OR */</span>
+<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ntlm&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="s2">&quot;domain&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;workstation&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;userName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="cm">/* OR */</span>
+<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;token-credential&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// @azure/core-auth</span>
+<span class="w">        </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="s2">&quot;credential&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;getToken&quot;</span><span class="o">:</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">scopes</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="cm">/* OR */</span>
+<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-default&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-password&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-access-token&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-msi-vm&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-msi-app-service&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-service-principal-secret&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="s2">&quot;userName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;clientId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;tenantId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;token&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;msiEndpoint&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;msiSecret&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
@@ -238,8 +271,22 @@
 <h2>&#64;pi-r/mssql<a class="headerlink" href="#pi-r-mssql" title="Link to this heading"></a></h2>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.0: </span></p>
-<ul class="simple">
-<li><p>NPM package <strong>tedious</strong> was upgraded from <strong>16.7</strong> to <em class="target">18.3</em> with minimum <em class="alt">NodeJS 20</em> requirement.</p></li>
+<ul>
+<li><p>NPM package <strong>tedious</strong> was upgraded from <em>16.7</em> to <strong>18.3</strong> with a <em class="target">NodeJS 18</em> requirement.</p></li>
+<li><p>Azure authentication validation was implemented:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>azure-active-directory-default</p></li>
+<li><p>azure-active-directory-password</p></li>
+<li><p>azure-active-directory-access-token</p></li>
+<li><p>azure-active-directory-msi-vm</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>azure-active-directory-msi-app-service</p></li>
+<li><p>azure-active-directory-service-principal-secret</p></li>
+<li><p>token-credential</p></li>
+</ul>
+</td></tr></table>
+</li>
 </ul>
 </div>
 </section>

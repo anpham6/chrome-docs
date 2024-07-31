@@ -224,13 +224,13 @@ Storage
 =========== =================== ================== ====================
 Service     CLOUD_UPLOAD_STREAM CLOUD_UPLOAD_CHUNK CLOUD_DOWNLOAD_CHUNK
 =========== =================== ================== ====================
-aws                  X                  X
-aws-v3               X                  X
-azure                X                  X                    X
-gcp                  X                  X                    X
-ibm                  X                  X
+aws                  X                  X                  
+aws-v3               X                  X                  
+azure                X                  X                   X
+gcp                  X                  X                   X
+ibm                  X                  X                  
 minio                X
-oci                  X                  X
+oci                  X                  X                  
 =========== =================== ================== ====================
 
 .. caution:: Setting :code:`process.env.EMC_CLOUD_UPLOAD_BUFFER = "true"` will enable the legacy behavior for :doc:`Document </document/index>` based uploads.

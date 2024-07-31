@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redis &mdash; E-mc 0.9.5 documentation</title>
+  <title>Redis &mdash; E-mc 0.9.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -19,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=61b282d3"></script>
+        <script src="../_static/documentation_options.js?v=564a08b9"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -65,6 +65,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#interface">Interface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#authentication">Authentication</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-usage">Example usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pi-r-redis">&#64;pi-r/redis</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mssql.html">SQL Server</a></li>
@@ -105,16 +106,19 @@
   <section id="redis">
 <h1>Redis<a class="headerlink" href="#redis" title="Link to this heading"></a></h1>
 <ul class="simple">
-<li><p><a class="reference external" href="https://redis.io/download">Redis Stable</a></p></li>
+<li><p><a class="reference external" href="https://redis.io/downloads/#redis-stack-downloads">Redis Stack</a></p></li>
 <li><p><strong>npm</strong> i <em>&#64;pi-r/redis</em></p></li>
 </ul>
 <section id="interface">
 <h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CommandOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/client/dist/lib/command-options&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ClientCommandOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/client/dist/lib/client&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ScanOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@redis/client/dist/lib/commands/generic-transformers&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RedisClientOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/client&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RediSearchSchema</span><span class="p">,</span><span class="w"> </span><span class="nx">SearchOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span>
+
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CreateOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/search/dist/commands/CREATE&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Internal</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AggregateOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">RediSearchSchema</span><span class="p">,</span><span class="w"> </span><span class="nx">SearchOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AggregateOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@redis/search/dist/commands/AGGREGATE&#39;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">RedisDataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span>
@@ -125,11 +129,14 @@
 <span class="w">    </span><span class="nx">credential?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ServerAuth</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">database?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 
-<span class="w">    </span><span class="nx">format</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;HASH&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;JSON&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HKEYS&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HVALS&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Default is &quot;HASH&quot;</span>
-<span class="w">    </span><span class="nx">key?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">)[];</span>
+<span class="hll"><span class="w">    </span><span class="nx">format</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;HASH&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;JSON&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HKEYS&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HVALS&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HSCAN&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Default is &quot;HASH&quot;</span>
+</span><span class="w">    </span><span class="nx">key?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">)[];</span>
 <span class="w">    </span><span class="nx">field?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">path?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// JSONPath</span>
 
+<span class="hll"><span class="w">    </span><span class="nx">cursor?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">[];</span><span class="w"> </span><span class="c1">// Scan</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">iterations?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">[];</span>
+</span>
 <span class="w">    </span><span class="nx">search</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Preexisting schema</span>
 <span class="w">        </span><span class="nx">schema?</span><span class="o">:</span><span class="w"> </span><span class="kt">RediSearchSchema</span><span class="p">;</span><span class="w"> </span><span class="c1">// Temporary schema</span>
@@ -145,7 +152,8 @@
 <span class="w">        </span><span class="nx">get?</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">search?</span><span class="o">:</span><span class="w"> </span><span class="kt">SearchOptions</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">aggregate?</span><span class="o">:</span><span class="w"> </span><span class="kt">AggregateOptions</span><span class="p">;</span>
-<span class="w">    </span><span class="p">};</span>
+<span class="hll"><span class="w">        </span><span class="nx">scan?</span><span class="o">:</span><span class="w"> </span><span class="kt">ScanOptions</span><span class="p">;</span>
+</span><span class="w">    </span><span class="p">};</span>
 
 <span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisSetValue</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">RedisSetValue</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">RedisJSONValue</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">RedisJSONValue</span><span class="p">[];</span><span class="w"> </span><span class="c1">// @pi-r/redis/types</span>
 <span class="w">    </span><span class="nx">update</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
@@ -236,6 +244,7 @@
 <span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
 
 <span class="w">    </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;demo:1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
 <span class="w">    </span><span class="nt">&quot;search&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -278,6 +287,15 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Search will only return the <strong>value</strong> object with the <strong>id</strong> field appended as <code class="docutils literal notranslate"><span class="pre">__id__</span></code>.</p>
+</div>
+</section>
+<section id="pi-r-redis">
+<h2>&#64;pi-r/redis<a class="headerlink" href="#pi-r-redis" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.8.0: </span></p>
+<ul class="simple">
+<li><p><em>RedisDataSource</em> property <strong>format</strong> with type “<strong>HSCAN</strong>” and optional argument <em class="target">cursor</em> | <em class="target">iterations</em> was implemented.</p></li>
+</ul>
 </div>
 </section>
 </section>

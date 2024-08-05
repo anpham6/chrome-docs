@@ -138,7 +138,7 @@
 <span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ParameterData</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kr">type</span><span class="w"> </span><span class="nx">MSSQLRequestParameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MSSQLRequestParameterValue</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ObjectMap</span><span class="o">&lt;</span><span class="nx">MSSQLRequestParameterValue</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="kr">type</span><span class="w"> </span><span class="nx">MSSQLRequestParameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MSSQLRequestParameterValue</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">MSSQLRequestParameterValue</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 <section id="pool">
@@ -272,7 +272,7 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.0: </span></p>
 <ul>
-<li><p>NPM package <strong>tedious</strong> was upgraded from <em>16.7</em> to <strong>18.3</strong> with a <em class="target">NodeJS 18</em> requirement.</p></li>
+<li><p>NPM package <strong>tedious</strong> was upgraded from <em>16.7</em> to <em class="target">18.3</em> with a <em class="alt">NodeJS 18</em> requirement.</p></li>
 <li><p>Azure authentication validation was implemented:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>azure-active-directory-default</p></li>

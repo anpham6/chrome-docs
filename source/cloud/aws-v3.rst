@@ -14,7 +14,7 @@ Interface
 
 .. code-block:: typescript
 
-  import type { AwsAuthInputConfig } from "@aws-sdk/middleware-signing";
+  import type { AwsSdkSigV4AuthInputConfig } from "@aws-sdk/core";
   import type { S3ClientConfig } from "@aws-sdk/client-s3";
 
   interface AWSStorage extends CloudStorage {
@@ -23,7 +23,7 @@ Interface
       bucket: string;
   }
 
-  interface AWSBaseCredential extends AwsAuthInputConfig {
+  interface AWSBaseCredential extends AwsSdkSigV4AuthInputConfig {
       provider?: {
           http?: unknown;
           ini?: unknown;

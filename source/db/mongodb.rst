@@ -92,7 +92,9 @@ Authentication
           "password": "**********"
         },
 
-        /* Optional */
+        "options": {/* MongoClientOptions */},
+
+        /* Optional (override) */
         "protocol": "mongodb+srv:", // "mongodb:" (default)
 
         "authMechanism": "MONGODB-AWS",

@@ -9,7 +9,7 @@
 project = 'E-mc'
 copyright = 'squared 2024'
 author = 'An Pham'
-release = '0.9.6'
+release = '0.10.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -23,7 +23,7 @@ intersphinx_mapping = {
 templates_path = ['_templates']
 exclude_patterns = []
 
-primary_domain = 'js'
+primary_domain = 'py'
 highlight_language = 'json'
 pygments_style = 'abap'
 
@@ -38,7 +38,7 @@ rst_prolog = """
 
 html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
-  'style_nav_header_background': 'url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);',
+  'style_nav_header_background': 'url(https://e-mc.readthedocs.io/en/latest/_static/places/002.png);',
   'navigation_depth': 3,
   'includehidden': False,
 }

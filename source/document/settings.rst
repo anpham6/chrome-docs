@@ -306,9 +306,12 @@ These are the latest server default settings for the :target:`chrome` framework.
 Changelog
 =========
 
-.. versionremoved:: 5.3.0
+.. versionadded:: 5.3.0
 
   - Transform plugin **eslint** format configuration :target:`lint-v9` was created.
+
+.. versionremoved:: 5.3.0
+
   - Transform plugins **html-minifier** | **uglify-js** are no longer supported.
 
 References

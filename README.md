@@ -1,4 +1,4 @@
-# E-mc 0.9 - chrome
+# E-mc 0.10 - chrome
 
 https://e-mc.readthedocs.io
 

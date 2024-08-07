@@ -178,7 +178,7 @@ Interface
       params?: unknown[];
       partitionKey?: PartitionKey;
       options?: FeedOptions | RequestOptions;
-      update?: PatchRequestBody;
+      update?: PatchRequestBody | Reord<string, unknown>;
       storedProcedureId?: string;
   }
 
@@ -267,12 +267,20 @@ Example usage
 
       "update": {/* PatchRequestBody */}, // JSON Patch
       "id": "1", // Same as item being retrieved
-      "partitionKey": "Pictures"
+      /* OR */
+      "query": "SELECT * FROM c WHERE c.id = '1'",
+      "update": {/* Record<string, unknown> */},
+      /* WITH */
+      "partitionKey": "Pictures" // Optional
     }
   }
 
 @pi-r/azure
 ===========
+
+.. versionadded:: 0.8.1
+
+  - *CosmoDB* items method **upsert** document as :target:`Record<string, unknown>` was implemented.
 
 .. versionadded:: 0.7.0
 

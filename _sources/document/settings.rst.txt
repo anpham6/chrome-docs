@@ -6,6 +6,7 @@ These are the latest server default settings for the :target:`chrome` framework.
 
 .. code-block:: json
   :caption: squared.json [#]_
+  :emphasize-lines: 230-246
 
   {
     "apiVersion": "1.5.0",
@@ -138,8 +139,7 @@ These are the latest server default settings for the :target:`chrome` framework.
               "sass": "@pi-r/sass",
               "stylelint": "@pi-r/stylelint",
               "svgo": "@pi-r/svgo",
-              "terser": "@pi-r/terser",
-              "uglify-js": "@pi-r/uglify-js"
+              "terser": "@pi-r/terser"
             },
             "html": {
               "posthtml": {
@@ -236,6 +236,23 @@ These are the latest server default settings for the :target:`chrome` framework.
                   "overrideConfig": null,
                   "plugins": null,
                   "useEslintrc": false
+                },
+                "lint-v9": {
+                  "fix": false,
+                  "fixTypes": null,
+                  "allowInlineConfig": true,
+                  "overrideConfigFile": false,
+                  "baseConfig": {
+                    "languageOptions": {
+                      "ecmaVersion": "2020",
+                      "sourceType": "module",
+                      "parserOptions": {}
+                    },
+                    "plugins": {},
+                    "rules": {}
+                  },
+                  "overrideConfig": null,
+                  "plugins": null
                 }
               },
               "prettier": {
@@ -285,6 +302,17 @@ These are the latest server default settings for the :target:`chrome` framework.
       }
     }
   }
+
+Changelog
+=========
+
+.. versionadded:: 5.3.0
+
+  - Transform plugin **eslint** format configuration :target:`lint-v9` was created.
+
+.. versionremoved:: 5.3.0
+
+  - Transform plugins **html-minifier** | **uglify-js** are no longer supported.
 
 References
 ==========

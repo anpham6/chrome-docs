@@ -9,7 +9,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 7,49,51,57
+  :emphasize-lines: 7,49,51,57-58
 
   import type { LogArguments } from "./lib/logger";
 
@@ -68,6 +68,7 @@ Interface
   function errorValue(value: string, hint?: string): Error;
   function errorMessage(title: number | string, value: string, hint?: string): Error;
   function supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
+  function importESM<T = unknown>(name: string, fromPath?: boolean): Promise<T>;
   function purgeMemory(percent?: number): number;
 
   interface LOG_TYPE {
@@ -204,6 +205,7 @@ Changelog
   
   - Method **hashKey** for single-pass encoding was created.
   - Method **supported** for NodeJS versioning :alt:`(from Module)` was implemented.
+  - Method **importESM** for dynamic module loading was created.
   - Method **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name "**AbortError**" and code **20**.
   - Method **formatTime** with argument :alt:`char` as "**:**" displays using digital clock format.
 

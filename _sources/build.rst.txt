@@ -45,7 +45,7 @@ Example usage
 
     escapeReservedCharacters: true, // Escape reserved characters inside attributes (e.g. "<")
     ignoreServerCodeBlocks: ["<%", "%>", "<?php", ";", "<?php", "?>"], // May produce better results with dynamic content (<% %> | <?php ; | <?php ?>)
-    sanitizeFramework: ["android"], // Remove inline data-android related UI attributes
+    sanitizeFramework: ["*", "android"], // Remove global and android dataset UI attributes
 
     removeBinaries: false, // Remove all script tags with src="squared.js"
 

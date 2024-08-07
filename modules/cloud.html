@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/cloud &mdash; E-mc 0.9.6 documentation</title>
+  <title>@e-mc/cloud &mdash; E-mc 0.10.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -19,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=564a08b9"></script>
+        <script src="../_static/documentation_options.js?v=82662543"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/002.png);" >
 
           
           
@@ -87,7 +87,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/002.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -162,10 +162,10 @@
 <span class="w">    </span><span class="nx">LOG_CLOUD_DELETE</span><span class="o">:</span><span class="w"> </span><span class="kt">LogMessageOptions</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">LOG_CLOUD_DELAYED</span><span class="o">:</span><span class="w"> </span><span class="kt">LogMessageOptions</span><span class="p">;</span>
 <span class="hll"><span class="w">    </span><span class="nx">finalize</span><span class="p">(</span><span class="nx">this</span><span class="o">:</span><span class="w"> </span><span class="kt">IHost</span><span class="p">,</span><span class="w"> </span><span class="nx">instance</span><span class="o">:</span><span class="w"> </span><span class="kt">ICloud</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">;</span>
-</span><span class="w">    </span><span class="nx">uploadAsset</span><span class="p">(</span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">IScopeOrigin</span><span class="o">&lt;</span><span class="nx">IFileManager</span><span class="p">,</span><span class="w"> </span><span class="nx">ICloud</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">UploadAssetOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">[];</span>
-<span class="w">    </span><span class="nx">uploadAsset</span><span class="p">(</span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">IScopeOrigin</span><span class="o">&lt;</span><span class="nx">IFileManager</span><span class="p">,</span><span class="w"> </span><span class="nx">ICloud</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">,</span><span class="w"> </span><span class="nx">ignoreProcess</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">[];</span>
-<span class="w">    </span><span class="nx">uploadAsset</span><span class="p">(</span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">IScopeOrigin</span><span class="o">&lt;</span><span class="nx">IFileManager</span><span class="p">,</span><span class="w"> </span><span class="nx">ICloud</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">,</span><span class="w"> </span><span class="nx">contentType?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">ignoreProcess?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">[];</span>
-<span class="w">    </span><span class="nx">sanitizeAssets</span><span class="p">(</span><span class="nx">assets</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nx">ExternalAsset</span><span class="p">[];</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">uploadAsset</span><span class="p">(</span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">IScopeOrigin</span><span class="o">&lt;</span><span class="nx">IFileManager</span><span class="p">,</span><span class="w"> </span><span class="nx">ICloud</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">UploadAssetOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">[];</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">uploadAsset</span><span class="p">(</span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">IScopeOrigin</span><span class="o">&lt;</span><span class="nx">IFileManager</span><span class="p">,</span><span class="w"> </span><span class="nx">ICloud</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">,</span><span class="w"> </span><span class="nx">ignoreProcess</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">[];</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">uploadAsset</span><span class="p">(</span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">IScopeOrigin</span><span class="o">&lt;</span><span class="nx">IFileManager</span><span class="p">,</span><span class="w"> </span><span class="nx">ICloud</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">,</span><span class="w"> </span><span class="nx">contentType?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">ignoreProcess?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">[];</span>
+</span><span class="w">    </span><span class="nx">sanitizeAssets</span><span class="p">(</span><span class="nx">assets</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nx">ExternalAsset</span><span class="p">[];</span>
 <span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">ICloud</span><span class="p">;</span>
 <span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="kr">module</span><span class="nx">?</span><span class="o">:</span><span class="w"> </span><span class="nx">CloudModule</span><span class="p">,</span><span class="w"> </span><span class="nx">database?</span><span class="o">:</span><span class="w"> </span><span class="kt">CloudDatabase</span><span class="p">[],</span><span class="w"> </span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nx">ICloud</span><span class="p">;</span>
 <span class="p">}</span>
@@ -199,7 +199,8 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>CloudConstructor</em> method <strong>finalize</strong> return value was modified to <em class="target">Promise&lt;boolean&gt;</em>.</p></li>
+<li><p><em>CloudConstructor</em> method <strong>finalize</strong> return value was modified to <em class="target">Promise&lt;void&gt;</em>.</p></li>
+<li><p><em>CloudConstructor</em> method <strong>uploadAsset</strong> return value was modified to <em class="target">Promise&lt;void&gt;[]</em>.</p></li>
 </ul>
 </div>
 <div class="versionadded">

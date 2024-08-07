@@ -11,7 +11,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 46
+  :emphasize-lines: 46-49
 
   import type { IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -59,9 +59,9 @@ Interface
       LOG_CLOUD_DELETE: LogMessageOptions;
       LOG_CLOUD_DELAYED: LogMessageOptions;
       finalize(this: IHost, instance: ICloud): Promise<void>;
-      uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, options: UploadAssetOptions): Promise<unknown>[];
-      uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, ignoreProcess: boolean): Promise<unknown>[];
-      uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, contentType?: string, ignoreProcess?: boolean): Promise<unknown>[];
+      uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, options: UploadAssetOptions): Promise<void>[];
+      uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, ignoreProcess: boolean): Promise<void>[];
+      uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, contentType?: string, ignoreProcess?: boolean): Promise<void>[];
       sanitizeAssets(assets: ExternalAsset[]): ExternalAsset[];
       readonly prototype: ICloud;
       new(module?: CloudModule, database?: CloudDatabase[], ...args: unknown[]): ICloud;
@@ -93,7 +93,8 @@ Changelog
 
 .. versionadded:: 0.10.0
 
-  - *CloudConstructor* method **finalize** return value was modified to :target:`Promise<boolean>`.
+  - *CloudConstructor* method **finalize** return value was modified to :target:`Promise<void>`.
+  - *CloudConstructor* method **uploadAsset** return value was modified to :target:`Promise<void>[]`.
 
 .. versionadded:: 0.9.0
 

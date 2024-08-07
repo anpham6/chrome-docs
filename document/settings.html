@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Settings &mdash; E-mc 0.9.6 documentation</title>
+  <title>Settings &mdash; E-mc 0.10.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -19,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=564a08b9"></script>
+        <script src="../_static/documentation_options.js?v=82662543"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -33,7 +33,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/002.png);" >
 
           
           
@@ -62,6 +62,7 @@
 <li class="toctree-l2"><a class="reference internal" href="broadcast.html">Broadcast</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finalize.html">Finalize</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#changelog">Changelog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
@@ -82,7 +83,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/001.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/002.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -238,8 +239,7 @@
 <span class="w">            </span><span class="nt">&quot;sass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/sass&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;stylelint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/stylelint&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;svgo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/svgo&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;terser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/terser&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;uglify-js&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/uglify-js&quot;</span>
+<span class="w">            </span><span class="nt">&quot;terser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/terser&quot;</span>
 <span class="w">          </span><span class="p">},</span>
 <span class="w">          </span><span class="nt">&quot;html&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;posthtml&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -336,8 +336,25 @@
 <span class="w">                </span><span class="nt">&quot;overrideConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">                </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">                </span><span class="nt">&quot;useEslintrc&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<span class="w">              </span><span class="p">}</span>
-<span class="w">            </span><span class="p">},</span>
+<span class="w">              </span><span class="p">},</span>
+<span class="hll"><span class="w">              </span><span class="nt">&quot;lint-v9&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;fix&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;fixTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;allowInlineConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;overrideConfigFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;baseConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">                  </span><span class="nt">&quot;languageOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">                    </span><span class="nt">&quot;ecmaVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                    </span><span class="nt">&quot;sourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                    </span><span class="nt">&quot;parserOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+</span><span class="hll"><span class="w">                  </span><span class="p">},</span>
+</span><span class="hll"><span class="w">                  </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+</span><span class="hll"><span class="w">                  </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+</span><span class="hll"><span class="w">                </span><span class="p">},</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;overrideConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span class="hll"><span class="w">              </span><span class="p">}</span>
+</span><span class="w">            </span><span class="p">},</span>
 <span class="w">            </span><span class="nt">&quot;prettier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">              </span><span class="nt">&quot;beautify&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                </span><span class="nt">&quot;parser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;babel&quot;</span><span class="p">,</span>
@@ -388,6 +405,21 @@
 </pre></div>
 </div>
 </div>
+<section id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 5.3.0: </span></p>
+<ul class="simple">
+<li><p>Transform plugin <strong>eslint</strong> format configuration <em class="target">lint-v9</em> was created.</p></li>
+</ul>
+</div>
+<div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 5.3.0: </span></p>
+<ul class="simple">
+<li><p>Transform plugins <strong>html-minifier</strong> | <strong>uglify-js</strong> are no longer supported.</p></li>
+</ul>
+</div>
+</section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
 <ul class="simple">

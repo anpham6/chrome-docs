@@ -64,6 +64,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#interface">Interface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#authentication">Authentication</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-usage">Example usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pi-r-atlas">&#64;pi-r/atlas</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="oci.html">Oracle</a></li>
@@ -149,6 +150,14 @@
 <span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span>
 <span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="nt">&quot;authMechanism&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MONGODB-X509&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tlsCertificateKeyFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/cert.pem&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="nt">&quot;authMechanism&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MONGODB-AWS&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;authMechanismProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="nt">&quot;authMechanism&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLAIN&quot;</span>
 
 <span class="w">      </span><span class="cm">/* Same as @pi-r/mongodb */</span>
 <span class="w">    </span><span class="p">}</span>
@@ -207,6 +216,26 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+</section>
+<section id="pi-r-atlas">
+<h2>&#64;pi-r/atlas<a class="headerlink" href="#pi-r-atlas" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.8.1: </span></p>
+<ul>
+<li><p><em>MongoDB</em> authentication mechanisms were implemented:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>MONGODB-X509</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>MONGODB-AWS</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>PLAIN</p></li>
+</ul>
+</td></tr></table>
+</li>
+</ul>
 </div>
 </section>
 </section>

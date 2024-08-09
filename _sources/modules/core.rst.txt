@@ -175,6 +175,9 @@ Changelog
 .. versionadded:: 0.10.0
 
   - *IClientDb* method **getCacheResult** was created.
+
+.. versionchanged:: 0.10.0
+
   - *IHost* methods **pauseLog** | **resumeLog** *optional* argument **type** as :alt:`string` was implemented.
 
 .. versionadded:: 0.9.0

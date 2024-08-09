@@ -82,7 +82,7 @@ Interface
 Changelog
 =========
 
-.. versionremoved:: 0.9.0
+.. versionchanged:: 0.9.0
 
   - *RequestInit* property **requestTimeout** was renamed :target:`readTimeout`.
 

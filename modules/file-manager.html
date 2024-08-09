@@ -309,9 +309,14 @@
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
-<ul>
+<ul class="simple">
 <li><p><em>IFileManager</em> method <strong>checkFilename</strong> for duplicate destination renames was created.</p></li>
 <li><p><em>IFileManager</em> method <strong>finalizeChecksum</strong> for directory hash validation was created.</p></li>
+</ul>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
+<ul>
 <li><p><em>IFileManager</em> methods return value was modified to <em class="target">Promise&lt;void&gt;</em>:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>finalize</p></li>
@@ -332,10 +337,7 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.9.0: </span></p>
 <ul>
-<li><p><em>IFileManager</em> method <strong>install</strong> with <strong>name</strong> <em class="alt">“image”</em> and <strong>target</strong> as <em class="alt">ImageConstructor</em>.</p></li>
-<li><p><em>IFileManager</em> method <strong>install</strong> with <strong>name</strong> <em class="alt">“document” | “image” | “task”</em> and <strong>handler</strong> as <em class="alt">string</em>.</p></li>
 <li><p><em>IFileManager</em> method <strong>transformAsset</strong> <em>optional</em> argument <strong>override</strong> as <em class="alt">boolean</em> was created.</p></li>
-<li><p><em>IFileManager</em> method <strong>transformAsset</strong> return value was modified to <em class="target">Promise&lt;boolean&gt;</em>.</p></li>
 <li><p><em>IFileManager</em> methods were created:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>scheduleTask</p></li>
@@ -348,6 +350,14 @@
 </ul>
 </td></tr></table>
 </li>
+</ul>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.9.0: </span></p>
+<ul class="simple">
+<li><p><em>IFileManager</em> method <strong>install</strong> with <strong>name</strong> <em class="alt">“image”</em> and <strong>target</strong> as <em class="alt">ImageConstructor</em>.</p></li>
+<li><p><em>IFileManager</em> method <strong>install</strong> with <strong>name</strong> <em class="alt">“document” | “image” | “task”</em> and <strong>handler</strong> as <em class="alt">string</em>.</p></li>
+<li><p><em>IFileManager</em> method <strong>transformAsset</strong> return value was modified to <em class="target">Promise&lt;boolean&gt;</em>.</p></li>
 </ul>
 </div>
 </section>

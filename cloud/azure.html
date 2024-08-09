@@ -283,7 +283,7 @@
 <span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">partitionKey?</span><span class="o">:</span><span class="w"> </span><span class="kt">PartitionKey</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">FeedOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">RequestOptions</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">PatchRequestBody</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">PatchRequestBody</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Reord</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">storedProcedureId?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -375,7 +375,11 @@
 
 <span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* PatchRequestBody */</span><span class="p">},</span><span class="w"> </span><span class="c1">// JSON Patch</span>
 <span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
-<span class="w">    </span><span class="nt">&quot;partitionKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pictures&quot;</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM c WHERE c.id = &#39;1&#39;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Record&lt;string, unknown&gt; */</span><span class="p">},</span>
+<span class="w">    </span><span class="cm">/* WITH */</span>
+<span class="w">    </span><span class="nt">&quot;partitionKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pictures&quot;</span><span class="w"> </span><span class="c1">// Optional</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -384,6 +388,12 @@
 </section>
 <section id="pi-r-azure">
 <h2>&#64;pi-r/azure<a class="headerlink" href="#pi-r-azure" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.8.1: </span></p>
+<ul class="simple">
+<li><p><em>CosmoDB</em> items method <strong>upsert</strong> document as <em class="target">Record&lt;string, unknown&gt;</em> was implemented.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.7.0: </span></p>
 <ul class="simple">
@@ -397,7 +407,7 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.6.2: </span></p>
 <ul class="simple">
-<li><p>Identity authentication with Azure AD (<strong>aadCredentials</strong>) was implemented.</p></li>
+<li><p>Identity authentication with Azure AD <em class="alt">(aadCredentials)</em> was implemented.</p></li>
 </ul>
 </div>
 </section>

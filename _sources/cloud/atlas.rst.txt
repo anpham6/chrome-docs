@@ -49,6 +49,14 @@ Authentication
           "username": "**********",
           "password": "**********"
         },
+        /* OR */
+        "authMechanism": "MONGODB-X509",
+        "tlsCertificateKeyFile": "/path/to/cert.pem",
+        /* OR */
+        "authMechanism": "MONGODB-AWS",
+        "authMechanismProperties": {}
+        /* OR */
+        "authMechanism": "PLAIN"
 
         /* Same as @pi-r/mongodb */
       }
@@ -104,3 +112,17 @@ Example usage
       "update": [/* Document */, /* Document */] // Not related to query (insertMany)
     }
   }
+
+@pi-r/atlas
+===========
+
+.. versionadded:: 0.8.1
+
+  - *MongoDB* authentication mechanisms were implemented:
+
+    .. hlist::
+      :columns: 3
+
+      - MONGODB-X509
+      - MONGODB-AWS
+      - PLAIN

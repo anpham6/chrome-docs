@@ -86,7 +86,7 @@ Interface
 Changelog
 =========
 
-.. versionadded:: 0.9.0
+.. versionchanged:: 0.9.0
 
   - *IDocument* property **config** was made abstract.
 

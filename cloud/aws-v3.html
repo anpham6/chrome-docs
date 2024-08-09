@@ -114,7 +114,7 @@
 </ul>
 <section id="interface">
 <h3>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AwsAuthInputConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@aws-sdk/middleware-signing&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AwsSdkSigV4AuthInputConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@aws-sdk/core&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">S3ClientConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@aws-sdk/client-s3&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">AWSStorage</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorage</span><span class="w"> </span><span class="p">{</span>
@@ -123,7 +123,7 @@
 <span class="w">    </span><span class="nx">bucket</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">AWSBaseCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">AwsAuthInputConfig</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">AWSBaseCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">AwsSdkSigV4AuthInputConfig</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">provider</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">http?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">ini?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
@@ -412,6 +412,11 @@
 <li><p><strong>configBucket.tags</strong> using <em>PutBucketTaggingRequest</em> was implemented.</p></li>
 <li><p><strong>configBucket.cors</strong> using <em>CORSConfiguration</em> was implemented.</p></li>
 <li><p><strong>configBucket.lifecycle</strong> using <em>BucketLifecycleConfiguration</em> was implemented.</p></li>
+</ul>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.7.0: </span></p>
+<ul class="simple">
 <li><p>NPM dependency <strong>&#64;pi-r/aws</strong> was replaced with <strong>&#64;pi-r/aws-lib</strong>.</p></li>
 </ul>
 </div>

@@ -206,6 +206,9 @@ Changelog
 
   - *IFileManager* method **checkFilename** for duplicate destination renames was created.
   - *IFileManager* method **finalizeChecksum** for directory hash validation was created.
+
+.. versionchanged:: 0.10.0
+
   - *IFileManager* methods return value was modified to :target:`Promise<void>`:
 
     .. hlist::
@@ -220,10 +223,7 @@ Changelog
 
 .. versionadded:: 0.9.0
 
-  - *IFileManager* method **install** with **name** :alt:`"image"` and **target** as :alt:`ImageConstructor`.
-  - *IFileManager* method **install** with **name** :alt:`"document" | "image" | "task"` and **handler** as :alt:`string`.
   - *IFileManager* method **transformAsset** *optional* argument **override** as :alt:`boolean` was created.
-  - *IFileManager* method **transformAsset** return value was modified to :target:`Promise<boolean>`.
   - *IFileManager* methods were created:
 
     .. hlist::
@@ -232,6 +232,12 @@ Changelog
       - scheduleTask
       - setTaskLimit
       - updateProgress
+
+.. versionchanged:: 0.9.0
+
+  - *IFileManager* method **install** with **name** :alt:`"image"` and **target** as :alt:`ImageConstructor`.
+  - *IFileManager* method **install** with **name** :alt:`"document" | "image" | "task"` and **handler** as :alt:`string`.
+  - *IFileManager* method **transformAsset** return value was modified to :target:`Promise<boolean>`.
 
 Settings
 ========

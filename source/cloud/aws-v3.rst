@@ -307,6 +307,9 @@ Example usage
   - **configBucket.tags** using *PutBucketTaggingRequest* was implemented.
   - **configBucket.cors** using *CORSConfiguration* was implemented.
   - **configBucket.lifecycle** using *BucketLifecycleConfiguration* was implemented.
+
+.. versionchanged:: 0.7.0
+
   - NPM dependency **@pi-r/aws** was replaced with **@pi-r/aws-lib**.
 
 .. versionremoved:: 0.7.0

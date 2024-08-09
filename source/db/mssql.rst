@@ -170,7 +170,6 @@ Example usage
 
 .. versionadded:: 0.8.0
 
-  - NPM package **tedious** was upgraded from *16.7* to :target:`18.3` with a :alt:`NodeJS 18` requirement.
   - Azure authentication validation was implemented:
 
     .. hlist::
@@ -183,3 +182,7 @@ Example usage
       - azure-active-directory-msi-app-service
       - azure-active-directory-service-principal-secret
       - token-credential
+
+.. versionchanged:: 0.8.0
+
+  - NPM package **tedious** was upgraded from *16.7* to :target:`18.3` with a :alt:`NodeJS 18` requirement.

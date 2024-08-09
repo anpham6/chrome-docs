@@ -248,7 +248,7 @@ Changelog
   - *ModuleConstructor* static property **PLATFORM_WIN32** was created.
   - *IModule* property accessor **silent** for console messages was created.
 
-.. versionremoved:: 0.10.0
+.. versionchanged:: 0.10.0
   
   - *ModuleConstructor* static method **asHash** argument :target:`minLength` was replaced with :target:`digest` as :alt:`BinaryToTextEncoding`.
 
@@ -259,6 +259,9 @@ Changelog
 .. versionadded:: 0.9.0
 
   - *ModuleConstructor* static property **LOG_FORMAT** was created.
+
+.. versionchanged:: 0.9.0
+  
   - *IModule* method **src** and **dest** arguments can accept :ref:`URL <references-nodejs-url>` object:
 
     .. hlist::

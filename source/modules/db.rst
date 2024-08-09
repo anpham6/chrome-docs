@@ -107,7 +107,7 @@ Changelog
   - *DbPoolConstructor* static property **CACHE_UNUSED** for unused pool attributes was created.
   - *DbPoolConstructor* static methods **asString** | **sanitize** | **removeUUIDKey** for pool keys were created.
 
-.. versionadded:: 0.9.0
+.. versionchanged:: 0.9.0
 
   - *IDb* methods **executeQuery** | **executeBatchQuery** with argument :target:`callback` as :alt:`ErrorQueryCallback`.
 

@@ -206,6 +206,9 @@ Changelog
   - Method **hashKey** for single-pass encoding was created.
   - Method **supported** for NodeJS versioning :alt:`(from Module)` was implemented.
   - Method **importESM** for dynamic module loading was created.
+
+.. versionchanged:: 0.10.0
+
   - Method **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name "**AbortError**" and code **20**.
   - Method **formatTime** with argument :alt:`char` as "**:**" displays using digital clock format.
 
@@ -235,7 +238,7 @@ Changelog
 
   - :alt:`enum` **LOG_STATE** for queuing console output was created.
 
-.. versionremoved:: 0.9.0
+.. versionchanged:: 0.9.0
 
   - :alt:`type` **StringOfArray** was renamed :target:`ArrayOf<string>`.
   - :alt:`type` **BufferContent** was renamed :target:`Bufferable`.

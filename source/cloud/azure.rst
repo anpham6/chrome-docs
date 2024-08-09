@@ -292,6 +292,6 @@ Example usage
 
 .. versionadded:: 0.6.2
 
-  - Identity authentication with Azure AD (**aadCredentials**) was implemented.
+  - Identity authentication with Azure AD :alt:`(aadCredentials)` was implemented.
 
 .. |env-apply| replace:: These are not official *Azure* environment variables and require :code:`process.env.apply = true` in :target:`squared.json`.

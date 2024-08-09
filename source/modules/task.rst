@@ -37,7 +37,7 @@ Interface
 Changelog
 =========
 
-.. versionadded:: 0.10.0
+.. versionchanged:: 0.10.0
 
   - *TaskConstructor* method **finalize** return value was modified to :target:`Promise<void>`:
 

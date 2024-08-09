@@ -91,7 +91,7 @@ Interface
 Changelog
 =========
 
-.. versionadded:: 0.10.0
+.. versionchanged:: 0.10.0
 
   - *CloudConstructor* method **finalize** return value was modified to :target:`Promise<void>`.
   - *CloudConstructor* method **uploadAsset** return value was modified to :target:`Promise<void>[]`.

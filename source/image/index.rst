@@ -226,6 +226,9 @@ Compression
       "tinify": {
         "api_key": "**********", // Default API key (optional)
         "proxy": ""
+      },
+      "settings": {
+        "tinify_api_key": "**********" // Alternate
       }
     }
   }

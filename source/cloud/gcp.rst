@@ -620,4 +620,4 @@ Realtime Database
 .. versionadded:: 0.6.2
 
   - *GoogleAuthOptions* properties **authClient** and **credentials** were not detected during credential validation.
-  - *Datastore* method **createQuery** with "namespace" and "kind" parameter is supported.
+  - *Datastore* method **createQuery** with :target:`namespace` and :target:`kind` parameter is supported.

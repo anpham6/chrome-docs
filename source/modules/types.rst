@@ -9,7 +9,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 7,49,51,57-58
+  :emphasize-lines: 7,32-33,49,51,57-58
 
   import type { LogArguments } from "./lib/logger";
 
@@ -200,6 +200,10 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.11.0
+
+  - :alt:`type` **HighResolutionTime** in **object** with :target:`bigint` primitive was amended.
 
 .. versionadded:: 0.10.0
   

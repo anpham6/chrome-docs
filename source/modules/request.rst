@@ -99,7 +99,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 49,69
+  :emphasize-lines: 38,49,69
 
   import type { PermittedDirectories } from "./core";
   import type { SecureConfig } from "./http";
@@ -184,6 +184,10 @@ Settings
 
 Changelog
 ---------
+
+.. versionchanged:: 0.11.0
+
+  - *RequestModule* property **proxy.exclude** can be prefixed with "**!**" to negate a subset of glob addresses.
 
 .. versionadded:: 0.10.0
 

@@ -202,6 +202,10 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.11.0
+
+  - *FileManagerConstructor* static method **verifyChecksum** with :alt:`ChecksumOptions` property :target:`exclude` can be prefixed with "**!**" to negate a subset of glob paths.
+
 .. versionadded:: 0.10.0
 
   - *IFileManager* method **checkFilename** for duplicate destination renames was created.

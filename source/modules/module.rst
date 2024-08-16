@@ -287,7 +287,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 59,74,89,98,106-111,133
+  :emphasize-lines: 40,59-60,75,90,99,107-112,134
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -348,6 +348,7 @@ Settings
   interface TempModule {
       dir?: string;
       env?: string;
+      os?: boolean;
       write?: boolean;
   }
 
@@ -446,6 +447,14 @@ Settings
 
 Changelog
 ---------
+
+.. versionadded:: 0.11.0
+
+  - *TempModule* property **os** for system global temp directory was implemented.
+
+.. versionchanged:: 0.11.0
+
+  - *MemoryModule* settings property **cache_disk.exclude** can be prefixed with "**!**" to negate a subset of glob paths.
 
 .. versionadded:: 0.10.0
 

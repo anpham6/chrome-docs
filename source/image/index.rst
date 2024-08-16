@@ -290,8 +290,27 @@ You can use image commands with **saveTo** (directory) on any element where the 
 
 Transformations are given a *UUID* filename except when "**@**" or "**%**" are used. Leaving **data-chrome-file** empty will save the transformations to the current image directory.
 
+Native (N-API)
+==============
+
+- **npm** i *jimp-native*
+
+Experimental support for `jimp-native <https://github.com/jimp-dev/jimp-native>`_ can be enabled using environment variables. Once it is loaded during initialization it cannot be unloaded without restarting the server process.
+
+=============== ======== ========
+ Name             Value   Default
+=============== ======== ========
+JIMP_NATIVE_LIB  boolean      any
+=============== ======== ========
+
+.. caution:: Only some built-in plugins have been converted. [#]_ 
+
 @pi-r/jimp
 ==========
+
+.. versionadded:: 0.8.2
+
+  - *NPM* package **jimp-native** can be loaded globally using environment variable :alt:`JIMP_NATIVE_LIB`.
 
 .. versionadded:: 0.8.1
 
@@ -314,4 +333,5 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 .. [#] left - 1 | center - 2 | right - 4 | top - 8 | middle - 16 | bottom - 32
 .. [#] png | jpeg | webp
 .. [#] e-mc 0.10
+.. [#] https://github.com/jimp-dev/jimp-native#coverage
 .. [#] https://github.com/jimp-dev/gifwrap#GifUtil.quantizeDekker

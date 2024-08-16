@@ -2,8 +2,6 @@
 @e-mc/module
 ============
 
-- **npm** i *@e-mc/module*
-
 Interface
 =========
 
@@ -450,7 +448,7 @@ Changelog
 
 .. versionadded:: 0.11.0
 
-  - *TempModule* property **os** for system global temp directory was implemented.
+  - *TempModule* property **os** for system global temp directory was created.
 
 .. versionchanged:: 0.11.0
 
@@ -461,7 +459,7 @@ Changelog
   - *LoggerModule* group **format** block :target:`error` for output display was created.
   - *LoggerModule* group **format** property **braces** for text separation was implemented.
   - *LoggerModule* group **progress** for summary data was created.
-  - *TempModule* property **env** for system user local temp directory was implemented.
+  - *TempModule* property **env** for system user local temp directory was  was created.
 
 .. versionadded:: 0.8.6
 

@@ -2,8 +2,6 @@
 @e-mc/file-manager
 ==================
 
-- **npm** i *@e-mc/file-manager*
-
 Interface
 =========
 

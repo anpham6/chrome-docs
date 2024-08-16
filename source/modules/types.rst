@@ -2,8 +2,6 @@
 @e-mc/types
 ===========
 
-- **npm** i *@e-mc/types*
-
 Interface
 =========
 

@@ -2,8 +2,6 @@
 @e-mc/task
 ==========
 
-- **npm** i *@e-mc/task*
-
 Interface
 =========
 

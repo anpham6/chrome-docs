@@ -2,8 +2,6 @@
 @e-mc/core
 ==========
 
-- **npm** i *@e-mc/core*
-
 Interface
 =========
 

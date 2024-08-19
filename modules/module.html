@@ -109,9 +109,6 @@
              
   <section id="e-mc-module">
 <h1>&#64;e-mc/module<a class="headerlink" href="#e-mc-module" title="Link to this heading"></a></h1>
-<ul class="simple">
-<li><p><strong>npm</strong> i <em>&#64;e-mc/module</em></p></li>
-</ul>
 <section id="interface">
 <h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
 <div class="literal-block-wrapper docutils container" id="id2">
@@ -449,8 +446,8 @@
 <span class="w">            </span><span class="nx">min_size?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">            </span><span class="nx">max_size?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">            </span><span class="nx">include?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
-<span class="w">            </span><span class="nx">exclude?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
-<span class="w">            </span><span class="nx">expires?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="hll"><span class="w">            </span><span class="nx">exclude?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+</span><span class="w">            </span><span class="nx">expires?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="p">};</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="p">}</span>
@@ -469,6 +466,7 @@
 <span class="kd">interface</span><span class="w"> </span><span class="nx">TempModule</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">dir?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="hll"><span class="w">    </span><span class="nx">env?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">os?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 </span><span class="w">    </span><span class="nx">write?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -569,6 +567,18 @@
 </div>
 <section id="id1">
 <h3>Changelog<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.0: </span></p>
+<ul class="simple">
+<li><p><em>TempModule</em> property <strong>os</strong> for system global temp directory was implemented.</p></li>
+</ul>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
+<ul class="simple">
+<li><p><em>MemoryModule</em> settings property <strong>cache_disk.exclude</strong> can be prefixed with “<strong>!</strong>” to negate a subset of glob paths.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">

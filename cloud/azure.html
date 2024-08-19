@@ -127,6 +127,7 @@
 <span class="kd">interface</span><span class="w"> </span><span class="nx">AzureStorageCredential</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">accountName?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">accountKey?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">accountSas?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">connectionString?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">sharedAccessSignature?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
@@ -144,6 +145,7 @@
 <h3>Authentication<a class="headerlink" href="#authentication" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.npmjs.com/package/&#64;azure/storage-blob#create-the-blob-service-client">Credentials</a></p></li>
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview">Shared Access Signatures</a></p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">using process.env</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
@@ -158,8 +160,11 @@
 <span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
 <span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;accountName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// +1 password option (required)</span>
+<span class="w">      </span><span class="nt">&quot;accountName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;accountKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="nt">&quot;accountName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;accountSas&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;?sv=2022-11-02&amp;sr=b...&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
 <span class="w">      </span><span class="nt">&quot;connectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DefaultEndpointsProtocol=http;AccountName=nodejs;AccountKey=**********;BlobEndpoint=http://127.0.0.1:10000/nodejs;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
@@ -388,6 +393,12 @@
 </section>
 <section id="pi-r-azure">
 <h2>&#64;pi-r/azure<a class="headerlink" href="#pi-r-azure" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.8.2: </span></p>
+<ul class="simple">
+<li><p><em>AzureStorageCredential</em> property <strong>accountSas</strong> for URL authentication using <abbr title="Shared Access Signatures">SAS</abbr> was implemented.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.1: </span></p>
 <ul class="simple">

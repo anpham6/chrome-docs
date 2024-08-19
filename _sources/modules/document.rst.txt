@@ -2,8 +2,6 @@
 @e-mc/document
 ==============
 
-- **npm** i *@e-mc/document*
-
 Interface
 =========
 

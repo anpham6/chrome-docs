@@ -109,9 +109,6 @@
              
   <section id="e-mc-request">
 <h1>&#64;e-mc/request<a class="headerlink" href="#e-mc-request" title="Link to this heading"></a></h1>
-<ul class="simple">
-<li><p><strong>npm</strong> i <em>&#64;e-mc/request</em></p></li>
-</ul>
 <section id="interface">
 <h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
 <div class="literal-block-wrapper docutils container" id="id2">
@@ -245,11 +242,12 @@
 <span class="w">    </span><span class="nx">proxy</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">address?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">port?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">username?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="hll"><span class="w">        </span><span class="nx">origin?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="w">        </span><span class="nx">username?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">password?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">include?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
-<span class="w">        </span><span class="nx">exclude?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
-<span class="w">        </span><span class="nx">keep_alive?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="hll"><span class="w">        </span><span class="nx">exclude?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+</span><span class="w">        </span><span class="nx">keep_alive?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">OutgoingHttpHeaders</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">certs?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">SecureConfig</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;&gt;</span><span class="p">;</span>
@@ -296,6 +294,18 @@
 </div>
 <section id="id1">
 <h3>Changelog<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.0: </span></p>
+<ul class="simple">
+<li><p><em>RequestModule</em> property <strong>proxy.origin</strong> is a combined alias for <em class="target">address</em> and <em class="target">port</em>.</p></li>
+</ul>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
+<ul class="simple">
+<li><p><em>RequestModule</em> property <strong>proxy.exclude</strong> can be prefixed with “<strong>!</strong>” to negate a subset of glob addresses.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">

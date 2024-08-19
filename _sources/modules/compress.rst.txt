@@ -2,8 +2,6 @@
 @e-mc/compress
 ==============
 
-- **npm** i *@e-mc/compress*
-
 Interface
 =========
 

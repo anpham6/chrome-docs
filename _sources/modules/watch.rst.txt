@@ -2,8 +2,6 @@
 @e-mc/watch
 ===========
 
-- **npm** i *@e-mc/watch*
-
 Interface
 =========
 

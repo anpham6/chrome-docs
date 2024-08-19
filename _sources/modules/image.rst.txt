@@ -2,8 +2,6 @@
 @e-mc/image
 ===========
 
-- **npm** i *@e-mc/image*
-
 Interface
 =========
 

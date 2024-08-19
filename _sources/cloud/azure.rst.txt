@@ -25,6 +25,7 @@ Interface
   interface AzureStorageCredential {
       accountName?: string;
       accountKey?: string;
+      accountSas?: string;
       connectionString?: string;
       sharedAccessSignature?: string;
   }
@@ -41,6 +42,7 @@ Authentication
 --------------
 
 - `Credentials <https://www.npmjs.com/package/@azure/storage-blob#create-the-blob-service-client>`_
+- `Shared Access Signatures <https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview>`_
 
 .. code-block:: javascript
   :caption: using process.env
@@ -56,8 +58,11 @@ Authentication
       "credential": "main", // squared.cloud.json
       /* OR */
       "credential": {
-        "accountName": "nodejs", // +1 password option (required)
+        "accountName": "nodejs",
         "accountKey": "**********",
+        /* OR */
+        "accountName": "nodejs",
+        "accountSas": "?sv=2022-11-02&sr=b...",
         /* OR */
         "connectionString": "DefaultEndpointsProtocol=http;AccountName=nodejs;AccountKey=**********;BlobEndpoint=http://127.0.0.1:10000/nodejs;",
         /* OR */
@@ -277,6 +282,10 @@ Example usage
 
 @pi-r/azure
 ===========
+
+.. versionadded:: 0.8.2
+
+  - *AzureStorageCredential* property **accountSas** for URL authentication using :abbr:`SAS (Shared Access Signatures)` was implemented.
 
 .. versionadded:: 0.8.1
 

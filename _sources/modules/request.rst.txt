@@ -184,13 +184,13 @@ Settings
 Changelog
 ---------
 
-.. versionadded:: 0.11.0
-
-  - *RequestModule* property **proxy.origin** is a combined alias for :target:`address` and :target:`port`.
-
 .. versionchanged:: 0.11.0
 
   - *RequestModule* property **proxy.exclude** can be prefixed with "**!**" to negate a subset of glob addresses.
+
+.. versionadded:: 0.10.1
+
+  - *RequestModule* property **proxy.origin** is a combined alias for :target:`address` and :target:`port`.
 
 .. versionadded:: 0.10.0
 

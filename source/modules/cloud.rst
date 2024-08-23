@@ -2,8 +2,6 @@
 @e-mc/cloud
 ===========
 
-- **npm** i *@e-mc/cloud*
-
 Interface
 =========
 

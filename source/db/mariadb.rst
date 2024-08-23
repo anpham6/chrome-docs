@@ -110,7 +110,7 @@ Example usage
 
 .. versionadded:: 0.8.0
 
-  - *DbPool* interface with static property **CACHE_UNUSED** through :target:`@pi-r/mariadb/client/pool` as :alt:`string[]` was implemented.
+  - *DbPool* static property **CACHE_UNUSED** through :target:`@pi-r/mariadb/client/pool` as :alt:`string[]` was implemented.
   - *SecureContextOptions* (:alt:`NodeJS.tls`) property **ca** with Amazon RDS CA [#]_ cert for *host* :alt:`rds.amazonaws.com` is attached when installed.
 
 .. versionadded:: 0.6.2

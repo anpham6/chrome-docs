@@ -2,8 +2,6 @@
 @e-mc/db
 ========
 
-- **npm** i *@e-mc/db*
-
 Interface
 =========
 

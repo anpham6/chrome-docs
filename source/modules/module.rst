@@ -2,8 +2,6 @@
 @e-mc/module
 ============
 
-- **npm** i *@e-mc/module*
-
 Interface
 =========
 
@@ -452,11 +450,11 @@ Changelog
   - *LoggerModule* group **format** block :target:`error` for output display was created.
   - *LoggerModule* group **format** property **braces** for text separation was implemented.
   - *LoggerModule* group **progress** for summary data was created.
-  - *TempModule* property **env** for system user local temp directory was implemented.
+  - *TempModule* property **env** for system user local temp directory was created.
 
 .. versionadded:: 0.8.6
 
-  - *PermissionModule* properties **home_read** | **home_write** were implemented.
+  - *PermissionModule* properties **home_read** | **home_write** were created.
 
 References
 ==========

@@ -156,5 +156,5 @@ Thick Mode
 
 .. versionadded:: 0.8.0
 
-  - *DbPool* interface with static property **CACHE_UNUSED** through :target:`@pi-r/oracle/client/pool` as :alt:`string[]` was implemented.
+  - *DbPool* static property **CACHE_UNUSED** through :target:`@pi-r/oracle/client/pool` as :alt:`string[]` was implemented.
   - *OracleCredential* property **connectString** | **connectionString** with `Centralized Configuration Providers <https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connecting-using-centralized-configuration-providers>`_ is supported.

@@ -2,8 +2,6 @@
 @e-mc/request
 =============
 
-- **npm** i *@e-mc/request*
-
 Interface
 =========
 
@@ -99,7 +97,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 49,69
+  :emphasize-lines: 35,50,70
 
   import type { PermittedDirectories } from "./core";
   import type { SecureConfig } from "./http";
@@ -135,6 +133,7 @@ Settings
       proxy?: {
           address?: string;
           port?: number;
+          origin?: string;
           username?: string;
           password?: string;
           include?: string[];
@@ -185,10 +184,14 @@ Settings
 Changelog
 ---------
 
+.. versionadded:: 0.10.1
+
+  - *RequestModule* property **proxy.origin** is a combined alias for :target:`address` and :target:`port`.
+
 .. versionadded:: 0.10.0
 
   - *DownloadModule* property **check_integrity** in :alt:`aria2` for hash validation was implemented.
-  - *RequestModule* property **write_stream** for stream size :alt:`(kb)` configuration by host was implemented.
+  - *RequestModule* property **write_stream** for stream size :alt:`(kb)` configuration by host was created.
 
 Example usage
 -------------

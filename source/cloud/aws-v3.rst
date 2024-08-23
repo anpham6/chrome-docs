@@ -294,6 +294,10 @@ Example usage
 @pi-r/aws-v3
 ============
 
+.. versionadded:: 0.8.1
+
+  - *S3* bucket names with the format **{base-name}--{zone}--x-s3** are created as directory buckets.
+
 .. versionadded:: 0.8.0
 
   - DynamoDB **PartiQL** using *ExecuteStatementCommand* performing one **SELECT** statement is supported.

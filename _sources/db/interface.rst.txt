@@ -30,7 +30,8 @@ Interface
       transactionFail?: boolean;
   }
 
-::
+.. code-block::
+  :emphasize-lines: 11
 
   interface DbDataSource extends DataSource {
       source: string; // Built-in alias | NPM package name
@@ -42,6 +43,7 @@ Interface
       credential?: PlainObject; // Client supplied by request
 
       parallel?: boolean; // Active with batched queries (implicit: true)
+      flat?: number; // Apply Array.flat(depth) to rows
       streamRow?: boolean; // Read streaming when available
       streamRow?: string | ((row: unknown) => Error | false | void); // Modify row + exclude (parseable)
 
@@ -59,6 +61,13 @@ Interface
       /* Module: Document */
       willAbort?: boolean; // Abort is called bypassing settings
   }
+
+Changelog
+=========
+
+.. versionadded:: 0.10.1
+
+  - *DbDataSource* property **flat** for concatenating multiple results was created.
 
 Global
 ======

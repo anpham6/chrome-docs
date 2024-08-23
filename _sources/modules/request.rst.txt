@@ -195,7 +195,7 @@ Changelog
 .. versionadded:: 0.10.0
 
   - *DownloadModule* property **check_integrity** in :alt:`aria2` for hash validation was implemented.
-  - *RequestModule* property **write_stream** for stream size :alt:`(kb)` configuration by host was implemented.
+  - *RequestModule* property **write_stream** for stream size :alt:`(kb)` configuration by host was created.
 
 Example usage
 -------------

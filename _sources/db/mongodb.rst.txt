@@ -178,4 +178,4 @@ Example usage
 
 .. versionadded:: 0.8.0
 
-  - *DbPool* interface with static property **CACHE_UNUSED** through :target:`@pi-r/mongodb/client/pool` as :alt:`string[]` was implemented.
+  - *DbPool* static property **CACHE_UNUSED** through :target:`@pi-r/mongodb/client/pool` as :alt:`string[]` was implemented.

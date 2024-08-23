@@ -258,7 +258,7 @@ The base folder level configuration file is a hash map of URL globs which can ma
 
 The hash key ``**/example*\\.html`` will only match either 1 and 2 or 3 and 4.
 
-.. code-block:: json
+.. code-block::
   :caption: sqd.config
 
   {

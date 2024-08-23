@@ -4,7 +4,7 @@ Settings
 
 These are the latest server default settings for the :target:`chrome` framework.
 
-.. code-block:: json
+.. code-block::
   :caption: squared.json [#]_
   :emphasize-lines: 230-246
 

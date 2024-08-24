@@ -201,7 +201,7 @@ Changelog
 
 .. versionchanged:: 0.11.0
 
-  - :alt:`type` **HighResolutionTime** in **object** with :target:`bigint` primitive was amended.
+  - :alt:`type` **HighResolutionTime** in **object** with :target:`bigint` primitive was implemented.
 
 .. versionadded:: 0.10.0
   

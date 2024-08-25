@@ -9,11 +9,11 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 69,110-116
+  :emphasize-lines: 38-39,49-50,70,111-117
 
   import type { DataSource, IncrementalMatch, TaskAction } from "./squared";
 
-  import type { DocumentConstructor, HostConstructor, ICloud, ICompress, IDocument, IHost, IImage, IModule, IRequest, ITask, ImageConstructor, TaskConstructor, WatchInstance } from "./index";
+  import type { DocumentConstructor, HostConstructor, ICloud, ICompress, IDocument, IHost, IImage, IModule, IRequest, ITask, IWatch, ImageConstructor, TaskConstructor, WatchConstructor } from "./index";
   import type { ExternalAsset, FileCommand, FileData, IFileThread, OutputFinalize } from "./asset";
   import type { IPermission, PermissionReadWrite } from "./core";
   import type { AssetContentOptions, ChecksumOptions, DeleteFileAddendum, FileOutput, FinalizeResult, FindAssetOptions, IHttpDiskCache, IHttpMemoryCache, InstallData, PostFinalizeCallback, ReplaceOptions } from "./filemanager";
@@ -28,8 +28,6 @@ Interface
 
   interface IFileManager extends IHost, Set<string> {
       processTimeout: number;
-      cacheToDisk: IHttpDiskCache<ExternalAsset>;
-      cacheToMemory: IHttpMemoryCache<ExternalAsset>;
       Request: IRequest<RequestModule>;
       Document: InstallData<IDocument<IFileManager, ExternalAsset>, DocumentConstructor<IFileManager, ExternalAsset>>[];
       Task: InstallData<ITask, TaskConstructor>[];
@@ -50,6 +48,8 @@ Interface
       readonly fetchedAssets: ExternalAsset[];
       readonly copiedAssets: ExternalAsset[];
       readonly emptyDir: Set<string>;
+      readonly cacheToDisk: IHttpDiskCache<ExternalAsset>;
+      readonly cacheToMemory: IHttpMemoryCache<ExternalAsset>;
       install(name: "document", handler: string, module?: DocumentModule, ...args: unknown[]): IDocument | undefined;
       install(name: "document", target: DocumentConstructor, module?: DocumentModule, ...args: unknown[]): IDocument | undefined;
       install(name: "task", handler: string, module?: TaskModule, ...args: unknown[]): ITask | undefined;
@@ -59,8 +59,9 @@ Interface
       install(name: "image", handler: string, module?: ImageModule, ...args: unknown[]): IImage | undefined;
       install(name: "image", target: ImageConstructor, module?: ImageModule, ...args: unknown[]): IImage | undefined;
       install(name: "image", targets: Map<string, ImageConstructor>, module?: ImageModule): void;
-      install(name: "watch", module: WatchModule): WatchInstance<ExternalAsset> | undefined;
-      install(name: "watch", interval?: number | string, port?: number | string, securePort?: number | string, extensions?: unknown[]): WatchInstance<ExternalAsset> | undefined;
+      install(name: "watch", handler: string, module?: WatchModule, ...args: unknown[]): IWatch | undefined;
+      install(name: "watch", target: WatchConstructor, module?: WatchModule, ...args: unknown[]): IWatch | undefined;
+      install(name: "watch", module: WatchModule): IWatch | undefined;
       install(name: "compress", module?: CompressModule): ICompress<CompressModule> | undefined;
       install(name: string, ...args: unknown[]): IModule | undefined;
       using(...items: ExternalAsset[] | [boolean, ...ExternalAsset[]]): this;
@@ -203,6 +204,12 @@ Changelog
 .. versionchanged:: 0.11.0
 
   - *FileManagerConstructor* static method **verifyChecksum** with :alt:`ChecksumOptions` property :target:`exclude` can be prefixed with "**!**" to negate a subset of glob paths.
+  - *IFileManager* method **install** with name :alt:`watch` injected with an *NPM* package or *Watch* constructor was implemented.
+  - *IFileManager* properties **cacheToDisk** | **cacheToMemory** were made :target:`readonly` references.
+
+.. versionremoved:: 0.11.0
+
+  - *IFileManager* method **install** with name :alt:`watch` injected with spread parameters does not conform with *Client* constructor.
 
 .. versionadded:: 0.10.0
 
@@ -225,7 +232,7 @@ Changelog
 
 .. versionadded:: 0.9.0
 
-  - *IFileManager* method **transformAsset** *optional* argument **override** as :alt:`boolean` was created.
+  - *IFileManager* method **transformAsset** argument :target:`override` as :alt:`boolean` was created.
   - *IFileManager* methods were created:
 
     .. hlist::

@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 38
 
   import type { IFileManager, ModuleConstructor } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -47,6 +48,7 @@ Interface
       shutdown(): void;
       setTimeout(value: number | string): void;
       checkTimeout(client: ws): boolean;
+      isConnectionError(err: unknown): boolean;
       readonly prototype: IWatch;
       new(module?: WatchModule): IWatch;
   }
@@ -54,9 +56,13 @@ Interface
 Changelog
 =========
 
+.. versionremoved:: 0.11.0
+
+  - *WatchConstructor* static method **isConnectionError** for identifying retryable errors was created. 
+
 .. versionremoved:: 0.9.0
 
-  - Constructor **new(interval, port, securePort, extensions)** did not conform with ``Module.init()``. 
+  - *WatchConstructor*  **new(interval, port, securePort, extensions)** did not conform with ``Module.init()``. 
 
 Settings
 ========

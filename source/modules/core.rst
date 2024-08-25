@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 23-24
+  :emphasize-lines: 23-24,39-40
 
   import type { DataSource, LogStatus } from "./squared";
 
@@ -49,6 +49,8 @@ Interface
       get host(): null;
       get config(): Readonly<HostInitConfig>;
       get username(): string;
+      get ipV4(): string;
+      get ipV6(): string;
       set done(value);
       get done(): boolean;
       get queued(): boolean;
@@ -170,13 +172,17 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.11.0
+
+  - *IHost* property getters **ipV4** | **ipV6** for remote client address was created.
+
 .. versionadded:: 0.10.0
 
   - *IClientDb* method **getCacheResult** was created.
 
 .. versionchanged:: 0.10.0
 
-  - *IHost* methods **pauseLog** | **resumeLog** *optional* argument **type** as :alt:`string` was implemented.
+  - *IHost* methods **pauseLog** | **resumeLog** argument :target:`type` as :alt:`string` was implemented.
 
 .. versionadded:: 0.9.0
 
@@ -195,8 +201,8 @@ Changelog
 
 .. versionremoved:: 0.9.0
 
-  - *IClientDb* method **hasCache** *optional* argument **override** as :alt:`DbCacheValue`.
-  - *IClientDb* method **hasCoerce** *optional* argument **override** as :alt:`DbCoerceValue`.
+  - *IClientDb* method **hasCache** argument :target:`override` as :alt:`DbCacheValue`.
+  - *IClientDb* method **hasCoerce** argument :target:`override` as :alt:`DbCoerceValue`.
 
 Settings
 ========

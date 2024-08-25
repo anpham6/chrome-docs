@@ -98,10 +98,12 @@ Interface
       service: "oci";
       credential: string | OCIDatabaseCredential;
       table?: string;
+      id?: string | string[];
       query?: string | Record<string, any>;
       options?: ExecuteOptions;
       params?: BindParameters;
       update?: Record<string, any>;
+      updateType?: 0 | 1 | 2;
       streamRow?: boolean;
   }
 
@@ -158,6 +160,7 @@ Example usage
       "table": "demo",
       /* AND */
       "id": "1", // SODA.key
+      "id": ["1", "2"],
       /* OR */
       "query": { "id": { "$eq": "1" } },  // SODA.filter
 
@@ -171,8 +174,12 @@ Example usage
 
       "value": "<b>${title}</b>: ${description}",
 
-      "update": {/* Record<string, any> */}, // SODA.replaceOne
-      "id": "1" // Same as item being retrieved
+      "update": {/* Record<string, any> */},
+      "updateType": 0, // SODA.replaceOne (append)
+      "updateType": 1, // SODA.insertOne (new)
+      "updateType": 2, // SODA.replaceOne
+      "id": "1", // Same as item being retrieved
+      "id": ["1", "2"] // Only first one is updated
     }
   }
 
@@ -181,9 +188,14 @@ Example usage
 @pi-r/oci
 =========
 
+.. versionadded:: 0.8.2
+
+  - *OCIDatabaseQuery* property **id** for multiple keys as :alt:`string[]` was implemented.
+  - *OCIDatabaseQuery* property **updateType** for replacement method invoked was created.
+
 .. versionadded:: 0.8.0
 
-  - *OCIDatabaseCredential* property **connectString** | **connectionString** with `Centralized Configuration Providers <https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connecting-using-centralized-configuration-providers>`_ is supported.
+  - *OCIDatabaseCredential* properties **connectString** | **connectionString** with `Centralized Configuration Providers <https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connecting-using-centralized-configuration-providers>`_ is supported.
 
 .. versionadded:: 0.7.0
 

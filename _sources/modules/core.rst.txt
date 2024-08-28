@@ -176,7 +176,7 @@ Changelog
 
 .. versionchanged:: 0.10.0
 
-  - *IHost* methods **pauseLog** | **resumeLog** *optional* argument **type** as :alt:`string` was implemented.
+  - *IHost* methods **pauseLog** | **resumeLog** argument :target:`type` as :alt:`string` was implemented.
 
 .. versionadded:: 0.9.0
 
@@ -195,8 +195,8 @@ Changelog
 
 .. versionremoved:: 0.9.0
 
-  - *IClientDb* method **hasCache** *optional* argument **override** as :alt:`DbCacheValue`.
-  - *IClientDb* method **hasCoerce** *optional* argument **override** as :alt:`DbCoerceValue`.
+  - *IClientDb* method **hasCache** argument :target:`override` as :alt:`DbCacheValue`.
+  - *IClientDb* method **hasCoerce** argument :target:`override` as :alt:`DbCoerceValue`.
 
 Settings
 ========

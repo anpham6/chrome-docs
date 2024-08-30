@@ -248,8 +248,6 @@ Custom functions or packages can be used to return any kind of dataset from any 
       settings?: string;
       /* OR */
       execute?: (...args: unknown[]) => unknown;
-
-      persist?: boolean; // Default is "true"
   }
 
 Example settings

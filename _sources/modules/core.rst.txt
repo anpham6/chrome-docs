@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 23-24
+  :emphasize-lines: 23-24,39-40
 
   import type { DataSource, LogStatus } from "./squared";
 
@@ -49,6 +49,8 @@ Interface
       get host(): null;
       get config(): Readonly<HostInitConfig>;
       get username(): string;
+      get ipV4(): string;
+      get ipV6(): string;
       set done(value);
       get done(): boolean;
       get queued(): boolean;
@@ -169,6 +171,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.11.0
+
+  - *IHost* property getters **ipV4** | **ipV6** for remote client address was created.
 
 .. versionadded:: 0.10.0
 

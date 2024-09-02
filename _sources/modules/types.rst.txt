@@ -201,15 +201,16 @@ Changelog
 
 .. versionchanged:: 0.11.0
 
-  - :alt:`type` **HighResolutionTime** in **object** with :target:`bigint` primitive was implemented.
+  - :alt:`type` **HighResolutionTime** in :alt:`object` with :target:`bigint` primitive was implemented.
 
 .. versionremoved:: 0.11.0
 
-  - :alt:`interface` **AsSourceFileOptions** property **persist** in **document** was not used.
+  - :alt:`interface` **AsSourceFileOptions** property **persist** in :alt:`document` was not used.
 
-.. deprecated:: 0.11.0
+.. deprecated:: 0.10.2
 
   - :alt:`type` **TupleOf** as a shorter alias does not convey explicit intent.
+  - :alt:`interface` **OpenOptions** property **follow_redirect** in :alt:`request` was renamed :target:`followRedirect`.
 
 .. versionadded:: 0.10.0
   
@@ -220,16 +221,16 @@ Changelog
 .. versionchanged:: 0.10.0
 
   - Method **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name "**AbortError**" and code **20**.
-  - Method **formatTime** with argument :alt:`char` as "**:**" displays using digital clock format.
+  - Method **formatTime** with argument :target:`char` as "**:**" displays using digital clock format.
 
 .. versionremoved:: 0.10.0
 
-  - :alt:`interface` **CloneObjectOptions** in :target:`module` was relocated to **types**.
-  - :alt:`interface` **AsHashOptions** property **minLength** in :target:`module` was deleted.
+  - :alt:`interface` **CloneObjectOptions** in :alt:`module` was relocated to :target:`types`.
+  - :alt:`interface` **AsHashOptions** property **minLength** in :alt:`module` was deleted.
   - :alt:`type` **Writeable** was renamed :target:`Writable`.
-  - :alt:`interface` **GetTempDirOptions** in **module** was renamed :target:`TempDirOptions`.
-  - :alt:`type` **NormalizeFlags** in **module** was removed.
-  - :alt:`export` definitions in **squared** were deleted:
+  - :alt:`interface` **GetTempDirOptions** in :alt:`module` was renamed :target:`TempDirOptions`.
+  - :alt:`type` **NormalizeFlags** in :alt:`module` was removed.
+  - :alt:`export` definitions in :alt:`squared` were deleted:
 
     .. hlist::
       :columns: 4
@@ -252,9 +253,9 @@ Changelog
 
   - :alt:`type` **StringOfArray** was renamed :target:`ArrayOf<string>`.
   - :alt:`type` **BufferContent** was renamed :target:`Bufferable`.
-  - :alt:`interface` **PoolConfig** in **db** was relocated to :target:`settings`.
-  - :alt:`interface` **LoggerFormat** in **logger** was relocated to :target:`settings`.
-  - :alt:`interface` **AddEventListenerOptions** in **dom** was relocated to :target:`core`.
+  - :alt:`interface` **PoolConfig** in :alt:`db` was relocated to :target:`settings`.
+  - :alt:`interface` **LoggerFormat** in :alt:`logger` was relocated to :target:`settings`.
+  - :alt:`interface` **AddEventListenerOptions** in :alt:`dom` was relocated to :target:`core`.
 
 .. versionadded:: 0.8.4
 

@@ -307,19 +307,20 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em class="alt">type</em> <strong>HighResolutionTime</strong> in <strong>object</strong> with <em class="target">bigint</em> primitive was implemented.</p></li>
+<li><p><em class="alt">type</em> <strong>HighResolutionTime</strong> in <em class="alt">object</em> with <em class="target">bigint</em> primitive was implemented.</p></li>
 </ul>
 </div>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em class="alt">interface</em> <strong>AsSourceFileOptions</strong> property <strong>persist</strong> in <strong>document</strong> was not used.</p></li>
+<li><p><em class="alt">interface</em> <strong>AsSourceFileOptions</strong> property <strong>persist</strong> in <em class="alt">document</em> was not used.</p></li>
 </ul>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 0.11.0: </span></p>
+<p><span class="versionmodified deprecated">Deprecated since version 0.10.2: </span></p>
 <ul class="simple">
 <li><p><em class="alt">type</em> <strong>TupleOf</strong> as a shorter alias does not convey explicit intent.</p></li>
+<li><p><em class="alt">interface</em> <strong>OpenOptions</strong> property <strong>follow_redirect</strong> in <em class="alt">request</em> was renamed <em class="target">followRedirect</em>.</p></li>
 </ul>
 </div>
 <div class="versionadded">
@@ -334,18 +335,18 @@
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul class="simple">
 <li><p>Method <strong>createAbortError</strong> uses built-in <em>DOMException</em> <em class="alt">(NodeJS 17)</em> with name “<strong>AbortError</strong>” and code <strong>20</strong>.</p></li>
-<li><p>Method <strong>formatTime</strong> with argument <em class="alt">char</em> as “<strong>:</strong>” displays using digital clock format.</p></li>
+<li><p>Method <strong>formatTime</strong> with argument <em class="target">char</em> as “<strong>:</strong>” displays using digital clock format.</p></li>
 </ul>
 </div>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.10.0: </span></p>
 <ul>
-<li><p><em class="alt">interface</em> <strong>CloneObjectOptions</strong> in <em class="target">module</em> was relocated to <strong>types</strong>.</p></li>
-<li><p><em class="alt">interface</em> <strong>AsHashOptions</strong> property <strong>minLength</strong> in <em class="target">module</em> was deleted.</p></li>
+<li><p><em class="alt">interface</em> <strong>CloneObjectOptions</strong> in <em class="alt">module</em> was relocated to <em class="target">types</em>.</p></li>
+<li><p><em class="alt">interface</em> <strong>AsHashOptions</strong> property <strong>minLength</strong> in <em class="alt">module</em> was deleted.</p></li>
 <li><p><em class="alt">type</em> <strong>Writeable</strong> was renamed <em class="target">Writable</em>.</p></li>
-<li><p><em class="alt">interface</em> <strong>GetTempDirOptions</strong> in <strong>module</strong> was renamed <em class="target">TempDirOptions</em>.</p></li>
-<li><p><em class="alt">type</em> <strong>NormalizeFlags</strong> in <strong>module</strong> was removed.</p></li>
-<li><p><em class="alt">export</em> definitions in <strong>squared</strong> were deleted:</p>
+<li><p><em class="alt">interface</em> <strong>GetTempDirOptions</strong> in <em class="alt">module</em> was renamed <em class="target">TempDirOptions</em>.</p></li>
+<li><p><em class="alt">type</em> <strong>NormalizeFlags</strong> in <em class="alt">module</em> was removed.</p></li>
+<li><p><em class="alt">export</em> definitions in <em class="alt">squared</em> were deleted:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>FinalizedElement</p></li>
 </ul>
@@ -380,9 +381,9 @@
 <ul class="simple">
 <li><p><em class="alt">type</em> <strong>StringOfArray</strong> was renamed <em class="target">ArrayOf&lt;string&gt;</em>.</p></li>
 <li><p><em class="alt">type</em> <strong>BufferContent</strong> was renamed <em class="target">Bufferable</em>.</p></li>
-<li><p><em class="alt">interface</em> <strong>PoolConfig</strong> in <strong>db</strong> was relocated to <em class="target">settings</em>.</p></li>
-<li><p><em class="alt">interface</em> <strong>LoggerFormat</strong> in <strong>logger</strong> was relocated to <em class="target">settings</em>.</p></li>
-<li><p><em class="alt">interface</em> <strong>AddEventListenerOptions</strong> in <strong>dom</strong> was relocated to <em class="target">core</em>.</p></li>
+<li><p><em class="alt">interface</em> <strong>PoolConfig</strong> in <em class="alt">db</em> was relocated to <em class="target">settings</em>.</p></li>
+<li><p><em class="alt">interface</em> <strong>LoggerFormat</strong> in <em class="alt">logger</em> was relocated to <em class="target">settings</em>.</p></li>
+<li><p><em class="alt">interface</em> <strong>AddEventListenerOptions</strong> in <em class="alt">dom</em> was relocated to <em class="target">core</em>.</p></li>
 </ul>
 </div>
 <div class="versionadded">

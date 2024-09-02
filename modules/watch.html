@@ -150,7 +150,8 @@
 <span class="w">    </span><span class="nx">shutdown</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">checkTimeout</span><span class="p">(</span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="kt">ws</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
-<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IWatch</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">isConnectionError</span><span class="p">(</span><span class="nx">err</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+</span><span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IWatch</span><span class="p">;</span>
 <span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="kr">module</span><span class="nx">?</span><span class="o">:</span><span class="w"> </span><span class="nx">WatchModule</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IWatch</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -160,9 +161,15 @@
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
 <div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 0.11.0: </span></p>
+<ul class="simple">
+<li><p><em>WatchConstructor</em> static method <strong>isConnectionError</strong> for identifying retryable errors was created.</p></li>
+</ul>
+</div>
+<div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.9.0: </span></p>
 <ul class="simple">
-<li><p>Constructor <strong>new(interval, port, securePort, extensions)</strong> did not conform with <code class="docutils literal notranslate"><span class="pre">Module.init()</span></code>.</p></li>
+<li><p><em>WatchConstructor</em>  <strong>new(interval, port, securePort, extensions)</strong> did not conform with <code class="docutils literal notranslate"><span class="pre">Module.init()</span></code>.</p></li>
 </ul>
 </div>
 </section>

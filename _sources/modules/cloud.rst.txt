@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 46-49
+  :emphasize-lines: 46-49,66,72
 
   import type { IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -75,11 +75,13 @@ Interface
       validateDatabase?(credential: unknown, data?: CloudService): boolean;
       createStorageClient?(this: IModule, credential: unknown, service?: string): unknown;
       createDatabaseClient?(this: IModule, credential: unknown, data?: CloudService): unknown;
+      /** @deprecated */
       createBucket?(this: IModule, credential: unknown, bucket: string, publicRead?: boolean, service?: string, sdk?: string): Promise<boolean>;
       createBucketV2?(this: IModule, credential: unknown, bucket: string, acl?: unknown, options?: unknown, service?: string, sdk?: string): Promise<boolean>;
       setBucketPolicy?(this: IModule, credential: unknown, bucket: string, options: unknown, service?: string, sdk?: string): Promise<boolean>;
       setBucketTagging?(this: IModule, credential: unknown, bucket: string, options: unknown, service?: string, sdk?: string): Promise<boolean>;
       setBucketWebsite?(this: IModule, credential: unknown, bucket: string, options: BucketWebsiteOptions, service?: string, sdk?: string): Promise<boolean>;
+      /** @deprecated */
       deleteObjects?(this: IModule, credential: unknown, bucket: string, service?: string, sdk?: string, recursive?: boolean): Promise<void>;
       deleteObjectsV2?(this: IModule, credential: unknown, bucket: string, recursive?: boolean, service?: string, sdk?: string): Promise<void>;
       executeQuery?(this: ICloud, credential: unknown, data: CloudDatabase, sessionKey?: string): Promise<QueryResult>;
@@ -88,6 +90,10 @@ Interface
 
 Changelog
 =========
+
+.. deprecated:: 0.10.2
+
+  - :alt:`interface` **ICloudServiceClient** methods **createBucket** | **deleteObjects** are changing to the V2 signature.
 
 .. versionchanged:: 0.10.0
 

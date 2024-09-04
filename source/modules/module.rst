@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 108-109,159,170-172
+  :emphasize-lines: 108-109,159,170-172,215
 
   import type { LogStatus } from "./squared";
 
@@ -224,8 +224,9 @@ Interface
       getPackageVersion(name: string | [string, string], startDir: string, baseDir?: string): string;
       getPackageVersion(name: string | [string, string], unstable?: boolean, startDir?: string, baseDir?: string): string;
       checkSemVer(name: string | [string, string], options: CheckSemVerOptions): boolean;
+      /** @deprecated options */
       checkSemVer(name: string | [string, string], min: number | string, max?: number | string, unstable?: boolean, startDir?: string): boolean;
-      checkSemVer(name: string | [string, string], min: number | string, max: number | string, options?: CheckSemVerOptions): boolean;
+      checkSemVer(name: string | [string, string], min: number | string, max: number | string, options?: Omit<CheckSemVerOptions, "equals">): boolean;
       sanitizeCmd(value: string): string;
       sanitizeArgs(value: string, doubleQuote?: boolean): string;
       sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
@@ -240,6 +241,10 @@ Interface
 
 Changelog
 =========
+
+.. deprecated:: 0.10.2
+
+  - *ModuleConstructor* static method **checkSemVer** with arguments :target:`unstable` as :alt:`boolean` and :target:`startDir` as :alt:`string` can be set through :target:`options` as :alt:`CheckSemVerOptions`.
 
 .. versionadded:: 0.10.0
 

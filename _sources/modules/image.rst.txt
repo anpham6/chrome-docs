@@ -16,20 +16,20 @@ Interface
   import type { ImageModule } from "./settings";
 
   interface IImage extends IClient<IHost, ImageModule> {
-      resizeData?: ResizeData;
-      cropData?: CropData;
-      rotateData?: RotateData;
-      qualityData?: QualityData;
-      methodData?: [string, unknown[]?][];
+      resizeData?: ResizeData | null;
+      cropData?: CropData | null;
+      rotateData?: RotateData | null;
+      qualityData?: QualityData | null;
+      methodData?: [string, unknown[]?][] | null;
       opacityValue?: number;
       setCommand(value: string | CommandData, outputAs?: string): void;
       getCommand(): string;
       parseCommand(value: string): CommandData;
-      parseMethod(value: string): [string, unknown[]?][] | undefined;
-      parseResize(value: string): ResizeData | undefined;
-      parseCrop(value: string): CropData | undefined;
-      parseRotate(value: string): RotateData | undefined;
-      parseQuality(value: string): QualityData | undefined;
+      parseMethod(value: string): [string, unknown[]?][] | null | undefined;
+      parseResize(value: string): ResizeData | null | undefined;
+      parseCrop(value: string): CropData | null | undefined;
+      parseRotate(value: string): RotateData | null | undefined;
+      parseQuality(value: string): QualityData | null | undefined;
       parseOpacity(value: string): number;
       using?(data: IFileThread, command: string): Promise<unknown>;
       get outputAs(): string;

@@ -9,13 +9,13 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 108-109,159,170-172
+  :emphasize-lines: 108-109,159,170-172,214
 
   import type { LogStatus } from "./squared";
 
   import type { IHost } from "./index";
   import type { IAbortComponent, IPermission } from "./core";
-  import type { LOG_TYPE, STATUS_TYPE, ExecCommand, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, LoggerFormat, StatusType } from "./logger";
+  import type { ExecCommand, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, LoggerFormat, StatusType } from "./logger";
   import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, GetTempDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
   import type { Settings } from "./node";
   import type { LoggerFormatSettings } from "./settings";
@@ -120,10 +120,10 @@ Interface
       get broadcastId(): string | string[];
       set silent(value);
       get silent(): boolean;
-      get logType(): LOG_TYPE;
+      get logType(): LogType;
       set logLevel(value: number | string);
       get logLevel(): number;
-      get statusType(): STATUS_TYPE;
+      get statusType(): StatusType;
       set tempDir(value);
       get tempDir(): string;
 
@@ -166,9 +166,9 @@ Interface
       LOG_STYLE_NOTICE: LogMessageOptions;
       LOG_STYLE_REVERSE: LogMessageOptions;
       readonly VERSION: string;
-      readonly LOG_TYPE: LOG_TYPE;
+      readonly LOG_TYPE: LogType;
       readonly LOG_FORMAT: LoggerFormatSettings<LoggerFormat<number>>;
-      readonly STATUS_TYPE: STATUS_TYPE;
+      readonly STATUS_TYPE: StatusType;
       readonly PLATFORM_WIN32: boolean;
       readonly MAX_TIMEOUT: number;
       readonly TEMP_DIR: string;
@@ -224,8 +224,7 @@ Interface
       getPackageVersion(name: string | [string, string], startDir: string, baseDir?: string): string;
       getPackageVersion(name: string | [string, string], unstable?: boolean, startDir?: string, baseDir?: string): string;
       checkSemVer(name: string | [string, string], options: CheckSemVerOptions): boolean;
-      checkSemVer(name: string | [string, string], min: number | string, max?: number | string, unstable?: boolean, startDir?: string): boolean;
-      checkSemVer(name: string | [string, string], min: number | string, max: number | string, options?: CheckSemVerOptions): boolean;
+      checkSemVer(name: string | [string, string], min: number | string, max: number | string, options?: Omit<CheckSemVerOptions, "min" | "max" | "equals">): boolean;
       sanitizeCmd(value: string): string;
       sanitizeArgs(value: string, doubleQuote?: boolean): string;
       sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
@@ -240,6 +239,10 @@ Interface
 
 Changelog
 =========
+
+.. versionremoved:: 0.11.0
+
+  - *ModuleConstructor* static method **checkSemVer** with arguments :target:`unstable` as :alt:`boolean` and :target:`startDir` as :alt:`string` can be through :target:`options` as :alt:`CheckSemVerOptions`.
 
 .. versionadded:: 0.10.0
 

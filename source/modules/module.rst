@@ -288,7 +288,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 40,59-60,75,90,99,107-112,134
+  :emphasize-lines: 40,56,62-63,78,93,102,110-115,137
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -344,6 +344,9 @@ Settings
   interface ErrorModule {
       out?: string | (err: Error, data: LogTypeValue, require?: NodeRequire) => void;
       fatal?: boolean;
+      settings?: {
+        trap_exceptions?: boolean;
+      };
   }
 
   interface TempModule {
@@ -452,6 +455,7 @@ Changelog
 .. versionadded:: 0.11.0
 
   - *TempModule* property **os** for system global temp directory was created.
+  - *ErrorModule* settings property **trap_exceptions** for global process error handling was created.
 
 .. versionchanged:: 0.11.0
 

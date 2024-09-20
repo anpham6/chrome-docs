@@ -466,6 +466,9 @@
 <span class="kd">interface</span><span class="w"> </span><span class="nx">ErrorModule</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">out?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="o">:</span><span class="w"> </span><span class="kt">Error</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">LogTypeValue</span><span class="p">,</span><span class="w"> </span><span class="nx">require?</span><span class="o">:</span><span class="w"> </span><span class="kt">NodeRequire</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">fatal?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">settings</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">      </span><span class="nx">trap_exceptions?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+</span><span class="w">    </span><span class="p">};</span>
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">TempModule</span><span class="w"> </span><span class="p">{</span>
@@ -576,6 +579,7 @@
 <p><span class="versionmodified added">Added in version 0.11.0: </span></p>
 <ul class="simple">
 <li><p><em>TempModule</em> property <strong>os</strong> for system global temp directory was created.</p></li>
+<li><p><em>ErrorModule</em> settings property <strong>trap_exceptions</strong> for global process error handling was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">

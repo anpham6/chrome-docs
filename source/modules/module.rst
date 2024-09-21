@@ -21,7 +21,7 @@ Interface
   import type { LoggerFormatSettings } from "./settings";
 
   import type { SpawnOptions } from "child_process";
-  import type { BinaryLike } from "crypto";
+  import type { BinaryLike, HashOptions } from "crypto";
   import type { FileTypeResult } from "file-type";
   import type { NoParamCallback } from "fs";
 
@@ -181,7 +181,7 @@ Interface
       parseFunction(value: unknown, absolute: boolean, sync?: boolean): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
       asString(value: unknown, cacheKey?: boolean | "throws"): string;
       asHash(data: BinaryLike, options?: AsHashOptions): string;
-      asHash(data: BinaryLike, algorithm?: string, options?: AsHashOptions): string;
+      asHash(data: BinaryLike, algorithm?: string, options?: HashOptions): string;
       asHash(data: BinaryLike, algorithm?: string, digest?: BinaryToTextEncoding): string;
       readHash(value: string | URL, options?: ReadHashOptions): Promise<string>;
       toPosix(value: unknown, normalize: boolean): string;

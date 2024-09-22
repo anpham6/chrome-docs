@@ -9,14 +9,13 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 23-24,39-40
+  :emphasize-lines: 39-40
 
   import type { DataSource, LogStatus } from "./squared";
 
   import type { IHost, IModule, ModuleConstructor } from "./index";
-  import type { CacheOptions, HostInitConfig, JoinQueueOptions, PermissionReadWrite, ResumeThreadOptions, StoreResultOptions, ThreadCountStat } from "./core";
+  import type { AddEventListenerOptions, CacheOptions, HostInitConfig, JoinQueueOptions, PermissionReadWrite, ResumeThreadOptions, StoreResultOptions, ThreadCountStat } from "./core";
   import type { QueryResult, TimeoutAction } from "./db";
-  import type { AddEventListenerOptions } from "./dom";
   import type { LogState, StatusType } from "./logger";
   import type { Settings } from "./node";
   import type { ClientDbSettings, ClientModule, ClientSettings, DbCacheValue, DbCoerceSettings, DbCoerceValue, DbSourceOptions } from "./settings";

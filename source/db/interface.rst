@@ -31,7 +31,6 @@ Interface
   }
 
 .. code-block::
-  :emphasize-lines: 11
 
   interface DbDataSource extends DataSource {
       source: string; // Built-in alias | NPM package name

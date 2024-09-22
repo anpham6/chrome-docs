@@ -80,7 +80,7 @@ Database
 
 - https://cloud.ibm.com/docs/Cloudant?topic=Cloudant-databases
 
-.. warning:: Maintanence officially ended with the ``pi-r 0.8.2`` release on September 21, 2024. This product is no longer part of the reference implementation.
+.. warning:: Maintanence officially ended with the ``pi-r 0.8.2`` release on **September 21, 2024**. This product is no longer part of the reference implementation.
 
 Interface
 ---------

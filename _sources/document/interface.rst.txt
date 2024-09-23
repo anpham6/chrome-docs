@@ -3,7 +3,6 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 31
 
   interface AssetCommand {
       selector: string;

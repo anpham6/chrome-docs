@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Options &mdash; E-mc 0.10.1 documentation</title>
+  <title>Build Options &mdash; E-mc 0.10.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=983eb2ed" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/role.css?v=7d609451" />
@@ -19,7 +19,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=261ea15a"></script>
+        <script src="_static/documentation_options.js?v=11e62b30"></script>
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -109,11 +109,11 @@
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;index.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">productionRelease</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Ignore local URL rewriting and use actual path</span>
 <span class="w">  </span><span class="nx">productionRelease</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/path/to/wwwroot/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Move assets outside base directory to server root directory</span>
-<span class="hll"><span class="w">  </span><span class="nx">serverRootMapping</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">    </span><span class="s2">&quot;images/&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;common/images&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// output/images/ -&gt; /path/to/wwwroot/common/images/ (move - no trailing slash)</span>
-</span><span class="hll"><span class="w">    </span><span class="s2">&quot;images/png/&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;main/data/&quot;</span><span class="w"> </span><span class="c1">// output/images/png/ -&gt; /path/to/wwwroot/main/data/images/png/ (append)</span>
-</span><span class="hll"><span class="w">  </span><span class="p">},</span>
-</span><span class="w">  </span><span class="nx">productionIncremental</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use cached data when processing transformed files</span>
+<span class="w">  </span><span class="nx">serverRootMapping</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;images/&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;common/images&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// output/images/ -&gt; /path/to/wwwroot/common/images/ (move - no trailing slash)</span>
+<span class="w">    </span><span class="s2">&quot;images/png/&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;main/data/&quot;</span><span class="w"> </span><span class="c1">// output/images/png/ -&gt; /path/to/wwwroot/main/data/images/png/ (append)</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">productionIncremental</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use cached data when processing transformed files</span>
 
 <span class="w">  </span><span class="nx">preserveCrossOrigin</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Ignore local assets hosted on other domains</span>
 <span class="w">  </span><span class="nx">preserveCrossOrigin</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// URL class attributes</span>
@@ -137,10 +137,10 @@
 
 <span class="w">  </span><span class="nx">escapeReservedCharacters</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Escape reserved characters inside attributes (e.g. &quot;&lt;&quot;)</span>
 <span class="w">  </span><span class="nx">ignoreServerCodeBlocks</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&lt;%&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;%&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&lt;?php&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&lt;?php&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;?&gt;&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// May produce better results with dynamic content (&lt;% %&gt; | &lt;?php ; | &lt;?php ?&gt;)</span>
-<span class="hll"><span class="w">  </span><span class="nx">sanitizeFramework</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;android&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Remove global and android dataset UI attributes</span>
-</span>
-<span class="hll"><span class="w">  </span><span class="nx">removeBinaries</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove all script tags with src=&quot;squared.js&quot;</span>
-</span>
+<span class="w">  </span><span class="nx">sanitizeFramework</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;android&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Remove global and android dataset UI attributes</span>
+
+<span class="w">  </span><span class="nx">removeBinaries</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove all script tags with src=&quot;squared.js&quot;</span>
+
 <span class="w">  </span><span class="nx">removeInlineStyles</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Strip style=&quot;&quot; attribute from all elements (useOriginalHtmlPage=false)</span>
 <span class="w">  </span><span class="nx">removeUnusedClasses</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Selectors without :pseudo-class</span>
 <span class="w">  </span><span class="nx">removeUnusedPseudoClasses</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Selectors with :pseudo-class (lowercase only)</span>

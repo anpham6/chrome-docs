@@ -5,6 +5,8 @@ MinIO
 - https://min.io/download
 - **npm** i *@pi-r/minio*
 
+.. warning:: Maintanence officially ended with the ``pi-r 0.7.3`` release on **July 24, 2024**. This product is no longer part of the reference implementation.
+
 Interface
 =========
 

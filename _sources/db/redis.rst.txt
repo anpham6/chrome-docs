@@ -9,7 +9,6 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 19,24-25,42
 
   import type { CommandOptions } from "@redis/client/dist/lib/command-options";
   import type { ClientCommandOptions } from "@redis/client/dist/lib/client";

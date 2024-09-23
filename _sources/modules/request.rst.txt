@@ -97,7 +97,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 35,39,50,70
+  :emphasize-lines: 39
 
   import type { PermittedDirectories } from "./core";
   import type { SecureConfig } from "./http";

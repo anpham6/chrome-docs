@@ -17,7 +17,6 @@ Interface
   }
 
 .. code-block::
-  :emphasize-lines: 17
 
   interface ITransformSeries extends IModule, TransformOutput {
       type: "html" | "css" | "js";

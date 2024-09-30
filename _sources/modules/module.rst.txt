@@ -288,7 +288,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 40,56,63
+  :emphasize-lines: 19,43,59,66
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -306,6 +306,9 @@ Settings
           ext?: string | string[] | boolean;
           npm?: boolean;
           inline?: boolean;
+      };
+      settings?: {
+          package_manager?: "npm" | "yarn" | "pnpm";
       };
   }
 
@@ -345,7 +348,7 @@ Settings
       out?: string | (err: Error, data: LogTypeValue, require?: NodeRequire) => void;
       fatal?: boolean;
       settings?: {
-        trap_exceptions?: boolean;
+          trap_exceptions?: boolean;
       };
   }
 
@@ -460,6 +463,10 @@ Changelog
 .. versionchanged:: 0.11.0
 
   - *MemoryModule* settings property **cache_disk.exclude** can be prefixed with "**!**" to negate a subset of glob paths.
+
+.. versionadded:: 0.10.3
+
+  - *NodeModule* settings property **package_manager** for module installations was created.
 
 .. versionadded:: 0.10.0
 

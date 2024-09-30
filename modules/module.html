@@ -429,6 +429,9 @@
 <span class="w">        </span><span class="nx">npm?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">inline?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">settings</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">        </span><span class="nx">package_manager</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;npm&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;yarn&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;pnpm&quot;</span><span class="p">;</span>
+</span><span class="w">    </span><span class="p">};</span>
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">ProcessModule</span><span class="w"> </span><span class="p">{</span>
@@ -467,7 +470,7 @@
 <span class="w">    </span><span class="nx">out?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="o">:</span><span class="w"> </span><span class="kt">Error</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">LogTypeValue</span><span class="p">,</span><span class="w"> </span><span class="nx">require?</span><span class="o">:</span><span class="w"> </span><span class="kt">NodeRequire</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">fatal?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">settings</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="w">      </span><span class="nx">trap_exceptions?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="hll"><span class="w">        </span><span class="nx">trap_exceptions?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 </span><span class="w">    </span><span class="p">};</span>
 <span class="p">}</span>
 
@@ -586,6 +589,12 @@
 <p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
 <ul class="simple">
 <li><p><em>MemoryModule</em> settings property <strong>cache_disk.exclude</strong> can be prefixed with “<strong>!</strong>” to negate a subset of glob paths.</p></li>
+</ul>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.3: </span></p>
+<ul class="simple">
+<li><p><em>NodeModule</em> settings property <strong>package_manager</strong> for module installations was created.</p></li>
 </ul>
 </div>
 <div class="versionadded">

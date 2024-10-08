@@ -25,15 +25,15 @@ NodeJS 16
 =========
 
 - `0.10.3 <https://github.com/anpham6/e-mc/releases>`_
-- `0.9.11 <https://github.com/anpham6/e-mc/releases/tag/v0.9.11>`_
+- `0.9.12 <https://github.com/anpham6/e-mc/releases/tag/v0.9.12>`_
 
 NodeJS 14 LTS
 =============
 
-- `0.8.19 <https://github.com/anpham6/e-mc/releases/tag/v0.8.19>`_ :alt:`(0.8.10)`
-- `0.7.15 <https://github.com/anpham6/e-mc/releases/tag/v0.7.15>`_ :alt:`(0.7.6)`
-- `0.6.12 <https://github.com/anpham6/e-mc/releases/tag/v0.6.12>`_ :alt:`(0.6.3)`
-- `0.5.14 <https://github.com/anpham6/e-mc/releases/tag/v0.5.14>`_ :alt:`(0.5.6)`
+- `0.8.20 <https://github.com/anpham6/e-mc/releases/tag/v0.8.20>`_ :alt:`(0.8.10)`
+- `0.7.16 <https://github.com/anpham6/e-mc/releases/tag/v0.7.16>`_ :alt:`(0.7.6)`
+- `0.6.13 <https://github.com/anpham6/e-mc/releases/tag/v0.6.13>`_ :alt:`(0.6.3)`
+- `0.5.15 <https://github.com/anpham6/e-mc/releases/tag/v0.5.15>`_ :alt:`(0.5.6)`
 
 License
 =======

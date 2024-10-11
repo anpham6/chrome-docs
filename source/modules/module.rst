@@ -465,14 +465,11 @@ Changelog
 
   - *TempModule* property **os** for system global temp directory was created.
   - *ErrorModule* settings property **trap_exceptions** for global process error handling was created.
+  - *NodeModule* settings property **package_manager** for module installations was created.
 
 .. versionchanged:: 0.11.0
 
   - *MemoryModule* settings property **cache_disk.exclude** can be prefixed with "**!**" to negate a subset of glob paths.
-
-.. versionadded:: 0.10.3
-
-  - *NodeModule* settings property **package_manager** for module installations was created.
 
 .. versionadded:: 0.10.0
 

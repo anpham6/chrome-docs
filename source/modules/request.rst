@@ -9,10 +9,11 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 36-37,46,62,64,67
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
-  import type { ApplyOptions, Aria2Options, FormDataPart, HeadersOnCallback, HostConfig, OpenOptions, PostOptions, ProxySettings, ReadExpectType, RequestInit, StatusOnCallback } from "./request";
+  import type { ApplyOptions, Aria2Options, FormDataPart, HeadersOnCallback, HostConfig, OpenOptions, PostOptions, ProxySettings, PutOptions, ReadExpectType, RequestInit, StatusOnCallback } from "./request";
   import type { DnsLookupSettings, RequestModule, RequestSettings } from "./settings";
 
   import type { ClientRequest, OutgoingHttpHeaders } from "http";
@@ -45,7 +46,8 @@ Interface
       opts(url: string | URL, options?: OpenOptions): HostConfig;
       open(uri: string | URL, options: OpenOptions): HttpRequestClient;
       head(uri: string | URL, options?: OpenOptions): ClientRequest;
-      post(uri: string | URL, data: unknown, contentType: string): Promise<Buffer | string | null>;
+      put(uri: string | URL, data: unknown, options: PutOptions): Promise<Buffer | string | null>;
+      put(uri: string | URL, data: unknown, contentType?: string, options?: PutOptions): Promise<Buffer | string | null>;
       post(uri: string | URL, parts: FormDataPart[]): Promise<Buffer | string | null>;
       post(uri: string | URL, form: Record<string, unknown>, parts: FormDataPart[]): Promise<Buffer | string | null>;
       post(uri: string | URL, data: unknown, options: PostOptions): Promise<Buffer | string | null>;
@@ -54,6 +56,7 @@ Interface
       detach(singleton?: boolean): void;
       reset(): void;
       close(): void;
+      set adapter(value: unknown);
       set agentTimeout(value);
       get agentTimeout(): number;
       set httpVersion(value);
@@ -68,10 +71,13 @@ Interface
       readTLSKey(value: string, cache?: boolean): string;
       readTLSCert(value: string, cache?: boolean): string;
       isCert(value: string): boolean;
+      /** @deprecated */
       fromURL(url: URL, value: string): string;
+      /** @deprecated */
       fromStatusCode(value: number | string): string;
       defineHttpAgent(options: HttpAgentSettings): void;
       defineDnsLookup(options: DnsLookupSettings, clear?: boolean): void;
+      defineHttpAdapter(module: unknown): void;
       getAria2Path(): string;
       readonly prototype: IRequest;
       new(module?: RequestModule): IRequest;
@@ -79,6 +85,19 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.11.0
+
+  - *IRequest* property setter **adapter** for the local HTTP request implementation as :alt:`IHttpAdapter` was created.
+  - *RequestConstructor* static method **defineHttpAdapter** for the global HTTP request implementation as :alt:`IHttpAdapter` was created.
+
+.. deprecated:: 0.11.0
+  
+  - *RequestConstructor* static methods **fromURL** | **fromStatusCode** were relocated into the utility package.
+
+.. versionadded:: 0.10.3
+
+  - *IRequest* method **put** for HTTP method :target:`PUT` was created.
 
 .. versionchanged:: 0.9.0
 

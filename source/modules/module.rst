@@ -9,14 +9,14 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 108-109,159,170-172,215
+  :emphasize-lines: 108-109,159,170-172,194-195,216
 
   import type { LogStatus } from "./squared";
 
   import type { IHost } from "./index";
   import type { IAbortComponent, IPermission } from "./core";
   import type { LOG_TYPE, STATUS_TYPE, ExecCommand, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, LoggerFormat, StatusType } from "./logger";
-  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, GetTempDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
+  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, GetTempDirOptions, GlobDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
   import type { Settings } from "./node";
   import type { LoggerFormatSettings } from "./settings";
 
@@ -204,6 +204,8 @@ Interface
       removeDir(value: string | URL, empty?: boolean, recursive?: boolean): boolean;
       copyDir(src: string | URL, dest: string | URL, move?: boolean, recursive?: boolean): Promise<CopyDirResult>;
       copyDir(src: string | URL, dest: string | URL, options?: CopyDirOptions): Promise<CopyDirResult>;
+      globDir(src: string | URL, pattern: string | string[], recursive: boolean | number): Promise<string[]>;
+      globDir(src: string | URL, pattern: string | string[], options?: GlobDirOptions): Promise<string[]>;
       renameFile(src: string | URL, dest: string | URL, throws?: boolean): boolean;
       streamFile(value: string | URL, cache: boolean): Promise<Buffer | string>;
       streamFile(value: string | URL, options: ReadBufferOptions): Promise<Buffer | string>;
@@ -241,6 +243,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.10.3
+
+  - *ModuleConstructor* static method **globDir** for recursive file searches was created.
 
 .. deprecated:: 0.10.2
 

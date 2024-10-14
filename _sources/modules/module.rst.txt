@@ -20,12 +20,12 @@ Interface
   import type { Settings } from "./node";
   import type { LoggerFormatSettings } from "./settings";
 
-  import type { SpawnOptions } from "child_process";
-  import type { BinaryLike, HashOptions } from "crypto";
+  import type { SpawnOptions } from "node:child_process";
+  import type { BinaryLike, HashOptions } from "node:crypto";
+  import type { NoParamCallback } from "node:fs";
   import type { FileTypeResult } from "file-type";
-  import type { NoParamCallback } from "fs";
 
-  import type * as EventEmitter from "events";
+  import type * as EventEmitter from "node:events";
 
   type BufferView = Buffer | string | NodeJS.ArrayBufferView;
   type CpuUsage = NodeJS.CpuUsage;
@@ -465,14 +465,11 @@ Changelog
 
   - *TempModule* property **os** for system global temp directory was created.
   - *ErrorModule* settings property **trap_exceptions** for global process error handling was created.
+  - *NodeModule* settings property **package_manager** for module installations was created.
 
 .. versionchanged:: 0.11.0
 
   - *MemoryModule* settings property **cache_disk.exclude** can be prefixed with "**!**" to negate a subset of glob paths.
-
-.. versionadded:: 0.10.3
-
-  - *NodeModule* settings property **package_manager** for module installations was created.
 
 .. versionadded:: 0.10.0
 

@@ -73,6 +73,20 @@ External plugins per package have to be pre-installed from NPM and may not be av
                 }
               }
             },
+            "js": {
+              "rollup": {
+                "plugin-example": {
+                  "plugins": [
+                    "@rollup/plugin-commonjs",
+                    ["@rollup/plugin-babel", { "__default__": "babel", "babelHelpers": "bundled" }] // __default__ (string)
+                  ]
+                },
+                "plugin-example-output": {
+                  "format": "es",
+                  "plugins": ["@rollup/plugin-babel", { "__default__": "getBabelOutputPlugin", { "presets": ["@babel/preset-env"] }]
+                }
+              }
+            },
             "css": {
               "postcss": { // npm i @pi-r/postcss
                 "transform": {

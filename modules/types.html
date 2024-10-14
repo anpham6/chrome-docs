@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/types &mdash; E-mc 0.10.2 documentation</title>
+  <title>@e-mc/types &mdash; E-mc 0.10.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -19,7 +19,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=11e62b30"></script>
+        <script src="../_static/documentation_options.js?v=b59eaf29"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -114,8 +114,8 @@
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/index.d.ts">View Source</a></span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LogArguments</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./lib/logger&quot;</span><span class="p">;</span>
 
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">BinaryToTextEncoding</span><span class="p">,</span><span class="w"> </span><span class="nx">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">Encoding</span><span class="p">,</span><span class="w"> </span><span class="nx">RandomUUIDOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:crypto&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BytesOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;bytes&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">BinaryToTextEncoding</span><span class="p">,</span><span class="w"> </span><span class="nx">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">Encoding</span><span class="p">,</span><span class="w"> </span><span class="nx">RandomUUIDOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;crypto&#39;</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">createAbortError</span><span class="p">(</span><span class="nx">reject</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">never</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">createAbortError</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">DOMException</span><span class="p">;</span>

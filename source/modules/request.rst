@@ -16,9 +16,9 @@ Interface
   import type { ApplyOptions, Aria2Options, FormDataPart, HeadersOnCallback, HostConfig, OpenOptions, PostOptions, ProxySettings, PutOptions, ReadExpectType, RequestInit, StatusOnCallback } from "./request";
   import type { DnsLookupSettings, RequestModule, RequestSettings } from "./settings";
 
-  import type { ClientRequest, OutgoingHttpHeaders } from "http";
-  import type { LookupFunction } from "net";
-  import type { Writable } from "stream";
+  import type { ClientRequest, OutgoingHttpHeaders } from "node:http";
+  import type { LookupFunction } from "node:net";
+  import type { Writable } from "node:stream";
 
   interface IRequest extends IModule {
       module: RequestModule;

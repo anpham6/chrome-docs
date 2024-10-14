@@ -14,9 +14,9 @@ Interface
   import type { BufferResult, CompressFormat, CompressLevel, TryFileCompressor } from "./compress";
   import type { CompressModule, CompressSettings } from "./settings";
 
-  import type { WriteStream } from "fs";
-  import type { Readable } from "stream";
-  import type { BrotliCompress, Gzip } from "zlib";
+  import type { WriteStream } from "node:fs";
+  import type { Readable } from "node:stream";
+  import type { BrotliCompress, Gzip } from "node:zlib";
 
   interface ICompress extends IModule {
       module: CompressModule;

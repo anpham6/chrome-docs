@@ -11,8 +11,8 @@ Interface
 
   import type { LogArguments } from "./lib/logger";
 
+  import type { BinaryLike, BinaryToTextEncoding, CipherGCMTypes, Encoding, RandomUUIDOptions } from "node:crypto";
   import type { BytesOptions } from "bytes";
-  import type { BinaryLike, BinaryToTextEncoding, CipherGCMTypes, Encoding, RandomUUIDOptions } from 'crypto';
 
   function createAbortError(reject: true): Promise<never>;
   function createAbortError(): DOMException;

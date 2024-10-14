@@ -18,7 +18,7 @@ Interface
   import type { AuthValue } from "./http";
   import type { DbCoerceSettings, DbModule, DbSourceOptions, PoolConfig } from "./settings";
 
-  import type { SecureContextOptions } from "tls";
+  import type { SecureContextOptions } from "node:tls";
 
   interface IDb extends IClientDb<IHost, DbModule, DbDataSource, DbSourceOptions, DbCoerceSettings> {
       setCredential(item: DbDataSource): Promise<void>;

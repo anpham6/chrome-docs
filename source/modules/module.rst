@@ -20,12 +20,12 @@ Interface
   import type { Settings } from "./node";
   import type { LoggerFormatSettings } from "./settings";
 
-  import type { SpawnOptions } from "child_process";
-  import type { BinaryLike, HashOptions } from "crypto";
+  import type { SpawnOptions } from "node:child_process";
+  import type { BinaryLike, HashOptions } from "node:crypto";
+  import type { NoParamCallback } from "node:fs";
   import type { FileTypeResult } from "file-type";
-  import type { NoParamCallback } from "fs";
 
-  import type * as EventEmitter from "events";
+  import type * as EventEmitter from "node:events";
 
   type BufferView = Buffer | string | NodeJS.ArrayBufferView;
   type CpuUsage = NodeJS.CpuUsage;

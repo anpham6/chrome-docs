@@ -23,8 +23,8 @@ Interface
   import type { Aria2Options, BufferFormat, OpenOptions } from "./request";
   import type { CloudModule, CompressModule, DbModule, DocumentModule, HttpConnectSettings, HttpMemorySettings, ImageModule, RequestModule, TaskModule, WatchModule } from "./settings";
 
-  import type { SpawnOptions } from "child_process";
-  import type { NoParamCallback } from "fs";
+  import type { SpawnOptions } from "node:child_process";
+  import type { NoParamCallback } from "node:fs";
 
   interface IFileManager extends IHost, Set<string> {
       processTimeout: number;

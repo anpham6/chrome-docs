@@ -4,6 +4,8 @@ IBM Cloud
 
 - **npm** i *@pi-r/ibm*
 
+.. warning:: Maintanence officially ended with the ``pi-r 0.8.3`` release on **October 12, 2024**. This product is no longer part of the reference implementation.
+
 Storage
 =======
 
@@ -79,8 +81,6 @@ Database
 ========
 
 - https://cloud.ibm.com/docs/Cloudant?topic=Cloudant-databases
-
-.. warning:: Maintanence officially ended with the ``pi-r 0.8.2`` release on **September 21, 2024**. This product is no longer part of the reference implementation.
 
 Interface
 ---------
@@ -233,7 +233,7 @@ Example usage
 
 .. versionremoved:: 0.9.0
 
-  - *Cloudant* is no longer supported due to the lack of feedback and future longevity.
+  - Package is no longer supported due to the lack of feedback and future longevity.
 
 .. versionadded:: 0.8.0
 

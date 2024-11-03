@@ -44,4 +44,3 @@ There are possible scenarios when a transformation into another format will requ
 You can also use the workspace feature in `squared-express <https://github.com/anpham6/squared-express#readme>`_ to precompile any text format and stream the transformed output directly into the source.
 
 .. [#] Setting an attribute to "undefined" will remove it from the HTML output.
-.. [#] Tags that are not well-formed may fail to be replaced. (e.g. CSS properties with embedded "}")

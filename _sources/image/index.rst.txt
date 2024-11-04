@@ -265,7 +265,7 @@ Other formats can be compressed similarly using `imagemin <https://github.com/im
     ]
   }
 
-When *format* is not defined the plugin will be applied to all images. [#]_ Multiple plugins of the same *MIME* will be processed in a series.
+When *format* is not defined the plugin will be applied to all images. Multiple plugins of the same *MIME* will be processed in a series.
 
 data-chrome-commands
 ====================
@@ -295,7 +295,7 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 
 .. versionadded:: 0.8.1
 
-  - *ImageModule* settings property **jimp.gifwrap_quantize** [#]_ was implemented using these method types:
+  - *ImageModule* settings property **jimp.gifwrap_quantize** was implemented using these method types:
 
     .. hlist::
       :columns: 4
@@ -313,6 +313,3 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 .. [#] srcOver | dstOver | multiply | add | screen | overlay | darken | lighten | hardLight | difference | exclusion
 .. [#] left - 1 | center - 2 | right - 4 | top - 8 | middle - 16 | bottom - 32
 .. [#] png | jpeg | webp
-.. [#] e-mc 0.10
-.. [#] https://github.com/jimp-dev/jimp-native#coverage
-.. [#] https://github.com/jimp-dev/gifwrap#GifUtil.quantizeDekker

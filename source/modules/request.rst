@@ -12,7 +12,7 @@ Interface
   :emphasize-lines: 36-37,46,62,64,67
 
   import type { IModule, ModuleConstructor } from "./index";
-  import type { HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
+  import type { HttpAdapterConstructor, HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
   import type { ApplyOptions, Aria2Options, FormDataPart, HeadersOnCallback, HostConfig, OpenOptions, PostOptions, ProxySettings, PutOptions, ReadExpectType, RequestInit, StatusOnCallback } from "./request";
   import type { DnsLookupSettings, RequestModule, RequestSettings } from "./settings";
 
@@ -56,7 +56,7 @@ Interface
       detach(singleton?: boolean): void;
       reset(): void;
       close(): void;
-      set adapter(value: unknown);
+      set adapter(value: HttpAdapterConstructor);
       set agentTimeout(value);
       get agentTimeout(): number;
       set httpVersion(value);
@@ -88,8 +88,8 @@ Changelog
 
 .. versionadded:: 0.11.0
 
-  - *IRequest* property setter **adapter** for the local HTTP request implementation as :alt:`IHttpAdapter` was created.
-  - *RequestConstructor* static method **defineHttpAdapter** for the global HTTP request implementation as :alt:`IHttpAdapter` was created.
+  - *IRequest* property setter **adapter** for the local HTTP implementation as :alt:`IHttpAdapter` was created.
+  - *RequestConstructor* static method **defineHttpAdapter** for the global HTTP implementation as :alt:`IHttpAdapter` was created.
 
 .. deprecated:: 0.11.0
   

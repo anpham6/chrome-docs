@@ -173,7 +173,7 @@ Changelog
 
 .. versionadded:: 0.11.0
 
-  - *IHost* property getters **ipV4** | **ipV6** for remote client address was created.
+  - *IHost* property getters **ipV4** | **ipV6** for remote client address were created.
 
 .. versionadded:: 0.10.0
 

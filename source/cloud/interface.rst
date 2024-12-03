@@ -83,8 +83,8 @@ Changelog
 
 .. versionadded:: 0.9.0
 
-  - *CloudStorageAction* property **chunkSize** | **chunkLimit** for parallel multipart operations.
-  - *CloudStorageDownload* property **options** to customize the provider download client.
+  - *CloudStorageAction* property **chunkSize** | **chunkLimit** for parallel multipart operations were created.
+  - *CloudStorageDownload* property **options** for the provider client was created.
   - *CloudStorageDownload* property **keyname** for file to be downloaded and subsequently renamed to **filename**.
 
 Shared properties

@@ -9,7 +9,7 @@
 project = 'E-mc'
 copyright = 'squared 2024'
 author = 'An Pham'
-release = '0.10.3'
+release = '0.10.4'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

@@ -5,6 +5,7 @@ Interface
 .. code-block:: typescript
 
   import type { DbDataSource } from "../db/interface";
+  import type { DeleteObjectsOptions } from "../types/cloud";
 
   interface CloudDatabase extends Omit<DbDataSource, "parallel" | "withCommand" | "usePool"> {
       source: "cloud";
@@ -14,6 +15,7 @@ Interface
   }
 
 .. code-block:: typescript
+  :emphasize-lines: 11,24
 
   interface CloudStorage {
       service: string;
@@ -25,7 +27,7 @@ Interface
   }
 
   interface CloudStorageAdmin extends CloudStorageACL {
-      emptyBucket?: boolean;
+      emptyBucket?: DeleteObjectsOptions | boolean;
       configBucket?: {
           create?: unknown;
           policy?: unknown;
@@ -37,6 +39,7 @@ Interface
           };
           retentionPolicy?: unknown;
       };
+      /** @deprecated */
       recursive?: boolean;
       preservePath?: boolean;
   }
@@ -81,6 +84,14 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.11.0
+
+  - *CloudStorageAdmin* property **emptyBucket** for directory listing with :alt:`DeleteObjectsOptions` was amended.
+
+.. deprecated:: 0.11.0
+
+  - *CloudStorageAdmin* property **recursive** for directory traversal was replaced with :target:`emptyBucket` as :alt:`DeleteObjectsOptions`.
+
 .. versionadded:: 0.9.0
 
   - *CloudStorageAction* property **chunkSize** | **chunkLimit** for parallel multipart operations were created.
@@ -108,6 +119,11 @@ Storage
 
         "emptyBucket": true, // Delete all objects (before upload #1)
         "recursive": false, // Default is "true" (emptyBucket)
+        /* OR */
+        "emptyBucket": {
+          /* service-interface */
+          "recursive": true // Optional
+        },
 
         "configBucket": {
           "create": {/* service-interface */}, // New bucket (before upload #2)

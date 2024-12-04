@@ -95,6 +95,9 @@ Example usage
         /* Will modify existing bucket (equivalent policy) + uploaded objects */
         "acl": "private", // Canned ACL - Bucket
 
+        "emptyBucket": { // s3.listObjects{ListObjectsRequest}
+          "recursive": true // Optional
+        },
         "configBucket": {
           "policy": {
             "Policy": "", // s3.putBucketPolicy
@@ -275,6 +278,10 @@ Example usage
 
 @pi-r/aws
 =========
+
+.. versionadded:: 0.9.0
+
+  - *AWSStorage* property **emptyBucket** for directory listing as :alt:`ListObjectsRequest` was implemented.
 
 .. versionadded:: 0.7.0
 

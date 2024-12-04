@@ -56,6 +56,10 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.11.0
+
+  - Permissions are required to watch externally added supplementary source files.
+
 .. versionremoved:: 0.11.0
 
   - *WatchConstructor* static method **isConnectionError** for identifying retryable errors was created. 

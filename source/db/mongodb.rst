@@ -11,6 +11,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :emphasize-lines: 17,27
 
   import type * as "m" from "mongodb";
 
@@ -28,6 +29,7 @@ Interface
       aggregate?: m.Document[] | { pipeline: m.Document[], options: m.AggregateOptions };
 
       command?: m.Document | m.Document[]; // Calls m.runCommand before any queries
+      bulkWrite?: m.ClientBulkWriteModel[]; // Calls m.bulkWrite before any queries
 
       update?: m.UpdateFilter<m.Document> | m.OptionalUnlessRequiredId<unknown>[];
       updateType?: 0 | 1 | 2 | 3; // 0 - update | 1 - insert | 2 - replace | 3 - delete
@@ -37,6 +39,7 @@ Interface
           db?: m.DbOptions; // Used as options with "name"
           collection?: m.CollectionOptions; // Used as options with "table"
           command?: m.RunCommandOptions; // Used as options with "command"
+          bulkWrite?: m.ClientBulkWriteOptions; // Used as options with "bulkWrite"
       };
       execute?: {
           insert?: m.BulkWriteOptions; // Used as options with "update - insert"
@@ -175,6 +178,10 @@ Example usage
 
 @pi-r/mongodb
 =============
+
+.. versionadded:: 0.11.0
+
+  - *MongoDBDataSource* property **bulkWrite** for multiple writes in a series as :alt:`ClientBulkWriteModel[]` was implemented.
 
 .. versionadded:: 0.8.0
 

@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 13
 
   import type { IHost, ModuleConstructor } from "./index";
   import type { IFileThread } from "./asset";
@@ -22,6 +23,7 @@ Interface
       qualityData?: QualityData | null;
       methodData?: [string, unknown[]?][] | null;
       opacityValue?: number;
+      outputType?: string;
       setCommand(value: string | CommandData, outputAs?: string): void;
       getCommand(): string;
       parseCommand(value: string): CommandData;
@@ -45,6 +47,13 @@ Interface
       readonly prototype: IImage;
       new(module?: ImageModule): IImage;
   }
+
+Changelog
+=========
+
+.. versionadded:: 0.11.0
+
+  - *IImage* property **outputType** for storing MIME write was created.
 
 Settings
 ========

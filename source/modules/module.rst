@@ -246,7 +246,7 @@ Changelog
 
   - *ModuleConstructor* static method **checkSemVer** with arguments :target:`unstable` as :alt:`boolean` and :target:`startDir` as :alt:`string` is only in :target:`options` as :alt:`CheckSemVerOptions`.
 
-.. versionadded:: 0.10.3
+.. versionadded:: 0.10.5
 
   - *ModuleConstructor* static method **globDir** for recursive file searches was created.
 

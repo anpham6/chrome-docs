@@ -3,8 +3,8 @@ Image
 =====
 
 - https://jimp-dev.github.io/jimp
-- **npm** i *@pi-r/jimp* :alt:`(v0)`
-- **npm** i *@pi-r2/jimp* :alt:`(v1)`
+- **npm** i *@pi-r/jimp* :alt:`(0.x)`
+- **npm** i *@pi-r2/jimp* :alt:`(1.x)`
 
 .. note:: *Jimp* is used as the reference implementation for an **Image** module.
 
@@ -125,8 +125,13 @@ Methods use simple bracket matching and does not fully check inside quoted strin
 Method aliases [#]_
 ===================
 
+0.x and 1.x
+-----------
+
+Methods in *italic* are ``0.x`` only.
+
 .. list-table::
-  :caption: *v0 only*
+  :width: 600px
   :widths: 25 8 25 8 25 8
 
   * - autocrop
@@ -159,65 +164,66 @@ Method aliases [#]_
     - **cu**
     - cover
     - **cv**
-  *  - crop
+  * - crop
     - **cr**
     - *cropQuiet*
     - **cq**
     - *deflateLevel*
     - **dl**
-  *  - *deflateStrategy*
-    - **ds**
-    - displace
+  * - displace
     - **dp**
     - *dither565*
     - **dt**
-  * - fade
+    - fade
     - **fa**
-    - *filterType*
+  * - *filterType*
     - **ft**
     - *fishEye*
     - **fe**
-  * - flip
+    - flip
     - **fl**
-    - gaussian
+  * - gaussian
     - **ga**
     - greyscale
     - **gr**
-  * - invert
+    - invert
     - **in**
-    - mask
+  * - mask
     - **ma**
     - *mirror*
-  * - **mi**
+    - **mi**
     - normalize
     - **no**
-    - opacity
+  * - opacity
     - **op**
     - opaque
     - **oq**
-  * - pixelate
+    - pixelate
     - **px**
-    - posterize
+  * - posterize
     - **po**
     - resize
     - **re**
-  * - *rgba*
+    - *rgba*
     - **rg**
-    - rotate
+  * - rotate
     - **ro**
     - scale
     - **sc**
-  * - scaleToFit
+    - scaleToFit
     - **sf**
-    - sepia
+  * - sepia
     - **se**
     - *shadow*
     - **sh**
-  * - threshold
+    - threshold
     - **th**
 
+1.x only
+--------
+
 .. list-table::
-  :caption: v1
+  :width: 600px
   :widths: 25 8 25 8 25 8
 
   * - dither
@@ -232,7 +238,7 @@ Compression
 
 `Tinify <https://tinypng.com/developers>`_ is a web service for image compression [#]_. The first 500 images are free each month with a developer API key.
 
-- **npm** i *@pi-r/tinify* :alt:`(Optional)`
+- **npm** i *@pi-r/tinify*
 
 .. code-block::
   :caption: squared.json
@@ -324,15 +330,15 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 @pi-r2/jimp
 ===========
 
-.. versionadded:: 0.9.0
+.. versionadded:: 0.1.0
 
-  - NPM package for the `1.x` series was created.
+  - Experimental package for the ``1.x`` releases was created.
 
 .. [#webp] https://developers.google.com/speed/webp/download
 .. [#] cwebp options: -q -preset -near_lossless
 .. [#] Method with no arguments. (e.g. sepia)
 .. [#] No expressions or native objects.
-.. [#] https://github.com/jimp-dev/jimp/tree/main/packages/jimp#methods
+.. [#] https://jimp-dev.github.io/jimp/api/jimp/classes/jimp
 .. [#] srcOver | dstOver | multiply | add | screen | overlay | darken | lighten | hardLight | difference | exclusion
 .. [#] left - 1 | center - 2 | right - 4 | top - 8 | middle - 16 | bottom - 32
 .. [#] png | jpeg | webp

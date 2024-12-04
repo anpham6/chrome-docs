@@ -107,6 +107,12 @@ Deprecated
   * - `uglify-js <https://github.com/mishoo/UglifyJS>`_
     - @pi-r/uglify-js [#]_
     - 0.7.3
+  * - `html-minifier-terser <https://github.com/DanielRuf/html-minifier-terser>`_
+    - @pi-r/html-minifier-terser [#]_
+    - 0.8.3
+  * - `svgo <https://github.com/svg/svgo>`_
+    - @pi-r/svgo [#]_
+    - 0.8.3
 
 Environment Variables
 =====================
@@ -120,6 +126,8 @@ stylelint  STYLELINT_OPTIONS_FIX   boolean    false
 ========== ====================== ======== ========
 
 .. [#] settings.transform.imports
-.. [#] Substitute: @pi-r/html-minifier-terser
-.. [#] Substitute: @pi-r/terser
+.. [#] Substitute: @pi-r2/html-minifier
+.. [#] Substitute: @pi-r2/uglify
+.. [#] Substitute: @pi-r2/html-minifier-terser
+.. [#] Substitute: @pi-r2/svgo
 .. [#v010] e-mc 0.10 (minimum)

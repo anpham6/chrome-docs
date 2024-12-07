@@ -4,7 +4,7 @@ IBM Cloud
 
 - **npm** i *@pi-r/ibm*
 
-.. warning:: Maintanence officially ended with the ``pi-r 0.8.3`` release on **October 12, 2024**. This product is no longer part of the reference implementation.
+.. warning:: Maintenence officially ended with the ``pi-r 0.8.3`` release on **October 12, 2024**. This product is no longer part of the reference implementation.
 
 Storage
 =======

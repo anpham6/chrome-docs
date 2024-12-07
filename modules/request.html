@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/request &mdash; E-mc 0.10.3 documentation</title>
+  <title>@e-mc/request &mdash; E-mc 0.10.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=b59eaf29"></script>
+      <script src="../_static/documentation_options.js?v=7e173fe4"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -112,7 +112,7 @@
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/index.d.ts">View Source</a></span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IModule</span><span class="p">,</span><span class="w"> </span><span class="nx">ModuleConstructor</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./index&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">HttpAgentSettings</span><span class="p">,</span><span class="w"> </span><span class="nx">HttpProtocolVersion</span><span class="p">,</span><span class="w"> </span><span class="nx">HttpRequestClient</span><span class="p">,</span><span class="w"> </span><span class="nx">InternetProtocolVersion</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./http&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">HttpAdapterConstructor</span><span class="p">,</span><span class="w"> </span><span class="nx">HttpAgentSettings</span><span class="p">,</span><span class="w"> </span><span class="nx">HttpProtocolVersion</span><span class="p">,</span><span class="w"> </span><span class="nx">HttpRequestClient</span><span class="p">,</span><span class="w"> </span><span class="nx">InternetProtocolVersion</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./http&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ApplyOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">Aria2Options</span><span class="p">,</span><span class="w"> </span><span class="nx">FormDataPart</span><span class="p">,</span><span class="w"> </span><span class="nx">HeadersOnCallback</span><span class="p">,</span><span class="w"> </span><span class="nx">HostConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">OpenOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">PostOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">ProxySettings</span><span class="p">,</span><span class="w"> </span><span class="nx">PutOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">ReadExpectType</span><span class="p">,</span><span class="w"> </span><span class="nx">RequestInit</span><span class="p">,</span><span class="w"> </span><span class="nx">StatusOnCallback</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./request&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DnsLookupSettings</span><span class="p">,</span><span class="w"> </span><span class="nx">RequestModule</span><span class="p">,</span><span class="w"> </span><span class="nx">RequestSettings</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./settings&quot;</span><span class="p">;</span>
 
@@ -156,7 +156,7 @@
 <span class="w">    </span><span class="nx">detach</span><span class="p">(</span><span class="nx">singleton?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">reset</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">close</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
-<span class="hll"><span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">adapter</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">);</span>
+<span class="hll"><span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">adapter</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">HttpAdapterConstructor</span><span class="p">);</span>
 </span><span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">agentTimeout</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">agentTimeout</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">httpVersion</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
@@ -191,8 +191,8 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em>IRequest</em> property setter <strong>adapter</strong> for the local HTTP request implementation as <em class="alt">IHttpAdapter</em> was created.</p></li>
-<li><p><em>RequestConstructor</em> static method <strong>defineHttpAdapter</strong> for the global HTTP request implementation as <em class="alt">IHttpAdapter</em> was created.</p></li>
+<li><p><em>IRequest</em> property setter <strong>adapter</strong> for the local HTTP implementation as <em class="alt">IHttpAdapter</em> was created.</p></li>
+<li><p><em>RequestConstructor</em> static method <strong>defineHttpAdapter</strong> for the global HTTP implementation as <em class="alt">IHttpAdapter</em> was created.</p></li>
 </ul>
 </div>
 <div class="deprecated">

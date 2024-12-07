@@ -105,6 +105,9 @@ Example usage
         /* OR */
         "acl": "private", // See "policy"
 
+        "emptyBucket": { // gcp.(deleteFiles | getFiles){GetFilesOptions}
+          "recursive": true // Optional
+        },
         "configBucket": {
           "policy": { // MakeBucketPrivateOptions
             "acl": "private", // makePrivate + includeFiles + projectPrivate
@@ -585,9 +588,13 @@ Realtime Database
 @pi-r/gcp
 =========
 
+.. versionadded:: 0.9.0
+
+  - *GCPStorage* property **emptyBucket** for directory listing as :alt:`GetListOptions` was implemented.
+
 .. versionadded:: 0.8.0
 
-  - Storage action **download** using **createReadStream** with :alt:`chunkLimit` was implemented.
+  - *GCPStorage* action **download** using **createReadStream** with :alt:`chunkLimit` was implemented.
   - *Firestore* method **findNearest** as a *VectorQuery* and *Query* is supported.
   - *Firestore* property **update** supports using *FieldValue<"vector" | "arrayUnion" | "arrayRemove">* methods.
 
@@ -602,9 +609,9 @@ Realtime Database
   - **CLOUD_DOWNLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
   - **chunkSize** | **chunkLimit** in *CloudStorageUpload* were implemented.
   - **chunkSize** | **chunkLimit** in *CloudStorageDownload* were implemented.
-  - Storage **configBucket.tags** using *Metadata* was implemented.
-  - Storage **configBucket.cors** using *Cors* was implemented.
-  - Storage **configBucket.lifecycle** using *LifecycleRule* was implemented.
+  - *GCPStorage* **configBucket.tags** using *Metadata* was implemented.
+  - *GCPStorage* **configBucket.cors** using *Cors* was implemented.
+  - *GCPStorage* **configBucket.lifecycle** using *LifecycleRule* was implemented.
   - *Firestore* property **update** supports using *FieldValue<"delete" | "increment" | "serverTimestamp">* methods.
   - *Firestore* property **update** supports using property **updateType** enum values.
 

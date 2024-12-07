@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amazon Web Services &mdash; E-mc 0.10.3 documentation</title>
+  <title>Amazon Web Services &mdash; E-mc 0.10.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=b59eaf29"></script>
+      <script src="../_static/documentation_options.js?v=7e173fe4"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -194,6 +194,9 @@
 <span class="w">      </span><span class="cm">/* Will modify existing bucket (equivalent policy) + uploaded objects */</span>
 <span class="w">      </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;private&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Canned ACL - Bucket</span>
 
+<span class="w">      </span><span class="nt">&quot;emptyBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// s3.listObjects{ListObjectsRequest}</span>
+<span class="w">        </span><span class="nt">&quot;recursive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">      </span><span class="p">},</span>
 <span class="w">      </span><span class="nt">&quot;configBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">          </span><span class="nt">&quot;Policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// s3.putBucketPolicy</span>
@@ -375,6 +378,12 @@
 </section>
 <section id="pi-r-aws">
 <h2>&#64;pi-r/aws<a class="headerlink" href="#pi-r-aws" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.9.0: </span></p>
+<ul class="simple">
+<li><p><em>AWSStorage</em> property <strong>emptyBucket</strong> for directory listing as <em class="alt">ListObjectsRequest</em> was implemented.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.7.0: </span></p>
 <ul class="simple">

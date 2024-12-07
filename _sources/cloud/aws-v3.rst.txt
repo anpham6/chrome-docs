@@ -138,6 +138,9 @@ Example usage
       "credential": {/* Authentication */},
       "admin": {
         /* Same as AWS */
+        "emptyBucket": { // s3.ListObjectsCommand{ListObjectsRequest}
+          "recursive": true // Optional
+        },
         "configBucket": {
           "policy": {
             "Policy": "", // s3.PutBucketPolicyCommand
@@ -293,6 +296,10 @@ Example usage
 
 @pi-r/aws-v3
 ============
+
+.. versionadded:: 0.9.0
+
+  - *AWSStorage* property **emptyBucket** for directory listing as :alt:`ListObjectsRequest` was implemented.
 
 .. versionadded:: 0.8.1
 

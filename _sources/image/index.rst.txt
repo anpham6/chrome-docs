@@ -2,9 +2,9 @@
 Image
 =====
 
-- https://github.com/jimp-dev/jimp#readme
-- **npm** i *@pi-r/jimp*
-- **npm** i *@pi-r/tinify* :alt:`(Optional)`
+- https://jimp-dev.github.io/jimp
+- **npm** i *@pi-r/jimp* :alt:`(0.x)`
+- **npm** i *@pi-r2/jimp* :alt:`(1.x)`
 
 .. note:: *Jimp* is used as the reference implementation for an **Image** module.
 
@@ -125,14 +125,20 @@ Methods use simple bracket matching and does not fully check inside quoted strin
 Method aliases [#]_
 ===================
 
+0.x and 1.x
+-----------
+
+Methods in *italic* are ``0.x`` only.
+
 .. list-table::
+  :width: 600px
   :widths: 25 8 25 8 25 8
 
   * - autocrop
     - **au**
     - background
     - **bg**
-    - backgroundQuiet
+    - *backgroundQuiet*
     - **bq**
   * - blit
     - **bt**
@@ -144,7 +150,7 @@ Method aliases [#]_
     - **ci**
     - color
     - **co**
-    - colorType
+    - *colorType*
     - **ce**
   * - composite [#]_
     - **cp**
@@ -154,25 +160,25 @@ Method aliases [#]_
     - **cn**
   * - convolute
     - **cl**
+    - convolution
+    - **cu**
     - cover
     - **cv**
-    - crop
+  * - crop
     - **cr**
-  * - cropQuiet
+    - *cropQuiet*
     - **cq**
-    - deflateLevel
+    - *deflateLevel*
     - **dl**
-    - deflateStrategy
-    - **ds**
   * - displace
     - **dp**
-    - dither565
+    - *dither565*
     - **dt**
     - fade
     - **fa**
-  * - filterType
+  * - *filterType*
     - **ft**
-    - fishEye
+    - *fishEye*
     - **fe**
     - flip
     - **fl**
@@ -184,7 +190,7 @@ Method aliases [#]_
     - **in**
   * - mask
     - **ma**
-    - mirror
+    - *mirror*
     - **mi**
     - normalize
     - **no**
@@ -198,7 +204,7 @@ Method aliases [#]_
     - **po**
     - resize
     - **re**
-    - rgba
+    - *rgba*
     - **rg**
   * - rotate
     - **ro**
@@ -208,15 +214,31 @@ Method aliases [#]_
     - **sf**
   * - sepia
     - **se**
-    - shadow
+    - *shadow*
     - **sh**
     - threshold
     - **th**
 
+1.x only
+--------
+
+.. list-table::
+  :width: 600px
+  :widths: 25 8 25 8 25 8
+
+  * - dither
+    - **dt**
+    - fisheye
+    - **fe**
+    - quantize
+    - **qu**
+
 Compression
 ===========
 
-`Tinify <https://tinypng.com/developers>`_ web service is used for image compression [#]_. The first 500 images are free each month with a developer API key.
+`Tinify <https://tinypng.com/developers>`_ is a web service for image compression [#]_. The first 500 images are free each month with a developer API key.
+
+- **npm** i *@pi-r/tinify*
 
 .. code-block::
   :caption: squared.json
@@ -305,11 +327,18 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
       - dekker
       - none
 
+@pi-r2/jimp
+===========
+
+.. versionadded:: 0.1.0
+
+  - Experimental package for the ``1.x`` releases was created.
+
 .. [#webp] https://developers.google.com/speed/webp/download
 .. [#] cwebp options: -q -preset -near_lossless
 .. [#] Method with no arguments. (e.g. sepia)
 .. [#] No expressions or native objects.
-.. [#] https://github.com/jimp-dev/jimp/tree/main/packages/jimp#methods
+.. [#] https://jimp-dev.github.io/jimp/api/jimp/classes/jimp
 .. [#] srcOver | dstOver | multiply | add | screen | overlay | darken | lighten | hardLight | difference | exclusion
 .. [#] left - 1 | center - 2 | right - 4 | top - 8 | middle - 16 | bottom - 32
 .. [#] png | jpeg | webp

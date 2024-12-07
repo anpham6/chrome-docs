@@ -101,6 +101,9 @@ Example usage
         /* OR */
         "acl": "container",
 
+        "emptyBucket": { // azure.listBlobsFlat{ContainerListBlobsOptions}
+          "recursive": true // Optional
+        },
         "configBucket": {
           "website": { // azure.setProperties{staticWebsite}
             "indexPage": "index.html", // indexDocument
@@ -282,6 +285,10 @@ Example usage
 
 @pi-r/azure
 ===========
+
+.. versionadded:: 0.9.0
+
+  - *AzureStorage* property **emptyBucket** for directory listing as :alt:`ContainerListBlobsOptions` was implemented.
 
 .. versionadded:: 0.8.2
 

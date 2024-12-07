@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interface &mdash; E-mc 0.10.3 documentation</title>
+  <title>Interface &mdash; E-mc 0.10.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=b59eaf29"></script>
+      <script src="../_static/documentation_options.js?v=7e173fe4"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -103,6 +103,7 @@
   <section id="interface">
 <h1>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h1>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../db/interface&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DeleteObjectsOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../types/cloud&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">CloudDatabase</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Omit</span><span class="o">&lt;</span><span class="nx">DbDataSource</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;parallel&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;withCommand&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;usePool&quot;</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">;</span>
@@ -122,8 +123,8 @@
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorageAdmin</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorageACL</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">emptyBucket?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">configBucket</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="nx">emptyBucket?</span><span class="o">:</span><span class="w"> </span><span class="kt">DeleteObjectsOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">configBucket</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">create?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">policy?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">website</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
@@ -134,8 +135,9 @@
 <span class="w">        </span><span class="p">};</span>
 <span class="w">        </span><span class="nx">retentionPolicy?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
 <span class="w">    </span><span class="p">};</span>
-<span class="w">    </span><span class="nx">recursive?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">preservePath?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** @deprecated */</span>
+<span class="hll"><span class="w">    </span><span class="nx">recursive?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">preservePath?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorageAction</span><span class="w"> </span><span class="p">{</span>
@@ -179,10 +181,22 @@
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
 <div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.0: </span></p>
+<ul class="simple">
+<li><p><em>CloudStorageAdmin</em> property <strong>emptyBucket</strong> for directory listing with <em class="alt">DeleteObjectsOptions</em> was amended.</p></li>
+</ul>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 0.11.0: </span></p>
+<ul class="simple">
+<li><p><em>CloudStorageAdmin</em> property <strong>recursive</strong> for directory traversal was replaced with <em class="target">emptyBucket</em> as <em class="alt">DeleteObjectsOptions</em>.</p></li>
+</ul>
+</div>
+<div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.9.0: </span></p>
 <ul class="simple">
-<li><p><em>CloudStorageAction</em> property <strong>chunkSize</strong> | <strong>chunkLimit</strong> for parallel multipart operations.</p></li>
-<li><p><em>CloudStorageDownload</em> property <strong>options</strong> to customize the provider download client.</p></li>
+<li><p><em>CloudStorageAction</em> property <strong>chunkSize</strong> | <strong>chunkLimit</strong> for parallel multipart operations were created.</p></li>
+<li><p><em>CloudStorageDownload</em> property <strong>options</strong> for the provider client was created.</p></li>
 <li><p><em>CloudStorageDownload</em> property <strong>keyname</strong> for file to be downloaded and subsequently renamed to <strong>filename</strong>.</p></li>
 </ul>
 </div>
@@ -204,6 +218,11 @@
 
 <span class="w">      </span><span class="nt">&quot;emptyBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Delete all objects (before upload #1)</span>
 <span class="w">      </span><span class="nt">&quot;recursive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Default is &quot;true&quot; (emptyBucket)</span>
+<span class="w">      </span><span class="cm">/* OR */</span>
+<span class="w">      </span><span class="nt">&quot;emptyBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/* service-interface */</span>
+<span class="w">        </span><span class="nt">&quot;recursive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">      </span><span class="p">},</span>
 
 <span class="w">      </span><span class="nt">&quot;configBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span><span class="w"> </span><span class="c1">// New bucket (before upload #2)</span>

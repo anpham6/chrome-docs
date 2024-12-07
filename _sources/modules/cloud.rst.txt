@@ -9,11 +9,11 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 66,72
+  :emphasize-lines: 18,19,67,73,75-76
 
   import type { IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
-  import type { BucketWebsiteOptions, CloudDatabase, CloudFeatures, CloudFunctions, CloudService, CloudStorage, CloudStorageDownload, CloudStorageUpload } from "./cloud";
+  import type { BucketWebsiteOptions, CloudDatabase, CloudFeatures, CloudFunctions, CloudService, CloudStorage, CloudStorageDownload, CloudStorageUpload, DeleteObjectsOptions } from "./cloud";
   import type { ClientDbConstructor, IClientDb } from "./core";
   import type { BatchQueryResult, QueryResult } from "./db";
   import type { LogMessageOptions } from "./logger";
@@ -28,7 +28,8 @@ Interface
       setBucketPolicy(service: string, credential: unknown, bucket: string, options: unknown): Promise<boolean>;
       setBucketTagging(service: string, credential: unknown, bucket: string, options: unknown): Promise<boolean>;
       setBucketWebsite(service: string, credential: unknown, bucket: string, options: BucketWebsiteOptions): Promise<boolean>;
-      deleteObjects(service: string, credential: unknown, bucket: string, recursive?: boolean): Promise<void>;
+      deleteObjects(service: string, credential: unknown, bucket: string, options: DeleteObjectsOptions): Promise<void>;
+      deleteObjects(service: string, credential: unknown, bucket: string, recursive?: boolean | DeleteObjectsOptions): Promise<void>;
       uploadObject(service: string, credential: unknown, bucket: string, upload: CloudStorageUpload, localUri: string, beforeResolve?: ((value: string) => Promise<void> | void)): Promise<string>;
       downloadObject(service: string, credential: unknown, bucket: string, download: CloudStorageDownload, beforeResolve?: ((value: Buffer | string | null) => Promise<string | undefined> | void)): Promise<Buffer | string>;
       getStorage(action: CloudFunctions, data: CloudStorage[] | undefined): CloudStorage | undefined;
@@ -83,13 +84,27 @@ Interface
       setBucketWebsite?(this: IModule, credential: unknown, bucket: string, options: BucketWebsiteOptions, service?: string, sdk?: string): Promise<boolean>;
       /** @deprecated */
       deleteObjects?(this: IModule, credential: unknown, bucket: string, service?: string, sdk?: string, recursive?: boolean): Promise<void>;
+      /** @deprecated */
       deleteObjectsV2?(this: IModule, credential: unknown, bucket: string, recursive?: boolean, service?: string, sdk?: string): Promise<void>;
+      deleteObjectsV3?(this: IModule, credential: U, bucket: string, options?: DeleteObjectsOptions, service?: string, sdk?: string): Promise<void>;
       executeQuery?(this: ICloud, credential: unknown, data: CloudDatabase, sessionKey?: string): Promise<QueryResult>;
       executeBatchQuery?(this: ICloud, credential: unknown, batch: CloudDatabase[], sessionKey?: string): Promise<BatchQueryResult>;
   }
 
 Changelog
 =========
+
+.. versionadded:: 0.11.0
+
+  - *ICloudServiceClient* method **deleteObjectsV3** :alt:`(optional)` was created.
+
+.. versionchanged:: 0.11.0
+
+  - *ICloud* method **deleteObjects** argument :target:`recursive` was supplemented with :target:`options` as :alt:`DeleteObjectsOptions`.
+
+.. deprecated:: 0.11.0
+
+  - :alt:`interface` **ICloudServiceClient** methods **deleteObjectsV2** is changing to the V3 signature.
 
 .. deprecated:: 0.10.2
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Image &mdash; E-mc 0.10.3 documentation</title>
+  <title>Image &mdash; E-mc 0.10.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=983eb2ed" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=b59eaf29"></script>
+      <script src="../_static/documentation_options.js?v=7e173fe4"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -57,10 +57,15 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#command-syntax">Command syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example-commands">Example commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#method-aliases">Method aliases </a></li>
+<li class="toctree-l2"><a class="reference internal" href="#method-aliases">Method aliases </a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#x-and-1-x">0.x and 1.x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-only">1.x only</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#compression">Compression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#data-chrome-commands">data-chrome-commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pi-r-jimp">&#64;pi-r/jimp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pi-r2-jimp">&#64;pi-r2/jimp</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud</a></li>
@@ -99,9 +104,9 @@
   <section id="image">
 <h1>Image<a class="headerlink" href="#image" title="Link to this heading"></a></h1>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/jimp-dev/jimp#readme">https://github.com/jimp-dev/jimp#readme</a></p></li>
-<li><p><strong>npm</strong> i <em>&#64;pi-r/jimp</em></p></li>
-<li><p><strong>npm</strong> i <em>&#64;pi-r/tinify</em> <em class="alt">(Optional)</em></p></li>
+<li><p><a class="reference external" href="https://jimp-dev.github.io/jimp">https://jimp-dev.github.io/jimp</a></p></li>
+<li><p><strong>npm</strong> i <em>&#64;pi-r/jimp</em> <em class="alt">(0.x)</em></p></li>
+<li><p><strong>npm</strong> i <em>&#64;pi-r2/jimp</em> <em class="alt">(1.x)</em></p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -274,7 +279,10 @@ webp~2x(1024x768)
 </section>
 <section id="method-aliases">
 <h2>Method aliases <a class="footnote-reference brackets" href="#id15" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a><a class="headerlink" href="#method-aliases" title="Link to this heading"></a></h2>
-<table class="docutils align-default">
+<section id="x-and-1-x">
+<h3>0.x and 1.x<a class="headerlink" href="#x-and-1-x" title="Link to this heading"></a></h3>
+<p>Methods in <em>italic</em> are <code class="docutils literal notranslate"><span class="pre">0.x</span></code> only.</p>
+<table class="docutils align-default" style="width: 600px">
 <colgroup>
 <col style="width: 25.3%" />
 <col style="width: 8.1%" />
@@ -288,7 +296,7 @@ webp~2x(1024x768)
 <td><p><strong>au</strong></p></td>
 <td><p>background</p></td>
 <td><p><strong>bg</strong></p></td>
-<td><p>backgroundQuiet</p></td>
+<td><p><em>backgroundQuiet</em></p></td>
 <td><p><strong>bq</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>blit</p></td>
@@ -302,7 +310,7 @@ webp~2x(1024x768)
 <td><p><strong>ci</strong></p></td>
 <td><p>color</p></td>
 <td><p><strong>co</strong></p></td>
-<td><p>colorType</p></td>
+<td><p><em>colorType</em></p></td>
 <td><p><strong>ce</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>composite <a class="footnote-reference brackets" href="#id16" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p></td>
@@ -314,28 +322,28 @@ webp~2x(1024x768)
 </tr>
 <tr class="row-odd"><td><p>convolute</p></td>
 <td><p><strong>cl</strong></p></td>
+<td><p>convolution</p></td>
+<td><p><strong>cu</strong></p></td>
 <td><p>cover</p></td>
 <td><p><strong>cv</strong></p></td>
-<td><p>crop</p></td>
-<td><p><strong>cr</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>cropQuiet</p></td>
+<tr class="row-even"><td><p>crop</p></td>
+<td><p><strong>cr</strong></p></td>
+<td><p><em>cropQuiet</em></p></td>
 <td><p><strong>cq</strong></p></td>
-<td><p>deflateLevel</p></td>
+<td><p><em>deflateLevel</em></p></td>
 <td><p><strong>dl</strong></p></td>
-<td><p>deflateStrategy</p></td>
-<td><p><strong>ds</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>displace</p></td>
 <td><p><strong>dp</strong></p></td>
-<td><p>dither565</p></td>
+<td><p><em>dither565</em></p></td>
 <td><p><strong>dt</strong></p></td>
 <td><p>fade</p></td>
 <td><p><strong>fa</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>filterType</p></td>
+<tr class="row-even"><td><p><em>filterType</em></p></td>
 <td><p><strong>ft</strong></p></td>
-<td><p>fishEye</p></td>
+<td><p><em>fishEye</em></p></td>
 <td><p><strong>fe</strong></p></td>
 <td><p>flip</p></td>
 <td><p><strong>fl</strong></p></td>
@@ -349,7 +357,7 @@ webp~2x(1024x768)
 </tr>
 <tr class="row-even"><td><p>mask</p></td>
 <td><p><strong>ma</strong></p></td>
-<td><p>mirror</p></td>
+<td><p><em>mirror</em></p></td>
 <td><p><strong>mi</strong></p></td>
 <td><p>normalize</p></td>
 <td><p><strong>no</strong></p></td>
@@ -365,7 +373,7 @@ webp~2x(1024x768)
 <td><p><strong>po</strong></p></td>
 <td><p>resize</p></td>
 <td><p><strong>re</strong></p></td>
-<td><p>rgba</p></td>
+<td><p><em>rgba</em></p></td>
 <td><p><strong>rg</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>rotate</p></td>
@@ -377,7 +385,7 @@ webp~2x(1024x768)
 </tr>
 <tr class="row-even"><td><p>sepia</p></td>
 <td><p><strong>se</strong></p></td>
-<td><p>shadow</p></td>
+<td><p><em>shadow</em></p></td>
 <td><p><strong>sh</strong></p></td>
 <td><p>threshold</p></td>
 <td><p><strong>th</strong></p></td>
@@ -385,9 +393,35 @@ webp~2x(1024x768)
 </tbody>
 </table>
 </section>
+<section id="x-only">
+<h3>1.x only<a class="headerlink" href="#x-only" title="Link to this heading"></a></h3>
+<table class="docutils align-default" style="width: 600px">
+<colgroup>
+<col style="width: 25.3%" />
+<col style="width: 8.1%" />
+<col style="width: 25.3%" />
+<col style="width: 8.1%" />
+<col style="width: 25.3%" />
+<col style="width: 8.1%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>dither</p></td>
+<td><p><strong>dt</strong></p></td>
+<td><p>fisheye</p></td>
+<td><p><strong>fe</strong></p></td>
+<td><p>quantize</p></td>
+<td><p><strong>qu</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 <section id="compression">
 <h2>Compression<a class="headerlink" href="#compression" title="Link to this heading"></a></h2>
-<p><a class="reference external" href="https://tinypng.com/developers">Tinify</a> web service is used for image compression <a class="footnote-reference brackets" href="#id18" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>. The first 500 images are free each month with a developer API key.</p>
+<p><a class="reference external" href="https://tinypng.com/developers">Tinify</a> is a web service for image compression <a class="footnote-reference brackets" href="#id18" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>. The first 500 images are free each month with a developer API key.</p>
+<ul class="simple">
+<li><p><strong>npm</strong> i <em>&#64;pi-r/tinify</em></p></li>
+</ul>
 <div class="literal-block-wrapper docutils container" id="id20">
 <div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id20" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -482,6 +516,15 @@ webp~2x(1024x768)
 </li>
 </ul>
 </div>
+</section>
+<section id="pi-r2-jimp">
+<h2>&#64;pi-r2/jimp<a class="headerlink" href="#pi-r2-jimp" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.1.0: </span></p>
+<ul class="simple">
+<li><p>Experimental package for the <code class="docutils literal notranslate"><span class="pre">1.x</span></code> releases was created.</p></li>
+</ul>
+</div>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id11" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
@@ -502,7 +545,7 @@ webp~2x(1024x768)
 </aside>
 <aside class="footnote brackets" id="id15" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">5</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://github.com/jimp-dev/jimp/tree/main/packages/jimp#methods">https://github.com/jimp-dev/jimp/tree/main/packages/jimp#methods</a></p>
+<p><a class="reference external" href="https://jimp-dev.github.io/jimp/api/jimp/classes/jimp">https://jimp-dev.github.io/jimp/api/jimp/classes/jimp</a></p>
 </aside>
 <aside class="footnote brackets" id="id16" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">6</a><span class="fn-bracket">]</span></span>

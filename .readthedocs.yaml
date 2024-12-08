@@ -33,7 +33,6 @@ search:
     references.html: 3
     "*/settings.html": 2
     "*/interface.html": 0
-    legacy.html: -1
   ignore:
   - index.html
   - versions.html

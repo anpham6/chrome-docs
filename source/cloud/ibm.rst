@@ -233,7 +233,7 @@ Example usage
 
 .. versionremoved:: 0.9.0
 
-  - Package is no longer supported due to the lack of feedback and future longevity.
+  - Package is no longer supported due to maintenance priorities with newer projects. [#]_
 
 .. versionadded:: 0.8.0
 
@@ -258,3 +258,4 @@ Example usage
   - **configBucket.lifecycle** using *LifecycleConfiguration* was implemented.
 
 .. [#] https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-compatibility-api
+.. [#] https://github.com/anpham6/pi-r2/src/cloud/ibm

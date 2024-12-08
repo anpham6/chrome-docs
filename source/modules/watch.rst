@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 38
+  :emphasize-lines: 40
 
   import type { IFileManager, ModuleConstructor } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -40,6 +40,8 @@ Interface
       get port(): number;
       set securePort(value);
       get securePort(): number;
+      set host(value);
+      get host(): IFileManager | null;
   }
 
   interface WatchConstructor extends ModuleConstructor {

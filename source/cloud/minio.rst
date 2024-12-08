@@ -156,7 +156,7 @@ Example usage
 
 .. versionremoved:: 0.8.0
 
-  - Package is no longer supported due to the lack of feedback and future longevity.
+  - Package is no longer supported due to maintenance priorities with newer projects. [#]_
 
 .. versionadded:: 0.7.0
 
@@ -164,3 +164,5 @@ Example usage
   - **configBucket.tags** using *TagList* was implemented.
   - **configBucket.lifecycle** using *LifecycleConfig* was implemented.
   - **configBucket.create** functionality was implemented.
+
+.. [#] https://github.com/anpham6/pi-r2/src/cloud/minio

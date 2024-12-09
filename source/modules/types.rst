@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 32-33
+  :emphasize-lines: 32-33,35,57
 
   import type { LogArguments } from "./lib/logger";
 
@@ -43,7 +43,7 @@ Interface
   function convertTime(value: HighResolutionTime, format: true): string;
   function convertTime(value: HighResolutionTime, format?: boolean): number;
   function hasGlob(value: string): boolean;
-  function escapePattern(value: unknown, lookBehind?: boolean): string;
+  function escapePattern(value: unknown, symbols?: boolean): string;
   function renameExt(value: string, ext: string, when?: string): string;
   function formatSize(value: string): number;
   function formatSize(value: number, options?: BytesOptions): string;
@@ -65,6 +65,7 @@ Interface
   function randomString(format: string, dictionary?: string): string;
   function errorValue(value: string, hint?: string): Error;
   function errorMessage(title: number | string, value: string, hint?: string): Error;
+  function supported(major: number, minor: number, lts: boolean): boolean;
   function supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
   function importESM<T = unknown>(name: string, fromPath?: boolean): Promise<T>;
   function purgeMemory(percent?: number): number;
@@ -198,6 +199,11 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.11.1
+
+  - ``BREAKING`` Method **escapePattern** argument :target:`lookBehind` was replaced with :target:`symbols`.
+  - Method **supported** argument :target:`lts` as :alt:`boolean` can be used in place of :target:`patch`.
 
 .. versionchanged:: 0.11.0
 

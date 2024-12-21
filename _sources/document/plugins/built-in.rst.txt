@@ -15,7 +15,7 @@ Built-In
 #. minify-svg
 #. custom name
 
-You can define or undefine your own optimizations in ``squared.json``:
+You can define or undefine your own optimizations in ``squared.json``.
 
 HTML
 ====
@@ -50,12 +50,6 @@ CSS
   * - `postcss <https://github.com/postcss/postcss>`_
     - @pi-r/postcss
     - 5
-  * - `clean-css <https://github.com/jakubpawlowicz/clean-css>`_
-    - @pi-r/clean-css
-    - 6
-  * - `csso <https://github.com/css/csso>`_
-    - @pi-r/csso
-    - 7
   * - `stylelint <https://github.com/stylelint/stylelint>`_
     - @pi-r/stylelint
     - 3
@@ -97,22 +91,26 @@ These plugins can be configured using a plain object in ``settings.transform``. 
 Unmaintained
 ------------
 
-.. list-table::
-  :width: 400px
-  :widths: 40 50 10
+The source for these packages are located in a separate repository `pi-r2 <https://github.com/anpham6/pi-r2>`_ which you can publish privately on your own.
 
-  * - `html-minifier <https://github.com/kangax/html-minifier>`_
-    - @pi-r/html-minifier
+.. list-table::
+  :width: 300px
+  :widths: 80 20
+
+  * - @pi-r/html-minifier
     - 0.7.x
-  * - `uglify-js <https://github.com/mishoo/UglifyJS>`_
-    - @pi-r/uglify-js
+  * - @pi-r/uglify-js
     - 0.7.x
-  * - `html-minifier-terser <https://github.com/DanielRuf/html-minifier-terser>`_
-    - @pi-r/html-minifier-terser
+  * - @pi-r/html-minifier-terser
     - 0.8.x
-  * - `svgo <https://github.com/svg/svgo>`_
-    - @pi-r/svgo
+  * - @pi-r/svgo
     - 0.8.x
+  * - @pi-r/clean-css
+    - 0.9.x
+  * - @pi-r/csso
+    - 0.9.x
+
+.. attention:: No new packages are planned due to the overall downturn in technology and only refactoring in general.
 
 Environment Variables
 =====================

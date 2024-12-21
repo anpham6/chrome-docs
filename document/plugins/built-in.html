@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Built-In &mdash; E-mc 0.11.0 documentation</title>
+  <title>Built-In &mdash; E-mc 0.11.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=983eb2ed" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=f3b36f1a"></script>
+      <script src="../../_static/documentation_options.js?v=57cbeb03"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -118,7 +118,7 @@
 <li><p>minify-svg</p></li>
 <li><p>custom name</p></li>
 </ol>
-<p>You can define or undefine your own optimizations in <code class="docutils literal notranslate"><span class="pre">squared.json</span></code>:</p>
+<p>You can define or undefine your own optimizations in <code class="docutils literal notranslate"><span class="pre">squared.json</span></code>.</p>
 <section id="html">
 <h2>HTML<a class="headerlink" href="#html" title="Link to this heading"></a></h2>
 <table class="docutils align-default" style="width: 400px">
@@ -164,14 +164,6 @@
 <td><p>&#64;pi-r/postcss</p></td>
 <td><p>5</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/jakubpawlowicz/clean-css">clean-css</a></p></td>
-<td><p>&#64;pi-r/clean-css</p></td>
-<td><p>6</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/css/csso">csso</a></p></td>
-<td><p>&#64;pi-r/csso</p></td>
-<td><p>7</p></td>
-</tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/stylelint/stylelint">stylelint</a></p></td>
 <td><p>&#64;pi-r/stylelint</p></td>
 <td><p>3</p></td>
@@ -214,7 +206,7 @@
 </tr>
 </tbody>
 </table>
-<p>These plugins can be configured using a plain object in <code class="docutils literal notranslate"><span class="pre">settings.transform</span></code>. Import maps <a class="footnote-reference brackets" href="#id6" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.</p>
+<p>These plugins can be configured using a plain object in <code class="docutils literal notranslate"><span class="pre">settings.transform</span></code>. Import maps <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.</p>
 <ul class="simple">
 <li><p>NPM custom package</p></li>
 <li><p>Local file using module.exports <em class="alt">(e.g. “.cjs”)</em></p></li>
@@ -224,31 +216,37 @@
 </ul>
 <section id="unmaintained">
 <h3>Unmaintained<a class="headerlink" href="#unmaintained" title="Link to this heading"></a></h3>
-<table class="docutils align-default" style="width: 400px">
+<p>The source for these packages are located in a separate repository <a class="reference external" href="https://github.com/anpham6/pi-r2">pi-r2</a> which you can publish privately on your own.</p>
+<table class="docutils align-default" style="width: 300px">
 <colgroup>
-<col style="width: 40.0%" />
-<col style="width: 50.0%" />
-<col style="width: 10.0%" />
+<col style="width: 80.0%" />
+<col style="width: 20.0%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/kangax/html-minifier">html-minifier</a></p></td>
-<td><p>&#64;pi-r/html-minifier</p></td>
+<tr class="row-odd"><td><p>&#64;pi-r/html-minifier</p></td>
 <td><p>0.7.x</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mishoo/UglifyJS">uglify-js</a></p></td>
-<td><p>&#64;pi-r/uglify-js</p></td>
+<tr class="row-even"><td><p>&#64;pi-r/uglify-js</p></td>
 <td><p>0.7.x</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/DanielRuf/html-minifier-terser">html-minifier-terser</a></p></td>
-<td><p>&#64;pi-r/html-minifier-terser</p></td>
+<tr class="row-odd"><td><p>&#64;pi-r/html-minifier-terser</p></td>
 <td><p>0.8.x</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/svg/svgo">svgo</a></p></td>
-<td><p>&#64;pi-r/svgo</p></td>
+<tr class="row-even"><td><p>&#64;pi-r/svgo</p></td>
 <td><p>0.8.x</p></td>
+</tr>
+<tr class="row-odd"><td><p>&#64;pi-r/clean-css</p></td>
+<td><p>0.9.x</p></td>
+</tr>
+<tr class="row-even"><td><p>&#64;pi-r/csso</p></td>
+<td><p>0.9.x</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>No new packages are planned due to the overall downturn in technology and only refactoring in general.</p>
+</div>
 </section>
 </section>
 <section id="environment-variables">
@@ -280,7 +278,7 @@
 </tbody>
 </table>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id6" role="doc-footnote">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
 <p>settings.transform.imports</p>
 </aside>

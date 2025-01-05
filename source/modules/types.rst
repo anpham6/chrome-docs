@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 32-33,35,57
+  :emphasize-lines: 32-33,35,57,185
 
   import type { LogArguments } from "./lib/logger";
 
@@ -193,12 +193,17 @@ Interface
       FILEMANAGER_INTERVAL: number;
       WATCH_INTERVAL: number;
       WATCH_CHANGE: number;
+      LOGGER_METER_INCREMENT: number;
   }
 
   const IMPORT_MAP: StringMap;
 
 Changelog
 =========
+
+.. versionadded:: 0.11.2
+
+  - :alt:`interface` **THRESHOLD** property **LOGGER_METER_INCREMENT** was created.
 
 .. versionchanged:: 0.11.1
 

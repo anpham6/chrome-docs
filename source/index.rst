@@ -28,14 +28,14 @@ NodeJS 16 LTS
 NodeJS 16
 =========
 
-- `0.10.6 <https://github.com/anpham6/e-mc/releases/tag/v0.10.6>`_
-- `0.9.15 <https://github.com/anpham6/e-mc/releases/tag/v0.9.15>`_
+- `0.10.7 <https://github.com/anpham6/e-mc/releases/tag/v0.10.7>`_
+- `0.9.16 <https://github.com/anpham6/e-mc/releases/tag/v0.9.16>`_
 
 NodeJS 14 LTS
 =============
 
-- `0.8.21 <https://github.com/anpham6/e-mc/releases/tag/v0.8.21>`_ :alt:`(0.8.10)`
-- `0.7.17 <https://github.com/anpham6/e-mc/releases/tag/v0.7.17>`_ :alt:`(0.7.6)`
+- `0.8.22 <https://github.com/anpham6/e-mc/releases/tag/v0.8.21>`_ :alt:`(0.8.10)`
+- `0.7.18 <https://github.com/anpham6/e-mc/releases/tag/v0.7.17>`_ :alt:`(0.7.6)`
 - `0.6.14 <https://github.com/anpham6/e-mc/releases/tag/v0.6.14>`_ :alt:`(0.6.3)`
 - `0.5.16 <https://github.com/anpham6/e-mc/releases/tag/v0.5.16>`_ :alt:`(0.5.6)`
 

@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 194,195,215
+  :emphasize-lines: 194-195,215
 
   import type { LogStatus } from "./squared";
 
@@ -294,7 +294,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 19,43,59,66
+  :emphasize-lines: 19,22,46,62,69
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -312,6 +312,9 @@ Settings
           ext?: string | string[] | boolean;
           npm?: boolean;
           inline?: boolean;
+      };
+      posix?: {
+          strict?: boolean;
       };
       settings?: {
           package_manager?: "npm" | "yarn" | "pnpm";
@@ -460,6 +463,14 @@ Settings
 
 Changelog
 ---------
+
+.. versionchanged:: 0.12.0
+
+  - *NodeModule* property **posix.strict** was enabled by default.
+
+.. versionadded:: 0.11.2
+
+  - *NodeModule* group **posix** property **strict** for mixed pattern expressions with Windows was created.
 
 .. versionadded:: 0.11.0
 

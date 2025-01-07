@@ -23,7 +23,7 @@ Examples use **squared** :alt:`5` and **chrome** as the reference framework. The
 NodeJS 16 LTS
 =============
 
-- `0.11.1 <https://github.com/anpham6/e-mc/releases/tag/v0.11.1>`_
+- `0.11.2 <https://github.com/anpham6/e-mc/releases/tag/v0.11.2>`_
 
 NodeJS 16
 =========

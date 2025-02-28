@@ -18,9 +18,11 @@ Interface
 ---------
 
 .. code-block:: typescript
+  :emphasize-lines: 13
 
   import type { StorageOptions } from "@google-cloud/storage";
   import type { FirebaseOptions } from "@firebase/app";
+  import type { ServiceAccount } from 'firebase-admin/app';
 
   interface GCPStorage extends CloudStorage {
       service: "gcp" | "gcloud";
@@ -30,6 +32,7 @@ Interface
 
   interface GCPStorageCredential extends StorageOptions, FirebaseOptions {
       product?: "firebase";
+      admin?: boolean | string | ServiceAccount;
   }
 
 API
@@ -140,6 +143,7 @@ Example usage
           "lifecycle": [], // Delete all rules
           "cors": [/* Cors */], // gcp.setCorsConfiguration
           "cors": [], // Delete all rules
+          "retentionPolicy": 0, // gcp.removeRetentionPeriod
           "retentionPolicy": 86400 // gcp.setRetentionPeriod (seconds)
         }
       },
@@ -587,6 +591,11 @@ Realtime Database
 
 @pi-r/gcp
 =========
+
+.. versionchanged:: 0.10.0
+
+  - *GCPStorage* property **admin.configBucket.retentionPolicy** as `0` calls the method :target:`removeRetentionPeriod`.
+  - *Firebase Admin* authentication using a path to a JSON file or an object representing a service account key is supported.
 
 .. versionadded:: 0.9.0
 

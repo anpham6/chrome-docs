@@ -15,6 +15,7 @@ Interface
 ---------
 
 .. code-block:: typescript
+  :emphasize-lines: 13-14
 
   interface AzureStorage extends CloudStorage {
       service: "azure" | "az";
@@ -28,6 +29,8 @@ Interface
       accountSas?: string;
       connectionString?: string;
       sharedAccessSignature?: string;
+      defaultAzureOptions?: DefaultAzureCredentialOptions;
+      clientOptions?: StoragePipelineOptions;
   }
 
 API
@@ -285,6 +288,10 @@ Example usage
 
 @pi-r/azure
 ===========
+
+.. versionadded:: 0.10.0
+
+  - *AzureStorageCredential* property **defaultAzureOptions** | **clientOptions** for blob client initialization was implemented.
 
 .. versionadded:: 0.9.0
 

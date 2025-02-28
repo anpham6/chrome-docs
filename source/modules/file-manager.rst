@@ -9,7 +9,6 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 38-39,49-50
 
   import type { DataSource, IncrementalMatch, TaskAction } from "./squared";
 

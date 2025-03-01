@@ -11,7 +11,6 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 17,27
 
   import type * as "m" from "mongodb";
 

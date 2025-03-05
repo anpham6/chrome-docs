@@ -187,7 +187,7 @@ squared
 
   - *NPM* package **image-size** is used exclusively for image dimensions.
 
-.. versioremoved:: 0.10.0
+.. versionremoved:: 0.10.0
 
   - *NPM* package **probe-image-size** is no longer supported for image dimensions.
 

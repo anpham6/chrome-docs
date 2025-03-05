@@ -129,7 +129,6 @@ These are the latest server default settings for the :target:`chrome` framework.
               "clean-css": "@pi-r/clean-css",
               "csso": "@pi-r/csso",
               "eslint": "@pi-r/eslint",
-              "html-minifier-terser": "@pi-r/html-minifier-terser",
               "html-validate": "@pi-r/html-validate",
               "postcss": "@pi-r/postcss",
               "posthtml": "@pi-r/posthtml",
@@ -137,7 +136,6 @@ These are the latest server default settings for the :target:`chrome` framework.
               "rollup": "@pi-r/rollup",
               "sass": "@pi-r/sass",
               "stylelint": "@pi-r/stylelint",
-              "svgo": "@pi-r/svgo",
               "terser": "@pi-r/terser"
             },
             "html": {
@@ -157,22 +155,6 @@ These are the latest server default settings for the :target:`chrome` framework.
                   "parser": "html",
                   "printWidth": 120,
                   "tabWidth": 4
-                }
-              },
-              "html-minifier-terser": {
-                "minify": {
-                  "collapseWhitespace": true,
-                  "collapseBooleanAttributes": true,
-                  "removeEmptyAttributes": true,
-                  "removeRedundantAttributes": true,
-                  "removeScriptTypeAttributes": true,
-                  "removeStyleLinkTypeAttributes": true,
-                  "removeComments": true
-                }
-              },
-              "svgo": {
-                "minify-svg": {
-                  "multipass": true
                 }
               }
             },
@@ -304,6 +286,10 @@ These are the latest server default settings for the :target:`chrome` framework.
 
 Changelog
 =========
+
+.. versionremoved:: 5.4.0
+
+  - Transform plugins **html-minifier-terser** | **svgo** are no longer supported.
 
 .. versionadded:: 5.3.0
 

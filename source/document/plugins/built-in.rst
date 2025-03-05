@@ -91,26 +91,32 @@ These plugins can be configured using a plain object in ``settings.transform``. 
 Unmaintained
 ------------
 
-The source for these packages are located in a separate repository `pi-r2 <https://github.com/anpham6/pi-r2>`_ which you can publish privately on your own.
+The source for these packages are located in a separate repository `pi-r2 <https://github.com/anpham6/pi-r2>`_ which you can publish on your own.
 
 .. list-table::
   :width: 300px
-  :widths: 80 20
+  :widths: 70 20 10
 
   * - @pi-r/html-minifier
     - 0.7.x
+    - N
   * - @pi-r/uglify-js
     - 0.7.x
+    - Y [#Y]_
   * - @pi-r/html-minifier-terser
     - 0.8.x
+    - N
   * - @pi-r/svgo
     - 0.8.x
+    - Y [#Y]_
   * - @pi-r/clean-css
     - 0.9.x
+    - N
   * - @pi-r/csso
     - 0.9.x
+    - N
 
-.. attention:: No new packages are planned due to the overall downturn in technology and only refactoring in general.
+.. tip:: `Pi-r` packages are compatible with the latest `E-mc` and can be used as is without any problems.
 
 Environment Variables
 =====================
@@ -125,3 +131,4 @@ stylelint  STYLELINT_OPTIONS_FIX   boolean    false
 
 .. [#] settings.transform.imports
 .. [#v010] e-mc 0.10 (minimum)
+.. [#Y] Package with dependencies (e.g. @e-mc/document)

@@ -15,7 +15,7 @@ Then optionally select nested objects with these :target:`query` expressions:
 - `JSONPath <https://github.com/dchester/jsonpath>`_ [#]_
 - `JMESPath <https://jmespath.org>`_ [#]_
 
-.. tip:: These examples can also be used with :doc:`Cloud </cloud/interface>` and :doc:`DB </db/interface>` data sources except every provider has a different way to *query* their data.
+.. tip:: These examples can be used similarly with :doc:`Cloud </cloud/interface>` and :doc:`DB </db/interface>` data sources.
 
 Interface
 =========
@@ -43,7 +43,7 @@ Interface
       query?: string; // startsWith("$") JSONPath otherwise JMESPath
 
       ignoreCache?: boolean; // Bypass cache without saving
-      ignoreCache?: 1; // purge cache with saving
+      ignoreCache?: 1; // Purge cache with saving
       ignoreEmpty?: boolean; // Will not modify anything when there are no results
       ignoreCoerce?: boolean; // Will not convert inline constructors to native objects
   }
@@ -65,7 +65,7 @@ Interface
         When multi-dimensional array { a: [[1], [2,3]] } then "a[0].0 == 1" OR "a.1.1 == 3" (brackets are optional)
         When key has spaces { " a ": { "b ": { c: 1 } } } then " a "["b "].c OR " a "."b "[c] == 1 (quotes are optional)
         When key has dot operator  { a: { "b.c": 1 } } then a[b\\.c] == 1
-        Invalid usage a[0][1][2] instead use a.0.1.0 or a[0].1[2] (max is 1 consequetive bracket)
+        Invalid usage a[0][1][2] instead use a.0.1.0 or a[0].1[2] (max is 1 consecutive bracket)
       */
       cascade?: string; // Called before "query"
       fallback?: object; // Used when there are missing fields

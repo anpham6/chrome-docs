@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
-      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59d4ba9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=52c05c6f" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=092ae043" />
 
@@ -227,7 +227,6 @@
 <span class="w">            </span><span class="nt">&quot;clean-css&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/clean-css&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;csso&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/csso&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;eslint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/eslint&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;html-minifier-terser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/html-minifier-terser&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;html-validate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/html-validate&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;postcss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/postcss&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;posthtml&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/posthtml&quot;</span><span class="p">,</span>
@@ -235,7 +234,6 @@
 <span class="w">            </span><span class="nt">&quot;rollup&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/rollup&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;sass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/sass&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;stylelint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/stylelint&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;svgo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/svgo&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;terser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/terser&quot;</span>
 <span class="w">          </span><span class="p">},</span>
 <span class="w">          </span><span class="nt">&quot;html&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -255,22 +253,6 @@
 <span class="w">                </span><span class="nt">&quot;parser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
 <span class="w">                </span><span class="nt">&quot;printWidth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span>
 <span class="w">                </span><span class="nt">&quot;tabWidth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
-<span class="w">              </span><span class="p">}</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="nt">&quot;html-minifier-terser&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;minify&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;collapseWhitespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;collapseBooleanAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;removeEmptyAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;removeRedundantAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;removeScriptTypeAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;removeStyleLinkTypeAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;removeComments&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<span class="w">              </span><span class="p">}</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="nt">&quot;svgo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;minify-svg&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;multipass&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">          </span><span class="p">},</span>
@@ -404,6 +386,12 @@
 </div>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 5.4.0: </span></p>
+<ul class="simple">
+<li><p>Transform plugins <strong>html-minifier-terser</strong> | <strong>svgo</strong> are no longer supported.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 5.3.0: </span></p>
 <ul class="simple">

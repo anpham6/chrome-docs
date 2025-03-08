@@ -10,7 +10,18 @@ Cloud
   AWS (v3) <aws-v3>
   Azure <azure>
   Google <gcp>
-  IBM <ibm>
-  minio
   atlas
   Oracle <oci>
+
+.. raw:: html
+
+   <hr>
+
+.. rst-class:: unmaintained
+
+.. toctree::
+  :caption: Unmaintained
+  :maxdepth: 1
+
+  IBM <ibm>
+  minio

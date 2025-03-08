@@ -54,3 +54,11 @@ ul.compressed dl dt {
 ul.compressed dl dd {
     margin-bottom: 8px;
 }
+
+.rst-content .unmaintained p.caption {
+    margin-bottom: 12px;
+}
+
+.unmaintained p.caption .caption-text {
+    font-size: 80%;
+}

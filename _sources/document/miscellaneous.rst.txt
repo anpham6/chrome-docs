@@ -74,17 +74,15 @@ Image dimensions
  NPM                            JPEG GIF PNG WebP BMP TIFF PSD ICO AVIF HEIC HEIF
 =============================== ==== === === ==== === ==== === === ==== ==== ====
 image-size [#]_                   x   x   x    x   x    x   x   x    x    x    x
-probe-image-size [#]_             x   x   x    x   x    x   x   x    x    x    x
-:doc:`jimp </image/index>` [#]_   x   x   x        x    x
 =============================== ==== === === ==== === ==== === === ==== ==== ====
 
-.. attention:: Element **width** OR **height** including **max-width** :alt:`(px)` AND **max-height** :alt:`(px)` being set will not be processed due to the likeliness of distortion.
+.. attention:: Element **width** OR **height** including **max-width** :alt:`(px)` AND **max-height** :alt:`(px)` being set is not processed due to the likeliness of distortion.
 
 ::
 
   {
     "selector": "img",
-    "filename": "probe.png",
+    "filename": "sample.png",
     /* OR */
     "mimeType": "image/png", // "image/unknown"
     "attributes": {
@@ -97,12 +95,12 @@ probe-image-size [#]_             x   x   x    x   x    x   x   x    x    x    x
 .. code-block:: html
   :caption: Source
 
-  <img src="probe.png" />
+  <img src="sample.png" />
 
 .. code-block:: html
   :caption: Output
 
-  <img src="probe.png" width="800" height="600" loading="lazy" />
+  <img src="sample.png" width="800" height="600" loading="lazy" />
 
 .. _document-miscellaneous-element-content:
 
@@ -185,12 +183,18 @@ squared
 @pi-r/chrome
 ------------
 
+.. versionadded:: 0.10.0
+
+  - *NPM* package **image-size** is used exclusively for image dimensions.
+
+.. versionremoved:: 0.10.0
+
+  - *NPM* package **probe-image-size** is no longer supported for image dimensions.
+
 .. versionadded:: 0.6.4
 
   - *NPM* package **image-size** is optionally supported for image dimensions.
 
 .. [#] When using server hosted directory based sqd.config.
-.. [#] npm i image-size
-.. [#] npm i probe-image-size
-.. [#] Jimp is not recommended for detecting image dimensions.
+.. [#] Installed by default (@pi-r/chrome 0.10)
 .. [#] https://web.dev/articles/add-manifest

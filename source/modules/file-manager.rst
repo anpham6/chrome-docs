@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 101
 
   import type { DataSource, IncrementalMatch, TaskAction } from "./squared";
 
@@ -19,7 +20,7 @@ Interface
   import type { ExecCommand } from "./logger";
   import type { CopyFileOptions, CreateDirOptions, DeleteFileOptions, MoveFileOptions, ReadFileOptions, RemoveDirOptions, WriteFileOptions } from "./module";
   import type { RequestData, Settings } from "./node";
-  import type { Aria2Options, BufferFormat, OpenOptions } from "./request";
+  import type { Aria2Options, BufferFormat, OpenOptions, RcloneOptions } from "./request";
   import type { CloudModule, CompressModule, DbModule, DocumentModule, HttpConnectSettings, HttpMemorySettings, ImageModule, RequestModule, TaskModule, WatchModule } from "./settings";
 
   import type { SpawnOptions } from "node:child_process";
@@ -110,7 +111,7 @@ Interface
       fetchObject(uri: string | URL, options?: OpenOptions): Promise<object | null>;
       fetchBuffer(uri: string | URL, options?: OpenOptions): Promise<Buffer | string | null>;
       fetchFiles(uri: string | URL, pathname: string): Promise<string[]>;
-      fetchFiles(uri: string | URL, options?: Aria2Options): Promise<string[]>;
+      fetchFiles(uri: string | URL, options?: Aria2Options | RcloneOptions): Promise<string[]>;
       updateProgress(name: "request", id: number | string, receivedBytes: number, totalBytes: number, dataTime?: HighResolutionTime): void;
       start(emptyDir?: boolean): Promise<FinalizeResult>;
       processAssets(emptyDir?: boolean, using?: ExternalAsset[]): void;
@@ -199,6 +200,10 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.12.0
+
+  - *IFileManager* method **fetchFiles** using the :target:`rclone://` protocol supports `Rclone <https://rclone.org>`_ copy commands.
 
 .. versionchanged:: 0.11.0
 

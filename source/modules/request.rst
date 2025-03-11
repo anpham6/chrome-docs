@@ -9,10 +9,11 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 31-32
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { HttpAdapterConstructor, HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
-  import type { ApplyOptions, Aria2Options, FormDataPart, HeadersOnCallback, HostConfig, OpenOptions, PostOptions, ProxySettings, PutOptions, ReadExpectType, RequestInit, StatusOnCallback } from "./request";
+  import type { ApplyOptions, Aria2Options, FormDataPart, HeadersOnCallback, HostConfig, OpenOptions, PostOptions, ProxySettings, PutOptions, ReadExpectType, RequestInit, RcloneOptions, StatusOnCallback } from "./request";
   import type { DnsLookupSettings, RequestModule, RequestSettings } from "./settings";
 
   import type { ClientRequest, OutgoingHttpHeaders } from "node:http";
@@ -40,6 +41,8 @@ Interface
       headersOf(uri: string): OutgoingHttpHeaders | undefined;
       aria2c(uri: string | URL, pathname: string): Promise<string[]>;
       aria2c(uri: string | URL, options?: Aria2Options): Promise<string[]>;
+      rclone(uri: string | URL, pathname: string): Promise<string[]>;
+      rclone(uri: string | URL, options?: RcloneOptions): Promise<string[]>;
       json(uri: string | URL, options?: OpenOptions): Promise<object | null>;
       pipe(uri: string | URL, to: Writable, options?: OpenOptions): Promise<null>;
       opts(url: string | URL, options?: OpenOptions): HostConfig;
@@ -89,6 +92,7 @@ Changelog
 
   - *IRequest* property setter **adapter** for the local HTTP implementation as :alt:`IHttpAdapter` was created.
   - *RequestConstructor* static method **defineHttpAdapter** for the global HTTP implementation as :alt:`IHttpAdapter` was created.
+  - *IRequest* method **get** supports :target:`Zstd` decompression for *accept-encoding* when using at least :alt:`NodeJS v23.8.0`.
 
 .. deprecated:: 0.11.0
   
@@ -115,6 +119,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 81-118
 
   import type { PermittedDirectories } from "./core";
   import type { SecureConfig } from "./http";
@@ -196,10 +201,52 @@ Settings
           file_allocation?: "none" | "prealloc" | "trunc" | "falloc";
           conf_path?: string;
       };
+      rclone?: {
+          bin?: string | false;
+          exec?: {
+              uid?: number;
+              gid?: number;
+          };
+          check_first?: boolean;
+          checksum?: boolean;
+          cutoff_mode?: "HARD" | "SOFT" | "CAUTIOUS";
+          ignore_case_sync?: boolean;
+          ignore_checksum?: boolean;
+          ignore_existing?: boolean;
+          ignore_size?: boolean;
+          ignore_times?: boolean;
+          immutable?: boolean;
+          inplace?: boolean;
+          max_backlog?: number;
+          max_duration?: string;
+          max_transfer?: string;
+          metadata?: boolean;
+          modify_window?: string;
+          multi_thread_chunk_size?: string;
+          multi_thread_cutoff?: string;
+          multi_thread_streams?: number;
+          multi_thread_write_buffer_size?: string;
+          no_check_dest?: boolean;
+          no_traverse?: boolean;
+          no_update_dir_modtime?: boolean;
+          refresh_times?: boolean;
+          size_only?: boolean;
+          update?: boolean;
+          fast_list?: boolean;
+          bind?: string;
+          contimeout?: string;
+          disable_http2?: boolean;
+          timeout?: string;
+          config?: string;
+      };
   }
 
 Changelog
 ---------
+
+.. versionchanged:: 0.12.0
+
+  - *RequestModule* section **rclone** for cloud storage copying settings was created.
 
 .. versionchanged:: 0.11.0
 

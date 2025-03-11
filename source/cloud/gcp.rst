@@ -212,8 +212,10 @@ Interface
 ---------
 
 .. code-block:: typescript
+  :emphasize-lines: 11,19-20
 
   import type { GoogleAuthOptions } from "google-auth-library";
+  import type { AggregateSpec } from "@google-cloud/firestore";
   import type { PathType } from "@google-cloud/datastore";
   import type { entity } from "@google-cloud/datastore/build/src/entity";
 
@@ -222,7 +224,7 @@ Interface
       service: "gcp" | "gcloud";
       credential: string | GCPDatabaseCredential;
       product?: "firestore" | "bigquery" | "bigtable" | "datastore" | "spanner" | "firebase";
-      id?: string | string[];
+      id?: string | string[] | number;
       params?: string | unknown[] | Document;
       database?: string;
       updateType?: 0 | 1 | 2 | 3;
@@ -230,6 +232,8 @@ Interface
       keys?: DatastoreKey | DatastoreKey[];
       kind?: string | string[];
       orderBy?: unknown[][];
+      aggregateSpec?: AggregateSpec;
+      flags?: number;
   }
 
   interface GCPDatabaseCredential extends GoogleAuthOptions {/* Empty */}
@@ -277,19 +281,27 @@ Firestore
       "credential": {/* Authentication */},
       "table": "demo",
 
-      "id": "8Qnt83DSNW0eNykpuzcQ", // fs.collection(table).doc
+      /* a = fs.collection(table) | b = fs.collectionGroup(table){flags & 1} */
+      "id": "8Qnt83DSNW0eNykpuzcQ", // a.doc
       /* OR */
       "id": ["8Qnt83DSNW0eNykpuzcQ", "aahiEBE4qHM73JE7jom3"], // fs.getAll (table/id)
       "options": {/* ReadOptions */},
       /* OR */
-      "params": ["column", "column.sub"], // fs.collection(table).findNearest
+      "params": ["column", "column.sub"], // a.findNearest
       "query": [1, 2],
       "options": {
         "limit": 1000, // Optional
         "distanceMeasure": "EUCLIDEAN"
       },
       /* OR */
-      "query": [ // fs.collection(table)
+      "options": { // a.findNearest{VectorQueryOptions} (not cached)
+        "vectorField": "column",
+        "queryVector": [1, 2],
+        "limit": 1000, // Optional
+        "distanceMeasure": "EUCLIDEAN"
+      },
+      /* OR */
+      "query": [
         ["where", "group", "==", "Firestore"],
         ["where", "id", "==", "8Qnt83DSNW0eNykpuzcQ"],
         ["findNearest", "column", [1, 2], { "limit": 1000, "distanceMeasure": "EUCLIDEAN" }],
@@ -313,6 +325,9 @@ Firestore
       "orderBy": [
         ["title", "asc"]
       ],
+      "id": 1, // b.getPartitions(id){number}
+      /* OR */
+      "aggregateSpec": {/* AggregateSpec */}, // (a | b).aggregate (not cached)
 
       "value": "<b>${title}</b>: ${description}",
 
@@ -596,6 +611,8 @@ Realtime Database
 
   - *GCPStorage* property **admin.configBucket.retentionPolicy** as `0` calls the method :target:`removeRetentionPeriod`.
   - *Firebase Admin* authentication using a path to a JSON file or an object representing a service account key is supported.
+  - *Firestore* aggregate and collection group partition queries are supported. 
+  - *Firestore* method **findNearest** for vector queries as :alt:`VectorQueryOptions` was implemented.
 
 .. versionadded:: 0.9.0
 

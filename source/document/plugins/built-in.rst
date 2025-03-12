@@ -91,7 +91,7 @@ These plugins can be configured using a plain object in ``settings.transform``. 
 Unmaintained
 ------------
 
-The source for these packages are located in a separate repository `pi-r2 <https://github.com/anpham6/pi-r2>`_ which you can publish on your own.
+The source for these packages are located in a separate repository `Pi-r2 <https://github.com/anpham6/pi-r2>`_ which you can publish on your own.
 
 .. list-table::
   :width: 300px
@@ -116,7 +116,7 @@ The source for these packages are located in a separate repository `pi-r2 <https
     - 0.9.x
     - N
 
-.. tip:: `Pi-r` packages are compatible with the latest `E-mc` and can be used as is without any problems.
+.. tip:: `Pi-r2` packages are compatible with the latest `E-mc` and can be used as is without any problems.
 
 Environment Variables
 =====================

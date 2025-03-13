@@ -172,4 +172,4 @@ Example usage
 
   - NPM: Unmaintained and untested source with :alt:`minio 8.0.4` was released.
 
-.. [#] https://github.com/anpham6/pi-r2/src/cloud/minio
+.. [#] https://github.com/anpham6/pi-r2/tree/master/src/cloud/minio

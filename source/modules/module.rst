@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 223-228
 
   import type { LogStatus } from "./squared";
 
@@ -222,12 +223,21 @@ Interface
       getMemUsage(format: true): string;
       getMemUsage(format?: boolean): number;
       formatCpuMem(start: CpuUsage, all?: boolean): string;
+      getPackageVersion(name: string | [string, string], options?: PackageVersionOptions): string;
+      /** @deprecated */
       getPackageVersion(name: string | [string, string], startDir: string, baseDir?: string): string;
+      /** @deprecated */
       getPackageVersion(name: string | [string, string], unstable?: boolean, startDir?: string, baseDir?: string): string;
       checkSemVer(name: string | [string, string], options: CheckSemVerOptions): boolean;
+      checkSemVer(name: string | [string, string], min: number | string, max?: number | string): boolean;
       checkSemVer(name: string | [string, string], min: number | string, max: number | string, options?: Omit<CheckSemVerOptions, "min" | "max" | "equals">): boolean;
+      /** @deprecated */
+      checkSemVer(name: string | [string, string], min: number | string, max?: number | string, unstable?: boolean, startDir?: string): boolean;
+      /** @deprecated Types.sanitizeCmd */
       sanitizeCmd(value: string): string;
+      /** @deprecated Types.sanitizeArgs */
       sanitizeArgs(value: string, doubleQuote?: boolean): string;
+      /** @deprecated Types.sanitizeArgs */
       sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
       purgeMemory(percent: number, parent: boolean): Promise<number>;
       purgeMemory(percent: number, limit: number, parent?: boolean): Promise<number>;
@@ -240,6 +250,10 @@ Interface
 
 Changelog
 =========
+
+.. deprecated:: 0.12.0
+
+  - *ModuleConstructor* static methods **sanitizeCmd** | **sanitizeArgs** were relocated into :target:`types`.
 
 .. versionremoved:: 0.11.0
 

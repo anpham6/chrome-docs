@@ -7,6 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
+  :emphasize-lines: 52-54
 
   import type { LogArguments } from "./lib/logger";
 
@@ -59,6 +60,9 @@ Interface
   function hashKey(data: BinaryLike, algorithm?: string, encoding?: BinaryToTextEncoding): string;
   function incrementUUID(restart?: boolean): string;
   function validateUUID(value: unknown): boolean;
+  function sanitizeCmd(value: string): string;
+  function sanitizeArgs(value: string, doubleQuote?: boolean): string;
+  function sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
   function randomString(format: string, dictionary?: string): string;
   function errorValue(value: string, hint?: string): Error;
   function errorMessage(title: number | string, value: string, hint?: string): Error;
@@ -198,6 +202,10 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.12.0
+
+  - Method **sanitizeCmd** | **sanitizeArgs** for escaping shell characters from :target:`module` was imported.
+
 .. versionremoved:: 0.12.0
 
   - Method **generateUUID** was an alias for :target:`crypto.randomUUID`.
@@ -210,7 +218,7 @@ Changelog
 .. versionchanged:: 0.11.1
 
   - ``BREAKING`` Method **escapePattern** argument :target:`lookBehind` was replaced with :target:`symbols`.
-  - Method **supported** argument :target:`lts` as :alt:`boolean` can be used in place of :target:`patch`.
+  - Method **supported** argument :target:`lts` :alt:`(boolean)` can be used as the :target:`patch` argument.
 
 .. versionchanged:: 0.11.0
 

@@ -57,8 +57,6 @@ Interface
   function encryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
   function decryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
   function hashKey(data: BinaryLike, algorithm?: string, encoding?: BinaryToTextEncoding): string;
-  /** @deprecated - crypto.randomUUID */
-  function generateUUID(options?: RandomUUIDOptions): string;
   function incrementUUID(restart?: boolean): string;
   function validateUUID(value: unknown): boolean;
   function randomString(format: string, dictionary?: string): string;
@@ -200,6 +198,11 @@ Interface
 Changelog
 =========
 
+.. versionremoved:: 0.12.0
+
+  - Method **generateUUID** was an alias for :target:`crypto.randomUUID`.
+  - :alt:`type` **Undef** | **Null** | **NumString** | **TupleOf** in :alt:`types`.
+ 
 .. versionadded:: 0.11.2
 
   - :alt:`interface` **THRESHOLD** property **LOGGER_METER_INCREMENT** was created.
@@ -232,15 +235,15 @@ Changelog
 
   - Method **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name "**AbortError**" and code **20**.
   - Method **formatTime** with argument :target:`char` as "**:**" displays using digital clock format.
+  - :alt:`interface` **CloneObjectOptions** in :alt:`module` was relocated to :target:`types`.
+  - :alt:`type` **Writeable** was renamed :target:`Writable`.
+  - :alt:`interface` **GetTempDirOptions** in :alt:`module` was renamed :target:`TempDirOptions`.
 
 .. versionremoved:: 0.10.0
 
-  - :alt:`interface` **CloneObjectOptions** in :alt:`module` was relocated to :target:`types`.
-  - :alt:`interface` **AsHashOptions** property **minLength** in :alt:`module` was deleted.
-  - :alt:`type` **Writeable** was renamed :target:`Writable`.
-  - :alt:`interface` **GetTempDirOptions** in :alt:`module` was renamed :target:`TempDirOptions`.
-  - :alt:`type` **NormalizeFlags** in :alt:`module` was removed.
-  - :alt:`export` definitions in :alt:`squared` were deleted:
+  - :alt:`interface` **AsHashOptions** property **minLength** in :alt:`module`.
+  - :alt:`type` **NormalizeFlags** in :alt:`module`.
+  - :alt:`export` definitions in :alt:`squared`:
 
     .. hlist::
       :columns: 4

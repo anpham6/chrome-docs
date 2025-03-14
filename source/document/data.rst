@@ -13,6 +13,7 @@ Using the same concept as a database you can read from these files:
 Then optionally select nested objects with these :target:`query` expressions:
 
 - `JSONPath <https://github.com/dchester/jsonpath>`_ [#]_
+- `JSONPath Plus <https://github.com/JSONPath-Plus/JSONPath>`_ [#]_
 - `JMESPath <https://jmespath.org>`_ [#]_
 
 .. tip:: These examples can be used similarly with :doc:`Cloud </cloud/interface>` and :doc:`DB </db/interface>` data sources.
@@ -470,6 +471,15 @@ Changelog
 @pi-r/chrome
 ------------
 
+.. versionadded:: 0.10.0
+
+  - *NPM* package **image-size** for detecting dimensions is default installed.
+  - *NPM* package **jsonpath-plus** for filtering JSON results is optionally installed.
+
+.. versionremoved:: 0.10.0
+
+  - *NPM* package **probe-image-size** is no longer supported.
+
 .. versionadded:: 0.7.0
 
   - *DataSource* property **ignoreCoerce** was created.
@@ -484,5 +494,6 @@ Changelog
 .. [#] npm i fast-xml-parser
 .. [#] npm i toml
 .. [#] npm i jsonpath
+.. [#] npm i jsonpath-plus
 .. [#] npm i jmespath
 .. [#] npm i ejs

@@ -78,7 +78,7 @@ External plugins per package have to be pre-installed from NPM and may not be av
                 "plugin-example": {
                   "plugins": [
                     "@rollup/plugin-commonjs",
-                    ["@rollup/plugin-babel", { "__default__": "babel", "babelHelpers": "bundled" }] // __default__ (string)
+                    ["@rollup/plugin-babel", { "__default__": "babel", "babelHelpers": "bundled" }] // __default__ (@pi-r property)
                   ]
                 },
                 "plugin-example-output": {
@@ -192,7 +192,7 @@ Using local file
   }
 
 .. code-block:: javascript
-  :caption: es6.mjs [#v010]_
+  :caption: es6.mjs
 
   import path from "node:path";
   let ID = 0;
@@ -280,4 +280,3 @@ The same concept can be used inline anywhere using a ``script`` tag with the **t
 .. attention:: Using **data-chrome-template** requires the setting :code:`eval.template = true`.
 
 .. [#] this = NodeJS.process
-.. [#v010] e-mc 0.10 (minimum)

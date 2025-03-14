@@ -84,7 +84,7 @@ These plugins can be configured using a plain object in ``settings.transform``. 
 
 - NPM custom package
 - Local file using module.exports :alt:`(e.g. ".cjs")`
-- Local file using export default :alt:`(e.g. ".mjs")` [#v010]_
+- Local file using export default :alt:`(e.g. ".mjs")`
 - Local plain file with single function :alt:`(e.g. ".js")`
 - Inline function
 
@@ -121,14 +121,56 @@ The source for these packages are located in a separate repository `Pi-r2 <https
 Environment Variables
 =====================
 
-========== ====================== ======== ========
-  Plugin    Name                   Value    Default
-========== ====================== ======== ========
-eslint     ESLINT_USE_FLAT_CONFIG  boolean     none
-eslint     ESLINT_FORMATTER_NAME       any     none
-stylelint  STYLELINT_OPTIONS_FIX   boolean    false
-========== ====================== ======== ========
+========== ================================ ========
+  Plugin    Name                             Value
+========== ================================ ========
+eslint     ESLINT_USE_FLAT_CONFIG            boolean
+eslint     ESLINT_FORMATTER_NAME                 any
+stylelint  STYLELINT_OPTIONS_CWD                path
+stylelint  STYLELINT_OPTIONS_CONFIG_FILE        path
+stylelint  STYLELINT_OPTIONS_CONFIG_BASEDIR     path
+stylelint  STYLELINT_OPTIONS_VALIDATE        boolean
+stylelint  STYLELINT_OPTIONS_FIX             boolean
+stylelint  STYLELINT_OPTIONS_FORMATTER        string
+========== ================================ ========
+
+Pre-Installed
+=============
+
+========== ================================ ============ =======
+  Plugin    Name                             Alias        Pi-r
+========== ================================ ============ =======
+postcss    autoprefixer                                   0.10.0
+postcss    postcss-import                   import        0.10.0
+rollup     @rollup/plugin-babel             babel         0.10.0
+rollup     @rollup/plugin-commonjs          commonjs      0.10.0
+rollup     @rollup/plugin-node-resolve      node-resolve  0.10.0
+rollup     @rollup/plugin-terser            terser        0.10.0
+========== ================================ ============ =======
+
+.. code-block::
+  :emphasize-lines: 6-8,15
+
+  {
+    "rollup": {
+      "bundle-es6": {
+        "treeshake": true,
+        "plugins": [
+          "node-resolve",
+          "@rollup/plugin-commonjs", // "commonjs"
+          ["babel", { "__default__": "babel", "babelHelpers": "bundled" }] // __default__ (@pi-r property)
+        ],
+        "output": {
+          "format": "es",
+          "preserveModules": false,
+          "sourcemap": true,
+          "plugins": [
+            ["terser", { "keep_classnames":  true }]
+          ]
+        }
+      }
+    }
+  }
 
 .. [#] settings.transform.imports
-.. [#v010] e-mc 0.10 (minimum)
 .. [#Y] Package with dependencies (e.g. @e-mc/document)

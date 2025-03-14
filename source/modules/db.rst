@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 77,79
 
   import type { DbDataSource } from "./squared";
 
@@ -86,7 +87,9 @@ Interface
 
   interface DbPoolConstructor {
       CACHE_UNUSED: readonly string[];
+      CACHE_IGNORE: readonly string[];
       asString(credential: unknown): string;
+      canCache(credential: unknown): boolean;
       sanitize(credential: unknown): unknown;
       removeUUIDKey(credential: unknown): unknown;
       findKey(pools: Record<string, IDbPool>, uuidKey: unknown, poolKey: string | undefined, ...items: DbDataSource[]): Record<string, IDbPool> | null;
@@ -98,6 +101,11 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.12.0
+
+  - *DbPoolConstructor* static property **CACHE_IGNORE** for non-cacheable pool attributes was created.
+  - *DbPoolConstructor* static method **canCache** for  non-cacheable credentials was created.
 
 .. versionadded:: 0.10.0
 

@@ -28,6 +28,7 @@ Pool
 ----
 
 .. code-block:: typescript
+  :emphasize-lines: 10
 
   import type { PoolConfig } from "mariadb";
 
@@ -38,6 +39,7 @@ Pool
       queue_idle?: number; // acquireTimeout
       timeout?: number; // connectTimeout
       socket_timeout?: number; // socketTimeout
+      init_timeout?: number; // socketTimeout
   }
 
 Authentication
@@ -108,9 +110,13 @@ Example usage
 @pi-r/mariadb
 =============
 
+.. versionadded:: 0.10.0
+
+  - *DbPool* static property **CACHE_IGNORE** through :target:`@pi-r/mariadb/client/pool` as :alt:`keyof PoolConfig` was implemented.
+
 .. versionadded:: 0.8.0
 
-  - *DbPool* static property **CACHE_UNUSED** through :target:`@pi-r/mariadb/client/pool` as :alt:`string[]` was implemented.
+  - *DbPool* static property **CACHE_UNUSED** through :target:`@pi-r/mariadb/client/pool` as :alt:`keyof PoolConfig` was implemented.
   - *SecureContextOptions* (:alt:`NodeJS.tls`) property **ca** with Amazon RDS CA [#]_ cert for *host* :alt:`rds.amazonaws.com` is attached when installed.
 
 .. versionadded:: 0.6.2

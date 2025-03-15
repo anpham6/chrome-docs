@@ -88,6 +88,10 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.12.0
+
+  - *IRequest* method **rclone** for pre-configured cloud storage transfers was created.
+
 .. versionadded:: 0.11.0
 
   - *IRequest* property setter **adapter** for the local HTTP implementation as :alt:`IHttpAdapter` was created.

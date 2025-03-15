@@ -10,6 +10,7 @@ E-mc 0.11
   image/index
   cloud/index
   db/index
+  request/index
   task/index
   build
   modules/index

@@ -33,12 +33,6 @@ HTML
   * - `html-validate <https://gitlab.com/html-validate/html-validate>`_
     - @pi-r/html-validate
     - 3
-  * - `html-minifier-terser <https://github.com/DanielRuf/html-minifier-terser>`_
-    - @pi-r/html-minifier-terser
-    - 7
-  * - `svgo <https://github.com/svg/svgo>`_
-    - @pi-r/svgo
-    - 9
 
 CSS
 ===
@@ -91,7 +85,7 @@ These plugins can be configured using a plain object in ``settings.transform``. 
 Unmaintained
 ------------
 
-The source for these packages are located in a separate repository `Pi-r2 <https://github.com/anpham6/pi-r2>`_ which you can publish on your own.
+The source for these packages are located in a separate repository `Pi-r2 <https://github.com/anpham6/pi-r2>`_. Once per year they are published with each major NodeJS release in April.
 
 .. list-table::
   :width: 300px

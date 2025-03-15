@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oracle &mdash; E-mc 0.11.2 documentation</title>
+  <title>Oracle &mdash; E-mc 0.11.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=60336169"></script>
+      <script src="../_static/documentation_options.js?v=c44be570"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -133,7 +133,8 @@
 <span class="w">    </span><span class="nx">queue_max?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// queueMax</span>
 <span class="w">    </span><span class="nx">queue_idle?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// queueTimeout</span>
 <span class="w">    </span><span class="nx">timeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// connectTimeout (ms)</span>
-<span class="p">}</span>
+<span class="hll"><span class="w">    </span><span class="nx">init_imeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// transportConnectTimeout (ms)</span>
+</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -255,9 +256,15 @@
 <section id="pi-r-oracle">
 <h2>&#64;pi-r/oracle<a class="headerlink" href="#pi-r-oracle" title="Link to this heading"></a></h2>
 <div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.0: </span></p>
+<ul class="simple">
+<li><p><em>DbPool</em> static property <strong>CACHE_IGNORE</strong> through <em class="target">&#64;pi-r/oracle/client/pool</em> as <em class="alt">keyof PoolAttributes</em> was implemented.</p></li>
+</ul>
+</div>
+<div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.0: </span></p>
 <ul class="simple">
-<li><p><em>DbPool</em> static property <strong>CACHE_UNUSED</strong> through <em class="target">&#64;pi-r/oracle/client/pool</em> as <em class="alt">string[]</em> was implemented.</p></li>
+<li><p><em>DbPool</em> static property <strong>CACHE_UNUSED</strong> through <em class="target">&#64;pi-r/oracle/client/pool</em> as <em class="alt">keyof PoolAttributes</em> was implemented.</p></li>
 <li><p><em>OracleCredential</em> property <strong>connectString</strong> | <strong>connectionString</strong> with <a class="reference external" href="https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connecting-using-centralized-configuration-providers">Centralized Configuration Providers</a> is supported.</p></li>
 </ul>
 </div>

@@ -257,5 +257,12 @@ Example usage
   - **configBucket.cors** using *CORSConfiguration* was implemented.
   - **configBucket.lifecycle** using *LifecycleConfiguration* was implemented.
 
+@pi-r2/ibm
+==========
+
+.. versionadded:: 0.1.0
+
+  - NPM: Unmaintained and untested source with :alt:`@ibm-cloud/cloudant 0.12.2` was released.
+
 .. [#] https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-compatibility-api
-.. [#] https://github.com/anpham6/pi-r2/src/cloud/ibm
+.. [#] https://github.com/anpham6/pi-r2/tree/master/src/cloud/ibm

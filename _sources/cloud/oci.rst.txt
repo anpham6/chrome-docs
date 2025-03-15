@@ -90,6 +90,7 @@ Interface
 ---------
 
 .. code-block:: typescript
+  :emphasize-lines: 12,13
 
   import type { BindParameters, ConnectionAttributes, ExecuteOptions, InitialiseOptions } from "oracledb";
 
@@ -102,8 +103,8 @@ Interface
       query?: string | Record<string, any>;
       options?: ExecuteOptions;
       params?: BindParameters;
-      update?: Record<string, any>;
-      updateType?: 0 | 1 | 2;
+      update?: Record<string, any> | Record<string, any>[];
+      updateType?: 0 | 1 | 2 | 3;
       streamRow?: boolean;
   }
 
@@ -176,10 +177,19 @@ Example usage
 
       "update": {/* Record<string, any> */},
       "updateType": 0, // SODA.replaceOne (append)
-      "updateType": 1, // SODA.insertOne (new)
+      "updateType": 1, // SODA.insertOneAndGet
       "updateType": 2, // SODA.replaceOne
       "id": "1", // Same as item being retrieved
       "id": ["1", "2"] // Only first one is updated
+
+      /* SODA.createCollection */
+      "update": [
+        {/* Record<string, any> */},
+        {/* Record<string, any> */}
+      ],
+      /* OR */
+      "update": {/* Record<string, any> */},
+      "updateType": 3 // SODA.insertOne
     }
   }
 
@@ -188,10 +198,15 @@ Example usage
 @pi-r/oci
 =========
 
+.. versionadded:: 0.10.0
+
+  - *OCIDatabaseQuery* property **update** for *SODA.insertMany* as :alt:`Record<string, any>[]` was implemented.
+  - *OCIDatabaseQuery* property **updateType** for *SODA.insertOne* as :alt:`3` was implemented.
+
 .. versionadded:: 0.8.2
 
   - *OCIDatabaseQuery* property **id** for multiple keys as :alt:`string[]` was implemented.
-  - *OCIDatabaseQuery* property **updateType** for replacement method invoked was created.
+  - *OCIDatabaseQuery* property **updateType** for invoked replacement method was created.
 
 .. versionadded:: 0.8.0
 

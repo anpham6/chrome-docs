@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Settings &mdash; E-mc 0.11.2 documentation</title>
+  <title>Settings &mdash; E-mc 0.11.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=60336169"></script>
+      <script src="../../_static/documentation_options.js?v=c44be570"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -177,7 +177,7 @@
 <span class="w">              </span><span class="nt">&quot;plugin-example&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">                  </span><span class="s2">&quot;@rollup/plugin-commonjs&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="p">[</span><span class="s2">&quot;@rollup/plugin-babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;__default__&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;babelHelpers&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bundled&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// __default__ (string)</span>
+<span class="w">                  </span><span class="p">[</span><span class="s2">&quot;@rollup/plugin-babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;__default__&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;babelHelpers&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bundled&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// __default__ (@pi-r property)</span>
 <span class="w">                </span><span class="p">]</span>
 <span class="w">              </span><span class="p">},</span>
 <span class="w">              </span><span class="nt">&quot;plugin-example-output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -205,7 +205,7 @@
 </div>
 </section>
 <section id="using-inline-function">
-<h2>Using inline function <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#using-inline-function" title="Link to this heading"></a></h2>
+<h2>Using inline function <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#using-inline-function" title="Link to this heading"></a></h2>
 <p>The suffix “<strong>-output</strong>” is used to create the variable <code class="docutils literal notranslate"><span class="pre">options.outputConfig</span></code>.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;document&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -269,8 +269,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">es5.js (function only)</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">es5.js (function only)</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">,</span><span class="w"> </span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">require</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">context</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">outputConfig</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -280,8 +280,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">es5-debug.cjs</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">es5-debug.cjs</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
@@ -291,8 +291,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">es6.mjs <a class="footnote-reference brackets" href="#v010" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">es6.mjs</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:path&quot;</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
@@ -364,8 +364,8 @@
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Alternate</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Alternate</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;js&quot;</span><span class="p">,</span>
@@ -383,13 +383,9 @@
 <p>Using <strong>data-chrome-template</strong> requires the setting <code class="code docutils literal notranslate"><span class="pre">eval.template</span> <span class="pre">=</span> <span class="pre">true</span></code>.</p>
 </div>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="doc-footnote">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>this = NodeJS.process</p>
-</aside>
-<aside class="footnote brackets" id="v010" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>e-mc 0.10 (minimum)</p>
 </aside>
 </aside>
 </section>

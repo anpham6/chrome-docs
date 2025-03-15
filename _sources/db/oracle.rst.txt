@@ -26,6 +26,7 @@ Pool
 ----
 
 .. code-block:: typescript
+  :emphasize-lines: 10
 
   import type { PoolAttributes } from "oracledb";
 
@@ -36,6 +37,7 @@ Pool
       queue_max?: number; // queueMax
       queue_idle?: number; // queueTimeout
       timeout?: number; // connectTimeout (ms)
+      init_imeout?: number; // transportConnectTimeout (ms)
   }
 
 Authentication
@@ -154,7 +156,11 @@ Thick Mode
 @pi-r/oracle
 ============
 
+.. versionadded:: 0.10.0
+
+  - *DbPool* static property **CACHE_IGNORE** through :target:`@pi-r/oracle/client/pool` as :alt:`keyof PoolAttributes` was implemented.
+
 .. versionadded:: 0.8.0
 
-  - *DbPool* static property **CACHE_UNUSED** through :target:`@pi-r/oracle/client/pool` as :alt:`string[]` was implemented.
+  - *DbPool* static property **CACHE_UNUSED** through :target:`@pi-r/oracle/client/pool` as :alt:`keyof PoolAttributes` was implemented.
   - *OracleCredential* property **connectString** | **connectionString** with `Centralized Configuration Providers <https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connecting-using-centralized-configuration-providers>`_ is supported.

@@ -292,6 +292,7 @@ Example usage
 .. versionadded:: 0.10.0
 
   - *AzureStorageCredential* property **defaultAzureOptions** | **clientOptions** for blob client initialization was implemented.
+  - Cloud instance abort signal is attached to every *Cosmos DB* SQL query.
 
 .. versionadded:: 0.9.0
 
@@ -303,7 +304,7 @@ Example usage
 
 .. versionadded:: 0.8.1
 
-  - *CosmoDB* items method **upsert** document as :target:`Record<string, unknown>` was implemented.
+  - *Cosmo DB* items method **upsert** document as :target:`Record<string, unknown>` was implemented.
 
 .. versionadded:: 0.7.0
 

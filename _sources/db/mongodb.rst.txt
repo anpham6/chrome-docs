@@ -54,6 +54,7 @@ Pool
 ----
 
 .. code-block:: typescript
+  :emphasize-lines: 11
 
   import type { MongoClientOptions } from "mongodb";
 
@@ -65,6 +66,7 @@ Pool
       queue_idle?: number; // waitQueueTimeoutMS
       timeout?: number; // connectTimeoutMS
       socket_timeout?: number; // socketTimeoutMS
+      init_timeout?: number; // serverSelectionTimeoutMS
   }
 
 Authentication
@@ -178,10 +180,14 @@ Example usage
 @pi-r/mongodb
 =============
 
-.. versionadded:: 0.11.0
+.. versionadded:: 0.10.0
+
+  - *DbPool* static property **CACHE_IGNORE** through :target:`@pi-r/mariadb/client/pool` as :alt:`keyof MongoClientOptions` was implemented.
+
+.. versionadded:: 0.9.0
 
   - *MongoDBDataSource* property **bulkWrite** for multiple writes in a series as :alt:`ClientBulkWriteModel[]` was implemented.
 
 .. versionadded:: 0.8.0
 
-  - *DbPool* static property **CACHE_UNUSED** through :target:`@pi-r/mongodb/client/pool` as :alt:`string[]` was implemented.
+  - *DbPool* static property **CACHE_UNUSED** through :target:`@pi-r/mongodb/client/pool` as :alt:`keyof MongoClientOptions` was implemented.

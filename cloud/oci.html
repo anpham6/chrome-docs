@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oracle Cloud Infrastructure &mdash; E-mc 0.11.2 documentation</title>
+  <title>Oracle Cloud Infrastructure &mdash; E-mc 0.11.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=60336169"></script>
+      <script src="../_static/documentation_options.js?v=c44be570"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -205,9 +205,9 @@
 <span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ExecuteOptions</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">BindParameters</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">updateType?</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">streamRow?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">any</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">any</span><span class="o">&gt;</span><span class="p">[];</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">updateType?</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">streamRow?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">OCIDatabaseCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">ConnectionAttributes</span><span class="p">,</span><span class="w"> </span><span class="nx">InitialiseOptions</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Empty */</span><span class="p">}</span>
@@ -283,10 +283,19 @@
 
 <span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Record&lt;string, any&gt; */</span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.replaceOne (append)</span>
-<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.insertOne (new)</span>
+<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.insertOneAndGet</span>
 <span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.replaceOne</span>
 <span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
 <span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1">// Only first one is updated</span>
+
+<span class="w">    </span><span class="cm">/* SODA.createCollection */</span>
+<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span><span class="cm">/* Record&lt;string, any&gt; */</span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="cm">/* Record&lt;string, any&gt; */</span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="cm">/* OR */</span>
+<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Record&lt;string, any&gt; */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="c1">// SODA.insertOne</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -300,10 +309,17 @@
 <section id="pi-r-oci">
 <h2>&#64;pi-r/oci<a class="headerlink" href="#pi-r-oci" title="Link to this heading"></a></h2>
 <div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.0: </span></p>
+<ul class="simple">
+<li><p><em>OCIDatabaseQuery</em> property <strong>update</strong> for <em>SODA.insertMany</em> as <em class="alt">Record&lt;string, any&gt;[]</em> was implemented.</p></li>
+<li><p><em>OCIDatabaseQuery</em> property <strong>updateType</strong> for <em>SODA.insertOne</em> as <em class="alt">3</em> was implemented.</p></li>
+</ul>
+</div>
+<div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.2: </span></p>
 <ul class="simple">
 <li><p><em>OCIDatabaseQuery</em> property <strong>id</strong> for multiple keys as <em class="alt">string[]</em> was implemented.</p></li>
-<li><p><em>OCIDatabaseQuery</em> property <strong>updateType</strong> for replacement method invoked was created.</p></li>
+<li><p><em>OCIDatabaseQuery</em> property <strong>updateType</strong> for invoked replacement method was created.</p></li>
 </ul>
 </div>
 <div class="versionadded">

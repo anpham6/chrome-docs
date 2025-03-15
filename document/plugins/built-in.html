@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Built-In &mdash; E-mc 0.11.2 documentation</title>
+  <title>Built-In &mdash; E-mc 0.11.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=60336169"></script>
+      <script src="../../_static/documentation_options.js?v=c44be570"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -206,17 +206,17 @@
 </tr>
 </tbody>
 </table>
-<p>These plugins can be configured using a plain object in <code class="docutils literal notranslate"><span class="pre">settings.transform</span></code>. Import maps <a class="footnote-reference brackets" href="#id6" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.</p>
+<p>These plugins can be configured using a plain object in <code class="docutils literal notranslate"><span class="pre">settings.transform</span></code>. Import maps <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.</p>
 <ul class="simple">
 <li><p>NPM custom package</p></li>
 <li><p>Local file using module.exports <em class="alt">(e.g. “.cjs”)</em></p></li>
-<li><p>Local file using export default <em class="alt">(e.g. “.mjs”)</em> <a class="footnote-reference brackets" href="#v010" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+<li><p>Local file using export default <em class="alt">(e.g. “.mjs”)</em></p></li>
 <li><p>Local plain file with single function <em class="alt">(e.g. “.js”)</em></p></li>
 <li><p>Inline function</p></li>
 </ul>
 <section id="unmaintained">
 <h3>Unmaintained<a class="headerlink" href="#unmaintained" title="Link to this heading"></a></h3>
-<p>The source for these packages are located in a separate repository <a class="reference external" href="https://github.com/anpham6/pi-r2">pi-r2</a> which you can publish on your own.</p>
+<p>The source for these packages are located in a separate repository <a class="reference external" href="https://github.com/anpham6/pi-r2">Pi-r2</a> which you can publish on your own.</p>
 <table class="docutils align-default" style="width: 300px">
 <colgroup>
 <col style="width: 70.0%" />
@@ -230,7 +230,7 @@
 </tr>
 <tr class="row-even"><td><p>&#64;pi-r/uglify-js</p></td>
 <td><p>0.7.x</p></td>
-<td><p>Y <a class="footnote-reference brackets" href="#y" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
+<td><p>Y <a class="footnote-reference brackets" href="#y" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>&#64;pi-r/html-minifier-terser</p></td>
 <td><p>0.8.x</p></td>
@@ -238,7 +238,7 @@
 </tr>
 <tr class="row-even"><td><p>&#64;pi-r/svgo</p></td>
 <td><p>0.8.x</p></td>
-<td><p>Y <a class="footnote-reference brackets" href="#y" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
+<td><p>Y <a class="footnote-reference brackets" href="#y" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>&#64;pi-r/clean-css</p></td>
 <td><p>0.9.x</p></td>
@@ -252,7 +252,7 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><cite>Pi-r</cite> packages are compatible with the latest <cite>E-mc</cite> and can be used as is without any problems.</p>
+<p><cite>Pi-r2</cite> packages are compatible with the latest <cite>E-mc</cite> and can be used as is without any problems.</p>
 </div>
 </section>
 </section>
@@ -263,39 +263,117 @@
 <tr class="row-odd"><th class="head"><p>Plugin</p></th>
 <th class="head"><p>Name</p></th>
 <th class="head"><p>Value</p></th>
-<th class="head"><p>Default</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>eslint</p></td>
 <td><p>ESLINT_USE_FLAT_CONFIG</p></td>
 <td><p>boolean</p></td>
-<td><p>none</p></td>
 </tr>
 <tr class="row-odd"><td><p>eslint</p></td>
 <td><p>ESLINT_FORMATTER_NAME</p></td>
 <td><p>any</p></td>
-<td><p>none</p></td>
+</tr>
+<tr class="row-even"><td><p>stylelint</p></td>
+<td><p>STYLELINT_OPTIONS_CWD</p></td>
+<td><p>path</p></td>
+</tr>
+<tr class="row-odd"><td><p>stylelint</p></td>
+<td><p>STYLELINT_OPTIONS_CONFIG_FILE</p></td>
+<td><p>path</p></td>
+</tr>
+<tr class="row-even"><td><p>stylelint</p></td>
+<td><p>STYLELINT_OPTIONS_CONFIG_BASEDIR</p></td>
+<td><p>path</p></td>
+</tr>
+<tr class="row-odd"><td><p>stylelint</p></td>
+<td><p>STYLELINT_OPTIONS_VALIDATE</p></td>
+<td><p>boolean</p></td>
 </tr>
 <tr class="row-even"><td><p>stylelint</p></td>
 <td><p>STYLELINT_OPTIONS_FIX</p></td>
 <td><p>boolean</p></td>
-<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>stylelint</p></td>
+<td><p>STYLELINT_OPTIONS_FORMATTER</p></td>
+<td><p>string</p></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="pre-installed">
+<h2>Pre-Installed<a class="headerlink" href="#pre-installed" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Plugin</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Alias</p></th>
+<th class="head"><p>Pi-r</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>postcss</p></td>
+<td><p>autoprefixer</p></td>
+<td></td>
+<td><p>0.10.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>postcss</p></td>
+<td><p>postcss-import</p></td>
+<td><p>import</p></td>
+<td><p>0.10.0</p></td>
+</tr>
+<tr class="row-even"><td><p>rollup</p></td>
+<td><p>&#64;rollup/plugin-babel</p></td>
+<td><p>babel</p></td>
+<td><p>0.10.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>rollup</p></td>
+<td><p>&#64;rollup/plugin-commonjs</p></td>
+<td><p>commonjs</p></td>
+<td><p>0.10.0</p></td>
+</tr>
+<tr class="row-even"><td><p>rollup</p></td>
+<td><p>&#64;rollup/plugin-node-resolve</p></td>
+<td><p>node-resolve</p></td>
+<td><p>0.10.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>rollup</p></td>
+<td><p>&#64;rollup/plugin-terser</p></td>
+<td><p>terser</p></td>
+<td><p>0.10.0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;rollup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;bundle-es6&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;treeshake&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="hll"><span class="w">        </span><span class="s2">&quot;node-resolve&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">        </span><span class="s2">&quot;@rollup/plugin-commonjs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// &quot;commonjs&quot;</span>
+</span><span class="hll"><span class="w">        </span><span class="p">[</span><span class="s2">&quot;babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;__default__&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;babelHelpers&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bundled&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// __default__ (@pi-r property)</span>
+</span><span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;es&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;preserveModules&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sourcemap&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="hll"><span class="w">          </span><span class="p">[</span><span class="s2">&quot;terser&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;keep_classnames&quot;</span><span class="p">:</span><span class="w">  </span><span class="kc">true</span><span class="w"> </span><span class="p">}]</span>
+</span><span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id6" role="doc-footnote">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
 <p>settings.transform.imports</p>
 </aside>
-<aside class="footnote brackets" id="v010" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
-<p>e-mc 0.10 (minimum)</p>
-</aside>
 <aside class="footnote brackets" id="y" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id4">1</a>,<a role="doc-backlink" href="#id5">2</a>)</span>
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id3">1</a>,<a role="doc-backlink" href="#id4">2</a>)</span>
 <p>Package with dependencies (e.g. &#64;e-mc/document)</p>
 </aside>
 </aside>

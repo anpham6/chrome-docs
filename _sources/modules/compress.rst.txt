@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 21-22
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { BufferResult, CompressFormat, CompressLevel, TryFileCompressor } from "./compress";
@@ -16,7 +17,7 @@ Interface
 
   import type { WriteStream } from "node:fs";
   import type { Readable } from "node:stream";
-  import type { BrotliCompress, Gzip } from "node:zlib";
+  import type { BrotliCompress, BrotliOptions, Gzip, ZlibOptions } from "node:zlib";
 
   interface ICompress extends IModule {
       module: CompressModule;
@@ -30,6 +31,8 @@ Interface
       createBrotliCompress(file: string | Buffer, options?: CompressLevel): BrotliCompress;
       createWriteStreamAsGzip(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
       createWriteStreamAsBrotli(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
+      pipeThroughIntoGzip(output: string, options?: ZlibOptions): WriteStream;
+      pipeThroughIntoBrotli(output: string, options?: BrotliOptions): WriteStream;
       writeGzip(file: string | Buffer, output: string, options?: CompressLevel): Promise<void>;
       writeBrotli(file: string | Buffer, output: string, options?: CompressLevel): Promise<void>;
       tryFile(file: string | Buffer, options: CompressFormat): Promise<BufferResult>;
@@ -49,6 +52,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.12.0
+
+  - *ICompress* methods **pipeThroughIntoGzip** | **pipeThroughIntoBrotli** were created.
 
 .. versionchanged:: 0.10.0
 

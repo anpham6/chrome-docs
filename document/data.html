@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Sources &mdash; E-mc 0.11.2 documentation</title>
+  <title>Data Sources &mdash; E-mc 0.11.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=60336169"></script>
+      <script src="../_static/documentation_options.js?v=c44be570"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -112,14 +112,15 @@
 <ul class="simple">
 <li><p><strong>JSON</strong></p></li>
 <li><p><strong>YAML</strong></p></li>
-<li><p>JSON5 <a class="footnote-reference brackets" href="#id12" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
-<li><p>XML <a class="footnote-reference brackets" href="#id13" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
-<li><p>TOML <a class="footnote-reference brackets" href="#id14" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
+<li><p>JSON5 <a class="footnote-reference brackets" href="#id13" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p>XML <a class="footnote-reference brackets" href="#id14" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+<li><p>TOML <a class="footnote-reference brackets" href="#id15" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
 </ul>
 <p>Then optionally select nested objects with these <em class="target">query</em> expressions:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/dchester/jsonpath">JSONPath</a> <a class="footnote-reference brackets" href="#id15" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></li>
-<li><p><a class="reference external" href="https://jmespath.org">JMESPath</a> <a class="footnote-reference brackets" href="#id16" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/dchester/jsonpath">JSONPath</a> <a class="footnote-reference brackets" href="#id16" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/JSONPath-Plus/JSONPath">JSONPath Plus</a> <a class="footnote-reference brackets" href="#id17" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p></li>
+<li><p><a class="reference external" href="https://jmespath.org">JMESPath</a> <a class="footnote-reference brackets" href="#id18" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -224,11 +225,11 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<section id="id6">
-<h3>Example usage<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<section id="id7">
+<h3>Example usage<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <p>Reusing configuration templates is possible with URL search parameters. All parameters <em class="lower">(excluding “value”)</em> from any source can be replaced using the <strong>{{param}}</strong> syntax.</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text"><em>http://localhost:3000/project/index.html?file=demo&amp;format=json</em></span><a class="headerlink" href="#id18" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text"><em>http://localhost:3000/project/index.html?file=demo&amp;format=json</em></span><a class="headerlink" href="#id20" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main img&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attribute&quot;</span><span class="p">,</span>
@@ -253,8 +254,8 @@
 <p class="admonition-title">Caution</p>
 <p>Query parameters will also replace values inside the <strong>attributes</strong> property.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">POST</span><a class="headerlink" href="#id19" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">POST</span><a class="headerlink" href="#id21" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
@@ -287,8 +288,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<section id="id7">
-<h3>Example usage<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<section id="id8">
+<h3>Example usage<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main img&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attribute&quot;</span><span class="p">,</span>
@@ -308,8 +309,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">Conditional statement</span><a class="headerlink" href="#id20" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">Conditional statement</span><a class="headerlink" href="#id22" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main div&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;display&quot;</span><span class="p">,</span>
@@ -355,8 +356,8 @@
 </div>
 <section id="example-settings">
 <h3>Example settings<a class="headerlink" href="#example-settings" title="Link to this heading"></a></h3>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id21" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id23" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;document&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;chrome&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -379,8 +380,8 @@
 </section>
 <section id="example-file-cjs">
 <h3>Example file “.cjs”<a class="headerlink" href="#example-file-cjs" title="Link to this heading"></a></h3>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text">/path/to/postgres.cjs</span><a class="headerlink" href="#id22" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text">/path/to/postgres.cjs</span><a class="headerlink" href="#id24" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">pg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;pg&quot;</span><span class="p">);</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -405,8 +406,8 @@
 </section>
 <section id="example-file-js">
 <h3>Example file “.js”<a class="headerlink" href="#example-file-js" title="Link to this heading"></a></h3>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text">/path/to/mysql.js</span><a class="headerlink" href="#id23" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text">/path/to/mysql.js</span><a class="headerlink" href="#id25" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">params</span><span class="p">,</span><span class="w"> </span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">require</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// async function (params, require)</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">mysql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;mysql&quot;</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
@@ -437,8 +438,8 @@
 <p>Using this approach with databases is not recommended.</p>
 </div>
 </section>
-<section id="id8">
-<h3>Example usage<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<section id="id9">
+<h3>Example usage<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main p&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
@@ -484,8 +485,8 @@
 <p class="admonition-title">Note</p>
 <p><a class="reference external" href="https://js.libhunt.com/libs/templating-engines">Template engines</a> with a <code class="code docutils literal notranslate"><span class="pre">compile(string[,</span> <span class="pre">options]):</span> <span class="pre">(data?:</span> <span class="pre">Record&lt;string,</span> <span class="pre">any&gt;)</span> <span class="pre">=&gt;</span> <span class="pre">string</span></code> method are compatible.</p>
 </div>
-<section id="id9">
-<h3>Example usage<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<section id="id10">
+<h3>Example usage<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
 <p>Using <code class="docutils literal notranslate"><span class="pre">template</span></code> <em class="lower">(external)</em> is the same as <code class="docutils literal notranslate"><span class="pre">value</span></code> <em class="lower">(inline)</em> except the reusable content is stored inside a cacheable template server directory.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
@@ -516,7 +517,7 @@
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p><a class="reference external" href="https://ejs.co/#docs">EJS</a> <a class="footnote-reference brackets" href="#id17" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> is used as the reference templating engine.</p>
+<p><a class="reference external" href="https://ejs.co/#docs">EJS</a> <a class="footnote-reference brackets" href="#id19" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> is used as the reference templating engine.</p>
 </div>
 </section>
 </section>
@@ -530,8 +531,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<section id="id11">
-<h3>Example usage<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<section id="id12">
+<h3>Example usage<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
 <p>Only one function can be defined per <code class="docutils literal notranslate"><span class="pre">&lt;script</span> <span class="pre">type=&quot;text/template&quot;&gt;</span></code> element.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/template&quot;</span> <span class="na">data-chrome-template</span><span class="o">=</span><span class="s">&quot;data::postQuery-example&quot;</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="cm">/* PlainObject[] */</span><span class="p">,</span><span class="w"> </span><span class="nx">dataSource</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -555,8 +556,8 @@
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text">Alternate</span><a class="headerlink" href="#id24" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text">Alternate</span><a class="headerlink" href="#id26" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
@@ -579,6 +580,19 @@
 <section id="pi-r-chrome">
 <h3>&#64;pi-r/chrome<a class="headerlink" href="#pi-r-chrome" title="Link to this heading"></a></h3>
 <div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.0: </span></p>
+<ul class="simple">
+<li><p><em>NPM</em> package <strong>image-size</strong> for detecting dimensions is default installed.</p></li>
+<li><p><em>NPM</em> package <strong>jsonpath-plus</strong> for filtering JSON results is optionally installed.</p></li>
+</ul>
+</div>
+<div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 0.10.0: </span></p>
+<ul class="simple">
+<li><p><em>NPM</em> package <strong>probe-image-size</strong> is no longer supported.</p></li>
+</ul>
+</div>
+<div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.7.0: </span></p>
 <ul class="simple">
 <li><p><em>DataSource</em> property <strong>ignoreCoerce</strong> was created.</p></li>
@@ -593,28 +607,32 @@
 </ul>
 </div>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id12" role="doc-footnote">
+<aside class="footnote brackets" id="id13" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>npm i json5</p>
 </aside>
-<aside class="footnote brackets" id="id13" role="doc-footnote">
+<aside class="footnote brackets" id="id14" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>npm i fast-xml-parser</p>
 </aside>
-<aside class="footnote brackets" id="id14" role="doc-footnote">
+<aside class="footnote brackets" id="id15" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>npm i toml</p>
 </aside>
-<aside class="footnote brackets" id="id15" role="doc-footnote">
+<aside class="footnote brackets" id="id16" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
 <p>npm i jsonpath</p>
 </aside>
-<aside class="footnote brackets" id="id16" role="doc-footnote">
+<aside class="footnote brackets" id="id17" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>npm i jsonpath-plus</p>
+</aside>
+<aside class="footnote brackets" id="id18" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
 <p>npm i jmespath</p>
 </aside>
-<aside class="footnote brackets" id="id17" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">6</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id19" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">7</a><span class="fn-bracket">]</span></span>
 <p>npm i ejs</p>
 </aside>
 </aside>

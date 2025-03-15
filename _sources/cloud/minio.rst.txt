@@ -165,4 +165,11 @@ Example usage
   - **configBucket.lifecycle** using *LifecycleConfig* was implemented.
   - **configBucket.create** functionality was implemented.
 
-.. [#] https://github.com/anpham6/pi-r2/src/cloud/minio
+@pi-r2/minio
+============
+
+.. versionadded:: 0.1.0
+
+  - NPM: Unmaintained and untested source with :alt:`minio 8.0.4` was released.
+
+.. [#] https://github.com/anpham6/pi-r2/tree/master/src/cloud/minio

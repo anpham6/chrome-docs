@@ -71,7 +71,9 @@ Interface
 
   interface DocumentConstructor extends ModuleConstructor {
       finalize(this: IFileManager, instance: IDocument): Promise<unknown>;
+      /** @deprecated @e-mc/document/transform{SourceMap} */
       createSourceMap(code: string, remove: boolean): SourceMap;
+      /** @deprecated @e-mc/document/transform{SourceMap} */
       createSourceMap(code: string, uri?: string, remove?: boolean): SourceMap;
       writeSourceMap(uri: string, data: SourceCode, options?: SourceMapOptions): string | undefined;
       updateGradle(source: string, namespaces: string[], value: string, upgrade: boolean): string;

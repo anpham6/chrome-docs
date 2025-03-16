@@ -172,7 +172,7 @@ Interface
       readonly PLATFORM_WIN32: boolean;
       readonly MAX_TIMEOUT: number;
       readonly TEMP_DIR: string;
-      /** @deprecated Types.supported */
+      /** @deprecated @e-mc/types */
       supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
       formatMessage(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogMessageOptions): void;
       writeFail(value: LogValue, message?: unknown, options?: LogFailOptions | LogType): void;
@@ -233,11 +233,11 @@ Interface
       checkSemVer(name: string | [string, string], min: number | string, max: number | string, options?: Omit<CheckSemVerOptions, "min" | "max" | "equals">): boolean;
       /** @deprecated */
       checkSemVer(name: string | [string, string], min: number | string, max?: number | string, unstable?: boolean, startDir?: string): boolean;
-      /** @deprecated Types.sanitizeCmd */
+      /** @deprecated @e-mc/types */
       sanitizeCmd(value: string): string;
-      /** @deprecated Types.sanitizeArgs */
+      /** @deprecated @e-mc/types */
       sanitizeArgs(value: string, doubleQuote?: boolean): string;
-      /** @deprecated Types.sanitizeArgs */
+      /** @deprecated @e-mc/types */
       sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
       purgeMemory(percent: number, parent: boolean): Promise<number>;
       purgeMemory(percent: number, limit: number, parent?: boolean): Promise<number>;

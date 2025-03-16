@@ -73,9 +73,9 @@ Interface
       readTLSKey(value: string, cache?: boolean): string;
       readTLSCert(value: string, cache?: boolean): string;
       isCert(value: string): boolean;
-      /** @deprecated */
+      /** @deprecated @e-mc/request/util */
       fromURL(url: URL, value: string): string;
-      /** @deprecated */
+      /** @deprecated @e-mc/request/util */
       fromStatusCode(value: number | string): string;
       defineHttpAgent(options: HttpAgentSettings): void;
       defineDnsLookup(options: DnsLookupSettings, clear?: boolean): void;
@@ -250,7 +250,7 @@ Changelog
 
 .. versionchanged:: 0.12.0
 
-  - *RequestModule* section **rclone** for cloud storage copying settings was created.
+  - *RequestModule* settings section **rclone** for cloud storage copying was created.
 
 .. versionchanged:: 0.11.0
 

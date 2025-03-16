@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 223-228
+  :emphasize-lines: 162,224-229
 
   import type { LogStatus } from "./squared";
 
@@ -172,6 +172,7 @@ Interface
       readonly PLATFORM_WIN32: boolean;
       readonly MAX_TIMEOUT: number;
       readonly TEMP_DIR: string;
+      instanceof<T>(value: unknown, type?: string): value is T;
       /** @deprecated @e-mc/types */
       supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
       formatMessage(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogMessageOptions): void;
@@ -254,6 +255,7 @@ Changelog
 .. deprecated:: 0.12.0
 
   - *ModuleConstructor* static methods **sanitizeCmd** | **sanitizeArgs** were relocated into :target:`types`.
+  - *ModuleConstructor* static method **instanceof** for universal detection using symbols was created.
 
 .. versionremoved:: 0.11.0
 

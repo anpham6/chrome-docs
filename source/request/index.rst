@@ -175,7 +175,7 @@ Example Usage
 
   {
     "command": "copy", // Optional (default)
-    "pathname": "/home/user/cloud/Archive/", // Explicit "/" is recommended
+    "pathname": "/home/user/cloud/Archive",
     "uri": "gdrive:Archive",
 
     /* Optional */
@@ -195,17 +195,17 @@ Example Usage
     /* OR */
     "pathname": "/home/user/cloud/Archive", // FileManager
     "filename": "out.tar.gz",
-    "uri": "rclone://gdrive:Archive/file.tar.gz"
+    "uri": "rclone:?drive:Archive/file.tar.gz"
   }
 
-.. attention:: The pseudo protocol ``rclone://`` is required when using :doc:`FileManager <../modules/file-manager>`.
+.. attention:: The pseudo protocol ``rclone:?`` is required when using :doc:`FileManager <../modules/file-manager>`.
 
 .. code-block::
   :caption: copyurl
 
   {
     "command": "copyurl",
-    "pathname": "/home/user/cloud/Archive",
+    "pathname": "/home/user/cloud/Archive/", // Explicit "/" is recommended
     "uri": "https://example.com/file.tar.gz",
     "binOpts": [
       "--auto-filename",

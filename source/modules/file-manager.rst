@@ -90,8 +90,8 @@ Interface
       removeProcessTimeout(instance: IModule, file: ExternalAsset): void;
       getProcessTimeout(handler: InstallData): number;
       clearProcessTimeout(): void;
-      scheduleTask(url: string | URL, data: unknown, priority: number): Promise<unknown>;
-      scheduleTask(url: string | URL, data: unknown, thenCallback?: (...args: unknown[]) => unknown, catchCallback?: (...args: unknown[]) => unknown, priority?: number): Promise<unknown>;
+      scheduleTask(uri: string | URL, data: unknown, priority: number): Promise<unknown>;
+      scheduleTask(uri: string | URL, data: unknown, thenCallback?: (...args: unknown[]) => unknown, catchCallback?: (...args: unknown[]) => unknown, priority?: number): Promise<unknown>;
       setTaskLimit(value: number): void;
       addDownload(value: number | Buffer | string, encoding: BufferEncoding): number;
       addDownload(value: number | Buffer | string, type?: number | BufferEncoding, encoding?: BufferEncoding): number;

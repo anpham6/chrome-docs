@@ -41,8 +41,8 @@ Interface
       headersOf(uri: string): OutgoingHttpHeaders | undefined;
       aria2c(uri: string | URL, pathname: string): Promise<string[]>;
       aria2c(uri: string | URL, options?: Aria2Options): Promise<string[]>;
-      rclone(uri: string | URL, pathname: string): Promise<string[]>;
-      rclone(uri: string | URL, options?: RcloneOptions): Promise<string[]>;
+      rclone(uri: string, pathname: string): Promise<string[]>;
+      rclone(uri: string, options?: RcloneOptions): Promise<string[]>;
       json(uri: string | URL, options?: OpenOptions): Promise<object | null>;
       pipe(uri: string | URL, to: Writable, options?: OpenOptions): Promise<null>;
       opts(url: string | URL, options?: OpenOptions): HostConfig;

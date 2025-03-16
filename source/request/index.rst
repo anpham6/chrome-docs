@@ -10,8 +10,6 @@ Request
 aria2
 =====
 
-- `README <https://aria2.github.io/manual/en/html/README.html>`_
-
 Protocols
 ---------
 
@@ -26,6 +24,7 @@ Configuation
 
 .. code-block::
   :caption: squared.json [#opt]_
+  :emphasize-lines: 24-30
 
   {
     "download": {
@@ -50,6 +49,13 @@ Configuation
         "disk_cache": "",
         "always_resume": false,
         "file_allocation": "none",
+        "proxy": {
+          "http": "",
+          "https": "",
+          "ftp": "",
+          "all": ""
+        },
+        "no_proxy": "",
         "conf_path": ""
       }
     }
@@ -59,6 +65,8 @@ Configuation
 
 Example Usage
 -------------
+
+- `Options <https://aria2.github.io/manual/en/html/aria2c.html#options>`_
 
 ::
 

@@ -19,4 +19,4 @@ Encoding
 
 .. [#] apt/brew install aria2
 .. [#] { socketPath: "/tmp/static0.sock", uri: "file:///path/filename" }
-.. [#] npm i zstd-codec
+.. [#] npm i zstd-codec (until NodeJS 23.8.0)

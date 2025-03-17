@@ -33,12 +33,6 @@ HTML
   * - `html-validate <https://gitlab.com/html-validate/html-validate>`_
     - @pi-r/html-validate
     - 3
-  * - `html-minifier-terser <https://github.com/DanielRuf/html-minifier-terser>`_
-    - @pi-r/html-minifier-terser
-    - 7
-  * - `svgo <https://github.com/svg/svgo>`_
-    - @pi-r/svgo
-    - 9
 
 CSS
 ===

@@ -71,9 +71,7 @@ Interface
 
   interface DocumentConstructor extends ModuleConstructor {
       finalize(this: IFileManager, instance: IDocument): Promise<unknown>;
-      /** @deprecated @e-mc/document/transform{SourceMap} */
       createSourceMap(code: string, remove: boolean): SourceMap;
-      /** @deprecated @e-mc/document/transform{SourceMap} */
       createSourceMap(code: string, uri?: string, remove?: boolean): SourceMap;
       writeSourceMap(uri: string, data: SourceCode, options?: SourceMapOptions): string | undefined;
       updateGradle(source: string, namespaces: string[], value: string, upgrade: boolean): string;
@@ -87,6 +85,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.12.0
+
+  - *ViewEngine* method **compile** | **compileSync** can be called with an Array of arguments :alt:`(options.compile)`.
 
 .. versionchanged:: 0.9.0
 

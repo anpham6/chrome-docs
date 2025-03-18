@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 101
+  :emphasize-lines: 101,131
 
   import type { DataSource, IncrementalMatch, TaskAction } from "./squared";
 
@@ -141,6 +141,7 @@ Interface
       get cleared(): boolean;
       set finalizeState(value);
       get finalizeState(): number;
+      get retryLimit(): number;
 
       /* Set */
       add(value: string, parent?: ExternalAsset, type?: number): this;
@@ -203,13 +204,14 @@ Changelog
 
 .. versionchanged:: 0.12.0
 
-  - *IFileManager* method **fetchFiles** using the :target:`rclone://` protocol supports `Rclone <https://rclone.org>`_ copy commands.
+  - *IFileManager* method **fetchFiles** using the :target:`rclone:?` protocol supports `Rclone <https://rclone.org>`_ copy commands.
+  - *IFileManager* property **retryLimit** for failed attempts was created.
 
 .. versionchanged:: 0.11.0
 
   - *FileManagerConstructor* static method **verifyChecksum** with :alt:`ChecksumOptions` property :target:`exclude` can be prefixed with "**!**" to negate a subset of glob paths.
   - *IFileManager* method **install** with name :alt:`watch` injected with an *NPM* package or *Watch* constructor was implemented.
-  - *IFileManager* properties **cacheToDisk** | **cacheToMemory** were made :target:`readonly` references.
+  - *IFileManager* properties **cacheToDisk** | **cacheToMemory** were made :alt:`readonly` references.
 
 .. versionremoved:: 0.11.0
 
@@ -257,6 +259,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 38
 
   import type { BackgroundColor, ForegroundColor, LoggerProgress } from "./logger";
 
@@ -295,7 +298,7 @@ Settings
   }
 
   interface ErrorModule {
-      recursion_limit?: number;
+      retry_limit?: number;
   }
 
   interface LoggerModule {
@@ -305,6 +308,10 @@ Settings
 
 Changelog
 ---------
+
+.. versionchanged:: 0.12.0
+
+  - *ErrorModule* property **recursion_limit** :alt:`(deprecated)` was renamed :target:`retry_limit`.
 
 .. versionadded:: 0.10.0
 

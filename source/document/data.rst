@@ -365,10 +365,10 @@ View Engine
 
   interface ViewEngine {
       name: string; // NPM package name
-      singleRow?: boolean; // Template data is sent in one pass using an Array[]
+      singleRow?: boolean; // Template data is sent in one pass with an Array
       outputEmpty?: boolean; // Pass empty results to template engine
       options?: {
-          compile?: PlainObject; // template = engine.compile(value, options)
+          compile?: PlainObject | unknown[]; // template = engine.compile(value, options) | engine.compile(value, ...args)
           output?: PlainObject; // template({ ...options, ...result[index] })
       };
   }

@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 162,224-229
+  :emphasize-lines: 160,163,225-230
 
   import type { LogStatus } from "./squared";
 
@@ -82,8 +82,8 @@ Interface
       allSettled(values: readonly PromiseLike<unknown>[], rejected?: LogValue, options?: LogFailOptions): Promise<PromiseFulfilledResult<unknown>[]>;
       formatMessage(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogMessageOptions): void;
       formatFail(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogFailOptions): void;
-      writeFail(value: LogValue, message?: unknown, type?: LogType): void;
-      writeFail(value: LogValue, message?: unknown, options?: LogFailOptions): void;
+      writeFail(value: LogValue, message: unknown, options: LogFailOptions): void;
+      writeFail(value: LogValue, message?: unknown, type?: LogType | LogFailOptions): void;
       writeTimeProcess(title: string, value: string, startTime: LogTime, options?: LogProcessOptions): void;
       writeTimeElapsed(title: string, value: LogValue, startTime: LogTime, options?: LogMessageOptions): void;
       checkPackage(err: unknown, name: string | undefined, options: LogType): boolean;
@@ -170,9 +170,10 @@ Interface
       readonly LOG_FORMAT: LoggerFormatSettings<LoggerFormat<number>>;
       readonly STATUS_TYPE: StatusType;
       readonly PLATFORM_WIN32: boolean;
+      readonly REQUIRE_ESM: boolean;
       readonly MAX_TIMEOUT: number;
       readonly TEMP_DIR: string;
-      instanceof<T>(value: unknown, type?: string): value is T;
+      instanceof(value: unknown, type?: string): value is ModuleConstructor;
       /** @deprecated @e-mc/types */
       supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
       formatMessage(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogMessageOptions): void;
@@ -251,6 +252,11 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.12.0
+
+  - *Node.js Permission Model* was implemented with one difference in compatibility. **moveFile** uses :alt:`fs-read` and :alt:`fs-write` with :target:`--permission` and only :alt:`fs-write` without :target:`--permission`.
+  - *ModuleConstructor* static property **REQUIRE_ESM** was created.
 
 .. deprecated:: 0.12.0
 
@@ -441,7 +447,7 @@ Settings
       };
       broadcast?: {
           enabled?: boolean;
-          out?: string | (value: string, options: LogMessageOptions, require?: NodeRequire) => void;
+          out?: string | (value: string, options: LogMessageOptions, require?: NodeJS.Require) => void;
           color?: boolean;
           port?: number | number[];
           secure?: {

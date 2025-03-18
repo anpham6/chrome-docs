@@ -21,7 +21,13 @@ Example configuration
       "avif": "avif-custom", // IImage handler for "image/avif" (npm i avif-custom)
       "settings": {
         "jimp": {
-          "rotate_clockwise": false
+          "rotate_clockwise": false,
+          "read_options": {
+            "image/jpeg": { // @jimp/js-jpeg{DecodeJpegOptions}
+              "colorTransform": true,
+              "formatAsRGBA": true
+            }
+          }
         },
         "webp": {
           "path": "/path/to/libwebp" // Optional
@@ -329,6 +335,10 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 
 @pi-r2/jimp
 ===========
+
+.. versionadded:: 0.2.0
+
+  - *ImageModule* settings **jimp.read_options** for image decoder options was implemented.
 
 .. versionadded:: 0.1.0
 

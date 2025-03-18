@@ -123,7 +123,7 @@ NodeJS
 .. rst-class:: block-list
 
 https://nodejs.org/api/modules.html
-  | `NodeRequire <search.html?q=NodeRequire>`_
+  | `NodeJS.Require <search.html?q=NodeJS.Require>`_
 
 .. _references-nodejs-buffer:
 .. rst-class:: block-list

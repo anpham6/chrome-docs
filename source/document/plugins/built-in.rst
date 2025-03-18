@@ -6,13 +6,12 @@ Built-In
 
 #. compile
 #. bundle[-es6]
-#. lint[-v9]
+#. lint
 #. es5
 #. transform
 #. beautify
 #. minify
 #. es5-minify
-#. minify-svg
 #. custom name
 
 You can define or undefine your own optimizations in ``squared.json``.
@@ -115,34 +114,39 @@ The source for these packages are located in a separate repository `Pi-r2 <https
 Environment Variables
 =====================
 
-========== ================================ ========
-  Plugin    Name                             Value
-========== ================================ ========
-eslint     ESLINT_USE_FLAT_CONFIG            boolean
-eslint     ESLINT_FORMATTER_NAME                 any
-stylelint  STYLELINT_OPTIONS_CWD                path
-stylelint  STYLELINT_OPTIONS_CONFIG_FILE        path
-stylelint  STYLELINT_OPTIONS_CONFIG_BASEDIR     path
-stylelint  STYLELINT_OPTIONS_VALIDATE        boolean
-stylelint  STYLELINT_OPTIONS_FIX             boolean
-stylelint  STYLELINT_OPTIONS_FORMATTER        string
-========== ================================ ========
+.. rst-class:: first-center
+
+========== =================================== ============
+  Plugin    Name                                Value
+========== =================================== ============
+eslint     ESLINT_USE_FLAT_CONFIG              boolean
+eslint     ESLINT_FORMATTER_NAME               any
+sass [#]_  SASS_OPTIONS_IMPORTER_NODE_PACKAGE  path/boolean
+stylelint  STYLELINT_OPTIONS_CWD               path
+stylelint  STYLELINT_OPTIONS_CONFIG_FILE       path
+stylelint  STYLELINT_OPTIONS_CONFIG_BASEDIR    path
+stylelint  STYLELINT_OPTIONS_VALIDATE          boolean
+stylelint  STYLELINT_OPTIONS_FIX               boolean
+stylelint  STYLELINT_OPTIONS_FORMATTER         string
+========== =================================== ============
 
 Pre-Installed
 =============
+
+.. rst-class:: first-center
 
 ========== ================================ ============ =======
   Plugin    Name                             Alias        Pi-r
 ========== ================================ ============ =======
 postcss    autoprefixer                                   0.10.0
 postcss    postcss-import                   import        0.10.0
-rollup     @rollup/plugin-babel             babel         0.10.0
 rollup     @rollup/plugin-commonjs          commonjs      0.10.0
 rollup     @rollup/plugin-node-resolve      node-resolve  0.10.0
 rollup     @rollup/plugin-terser            terser        0.10.0
 ========== ================================ ============ =======
 
 .. code-block::
+  :caption: squared.json
   :emphasize-lines: 6-8,15
 
   {
@@ -159,7 +163,7 @@ rollup     @rollup/plugin-terser            terser        0.10.0
           "preserveModules": false,
           "sourcemap": true,
           "plugins": [
-            ["terser", { "keep_classnames":  true }]
+            ["terser", { "keep_classnames": true }]
           ]
         }
       }
@@ -168,3 +172,4 @@ rollup     @rollup/plugin-terser            terser        0.10.0
 
 .. [#] settings.transform.imports
 .. [#Y] Package with dependencies (e.g. @e-mc/document)
+.. [#] metadata: { "__nodepackageimporter__": true }

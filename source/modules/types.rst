@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 52-54
+  :emphasize-lines: 20,52-54
 
   import type { LogArguments } from "./lib/logger";
 
@@ -28,7 +28,7 @@ Interface
   function getLogCurrent(): LogArguments | null;
   function setLogCurrent(value: LogArguments): void;
   function setTempDir(value: string): boolean;
-  function getTempDir(): string;
+  function getTempDir(...values: string[]): string;
   function isArray(value: unknown): value is unknown[];
   function isObject(value: unknown): value is object;
   function isPlainObject(value: unknown): value is Record<string | number | symbol, unknown>;
@@ -204,12 +204,31 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - Method **sanitizeCmd** | **sanitizeArgs** for escaping shell characters from :target:`module` was imported.
+  - Method **sanitizeCmd** | **sanitizeArgs** for escaping shell characters from :target:`module` were imported.
+
+.. versionchanged:: 0.12.0
+
+  - :alt: Method **getTempDir** concatenates path segments :alt:`(path.join)` without creating any directories.
+
+.. deprecated:: 0.12.0
+
+  - :alt:`global` types in :target:`object` were relocated:
+
+    - lib/image: **Point** | **Dimension**
+    - lib/http: **AuthValue**
+    - lib/node: **ErrorCode** | **HighResolutionTime**
+    - lib/settings: **MinMax**
+    - lib/squared: **KeyValue**
 
 .. versionremoved:: 0.12.0
 
   - Method **generateUUID** was an alias for :target:`crypto.randomUUID`.
-  - :alt:`type` **Undef** | **Null** | **NumString** | **TupleOf** in :alt:`types`.
+  - :alt:`global` types in :target:`types`:
+
+    - **Undef**
+    - **Null**
+    - **NumString**
+    - **TupleOf**
  
 .. versionadded:: 0.11.2
 
@@ -234,9 +253,9 @@ Changelog
   - :alt:`interface` **OpenOptions** property **follow_redirect** in :alt:`request` was renamed :target:`followRedirect`.
 
 .. versionadded:: 0.10.0
-  
+
   - Method **hashKey** for single-pass encoding was created.
-  - Method **supported** for NodeJS versioning :alt:`(from Module)` was implemented.
+  - Method **supported** for NodeJS versioning from :target:`module` were imported.
   - Method **importESM** for dynamic module loading was created.
 
 .. versionchanged:: 0.10.0

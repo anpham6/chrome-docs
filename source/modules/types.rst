@@ -205,10 +205,11 @@ Changelog
 .. versionadded:: 0.12.0
 
   - Method **sanitizeCmd** | **sanitizeArgs** for escaping shell characters from :target:`module` were imported.
+  - :alt:`interface` **CloneObjectOptions** property **structured** for using the native :target:`structuredClone` was implemented.
 
 .. versionchanged:: 0.12.0
 
-  - :alt: Method **getTempDir** concatenates path segments :alt:`(path.join)` without creating any directories.
+  - Method **getTempDir** optionally concatenates path segments :alt:`(path.join)` without creating any directories.
 
 .. deprecated:: 0.12.0
 

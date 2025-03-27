@@ -143,9 +143,9 @@ Interface
 
   interface IWorkerChannel {
       [Symbol.iterator](): IteratorObject<Worker, BuiltinIteratorReturn>;
-      send(data: unknown, transferList: TransferListItem[], callback: WorkerChannelResponse<unknown>, ...returnArgs: unknown[]): Worker;
-      sendBuffer(data: Buffer, shared: boolean, callback: WorkerChannelResponse<unknown>, ...returnArgs: unknown[]): Worker | null;
-      postData(value: unknown, transferList?: TransferListItem[]): Promise<unknown>;
+      sendObject(data: unknown, transferList?: TransferListItem[], callback?: WorkerChannelResponse<unknown>, ...returnArgs: unknown[]): Worker;
+      sendBuffer(data: Buffer, shared?: boolean, callback?: WorkerChannelResponse<unknown>, ...returnArgs: unknown[]): Worker | null;
+      send(data: unknown, transferList?: TransferListItem[]): Promise<unknown>;
       drop(count?: number): Promise<number>;
       kill(count?: number): Promise<number>;
       isEmpty(): boolean;
@@ -170,13 +170,13 @@ Interface
       on(event: "online", listener: () => void): this;
       on(event: "message", listener: (value: any) => void): this;
       on(event: "data", listener: (data: unknown) => void): this;
-      on(event: "pass", listener: (data: unknown, transferList: TransferListItem[]) => void): this;
+      on(event: "pass", listener: (data: unknown, transferList: TransferListItem[] | undefined) => void): this;
       once(event: "error" | "messageerror" | "abort", listener: (err: Error) => void): this;
       once(event: "exit", listener: (exitCode: number) => void): this;
       once(event: "online", listener: () => void): this;
       once(event: "message", listener: (value: any) => void): this;
       once(event: "data", listener: (data: unknown) => void): this;
-      once(event: "pass", listener: (data: unknown, transferList: TransferListItem[]) => void): this;
+      once(event: "pass", listener: (data: unknown, transferList: TransferListItem[] | undefined) => void): this;
   }
 
   interface WorkerChannelConstructor {

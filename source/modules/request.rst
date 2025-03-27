@@ -95,12 +95,12 @@ Changelog
 .. versionadded:: 0.11.0
 
   - *IRequest* property setter **adapter** for the local HTTP implementation as :alt:`IHttpAdapter` was created.
-  - *RequestConstructor* static method **defineHttpAdapter** for the global HTTP implementation as :alt:`IHttpAdapter` was created.
+  - *RequestConstructor* method **defineHttpAdapter** for the global HTTP implementation as :alt:`IHttpAdapter` was created.
   - *IRequest* method **get** supports :target:`Zstd` decompression for *accept-encoding* when using at least :alt:`NodeJS v23.8.0`.
 
 .. deprecated:: 0.11.0
   
-  - *RequestConstructor* static methods **fromURL** | **fromStatusCode** were relocated into the utility package.
+  - *RequestConstructor* methods **fromURL** | **fromStatusCode** were relocated into the utility package.
 
 .. versionadded:: 0.10.3
 

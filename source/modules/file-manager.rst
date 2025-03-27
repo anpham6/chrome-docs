@@ -209,7 +209,7 @@ Changelog
 
 .. versionchanged:: 0.11.0
 
-  - *FileManagerConstructor* static method **verifyChecksum** with :alt:`ChecksumOptions` property :target:`exclude` can be prefixed with "**!**" to negate a subset of glob paths.
+  - *FileManagerConstructor* method **verifyChecksum** with :alt:`ChecksumOptions` property :target:`exclude` can be prefixed with "**!**" to negate a subset of glob paths.
   - *IFileManager* method **install** with name :alt:`watch` injected with an *NPM* package or *Watch* constructor was implemented.
   - *IFileManager* properties **cacheToDisk** | **cacheToMemory** were made :alt:`readonly` references.
 

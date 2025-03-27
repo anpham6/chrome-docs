@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 28-34
 
   import type { IHost, ModuleConstructor } from "./index";
   import type { IFileThread } from "./asset";
@@ -37,7 +38,13 @@ Interface
   }
 
   interface ImageConstructor extends ModuleConstructor {
-      readonly REGEXP_SIZERANGE: RegExp;
+      readonly MIME_JPEG: string;
+      readonly MIME_PNG: string;
+      readonly MIME_WEBP: string;
+      readonly MIME_SVG: string;
+      readonly MIME_GIF: string;
+      readonly MIME_BMP: string;
+      readonly MIME_TIFF: string;
       transform(file: string | Buffer, command: string, options: { tempFile: true }): Promise<string>;
       transform(file: string | Buffer, command: string, options?: TransformOptions): Promise<Buffer | null>;
       clamp(value: unknown, min?: number, max?: number): number;
@@ -49,6 +56,25 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.12.0
+
+  - *ImageConstructor* property getters for MIME types:
+
+    .. hlist::
+      :columns: 4
+
+      - MIME_JPEG
+      - MIME_PNG
+      - MIME_WEBP
+      - MIME_SVG
+      - MIME_GIF
+      - MIME_BMP
+      - MIME_TIFF
+
+.. versionremoved:: 0.12.0
+
+  - *ImageConstructor* property **REGEXP_SIZERANGE** was for internal use in :doc:`file-manager`.
 
 .. versionadded:: 0.11.0
 

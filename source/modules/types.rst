@@ -204,7 +204,7 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - Method **sanitizeCmd** | **sanitizeArgs** for escaping shell characters from :target:`module` were imported.
+  - Method **sanitizeCmd** | **sanitizeArgs** for escaping shell characters were imported from :doc:`module`.
   - :alt:`interface` **CloneObjectOptions** property **structured** for using the native :target:`structuredClone` was implemented.
 
 .. versionchanged:: 0.12.0
@@ -256,7 +256,7 @@ Changelog
 .. versionadded:: 0.10.0
 
   - Method **hashKey** for single-pass encoding was created.
-  - Method **supported** for NodeJS versioning from :target:`module` were imported.
+  - Method **supported** for NodeJS versioning was imported from :doc:`module`.
   - Method **importESM** for dynamic module loading was created.
 
 .. versionchanged:: 0.10.0

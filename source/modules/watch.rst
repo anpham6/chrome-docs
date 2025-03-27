@@ -63,7 +63,7 @@ Changelog
 
 .. versionremoved:: 0.11.0
 
-  - *WatchConstructor* static method **isConnectionError** for identifying retryable errors was created. 
+  - *WatchConstructor* method **isConnectionError** for identifying retryable errors was created. 
 
 .. versionremoved:: 0.9.0
 

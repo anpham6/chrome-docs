@@ -104,13 +104,13 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - *DbPoolConstructor* static property **CACHE_IGNORE** for non-cacheable pool attributes was created.
-  - *DbPoolConstructor* static method **canCache** for  non-cacheable credentials was created.
+  - *DbPoolConstructor* property **CACHE_IGNORE** for non-cacheable pool attributes was created.
+  - *DbPoolConstructor* method **canCache** for  non-cacheable credentials was created.
 
 .. versionadded:: 0.10.0
 
-  - *DbPoolConstructor* static property **CACHE_UNUSED** for unused pool attributes was created.
-  - *DbPoolConstructor* static methods **asString** | **sanitize** | **removeUUIDKey** for pool keys were created.
+  - *DbPoolConstructor* property **CACHE_UNUSED** for unused pool attributes was created.
+  - *DbPoolConstructor* methods **asString** | **sanitize** | **removeUUIDKey** for pool keys were created.
 
 .. versionchanged:: 0.9.0
 

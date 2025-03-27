@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 160,163,225-230
+  :emphasize-lines: 160,163,220,222,224
 
   import type { LogStatus } from "./squared";
 
@@ -173,7 +173,7 @@ Interface
       readonly REQUIRE_ESM: boolean;
       readonly MAX_TIMEOUT: number;
       readonly TEMP_DIR: string;
-      instanceof(value: unknown, type?: string): value is ModuleConstructor;
+      constructorOf(value: unknown, moduleName?: string): value is ModuleConstructor;
       /** @deprecated @e-mc/types */
       supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
       formatMessage(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogMessageOptions): void;
@@ -226,15 +226,9 @@ Interface
       getMemUsage(format?: boolean): number;
       formatCpuMem(start: CpuUsage, all?: boolean): string;
       getPackageVersion(name: string | [string, string], options?: PackageVersionOptions): string;
-      /** @deprecated */
-      getPackageVersion(name: string | [string, string], startDir: string, baseDir?: string): string;
-      /** @deprecated */
-      getPackageVersion(name: string | [string, string], unstable?: boolean, startDir?: string, baseDir?: string): string;
       checkSemVer(name: string | [string, string], options: CheckSemVerOptions): boolean;
       checkSemVer(name: string | [string, string], min: number | string, max?: number | string): boolean;
       checkSemVer(name: string | [string, string], min: number | string, max: number | string, options?: Omit<CheckSemVerOptions, "min" | "max" | "equals">): boolean;
-      /** @deprecated */
-      checkSemVer(name: string | [string, string], min: number | string, max?: number | string, unstable?: boolean, startDir?: string): boolean;
       /** @deprecated @e-mc/types */
       sanitizeCmd(value: string): string;
       /** @deprecated @e-mc/types */
@@ -256,37 +250,41 @@ Changelog
 .. versionadded:: 0.12.0
 
   - *Node.js Permission Model* was implemented with one difference in compatibility. **moveFile** uses :alt:`fs-read` and :alt:`fs-write` with :target:`--permission` and only :alt:`fs-write` without :target:`--permission`.
-  - *ModuleConstructor* static property **REQUIRE_ESM** was created.
+  - *ModuleConstructor* method **constructorOf** for universal detection using symbols was created.
+  - *ModuleConstructor* property **REQUIRE_ESM** was created.
+
+.. versionremoved:: 0.12.0
+
+  - *ModuleConstructor* method **getPackageVersion** optional arguments **unstable** | **startDir** | **baseDir** are only available in :target:`options` as :alt:`PackageVersionOptions`.
 
 .. deprecated:: 0.12.0
 
-  - *ModuleConstructor* static methods **sanitizeCmd** | **sanitizeArgs** were relocated into :target:`types`.
-  - *ModuleConstructor* static method **instanceof** for universal detection using symbols was created.
+  - *ModuleConstructor* methods **sanitizeCmd** | **sanitizeArgs** were relocated into :doc:`types`.
 
 .. versionremoved:: 0.11.0
 
-  - *ModuleConstructor* static method **checkSemVer** with arguments :target:`unstable` as :alt:`boolean` and :target:`startDir` as :alt:`string` is only in :target:`options` as :alt:`CheckSemVerOptions`.
+  - *ModuleConstructor* method **checkSemVer** optional arguments **unstable** | **startDir** are only available in :target:`options` as :alt:`CheckSemVerOptions`.
 
 .. versionadded:: 0.10.5
 
-  - *ModuleConstructor* static method **globDir** for recursive file searches was created.
+  - *ModuleConstructor* method **globDir** for recursive file searches was created.
 
 .. versionadded:: 0.10.0
 
-  - *ModuleConstructor* static property **PLATFORM_WIN32** was created.
+  - *ModuleConstructor* property **PLATFORM_WIN32** was created.
   - *IModule* property accessor **silent** for console messages was created.
 
 .. versionchanged:: 0.10.0
   
-  - *ModuleConstructor* static method **asHash** argument :target:`minLength` was replaced with :target:`digest` as :alt:`BinaryToTextEncoding`.
+  - *ModuleConstructor* method **asHash** argument :target:`minLength` was replaced with :target:`digest` as :alt:`BinaryToTextEncoding`.
 
 .. deprecated:: 0.10.0
 
-  - *ModuleConstructor* static method **supported** is a wrapper for :target:`Types.supported`.
+  - *ModuleConstructor* method **supported** was relocated into :doc:`types`.
 
 .. versionadded:: 0.9.0
 
-  - *ModuleConstructor* static property **LOG_FORMAT** was created.
+  - *ModuleConstructor* property **LOG_FORMAT** was created.
 
 .. versionchanged:: 0.9.0
   

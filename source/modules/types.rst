@@ -226,7 +226,7 @@ Changelog
 .. versionadded:: 0.10.0
   
   - Method **hashKey** for single-pass encoding was created.
-  - Method **supported** for NodeJS versioning :alt:`(from Module)` was implemented.
+  - Method **supported** for NodeJS versioning from :target:`module` were imported.
   - Method **importESM** for dynamic module loading was created.
 
 .. versionchanged:: 0.10.0

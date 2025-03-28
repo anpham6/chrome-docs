@@ -55,7 +55,7 @@ Authentication
       /* OR */
       "credential": {
         "host": "localhost", // Required
-        "port": 3306,
+        "port": 3306, // Required
         "user": "**********", // Required
         "password": "**********",
         "database": "example"

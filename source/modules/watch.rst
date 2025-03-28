@@ -68,7 +68,7 @@ Changelog
 
 .. versionremoved:: 0.9.0
 
-  - *WatchConstructor*  **new(interval, port, securePort, extensions)** did not conform with ``Module.init()``. 
+  - *WatchConstructor* as :alt:`new(interval, port, securePort, extensions)` did not conform with **Module.init()**. 
 
 Settings
 ========

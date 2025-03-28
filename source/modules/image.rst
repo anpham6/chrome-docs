@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 13
+  :emphasize-lines: 13,29
 
   import type { IHost, ModuleConstructor } from "./index";
   import type { IFileThread } from "./asset";
@@ -38,6 +38,7 @@ Interface
   }
 
   interface ImageConstructor extends ModuleConstructor {
+      /** @deprecated */
       readonly REGEXP_SIZERANGE: RegExp;
       transform(file: string | Buffer, command: string, options: { tempFile: true }): Promise<string>;
       transform(file: string | Buffer, command: string, options?: TransformOptions): Promise<Buffer | null>;
@@ -50,6 +51,10 @@ Interface
 
 Changelog
 =========
+
+.. deprecated:: 0.11.4
+
+  - *ImageConstructor* property **REGEXP_SIZERANGE** was for internal use in :target:`filemanager`.
 
 .. versionadded:: 0.11.0
 

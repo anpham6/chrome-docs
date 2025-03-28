@@ -123,7 +123,7 @@ NodeJS
 .. rst-class:: block-list
 
 https://nodejs.org/api/modules.html
-  | `NodeRequire <search.html?q=NodeRequire>`_
+  | `Node.Require <search.html?q=Node.Require>`_
 
 .. _references-nodejs-buffer:
 .. rst-class:: block-list
@@ -149,6 +149,18 @@ https://nodejs.org/api/tls.html
 
 https://nodejs.org/api/url.html
   | `URL <search.html?q=URL>`_
+
+.. _references-typescript:
+
+TypeScript
+==========
+
+.. _references-typescript-es2015-iterable:
+.. rst-class:: block-list
+
+https://github.com/microsoft/TypeScript/blob/main/src/lib/es2015.iterable.d.ts
+  | `IteratorObject <search.html?q=IteratorObject>`_
+  | `BuiltinIteratorReturn <search.html?q=BuiltinIteratorReturn>`_
 
 .. _references-mdn:
 

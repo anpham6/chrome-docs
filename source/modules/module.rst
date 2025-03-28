@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 194-195,215
+  :emphasize-lines: 194-195,214,216
 
   import type { LogStatus } from "./squared";
 
@@ -82,8 +82,8 @@ Interface
       allSettled(values: readonly PromiseLike<unknown>[], rejected?: LogValue, options?: LogFailOptions): Promise<PromiseFulfilledResult<unknown>[]>;
       formatMessage(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogMessageOptions): void;
       formatFail(type: LogType, title: string, value: LogValue, message?: unknown, options?: LogFailOptions): void;
-      writeFail(value: LogValue, message?: unknown, type?: LogType): void;
-      writeFail(value: LogValue, message?: unknown, options?: LogFailOptions): void;
+      writeFail(value: LogValue, message: unknown, options: LogFailOptions): void;
+      writeFail(value: LogValue, message?: unknown, type?: LogType | LogFailOptions): void;
       writeTimeProcess(title: string, value: string, startTime: LogTime, options?: LogProcessOptions): void;
       writeTimeElapsed(title: string, value: LogValue, startTime: LogTime, options?: LogMessageOptions): void;
       checkPackage(err: unknown, name: string | undefined, options: LogType): boolean;
@@ -223,7 +223,9 @@ Interface
       getMemUsage(format: true): string;
       getMemUsage(format?: boolean): number;
       formatCpuMem(start: CpuUsage, all?: boolean): string;
+      /** @deprecated */
       getPackageVersion(name: string | [string, string], startDir: string, baseDir?: string): string;
+      /** @deprecated */
       getPackageVersion(name: string | [string, string], unstable?: boolean, startDir?: string, baseDir?: string): string;
       checkSemVer(name: string | [string, string], options: CheckSemVerOptions): boolean;
       checkSemVer(name: string | [string, string], min: number | string, max: number | string, options?: Omit<CheckSemVerOptions, "min" | "max" | "equals">): boolean;
@@ -242,9 +244,13 @@ Interface
 Changelog
 =========
 
+.. deprecated:: 0.11.4
+
+  - *ModuleConstructor* method **getPackageVersion** optional arguments **unstable** | **startDir** | **baseDir** will be available only in :target:`options`.
+
 .. versionremoved:: 0.11.0
 
-  - *ModuleConstructor* static method **checkSemVer** with arguments :target:`unstable` as :alt:`boolean` and :target:`startDir` as :alt:`string` is only in :target:`options` as :alt:`CheckSemVerOptions`.
+  - *ModuleConstructor* method **checkSemVer** optional arguments **unstable** | **startDir** are only available in :target:`options` as :alt:`CheckSemVerOptions`.
 
 .. versionadded:: 0.10.5
 
@@ -354,7 +360,7 @@ Settings
   }
 
   interface ErrorModule {
-      out?: string | (err: Error, data: LogTypeValue, require?: NodeRequire) => void;
+      out?: string | (err: Error, data: LogTypeValue, require?: Node.Require) => void;
       fatal?: boolean;
       settings?: {
           trap_exceptions?: boolean;
@@ -426,7 +432,7 @@ Settings
       };
       broadcast?: {
           enabled?: boolean;
-          out?: string | (value: string, options: LogMessageOptions, require?: NodeRequire) => void;
+          out?: string | (value: string, options: LogMessageOptions, require?: Node.Require) => void;
           color?: boolean;
           port?: number | number[];
           secure?: {

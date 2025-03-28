@@ -12,7 +12,7 @@ Interface
   :emphasize-lines: 21-22,36
 
   import type { IModule, ModuleConstructor } from "./index";
-  import type { BufferResult, CompressFormat, CompressLevel, TryFileCompressor } from "./compress";
+  import type { BrotliCompressLevel, BufferResult, CompressFormat, CompressLevel, TryFileCompressor } from "./compress";
   import type { CompressModule, CompressSettings } from "./settings";
 
   import type { WriteStream } from "node:fs";
@@ -28,7 +28,7 @@ Interface
       getLevel(value: string, fallback?: number): number | undefined;
       getReadable(file: string | URL | Buffer): Readable;
       createGzip(file: string | Buffer, options?: CompressLevel): Gzip;
-      createBrotliCompress(file: string | Buffer, options?: CompressLevel): BrotliCompress;
+      createBrotliCompress(file: string | Buffer, options?: BrotliCompressLevel): BrotliCompress;
       createWriteStreamAsGzip(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
       createWriteStreamAsBrotli(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
       pipeThroughIntoGzip(output: string, options?: ZlibOptions): WriteStream;
@@ -58,6 +58,10 @@ Changelog
 
   - *ICompress* methods **pipeThroughIntoGzip** | **pipeThroughIntoBrotli** were created.
   - *CompressConstructor* method **asBuffer** was created.
+
+.. versionchanged:: 0.12.0
+
+  - *ICompress* methods **tryFile** | **tryImage** enforce read :alt:(file) and write :alt:(output) permissions.
 
 .. versionchanged:: 0.10.0
 

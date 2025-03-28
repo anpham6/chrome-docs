@@ -7,6 +7,8 @@ Request
 
 .. note:: Program binaries are expected to already be installed on the host system.
 
+.. _request-aria:
+
 aria2
 =====
 
@@ -108,6 +110,8 @@ Unsupported options
   * --enable-color
   * --stderr
   * --log
+
+.. _request-rclone:
 
 Rclone
 ======

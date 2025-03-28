@@ -12,6 +12,7 @@ E-mc 0.11
   db/index
   request/index
   task/index
+  compress/index
   build
   modules/index
   references

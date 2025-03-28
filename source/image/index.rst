@@ -239,62 +239,6 @@ Methods in *italic* are ``0.x`` only.
     - quantize
     - **qu**
 
-Compression
-===========
-
-`Tinify <https://tinypng.com/developers>`_ is a web service for image compression [#]_. The first 500 images are free each month with a developer API key.
-
-- **npm** i *@pi-r/tinify*
-
-.. code-block::
-  :caption: squared.json
-  
-  {
-    "compress": {
-      "tinify": {
-        "api_key": "**********", // Default API key (optional)
-        "proxy": ""
-      },
-      "settings": {
-        "tinify_api_key": "**********" // Alternate
-      }
-    }
-  }
-
-::
-
-  {
-    "selector": "p > img",
-    "compress": [
-      {
-        "format": "png", // png | jpeg | webp
-        "plugin": "tinify",
-        "options": {
-          "apiKey": "**********" // Overrides settings
-        }
-      }
-    ]
-  }
-
-Other formats can be compressed similarly using `imagemin <https://github.com/imagemin/imagemin#readme>`_.
-
-::
-
-  {
-    "selector": "p > img",
-    "compress": [
-      {
-        "format": "png",
-        "plugin": "imagemin-pngquant", // npm i imagemin-pngquant
-        "options": {
-          "quality": [0.6, 0.8]
-        }
-      }
-    ]
-  }
-
-When *format* is not defined the plugin will be applied to all images. Multiple plugins of the same *MIME* will be processed in a series.
-
 data-chrome-commands
 ====================
 
@@ -351,4 +295,3 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 .. [#] https://jimp-dev.github.io/jimp/api/jimp/classes/jimp
 .. [#] srcOver | dstOver | multiply | add | screen | overlay | darken | lighten | hardLight | difference | exclusion
 .. [#] left - 1 | center - 2 | right - 4 | top - 8 | middle - 16 | bottom - 32
-.. [#] png | jpeg | webp

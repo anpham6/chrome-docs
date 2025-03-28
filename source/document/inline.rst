@@ -74,9 +74,8 @@ data-chrome-options
     - image: "srcset" uses query parameters with an image resizer
     - element :lower:`(non-void)`: mixed content which uses a view engine template :alt:`(e.g. ejs)`
 * compress (array)
-    - image: imagemin [#]_
+    - image: tinify + imagemin [#]_
     - font: woff + woff2
-    - png: TinyPNG service [#]_
     - gz: Gzip + *Zopfli* [#]_
     - br: Brotli
 * static
@@ -93,6 +92,9 @@ data-chrome-options
     - font
     - audio
     - video
+* worker
+    - image
+    - font
 * remove
     - all: Remove element during finalization
 * charset :lower:`(string)`
@@ -153,8 +155,7 @@ Inline commands are usually sufficient for simple web pages. More advanced confi
 .. [#] data-chrome-file='*"exportAs": "css/prod.css", "process": ["lint", "beautify"]*'
 .. [#] Do not use the built-in transformers per document.
 .. [#] boolean - config | "no-module" - inline
-.. [#] Optionally installed NPM plugins are required. (e.g. imagemin-pngquant)
-.. [#] png | jpeg | webp
+.. [#] @pi-r/tinify | @pi-r2/imagemin
 .. [#] npm i node-zopfli
 .. [#] "true" - explicit | "false"
 .. [#] filename + content hash (productionRelease=true)

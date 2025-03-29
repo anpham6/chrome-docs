@@ -23,21 +23,21 @@ Examples use **squared** :alt:`5` and **chrome** as the reference framework. The
 NodeJS 16 LTS
 =============
 
-- `0.11.3 <https://github.com/anpham6/e-mc/releases/tag/v0.11.3>`_
+- `0.11.4 <https://github.com/anpham6/e-mc/releases/tag/v0.11.4>`_
 
 NodeJS 16
 =========
 
-- `0.10.8 <https://github.com/anpham6/e-mc/releases/tag/v0.10.8>`_
-- `0.9.17 <https://github.com/anpham6/e-mc/releases/tag/v0.9.17>`_
+- `0.10.9 <https://github.com/anpham6/e-mc/releases/tag/v0.10.9>`_
+- `0.9.18 <https://github.com/anpham6/e-mc/releases/tag/v0.9.18>`_
 
 NodeJS 14 LTS
 =============
 
-- `0.8.23 <https://github.com/anpham6/e-mc/releases/tag/v0.8.23>`_ :alt:`(0.8.10)`
-- `0.7.19 <https://github.com/anpham6/e-mc/releases/tag/v0.7.19>`_ :alt:`(0.7.6)`
-- `0.6.15 <https://github.com/anpham6/e-mc/releases/tag/v0.6.15>`_ :alt:`(0.6.3)`
-- `0.5.17 <https://github.com/anpham6/e-mc/releases/tag/v0.5.17>`_ :alt:`(0.5.6)`
+- `0.8.24 <https://github.com/anpham6/e-mc/releases/tag/v0.8.24>`_ :alt:`(0.8.10)`
+- `0.7.20 <https://github.com/anpham6/e-mc/releases/tag/v0.7.20>`_ :alt:`(0.7.6)`
+- `0.6.16 <https://github.com/anpham6/e-mc/releases/tag/v0.6.16>`_ :alt:`(0.6.3)`
+- `0.5.18 <https://github.com/anpham6/e-mc/releases/tag/v0.5.18>`_ :alt:`(0.5.6)`
 
 License
 =======

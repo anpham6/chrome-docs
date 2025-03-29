@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 50
 
   import type { DataSource, ViewEngine } from "./squared";
 
@@ -59,7 +60,7 @@ Interface
       cloudUpload?(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, url: string, active: boolean): Promise<boolean>;
       cloudFinalize?(state: IScopeOrigin<IFileManager, ICloud>): Promise<unknown[]>;
       watchInit?(watch: IFileGroup<ExternalAsset>, assets: ExternalAsset[], sanitize?: boolean): WatchInitResult | undefined;
-      watchModified?(watch: IFileGroup<ExternalAsset>, assets?: ExternalAsset[]): PostFinalizeCallback;
+      watchModified?(watch: IFileGroup<ExternalAsset>, assets?: ExternalAsset[], recursive?: [string, string[]][]): PostFinalizeCallback;
       set dataSource(value: DataSource[]);
       get dataSource(): DataSource[];
       set imports(value);
@@ -89,6 +90,10 @@ Changelog
 .. versionadded:: 0.12.0
 
   - *ViewEngine* method **compile** | **compileSync** can be called with an Array of arguments :alt:`(options.compile)`.
+
+.. versionchanged:: 0.12.0
+
+  - *IDocument* method **watchModified** argument :target:`recursive` as :alt:`[string, string[]][]` for directory watchers was created.
 
 .. versionchanged:: 0.9.0
 

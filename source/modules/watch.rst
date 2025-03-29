@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 20
 
   import type { IFileManager, ModuleConstructor } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -29,6 +30,7 @@ Interface
       setSSLKey(value: string): boolean;
       setSSLCert(value: string): boolean;
       hasSecureProtocol(): boolean;
+      getRecursiveFiles(watch: IFileGroup<ExternalAsset>): [string, string[]][];
       whenModified?(assets: ExternalAsset[], postFinalize: PostFinalizeCallback): IFileManager;
       whenModified?(assets: ExternalAsset[], sanitize?: boolean, postFinalize?: PostFinalizeCallback): IFileManager;
       set assets(value: ExternalAsset[]);
@@ -56,6 +58,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.12.0
+
+  - *IWatch* method **getRecursiveFiles** for collecting directory watchers :alt:`(fs.watch)` was created.
 
 .. versionchanged:: 0.11.0
 

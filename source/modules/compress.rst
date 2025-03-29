@@ -62,6 +62,7 @@ Changelog
 .. versionchanged:: 0.12.0
 
   - *ICompress* methods **tryFile** | **tryImage** enforce read :alt:(file) and write :alt:(output) permissions.
+  - ``BREAKING`` :alt:`type` function **PluginCompressor** argument :target:`mimeType` as :alt:`string` was replaced with :target:`metadata` as :alt:`PlainObject`.
 
 .. versionchanged:: 0.10.0
 

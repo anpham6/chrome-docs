@@ -67,7 +67,7 @@ Images are transcoded locally using *MIME* detection to automatically choose the
     }
   }
 
-.. note:: Any ``null`` values being truthy will override the default transformer when "**__package__**" is ``undefined``. [#]_
+.. note:: Any ``null`` values being truthy will override the default transformer when "**metadata.package**" [#]_ is ``undefined``.
 
 ::
 
@@ -86,8 +86,11 @@ Images are transcoded locally using *MIME* detection to automatically choose the
       {
         "format": "png",
         "plugin": "imagemin",
+        "metadata": {
+          "package": "imagemin-optipng", // Alias "optipng"
+          "mimeType": "image/png" // Optional (auto-detect)
+        },
         "options": {
-          "__package__": "imagemin-optipng", // Alias "optipng"
           "optimizationLevel": 7,
           "interlaced": true
         }
@@ -116,14 +119,14 @@ Other formats can be compressed similarly using *imagemin-like* plugins directly
       {
         "format": "png",
         "plugin": "imagemin",
-        "options": {
-          "__package__": "imagemin-gif2webp" // With settings "gif2webp"
+        "metadata": {
+          "package": "imagemin-gif2webp" // With settings "gif2webp"
         }
       }
     ]
   }
 
-.. important:: Settings are used only when **options** is ``empty`` not including "**__package__**".
+.. important:: Settings are used only when **options** is ``undefined``.
 
 Environment Variables
 =====================
@@ -136,4 +139,4 @@ EMC_COMPRESS_WORKER_MAX      number
 EMC_COMPRESS_WORKER_TIMEOUT  minute
 ============================ =======
 
-.. [#] jpegtran | optipng
+.. [#] Metadata interface is plugin independent.

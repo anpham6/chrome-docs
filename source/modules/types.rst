@@ -237,7 +237,7 @@ Changelog
 
 .. versionchanged:: 0.11.1
 
-  - ``BREAKING`` Method **escapePattern** argument :target:`lookBehind` was replaced with :target:`symbols`.
+  - ``BREAKING`` Method **escapePattern** argument :target:`lookBehind` as :alt:`boolean` was replaced with :target:`symbols`.
   - Method **supported** argument :target:`lts` :alt:`(boolean)` can be used as the :target:`patch` argument.
 
 .. versionchanged:: 0.11.0

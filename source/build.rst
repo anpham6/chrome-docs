@@ -97,7 +97,7 @@ Example "saveAs"
 The entire page can be transformed as a group with the same functionality as JSON :alt:`(yaml)` configuration except where highlighted.
 
 .. code-block::
-  :emphasize-lines: 8,9,32
+  :emphasize-lines: 8-9,33
 
   squared.copyTo("/path/to/target", {    
     saveAs: {
@@ -122,7 +122,8 @@ The entire page can be transformed as a group with the same functionality as JSO
       image: {
         attributes: { loading: "lazy", width: "detect", height: "detect" },
         commands: ["webp(480x300)"], // Only valid for binary images
-        process: ["minify-svg"] // Only valid for text based images (e.g. SVG)
+        process: ["minify-svg"], // Only valid for text based images (e.g. SVG)
+        worker: 10000 // 10s timeout
       },
       font: {
         pathname: "fonts",
@@ -130,6 +131,7 @@ The entire page can be transformed as a group with the same functionality as JSO
         blob: false, // Save base64 as file
         blob: "fonts/blob", // Overrides pathname for blob only
         inline: false, // Write file as data:font/ttf;base64
+        worker: true,
         customize: (uri, mimeType, command) => { // script | link | image | font
           if (mimeType === "font/ttf") {
             command.blob = true; // Does not alter font object
@@ -331,7 +333,7 @@ The order of precedence when using :target:`inherit` is resolved through the ass
 Example data source
 -------------------
 
-There is no difference between using a data source for a web page and for configuration. *JSON* stored in ``key-value`` document format is the same as unstructured *JSON* stored in a file.
+There is no difference between using :doc:`data sources <document/data>` for a web page and for configuration. *JSON* stored in ``key-value`` document format is the same as unstructured *JSON* stored in a file.
 
 .. code-block::
   :caption: DB
@@ -363,7 +365,7 @@ There is no difference between using a data source for a web page and for config
     }
   });
 
-.. tip:: When using "**preserve**" the first config is used as the base. Each subsequent config adds missing properties to existing objects and creates any missing objects.
+.. tip:: When using "**preserve**" the first config is used as the base. Each subsequent config fills :target:`undefined` properties to existing objects and creates new objects.
 
 .. code-block::
   :caption: Cloud

@@ -31,8 +31,8 @@ Interface
       createBrotliCompress(file: string | Buffer, options?: BrotliCompressLevel): BrotliCompress;
       createWriteStreamAsGzip(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
       createWriteStreamAsBrotli(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
-      pipeThroughIntoGzip(output: string, options?: ZlibOptions): WriteStream;
-      pipeThroughIntoBrotli(output: string, options?: BrotliOptions): WriteStream;
+      intoGzipStream(output: string, options?: ZlibOptions): WriteStream;
+      intoBrotliStream(output: string, options?: BrotliOptions): WriteStream;
       writeGzip(file: string | Buffer, output: string, options?: CompressLevel): Promise<void>;
       writeBrotli(file: string | Buffer, output: string, options?: CompressLevel): Promise<void>;
       tryFile(file: string | Buffer, options: CompressFormat): Promise<BufferResult>;
@@ -56,7 +56,7 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - *ICompress* methods **pipeThroughIntoGzip** | **pipeThroughIntoBrotli** were created.
+  - *ICompress* methods **intoGzipStream** | **intoBrotliStream** were created.
   - *CompressConstructor* method **asBuffer** was created.
 
 .. versionchanged:: 0.12.0

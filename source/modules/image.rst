@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 28-34
+  :emphasize-lines: 28-34,40
 
   import type { IHost, ModuleConstructor } from "./index";
   import type { IFileThread } from "./asset";
@@ -50,6 +50,7 @@ Interface
       clamp(value: unknown, min?: number, max?: number): number;
       isBinary(mime: unknown): mime is string;
       toABGR(buffer: Uint8Array | Buffer): Buffer;
+      asBuffer(data: Buffer | Uint8Array): Buffer;
       readonly prototype: IImage;
       new(module?: ImageModule): IImage;
   }
@@ -59,6 +60,7 @@ Changelog
 
 .. versionadded:: 0.12.0
 
+  - *ImageConstructor* method **asBuffer** was created.
   - *ImageConstructor* property getters for MIME types:
 
     .. hlist::

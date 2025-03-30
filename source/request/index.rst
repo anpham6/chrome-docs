@@ -5,7 +5,7 @@ Request
 - `aria2 <https://aria2.github.io/manual/en/html/README.html>`_
 - `rclone <https://rclone.org/overview>`_
 
-.. note:: Program binaries are expected to already be installed on the host system.
+.. important:: Program binaries are expected to already be installed on the host system.
 
 .. _request-aria:
 

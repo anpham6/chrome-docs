@@ -50,7 +50,7 @@ Interface
       createServer(port: number, secure?: SecureOptions | null, active?: boolean): ws.Server | null;
       shutdown(): void;
       setTimeout(value: number | string): void;
-      checkTimeout(client: ws): boolean;
+      checkTimeout(client: ws.WebSocket): boolean;
       isConnectionError(err: unknown): boolean;
       readonly prototype: IWatch;
       new(module?: WatchModule): IWatch;

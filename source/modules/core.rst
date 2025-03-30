@@ -9,9 +9,9 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 131-172
+  :emphasize-lines: 131-175
 
-  import type { DataSource, LogStatus } from "./squared";
+  import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
   import type { IHost, IModule, ModuleConstructor } from "./index";
   import type { AddEventListenerOptions, CacheOptions, HostInitConfig, JoinQueueOptions, PermissionReadWrite, ResumeThreadOptions, StoreResultOptions, ThreadCountStat, WorkerChannelResponse } from "./core";
@@ -148,17 +148,19 @@ Interface
       send(data: unknown, transferList?: TransferListItem[]): Promise<unknown>;
       drop(count?: number): Promise<number>;
       kill(count?: number): Promise<number>;
+      lock(): void;
       isEmpty(): boolean;
       set min(value);
       get min(): number;
       set max(value);
       get max(): number;
+      set timeoutMs(value);
+      get timeoutMs(): number;
       get filename(): string;
       get workers(): Worker[];
       get pending(): number;
       get available(): number;
       get detached(): boolean;
-      get timeoutMs(): number;
       get lastAccessed(): Date;
       get timesAccessed(): number;
       get frequencyAccessed(): number;
@@ -180,6 +182,7 @@ Interface
   }
 
   interface WorkerChannelConstructor {
+      hasPermission(options?: WorkerAction): boolean;
       readonly prototype: IWorkerChannel;
       new(filename: string, max?: number, timeoutMs?: number): IWorkerChannel;
   }

@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 21-22,36
+  :emphasize-lines: 21-22,29,37
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { BrotliCompressLevel, BufferResult, CompressFormat, CompressLevel, TryFileCompressor } from "./compress";
@@ -39,6 +39,7 @@ Interface
       tryFile(file: string | Buffer, output: string, options?: CompressFormat): Promise<BufferResult>;
       tryImage(file: string, options: CompressFormat): Promise<BufferResult>;
       tryImage(file: string | Buffer, output: string, options?: CompressFormat): Promise<BufferResult>;
+      hasPermission(type: string, options?: unknown): boolean;
       set chunkSize(value: number | string | undefined): void;
       get chunkSize(): number | undefined;
       get settings(): CompressSettings;

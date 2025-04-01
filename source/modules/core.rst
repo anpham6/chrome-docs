@@ -9,18 +9,18 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 131-175
+  :emphasize-lines: 131-147,149-152,154-194,196-202
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
   import type { IHost, IModule, ModuleConstructor } from "./index";
-  import type { AddEventListenerOptions, CacheOptions, HostInitConfig, JoinQueueOptions, PermissionReadWrite, ResumeThreadOptions, StoreResultOptions, ThreadCountStat, WorkerChannelResponse } from "./core";
+  import type { AddEventListenerOptions, CacheOptions, HostInitConfig, JoinQueueOptions, PermissionReadWrite, ResumeThreadOptions, StoreResultOptions, ThreadCountStat, WorkerChannelError, WorkerChannelResponse } from "./core";
   import type { QueryResult, TimeoutAction } from "./db";
   import type { LogState, StatusType } from "./logger";
   import type { Settings } from "./node";
   import type { ClientDbSettings, ClientModule, ClientSettings, DbCacheValue, DbCoerceSettings, DbCoerceValue, DbSourceOptions } from "./settings";
 
-  import type { TransferListItem, Worker } from "node:worker_threads";
+  import type { TransferListItem, Worker, WorkerOptions } from "node:worker_threads";
 
   import type * as EventEmitter from "node:events";
 
@@ -141,12 +141,37 @@ Interface
       new(module?: ClientModule, database?: DataSource[]): IClientDb;
   }
 
-  interface IWorkerChannel {
+  interface IWorkerGroup {
+      [Symbol.iterator](): IteratorObject<IWorkerChannel, BuiltinIteratorReturn>;
+      add(name: string, item: IWorkerChannel, priority?: number): this;
+      get(name: string, force?: boolean | number): IWorkerChannel | undefined;
+      delete(name: string | IWorkerChannel): boolean;
+      free(count?: number): number;
+      print(format: "stats" | "errors"): void;
+      clear(): void;
+      set max(value);
+      get max(): number;
+      get workers(): IWorkerChannel[];
+      get pending(): number;
+      get available(): number;
+      get errors(): WorkerChannelError[];
+      get size(): number;
+      get sizeOf(): number;
+  }
+
+  interface WorkerGroupConstructor {
+      readonly prototype: IWorkerGroup;
+      new(max?: number, locked?: boolean): IWorkerGroup;
+  }
+
+  interface IWorkerChannel extends EventEmitter {
       [Symbol.iterator](): IteratorObject<Worker, BuiltinIteratorReturn>;
       sendObject(data: unknown, transferList?: TransferListItem[], callback?: WorkerChannelResponse<unknown>, ...returnArgs: unknown[]): Worker;
       sendBuffer(data: Buffer, shared?: boolean, callback?: WorkerChannelResponse<unknown>, ...returnArgs: unknown[]): Worker | null;
       send(data: unknown, transferList?: TransferListItem[]): Promise<unknown>;
       drop(count?: number): Promise<number>;
+      join(group: IWorkerGroup, label?: string): void;
+      quit(): void;
       kill(count?: number): Promise<number>;
       lock(): void;
       isEmpty(): boolean;
@@ -158,12 +183,12 @@ Interface
       get timeoutMs(): number;
       get filename(): string;
       get workers(): Worker[];
-      get pending(): number;
-      get available(): number;
       get detached(): boolean;
       get lastAccessed(): Date;
       get timesAccessed(): number;
       get frequencyAccessed(): number;
+      get pending(): number;
+      get available(): number;
       get size(): number;
 
       /* EventEmitter */
@@ -182,6 +207,8 @@ Interface
   }
 
   interface WorkerChannelConstructor {
+      create(filename: string, name: string): IWorkerChannel;
+      create(filename: string, options?: WorkerOptions, name?: string): IWorkerChannel;
       hasPermission(options?: WorkerAction): boolean;
       readonly prototype: IWorkerChannel;
       new(filename: string, max?: number, timeoutMs?: number): IWorkerChannel;
@@ -224,6 +251,7 @@ Changelog
 .. versionadded:: 0.12.0
 
   - *IWorkerChannel* and *WorkerChannelConstructor* were created.
+  - *IWorkerGroup* and *WorkerGroupConstructor* were created.
 
 .. versionadded:: 0.11.0
 
@@ -262,7 +290,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 21-23
+  :emphasize-lines: 21-26
 
   import type { ExecOptions } from "./settings";
 
@@ -284,10 +312,14 @@ Settings
                   max?: number;
               };
           };
-          workers?: {
-              channel?: { min?: number; max?: number; expires?: number | string };
+          worker?: {
+              users?: boolean | string[];
+              max?: number | string;
+              locked?: boolean;
+              channel?: { min?: number; max?: number; expires?: number | string; verbose?: boolean };
           };
-          limit?: number;
+          limit?: number | string;
+          sub_limit?: number | string;
           expires?: number | string;
       };
   }
@@ -303,6 +335,13 @@ Settings
           minimatch?: MinimatchOptions | null;
       };
   }
+
+Changelog
+---------
+
+.. versionadded:: 0.12.0
+
+  - *ProcessModule* property group **workers** for channel throttling was implemented.
 
 Example usage
 -------------

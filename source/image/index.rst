@@ -87,12 +87,12 @@ WebP
 .. rst-class:: center-data
 
 ========== = = ==================== ========== =======
-Library    R W         NPM           0.x [#]_    1.x
+Library    R W         NPM           CJS [#]_    ESM
 ========== = = ==================== ========== =======
-dwebp      x   dwebp-bin [#webp]_   1.0.0       2.0.1
-cwebp        x cwebp-bin [#webp]_   6.1.2       8.0.0
-gif2webp     x gif2webp-bin         3.0.3       5.0.0
-webpmux    x x node-webpmux         3.2.1       3.2.1
+dwebp      x   dwebp-bin [#webp]_   1.0.0       2.0.0
+cwebp        x cwebp-bin [#webp]_   6.0.0       8.0.0
+gif2webp     x gif2webp-bin         3.0.0       5.0.0
+webpmux    x x node-webpmux         3.2.0       3.2.0
 ========== = = ==================== ========== =======
 
 There can be transparency issues for *WebP* animated transformations due to the *WebP* compression algorithm. **node-webpmux** is used to extract the raw data from the *WebP* image and to reconstruct the frames.
@@ -302,7 +302,10 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 .. versionadded:: 0.10.0
 
   - *Jimp* rotate strategy mode **nearest** | **none** were implemented.
-  - *NPM* binaries for **WebP** :alt:`(ESM)` are supported. 
+
+.. versionchanged:: 0.9.4
+
+  - *NPM* binaries for **WebP** :alt:`(ESM)` are supported.
 
 .. versionadded:: 0.8.1
 
@@ -324,6 +327,7 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
   - *ImageModule* settings **jimp.options** for MIME-based decode and encode optimizations was implemented.
   - Workers :alt:`(experimental)` for native Jimp commands was implemented. [#]_
   - *ImageModule* settings **jimp.worker** for available threads was implemented.
+  - *NPM* binaries for **WebP** :alt:`(ESM)` are supported.
 
 .. versionadded:: 0.1.0
 
@@ -331,7 +335,7 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 
 .. [#webp] https://developers.google.com/speed/webp/download
 .. [#v1] Jimp 1.x
-.. [#] Until pi-r 0.10
+.. [#] Until: pi-r 0.9.4 | pi-r2 0.2
 .. [#] cwebp options: -q -preset -near_lossless
 .. [#] Method with no arguments. (e.g. sepia)
 .. [#] No expressions or native objects.

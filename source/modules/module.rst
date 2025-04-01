@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 160,163,220,222,224
+  :emphasize-lines: 92-94,162,165,222,224,226
 
   import type { LogStatus } from "./squared";
 
@@ -101,7 +101,9 @@ Interface
       getLog(...type: StatusType[]): LogStatus<StatusType>[];
       flushLog(): void;
       willAbort(value: unknown): boolean;
+      /** @deprecated hasPermission("fs") */
       hasOwnPermission(): boolean;
+      hasPermission(type: string, ...values: unknown[]): boolean;
       isFatal(err?: unknown): boolean;
       detach(): void;
       reset(): void;
@@ -252,6 +254,11 @@ Changelog
   - *Node.js Permission Model* was implemented with one difference in compatibility. **moveFile** uses :alt:`fs-read` and :alt:`fs-write` with :target:`--permission` and only :alt:`fs-write` without :target:`--permission`.
   - *ModuleConstructor* method **constructorOf** for universal detection using symbols was created.
   - *ModuleConstructor* property **REQUIRE_ESM** was created.
+  - *IModule* method **hasPermission** for context resolution was created.
+
+.. versionchanged:: 0.12.0
+
+  - *IModule* method **isFatal** validates error objects are an instance of :ref:`Error <references-mdn-error>` class.
 
 .. versionremoved:: 0.12.0
 
@@ -260,6 +267,7 @@ Changelog
 .. deprecated:: 0.12.0
 
   - *ModuleConstructor* methods **sanitizeCmd** | **sanitizeArgs** were relocated into :doc:`types`.
+  - *IModule* method **hasOwnPermission** can be called through :target:`hasPermission("fs")`.
 
 .. versionremoved:: 0.11.0
 
@@ -313,7 +321,6 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 19
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";

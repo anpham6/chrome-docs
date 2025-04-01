@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Sources &mdash; E-mc 0.11.3 documentation</title>
+  <title>Data Sources &mdash; E-mc 0.11.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
-      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=52c05c6f" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=2121b98c" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=092ae043" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=cb66cdff" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c44be570"></script>
+      <script src="../_static/documentation_options.js?v=0fc275bd"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -75,7 +75,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../image/index.html">Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../request/index.html">Request</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compress/index.html">Compress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
@@ -472,10 +474,10 @@
 <h2>View Engine<a class="headerlink" href="#view-engine" title="Link to this heading"></a></h2>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">ViewEngine</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// NPM package name</span>
-<span class="w">    </span><span class="nx">singleRow?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Template data is sent in one pass using an Array[]</span>
+<span class="w">    </span><span class="nx">singleRow?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Template data is sent in one pass with an Array</span>
 <span class="w">    </span><span class="nx">outputEmpty?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pass empty results to template engine</span>
 <span class="w">    </span><span class="nx">options</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">compile?</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">;</span><span class="w"> </span><span class="c1">// template = engine.compile(value, options)</span>
+<span class="w">        </span><span class="nx">compile?</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">unknown</span><span class="p">[];</span><span class="w"> </span><span class="c1">// template = engine.compile(value, options) | engine.compile(value, ...args)</span>
 <span class="w">        </span><span class="nx">output?</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">;</span><span class="w"> </span><span class="c1">// template({ ...options, ...result[index] })</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="p">}</span>

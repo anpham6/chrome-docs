@@ -3,6 +3,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :emphasize-lines: 34
 
   interface AssetCommand {
       selector: string;
@@ -36,6 +37,8 @@ Interface
 
       hash?: "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512" | "ripemd";
       hash?: "md5[8]" // Will shorten hash to the first 8 characters
+
+      worker?: boolean; // image + font
 
       checksum?: string | { algorithm: string; value: string; digest?: string }; // Download URI (default is "sha256")
       checksumOutput?: string | {/* Same */}; // Expected locally transformed result
@@ -77,6 +80,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.12.0
+
+  - *AssetCommand* property **worker** for images and fonts was created.
 
 .. versionadded:: 0.10.0
 

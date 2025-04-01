@@ -41,8 +41,8 @@ Interface
       headersOf(uri: string): OutgoingHttpHeaders | undefined;
       aria2c(uri: string | URL, pathname: string): Promise<string[]>;
       aria2c(uri: string | URL, options?: Aria2Options): Promise<string[]>;
-      rclone(uri: string | URL, pathname: string): Promise<string[]>;
-      rclone(uri: string | URL, options?: RcloneOptions): Promise<string[]>;
+      rclone(uri: string, pathname: string): Promise<string[]>;
+      rclone(uri: string, options?: RcloneOptions): Promise<string[]>;
       json(uri: string | URL, options?: OpenOptions): Promise<object | null>;
       pipe(uri: string | URL, to: Writable, options?: OpenOptions): Promise<null>;
       opts(url: string | URL, options?: OpenOptions): HostConfig;
@@ -73,9 +73,9 @@ Interface
       readTLSKey(value: string, cache?: boolean): string;
       readTLSCert(value: string, cache?: boolean): string;
       isCert(value: string): boolean;
-      /** @deprecated */
+      /** @deprecated @e-mc/request/util */
       fromURL(url: URL, value: string): string;
-      /** @deprecated */
+      /** @deprecated @e-mc/request/util */
       fromStatusCode(value: number | string): string;
       defineHttpAgent(options: HttpAgentSettings): void;
       defineDnsLookup(options: DnsLookupSettings, clear?: boolean): void;
@@ -88,15 +88,19 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.12.0
+
+  - *IRequest* method **rclone** for pre-configured cloud storage transfers was created.
+
 .. versionadded:: 0.11.0
 
   - *IRequest* property setter **adapter** for the local HTTP implementation as :alt:`IHttpAdapter` was created.
-  - *RequestConstructor* static method **defineHttpAdapter** for the global HTTP implementation as :alt:`IHttpAdapter` was created.
+  - *RequestConstructor* method **defineHttpAdapter** for the global HTTP implementation as :alt:`IHttpAdapter` was created.
   - *IRequest* method **get** supports :target:`Zstd` decompression for *accept-encoding* when using at least :alt:`NodeJS v23.8.0`.
 
 .. deprecated:: 0.11.0
   
-  - *RequestConstructor* static methods **fromURL** | **fromStatusCode** were relocated into the utility package.
+  - *RequestConstructor* methods **fromURL** | **fromStatusCode** were relocated into the utility package.
 
 .. versionadded:: 0.10.3
 
@@ -246,7 +250,7 @@ Changelog
 
 .. versionchanged:: 0.12.0
 
-  - *RequestModule* section **rclone** for cloud storage copying settings was created.
+  - *RequestModule* settings section **rclone** for cloud storage copying was created.
 
 .. versionchanged:: 0.11.0
 

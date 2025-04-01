@@ -6,13 +6,12 @@ Built-In
 
 #. compile
 #. bundle[-es6]
-#. lint[-v9]
+#. lint
 #. es5
 #. transform
 #. beautify
 #. minify
 #. es5-minify
-#. minify-svg
 #. custom name
 
 You can define or undefine your own optimizations in ``squared.json``.
@@ -33,12 +32,6 @@ HTML
   * - `html-validate <https://gitlab.com/html-validate/html-validate>`_
     - @pi-r/html-validate
     - 3
-  * - `html-minifier-terser <https://github.com/DanielRuf/html-minifier-terser>`_
-    - @pi-r/html-minifier-terser
-    - 7
-  * - `svgo <https://github.com/svg/svgo>`_
-    - @pi-r/svgo
-    - 9
 
 CSS
 ===
@@ -91,7 +84,7 @@ These plugins can be configured using a plain object in ``settings.transform``. 
 Unmaintained
 ------------
 
-The source for these packages are located in a separate repository `Pi-r2 <https://github.com/anpham6/pi-r2>`_ which you can publish on your own.
+The source for these packages are located in a separate repository `Pi-r2 <https://github.com/anpham6/pi-r2>`_. Once per year they are published with each major NodeJS release in April.
 
 .. list-table::
   :width: 300px
@@ -121,34 +114,39 @@ The source for these packages are located in a separate repository `Pi-r2 <https
 Environment Variables
 =====================
 
-========== ================================ ========
-  Plugin    Name                             Value
-========== ================================ ========
-eslint     ESLINT_USE_FLAT_CONFIG            boolean
-eslint     ESLINT_FORMATTER_NAME                 any
-stylelint  STYLELINT_OPTIONS_CWD                path
-stylelint  STYLELINT_OPTIONS_CONFIG_FILE        path
-stylelint  STYLELINT_OPTIONS_CONFIG_BASEDIR     path
-stylelint  STYLELINT_OPTIONS_VALIDATE        boolean
-stylelint  STYLELINT_OPTIONS_FIX             boolean
-stylelint  STYLELINT_OPTIONS_FORMATTER        string
-========== ================================ ========
+.. rst-class:: first-center
+
+========== =================================== ============
+  Plugin    Name                                Value
+========== =================================== ============
+eslint     ESLINT_USE_FLAT_CONFIG              boolean
+eslint     ESLINT_FORMATTER_NAME               any
+sass [#]_  SASS_OPTIONS_IMPORTER_NODE_PACKAGE  path/boolean
+stylelint  STYLELINT_OPTIONS_CWD               path
+stylelint  STYLELINT_OPTIONS_CONFIG_FILE       path
+stylelint  STYLELINT_OPTIONS_CONFIG_BASEDIR    path
+stylelint  STYLELINT_OPTIONS_VALIDATE          boolean
+stylelint  STYLELINT_OPTIONS_FIX               boolean
+stylelint  STYLELINT_OPTIONS_FORMATTER         string
+========== =================================== ============
 
 Pre-Installed
 =============
+
+.. rst-class:: first-center
 
 ========== ================================ ============ =======
   Plugin    Name                             Alias        Pi-r
 ========== ================================ ============ =======
 postcss    autoprefixer                                   0.10.0
 postcss    postcss-import                   import        0.10.0
-rollup     @rollup/plugin-babel             babel         0.10.0
 rollup     @rollup/plugin-commonjs          commonjs      0.10.0
 rollup     @rollup/plugin-node-resolve      node-resolve  0.10.0
 rollup     @rollup/plugin-terser            terser        0.10.0
 ========== ================================ ============ =======
 
 .. code-block::
+  :caption: squared.json
   :emphasize-lines: 6-8,15
 
   {
@@ -165,7 +163,7 @@ rollup     @rollup/plugin-terser            terser        0.10.0
           "preserveModules": false,
           "sourcemap": true,
           "plugins": [
-            ["terser", { "keep_classnames":  true }]
+            ["terser", { "keep_classnames": true }]
           ]
         }
       }
@@ -174,3 +172,4 @@ rollup     @rollup/plugin-terser            terser        0.10.0
 
 .. [#] settings.transform.imports
 .. [#Y] Package with dependencies (e.g. @e-mc/document)
+.. [#] metadata: { "__nodepackageimporter__": true }

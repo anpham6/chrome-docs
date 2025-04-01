@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/request &mdash; E-mc 0.11.3 documentation</title>
+  <title>@e-mc/request &mdash; E-mc 0.11.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
-      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=52c05c6f" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=2121b98c" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=092ae043" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=cb66cdff" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c44be570"></script>
+      <script src="../_static/documentation_options.js?v=0fc275bd"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -52,7 +52,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../image/index.html">Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../request/index.html">Request</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compress/index.html">Compress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Modules</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="cloud.html">&#64;e-mc/cloud</a></li>
@@ -140,8 +142,8 @@
 <span class="w">    </span><span class="nx">headersOf</span><span class="p">(</span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">OutgoingHttpHeaders</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">aria2c</span><span class="p">(</span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">aria2c</span><span class="p">(</span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">Aria2Options</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="hll"><span class="w">    </span><span class="nx">rclone</span><span class="p">(</span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">rclone</span><span class="p">(</span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">RcloneOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">rclone</span><span class="p">(</span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">rclone</span><span class="p">(</span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">RcloneOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
 </span><span class="w">    </span><span class="nx">json</span><span class="p">(</span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">OpenOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">object</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">to</span><span class="o">:</span><span class="w"> </span><span class="kt">Writable</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">OpenOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kc">null</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">opts</span><span class="p">(</span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">OpenOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">HostConfig</span><span class="p">;</span>
@@ -172,9 +174,9 @@
 <span class="w">    </span><span class="nx">readTLSKey</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">readTLSCert</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">isCert</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
-<span class="w">    </span><span class="cm">/** @deprecated */</span>
+<span class="w">    </span><span class="cm">/** @deprecated @e-mc/request/util */</span>
 <span class="w">    </span><span class="nx">fromURL</span><span class="p">(</span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="kt">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="w">    </span><span class="cm">/** @deprecated */</span>
+<span class="w">    </span><span class="cm">/** @deprecated @e-mc/request/util */</span>
 <span class="w">    </span><span class="nx">fromStatusCode</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">defineHttpAgent</span><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">HttpAgentSettings</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">defineDnsLookup</span><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">DnsLookupSettings</span><span class="p">,</span><span class="w"> </span><span class="nx">clear?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
@@ -189,18 +191,24 @@
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
+<ul class="simple">
+<li><p><em>IRequest</em> method <strong>rclone</strong> for pre-configured cloud storage transfers was created.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.0: </span></p>
 <ul class="simple">
 <li><p><em>IRequest</em> property setter <strong>adapter</strong> for the local HTTP implementation as <em class="alt">IHttpAdapter</em> was created.</p></li>
-<li><p><em>RequestConstructor</em> static method <strong>defineHttpAdapter</strong> for the global HTTP implementation as <em class="alt">IHttpAdapter</em> was created.</p></li>
+<li><p><em>RequestConstructor</em> method <strong>defineHttpAdapter</strong> for the global HTTP implementation as <em class="alt">IHttpAdapter</em> was created.</p></li>
 <li><p><em>IRequest</em> method <strong>get</strong> supports <em class="target">Zstd</em> decompression for <em>accept-encoding</em> when using at least <em class="alt">NodeJS v23.8.0</em>.</p></li>
 </ul>
 </div>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em>RequestConstructor</em> static methods <strong>fromURL</strong> | <strong>fromStatusCode</strong> were relocated into the utility package.</p></li>
+<li><p><em>RequestConstructor</em> methods <strong>fromURL</strong> | <strong>fromStatusCode</strong> were relocated into the utility package.</p></li>
 </ul>
 </div>
 <div class="versionadded">
@@ -359,7 +367,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
 <ul class="simple">
-<li><p><em>RequestModule</em> section <strong>rclone</strong> for cloud storage copying settings was created.</p></li>
+<li><p><em>RequestModule</em> settings section <strong>rclone</strong> for cloud storage copying was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">

@@ -13,9 +13,7 @@ Cloud
   atlas
   Oracle <oci>
 
-.. raw:: html
-
-   <hr>
+----
 
 .. rst-class:: unmaintained
 

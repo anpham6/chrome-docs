@@ -206,9 +206,10 @@ Interface
 ---------
 
 .. code-block:: typescript
+  :emphasize-lines: 11
 
   import type { DynamoDBClientConfig, QueryCommandInput, ScanCommandInput } from "@aws-sdk/client-dynamodb";
-  import type { BatchGetCommandInput, NativeAttributeValue, TranslateConfig, UpdateCommandInput } from "@aws-sdk/lib-dynamodb";
+  import type { BatchGetCommandInput, NativeAttributeValue, TranslateConfig, TransactGetItemsCommandInput, UpdateCommandInput } from "@aws-sdk/lib-dynamodb";
   import type { NativeAttributeValue } from "@aws-sdk/util-dynamodb";
 
   interface AWSDatabaseQuery extends CloudDatabase {
@@ -217,7 +218,7 @@ Interface
       credential: string | AWSDatabaseCredential;
       key?: string | AttributeKey;
       query?: QueryCommandInput | Record<string, NativeAttributeValue>[] | string;
-      params?: BatchGetCommandInput | ScanCommandInput | NativeAttributeValue[];
+      params?: BatchGetCommandInput | ScanCommandInput | TransactGetItemsCommandInput | NativeAttributeValue[];
       update?: UpdateCommandInput;
   }
 
@@ -264,9 +265,14 @@ Example usage
       },
       /* OR */
       "query": [{ "name": { "S": "value" } }], // db.BatchGetCommand{BatchGetCommandInput[RequestItems]}
-      "query": "<empty>", // db.ScanCommand
-      "params": { // BatchGetCommandInput | ScanCommandInput
+      "params": {
         "ProjectionExpression": "name"
+      },
+      /* OR */
+      "query": "<empty>", // db.ScanCommand | db.TransactGetCommand
+      "params": {
+        "TableName": "<table>", // ScanCommandInput
+        "TransactItems": [] // TransactGetItemsCommandInput
       },
       /* OR */
       "key": { // db.GetCommand{GetCommandInput[Key]}
@@ -296,6 +302,10 @@ Example usage
 
 @pi-r/aws-v3
 ============
+
+.. versionadded:: 0.10.0
+
+  - *DynamoDB* send method **TransactGetCommand** using *TransactGetItemsCommandInput* was implemented.
 
 .. versionadded:: 0.9.0
 

@@ -194,6 +194,7 @@ Interface
 ---------
 
 .. code-block:: typescript
+  :emphasize-lines: 9
 
   import type { DocumentClient, Types } from "aws-sdk/clients/dynamodb";
 
@@ -203,7 +204,7 @@ Interface
       credential: string | AWSDatabaseCredential;
       key?: string | DocumentClient.Key;
       query?: DocumentClient.QueryInput | Key[];
-      params?: DocumentClient.BatchGetItemInput | DocumentClient.ScanInput;
+      params?: DocumentClient.BatchGetItemInput | DocumentClient.ScanInput | DocumentClient.TransactGetItemsInput;
       options?: Record<string, unknown>;
       update?: DocumentClient.UpdateItemInput;
   }
@@ -253,9 +254,14 @@ Example usage
       },
       /* OR */      
       "query": [{ "name": { "S": "value" } }], // db.batchGet{BatchGetItemInput[RequestItems]}
-      "query": "<empty>", // db.scan
-      "params": { // BatchGetItemInput | ScanInput
+      "params": {
         "ProjectionExpression": "name"
+      },
+      /* OR */
+      "query": "<empty>", // db.scan | db.transactGet
+      "params": {
+        "TableName": "<table>", // ScanInput
+        "TransactItems": [] // TransactGetItemsInput
       },
       /* OR */
       "key": { // db.get{GetItemInput[Key]}
@@ -278,6 +284,10 @@ Example usage
 
 @pi-r/aws
 =========
+
+.. versionadded:: 0.10.0
+
+  - *DynamoDB* method **transactGet** using *TransactGetItemsInput* was implemented.
 
 .. versionadded:: 0.9.0
 

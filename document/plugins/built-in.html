@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Built-In &mdash; E-mc 0.11.3 documentation</title>
+  <title>Built-In &mdash; E-mc 0.11.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/role.css?v=7d609451" />
-      <link rel="stylesheet" type="text/css" href="../../_static/content.css?v=52c05c6f" />
+      <link rel="stylesheet" type="text/css" href="../../_static/content.css?v=2121b98c" />
       <link rel="stylesheet" type="text/css" href="../../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../../_static/override.css?v=092ae043" />
+      <link rel="stylesheet" type="text/css" href="../../_static/override.css?v=cb66cdff" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=c44be570"></script>
+      <script src="../../_static/documentation_options.js?v=0fc275bd"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -71,7 +71,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../image/index.html">Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cloud/index.html">Cloud</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../request/index.html">Request</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compress/index.html">Compress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../build.html">Build Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
@@ -109,13 +111,12 @@
 <ol class="arabic simple">
 <li><p>compile</p></li>
 <li><p>bundle[-es6]</p></li>
-<li><p>lint[-v9]</p></li>
+<li><p>lint</p></li>
 <li><p>es5</p></li>
 <li><p>transform</p></li>
 <li><p>beautify</p></li>
 <li><p>minify</p></li>
 <li><p>es5-minify</p></li>
-<li><p>minify-svg</p></li>
 <li><p>custom name</p></li>
 </ol>
 <p>You can define or undefine your own optimizations in <code class="docutils literal notranslate"><span class="pre">squared.json</span></code>.</p>
@@ -139,14 +140,6 @@
 <tr class="row-odd"><td><p><a class="reference external" href="https://gitlab.com/html-validate/html-validate">html-validate</a></p></td>
 <td><p>&#64;pi-r/html-validate</p></td>
 <td><p>3</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/DanielRuf/html-minifier-terser">html-minifier-terser</a></p></td>
-<td><p>&#64;pi-r/html-minifier-terser</p></td>
-<td><p>7</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/svg/svgo">svgo</a></p></td>
-<td><p>&#64;pi-r/svgo</p></td>
-<td><p>9</p></td>
 </tr>
 </tbody>
 </table>
@@ -206,7 +199,7 @@
 </tr>
 </tbody>
 </table>
-<p>These plugins can be configured using a plain object in <code class="docutils literal notranslate"><span class="pre">settings.transform</span></code>. Import maps <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.</p>
+<p>These plugins can be configured using a plain object in <code class="docutils literal notranslate"><span class="pre">settings.transform</span></code>. Import maps <a class="footnote-reference brackets" href="#id6" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.</p>
 <ul class="simple">
 <li><p>NPM custom package</p></li>
 <li><p>Local file using module.exports <em class="alt">(e.g. “.cjs”)</em></p></li>
@@ -216,7 +209,7 @@
 </ul>
 <section id="unmaintained">
 <h3>Unmaintained<a class="headerlink" href="#unmaintained" title="Link to this heading"></a></h3>
-<p>The source for these packages are located in a separate repository <a class="reference external" href="https://github.com/anpham6/pi-r2">Pi-r2</a> which you can publish on your own.</p>
+<p>The source for these packages are located in a separate repository <a class="reference external" href="https://github.com/anpham6/pi-r2">Pi-r2</a>. Once per year they are published with each major NodeJS release in April.</p>
 <table class="docutils align-default" style="width: 300px">
 <colgroup>
 <col style="width: 70.0%" />
@@ -258,7 +251,7 @@
 </section>
 <section id="environment-variables">
 <h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading"></a></h2>
-<table class="docutils align-default">
+<table class="first-center docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Plugin</p></th>
 <th class="head"><p>Name</p></th>
@@ -274,27 +267,31 @@
 <td><p>ESLINT_FORMATTER_NAME</p></td>
 <td><p>any</p></td>
 </tr>
-<tr class="row-even"><td><p>stylelint</p></td>
+<tr class="row-even"><td><p>sass <a class="footnote-reference brackets" href="#id7" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
+<td><p>SASS_OPTIONS_IMPORTER_NODE_PACKAGE</p></td>
+<td><p>path/boolean</p></td>
+</tr>
+<tr class="row-odd"><td><p>stylelint</p></td>
 <td><p>STYLELINT_OPTIONS_CWD</p></td>
 <td><p>path</p></td>
 </tr>
-<tr class="row-odd"><td><p>stylelint</p></td>
+<tr class="row-even"><td><p>stylelint</p></td>
 <td><p>STYLELINT_OPTIONS_CONFIG_FILE</p></td>
 <td><p>path</p></td>
 </tr>
-<tr class="row-even"><td><p>stylelint</p></td>
+<tr class="row-odd"><td><p>stylelint</p></td>
 <td><p>STYLELINT_OPTIONS_CONFIG_BASEDIR</p></td>
 <td><p>path</p></td>
 </tr>
-<tr class="row-odd"><td><p>stylelint</p></td>
+<tr class="row-even"><td><p>stylelint</p></td>
 <td><p>STYLELINT_OPTIONS_VALIDATE</p></td>
 <td><p>boolean</p></td>
 </tr>
-<tr class="row-even"><td><p>stylelint</p></td>
+<tr class="row-odd"><td><p>stylelint</p></td>
 <td><p>STYLELINT_OPTIONS_FIX</p></td>
 <td><p>boolean</p></td>
 </tr>
-<tr class="row-odd"><td><p>stylelint</p></td>
+<tr class="row-even"><td><p>stylelint</p></td>
 <td><p>STYLELINT_OPTIONS_FORMATTER</p></td>
 <td><p>string</p></td>
 </tr>
@@ -303,7 +300,7 @@
 </section>
 <section id="pre-installed">
 <h2>Pre-Installed<a class="headerlink" href="#pre-installed" title="Link to this heading"></a></h2>
-<table class="docutils align-default">
+<table class="first-center docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Plugin</p></th>
 <th class="head"><p>Name</p></th>
@@ -323,27 +320,24 @@
 <td><p>0.10.0</p></td>
 </tr>
 <tr class="row-even"><td><p>rollup</p></td>
-<td><p>&#64;rollup/plugin-babel</p></td>
-<td><p>babel</p></td>
-<td><p>0.10.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>rollup</p></td>
 <td><p>&#64;rollup/plugin-commonjs</p></td>
 <td><p>commonjs</p></td>
 <td><p>0.10.0</p></td>
 </tr>
-<tr class="row-even"><td><p>rollup</p></td>
+<tr class="row-odd"><td><p>rollup</p></td>
 <td><p>&#64;rollup/plugin-node-resolve</p></td>
 <td><p>node-resolve</p></td>
 <td><p>0.10.0</p></td>
 </tr>
-<tr class="row-odd"><td><p>rollup</p></td>
+<tr class="row-even"><td><p>rollup</p></td>
 <td><p>&#64;rollup/plugin-terser</p></td>
 <td><p>terser</p></td>
 <td><p>0.10.0</p></td>
 </tr>
 </tbody>
 </table>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;rollup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;bundle-es6&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -358,7 +352,7 @@
 <span class="w">        </span><span class="nt">&quot;preserveModules&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;sourcemap&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="hll"><span class="w">          </span><span class="p">[</span><span class="s2">&quot;terser&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;keep_classnames&quot;</span><span class="p">:</span><span class="w">  </span><span class="kc">true</span><span class="w"> </span><span class="p">}]</span>
+<span class="hll"><span class="w">          </span><span class="p">[</span><span class="s2">&quot;terser&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;keep_classnames&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}]</span>
 </span><span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
@@ -366,8 +360,9 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+</div>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id5" role="doc-footnote">
+<aside class="footnote brackets" id="id6" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
 <p>settings.transform.imports</p>
 </aside>
@@ -375,6 +370,10 @@
 <span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
 <span class="backrefs">(<a role="doc-backlink" href="#id3">1</a>,<a role="doc-backlink" href="#id4">2</a>)</span>
 <p>Package with dependencies (e.g. &#64;e-mc/document)</p>
+</aside>
+<aside class="footnote brackets" id="id7" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
+<p>metadata: { “__nodepackageimporter__”: true }</p>
 </aside>
 </aside>
 </section>

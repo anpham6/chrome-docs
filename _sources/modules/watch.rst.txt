@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 20
 
   import type { IFileManager, ModuleConstructor } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -29,6 +30,7 @@ Interface
       setSSLKey(value: string): boolean;
       setSSLCert(value: string): boolean;
       hasSecureProtocol(): boolean;
+      getRecursiveFiles(watch: IFileGroup<ExternalAsset>): [string, string[]][];
       whenModified?(assets: ExternalAsset[], postFinalize: PostFinalizeCallback): IFileManager;
       whenModified?(assets: ExternalAsset[], sanitize?: boolean, postFinalize?: PostFinalizeCallback): IFileManager;
       set assets(value: ExternalAsset[]);
@@ -48,7 +50,7 @@ Interface
       createServer(port: number, secure?: SecureOptions | null, active?: boolean): ws.Server | null;
       shutdown(): void;
       setTimeout(value: number | string): void;
-      checkTimeout(client: ws): boolean;
+      checkTimeout(client: ws.WebSocket): boolean;
       isConnectionError(err: unknown): boolean;
       readonly prototype: IWatch;
       new(module?: WatchModule): IWatch;
@@ -57,17 +59,21 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.12.0
+
+  - *IWatch* method **getRecursiveFiles** for collecting directory watchers :alt:`(fs.watch)` was created.
+
 .. versionchanged:: 0.11.0
 
   - Permissions are required to watch externally added supplementary source files.
 
 .. versionremoved:: 0.11.0
 
-  - *WatchConstructor* static method **isConnectionError** for identifying retryable errors was created. 
+  - *WatchConstructor* method **isConnectionError** for identifying retryable errors was created. 
 
 .. versionremoved:: 0.9.0
 
-  - *WatchConstructor*  **new(interval, port, securePort, extensions)** did not conform with ``Module.init()``. 
+  - *WatchConstructor* as :alt:`new(interval, port, securePort, extensions)` did not conform with **Module.init()**.
 
 Settings
 ========

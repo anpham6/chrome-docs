@@ -9,15 +9,20 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 131-175
 
-  import type { DataSource, LogStatus } from "./squared";
+  import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
   import type { IHost, IModule, ModuleConstructor } from "./index";
-  import type { AddEventListenerOptions, CacheOptions, HostInitConfig, JoinQueueOptions, PermissionReadWrite, ResumeThreadOptions, StoreResultOptions, ThreadCountStat } from "./core";
+  import type { AddEventListenerOptions, CacheOptions, HostInitConfig, JoinQueueOptions, PermissionReadWrite, ResumeThreadOptions, StoreResultOptions, ThreadCountStat, WorkerChannelResponse } from "./core";
   import type { QueryResult, TimeoutAction } from "./db";
   import type { LogState, StatusType } from "./logger";
   import type { Settings } from "./node";
   import type { ClientDbSettings, ClientModule, ClientSettings, DbCacheValue, DbCoerceSettings, DbCoerceValue, DbSourceOptions } from "./settings";
+
+  import type { TransferListItem, Worker } from "node:worker_threads";
+
+  import type * as EventEmitter from "node:events";
 
   interface IHost extends IModule {
       restartable: boolean;
@@ -136,6 +141,52 @@ Interface
       new(module?: ClientModule, database?: DataSource[]): IClientDb;
   }
 
+  interface IWorkerChannel {
+      [Symbol.iterator](): IteratorObject<Worker, BuiltinIteratorReturn>;
+      sendObject(data: unknown, transferList?: TransferListItem[], callback?: WorkerChannelResponse<unknown>, ...returnArgs: unknown[]): Worker;
+      sendBuffer(data: Buffer, shared?: boolean, callback?: WorkerChannelResponse<unknown>, ...returnArgs: unknown[]): Worker | null;
+      send(data: unknown, transferList?: TransferListItem[]): Promise<unknown>;
+      drop(count?: number): Promise<number>;
+      kill(count?: number): Promise<number>;
+      lock(): void;
+      isEmpty(): boolean;
+      set min(value);
+      get min(): number;
+      set max(value);
+      get max(): number;
+      set timeoutMs(value);
+      get timeoutMs(): number;
+      get filename(): string;
+      get workers(): Worker[];
+      get pending(): number;
+      get available(): number;
+      get detached(): boolean;
+      get lastAccessed(): Date;
+      get timesAccessed(): number;
+      get frequencyAccessed(): number;
+      get size(): number;
+
+      /* EventEmitter */
+      on(event: "error" | "messageerror" | "abort", listener: (err: Error) => void): this;
+      on(event: "exit", listener: (exitCode: number) => void): this;
+      on(event: "online", listener: () => void): this;
+      on(event: "message", listener: (value: any) => void): this;
+      on(event: "data", listener: (data: unknown) => void): this;
+      on(event: "pass", listener: (data: unknown, transferList: TransferListItem[] | undefined) => void): this;
+      once(event: "error" | "messageerror" | "abort", listener: (err: Error) => void): this;
+      once(event: "exit", listener: (exitCode: number) => void): this;
+      once(event: "online", listener: () => void): this;
+      once(event: "message", listener: (value: any) => void): this;
+      once(event: "data", listener: (data: unknown) => void): this;
+      once(event: "pass", listener: (data: unknown, transferList: TransferListItem[] | undefined) => void): this;
+  }
+
+  interface WorkerChannelConstructor {
+      hasPermission(options?: WorkerAction): boolean;
+      readonly prototype: IWorkerChannel;
+      new(filename: string, max?: number, timeoutMs?: number): IWorkerChannel;
+  }
+
   interface IAbortComponent extends AbortController {
       reset(): void;
       get aborted(): boolean;
@@ -169,6 +220,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.12.0
+
+  - *IWorkerChannel* and *WorkerChannelConstructor* were created.
 
 .. versionadded:: 0.11.0
 
@@ -207,6 +262,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 21-23
 
   import type { ExecOptions } from "./settings";
 
@@ -227,6 +283,9 @@ Settings
                   min?: number;
                   max?: number;
               };
+          };
+          workers?: {
+              channel?: { min?: number; max?: number; expires?: number | string };
           };
           limit?: number;
           expires?: number | string;
@@ -276,5 +335,6 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/node.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
 
+* https://www.npmjs.com/package/@types/node
 * https://www.npmjs.com/package/minimatch
 * https://www.npmjs.com/package/picomatch

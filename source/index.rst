@@ -25,12 +25,12 @@ Examples use **squared** :alt:`5` and **chrome** as the reference framework. The
 NodeJS 16 LTS
 =============
 
-- `0.11.4 <https://github.com/anpham6/e-mc/releases/tag/v0.11.4>`_
+- `0.11.5 <https://github.com/anpham6/e-mc/releases/tag/v0.11.5>`_
 
 NodeJS 16
 =========
 
-- `0.10.9 <https://github.com/anpham6/e-mc/releases/tag/v0.10.9>`_
+- `0.10.10 <https://github.com/anpham6/e-mc/releases/tag/v0.10.10>`_
 - `0.9.18 <https://github.com/anpham6/e-mc/releases/tag/v0.9.18>`_
 
 NodeJS 14 LTS

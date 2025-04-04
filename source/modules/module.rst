@@ -103,7 +103,7 @@ Interface
       willAbort(value: unknown): boolean;
       /** @deprecated hasPermission("fs") */
       hasOwnPermission(): boolean;
-      hasPermission(type: string, ...values: unknown[]): boolean;
+      hasPermission(type: "fs" | "memory" | "memory.user" | "worker" | string, ...values: unknown[]): boolean;
       isFatal(err?: unknown): boolean;
       detach(): void;
       reset(): void;
@@ -251,18 +251,18 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - *Node.js Permission Model* was implemented with one difference in compatibility. **moveFile** uses :alt:`fs-read` and :alt:`fs-write` with :target:`--permission` and only :alt:`fs-write` without :target:`--permission`.
+  - *Node.js Permission Model* was implemented with one compatibility difference. **moveFile** uses :alt:`fs-read` and :alt:`fs-write` with :target:`--permission`.
   - *ModuleConstructor* method **constructorOf** for universal detection using symbols was created.
   - *ModuleConstructor* property **REQUIRE_ESM** was created.
   - *IModule* method **hasPermission** for context resolution was created.
 
 .. versionchanged:: 0.12.0
 
-  - *IModule* method **isFatal** validates error objects are an instance of :ref:`Error <references-mdn-error>` class.
+  - *IModule* method **isFatal** validates error objects are an instance of :ref:`Error <references-mdn-error>`.
 
 .. versionremoved:: 0.12.0
 
-  - *ModuleConstructor* method **getPackageVersion** optional arguments **unstable** | **startDir** | **baseDir** are only available in :target:`options` as :alt:`PackageVersionOptions`.
+  - ``BREAKING`` *ModuleConstructor* method **getPackageVersion** optional arguments **unstable** | **startDir** | **baseDir** are only available in :target:`options` as :alt:`PackageVersionOptions`.
 
 .. deprecated:: 0.12.0
 
@@ -271,7 +271,7 @@ Changelog
 
 .. versionremoved:: 0.11.0
 
-  - *ModuleConstructor* method **checkSemVer** optional arguments **unstable** | **startDir** are only available in :target:`options` as :alt:`CheckSemVerOptions`.
+  - ``BREAKING`` *ModuleConstructor* method **checkSemVer** optional arguments **unstable** | **startDir** are only available in :target:`options` as :alt:`CheckSemVerOptions`.
 
 .. versionadded:: 0.10.5
 
@@ -321,6 +321,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 150
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -493,6 +494,7 @@ Changelog
 .. versionchanged:: 0.12.0
 
   - *NodeModule* property **posix.strict** was enabled by default.
+  - *LoggerProcessSettings* property **enabled** was implemented.
 
 .. versionadded:: 0.11.2
 

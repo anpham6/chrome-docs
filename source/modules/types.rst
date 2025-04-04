@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 20,52-54
+  :emphasize-lines: 20,47-48,52-54
 
   import type { LogArguments } from "./lib/logger";
 
@@ -230,6 +230,10 @@ Changelog
     - **Null**
     - **NumString**
     - **TupleOf**
+
+.. versionchanged:: 0.11.7
+
+  - ``BREAKING`` Method **decryptUTF8** did not consistently reproduce data output from **encryptUTF8**.
  
 .. versionadded:: 0.11.2
 
@@ -237,7 +241,7 @@ Changelog
 
 .. versionchanged:: 0.11.1
 
-  - ``BREAKING`` Method **escapePattern** argument :target:`lookBehind` as :alt:`boolean` was replaced with :target:`symbols`.
+  - ``BREAKING`` Method **escapePattern** argument :target:`lookBehind` was replaced with :target:`symbols` as :alt:`boolean`.
   - Method **supported** argument :target:`lts` :alt:`(boolean)` can be used as the :target:`patch` argument.
 
 .. versionchanged:: 0.11.0

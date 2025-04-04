@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 131-147,149-152,154-194,196-202
+  :emphasize-lines: 56-57,133-149,151-154,156-196,198-204
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -66,6 +66,8 @@ Interface
       loadSettings(settings: Settings, permission?: PermissionReadWrite, password?: string): boolean;
       isPermission(value: unknown): value is IPermission;
       createPermission(all?: boolean, freeze?: boolean): IPermission;
+      kill(username: string, all: true): number;
+      kill(username: string, pid: number | number[]): number;
       kill(username: string, iv: BinaryLike, all: true): number;
       kill(username: string, iv: BinaryLike, pid: number | number[]): number;
       getThreadCount(full: true): ThreadCountStat;
@@ -252,6 +254,10 @@ Changelog
 
   - *IWorkerChannel* and *WorkerChannelConstructor* were created.
   - *IWorkerGroup* and *WorkerGroupConstructor* were created.
+
+.. versionchanged:: 0.12.0
+
+  - *HostConstructor* method **kill** can be called without :target:`iv` when using a pre-encrypted :target:`username`.
 
 .. versionadded:: 0.11.0
 

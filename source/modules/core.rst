@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 56-57,133-149,151-154,156-196,198-204
+  :emphasize-lines: 56-57,133-149,151-154,156-196,198-204,219,221,223,225
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -229,9 +229,13 @@ Interface
   }
 
   interface IPermission {
+      setDiskRead(enabled: boolean): void;
       setDiskRead(pathname?: string | string[], enabled?: boolean): void;
+      setDiskWrite(enabled: boolean): void;
       setDiskWrite(pathname?: string | string[], enabled?: boolean): void;
+      setUNCRead(enabled: boolean): void;
       setUNCRead(pathname?: string | string[], enabled?: boolean): void;
+      setUNCWrite(enabled: boolean): void;
       setUNCWrite(pathname?: string | string[], enabled?: boolean): void;
       getDiskRead(): string | string[];
       getDiskWrite(): string | string[];
@@ -257,7 +261,17 @@ Changelog
 
 .. versionchanged:: 0.12.0
 
+  - ``BREAKING`` Permission glob matchers **picomatch** | **minimatch** do not set any initial options other than :target:`nocase` for *Windows*.
   - *HostConstructor* method **kill** can be called without :target:`iv` when using a pre-encrypted :target:`username`.
+  - *IPermission* setter methods can be called with a boolean:
+
+    .. hlist::
+      :columns: 4
+
+      - setDiskRead
+      - setDiskWrite
+      - setUNCRead
+      - setUNCWrite
 
 .. versionadded:: 0.11.0
 
@@ -276,12 +290,12 @@ Changelog
   - *IHost* methods were created:
 
     .. hlist::
-      :columns: 3
+      :columns: 4
 
       - pauseLog
+      - delayMessage
       - resumeLog
       - hasLog
-      - delayMessage
       - updateProgress
 
   - *IHost* property **logState** was created.

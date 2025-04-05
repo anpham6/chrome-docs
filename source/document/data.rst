@@ -367,6 +367,7 @@ View Engine
       name: string; // NPM package name
       singleRow?: boolean; // Template data is sent in one pass with an Array
       outputEmpty?: boolean; // Pass empty results to template engine
+      expires?: number | string; // Duration compiled template is cached (disable: 0)
       options?: {
           compile?: PlainObject | unknown[]; // template = engine.compile(value, options) | engine.compile(value, ...args)
           output?: PlainObject; // template({ ...options, ...result[index] })
@@ -475,6 +476,7 @@ Changelog
 
   - *NPM* package **image-size** for detecting dimensions is default installed.
   - *NPM* package **jsonpath-plus** for filtering JSON results is optionally installed.
+  - *ViewEngine* property **expires** for compiled template cache removal was implemented.
 
 .. versionremoved:: 0.10.0
 

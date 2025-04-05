@@ -215,21 +215,27 @@ Changelog
 
   - :alt:`global` types in :target:`object` were relocated:
 
-    - lib/image: **Point** | **Dimension**
-    - lib/http: **AuthValue**
-    - lib/node: **ErrorCode** | **HighResolutionTime**
-    - lib/settings: **MinMax**
-    - lib/squared: **KeyValue**
+    .. hlist::
+      :columns: 2
+
+      - lib/image: **Point** | **Dimension**
+      - lib/http: **AuthValue**
+      - lib/node: **ErrorCode** | **HighResolutionTime**
+      - lib/settings: **MinMax**
+      - lib/squared: **KeyValue**
 
 .. versionremoved:: 0.12.0
 
   - Method **generateUUID** was an alias for :target:`crypto.randomUUID`.
   - :alt:`global` types in :target:`types`:
 
-    - **Undef**
-    - **Null**
-    - **NumString**
-    - **TupleOf**
+    .. hlist::
+      :columns: 4
+
+      - **Undef**
+      - **Null**
+      - **NumString**
+      - **TupleOf**
 
 .. versionchanged:: 0.11.7
 

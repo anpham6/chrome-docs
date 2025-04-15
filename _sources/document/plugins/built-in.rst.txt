@@ -142,7 +142,6 @@ postcss    autoprefixer                                   0.10.0
 postcss    postcss-import                   import        0.10.0
 rollup     @rollup/plugin-commonjs          commonjs      0.10.0
 rollup     @rollup/plugin-node-resolve      node-resolve  0.10.0
-rollup     @rollup/plugin-terser            terser        0.10.0
 ========== ================================ ============ =======
 
 .. code-block::
@@ -163,7 +162,7 @@ rollup     @rollup/plugin-terser            terser        0.10.0
           "preserveModules": false,
           "sourcemap": true,
           "plugins": [
-            ["terser", { "keep_classnames": true }]
+            ["@rollup/plugin-terser", { "keep_classnames": true }] // npm i @rollup/plugin-terser
           ]
         }
       }

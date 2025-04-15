@@ -22,7 +22,7 @@ Interface
 
   import type { StorageOptions } from "@google-cloud/storage";
   import type { FirebaseOptions } from "@firebase/app";
-  import type { ServiceAccount } from 'firebase-admin/app';
+  import type { ServiceAccount } from "firebase-admin/app";
 
   interface GCPStorage extends CloudStorage {
       service: "gcp" | "gcloud";

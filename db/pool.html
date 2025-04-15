@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pool &mdash; E-mc 0.11.4 documentation</title>
+  <title>Pool &mdash; E-mc 0.11.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=2121b98c" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=cb66cdff" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=dbdd5f4e" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=0fc275bd"></script>
+      <script src="../_static/documentation_options.js?v=383affd7"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/003.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
 
           
           
@@ -76,7 +76,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/003.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -98,7 +98,7 @@
              
   <section id="pool">
 <h1>Pool<a class="headerlink" href="#pool" title="Link to this heading"></a></h1>
-<p>Each source provider will associate each client setting with their equivalent system setting for their own hosted pool.</p>
+<p>Each data source provider will associate each client setting with their equivalent system pool setting.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">squared.db.json</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">{</span>
@@ -107,9 +107,10 @@
 <span class="w">    </span><span class="nx">idle?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Maximum idle time before closing connection (ms)</span>
 <span class="w">    </span><span class="nx">queue_max?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Maximum clients that can be waiting for a connection</span>
 <span class="w">    </span><span class="nx">queue_idle?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Maximum time a client can be waiting for a connection (ms)</span>
-<span class="w">    </span><span class="nx">timeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Maximum time to establish a connection (ms)</span>
+<span class="w">    </span><span class="nx">timeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Maximum time to establish a database connection (ms)</span>
 <span class="w">    </span><span class="nx">socket_timeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Maximum time without data being sent or received (ms)</span>
-
+<span class="hll"><span class="w">    </span><span class="nx">server_timeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">//  Maximum time to establish a server connection (ms)</span>
+</span>
 <span class="w">    </span><span class="cm">/* Module: Db */</span>
 <span class="w">    </span><span class="nx">purge?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Will check pool idle time when global memory is purged</span>
 <span class="p">}</span>

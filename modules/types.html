@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/types &mdash; E-mc 0.11.4 documentation</title>
+  <title>@e-mc/types &mdash; E-mc 0.11.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=2121b98c" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=cb66cdff" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=dbdd5f4e" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=0fc275bd"></script>
+      <script src="../_static/documentation_options.js?v=383affd7"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/003.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
 
           
           
@@ -85,7 +85,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/003.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -157,9 +157,9 @@
 <span class="kd">function</span><span class="w"> </span><span class="nx">coerceObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">cache</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">coerceObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">parseString</span><span class="o">?:</span><span class="w"> </span><span class="p">(...</span><span class="nx">args</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">cache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">getEncoding</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">fallback?</span><span class="o">:</span><span class="w"> </span><span class="kt">BufferEncoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">BufferEncoding</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">encryptUTF8</span><span class="p">(</span><span class="nx">algorithm</span><span class="o">:</span><span class="w"> </span><span class="kt">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">iv</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">Encoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">decryptUTF8</span><span class="p">(</span><span class="nx">algorithm</span><span class="o">:</span><span class="w"> </span><span class="kt">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">iv</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">Encoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">hashKey</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">algorithm?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryToTextEncoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">encryptUTF8</span><span class="p">(</span><span class="nx">algorithm</span><span class="o">:</span><span class="w"> </span><span class="kt">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">iv</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">Encoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+</span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">decryptUTF8</span><span class="p">(</span><span class="nx">algorithm</span><span class="o">:</span><span class="w"> </span><span class="kt">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">iv</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">Encoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+</span><span class="kd">function</span><span class="w"> </span><span class="nx">hashKey</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">algorithm?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryToTextEncoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">incrementUUID</span><span class="p">(</span><span class="nx">restart?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">validateUUID</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">sanitizeCmd</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
@@ -321,30 +321,46 @@
 </div>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 0.12.0: </span></p>
-<ul class="simple">
-<li><p><em class="alt">global</em> types in <em class="target">object</em> were relocated:</p>
 <ul>
+<li><p><em class="alt">global</em> types in <em class="target">object</em> were relocated:</p>
+<table class="hlist"><tr><td><ul class="simple">
 <li><p>lib/image: <strong>Point</strong> | <strong>Dimension</strong></p></li>
 <li><p>lib/http: <strong>AuthValue</strong></p></li>
 <li><p>lib/node: <strong>ErrorCode</strong> | <strong>HighResolutionTime</strong></p></li>
+</ul>
+</td><td><ul class="simple">
 <li><p>lib/settings: <strong>MinMax</strong></p></li>
 <li><p>lib/squared: <strong>KeyValue</strong></p></li>
 </ul>
+</td></tr></table>
 </li>
 </ul>
 </div>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.12.0: </span></p>
-<ul class="simple">
+<ul>
 <li><p>Method <strong>generateUUID</strong> was an alias for <em class="target">crypto.randomUUID</em>.</p></li>
 <li><p><em class="alt">global</em> types in <em class="target">types</em>:</p>
-<ul>
+<table class="hlist"><tr><td><ul class="simple">
 <li><p><strong>Undef</strong></p></li>
+</ul>
+</td><td><ul class="simple">
 <li><p><strong>Null</strong></p></li>
+</ul>
+</td><td><ul class="simple">
 <li><p><strong>NumString</strong></p></li>
+</ul>
+</td><td><ul class="simple">
 <li><p><strong>TupleOf</strong></p></li>
 </ul>
+</td></tr></table>
 </li>
+</ul>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.11.7: </span></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> Method <strong>decryptUTF8</strong> did not consistently reproduce data output from <strong>encryptUTF8</strong>.</p></li>
 </ul>
 </div>
 <div class="versionadded">
@@ -356,7 +372,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.11.1: </span></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> Method <strong>escapePattern</strong> argument <em class="target">lookBehind</em> as <em class="alt">boolean</em> was replaced with <em class="target">symbols</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> Method <strong>escapePattern</strong> argument <em class="target">lookBehind</em> was replaced with <em class="target">symbols</em> as <em class="alt">boolean</em>.</p></li>
 <li><p>Method <strong>supported</strong> argument <em class="target">lts</em> <em class="alt">(boolean)</em> can be used as the <em class="target">patch</em> argument.</p></li>
 </ul>
 </div>

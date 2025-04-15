@@ -10,7 +10,7 @@ Interface
 
 .. code-block:: typescript
 
-  import type { ConnectionConfiguration } from 'tedious';
+  import type { ConnectionConfiguration } from "tedious";
   import type { DataType, ParameterData } from "tedious/lib/data-type";
   import type { PoolConfig } from "@e-mc/mssql/types/pool"; // From "@types/tedious-connection-pool"
 

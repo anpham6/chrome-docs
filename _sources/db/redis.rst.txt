@@ -12,12 +12,12 @@ Interface
 
   import type { CommandOptions } from "@redis/client/dist/lib/command-options";
   import type { ClientCommandOptions } from "@redis/client/dist/lib/client";
-  import type { ScanOptions } from '@redis/client/dist/lib/commands/generic-transformers';
+  import type { ScanOptions } from "@redis/client/dist/lib/commands/generic-transformers";
   import type { RedisClientOptions } from "@redis/client";
   import type { RediSearchSchema, SearchOptions } from "redis";
 
   import type { CreateOptions } from "@redis/search/dist/commands/CREATE"; // Internal
-  import type { AggregateOptions } from '@redis/search/dist/commands/AGGREGATE';
+  import type { AggregateOptions } from "@redis/search/dist/commands/AGGREGATE";
 
   interface RedisDataSource extends DbDataSource {
       source: "redis";

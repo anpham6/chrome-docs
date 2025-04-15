@@ -39,7 +39,7 @@ Pool
       queue_idle?: number; // acquireTimeout
       timeout?: number; // connectTimeout
       socket_timeout?: number; // socketTimeout
-      init_timeout?: number; // socketTimeout
+      server_timeout?: number; // initializationTimeout
   }
 
 Authentication

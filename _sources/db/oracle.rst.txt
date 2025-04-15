@@ -37,7 +37,7 @@ Pool
       queue_max?: number; // queueMax
       queue_idle?: number; // queueTimeout
       timeout?: number; // connectTimeout (ms)
-      init_imeout?: number; // transportConnectTimeout (ms)
+      server_timeout?: number; // transportConnectTimeout (ms)
   }
 
 Authentication

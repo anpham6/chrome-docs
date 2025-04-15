@@ -66,7 +66,7 @@ Pool
       queue_idle?: number; // waitQueueTimeoutMS
       timeout?: number; // connectTimeoutMS
       socket_timeout?: number; // socketTimeoutMS
-      init_timeout?: number; // serverSelectionTimeoutMS
+      server_timeout?: number; // serverSelectionTimeoutMS
   }
 
 Authentication
@@ -182,7 +182,7 @@ Example usage
 
 .. versionadded:: 0.10.0
 
-  - *DbPool* static property **CACHE_IGNORE** through :target:`@pi-r/mariadb/client/pool` as :alt:`keyof MongoClientOptions` was implemented.
+  - *DbPool* static property **CACHE_IGNORE** through :target:`@pi-r/mongodb/client/pool` as :alt:`keyof MongoClientOptions` was implemented.
 
 .. versionadded:: 0.9.0
 

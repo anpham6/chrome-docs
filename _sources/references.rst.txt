@@ -175,6 +175,12 @@ https://github.com/microsoft/TypeScript/blob/main/src/lib/es2015.iterable.d.ts
 MDN
 ===
 
+.. _references-mdn-error:
+.. rst-class:: block-list
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+ | `Error <search.html?q=Error>`_
+
 .. _references-mdn-dom-exception:
 .. rst-class:: block-list
 

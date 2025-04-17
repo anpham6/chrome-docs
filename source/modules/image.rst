@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 28-34,40
+  :emphasize-lines: 23,29-35,41
 
   import type { IHost, ModuleConstructor } from "./index";
   import type { IFileThread } from "./asset";
@@ -33,6 +33,7 @@ Interface
       parseRotate(value: string): RotateData | null | undefined;
       parseQuality(value: string): QualityData | null | undefined;
       parseOpacity(value: string): number;
+      parseWorker(command: string | CommandData, outputType?: string): CommandData | null;
       using?(data: IFileThread, command: string): Promise<unknown>;
       get outputAs(): string;
   }
@@ -73,6 +74,7 @@ Changelog
       - MIME_GIF
       - MIME_BMP
       - MIME_TIFF
+  - *IImage* method **parseWorker** for transform capabilities was created.
 
 .. versionremoved:: 0.12.0
 

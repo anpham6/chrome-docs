@@ -31,7 +31,6 @@ Pool
   import type { PoolConfig } from "pg";
 
   interface PoolConfig {
-      min?: number; // min
       max?: number; // max
       idle?: number; // idleTimeoutMillis
       timeout?: number; // connectionTimeoutMillis
@@ -96,9 +95,13 @@ Example usage
 @pi-r/postgres
 ==============
 
+.. versionremoved:: 0.10.0
+
+  - *PoolConfig* property **min** is no longer supported by ``pg`` client library.
+
 .. versionadded:: 0.8.0
 
   - *DbPool* static property **CACHE_UNUSED** through :target:`@pi-r/postgres/client/pool` as :alt:`string[]` was implemented.
-  - *ConnectionOptions* (:alt:`NodeJS.tls`) property **ca** with Amazon RDS CA [#]_ cert for *host* :alt:`rds.amazonaws.com` is attached when installed.
+  - *ConnectionOptions* :alt:`(NodeJS.tls)` property **ca** with Amazon RDS CA [#]_ cert for *host* :alt:`rds.amazonaws.com` is attached when installed.
 
 .. [#] npm i aws-ssl-profiles

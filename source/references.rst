@@ -175,6 +175,12 @@ https://github.com/microsoft/TypeScript/blob/main/src/lib/es2015.iterable.d.ts
 MDN
 ===
 
+.. _references-mdn-symbol:
+.. rst-class:: block-list
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+ | `Symbol <search.html?q=Symbol>`_
+
 .. _references-mdn-error:
 .. rst-class:: block-list
 

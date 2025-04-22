@@ -18,6 +18,36 @@ Modules
   types
   watch
 
+Private members
+===============
+
+:ref:`Symbols <references-mdn-symbol>` for semi-privacy were replaced with JavaScript private properties [#]_. The :target:`username` property requires pre-encryption [#]_ using the ``encryptUTF8`` method provided in the :doc:`Types <types>` package in **E-mc 0.12**.
+
+.. highlight:: typescript
+
+.. code-block::
+  :caption: 0.11.0
+
+  class Host {
+      constructor(config: HostInitConfig) {
+          if (config.username) {
+              HOST_USERNAME.set(this, config.username);
+          }
+      }
+  }
+
+.. code-block::
+  :caption: 0.12.0
+
+  class Host {
+      constructor(config: HostInitConfig) {
+          if (config.username) {
+              const cipher = HOST.CIPHER;
+              this.#username = cipher ? decryptUTF8(cipher.algorithm, cipher.key, cipher.iv, config.username) || '' : config.username;
+          }
+      }
+  }
+
 ESM imports
 ===========
 
@@ -58,3 +88,6 @@ Besides static methods there is an additional utility library within these modul
 - `@e-mc/db/util <https://www.unpkg.com/@e-mc/db/util.d.ts>`_
 - `@e-mc/document/util <https://www.unpkg.com/@e-mc/document/util.d.ts>`_
 - `@e-mc/request/util <https://www.unpkg.com/@e-mc/request/util.d.ts>`_
+
+.. [#] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties
+.. [#] squared-express 3.5 + sqd-serve 0.17

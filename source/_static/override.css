@@ -79,3 +79,8 @@
 .rst-content .admonition code.literal {
     font-size: 90%;
 }
+
+.rst-content .footnote-reference {
+    top: -0.5em;
+    font-size: 75%;
+}

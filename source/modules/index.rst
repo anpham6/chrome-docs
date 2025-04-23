@@ -21,18 +21,23 @@ Modules
 Private members
 ===============
 
-:ref:`Symbols <references-mdn-symbol>` for semi-privacy were replaced with JavaScript private properties [#]_. The :target:`username` property requires pre-encryption [#]_ using the ``encryptUTF8`` method provided in the :doc:`Types <types>` package in **E-mc 0.12**.
+:ref:`Symbols <references-mdn-symbol>` for semi-privacy were replaced with JavaScript private properties [#]_ in **E-mc 0.12**.
 
 .. highlight:: typescript
 
 .. code-block::
   :caption: 0.11.0
 
+  const kConfig = Symbol('config');
+
   class Host {
+      private readonly [kConfig]: Readonly<HostInitConfig>;
+
       constructor(config: HostInitConfig) {
           if (config.username) {
               HOST_USERNAME.set(this, config.username);
           }
+          this[kConfig] = Object.freeze({ ...config });
       }
   }
 
@@ -40,13 +45,18 @@ Private members
   :caption: 0.12.0
 
   class Host {
+      readonly #config: Readonly<HostInitConfig>;
+
       constructor(config: HostInitConfig) {
           if (config.username) {
               const cipher = HOST.CIPHER;
               this.#username = cipher ? decryptUTF8(cipher.algorithm, cipher.key, cipher.iv, config.username) || '' : config.username;
           }
+          this.#config = Object.freeze({ ...config });
       }
   }
+
+The :target:`username` property in particular requires pre-encryption [#]_ using the ``encryptUTF8`` method exported from the :doc:`Types <types>` package.
 
 ESM imports
 ===========

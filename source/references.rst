@@ -86,6 +86,7 @@ https://unpkg.com/@e-mc/types/lib/cloud.d.ts
 .. rst-class:: block-list
 
 https://unpkg.com/@e-mc/types/lib/node.d.ts
+  | `HighResolutionTime <search.html?q=HighResolutionTime>`_
   | `Settings <search.html?q=Settings>`_
 
 .. _references-e-mc-types-lib-logger:
@@ -107,12 +108,6 @@ https://unpkg.com/@e-mc/types/lib/http.d.ts
 
 https://unpkg.com/@e-mc/types/lib/asset.d.ts
   | `ExternalAsset <search.html?q=ExternalAsset>`_
-
-.. _references-e-mc-types-lib-object:
-.. rst-class:: block-list
-
-https://unpkg.com/@e-mc/types/lib/object.d.ts
-  | `HighResolutionTime <search.html?q=HighResolutionTime>`_
 
 .. _references-nodejs:
 

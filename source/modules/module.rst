@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 92-94,162,165,222,224,226
+  :emphasize-lines: 92-94,164,221,223,225
 
   import type { LogStatus } from "./squared";
 
@@ -172,7 +172,6 @@ Interface
       readonly LOG_FORMAT: LoggerFormatSettings<LoggerFormat<number>>;
       readonly STATUS_TYPE: StatusType;
       readonly PLATFORM_WIN32: boolean;
-      readonly REQUIRE_ESM: boolean;
       readonly MAX_TIMEOUT: number;
       readonly TEMP_DIR: string;
       constructorOf(value: unknown, moduleName?: string): value is ModuleConstructor;
@@ -253,7 +252,6 @@ Changelog
 
   - *Node.js Permission Model* was implemented with one compatibility difference. **moveFile** uses :alt:`fs-read` and :alt:`fs-write` with :target:`--permission`.
   - *ModuleConstructor* method **constructorOf** for universal detection using symbols was created.
-  - *ModuleConstructor* property **REQUIRE_ESM** was created.
   - *IModule* method **hasPermission** for context resolution was created.
 
 .. versionchanged:: 0.12.0

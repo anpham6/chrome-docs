@@ -214,7 +214,7 @@ Example Usage
     "binOpts": [
       "--auto-filename",
       "--contimeout=30s",
-      "--disable_http2"
+      "--disable-http2"
     ]
   }
 

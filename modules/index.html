@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modules &mdash; E-mc 0.11.7 documentation</title>
+  <title>Modules &mdash; E-mc 0.12.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=2121b98c" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=dbdd5f4e" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=02443a00" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=383affd7"></script>
+      <script src="../_static/documentation_options.js?v=c5b435e8"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.jpg);" >
 
           
           
@@ -69,6 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="task.html">&#64;e-mc/task</a></li>
 <li class="toctree-l2"><a class="reference internal" href="types.html">&#64;e-mc/types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="watch.html">&#64;e-mc/watch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#private-members">Private members</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#esm-imports">ESM imports</a></li>
 </ul>
 </li>
@@ -80,7 +81,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.jpg);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -117,11 +118,49 @@
 <li class="toctree-l1"><a class="reference internal" href="watch.html">&#64;e-mc/watch</a></li>
 </ul>
 </div>
+<section id="private-members">
+<h2>Private members<a class="headerlink" href="#private-members" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../references.html#references-mdn-symbol"><span class="std std-ref">Symbols</span></a> for semi-privacy were replaced with JavaScript private properties <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> in <strong>E-mc 0.12</strong>.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">0.11.0</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">kConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Host</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="p">[</span><span class="nx">kConfig</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">Readonly</span><span class="o">&lt;</span><span class="nx">HostInitConfig</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="kt">HostInitConfig</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">username</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">HOST_USERNAME</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">this</span><span class="p">[</span><span class="nx">kConfig</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">config</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">0.12.0</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">Host</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="n">#config</span><span class="o">:</span><span class="w"> </span><span class="nx">Readonly</span><span class="o">&lt;</span><span class="nx">HostInitConfig</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="kt">HostInitConfig</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">username</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">cipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">HOST</span><span class="p">.</span><span class="nx">CIPHER</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">#username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cipher</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">decryptUTF8</span><span class="p">(</span><span class="nx">cipher</span><span class="p">.</span><span class="nx">algorithm</span><span class="p">,</span><span class="w"> </span><span class="nx">cipher</span><span class="p">.</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">cipher</span><span class="p">.</span><span class="nx">iv</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">username</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">username</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">#config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">config</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>The <em class="target">username</em> property in particular requires pre-encryption <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> using the <code class="docutils literal notranslate"><span class="pre">encryptUTF8</span></code> method exported from the <a class="reference internal" href="types.html"><span class="doc">Types</span></a> package.</p>
+</section>
 <section id="esm-imports">
 <h2>ESM imports<a class="headerlink" href="#esm-imports" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">default</span></code> convention for all packages was removed in <strong>E-mc 0.9</strong>. It is auto-generated by the <abbr title="TypeScript">TSC</abbr> compiler and is not necessary for out-of-source tree usage.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">0.8.0</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">0.8.0</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">Module</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@e-mc/module&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// OK</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">Module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/module&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK</span>
 
@@ -134,8 +173,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">0.9.0</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">0.9.0</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">Module</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@e-mc/module&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// OK</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">Module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/module&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK</span>
 
@@ -155,6 +194,16 @@
 <li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/document/util.d.ts">&#64;e-mc/document/util</a></p></li>
 <li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/request/util.d.ts">&#64;e-mc/request/util</a></p></li>
 </ul>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties</a></p>
+</aside>
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>squared-express 3.5 + sqd-serve 0.17</p>
+</aside>
+</aside>
 </section>
 </section>
 

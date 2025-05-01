@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 56-57,133-149,151-154,156-196,198-204,219,221,223,225
+  :emphasize-lines: 56-57,133-149,151-155,157-197,199-205,220,222,224,226
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -162,6 +162,7 @@ Interface
   }
 
   interface WorkerGroupConstructor {
+      checkTimeout(value: number, active?: boolean): number;
       readonly prototype: IWorkerGroup;
       new(max?: number, locked?: boolean): IWorkerGroup;
   }

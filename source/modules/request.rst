@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 31-32
+  :emphasize-lines: 31-32,70,72
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { HttpAdapterConstructor, HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
@@ -80,7 +80,9 @@ Interface
       defineHttpAgent(options: HttpAgentSettings): void;
       defineDnsLookup(options: DnsLookupSettings, clear?: boolean): void;
       defineHttpAdapter(module: unknown): void;
+      isRclone(value: string | URL): boolean;
       getAria2Path(): string;
+      getRclonePath(): string;
       readonly prototype: IRequest;
       new(module?: RequestModule): IRequest;
   }
@@ -88,7 +90,11 @@ Interface
 Changelog
 =========
 
-.. versionchanged:: 0.12.0
+.. versionadded:: 0.12.3
+
+  - *RequestConstructor* :alt:`function` **isRclone** for URI detection was created.
+
+.. versionadded:: 0.12.0
 
   - *IRequest* :alt:`function` **rclone** for pre-configured cloud storage transfers was created.
 

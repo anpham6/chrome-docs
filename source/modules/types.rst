@@ -60,7 +60,7 @@ Interface
   function hashKey(data: BinaryLike, algorithm?: string, encoding?: BinaryToTextEncoding): string;
   function incrementUUID(restart?: boolean): string;
   function validateUUID(value: unknown): boolean;
-  function sanitizeCmd(value: string): string;
+  function sanitizeCmd(value: string, ...args: unknown[]): string;
   function sanitizeArgs(value: string, doubleQuote?: boolean): string;
   function sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
   function randomString(format: string, dictionary?: string): string;
@@ -202,14 +202,18 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.12.2
+
+  - :alt:`function` **sanitizeCmd** optionally concatenates arguments without altering the supplied values.
+
 .. versionadded:: 0.12.0
 
-  - Method **sanitizeCmd** | **sanitizeArgs** for escaping shell characters were imported from :doc:`module`.
+  - :alt:`function` **sanitizeCmd** | **sanitizeArgs** for escaping shell characters were imported from :doc:`module`.
   - :alt:`interface` **CloneObjectOptions** property **structured** for using the native :target:`structuredClone` was implemented.
 
 .. versionchanged:: 0.12.0
 
-  - Method **getTempDir** optionally concatenates path segments :alt:`(path.join)` without creating any directories.
+  - :alt:`function` **getTempDir** optionally concatenates path segments :alt:`(path.join)` without creating any directories.
 
 .. deprecated:: 0.12.0
 
@@ -226,7 +230,7 @@ Changelog
 
 .. versionremoved:: 0.12.0
 
-  - Method **generateUUID** was an alias for :target:`crypto.randomUUID`.
+  - :alt:`function` **generateUUID** was an alias for :target:`crypto.randomUUID`.
   - :alt:`global` types in :target:`types`:
 
     .. hlist::
@@ -248,7 +252,7 @@ Changelog
 .. versionchanged:: 0.11.1
 
   - ``BREAKING`` Method **escapePattern** argument :target:`lookBehind` was replaced with :target:`symbols` as :alt:`boolean`.
-  - Method **supported** argument :target:`lts` :alt:`(boolean)` can be used as the :target:`patch` argument.
+  - :alt:`function` **supported** argument :target:`lts` :alt:`(boolean)` can be used as the :target:`patch` argument.
 
 .. versionchanged:: 0.11.0
 
@@ -265,14 +269,14 @@ Changelog
 
 .. versionadded:: 0.10.0
 
-  - Method **hashKey** for single-pass encoding was created.
-  - Method **supported** for NodeJS versioning was imported from :doc:`module`.
-  - Method **importESM** for dynamic module loading was created.
+  - :alt:`function` **hashKey** for single-pass encoding was created.
+  - :alt:`function` **supported** for NodeJS versioning was imported from :doc:`module`.
+  - :alt:`function` **importESM** for dynamic module loading was created.
 
 .. versionchanged:: 0.10.0
 
-  - Method **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name "**AbortError**" and code **20**.
-  - Method **formatTime** with argument :target:`char` as "**:**" displays using digital clock format.
+  - :alt:`function` **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name "**AbortError**" and code **20**.
+  - :alt:`function` **formatTime** with argument :target:`char` as "**:**" displays using digital clock format.
   - :alt:`interface` **CloneObjectOptions** in :alt:`module` was relocated to :target:`types`.
   - :alt:`type` **Writeable** was renamed :target:`Writable`.
   - :alt:`interface` **GetTempDirOptions** in :alt:`module` was renamed :target:`TempDirOptions`.
@@ -293,7 +297,7 @@ Changelog
 
 .. deprecated:: 0.9.2
 
-  - Method **generateUUID** is a reference to :target:`crypto.randomUUID`.
+  - :alt:`function` **generateUUID** is a reference to :target:`crypto.randomUUID`.
   - :alt:`type` **NumString** as a union is not a standard convention.
 
 .. versionadded:: 0.9.0
@@ -310,7 +314,7 @@ Changelog
 
 .. versionadded:: 0.8.4
 
-  - Method **alignSize** was created.
+  - :alt:`function` **alignSize** was created.
 
 References
 ==========

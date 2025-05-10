@@ -263,8 +263,8 @@ Changelog
 .. versionchanged:: 0.12.0
 
   - ``BREAKING`` Permission glob matchers **picomatch** | **minimatch** do not set any initial options other than :target:`nocase` for *Windows*.
-  - *HostConstructor* method **kill** can be called without :target:`iv` when using a pre-encrypted :target:`username`.
-  - *IPermission* setter methods can be called with a boolean:
+  - *HostConstructor* :alt:`function` **kill** can be called without :target:`iv` when using a pre-encrypted :target:`username`.
+  - *IPermission* :alt:`function` setters can be called with a boolean:
 
     .. hlist::
       :columns: 4
@@ -276,19 +276,19 @@ Changelog
 
 .. versionadded:: 0.11.0
 
-  - *IHost* property getters **ipV4** | **ipV6** for remote client address were created.
+  - *IHost* :alt:`property` getters **ipV4** | **ipV6** for remote client address were created.
 
 .. versionadded:: 0.10.0
 
-  - *IClientDb* method **getCacheResult** was created.
+  - *IClientDb* :alt:`function` **getCacheResult** was created.
 
 .. versionchanged:: 0.10.0
 
-  - *IHost* methods **pauseLog** | **resumeLog** argument :target:`type` as :alt:`string` was implemented.
+  - *IHost* :alt:`function` **pauseLog** | **resumeLog** argument :target:`type` as :alt:`string` was implemented.
 
 .. versionadded:: 0.9.0
 
-  - *IHost* methods were created:
+  - *IHost* :alt:`function` were created:
 
     .. hlist::
       :columns: 4
@@ -299,12 +299,12 @@ Changelog
       - hasLog
       - updateProgress
 
-  - *IHost* property **logState** was created.
+  - *IHost* :alt:`property` getter **logState** was created.
 
 .. versionremoved:: 0.9.0
 
-  - *IClientDb* method **hasCache** argument :target:`override` as :alt:`DbCacheValue`.
-  - *IClientDb* method **hasCoerce** argument :target:`override` as :alt:`DbCoerceValue`.
+  - *IClientDb* :alt:`function` **hasCache** argument :target:`override` as :alt:`DbCacheValue`.
+  - *IClientDb* :alt:`function` **hasCoerce** argument :target:`override` as :alt:`DbCoerceValue`.
 
 Settings
 ========

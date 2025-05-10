@@ -61,7 +61,7 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - *IWatch* method **getRecursiveFiles** for collecting directory watchers :alt:`(fs.watch)` was created.
+  - *IWatch* :alt:`function` **getRecursiveFiles** for collecting directory watchers :alt:`(fs.watch)` was created.
 
 .. versionchanged:: 0.11.0
 
@@ -69,7 +69,7 @@ Changelog
 
 .. versionremoved:: 0.11.0
 
-  - *WatchConstructor* method **isConnectionError** for identifying retryable errors was created. 
+  - *WatchConstructor* :alt:`function` **isConnectionError** for identifying retryable errors was created. 
 
 .. versionremoved:: 0.9.0
 

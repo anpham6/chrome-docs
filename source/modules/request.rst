@@ -90,21 +90,21 @@ Changelog
 
 .. versionchanged:: 0.12.0
 
-  - *IRequest* method **rclone** for pre-configured cloud storage transfers was created.
+  - *IRequest* :alt:`function` **rclone** for pre-configured cloud storage transfers was created.
 
 .. versionadded:: 0.11.0
 
-  - *IRequest* property setter **adapter** for the local HTTP implementation as :alt:`IHttpAdapter` was created.
-  - *RequestConstructor* method **defineHttpAdapter** for the global HTTP implementation as :alt:`IHttpAdapter` was created.
-  - *IRequest* method **get** supports :target:`Zstd` decompression for *accept-encoding* when using at least :alt:`NodeJS v23.8.0`.
+  - *IRequest* :alt:`property` setter **adapter** for the local HTTP implementation as :alt:`IHttpAdapter` was created.
+  - *RequestConstructor* :alt:`function` **defineHttpAdapter** for the global HTTP implementation as :alt:`IHttpAdapter` was created.
+  - *IRequest* :alt:`function` **get** supports :target:`Zstd` decompression for *accept-encoding* when using at least :alt:`NodeJS v23.8.0`.
 
 .. deprecated:: 0.11.0
   
-  - *RequestConstructor* methods **fromURL** | **fromStatusCode** were relocated into the utility package.
+  - *RequestConstructor* :alt:`function` **fromURL** | **fromStatusCode** were relocated into the utility package.
 
 .. versionadded:: 0.10.3
 
-  - *IRequest* method **put** for HTTP method :target:`PUT` was created.
+  - *IRequest* :alt:`function` **put** for HTTP method :target:`PUT` was created.
 
 .. versionchanged:: 0.9.0
 
@@ -112,11 +112,11 @@ Changelog
 
 .. versionadded:: 0.8.2
 
-  - *IRequest* method **statusOn** was created.
+  - *IRequest* :alt:`function` **statusOn** was created.
 
 .. versionadded:: 0.8.1
 
-  - *IRequest* method **headersOn** was created.
+  - *IRequest* :alt:`function` **headersOn** was created.
 
 Settings
 ========

@@ -104,17 +104,17 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - *DbPoolConstructor* property **CACHE_IGNORE** for non-cacheable pool attributes was created.
-  - *DbPoolConstructor* method **canCache** for  non-cacheable credentials was created.
+  - *DbPoolConstructor* :alt:`property` **CACHE_IGNORE** for non-cacheable pool attributes was created.
+  - *DbPoolConstructor* :alt:`function` **canCache** for  non-cacheable credentials was created.
 
 .. versionadded:: 0.10.0
 
-  - *DbPoolConstructor* property **CACHE_UNUSED** for unused pool attributes was created.
-  - *DbPoolConstructor* methods **asString** | **sanitize** | **removeUUIDKey** for pool keys were created.
+  - *DbPoolConstructor* :alt:`property` **CACHE_UNUSED** for unused pool attributes was created.
+  - *DbPoolConstructor* :alt:`function` **asString** | **sanitize** | **removeUUIDKey** for pool keys were created.
 
 .. versionchanged:: 0.9.0
 
-  - *IDb* methods **executeQuery** | **executeBatchQuery** with argument :target:`callback` as :alt:`ErrorQueryCallback`.
+  - *IDb* :alt:`function` **executeQuery** | **executeBatchQuery** with argument :target:`callback` as :alt:`ErrorQueryCallback`.
 
 Settings
 ========

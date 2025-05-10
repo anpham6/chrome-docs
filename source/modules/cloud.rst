@@ -95,28 +95,28 @@ Changelog
 
 .. versionadded:: 0.11.0
 
-  - *ICloudServiceClient* method **deleteObjectsV3** :alt:`(optional)` was created.
+  - *ICloudServiceClient* :alt:`function` **deleteObjectsV3** :alt:`(optional)` was created.
 
 .. versionchanged:: 0.11.0
 
-  - *ICloud* method **deleteObjects** argument :target:`recursive` was supplemented with :target:`options` as :alt:`DeleteObjectsOptions`.
+  - *ICloud* :alt:`function` **deleteObjects** argument :target:`recursive` was supplemented with :target:`options` as :alt:`DeleteObjectsOptions`.
 
 .. deprecated:: 0.11.0
 
-  - :alt:`interface` **ICloudServiceClient** methods **deleteObjectsV2** is changing to the V3 signature.
+  - :alt:`interface` **ICloudServiceClient** :alt:`function` **deleteObjectsV2** is changing to the V3 signature.
 
 .. deprecated:: 0.10.2
 
-  - :alt:`interface` **ICloudServiceClient** methods **createBucket** | **deleteObjects** are changing to the V2 signature.
+  - :alt:`interface` **ICloudServiceClient** :alt:`function` **createBucket** | **deleteObjects** are changing to the V2 signature.
 
 .. versionchanged:: 0.10.0
 
-  - *CloudConstructor* method **finalize** return value was modified to :target:`Promise<void>`.
-  - *CloudConstructor* method **uploadAsset** return value was modified to :target:`Promise<void>[]`.
+  - *CloudConstructor* :alt:`function` **finalize** return value was modified to :target:`Promise<void>`.
+  - *CloudConstructor* :alt:`function` **uploadAsset** return value was modified to :target:`Promise<void>[]`.
 
 .. versionadded:: 0.9.0
 
-  - *ICloud* method **setBucketTagging** was created.
+  - *ICloud* :alt:`function` **setBucketTagging** was created.
   - *ICloudServiceClient* global **CLOUD_UPLOAD_DISK** replaced *CLOUD_UPLOAD_FROMDISK*.
 
 .. versionremoved:: 0.9.0

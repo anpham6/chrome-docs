@@ -231,7 +231,7 @@ Interface
       checkSemVer(name: string | [string, string], min: number | string, max?: number | string): boolean;
       checkSemVer(name: string | [string, string], min: number | string, max: number | string, options?: Omit<CheckSemVerOptions, "min" | "max" | "equals">): boolean;
       /** @deprecated @e-mc/types */
-      sanitizeCmd(value: string): string;
+      sanitizeCmd(value: string, ...args: unknown[]): string;
       /** @deprecated @e-mc/types */
       sanitizeArgs(value: string, doubleQuote?: boolean): string;
       /** @deprecated @e-mc/types */
@@ -248,53 +248,57 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.12.2/0.11.9/0.10.13 
+
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **isURL** no longer uses :target:`URL.canParse` for validation.
+
 .. versionadded:: 0.12.0
 
   - *Node.js Permission Model* was implemented with one compatibility difference. **moveFile** uses :alt:`fs-read` and :alt:`fs-write` with :target:`--permission`.
-  - *ModuleConstructor* method **constructorOf** for universal detection using symbols was created.
-  - *IModule* method **hasPermission** for context resolution was created.
+  - *ModuleConstructor* :alt:`function` **constructorOf** for universal detection using symbols was created.
+  - *IModule* :alt:`function` **hasPermission** for context resolution was created.
 
 .. versionchanged:: 0.12.0
 
-  - *IModule* method **isFatal** validates error objects are an instance of :ref:`Error <references-mdn-error>`.
+  - *IModule* :alt:`function` **isFatal** validates error objects are an instance of :ref:`Error <references-mdn-error>`.
 
 .. versionremoved:: 0.12.0
 
-  - ``BREAKING`` *ModuleConstructor* method **getPackageVersion** optional arguments **unstable** | **startDir** | **baseDir** are only available in :target:`options` as :alt:`PackageVersionOptions`.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **getPackageVersion** optional arguments **unstable** | **startDir** | **baseDir** are only available in :target:`options` as :alt:`PackageVersionOptions`.
 
 .. deprecated:: 0.12.0
 
-  - *ModuleConstructor* methods **sanitizeCmd** | **sanitizeArgs** were relocated into :doc:`types`.
-  - *IModule* method **hasOwnPermission** can be called through :target:`hasPermission("fs")`.
+  - *ModuleConstructor* :alt:`function` **sanitizeCmd** | **sanitizeArgs** were relocated into :doc:`types`.
+  - *IModule* :alt:`function` **hasOwnPermission** can be called through :target:`hasPermission("fs")`.
 
 .. versionremoved:: 0.11.0
 
-  - ``BREAKING`` *ModuleConstructor* method **checkSemVer** optional arguments **unstable** | **startDir** are only available in :target:`options` as :alt:`CheckSemVerOptions`.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **checkSemVer** optional arguments **unstable** | **startDir** are only available in :target:`options` as :alt:`CheckSemVerOptions`.
 
 .. versionadded:: 0.10.5
 
-  - *ModuleConstructor* method **globDir** for recursive file searches was created.
+  - *ModuleConstructor* :alt:`function` **globDir** for recursive file searches was created.
 
 .. versionadded:: 0.10.0
 
-  - *ModuleConstructor* property **PLATFORM_WIN32** was created.
-  - *IModule* property accessor **silent** for console messages was created.
+  - *ModuleConstructor* :alt:`property` **PLATFORM_WIN32** was created.
+  - *IModule* :alt:`property` accessor **silent** for console messages was created.
 
 .. versionchanged:: 0.10.0
   
-  - *ModuleConstructor* method **asHash** argument :target:`minLength` was replaced with :target:`digest` as :alt:`BinaryToTextEncoding`.
+  - *ModuleConstructor* :alt:`function` **asHash** argument :target:`minLength` was replaced with :target:`digest` as :alt:`BinaryToTextEncoding`.
 
 .. deprecated:: 0.10.0
 
-  - *ModuleConstructor* method **supported** was relocated into :doc:`types`.
+  - *ModuleConstructor* :alt:`function` **supported** was relocated into :doc:`types`.
 
 .. versionadded:: 0.9.0
 
-  - *ModuleConstructor* property **LOG_FORMAT** was created.
+  - *ModuleConstructor* :alt:`property` **LOG_FORMAT** was created.
 
 .. versionchanged:: 0.9.0
   
-  - *IModule* method **src** and **dest** arguments can accept :ref:`URL <references-nodejs-url>` object:
+  - *IModule* :alt:`function` **src** and **dest** arguments can accept :ref:`URL <references-nodejs-url>` object:
 
     .. hlist::
       :columns: 4
@@ -312,7 +316,7 @@ Changelog
 
 .. versionadded:: 0.8.7
 
-  - *IModule* method **getPackageVersion** argument :target:`baseDir` as :alt:`string` was created.
+  - *IModule* :alt:`function` **getPackageVersion** argument :target:`baseDir` as :alt:`string` was created.
 
 Settings
 ========

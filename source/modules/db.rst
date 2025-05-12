@@ -33,7 +33,7 @@ Interface
       executeBatchQuery(batch: DbDataSource[], sessionKey: string, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       executeBatchQuery(batch: DbDataSource[], options?: ExecuteBatchQueryOptions | string, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       processRows(batch: DbDataSource[], tasks: Promise<QueryResult | null>[], parallel: boolean): Promise<BatchQueryResult>;
-      processRows(batch: DbDataSource[], tasks: Promise<QueryResult | null>[], options?: ProcessRowsOptions, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
+      processRows(batch: DbDataSource[], tasks: Promise<QueryResult | null>[], options?: ProcessRowsOptions | boolean, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       handleFail(err: unknown, item: DbDataSource, options?: HandleFailOptions): boolean;
       readTLSCert(value: unknown, cache?: boolean): string;
       readTLSConfig(options: SecureContextOptions, cache?: boolean): void;
@@ -105,7 +105,7 @@ Changelog
 .. versionadded:: 0.12.0
 
   - *DbPoolConstructor* :alt:`property` **CACHE_IGNORE** for non-cacheable pool attributes was created.
-  - *DbPoolConstructor* :alt:`function` **canCache** for  non-cacheable credentials was created.
+  - *DbPoolConstructor* :alt:`function` **canCache** for non-cacheable credentials was created.
 
 .. versionadded:: 0.10.0
 

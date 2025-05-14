@@ -329,8 +329,6 @@ Firestore
       /* OR */
       "aggregateSpec": {/* AggregateSpec */}, // (a | b).aggregate (not cached)
 
-      "value": "<b>${title}</b>: ${description}",
-
       "updateType": 0, // 0 - update{exists} | 1 - create | 2 - set | 3 - set{merge}
       "update": {/* Document */}, // fs.update
       "update": {
@@ -391,12 +389,6 @@ BigQuery
       "params": ["arg0" /* ? */, "arg1" /* ? */],
       "options": {/* IQuery */},
 
-      /* Result: { "item_src": "bigquery.png", "item_alt": "BigQuery" } */
-      "value": {
-        "src": "item_src",
-        "alt": "item_alt"
-      },
-
       "update": "SELECT name, state FROM `bigquery-public-data.usa_names.usa_1910_current` LIMIT 10" // "database" | "database" + "table" (bq.setMetadata)
     }
   }
@@ -437,8 +429,6 @@ Datastore
         ["order", "priority", { "descending": true }]
       ],
       "options": {/* RunQueryOptions */},
-
-      "value": "`<b>${this.title}</b>: ${this.description} (${this.total * 2})`", // Function template literal
 
       "update": {/* Document */}, // ds.save
       "keys": "task", // Same as item being retrieved
@@ -490,8 +480,6 @@ Bigtable
       "query": {/* Filter */}, // Overrides "filter" in GetRowOptions
       "options": {/* GetRowOptions */},
 
-      "value": "{{if not expired}}<b>${title}</b>: ${description}{{else}}Expired{{end}}",
-
       "update": {/* Document */}, // bt.save
       "id": "rowKey1" // Same as item being retrieved
     }
@@ -534,11 +522,15 @@ Spanner
       },
       /* OR */
       "table": "<empty>", // sp.run
+      "flags": 2, // sp.runStream
       "query": "SELECT 1", // DML
-      "query": { "sql": "SELECT 1", "params": { "p1": 0, "p2": 1 } } // ExecuteSqlRequest
-
-      "dynamic": true, // element.innerXml (with tags)
-      "dynamic": false, // element.textContent
+      "query": { // ExecuteSqlRequest
+        "sql": "SELECT 1",
+        "params": { "p1": 0, "p2": 1 },
+        "types": {
+          "p1": "numeric" // date | float | float32 | int | protoEnum | protoMessage | struct | pgJsonb | pgNumeric | timestamp
+        }
+      },
 
       "table": "demo", // sp.table.update
       "update": {/* Document */},
@@ -581,9 +573,6 @@ Realtime Database
         ["limitToFirst", 1]
       ],
 
-      "viewEngine": { "name": "ejs" },
-      "value": "<b><%= title %></b>: <%= description %>",
-
       "update": {/* Document */}, // rd.update
       "query": "path/to/ref" // Same as item being retrieved (rd.child)
     }
@@ -606,6 +595,10 @@ Realtime Database
 
 @pi-r/gcp
 =========
+
+.. versionadded:: 0.10.1
+
+  - *Spanner* method **runStream** for SQL requests was implemented.  
 
 .. versionchanged:: 0.10.0
 

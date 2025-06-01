@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/types &mdash; E-mc 0.12.1 documentation</title>
+  <title>@e-mc/types &mdash; E-mc 0.12.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c5b435e8"></script>
+      <script src="../_static/documentation_options.js?v=56343b9b"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -163,7 +163,7 @@
 </span><span class="kd">function</span><span class="w"> </span><span class="nx">hashKey</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">algorithm?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryToTextEncoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">incrementUUID</span><span class="p">(</span><span class="nx">restart?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">validateUUID</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
-<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">sanitizeCmd</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">sanitizeCmd</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 </span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">sanitizeArgs</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">doubleQuote?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 </span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">sanitizeArgs</span><span class="p">(</span><span class="nx">values</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[],</span><span class="w"> </span><span class="nx">doubleQuote?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
 </span><span class="kd">function</span><span class="w"> </span><span class="nx">randomString</span><span class="p">(</span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">dictionary?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
@@ -307,17 +307,23 @@
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.12.2: </span></p>
+<ul class="simple">
+<li><p><em class="alt">function</em> <strong>sanitizeCmd</strong> optionally concatenates arguments without altering the supplied values.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.12.0: </span></p>
 <ul class="simple">
-<li><p>Method <strong>sanitizeCmd</strong> | <strong>sanitizeArgs</strong> for escaping shell characters were imported from <a class="reference internal" href="module.html"><span class="doc">&#64;e-mc/module</span></a>.</p></li>
+<li><p><em class="alt">function</em> <strong>sanitizeCmd</strong> | <strong>sanitizeArgs</strong> for escaping shell characters were imported from <a class="reference internal" href="module.html"><span class="doc">&#64;e-mc/module</span></a>.</p></li>
 <li><p><em class="alt">interface</em> <strong>CloneObjectOptions</strong> property <strong>structured</strong> for using the native <em class="target">structuredClone</em> was implemented.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
 <ul class="simple">
-<li><p>Method <strong>getTempDir</strong> optionally concatenates path segments <em class="alt">(path.join)</em> without creating any directories.</p></li>
+<li><p><em class="alt">function</em> <strong>getTempDir</strong> optionally concatenates path segments <em class="alt">(path.join)</em> without creating any directories.</p></li>
 </ul>
 </div>
 <div class="deprecated">
@@ -340,7 +346,7 @@
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.12.0: </span></p>
 <ul>
-<li><p>Method <strong>generateUUID</strong> was an alias for <em class="target">crypto.randomUUID</em>.</p></li>
+<li><p><em class="alt">function</em> <strong>generateUUID</strong> was an alias for <em class="target">crypto.randomUUID</em>.</p></li>
 <li><p><em class="alt">global</em> types in <em class="target">types</em>:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p><strong>Undef</strong></p></li>
@@ -374,7 +380,7 @@
 <p><span class="versionmodified changed">Changed in version 0.11.1: </span></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> Method <strong>escapePattern</strong> argument <em class="target">lookBehind</em> was replaced with <em class="target">symbols</em> as <em class="alt">boolean</em>.</p></li>
-<li><p>Method <strong>supported</strong> argument <em class="target">lts</em> <em class="alt">(boolean)</em> can be used as the <em class="target">patch</em> argument.</p></li>
+<li><p><em class="alt">function</em> <strong>supported</strong> argument <em class="target">lts</em> <em class="alt">(boolean)</em> can be used as the <em class="target">patch</em> argument.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
@@ -399,16 +405,16 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p>Method <strong>hashKey</strong> for single-pass encoding was created.</p></li>
-<li><p>Method <strong>supported</strong> for NodeJS versioning was imported from <a class="reference internal" href="module.html"><span class="doc">&#64;e-mc/module</span></a>.</p></li>
-<li><p>Method <strong>importESM</strong> for dynamic module loading was created.</p></li>
+<li><p><em class="alt">function</em> <strong>hashKey</strong> for single-pass encoding was created.</p></li>
+<li><p><em class="alt">function</em> <strong>supported</strong> for NodeJS versioning was imported from <a class="reference internal" href="module.html"><span class="doc">&#64;e-mc/module</span></a>.</p></li>
+<li><p><em class="alt">function</em> <strong>importESM</strong> for dynamic module loading was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p>Method <strong>createAbortError</strong> uses built-in <em>DOMException</em> <em class="alt">(NodeJS 17)</em> with name “<strong>AbortError</strong>” and code <strong>20</strong>.</p></li>
-<li><p>Method <strong>formatTime</strong> with argument <em class="target">char</em> as “<strong>:</strong>” displays using digital clock format.</p></li>
+<li><p><em class="alt">function</em> <strong>createAbortError</strong> uses built-in <em>DOMException</em> <em class="alt">(NodeJS 17)</em> with name “<strong>AbortError</strong>” and code <strong>20</strong>.</p></li>
+<li><p><em class="alt">function</em> <strong>formatTime</strong> with argument <em class="target">char</em> as “<strong>:</strong>” displays using digital clock format.</p></li>
 <li><p><em class="alt">interface</em> <strong>CloneObjectOptions</strong> in <em class="alt">module</em> was relocated to <em class="target">types</em>.</p></li>
 <li><p><em class="alt">type</em> <strong>Writeable</strong> was renamed <em class="target">Writable</em>.</p></li>
 <li><p><em class="alt">interface</em> <strong>GetTempDirOptions</strong> in <em class="alt">module</em> was renamed <em class="target">TempDirOptions</em>.</p></li>
@@ -439,7 +445,7 @@
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 0.9.2: </span></p>
 <ul class="simple">
-<li><p>Method <strong>generateUUID</strong> is a reference to <em class="target">crypto.randomUUID</em>.</p></li>
+<li><p><em class="alt">function</em> <strong>generateUUID</strong> is a reference to <em class="target">crypto.randomUUID</em>.</p></li>
 <li><p><em class="alt">type</em> <strong>NumString</strong> as a union is not a standard convention.</p></li>
 </ul>
 </div>
@@ -462,7 +468,7 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.4: </span></p>
 <ul class="simple">
-<li><p>Method <strong>alignSize</strong> was created.</p></li>
+<li><p><em class="alt">function</em> <strong>alignSize</strong> was created.</p></li>
 </ul>
 </div>
 </section>

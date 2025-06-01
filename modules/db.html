@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/db &mdash; E-mc 0.12.1 documentation</title>
+  <title>@e-mc/db &mdash; E-mc 0.12.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c5b435e8"></script>
+      <script src="../_static/documentation_options.js?v=56343b9b"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -135,7 +135,7 @@
 <span class="w">    </span><span class="nx">executeBatchQuery</span><span class="p">(</span><span class="nx">batch</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">sessionKey</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">outResult?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchQueryResult</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">BatchQueryResult</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">executeBatchQuery</span><span class="p">(</span><span class="nx">batch</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ExecuteBatchQueryOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">outResult?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchQueryResult</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">BatchQueryResult</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">processRows</span><span class="p">(</span><span class="nx">batch</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">tasks</span><span class="o">:</span><span class="w"> </span><span class="kt">Promise</span><span class="o">&lt;</span><span class="nx">QueryResult</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">[],</span><span class="w"> </span><span class="nx">parallel</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">BatchQueryResult</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">processRows</span><span class="p">(</span><span class="nx">batch</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">tasks</span><span class="o">:</span><span class="w"> </span><span class="kt">Promise</span><span class="o">&lt;</span><span class="nx">QueryResult</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">[],</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ProcessRowsOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">outResult?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchQueryResult</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">BatchQueryResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">processRows</span><span class="p">(</span><span class="nx">batch</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[],</span><span class="w"> </span><span class="nx">tasks</span><span class="o">:</span><span class="w"> </span><span class="kt">Promise</span><span class="o">&lt;</span><span class="nx">QueryResult</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">[],</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ProcessRowsOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span><span class="w"> </span><span class="nx">outResult?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchQueryResult</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">BatchQueryResult</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">handleFail</span><span class="p">(</span><span class="nx">err</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">HandleFailOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">readTLSCert</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">cache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">readTLSConfig</span><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">SecureContextOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">cache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
@@ -209,21 +209,21 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.12.0: </span></p>
 <ul class="simple">
-<li><p><em>DbPoolConstructor</em> property <strong>CACHE_IGNORE</strong> for non-cacheable pool attributes was created.</p></li>
-<li><p><em>DbPoolConstructor</em> method <strong>canCache</strong> for  non-cacheable credentials was created.</p></li>
+<li><p><em>DbPoolConstructor</em> <em class="alt">property</em> <strong>CACHE_IGNORE</strong> for non-cacheable pool attributes was created.</p></li>
+<li><p><em>DbPoolConstructor</em> <em class="alt">function</em> <strong>canCache</strong> for non-cacheable credentials was created.</p></li>
 </ul>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>DbPoolConstructor</em> property <strong>CACHE_UNUSED</strong> for unused pool attributes was created.</p></li>
-<li><p><em>DbPoolConstructor</em> methods <strong>asString</strong> | <strong>sanitize</strong> | <strong>removeUUIDKey</strong> for pool keys were created.</p></li>
+<li><p><em>DbPoolConstructor</em> <em class="alt">property</em> <strong>CACHE_UNUSED</strong> for unused pool attributes was created.</p></li>
+<li><p><em>DbPoolConstructor</em> <em class="alt">function</em> <strong>asString</strong> | <strong>sanitize</strong> | <strong>removeUUIDKey</strong> for pool keys were created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.9.0: </span></p>
 <ul class="simple">
-<li><p><em>IDb</em> methods <strong>executeQuery</strong> | <strong>executeBatchQuery</strong> with argument <em class="target">callback</em> as <em class="alt">ErrorQueryCallback</em>.</p></li>
+<li><p><em>IDb</em> <em class="alt">function</em> <strong>executeQuery</strong> | <strong>executeBatchQuery</strong> with argument <em class="target">callback</em> as <em class="alt">ErrorQueryCallback</em>.</p></li>
 </ul>
 </div>
 </section>

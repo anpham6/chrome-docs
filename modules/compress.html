@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/compress &mdash; E-mc 0.12.1 documentation</title>
+  <title>@e-mc/compress &mdash; E-mc 0.12.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c5b435e8"></script>
+      <script src="../_static/documentation_options.js?v=56343b9b"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -162,33 +162,33 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.12.0: </span></p>
 <ul class="simple">
-<li><p><em>ICompress</em> methods <strong>intoGzipStream</strong> | <strong>intoBrotliStream</strong> were created.</p></li>
-<li><p><em>CompressConstructor</em> method <strong>asBuffer</strong> was created.</p></li>
+<li><p><em>ICompress</em> <em class="alt">function</em> <strong>intoGzipStream</strong> | <strong>intoBrotliStream</strong> were created.</p></li>
+<li><p><em>CompressConstructor</em> <em class="alt">function</em> <strong>asBuffer</strong> was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
 <ul class="simple">
-<li><p><em>ICompress</em> methods <strong>tryFile</strong> | <strong>tryImage</strong> enforce read :alt:(file) and write :alt:(output) permissions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">type</em> function <strong>PluginCompressor</strong> argument <em class="target">mimeType</em> as <em class="alt">string</em> was replaced with <em class="target">metadata</em> as <em class="alt">PlainObject</em>.</p></li>
+<li><p><em>ICompress</em> <em class="alt">function</em> <strong>tryFile</strong> | <strong>tryImage</strong> enforce read :alt:(file) and write :alt:(output) permissions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">type</em> <strong>PluginCompressor</strong> argument <em class="target">mimeType</em> as <em class="alt">string</em> was replaced with <em class="target">metadata</em> as <em class="alt">PlainObject</em>.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>ICompress</em> property <strong>chunkSize</strong> was converted into a 1KB aligned accessor.</p></li>
+<li><p><em>ICompress</em> <em class="alt">property</em> <strong>chunkSize</strong> was converted into a 1KB aligned accessor.</p></li>
 </ul>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.9.0: </span></p>
 <ul class="simple">
-<li><p><em>ICompress</em> methods <strong>writeGzip</strong> | <strong>writeBrotli</strong> were created.</p></li>
+<li><p><em>ICompress</em> <em class="alt">function</em> <strong>writeGzip</strong> | <strong>writeBrotli</strong> were created.</p></li>
 </ul>
 </div>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.9.0: </span></p>
 <ul class="simple">
-<li><p><em>ICompress</em> methods <strong>tryFile</strong> | <strong>tryImage</strong> argument <em class="target">callback</em> as <em class="alt">function</em>.</p></li>
+<li><p><em>ICompress</em> <em class="alt">function</em> <strong>tryFile</strong> | <strong>tryImage</strong> argument <em class="target">callback</em> as <em class="alt">function</em>.</p></li>
 </ul>
 </div>
 </section>

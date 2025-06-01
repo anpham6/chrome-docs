@@ -204,27 +204,27 @@ Changelog
 
 .. versionchanged:: 0.12.0
 
-  - *IFileManager* method **fetchFiles** using the :target:`rclone:?` protocol supports `Rclone <https://rclone.org>`_ copy commands.
-  - *IFileManager* property **retryLimit** for failed attempts was created.
+  - *IFileManager* :alt:`function` **fetchFiles** using the :target:`rclone:?` protocol supports `Rclone <https://rclone.org>`_ copy commands.
+  - *IFileManager* :alt:`property` getter **retryLimit** for failed attempts was created.
 
 .. versionchanged:: 0.11.0
 
-  - *FileManagerConstructor* method **verifyChecksum** with :alt:`ChecksumOptions` property :target:`exclude` can be prefixed with "**!**" to negate a subset of glob paths.
-  - *IFileManager* method **install** with name :alt:`watch` injected with an *NPM* package or *Watch* constructor was implemented.
-  - *IFileManager* properties **cacheToDisk** | **cacheToMemory** were made :alt:`readonly` references.
+  - *FileManagerConstructor* :alt:`function` **verifyChecksum** with :alt:`ChecksumOptions` property :target:`exclude` can be prefixed with "**!**" to negate a subset of glob paths.
+  - *IFileManager* :alt:`function` **install** with name :alt:`watch` injected with an *NPM* package or *Watch* constructor was implemented.
+  - *IFileManager* :alt:`property` **cacheToDisk** | **cacheToMemory** were made :alt:`readonly` references.
 
 .. versionremoved:: 0.11.0
 
-  - *IFileManager* method **install** with name :alt:`watch` injected with spread parameters does not conform with *Client* constructor.
+  - *IFileManager* :alt:`function` **install** with name :alt:`watch` injected with spread parameters does not conform with *Client* constructor.
 
 .. versionadded:: 0.10.0
 
-  - *IFileManager* method **checkFilename** for duplicate destination renames was created.
-  - *IFileManager* method **finalizeChecksum** for directory hash validation was created.
+  - *IFileManager* :alt:`function` **checkFilename** for duplicate destination renames was created.
+  - *IFileManager* :alt:`function` **finalizeChecksum** for directory hash validation was created.
 
 .. versionchanged:: 0.10.0
 
-  - *IFileManager* methods return value was modified to :target:`Promise<void>`:
+  - *IFileManager* :alt:`function` return value was modified to :target:`Promise<void>`:
 
     .. hlist::
       :columns: 3
@@ -238,8 +238,8 @@ Changelog
 
 .. versionadded:: 0.9.0
 
-  - *IFileManager* method **transformAsset** argument :target:`override` as :alt:`boolean` was created.
-  - *IFileManager* methods were created:
+  - *IFileManager* :alt:`function` **transformAsset** argument :target:`override` as :alt:`boolean` was created.
+  - *IFileManager* :alt:`function` were created:
 
     .. hlist::
       :columns: 3
@@ -250,9 +250,9 @@ Changelog
 
 .. versionchanged:: 0.9.0
 
-  - *IFileManager* method **install** with **name** :alt:`"image"` and **target** as :alt:`ImageConstructor`.
-  - *IFileManager* method **install** with **name** :alt:`"document" | "image" | "task"` and **handler** as :alt:`string`.
-  - *IFileManager* method **transformAsset** return value was modified to :target:`Promise<boolean>`.
+  - *IFileManager* :alt:`function` **install** with **name** :alt:`"image"` and **target** as :alt:`ImageConstructor`.
+  - *IFileManager* :alt:`function` **install** with **name** :alt:`"document" | "image" | "task"` and **handler** as :alt:`string`.
+  - *IFileManager* :alt:`function` **transformAsset** return value was modified to :target:`Promise<boolean>`.
 
 Settings
 ========

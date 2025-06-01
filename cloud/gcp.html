@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Cloud Platform &mdash; E-mc 0.12.1 documentation</title>
+  <title>Google Cloud Platform &mdash; E-mc 0.12.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c5b435e8"></script>
+      <script src="../_static/documentation_options.js?v=56343b9b"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -430,8 +430,6 @@
 <span class="w">    </span><span class="cm">/* OR */</span>
 <span class="w">    </span><span class="nt">&quot;aggregateSpec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* AggregateSpec */</span><span class="p">},</span><span class="w"> </span><span class="c1">// (a | b).aggregate (not cached)</span>
 
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;b&gt;${title}&lt;/b&gt;: ${description}&quot;</span><span class="p">,</span>
-
 <span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0 - update{exists} | 1 - create | 2 - set | 3 - set{merge}</span>
 <span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// fs.update</span>
 <span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -499,12 +497,6 @@
 <span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;arg0&quot;</span><span class="w"> </span><span class="cm">/* ? */</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;arg1&quot;</span><span class="w"> </span><span class="cm">/* ? */</span><span class="p">],</span>
 <span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* IQuery */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="cm">/* Result: { &quot;item_src&quot;: &quot;bigquery.png&quot;, &quot;item_alt&quot;: &quot;BigQuery&quot; } */</span>
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item_src&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item_alt&quot;</span>
-<span class="w">    </span><span class="p">},</span>
-
 <span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT name, state FROM `bigquery-public-data.usa_names.usa_1910_current` LIMIT 10&quot;</span><span class="w"> </span><span class="c1">// &quot;database&quot; | &quot;database&quot; + &quot;table&quot; (bq.setMetadata)</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -547,8 +539,6 @@
 <span class="w">      </span><span class="p">[</span><span class="s2">&quot;order&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;priority&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;descending&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}]</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* RunQueryOptions */</span><span class="p">},</span>
-
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;`&lt;b&gt;${this.title}&lt;/b&gt;: ${this.description} (${this.total * 2})`&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Function template literal</span>
 
 <span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// ds.save</span>
 <span class="w">    </span><span class="nt">&quot;keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;task&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
@@ -607,8 +597,6 @@
 <span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Filter */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Overrides &quot;filter&quot; in GetRowOptions</span>
 <span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* GetRowOptions */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{if not expired}}&lt;b&gt;${title}&lt;/b&gt;: ${description}{{else}}Expired{{end}}&quot;</span><span class="p">,</span>
-
 <span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// bt.save</span>
 <span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rowKey1&quot;</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
 <span class="w">  </span><span class="p">}</span>
@@ -653,11 +641,15 @@
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
 <span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;empty&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.run</span>
+<span class="w">    </span><span class="nt">&quot;flags&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.runStream</span>
 <span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// DML</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;sql&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;p1&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;p2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// ExecuteSqlRequest</span>
-
-<span class="w">    </span><span class="nt">&quot;dynamic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// element.innerXml (with tags)</span>
-<span class="w">    </span><span class="nt">&quot;dynamic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// element.textContent</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// ExecuteSqlRequest</span>
+<span class="w">      </span><span class="nt">&quot;sql&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;p1&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;p2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;types&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;p1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;numeric&quot;</span><span class="w"> </span><span class="c1">// date | float | float32 | int | protoEnum | protoMessage | struct | pgJsonb | pgNumeric | timestamp</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
 
 <span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.table.update</span>
 <span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span>
@@ -702,9 +694,6 @@
 <span class="w">      </span><span class="p">[</span><span class="s2">&quot;limitToFirst&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
 <span class="w">    </span><span class="p">],</span>
 
-<span class="w">    </span><span class="nt">&quot;viewEngine&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ejs&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;b&gt;&lt;%= title %&gt;&lt;/b&gt;: &lt;%= description %&gt;&quot;</span><span class="p">,</span>
-
 <span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// rd.update</span>
 <span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;path/to/ref&quot;</span><span class="w"> </span><span class="c1">// Same as item being retrieved (rd.child)</span>
 <span class="w">  </span><span class="p">}</span>
@@ -736,6 +725,12 @@
 </section>
 <section id="pi-r-gcp">
 <h2>&#64;pi-r/gcp<a class="headerlink" href="#pi-r-gcp" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.1: </span></p>
+<ul class="simple">
+<li><p><em>Spanner</em> method <strong>runStream</strong> for SQL requests was implemented.</p></li>
+</ul>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul class="simple">

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request &mdash; E-mc 0.12.1 documentation</title>
+  <title>Request &mdash; E-mc 0.12.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c5b435e8"></script>
+      <script src="../_static/documentation_options.js?v=56343b9b"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -172,22 +172,36 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://aria2.github.io/manual/en/html/aria2c.html#options">Options</a></p></li>
 </ul>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;images/&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;magnet:?xt=urn:btih:a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/file.torrent&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sftp://example.com/file.metalink&quot;</span><span class="p">,</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/request&quot;</span><span class="p">);</span>
+
+<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">aria2c</span><span class="p">(</span><span class="s2">&quot;https://example.com/file.torrent&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copyto&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;images/&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">shellExpansion</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">binOpts</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s1">&#39;--conf-path=&quot;$HOME/.aria2/aria2.conf&quot;&#39;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">});</span>
+
+<span class="cm">/* OR */</span>
+
+<span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;pathname&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;images/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FileManager</span>
+<span class="w">  </span><span class="s2">&quot;uri&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;magnet:?xt=urn:btih:a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;uri&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/file.torrent&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;uri&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sftp://example.com/file.metalink&quot;</span><span class="p">,</span>
 
 <span class="w">  </span><span class="cm">/* Optional */</span>
-<span class="w">  </span><span class="nt">&quot;binOpts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;shellExpansion&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;binOpts&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">&quot;--conf-path=\&quot;$HOME/.aria2/aria2.conf\&quot;&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;--keep-unfinished-download-result&quot;</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;mimeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Authorization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer &lt;token&gt;&quot;</span>
+<span class="w">  </span><span class="s2">&quot;mimeType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;headers&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;Authorization&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bearer &lt;token&gt;&quot;</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;silent&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="s2">&quot;silent&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -281,30 +295,37 @@
 <h3>Example Usage<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text">copy</span><a class="headerlink" href="#id9" title="Link to this code"></a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;copy&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional (default)</span>
-<span class="w">  </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gdrive:Archive&quot;</span><span class="p">,</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/request&quot;</span><span class="p">);</span>
+
+<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">rclone</span><span class="p">(</span><span class="s2">&quot;gdrive:Archive&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copy&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional (default)</span>
+<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive&quot;</span><span class="p">,</span>
 
 <span class="w">  </span><span class="cm">/* Optional */</span>
-<span class="w">  </span><span class="nt">&quot;binOpts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;--config=\&quot;$HOME/.config/rclone/rclone.conf\&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;--inplace=false&quot;</span>
+<span class="w">  </span><span class="nx">shellExpansion</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">binOpts</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s1">&#39;--config=&quot;$HOME/.config/rclone/rclone.conf&quot;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;--inplace=false&#39;</span>
 <span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">copyto</span><a class="headerlink" href="#id10" title="Link to this code"></a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;copyto&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive/out.tar.gz&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gdrive:Archive/file.tar.gz&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="cm">/* OR */</span>
-<span class="w">  </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FileManager</span>
-<span class="w">  </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;out.tar.gz&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rclone:?gdrive:Archive/file.tar.gz&quot;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/request&quot;</span><span class="p">);</span>
+
+<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">rclone</span><span class="p">(</span><span class="s2">&quot;gdrive:Archive/file.tar.gz&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copyto&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive/out.tar.gz&quot;</span>
+<span class="p">});</span>
+
+<span class="cm">/* OR */</span>
+
+<span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;pathname&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FileManager</span>
+<span class="w">  </span><span class="s2">&quot;filename&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;out.tar.gz&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;uri&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rclone:?gdrive:Archive/file.tar.gz&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -315,16 +336,17 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">copyurl</span><a class="headerlink" href="#id11" title="Link to this code"></a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;copyurl&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Explicit &quot;/&quot; is recommended</span>
-<span class="w">  </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/file.tar.gz&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;binOpts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/request&quot;</span><span class="p">);</span>
+
+<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">rclone</span><span class="p">(</span><span class="s2">&quot;https://example.com/file.tar.gz&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copyurl&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Explicit &quot;/&quot; is recommended</span>
+<span class="w">  </span><span class="nx">binOpts</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">&quot;--auto-filename&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;--contimeout=30s&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;--disable-http2&quot;</span>
 <span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </div>

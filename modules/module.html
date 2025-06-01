@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/module &mdash; E-mc 0.12.1 documentation</title>
+  <title>@e-mc/module &mdash; E-mc 0.12.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c5b435e8"></script>
+      <script src="../_static/documentation_options.js?v=56343b9b"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -333,7 +333,7 @@
 <span class="w">    </span><span class="nx">checkSemVer</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">],</span><span class="w"> </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">max?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">checkSemVer</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">],</span><span class="w"> </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">Omit</span><span class="o">&lt;</span><span class="nx">CheckSemVerOptions</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;min&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;max&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;equals&quot;</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="cm">/** @deprecated @e-mc/types */</span>
-<span class="hll"><span class="w">    </span><span class="nx">sanitizeCmd</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">sanitizeCmd</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 </span><span class="w">    </span><span class="cm">/** @deprecated @e-mc/types */</span>
 <span class="hll"><span class="w">    </span><span class="nx">sanitizeArgs</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">doubleQuote?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 </span><span class="w">    </span><span class="cm">/** @deprecated @e-mc/types */</span>
@@ -352,74 +352,80 @@
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.12.2/0.11.9/0.10.13: </span></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>ModuleConstructor</em> <em class="alt">function</em> <strong>isURL</strong> no longer uses <em class="target">URL.canParse</em> for validation.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.12.0: </span></p>
 <ul class="simple">
 <li><p><em>Node.js Permission Model</em> was implemented with one compatibility difference. <strong>moveFile</strong> uses <em class="alt">fs-read</em> and <em class="alt">fs-write</em> with <em class="target">–permission</em>.</p></li>
-<li><p><em>ModuleConstructor</em> method <strong>constructorOf</strong> for universal detection using symbols was created.</p></li>
-<li><p><em>IModule</em> method <strong>hasPermission</strong> for context resolution was created.</p></li>
+<li><p><em>ModuleConstructor</em> <em class="alt">function</em> <strong>constructorOf</strong> for universal detection using symbols was created.</p></li>
+<li><p><em>IModule</em> <em class="alt">function</em> <strong>hasPermission</strong> for context resolution was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
 <ul class="simple">
-<li><p><em>IModule</em> method <strong>isFatal</strong> validates error objects are an instance of <a class="reference internal" href="../references.html#references-mdn-error"><span class="std std-ref">Error</span></a>.</p></li>
+<li><p><em>IModule</em> <em class="alt">function</em> <strong>isFatal</strong> validates error objects are an instance of <a class="reference internal" href="../references.html#references-mdn-error"><span class="std std-ref">Error</span></a>.</p></li>
 </ul>
 </div>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.12.0: </span></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>ModuleConstructor</em> method <strong>getPackageVersion</strong> optional arguments <strong>unstable</strong> | <strong>startDir</strong> | <strong>baseDir</strong> are only available in <em class="target">options</em> as <em class="alt">PackageVersionOptions</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>ModuleConstructor</em> <em class="alt">function</em> <strong>getPackageVersion</strong> optional arguments <strong>unstable</strong> | <strong>startDir</strong> | <strong>baseDir</strong> are only available in <em class="target">options</em> as <em class="alt">PackageVersionOptions</em>.</p></li>
 </ul>
 </div>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 0.12.0: </span></p>
 <ul class="simple">
-<li><p><em>ModuleConstructor</em> methods <strong>sanitizeCmd</strong> | <strong>sanitizeArgs</strong> were relocated into <a class="reference internal" href="types.html"><span class="doc">&#64;e-mc/types</span></a>.</p></li>
-<li><p><em>IModule</em> method <strong>hasOwnPermission</strong> can be called through <em class="target">hasPermission(“fs”)</em>.</p></li>
+<li><p><em>ModuleConstructor</em> <em class="alt">function</em> <strong>sanitizeCmd</strong> | <strong>sanitizeArgs</strong> were relocated into <a class="reference internal" href="types.html"><span class="doc">&#64;e-mc/types</span></a>.</p></li>
+<li><p><em>IModule</em> <em class="alt">function</em> <strong>hasOwnPermission</strong> can be called through <em class="target">hasPermission(“fs”)</em>.</p></li>
 </ul>
 </div>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>ModuleConstructor</em> method <strong>checkSemVer</strong> optional arguments <strong>unstable</strong> | <strong>startDir</strong> are only available in <em class="target">options</em> as <em class="alt">CheckSemVerOptions</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>ModuleConstructor</em> <em class="alt">function</em> <strong>checkSemVer</strong> optional arguments <strong>unstable</strong> | <strong>startDir</strong> are only available in <em class="target">options</em> as <em class="alt">CheckSemVerOptions</em>.</p></li>
 </ul>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.5: </span></p>
 <ul class="simple">
-<li><p><em>ModuleConstructor</em> method <strong>globDir</strong> for recursive file searches was created.</p></li>
+<li><p><em>ModuleConstructor</em> <em class="alt">function</em> <strong>globDir</strong> for recursive file searches was created.</p></li>
 </ul>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>ModuleConstructor</em> property <strong>PLATFORM_WIN32</strong> was created.</p></li>
-<li><p><em>IModule</em> property accessor <strong>silent</strong> for console messages was created.</p></li>
+<li><p><em>ModuleConstructor</em> <em class="alt">property</em> <strong>PLATFORM_WIN32</strong> was created.</p></li>
+<li><p><em>IModule</em> <em class="alt">property</em> accessor <strong>silent</strong> for console messages was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>ModuleConstructor</em> method <strong>asHash</strong> argument <em class="target">minLength</em> was replaced with <em class="target">digest</em> as <em class="alt">BinaryToTextEncoding</em>.</p></li>
+<li><p><em>ModuleConstructor</em> <em class="alt">function</em> <strong>asHash</strong> argument <em class="target">minLength</em> was replaced with <em class="target">digest</em> as <em class="alt">BinaryToTextEncoding</em>.</p></li>
 </ul>
 </div>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>ModuleConstructor</em> method <strong>supported</strong> was relocated into <a class="reference internal" href="types.html"><span class="doc">&#64;e-mc/types</span></a>.</p></li>
+<li><p><em>ModuleConstructor</em> <em class="alt">function</em> <strong>supported</strong> was relocated into <a class="reference internal" href="types.html"><span class="doc">&#64;e-mc/types</span></a>.</p></li>
 </ul>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.9.0: </span></p>
 <ul class="simple">
-<li><p><em>ModuleConstructor</em> property <strong>LOG_FORMAT</strong> was created.</p></li>
+<li><p><em>ModuleConstructor</em> <em class="alt">property</em> <strong>LOG_FORMAT</strong> was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.9.0: </span></p>
 <ul>
-<li><p><em>IModule</em> method <strong>src</strong> and <strong>dest</strong> arguments can accept <a class="reference internal" href="../references.html#references-nodejs-url"><span class="std std-ref">URL</span></a> object:</p>
+<li><p><em>IModule</em> <em class="alt">function</em> <strong>src</strong> and <strong>dest</strong> arguments can accept <a class="reference internal" href="../references.html#references-nodejs-url"><span class="std std-ref">URL</span></a> object:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>canRead</p></li>
 <li><p>canWrite</p></li>
@@ -445,7 +451,7 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.7: </span></p>
 <ul class="simple">
-<li><p><em>IModule</em> method <strong>getPackageVersion</strong> argument <em class="target">baseDir</em> as <em class="alt">string</em> was created.</p></li>
+<li><p><em>IModule</em> <em class="alt">function</em> <strong>getPackageVersion</strong> argument <em class="target">baseDir</em> as <em class="alt">string</em> was created.</p></li>
 </ul>
 </div>
 </section>

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/file-manager &mdash; E-mc 0.12.1 documentation</title>
+  <title>@e-mc/file-manager &mdash; E-mc 0.12.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c5b435e8"></script>
+      <script src="../_static/documentation_options.js?v=56343b9b"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -309,35 +309,35 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
 <ul class="simple">
-<li><p><em>IFileManager</em> method <strong>fetchFiles</strong> using the <em class="target">rclone:?</em> protocol supports <a class="reference external" href="https://rclone.org">Rclone</a> copy commands.</p></li>
-<li><p><em>IFileManager</em> property <strong>retryLimit</strong> for failed attempts was created.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>fetchFiles</strong> using the <em class="target">rclone:?</em> protocol supports <a class="reference external" href="https://rclone.org">Rclone</a> copy commands.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">property</em> getter <strong>retryLimit</strong> for failed attempts was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em>FileManagerConstructor</em> method <strong>verifyChecksum</strong> with <em class="alt">ChecksumOptions</em> property <em class="target">exclude</em> can be prefixed with “<strong>!</strong>” to negate a subset of glob paths.</p></li>
-<li><p><em>IFileManager</em> method <strong>install</strong> with name <em class="alt">watch</em> injected with an <em>NPM</em> package or <em>Watch</em> constructor was implemented.</p></li>
-<li><p><em>IFileManager</em> properties <strong>cacheToDisk</strong> | <strong>cacheToMemory</strong> were made <em class="alt">readonly</em> references.</p></li>
+<li><p><em>FileManagerConstructor</em> <em class="alt">function</em> <strong>verifyChecksum</strong> with <em class="alt">ChecksumOptions</em> property <em class="target">exclude</em> can be prefixed with “<strong>!</strong>” to negate a subset of glob paths.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>install</strong> with name <em class="alt">watch</em> injected with an <em>NPM</em> package or <em>Watch</em> constructor was implemented.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">property</em> <strong>cacheToDisk</strong> | <strong>cacheToMemory</strong> were made <em class="alt">readonly</em> references.</p></li>
 </ul>
 </div>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em>IFileManager</em> method <strong>install</strong> with name <em class="alt">watch</em> injected with spread parameters does not conform with <em>Client</em> constructor.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>install</strong> with name <em class="alt">watch</em> injected with spread parameters does not conform with <em>Client</em> constructor.</p></li>
 </ul>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>IFileManager</em> method <strong>checkFilename</strong> for duplicate destination renames was created.</p></li>
-<li><p><em>IFileManager</em> method <strong>finalizeChecksum</strong> for directory hash validation was created.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>checkFilename</strong> for duplicate destination renames was created.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>finalizeChecksum</strong> for directory hash validation was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul>
-<li><p><em>IFileManager</em> methods return value was modified to <em class="target">Promise&lt;void&gt;</em>:</p>
+<li><p><em>IFileManager</em> <em class="alt">function</em> return value was modified to <em class="target">Promise&lt;void&gt;</em>:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>finalize</p></li>
 <li><p>finalizeCompress</p></li>
@@ -357,8 +357,8 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.9.0: </span></p>
 <ul>
-<li><p><em>IFileManager</em> method <strong>transformAsset</strong> argument <em class="target">override</em> as <em class="alt">boolean</em> was created.</p></li>
-<li><p><em>IFileManager</em> methods were created:</p>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>transformAsset</strong> argument <em class="target">override</em> as <em class="alt">boolean</em> was created.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> were created:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>scheduleTask</p></li>
 </ul>
@@ -375,9 +375,9 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.9.0: </span></p>
 <ul class="simple">
-<li><p><em>IFileManager</em> method <strong>install</strong> with <strong>name</strong> <em class="alt">“image”</em> and <strong>target</strong> as <em class="alt">ImageConstructor</em>.</p></li>
-<li><p><em>IFileManager</em> method <strong>install</strong> with <strong>name</strong> <em class="alt">“document” | “image” | “task”</em> and <strong>handler</strong> as <em class="alt">string</em>.</p></li>
-<li><p><em>IFileManager</em> method <strong>transformAsset</strong> return value was modified to <em class="target">Promise&lt;boolean&gt;</em>.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>install</strong> with <strong>name</strong> <em class="alt">“image”</em> and <strong>target</strong> as <em class="alt">ImageConstructor</em>.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>install</strong> with <strong>name</strong> <em class="alt">“document” | “image” | “task”</em> and <strong>handler</strong> as <em class="alt">string</em>.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>transformAsset</strong> return value was modified to <em class="target">Promise&lt;boolean&gt;</em>.</p></li>
 </ul>
 </div>
 </section>

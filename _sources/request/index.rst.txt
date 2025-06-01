@@ -70,15 +70,29 @@ Example Usage
 
 - `Options <https://aria2.github.io/manual/en/html/aria2c.html#options>`_
 
-::
+.. code-block:: javascript
+
+  const Request = require("@e-mc/request");
+
+  new Request().aria2c("https://example.com/file.torrent", {
+    command: "copyto",
+    pathname: "images/",
+    shellExpansion: true,
+    binOpts: [
+      '--conf-path="$HOME/.aria2/aria2.conf"'
+    ]
+  });
+
+  /* OR */
 
   {
-    "pathname": "images/",
+    "pathname": "images/", // FileManager
     "uri": "magnet:?xt=urn:btih:a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8",
     "uri": "https://example.com/file.torrent",
     "uri": "sftp://example.com/file.metalink",
 
     /* Optional */
+    "shellExpansion": true,
     "binOpts": [
       "--conf-path=\"$HOME/.aria2/aria2.conf\"",
       "--keep-unfinished-download-result"
@@ -174,29 +188,38 @@ Commands
 Example Usage
 -------------
 
+.. highlight:: javascript
+
 .. code-block::
   :caption: copy
 
-  {
-    "command": "copy", // Optional (default)
-    "pathname": "/home/user/cloud/Archive",
-    "uri": "gdrive:Archive",
+  const Request = require("@e-mc/request");
+
+  new Request().rclone("gdrive:Archive", {
+    command: "copy", // Optional (default)
+    pathname: "/home/user/cloud/Archive",
 
     /* Optional */
-    "binOpts": [
-      "--config=\"$HOME/.config/rclone/rclone.conf\"",
-      "--inplace=false"
+    shellExpansion: true,
+    binOpts: [
+      '--config="$HOME/.config/rclone/rclone.conf"',
+      '--inplace=false'
     ]
-  }
+  });
 
 .. code-block::
   :caption: copyto
 
+  const Request = require("@e-mc/request");
+
+  new Request().rclone("gdrive:Archive/file.tar.gz", {
+    command: "copyto",
+    pathname: "/home/user/cloud/Archive/out.tar.gz"
+  });
+
+  /* OR */
+
   {
-    "command": "copyto",
-    "pathname": "/home/user/cloud/Archive/out.tar.gz",
-    "uri": "gdrive:Archive/file.tar.gz",
-    /* OR */
     "pathname": "/home/user/cloud/Archive", // FileManager
     "filename": "out.tar.gz",
     "uri": "rclone:?gdrive:Archive/file.tar.gz"
@@ -207,16 +230,17 @@ Example Usage
 .. code-block::
   :caption: copyurl
 
-  {
-    "command": "copyurl",
-    "pathname": "/home/user/cloud/Archive/", // Explicit "/" is recommended
-    "uri": "https://example.com/file.tar.gz",
-    "binOpts": [
+  const Request = require("@e-mc/request");
+
+  new Request().rclone("https://example.com/file.tar.gz", {
+    command: "copyurl",
+    pathname: "/home/user/cloud/Archive/", // Explicit "/" is recommended
+    binOpts: [
       "--auto-filename",
       "--contimeout=30s",
       "--disable-http2"
     ]
-  }
+  });
 
 Unsupported options
 -------------------

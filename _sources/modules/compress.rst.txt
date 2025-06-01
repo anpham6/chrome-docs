@@ -57,25 +57,25 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - *ICompress* methods **intoGzipStream** | **intoBrotliStream** were created.
-  - *CompressConstructor* method **asBuffer** was created.
+  - *ICompress* :alt:`function` **intoGzipStream** | **intoBrotliStream** were created.
+  - *CompressConstructor* :alt:`function` **asBuffer** was created.
 
 .. versionchanged:: 0.12.0
 
-  - *ICompress* methods **tryFile** | **tryImage** enforce read :alt:(file) and write :alt:(output) permissions.
-  - ``BREAKING`` :alt:`type` function **PluginCompressor** argument :target:`mimeType` as :alt:`string` was replaced with :target:`metadata` as :alt:`PlainObject`.
+  - *ICompress* :alt:`function` **tryFile** | **tryImage** enforce read :alt:(file) and write :alt:(output) permissions.
+  - ``BREAKING`` :alt:`type` **PluginCompressor** argument :target:`mimeType` as :alt:`string` was replaced with :target:`metadata` as :alt:`PlainObject`.
 
 .. versionchanged:: 0.10.0
 
-  - *ICompress* property **chunkSize** was converted into a 1KB aligned accessor.
+  - *ICompress* :alt:`property` **chunkSize** was converted into a 1KB aligned accessor.
 
 .. versionadded:: 0.9.0
 
-  - *ICompress* methods **writeGzip** | **writeBrotli** were created.
+  - *ICompress* :alt:`function` **writeGzip** | **writeBrotli** were created.
 
 .. versionremoved:: 0.9.0
 
-  - *ICompress* methods **tryFile** | **tryImage** argument :target:`callback` as :alt:`function`.
+  - *ICompress* :alt:`function` **tryFile** | **tryImage** argument :target:`callback` as :alt:`function`.
 
 Settings
 ========

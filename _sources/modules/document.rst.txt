@@ -89,15 +89,15 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - *ViewEngine* method **compile** | **compileSync** can be called with an Array of arguments :alt:`(options.compile)`.
+  - *ViewEngine* :alt:`function` **compile** | **compileSync** can be called with an Array of arguments :alt:`(options.compile)`.
 
 .. versionchanged:: 0.12.0
 
-  - *IDocument* method **watchModified** argument :target:`recursive` as :alt:`[string, string[]][]` for directory watchers was created.
+  - *IDocument* :alt:`function` **watchModified** argument :target:`recursive` as :alt:`[string, string[]][]` for directory watchers was created.
 
 .. versionchanged:: 0.9.0
 
-  - *IDocument* property **config** was made abstract.
+  - *IDocument* :alt:`property` **config** was made abstract.
 
 Settings
 ========

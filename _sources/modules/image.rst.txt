@@ -61,8 +61,8 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - *ImageConstructor* method **asBuffer** was created.
-  - *ImageConstructor* property getters for MIME types:
+  - *ImageConstructor* :alt:`function` **asBuffer** was created.
+  - *ImageConstructor* :alt:`property` getters for **MIME** types:
 
     .. hlist::
       :columns: 4
@@ -74,15 +74,15 @@ Changelog
       - MIME_GIF
       - MIME_BMP
       - MIME_TIFF
-  - *IImage* method **parseWorker** for transform capabilities was created.
+  - *IImage* :alt:`function` **parseWorker** for transform capabilities was created.
 
 .. versionremoved:: 0.12.0
 
-  - *ImageConstructor* property **REGEXP_SIZERANGE** was for internal use in :doc:`file-manager`.
+  - *ImageConstructor* :alt:`property` **REGEXP_SIZERANGE** was for internal use in :doc:`file-manager`.
 
 .. versionadded:: 0.11.0
 
-  - *IImage* property **outputType** for storing MIME write was created.
+  - *IImage* :alt:`property` **outputType** for storing MIME write was created.
 
 Settings
 ========

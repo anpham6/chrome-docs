@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/request &mdash; E-mc 0.12.1 documentation</title>
+  <title>@e-mc/request &mdash; E-mc 0.12.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c5b435e8"></script>
+      <script src="../_static/documentation_options.js?v=56343b9b"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -182,8 +182,10 @@
 <span class="w">    </span><span class="nx">defineHttpAgent</span><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">HttpAgentSettings</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">defineDnsLookup</span><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">DnsLookupSettings</span><span class="p">,</span><span class="w"> </span><span class="nx">clear?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">defineHttpAdapter</span><span class="p">(</span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">getAria2Path</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IRequest</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">isRclone</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">getAria2Path</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">getRclonePath</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IRequest</span><span class="p">;</span>
 <span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="kr">module</span><span class="nx">?</span><span class="o">:</span><span class="w"> </span><span class="nx">RequestModule</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IRequest</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -192,30 +194,36 @@
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.12.3: </span></p>
 <ul class="simple">
-<li><p><em>IRequest</em> method <strong>rclone</strong> for pre-configured cloud storage transfers was created.</p></li>
+<li><p><em>RequestConstructor</em> <em class="alt">function</em> <strong>isRclone</strong> for URI detection was created.</p></li>
+</ul>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.12.0: </span></p>
+<ul class="simple">
+<li><p><em>IRequest</em> <em class="alt">function</em> <strong>rclone</strong> for pre-configured cloud storage transfers was created.</p></li>
 </ul>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em>IRequest</em> property setter <strong>adapter</strong> for the local HTTP implementation as <em class="alt">IHttpAdapter</em> was created.</p></li>
-<li><p><em>RequestConstructor</em> method <strong>defineHttpAdapter</strong> for the global HTTP implementation as <em class="alt">IHttpAdapter</em> was created.</p></li>
-<li><p><em>IRequest</em> method <strong>get</strong> supports <em class="target">Zstd</em> decompression for <em>accept-encoding</em> when using at least <em class="alt">NodeJS v23.8.0</em>.</p></li>
+<li><p><em>IRequest</em> <em class="alt">property</em> setter <strong>adapter</strong> for the local HTTP implementation as <em class="alt">IHttpAdapter</em> was created.</p></li>
+<li><p><em>RequestConstructor</em> <em class="alt">function</em> <strong>defineHttpAdapter</strong> for the global HTTP implementation as <em class="alt">IHttpAdapter</em> was created.</p></li>
+<li><p><em>IRequest</em> <em class="alt">function</em> <strong>get</strong> supports <em class="target">Zstd</em> decompression for <em>accept-encoding</em> when using at least <em class="alt">NodeJS v23.8.0</em>.</p></li>
 </ul>
 </div>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em>RequestConstructor</em> methods <strong>fromURL</strong> | <strong>fromStatusCode</strong> were relocated into the utility package.</p></li>
+<li><p><em>RequestConstructor</em> <em class="alt">function</em> <strong>fromURL</strong> | <strong>fromStatusCode</strong> were relocated into the utility package.</p></li>
 </ul>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.3: </span></p>
 <ul class="simple">
-<li><p><em>IRequest</em> method <strong>put</strong> for HTTP method <em class="target">PUT</em> was created.</p></li>
+<li><p><em>IRequest</em> <em class="alt">function</em> <strong>put</strong> for HTTP method <em class="target">PUT</em> was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
@@ -227,13 +235,13 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.2: </span></p>
 <ul class="simple">
-<li><p><em>IRequest</em> method <strong>statusOn</strong> was created.</p></li>
+<li><p><em>IRequest</em> <em class="alt">function</em> <strong>statusOn</strong> was created.</p></li>
 </ul>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.1: </span></p>
 <ul class="simple">
-<li><p><em>IRequest</em> method <strong>headersOn</strong> was created.</p></li>
+<li><p><em>IRequest</em> <em class="alt">function</em> <strong>headersOn</strong> was created.</p></li>
 </ul>
 </div>
 </section>

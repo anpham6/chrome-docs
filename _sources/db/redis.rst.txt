@@ -3,24 +3,26 @@ Redis
 =====
 
 - `Redis Stack <https://redis.io/downloads/#redis-stack-downloads>`_
-- **npm** i *@pi-r/redis*
+- **npm** i *@pi-r/redis* :alt:`(4.x)`
+- **npm** i *@pi-r2/redis* :alt:`(5.x)`
 
 Interface
 =========
 
 .. code-block:: typescript
 
-  import type { CommandOptions } from "@redis/client/dist/lib/command-options";
-  import type { ClientCommandOptions } from "@redis/client/dist/lib/client";
-  import type { ScanOptions } from "@redis/client/dist/lib/commands/generic-transformers";
-  import type { RedisClientOptions } from "@redis/client";
-  import type { RediSearchSchema, SearchOptions } from "redis";
+  import type { RediSearchSchema, RedisClientOptions, SearchOptions } from "redis";
 
-  import type { CreateOptions } from "@redis/search/dist/commands/CREATE"; // Internal
-  import type { AggregateOptions } from "@redis/search/dist/commands/AGGREGATE";
+  import type { CommandOptions } from "@redis/client/dist/lib/client/commands-queue";
+  import type { ScanOptions } from "@redis/client/dist/lib/commands/SCAN";
+  import type { JsonGetOptions } from "@redis/json/dist/lib/commands/GET";
+  import type { CreateOptions } from "@redis/search/dist/lib/commands/CREATE";
+  import type { FtAggregateOptions } from "@redis/search/dist/lib/commands/AGGREGATE";
+  import type { FtSearchOptions } from "@redis/search/dist/lib/commands/SEARCH";
 
   interface RedisDataSource extends DbDataSource {
-      source: "redis";
+      source: "redis"; // 4.x
+      source: "@pi-r2/redis"; // 5.x
 
       uri: string; // redis://<username>:<password>@hostname:6379
       username?: string; // redis://hostname:6379
@@ -29,28 +31,30 @@ Interface
       database?: number;
 
       format?: "HASH" | "JSON" | "HKEYS" | "HVALS" | "HSCAN"; // Default is "HASH"
-      key?: string | Buffer | (string | Buffer)[];
-      field?: string | Buffer;
+      key?: RedisArgument | RedisArgument[];
+      field?: RedisArgument;
       path?: string; // JSONPath
 
-      cursor?: number | number[]; // Scan
+      /* Scan */
+      cursor?: number | number[]; // 4.x
+      cursor?: RedisArgument | RedisArgument[] | number | number[]; // 5.x
       iterations?: number | number[];
 
       search?: {
           index: string; // Preexisting schema
+          query: string;
           schema?: RediSearchSchema; // Temporary schema
           schema?: string; // settings.directory.schema + users/username/?
-          query: string;
           options?: CreateOptions;
       };
       aggregate?: {/* Same */};
 
       options?: {
           client?: RedisClientOptions;
-          command?: RedisCommandOptions;
-          get?: PlainObject;
-          search?: SearchOptions;
-          aggregate?: AggregateOptions;
+          command?: CommandOptions; // client.commandOptions (5.x)
+          get?: JsonGetOptions;
+          search?: FtSearchOptions;
+          aggregate?: FtAggregateOptions;
           scan?: ScanOptions;
       };
 
@@ -69,12 +73,14 @@ Interface
       };
   }
 
+  type RedisArgument = string | Buffer;
   type RedisCredential = ServerAuth;
 
 Pool
 ----
 
 .. code-block:: typescript
+  :caption: 4.x
 
   import type { RedisClientOptions } from "redis";
 
@@ -85,6 +91,17 @@ Pool
       queue_max?: number; // maxWaitingClients
       queue_idle?: number; // softIdleTimeoutMillis
       timeout?: number; // acquireTimeoutMillis
+  }
+
+.. code-block:: typescript
+  :caption: 5.x
+
+  import type { RedisPoolOptions } from "redis";
+
+  interface PoolConfig { // using RedisPoolOptions
+      min?: number; // minimum
+      max?: number; // maximum
+      timeout?: number; // acquireTimeout
   }
 
 Authentication
@@ -102,6 +119,11 @@ Authentication
         "username": "",
         "password": "",
         "database": 0 // SELECT index (number > 0)
+      }
+    },
+    "settings": {
+      "imports": {
+        "redis": "@pi-r2/redis" // Optional
       }
     }
   }
@@ -174,7 +196,7 @@ Example usage
       "usePool": true,
       "options": {
         "client": {
-          "isolationPoolOptions": {
+          "isolationPoolOptions": { // 4.x
             "min": 0,
             "max": 10
           }
@@ -188,6 +210,17 @@ Example usage
 @pi-r/redis
 ===========
 
+.. versionadded:: 0.10.1
+
+  - *DbPool* static property **CACHE_IGNORE** through :target:`@pi-r/redis/client/pool` as :alt:`keyof RedisClientOptions` was implemented.
+
 .. versionadded:: 0.8.0
 
   - *RedisDataSource* property **format** with type "**HSCAN**" and optional argument :target:`cursor` | :target:`iterations` was implemented.
+
+@pi-r2/redis
+============
+
+.. versionadded:: 0.2.0
+
+  - Staging package for the ``redis 5.x`` release was created.

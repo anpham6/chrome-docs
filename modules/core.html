@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/core &mdash; E-mc 0.12.1 documentation</title>
+  <title>@e-mc/core &mdash; E-mc 0.12.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c5b435e8"></script>
+      <script src="../_static/documentation_options.js?v=56343b9b"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -370,8 +370,8 @@
 <p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> Permission glob matchers <strong>picomatch</strong> | <strong>minimatch</strong> do not set any initial options other than <em class="target">nocase</em> for <em>Windows</em>.</p></li>
-<li><p><em>HostConstructor</em> method <strong>kill</strong> can be called without <em class="target">iv</em> when using a pre-encrypted <em class="target">username</em>.</p></li>
-<li><p><em>IPermission</em> setter methods can be called with a boolean:</p>
+<li><p><em>HostConstructor</em> <em class="alt">function</em> <strong>kill</strong> can be called without <em class="target">iv</em> when using a pre-encrypted <em class="target">username</em>.</p></li>
+<li><p><em>IPermission</em> <em class="alt">function</em> setters can be called with a boolean:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>setDiskRead</p></li>
 </ul>
@@ -391,25 +391,25 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em>IHost</em> property getters <strong>ipV4</strong> | <strong>ipV6</strong> for remote client address were created.</p></li>
+<li><p><em>IHost</em> <em class="alt">property</em> getters <strong>ipV4</strong> | <strong>ipV6</strong> for remote client address were created.</p></li>
 </ul>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>IClientDb</em> method <strong>getCacheResult</strong> was created.</p></li>
+<li><p><em>IClientDb</em> <em class="alt">function</em> <strong>getCacheResult</strong> was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>IHost</em> methods <strong>pauseLog</strong> | <strong>resumeLog</strong> argument <em class="target">type</em> as <em class="alt">string</em> was implemented.</p></li>
+<li><p><em>IHost</em> <em class="alt">function</em> <strong>pauseLog</strong> | <strong>resumeLog</strong> argument <em class="target">type</em> as <em class="alt">string</em> was implemented.</p></li>
 </ul>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.9.0: </span></p>
 <ul>
-<li><p><em>IHost</em> methods were created:</p>
+<li><p><em>IHost</em> <em class="alt">function</em> were created:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>pauseLog</p></li>
 <li><p>delayMessage</p></li>
@@ -425,14 +425,14 @@
 </ul>
 </td></tr></table>
 </li>
-<li><p><em>IHost</em> property <strong>logState</strong> was created.</p></li>
+<li><p><em>IHost</em> <em class="alt">property</em> getter <strong>logState</strong> was created.</p></li>
 </ul>
 </div>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.9.0: </span></p>
 <ul class="simple">
-<li><p><em>IClientDb</em> method <strong>hasCache</strong> argument <em class="target">override</em> as <em class="alt">DbCacheValue</em>.</p></li>
-<li><p><em>IClientDb</em> method <strong>hasCoerce</strong> argument <em class="target">override</em> as <em class="alt">DbCoerceValue</em>.</p></li>
+<li><p><em>IClientDb</em> <em class="alt">function</em> <strong>hasCache</strong> argument <em class="target">override</em> as <em class="alt">DbCacheValue</em>.</p></li>
+<li><p><em>IClientDb</em> <em class="alt">function</em> <strong>hasCoerce</strong> argument <em class="target">override</em> as <em class="alt">DbCoerceValue</em>.</p></li>
 </ul>
 </div>
 </section>

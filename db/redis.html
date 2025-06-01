@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redis &mdash; E-mc 0.12.1 documentation</title>
+  <title>Redis &mdash; E-mc 0.12.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c5b435e8"></script>
+      <script src="../_static/documentation_options.js?v=56343b9b"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -64,6 +64,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#authentication">Authentication</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-usage">Example usage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pi-r-redis">&#64;pi-r/redis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pi-r2-redis">&#64;pi-r2/redis</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mssql.html">SQL Server</a></li>
@@ -106,21 +107,23 @@
 <h1>Redis<a class="headerlink" href="#redis" title="Link to this heading"></a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://redis.io/downloads/#redis-stack-downloads">Redis Stack</a></p></li>
-<li><p><strong>npm</strong> i <em>&#64;pi-r/redis</em></p></li>
+<li><p><strong>npm</strong> i <em>&#64;pi-r/redis</em> <em class="alt">(4.x)</em></p></li>
+<li><p><strong>npm</strong> i <em>&#64;pi-r2/redis</em> <em class="alt">(5.x)</em></p></li>
 </ul>
 <section id="interface">
 <h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CommandOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/client/dist/lib/command-options&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ClientCommandOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/client/dist/lib/client&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ScanOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/client/dist/lib/commands/generic-transformers&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RedisClientOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/client&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RediSearchSchema</span><span class="p">,</span><span class="w"> </span><span class="nx">SearchOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RediSearchSchema</span><span class="p">,</span><span class="w"> </span><span class="nx">RedisClientOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">SearchOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span>
 
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CreateOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/search/dist/commands/CREATE&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Internal</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AggregateOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/search/dist/commands/AGGREGATE&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CommandOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/client/dist/lib/client/commands-queue&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ScanOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/client/dist/lib/commands/SCAN&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">JsonGetOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/json/dist/lib/commands/GET&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CreateOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/search/dist/lib/commands/CREATE&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FtAggregateOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/search/dist/lib/commands/AGGREGATE&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FtSearchOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/search/dist/lib/commands/SEARCH&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">RedisDataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 4.x</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;@pi-r2/redis&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 5.x</span>
 
 <span class="w">    </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// redis://&lt;username&gt;:&lt;password&gt;@hostname:6379</span>
 <span class="w">    </span><span class="nx">username?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// redis://hostname:6379</span>
@@ -129,28 +132,30 @@
 <span class="w">    </span><span class="nx">database?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 
 <span class="w">    </span><span class="nx">format</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;HASH&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;JSON&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HKEYS&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HVALS&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HSCAN&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Default is &quot;HASH&quot;</span>
-<span class="w">    </span><span class="nx">key?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">)[];</span>
-<span class="w">    </span><span class="nx">field?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">key?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisArgument</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">RedisArgument</span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">field?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisArgument</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">path?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// JSONPath</span>
 
-<span class="w">    </span><span class="nx">cursor?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">[];</span><span class="w"> </span><span class="c1">// Scan</span>
+<span class="w">    </span><span class="cm">/* Scan */</span>
+<span class="w">    </span><span class="nx">cursor?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">[];</span><span class="w"> </span><span class="c1">// 4.x</span>
+<span class="w">    </span><span class="nx">cursor?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisArgument</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">RedisArgument</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">[];</span><span class="w"> </span><span class="c1">// 5.x</span>
 <span class="w">    </span><span class="nx">iterations?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">[];</span>
 
 <span class="w">    </span><span class="nx">search</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Preexisting schema</span>
+<span class="w">        </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">schema?</span><span class="o">:</span><span class="w"> </span><span class="kt">RediSearchSchema</span><span class="p">;</span><span class="w"> </span><span class="c1">// Temporary schema</span>
 <span class="w">        </span><span class="nx">schema?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// settings.directory.schema + users/username/?</span>
-<span class="w">        </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">CreateOptions</span><span class="p">;</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="w">    </span><span class="nx">aggregate</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">};</span>
 
 <span class="w">    </span><span class="nx">options</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">client?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisClientOptions</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">command?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisCommandOptions</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">get?</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">search?</span><span class="o">:</span><span class="w"> </span><span class="kt">SearchOptions</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">aggregate?</span><span class="o">:</span><span class="w"> </span><span class="kt">AggregateOptions</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">command?</span><span class="o">:</span><span class="w"> </span><span class="kt">CommandOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// client.commandOptions (5.x)</span>
+<span class="w">        </span><span class="nx">get?</span><span class="o">:</span><span class="w"> </span><span class="kt">JsonGetOptions</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">search?</span><span class="o">:</span><span class="w"> </span><span class="kt">FtSearchOptions</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">aggregate?</span><span class="o">:</span><span class="w"> </span><span class="kt">FtAggregateOptions</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">scan?</span><span class="o">:</span><span class="w"> </span><span class="kt">ScanOptions</span><span class="p">;</span>
 <span class="w">    </span><span class="p">};</span>
 
@@ -169,11 +174,14 @@
 <span class="w">    </span><span class="p">};</span>
 <span class="p">}</span>
 
+<span class="kr">type</span><span class="w"> </span><span class="nx">RedisArgument</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">;</span>
 <span class="kr">type</span><span class="w"> </span><span class="nx">RedisCredential</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ServerAuth</span><span class="p">;</span>
 </pre></div>
 </div>
 <section id="pool">
 <h3>Pool<a class="headerlink" href="#pool" title="Link to this heading"></a></h3>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">4.x</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RedisClientOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// using isolationPoolOptions</span>
@@ -186,12 +194,25 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">5.x</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RedisPoolOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// using RedisPoolOptions</span>
+<span class="w">    </span><span class="nx">min?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// minimum</span>
+<span class="w">    </span><span class="nx">max?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// maximum</span>
+<span class="w">    </span><span class="nx">timeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// acquireTimeout</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 <section id="authentication">
 <h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading"></a></h2>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">squared.db.json</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">squared.db.json</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;redis&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -201,6 +222,11 @@
 <span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="c1">// SELECT index (number &gt; 0)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;imports&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;redis&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r2/redis&quot;</span><span class="w"> </span><span class="c1">// Optional</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -273,7 +299,7 @@
 <span class="w">    </span><span class="nt">&quot;usePool&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;client&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;isolationPoolOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;isolationPoolOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 4.x</span>
 <span class="w">          </span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">          </span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
 <span class="w">        </span><span class="p">}</span>
@@ -291,9 +317,24 @@
 <section id="pi-r-redis">
 <h2>&#64;pi-r/redis<a class="headerlink" href="#pi-r-redis" title="Link to this heading"></a></h2>
 <div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.1: </span></p>
+<ul class="simple">
+<li><p><em>DbPool</em> static property <strong>CACHE_IGNORE</strong> through <em class="target">&#64;pi-r/redis/client/pool</em> as <em class="alt">keyof RedisClientOptions</em> was implemented.</p></li>
+</ul>
+</div>
+<div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.0: </span></p>
 <ul class="simple">
 <li><p><em>RedisDataSource</em> property <strong>format</strong> with type “<strong>HSCAN</strong>” and optional argument <em class="target">cursor</em> | <em class="target">iterations</em> was implemented.</p></li>
+</ul>
+</div>
+</section>
+<section id="pi-r2-redis">
+<h2>&#64;pi-r2/redis<a class="headerlink" href="#pi-r2-redis" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.2.0: </span></p>
+<ul class="simple">
+<li><p>Staging package for the <code class="docutils literal notranslate"><span class="pre">redis</span> <span class="pre">5.x</span></code> release was created.</p></li>
 </ul>
 </div>
 </section>

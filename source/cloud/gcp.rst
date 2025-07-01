@@ -18,7 +18,6 @@ Interface
 ---------
 
 .. code-block:: typescript
-  :emphasize-lines: 13
 
   import type { StorageOptions } from "@google-cloud/storage";
   import type { FirebaseOptions } from "@firebase/app";
@@ -212,7 +211,6 @@ Interface
 ---------
 
 .. code-block:: typescript
-  :emphasize-lines: 11,19-20
 
   import type { GoogleAuthOptions } from "google-auth-library";
   import type { AggregateSpec } from "@google-cloud/firestore";
@@ -239,6 +237,7 @@ Interface
   interface GCPDatabaseCredential extends GoogleAuthOptions {/* Empty */}
 
   type DatastoreKey = string | PathType[] | entity.KeyOptions;
+  type Document = Record<string, any>;
 
 Authentication
 --------------

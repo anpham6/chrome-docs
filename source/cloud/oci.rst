@@ -90,7 +90,6 @@ Interface
 ---------
 
 .. code-block:: typescript
-  :emphasize-lines: 12,13
 
   import type { BindParameters, ConnectionAttributes, ExecuteOptions, InitialiseOptions } from "oracledb";
 

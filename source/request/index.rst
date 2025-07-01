@@ -26,7 +26,6 @@ Configuation
 
 .. code-block::
   :caption: squared.json [#opt]_
-  :emphasize-lines: 24-30
 
   {
     "download": {

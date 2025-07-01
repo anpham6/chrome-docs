@@ -15,7 +15,6 @@ Interface
 ---------
 
 .. code-block:: typescript
-  :emphasize-lines: 13-14
 
   interface AzureStorage extends CloudStorage {
       service: "azure" | "az";

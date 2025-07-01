@@ -7,7 +7,6 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 20,47-48,52-54
 
   import type { LogArguments } from "./lib/logger";
 

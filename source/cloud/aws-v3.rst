@@ -206,7 +206,6 @@ Interface
 ---------
 
 .. code-block:: typescript
-  :emphasize-lines: 11
 
   import type { DynamoDBClientConfig, QueryCommandInput, ScanCommandInput } from "@aws-sdk/client-dynamodb";
   import type { BatchGetCommandInput, NativeAttributeValue, TranslateConfig, TransactGetItemsCommandInput, UpdateCommandInput } from "@aws-sdk/lib-dynamodb";

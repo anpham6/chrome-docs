@@ -9,7 +9,6 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 56-57,133-149,151-155,157-197,199-205,220,222,224,226
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -311,7 +310,6 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 21-26
 
   import type { ExecOptions } from "./settings";
 

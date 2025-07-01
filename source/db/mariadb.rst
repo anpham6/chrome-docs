@@ -28,7 +28,6 @@ Pool
 ----
 
 .. code-block:: typescript
-  :emphasize-lines: 10
 
   import type { PoolConfig } from "mariadb";
 

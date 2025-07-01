@@ -9,7 +9,6 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 21-22,29,37
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { BrotliCompressLevel, BufferResult, CompressFormat, CompressLevel, TryFileCompressor } from "./compress";

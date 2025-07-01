@@ -54,7 +54,6 @@ Pool
 ----
 
 .. code-block:: typescript
-  :emphasize-lines: 11
 
   import type { MongoClientOptions } from "mongodb";
 

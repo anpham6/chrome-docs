@@ -6,7 +6,6 @@ Each data source provider will associate each client setting with their equivale
 
 .. code-block:: typescript
   :caption: squared.db.json
-  :emphasize-lines: 9
 
   interface PoolConfig {
       min?: number; // Minimum connections

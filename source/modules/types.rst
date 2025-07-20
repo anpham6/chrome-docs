@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 20,47-48,52-54
+  :emphasize-lines: 20,48-49,53-55
 
   import type { LogArguments } from "./lib/logger";
 
@@ -28,6 +28,7 @@ Interface
   function getLogCurrent(): LogArguments | null;
   function setLogCurrent(value: LogArguments): void;
   function setTempDir(value: string): boolean;
+  function getTempDir(create: true, prefix?: string): string;
   function getTempDir(...values: string[]): string;
   function isArray(value: unknown): value is unknown[];
   function isObject(value: unknown): value is object;
@@ -201,6 +202,10 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.12.4
+
+  - :alt:`function` **getTempDir** argument :target:`create` as :alt:`boolean` using **fs.mkdtemp** was implemented.
 
 .. versionchanged:: 0.12.2
 

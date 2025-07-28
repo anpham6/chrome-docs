@@ -116,8 +116,8 @@ The entire page can be transformed as a group with the same functionality as JSO
         preserve: true,
         attributes: { rel: "stylesheet", media: "all" },
         inlineAction: true, // merge + override
-        inlineAction: "merge", // { "media": "screen" } -> { "rel": "stylesheet", "media": "screen" }
-        inlineAction: "override" // { "rel": "alternate" } -> { "rel": "alternate" }
+        inlineAction: "merge", // { media: "screen" } -> { rel: "stylesheet", media: "screen" }
+        inlineAction: "override" // { rel: "alternate" } -> { rel: "alternate" }
       },
       image: {
         attributes: { loading: "lazy", width: "detect", height: "detect" },
@@ -238,6 +238,73 @@ Build time during development can be optimized at the global and asset level.
     }
   });
 
+.. _build-external-authentication:
+
+External authentication
+=======================
+
+Non-JWT access is supported when using **squared-express** [#]_ and `Express 5 <https://expressjs.com>`_. *Firebase* is used as the reference implementation and requires additional configuration.
+
+- **npm** i *firebase* (username|token)
+- **npm** i *firebase-admin* (uid|token)
+
+.. code-block:: json
+  :caption: squared.auth.json
+
+  {
+    "providers": {
+      "firebase": { // FirebaseOptions
+        "projectId": "squared-123456",", // API Keys (https://console.cloud.google.com/apis/credentials)
+        "apiKey": "PbzaryCxqzE2smem1pPzvExwfJRaXA81h0FdB42
+        "authDomain": "squared-123456.firebaseapp.com",
+        "storageBucket": "squared-123456.appspot.com"
+      },
+      "firebase-admin": { // ServiceAccount
+        "projectId": "squared-123456", // Keys (https://console.cloud.google.com/iam-admin/serviceaccounts/details)
+        "privateKey": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBK\n-----END PRIVATE KEY-----\n",
+        "clientEmail": "firebase-adminsdk-fbsvc@squared-123456.iam.gserviceaccount.com",
+      },
+      "firebase-admin": "./cloud/auth/gcp/squared-123456-4e1c2290e638.json",
+      "firebase-admin": true, // FIREBASE_CONFIG
+      "cognito": "./cloud/auth/aws/cognito.cjs" // User extension method
+    },
+    "settings": {
+      "exclude": {
+        "realm": ["firebase-admin"], // Use only username and not domain (e.g. username@domain.com)
+        "users": ["osaka"] // Do not permit user "osaka" from authenticating
+      }
+    }
+  }
+
+.. tip:: Use ``squared.auth.cjs`` to define inline asynchronous methods for any authentication provider.
+
+.. code-block::
+  :caption: Username
+
+  squared.saveAs("output.zip", {
+    auth: {
+      username: "mongodb",
+      password: "fighters",
+      realm: "firebase" // Same as authProvider
+    }
+  });
+
+.. code-block::
+  :caption: Custom JWT token
+
+  squared.saveAs("output.zip", {
+    auth: "xxxxx.yyyyy.zzzzz"
+    authProvider: "firebase" // Recommended
+  });
+
+.. code-block::
+  :caption: UID
+
+  squared.saveAs("output.zip", {
+    auth: "7EymzDz4X7UJKmDDITeqfZl0nNKv"
+    authProvider: "firebase-admin"
+  });
+
 .. _build-using-sqd-config:
 
 Using sqd.config
@@ -259,7 +326,7 @@ The base folder level configuration file is a hash map of URL globs which can ma
 
 The hash key ``**/example*\\.html`` will only match either 1 and 2 or 3 and 4.
 
-.. code-block::
+.. code-block:: json
   :caption: sqd.config
 
   {
@@ -310,7 +377,7 @@ The order of precedence when using :target:`inherit` is resolved through the ass
 .. code-block::
   :caption: Globs are concatenated
 
-  squared.saveAs("/path/output", {
+  squared.saveAs("output.zip", {
     config: {
       uri: true,
       inherit: true, // Duplicate selectors are replaced
@@ -347,20 +414,20 @@ There is no difference between using :doc:`data sources <document/data>` for a w
       },
       document: "chrome", // Required with DB
       dataSource: [{
-        "source": "redis",
-        "uri": "redis://redis-6379.redislabs.com:6379",
-        "username": "squared",
-        "password": "************",
-        "key": "config:1",
-        "format": "JSON"
+        source: "redis",
+        uri: "redis://redis-6379.redislabs.com:6379",
+        username: "squared",
+        password: "************",
+        key: "config:1",
+        format: "JSON"
       },
       {
-        "source": "redis",
-        "uri": "redis://redis-6379.redislabs.com:6379",
-        "username": "squared",
-        "password": "************",
-        "key": "config:2",
-        "format": "JSON"
+        source: "redis",
+        uri: "redis://redis-6379.redislabs.com:6379",
+        username: "squared",
+        password: "************",
+        key: "config:2",
+        format: "JSON"
       }]
     }
   });
@@ -373,32 +440,32 @@ There is no difference between using :doc:`data sources <document/data>` for a w
   squared.copyTo("/path/output", {
     config: {
       dataSource: [{
-        "source": "cloud",
-        "service": "aws-v3",
-        "credential": {
-          "credentials": {
-            "accessKeyId": "************",
-            "secretAccessKey": "************"
+        source: "cloud",
+        service: "aws-v3",
+        credential: {
+          credentials: {
+            accessKeyId: "************",
+            secretAccessKey: "************"
           }
         },
-        "table": "demo",
-        "query": {
-          "KeyConditionExpression": "#name = :value",
-          "ExpressionAttributeNames": {
+        table: "demo",
+        query: {
+          KeyConditionExpression: "#name = :value",
+          ExpressionAttributeNames: {
             "#name": "id"
           },
-          "ExpressionAttributeValues": {
+          ExpressionAttributeValues: {
             ":value": 1
           }
         },
-        "limit": 1
+        limit: 1
       },
       {
-        "source": "cloud",
-        "service": "gcp",
-        "credential": "firestore-config",
-        "query": "demo",
-        "orderBy": [
+        source: "cloud",
+        service: "gcp",
+        credential: "firestore-config",
+        query: "demo",
+        orderBy: [
           [
             "orderByKey"
           ],
@@ -414,3 +481,4 @@ There is no difference between using :doc:`data sources <document/data>` for a w
 .. [#] https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap
 .. [#] npm i json5
 .. [#] npm i toml
+.. [#] squared-express 4.0 + sqd-serve 0.18

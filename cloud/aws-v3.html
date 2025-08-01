@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amazon Web Services &mdash; E-mc 0.12.3 documentation</title>
+  <title>Amazon Web Services &mdash; E-mc 0.12.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=56343b9b"></script>
+      <script src="../_static/documentation_options.js?v=9dbdab56"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -317,8 +317,8 @@
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">AWSDatabaseCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">key?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">AttributeKey</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">QueryCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">NativeAttributeValue</span><span class="o">&gt;</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="hll"><span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchGetCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ScanCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">TransactGetItemsCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">NativeAttributeValue</span><span class="p">[];</span>
-</span><span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">UpdateCommandInput</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">BatchGetCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ScanCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">TransactGetItemsCommandInput</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">NativeAttributeValue</span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">UpdateCommandInput</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">AWSDatabaseCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DynamoDBClientConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">AWSBaseCredential</span><span class="w"> </span><span class="p">{</span>

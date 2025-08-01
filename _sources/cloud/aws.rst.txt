@@ -194,7 +194,6 @@ Interface
 ---------
 
 .. code-block:: typescript
-  :emphasize-lines: 9
 
   import type { DocumentClient, Types } from "aws-sdk/clients/dynamodb";
 

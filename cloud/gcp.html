@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Cloud Platform &mdash; E-mc 0.12.3 documentation</title>
+  <title>Google Cloud Platform &mdash; E-mc 0.12.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=56343b9b"></script>
+      <script src="../_static/documentation_options.js?v=9dbdab56"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -134,8 +134,8 @@
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">GCPStorageCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">StorageOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">FirebaseOptions</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">product</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;firebase&quot;</span><span class="p">;</span>
-<span class="hll"><span class="w">    </span><span class="nx">admin?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ServiceAccount</span><span class="p">;</span>
-</span><span class="p">}</span>
+<span class="w">    </span><span class="nx">admin?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ServiceAccount</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <section id="api">
@@ -327,21 +327,22 @@
 <span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;gcloud&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">GCPDatabaseCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">product</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;firestore&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;bigquery&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;bigtable&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;datastore&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;spanner&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;firebase&quot;</span><span class="p">;</span>
-<span class="hll"><span class="w">    </span><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
-</span><span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">unknown</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Document</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">unknown</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Document</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">database?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">updateType?</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">columns?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">keys?</span><span class="o">:</span><span class="w"> </span><span class="kt">DatastoreKey</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">DatastoreKey</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">kind?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">orderBy?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[][];</span>
-<span class="hll"><span class="w">    </span><span class="nx">aggregateSpec?</span><span class="o">:</span><span class="w"> </span><span class="kt">AggregateSpec</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">flags?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
-</span><span class="p">}</span>
+<span class="w">    </span><span class="nx">aggregateSpec?</span><span class="o">:</span><span class="w"> </span><span class="kt">AggregateSpec</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">flags?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">GCPDatabaseCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">GoogleAuthOptions</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Empty */</span><span class="p">}</span>
 
 <span class="kr">type</span><span class="w"> </span><span class="nx">DatastoreKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">PathType</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">entity</span><span class="p">.</span><span class="nx">KeyOptions</span><span class="p">;</span>
+<span class="kr">type</span><span class="w"> </span><span class="nx">Document</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>

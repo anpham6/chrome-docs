@@ -26,7 +26,6 @@ Pool
 ----
 
 .. code-block:: typescript
-  :emphasize-lines: 10
 
   import type { PoolAttributes } from "oracledb";
 

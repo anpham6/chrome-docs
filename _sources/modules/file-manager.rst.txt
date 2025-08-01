@@ -9,7 +9,6 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 101,131
 
   import type { DataSource, IncrementalMatch, TaskAction } from "./squared";
 
@@ -259,7 +258,6 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 38
 
   import type { BackgroundColor, ForegroundColor, LoggerProgress } from "./logger";
 

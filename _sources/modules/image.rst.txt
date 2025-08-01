@@ -9,7 +9,6 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 23,29-35,41
 
   import type { IHost, ModuleConstructor } from "./index";
   import type { IFileThread } from "./asset";

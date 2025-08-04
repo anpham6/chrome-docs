@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 20,48-49,53-55
+  :emphasize-lines: 20,48-49,53-55,57
 
   import type { LogArguments } from "./lib/logger";
 
@@ -69,7 +69,8 @@ Interface
   function errorMessage(title: number | string, value: string, hint?: string): Error;
   function supported(major: number, minor: number, lts: boolean): boolean;
   function supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
-  function importESM<T = unknown>(name: string, fromPath?: boolean): Promise<T>;
+  function importESM(name: string | URL, isDefault: boolean, fromPath?: boolean): Promise<unknown>;
+  function importESM(name: string | URL, options?: ImportAttributes, fromPath?: boolean): Promise<unknown>;
   function purgeMemory(percent?: number): number;
 
   interface LOG_TYPE {
@@ -138,6 +139,7 @@ Interface
 
   interface ERR_CODE {
       MODULE_NOT_FOUND: "MODULE_NOT_FOUND";
+      ERR_MODULE_NOT_FOUND: "ERR_MODULE_NOT_FOUND";
   }
 
   interface DOWNLOAD_TYPE {
@@ -202,6 +204,10 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.12.5
+
+  - :alt:`function` **importESM** argument :target:`options` as :alt:`ImportAttributes` was implemented.
 
 .. versionchanged:: 0.12.4
 

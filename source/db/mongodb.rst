@@ -11,6 +11,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :emphasize-lines: 15,37
 
   import type * as "m" from "mongodb";
 
@@ -23,9 +24,10 @@ Interface
       credential: string | MongoDBCredential;
 
       id?: string; // Uses ObjectId
-      query?: m.Filter<m.Document> | MongoDBFilterValue;
-      query?: { value: m.Filter<m.Document>, options: m.CommandOperationOptions }; // "value" is required when using "options"
+      query?: m.Filter<m.Document>;
+      query?: { value: m.Filter<m.Document>, options?: m.CommandOperationOptions };
       aggregate?: m.Document[] | { pipeline: m.Document[], options: m.AggregateOptions };
+      distinct?: keyof m.WithId<m.Document> | [keyof m.WithId<m.Document>, Filter<m.Document>?, m.DistinctOptions?];
 
       command?: m.Document | m.Document[]; // Calls m.runCommand before any queries
       bulkWrite?: m.ClientBulkWriteModel[]; // Calls m.bulkWrite before any queries
@@ -46,6 +48,8 @@ Interface
       };
 
       sort?: string | m.Sort | { value: m.Sort, direction: m.SortDirection };
+
+      driverInfo?: m.DriverInfo; // appendMetadata
   }
 
   interface MongoDBCredential extends ServerAuth, m.MongoClientOptions {/* Empty */}
@@ -179,6 +183,11 @@ Example usage
 
 @pi-r/mongodb
 =============
+
+.. versionadded:: 0.10.2
+
+  - *MongoDBDataSource* property **distinct** for values for a specified field across a single collection was implemented.
+  - *MongoDBDataSource* property **driverInfo** for driver information :alt:`(name/version/platform)` was implemented.
 
 .. versionadded:: 0.10.0
 

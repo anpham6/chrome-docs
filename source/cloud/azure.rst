@@ -175,8 +175,9 @@ Interface
 ---------
 
 .. code-block:: typescript
+  :emphasize-lines: 10
 
-  import type { CosmosClientOptions, FeedOptions, PartitionKey, PatchRequestBody, RequestOptions, SqlQuerySpec } from "@azure/cosmos";
+  import type { CosmosClientOptions, FeedOptions, OperationInput, PartitionKey, PatchRequestBody, RequestOptions, SqlQuerySpec } from "@azure/cosmos";
 
   interface AzureDatabaseQuery extends CloudDatabase {
       source: "cloud";
@@ -185,7 +186,7 @@ Interface
       name: string;
       table: string;
       query?: string | SqlQuerySpec;
-      params?: unknown[];
+      params?: unknown[] | OperationInput[];
       partitionKey?: PartitionKey;
       options?: FeedOptions | RequestOptions;
       update?: PatchRequestBody | Reord<string, unknown>;
@@ -287,6 +288,10 @@ Example usage
 
 @pi-r/azure
 ===========
+
+.. versionadded:: 0.10.2
+
+  - *AzureDatabaseQuery* property **params** as :target:`OperationInput[]` for Bulk API was implemented.
 
 .. versionadded:: 0.10.0
 

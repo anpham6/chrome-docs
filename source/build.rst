@@ -254,15 +254,15 @@ Non-JWT access is supported when using **squared-express** [#]_ and `Express 5 <
   {
     "providers": {
       "firebase": { // FirebaseOptions
-        "projectId": "squared-123456",", // API Keys (https://console.cloud.google.com/apis/credentials)
-        "apiKey": "PbzaryCxqzE2smem1pPzvExwfJRaXA81h0FdB42
+        "projectId": "squared-123456", // API Keys (https://console.cloud.google.com/apis/credentials)
+        "apiKey": "PbzaryCxqzE2smem1pPzvExwfJRaXA81h0FdB42",
         "authDomain": "squared-123456.firebaseapp.com",
         "storageBucket": "squared-123456.appspot.com"
       },
       "firebase-admin": { // ServiceAccount
         "projectId": "squared-123456", // Keys (https://console.cloud.google.com/iam-admin/serviceaccounts/details)
         "privateKey": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBK\n-----END PRIVATE KEY-----\n",
-        "clientEmail": "firebase-adminsdk-fbsvc@squared-123456.iam.gserviceaccount.com",
+        "clientEmail": "firebase-adminsdk-fbsvc@squared-123456.iam.gserviceaccount.com"
       },
       "firebase-admin": "./cloud/auth/gcp/squared-123456-4e1c2290e638.json",
       "firebase-admin": true, // FIREBASE_CONFIG

@@ -25,7 +25,7 @@ Examples use **squared** :alt:`5` and **chrome** as the reference framework. The
 NodeJS 18
 =========
 
-- `0.12.4 <https://github.com/anpham6/e-mc/releases/tag/v0.12.4>`_
+- `0.12.5 <https://github.com/anpham6/e-mc/releases/tag/v0.12.5>`_
 
 NodeJS 16 LTS
 =============

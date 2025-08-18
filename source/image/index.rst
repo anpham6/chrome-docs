@@ -299,6 +299,10 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 @pi-r/jimp
 ==========
 
+.. versionadded:: 0.11.0
+
+  - *NPM* package ``jimp`` was upgraded to **1.6.0**.
+
 .. versionadded:: 0.10.0
 
   - *Jimp* rotate strategy mode **nearest** | **none** were implemented.
@@ -321,6 +325,10 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 
 @pi-r2/jimp
 ===========
+
+.. versionchanged:: 0.3.0
+
+  - Package will be published under ``@pi-r/jimp`` and developed under ``@pi-r2/jimp`` for future releases.
 
 .. versionadded:: 0.2.0
 

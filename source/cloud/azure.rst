@@ -47,11 +47,17 @@ Authentication
 - `Shared Access Signatures <https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview>`_
 
 .. code-block:: javascript
-  :caption: using process.env
+  :caption: EnvironmentCredential
 
-  AZURE_TENANT_ID = ""; // DefaultAzureCredential
+  AZURE_TENANT_ID = "";
   AZURE_CLIENT_ID = "";
   AZURE_CLIENT_SECRET = "";
+  /* OR */
+  AZURE_TENANT_ID = "";
+  AZURE_CLIENT_ID = "";
+  AZURE_CLIENT_CERTIFICATE_PATH = "";
+  AZURE_CLIENT_CERTIFICATE_PASSWORD = ""; // Optional
+  AZURE_CLIENT_SEND_CERTIFICATE_CHAIN = "";
 
 ::
 
@@ -288,6 +294,10 @@ Example usage
 
 @pi-r/azure
 ===========
+
+.. versionchanged:: 0.11.0
+
+  - *EnvironmentCredential* from **@azure/identity** is enforced when qualified for default authentication.
 
 .. versionadded:: 0.10.2
 

@@ -199,9 +199,9 @@ Using local file
 
   export default async function (context, value, options) {
     return await context.transform(`/* ${ID++} */` + value, options.outputConfig).code;
-  }``.mjs``.
+  }
 
-.. caution:: The ``.js`` extension uses the "**type**" value in your *package.json* to determine which module loader to use. It is better to be explicit using either ``.cjs`` or 
+.. caution:: The ``.js`` extension uses the "**type**" value in your *package.json* to determine which module loader to use. It is better to be explicit using either ``.cjs`` or ``.mjs``.
 
 Using custom package
 ====================
@@ -234,6 +234,39 @@ You can create or use a package from NPM which will behave like a built-in trans
                   "sourceMap": true
                 }
               }
+            }
+          }
+        }
+      }
+    }
+  }
+
+You can create aliases with your own handling routine to wrap any *NPM* package.
+
+::
+
+  {
+    "document": {
+      "chrome": {
+        "settings": {
+          "transform": {
+            "imports": {
+              /* @pi-r - e-mc + squared-express */
+              "@babel/core": "@pi-r/babel",
+
+              /* @pi-r2 - e-mc */
+              "clean-css": "@pi-r2/clean-css", // Unmaintained
+              "csso": "@pi-r2/clean-css",
+              "html-minifier": "@pi-r2/html-minifier",
+              "html-minifier-terser": "@pi-r2/html-minifier-terser",
+              "svgo": "@pi-r2/svgo",
+              "uglify-js": "@pi-r2/uglify-js",
+
+              /* Custom - Add */
+              "webpack": "webpack-custom",
+
+              /* Custom - Replace */
+              "@babel/core": "babel-custom"
             }
           }
         }

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Settings &mdash; E-mc 0.12.4 documentation</title>
+  <title>Settings &mdash; E-mc 0.12.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=9dbdab56"></script>
+      <script src="../../_static/documentation_options.js?v=0e3da525"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
 
           
           
@@ -84,7 +84,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">E-mc</a>
       </nav>
@@ -300,13 +300,13 @@
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="sb">`/* </span><span class="si">${</span><span class="nx">ID</span><span class="o">++</span><span class="si">}</span><span class="sb"> */`</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">outputConfig</span><span class="p">).</span><span class="nx">code</span><span class="p">;</span>
-<span class="p">}</span><span class="sb">``</span><span class="p">.</span><span class="nx">mjs</span><span class="sb">``</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">.js</span></code> extension uses the “<strong>type</strong>” value in your <em>package.json</em> to determine which module loader to use. It is better to be explicit using either <code class="docutils literal notranslate"><span class="pre">.cjs</span></code> or</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.js</span></code> extension uses the “<strong>type</strong>” value in your <em>package.json</em> to determine which module loader to use. It is better to be explicit using either <code class="docutils literal notranslate"><span class="pre">.cjs</span></code> or <code class="docutils literal notranslate"><span class="pre">.mjs</span></code>.</p>
 </div>
 </section>
 <section id="using-custom-package">
@@ -336,6 +336,37 @@
 <span class="w">                </span><span class="nt">&quot;sourceMap&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can create aliases with your own handling routine to wrap any <em>NPM</em> package.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;document&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;chrome&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;transform&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;imports&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="cm">/* @pi-r - e-mc + squared-express */</span>
+<span class="w">            </span><span class="nt">&quot;@babel/core&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/babel&quot;</span><span class="p">,</span>
+
+<span class="w">            </span><span class="cm">/* @pi-r2 - e-mc */</span>
+<span class="w">            </span><span class="nt">&quot;clean-css&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r2/clean-css&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Unmaintained</span>
+<span class="w">            </span><span class="nt">&quot;csso&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r2/clean-css&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;html-minifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r2/html-minifier&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;html-minifier-terser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r2/html-minifier-terser&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;svgo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r2/svgo&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;uglify-js&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r2/uglify-js&quot;</span><span class="p">,</span>
+
+<span class="w">            </span><span class="cm">/* Custom - Add */</span>
+<span class="w">            </span><span class="nt">&quot;webpack&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;webpack-custom&quot;</span><span class="p">,</span>
+
+<span class="w">            </span><span class="cm">/* Custom - Replace */</span>
+<span class="w">            </span><span class="nt">&quot;@babel/core&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;babel-custom&quot;</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}</span>

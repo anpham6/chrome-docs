@@ -15,6 +15,7 @@ Interface
 
   import type { CommandOptions } from "@redis/client/dist/lib/client/commands-queue";
   import type { ScanOptions } from "@redis/client/dist/lib/commands/SCAN";
+  import type { XReadOptions, XReadStreams } from '@redis/client/dist/lib/commands/XREAD';
   import type { JsonGetOptions } from "@redis/json/dist/lib/commands/GET";
   import type { CreateOptions } from "@redis/search/dist/lib/commands/CREATE";
   import type { FtAggregateOptions } from "@redis/search/dist/lib/commands/AGGREGATE";
@@ -30,7 +31,7 @@ Interface
       credential?: string | ServerAuth;
       database?: number;
 
-      format?: "HASH" | "JSON" | "HKEYS" | "HVALS" | "HSCAN"; // Default is "HASH"
+      format?: "HASH" | "JSON" | "HKEYS" | "HVALS" | "HSCAN" | "SMEMBERS"; // Default is "HASH"
       key?: RedisArgument | RedisArgument[];
       field?: RedisArgument;
       path?: string; // JSONPath
@@ -49,12 +50,15 @@ Interface
       };
       aggregate?: {/* Same */};
 
+      streams?: XReadStreams;
+
       options?: {
           client?: RedisClientOptions;
           command?: CommandOptions; // client.commandOptions (5.x)
           get?: JsonGetOptions;
           search?: FtSearchOptions;
           aggregate?: FtAggregateOptions;
+          xread?: XReadOptions;
           scan?: ScanOptions;
       };
 
@@ -210,6 +214,12 @@ Example usage
 @pi-r/redis
 ===========
 
+.. versionadded:: 0.11.0
+
+  - *NPM* package ``redis`` was upgraded to **5.8.0**.
+  - *RedisDataSource* property **streams** as :alt:`XReadStreams` was implemented.
+  - *RedisDataSource* property **format** with type "**SMEMBERS**" using :target:`key` as :alt:`string` was implemented.
+
 .. versionadded:: 0.10.1
 
   - *DbPool* static property **CACHE_IGNORE** through :target:`@pi-r/redis/client/pool` as :alt:`keyof RedisClientOptions` was implemented.
@@ -220,6 +230,10 @@ Example usage
 
 @pi-r2/redis
 ============
+
+.. deprecated:: 0.3.0
+
+  - Package will be published and developed under ``@pi-r/redis`` for future releases.
 
 .. versionadded:: 0.2.0
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Microsoft Azure &mdash; E-mc 0.12.4 documentation</title>
+  <title>Microsoft Azure &mdash; E-mc 0.12.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=9dbdab56"></script>
+      <script src="../_static/documentation_options.js?v=0e3da525"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
 
           
           
@@ -81,7 +81,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -149,10 +149,16 @@
 <li><p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview">Shared Access Signatures</a></p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">using process.env</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">AZURE_TENANT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// DefaultAzureCredential</span>
+<div class="code-block-caption"><span class="caption-text">EnvironmentCredential</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">AZURE_TENANT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
 <span class="nx">AZURE_CLIENT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
 <span class="nx">AZURE_CLIENT_SECRET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="cm">/* OR */</span>
+<span class="nx">AZURE_TENANT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nx">AZURE_CLIENT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nx">AZURE_CLIENT_CERTIFICATE_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nx">AZURE_CLIENT_CERTIFICATE_PASSWORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="nx">AZURE_CLIENT_SEND_CERTIFICATE_CHAIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -280,7 +286,7 @@
 </ul>
 <section id="id1">
 <h3>Interface<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CosmosClientOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">FeedOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">PartitionKey</span><span class="p">,</span><span class="w"> </span><span class="nx">PatchRequestBody</span><span class="p">,</span><span class="w"> </span><span class="nx">RequestOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">SqlQuerySpec</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@azure/cosmos&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CosmosClientOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">FeedOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">OperationInput</span><span class="p">,</span><span class="w"> </span><span class="nx">PartitionKey</span><span class="p">,</span><span class="w"> </span><span class="nx">PatchRequestBody</span><span class="p">,</span><span class="w"> </span><span class="nx">RequestOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">SqlQuerySpec</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@azure/cosmos&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">AzureDatabaseQuery</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudDatabase</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">;</span>
@@ -289,8 +295,8 @@
 <span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">table</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">SqlQuerySpec</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[];</span>
-<span class="w">    </span><span class="nx">partitionKey?</span><span class="o">:</span><span class="w"> </span><span class="kt">PartitionKey</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">OperationInput</span><span class="p">[];</span>
+</span><span class="w">    </span><span class="nx">partitionKey?</span><span class="o">:</span><span class="w"> </span><span class="kt">PartitionKey</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">FeedOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">RequestOptions</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">PatchRequestBody</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Reord</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">storedProcedureId?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
@@ -397,6 +403,18 @@
 </section>
 <section id="pi-r-azure">
 <h2>&#64;pi-r/azure<a class="headerlink" href="#pi-r-azure" title="Link to this heading"></a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
+<ul class="simple">
+<li><p><em>EnvironmentCredential</em> from <strong>&#64;azure/identity</strong> is enforced when qualified for default authentication.</p></li>
+</ul>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.2: </span></p>
+<ul class="simple">
+<li><p><em>AzureDatabaseQuery</em> property <strong>params</strong> as <em class="target">OperationInput[]</em> for Bulk API was implemented.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">

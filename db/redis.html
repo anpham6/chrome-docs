@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redis &mdash; E-mc 0.12.4 documentation</title>
+  <title>Redis &mdash; E-mc 0.12.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=9dbdab56"></script>
+      <script src="../_static/documentation_options.js?v=0e3da525"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
 
           
           
@@ -83,7 +83,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/004.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -116,6 +116,7 @@
 
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CommandOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/client/dist/lib/client/commands-queue&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ScanOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/client/dist/lib/commands/SCAN&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">XReadOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">XReadStreams</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@redis/client/dist/lib/commands/XREAD&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">JsonGetOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/json/dist/lib/commands/GET&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CreateOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/search/dist/lib/commands/CREATE&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FtAggregateOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/search/dist/lib/commands/AGGREGATE&quot;</span><span class="p">;</span>
@@ -131,7 +132,7 @@
 <span class="w">    </span><span class="nx">credential?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ServerAuth</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">database?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 
-<span class="w">    </span><span class="nx">format</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;HASH&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;JSON&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HKEYS&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HVALS&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HSCAN&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Default is &quot;HASH&quot;</span>
+<span class="w">    </span><span class="nx">format</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;HASH&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;JSON&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HKEYS&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HVALS&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;HSCAN&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;SMEMBERS&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Default is &quot;HASH&quot;</span>
 <span class="w">    </span><span class="nx">key?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisArgument</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">RedisArgument</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">field?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisArgument</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">path?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// JSONPath</span>
@@ -150,12 +151,15 @@
 <span class="w">    </span><span class="p">};</span>
 <span class="w">    </span><span class="nx">aggregate</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">};</span>
 
+<span class="w">    </span><span class="nx">streams?</span><span class="o">:</span><span class="w"> </span><span class="kt">XReadStreams</span><span class="p">;</span>
+
 <span class="w">    </span><span class="nx">options</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">client?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisClientOptions</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">command?</span><span class="o">:</span><span class="w"> </span><span class="kt">CommandOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// client.commandOptions (5.x)</span>
 <span class="w">        </span><span class="nx">get?</span><span class="o">:</span><span class="w"> </span><span class="kt">JsonGetOptions</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">search?</span><span class="o">:</span><span class="w"> </span><span class="kt">FtSearchOptions</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">aggregate?</span><span class="o">:</span><span class="w"> </span><span class="kt">FtAggregateOptions</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">xread?</span><span class="o">:</span><span class="w"> </span><span class="kt">XReadOptions</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">scan?</span><span class="o">:</span><span class="w"> </span><span class="kt">ScanOptions</span><span class="p">;</span>
 <span class="w">    </span><span class="p">};</span>
 
@@ -317,6 +321,14 @@
 <section id="pi-r-redis">
 <h2>&#64;pi-r/redis<a class="headerlink" href="#pi-r-redis" title="Link to this heading"></a></h2>
 <div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.0: </span></p>
+<ul class="simple">
+<li><p><em>NPM</em> package <code class="docutils literal notranslate"><span class="pre">redis</span></code> was upgraded to <strong>5.8.0</strong>.</p></li>
+<li><p><em>RedisDataSource</em> property <strong>streams</strong> as <em class="alt">XReadStreams</em> was implemented.</p></li>
+<li><p><em>RedisDataSource</em> property <strong>format</strong> with type “<strong>SMEMBERS</strong>” using <em class="target">key</em> as <em class="alt">string</em> was implemented.</p></li>
+</ul>
+</div>
+<div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.1: </span></p>
 <ul class="simple">
 <li><p><em>DbPool</em> static property <strong>CACHE_IGNORE</strong> through <em class="target">&#64;pi-r/redis/client/pool</em> as <em class="alt">keyof RedisClientOptions</em> was implemented.</p></li>
@@ -331,6 +343,12 @@
 </section>
 <section id="pi-r2-redis">
 <h2>&#64;pi-r2/redis<a class="headerlink" href="#pi-r2-redis" title="Link to this heading"></a></h2>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 0.3.0: </span></p>
+<ul class="simple">
+<li><p>Package will be published and developed under <code class="docutils literal notranslate"><span class="pre">&#64;pi-r/redis</span></code> for future releases.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.2.0: </span></p>
 <ul class="simple">

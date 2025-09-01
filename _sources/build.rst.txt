@@ -254,18 +254,18 @@ Non-JWT access is supported when using **squared-express** [#]_ and `Express 5 <
   {
     "providers": {
       "firebase": { // FirebaseOptions
-        "apiKey": "7e44bf04778a63c6766b04613386e40c21111349",
+        "projectId": "squared-123456", // API Keys (https://console.cloud.google.com/apis/credentials)
+        "apiKey": "PbzaryCxqzE2smem1pPzvExwfJRaXA81h0FdB42",
         "authDomain": "squared-123456.firebaseapp.com",
-        "projectId": "squared-123456",
         "storageBucket": "squared-123456.appspot.com"
       },
       "firebase-admin": { // ServiceAccount
-        "apiKey": "09590026ea923c7770117d74b4a80ea5e5361e97",
-        "authDomain": "squared-123456.firebaseapp.com",
-        "projectId": "squared-123456",
-        "databaseURL": "https://squared-123456-default-rtdb.firebaseio.com"
+        "projectId": "squared-123456", // Keys (https://console.cloud.google.com/iam-admin/serviceaccounts/details)
+        "privateKey": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBK\n-----END PRIVATE KEY-----\n",
+        "clientEmail": "firebase-adminsdk-fbsvc@squared-123456.iam.gserviceaccount.com"
       },
-      "firebase-admin": true, // applicationDefault()
+      "firebase-admin": "./cloud/auth/gcp/squared-123456-4e1c2290e638.json",
+      "firebase-admin": true, // FIREBASE_CONFIG
       "cognito": "./cloud/auth/aws/cognito.cjs" // User extension method
     },
     "settings": {

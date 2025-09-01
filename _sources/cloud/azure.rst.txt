@@ -47,11 +47,17 @@ Authentication
 - `Shared Access Signatures <https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview>`_
 
 .. code-block:: javascript
-  :caption: using process.env
+  :caption: EnvironmentCredential
 
-  AZURE_TENANT_ID = ""; // DefaultAzureCredential
+  AZURE_TENANT_ID = "";
   AZURE_CLIENT_ID = "";
   AZURE_CLIENT_SECRET = "";
+  /* OR */
+  AZURE_TENANT_ID = "";
+  AZURE_CLIENT_ID = "";
+  AZURE_CLIENT_CERTIFICATE_PATH = "";
+  AZURE_CLIENT_CERTIFICATE_PASSWORD = ""; // Optional
+  AZURE_CLIENT_SEND_CERTIFICATE_CHAIN = "";
 
 ::
 
@@ -175,8 +181,9 @@ Interface
 ---------
 
 .. code-block:: typescript
+  :emphasize-lines: 10
 
-  import type { CosmosClientOptions, FeedOptions, PartitionKey, PatchRequestBody, RequestOptions, SqlQuerySpec } from "@azure/cosmos";
+  import type { CosmosClientOptions, FeedOptions, OperationInput, PartitionKey, PatchRequestBody, RequestOptions, SqlQuerySpec } from "@azure/cosmos";
 
   interface AzureDatabaseQuery extends CloudDatabase {
       source: "cloud";
@@ -185,7 +192,7 @@ Interface
       name: string;
       table: string;
       query?: string | SqlQuerySpec;
-      params?: unknown[];
+      params?: unknown[] | OperationInput[];
       partitionKey?: PartitionKey;
       options?: FeedOptions | RequestOptions;
       update?: PatchRequestBody | Reord<string, unknown>;
@@ -287,6 +294,14 @@ Example usage
 
 @pi-r/azure
 ===========
+
+.. versionchanged:: 0.11.0
+
+  - *EnvironmentCredential* from **@azure/identity** is enforced when qualified for default authentication.
+
+.. versionadded:: 0.10.2
+
+  - *AzureDatabaseQuery* property **params** as :target:`OperationInput[]` for Bulk API was implemented.
 
 .. versionadded:: 0.10.0
 

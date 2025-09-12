@@ -248,6 +248,8 @@ Non-JWT access is supported when using **squared-express** [#]_ and `Express 5 <
 - **npm** i *firebase* (username|token)
 - **npm** i *firebase-admin* (uid|token)
 
+.. note:: NPM package ``squared-express-firebase`` is the recommended way to use *Firebase*. Starting with **squared-express 4.1.0** the provider was converted into an extension.
+
 .. code-block:: json
   :caption: squared.auth.json
 
@@ -269,6 +271,13 @@ Non-JWT access is supported when using **squared-express** [#]_ and `Express 5 <
       "cognito": "./cloud/auth/aws/cognito.cjs" // User extension method
     },
     "settings": {
+      "session": {
+        "extensions": [
+          "serve.auth.firebase.js",
+          /* OR */
+          "npm:squared-express-firebase"
+        ]
+      },
       "exclude": {
         "realm": ["firebase-admin"], // Use only username and not domain (e.g. username@domain.com)
         "users": ["osaka"] // Do not permit user "osaka" from authenticating

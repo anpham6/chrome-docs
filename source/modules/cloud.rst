@@ -103,7 +103,7 @@ Changelog
 
 .. versionchanged:: 0.13.0
 
-  - ``BREAKING`` *CloudConstructor* :alt:`function` **joinPath** was overriden to preserve spaces in paths when used on a *Win32* platform.
+  - ``BREAKING`` *CloudConstructor* :alt:`function` **joinPath** overrides *ModuleConstructor* to resolve :target:`object` paths with spaces on a *Win32* platform.
 
 .. versionadded:: 0.11.0
 

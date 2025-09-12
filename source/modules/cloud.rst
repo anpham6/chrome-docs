@@ -140,9 +140,7 @@ Settings
       "aws-v3"?: CloudStoredCredentials;
       azure?: CloudStoredCredentials; // az
       gcp?: CloudStoredCredentials; // gcloud
-      ibm?: CloudStoredCredentials;
       oci?: CloudStoredCredentials;
-      minio?: CloudStoredCredentials;
       settings?: {
           broadcast_id?: string | string[];
           users?: Record<string, Record<string, unknown>>;

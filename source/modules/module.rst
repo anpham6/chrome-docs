@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 186
 
   import type { LogStatus } from "./squared";
 
@@ -16,7 +17,7 @@ Interface
   import type { IAbortComponent, IPermission } from "./core";
   import type { ExecCommand, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, LoggerFormat, StatusType } from "./logger";
   import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, GetTempDirOptions, GlobDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
-  import type { Settings } from "./node";
+  import type { ErrorCode, Settings } from "./node";
   import type { LoggerFormatSettings } from "./settings";
 
   import type { SpawnOptions } from "node:child_process";
@@ -194,7 +195,8 @@ Interface
       isDir(value: string | URL): boolean;
       isPath(value: string | URL, type?: "unc" | "unc-exists"): boolean;
       isPath(value: string | URL, isFile?: boolean): boolean;
-      isErrorCode(err: unknown, ...code: string[]): boolean;
+      /** @deprecated @e-mc/types */
+      isErrorCode(err: unknown, ...code: unknown[]): err is Required<ErrorCode>;
       fromLocalPath(value: string): string;
       resolveFile(value: string): string;
       resolvePath(value: string, base: string | URL): string;
@@ -247,7 +249,11 @@ Interface
 Changelog
 =========
 
-.. versionchanged:: 0.13.0
+.. deprecated:: 0.13.0
+
+  - *ModuleConstructor* :alt:`function` **isErrorCode** was relocated into :doc:`types`.
+
+.. versionchanged:: 0.12.7/0.11.10/0.10.14/0.9.22
 
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **joinPath** preseves leading and trailing spaces for non-Windows paths.
 

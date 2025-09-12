@@ -295,6 +295,10 @@ Example usage
 @pi-r/azure
 ===========
 
+.. versionadded:: 0.11.0
+
+  - *AzureStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject`.
+
 .. versionchanged:: 0.11.0
 
   - *EnvironmentCredential* from **@azure/identity** is enforced when qualified for default authentication.

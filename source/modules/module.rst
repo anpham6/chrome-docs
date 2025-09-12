@@ -247,6 +247,10 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.13.0
+
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **joinPath** preseves leading and trailing spaces for non-Windows paths.
+
 .. versionchanged:: 0.12.2/0.11.9/0.10.13 
 
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **isURL** no longer uses :target:`URL.canParse` for validation.

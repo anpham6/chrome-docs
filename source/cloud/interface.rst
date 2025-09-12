@@ -16,6 +16,8 @@ Interface
 
 .. code-block:: typescript
 
+  import type { CopyObjectAction } from "../types/cloud";
+
   interface CloudStorage {
       service: string;
       credential: unknown;
@@ -55,7 +57,7 @@ Interface
       admin?: CloudStorageAdmin;
   }
 
-  interface CloudStorageUpload extends CloudStorageACL, CloudStorageAction {
+  interface CloudStorageUpload extends CloudStorageACL, CloudStorageAction, CopyObjectAction {
       buffer?: Buffer | null;
       contentType?: string;
       metadata?: Record<string, string>;
@@ -72,7 +74,7 @@ Interface
       acl?: string;
   }
 
-  interface CloudStorageDownload extends CloudStorageAction {
+  interface CloudStorageDownload extends CloudStorageAction, CopyObjectAction {
       keyname?: string;
       versionId?: string;
       options?: unknown;
@@ -82,6 +84,11 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.13.0
+
+  - *CloudStorageUpload* property **copyObject** for alternate bucket location was implemented.
+  - *CloudStorageDownload* property **copyObject** for emulating move/rename and delete semantics was implemented.
 
 .. versionadded:: 0.11.0
 
@@ -151,7 +158,7 @@ Storage
         "overwrite": true, // Always use current filename
 
         "contentType": "image/png", // Metadata has higher precedence (default is "application/octet-stream")
-        
+
         "minStreamSize": 0, // Always use readable stream
         "minStreamSize": "512mb", // Detect when to use readable stream (not limited to 2gb)
         "minStreamSize": -1, // Prefer transfer by Buffer (small files)
@@ -159,7 +166,21 @@ Storage
         "chunkSize": "8mb", // Part size of a parallel upload operation
         "chunkLimit": 4, // Concurrent parts uploading
 
-        "endpoint": "http://hostname/nodejs-001" // Required when different from credential
+        "endpoint": "http://hostname/nodejs-001", // Required when different from credential
+
+        "copyObject": {
+          "bucket": "nodejs-002", // nodejs-002/2024/picture.png (required)
+          /* OR */
+          "filename": "001.png", // nodejs-002/2024/001.png
+          /* OR */
+          "pathname": "images", // nodejs-002/images/001.png
+          "filename": "001.png",
+          /* OR */
+          "pathname": "", // nodejs-002/001.png (override "2024")
+          "filename": "001.png",
+
+          "options": {/* service-interface */}
+        }
       },
       "download": {
         "filename": "alternate.png", // Required
@@ -185,7 +206,9 @@ Storage
         "keyname": "picture.png", // bucket/picture.png to download/images/alternate.png
 
         "deleteObject": true, // Delete from bucket after successful download
-        "deleteObject": {/* service-interface */}
+        "deleteObject": {/* service-interface */},
+
+        "copyObject": {/* same as upload */}
       }
     }]
   }

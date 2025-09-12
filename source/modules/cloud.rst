@@ -93,6 +93,10 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.13.0
+
+  - ``BREAKING`` *CloudConstructor* :alt:`function` **joinPath** was overriden to preserve spaces in paths when used on a *Win32* platform.
+
 .. versionadded:: 0.11.0
 
   - *ICloudServiceClient* :alt:`function` **deleteObjectsV3** :alt:`(optional)` was created.

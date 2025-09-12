@@ -595,6 +595,10 @@ Realtime Database
 @pi-r/gcp
 =========
 
+.. versionadded:: 0.11.0
+
+  - *GCPStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject`.
+
 .. versionadded:: 0.10.1
 
   - *Spanner* method **runStream** for SQL requests was implemented.  

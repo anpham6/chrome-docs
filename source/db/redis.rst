@@ -3,8 +3,7 @@ Redis
 =====
 
 - `Redis Stack <https://redis.io/downloads/#redis-stack-downloads>`_
-- **npm** i *@pi-r/redis* :alt:`(4.x)`
-- **npm** i *@pi-r2/redis* :alt:`(5.x)`
+- **npm** i *@pi-r/redis*
 
 Interface
 =========
@@ -22,8 +21,7 @@ Interface
   import type { FtSearchOptions } from "@redis/search/dist/lib/commands/SEARCH";
 
   interface RedisDataSource extends DbDataSource {
-      source: "redis"; // 4.x
-      source: "@pi-r2/redis"; // 5.x
+      source: "redis";
 
       uri: string; // redis://<username>:<password>@hostname:6379
       username?: string; // redis://hostname:6379
@@ -37,8 +35,7 @@ Interface
       path?: string; // JSONPath
 
       /* Scan */
-      cursor?: number | number[]; // 4.x
-      cursor?: RedisArgument | RedisArgument[] | number | number[]; // 5.x
+      cursor?: RedisArgument | RedisArgument[] | number | number[];
       iterations?: number | number[];
 
       search?: {
@@ -54,7 +51,7 @@ Interface
 
       options?: {
           client?: RedisClientOptions;
-          command?: CommandOptions; // client.commandOptions (5.x)
+          command?: CommandOptions; // client.commandOptions
           get?: JsonGetOptions;
           search?: FtSearchOptions;
           aggregate?: FtAggregateOptions;
@@ -84,21 +81,6 @@ Pool
 ----
 
 .. code-block:: typescript
-  :caption: 4.x
-
-  import type { RedisClientOptions } from "redis";
-
-  interface PoolConfig { // using isolationPoolOptions
-      min?: number; // min
-      max?: number; // max
-      idle?: number; // idleTimeoutMillis
-      queue_max?: number; // maxWaitingClients
-      queue_idle?: number; // softIdleTimeoutMillis
-      timeout?: number; // acquireTimeoutMillis
-  }
-
-.. code-block:: typescript
-  :caption: 5.x
 
   import type { RedisPoolOptions } from "redis";
 
@@ -197,15 +179,7 @@ Example usage
         "alt": "item_alt"
       },
 
-      "usePool": true,
-      "options": {
-        "client": {
-          "isolationPoolOptions": { // 4.x
-            "min": 0,
-            "max": 10
-          }
-        }
-      }
+      "usePool": true
     }
   }
 
@@ -231,9 +205,9 @@ Example usage
 @pi-r2/redis
 ============
 
-.. deprecated:: 0.3.0
+.. versionchanged:: 0.3.0
 
-  - Package will be published and developed under ``@pi-r/redis`` for future releases.
+  - Package will be published under ``@pi-r/redis`` and developed under ``pi-r2/src/db/redis`` for future releases.
 
 .. versionadded:: 0.2.0
 

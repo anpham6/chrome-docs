@@ -7,9 +7,10 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 20,57
+  :emphasize-lines: 28,30-31,33
 
   import type { LogArguments } from "./lib/logger";
+  import type { ErrorCode, HighResolutionTime } from "./lib/node";
 
   import type { BinaryLike, BinaryToTextEncoding, CipherGCMTypes, Encoding, RandomUUIDOptions } from "node:crypto";
   import type { BytesOptions } from "bytes";
@@ -35,9 +36,13 @@ Interface
   function isPlainObject(value: unknown): value is Record<string | number | symbol, unknown>;
   function isString(value: unknown): value is string;
   function isEmpty(value: unknown): boolean;
+  function isErrorCode(err: unknown, ...code: unknown[]): err is Required<ErrorCode>;
   function asFunction(value: unknown, sync?: boolean): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
+  function parseTime(value: number | string, epoch: true): number;
+  function parseTime(value: number | string, negative: false): number;
   function parseTime(value: number | string, start?: number): number;
-  function parseExpires(value: number | string, start?: number): number;
+  function parseExpires(value: number | string, epoch: true): number;
+  function parseExpires(value: number | string, start?: number | boolean): number;
   function formatTime(value: number, char: string): string;
   function formatTime(value: number, elapsed?: boolean, char?: string): string;
   function convertTime(value: number | string): number;
@@ -205,6 +210,16 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.13.0
+
+  - :alt:`function` **isErrorCode** for checking *Error* properties was imported from :doc:`module`.
+
+.. versionchanged:: 0.13.0
+
+  - :alt:`function` **parseTime** argument :target:`epoch` as :alt:`true` for starting the interval from Unix or Epoch time.
+  - :alt:`function` **parseTime** argument :target:`negative` as :alt:`false` for including plus and minus operators.
+  - :alt:`function` **parseExpires** argument :target:`epoch` as :alt:`true` for starting the interval from Unix or Epoch time.
+
 .. versionchanged:: 0.12.5
 
   - :alt:`function` **importESM** argument :target:`options` as :alt:`ImportAttributes` was implemented.
@@ -263,7 +278,7 @@ Changelog
 .. versionchanged:: 0.11.1
 
   - ``BREAKING`` Method **escapePattern** argument :target:`lookBehind` was replaced with :target:`symbols` as :alt:`boolean`.
-  - :alt:`function` **supported** argument :target:`lts` :alt:`(boolean)` can be used as the :target:`patch` argument.
+  - :alt:`function` **supported** argument :target:`lts` as :alt:`boolean` can be used as the :target:`patch` argument.
 
 .. versionchanged:: 0.11.0
 
@@ -271,7 +286,7 @@ Changelog
 
 .. versionremoved:: 0.11.0
 
-  - :alt:`interface` **AsSourceFileOptions** property **persist** in :alt:`document` was not used.
+  - :alt:`interface` **AsSourceFileOptions** property **persist** in :alt:`document` was never implemented.
 
 .. deprecated:: 0.10.2
 

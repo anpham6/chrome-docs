@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interface &mdash; E-mc 0.12.6 documentation</title>
+  <title>Interface &mdash; E-mc 0.12.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=0e3da525"></script>
+      <script src="../_static/documentation_options.js?v=aa45213c"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -114,7 +114,9 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorage</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CopyObjectAction</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../types/cloud&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorage</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">bucket?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
@@ -153,7 +155,7 @@
 <span class="w">    </span><span class="nx">admin?</span><span class="o">:</span><span class="w"> </span><span class="kt">CloudStorageAdmin</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorageUpload</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorageACL</span><span class="p">,</span><span class="w"> </span><span class="nx">CloudStorageAction</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorageUpload</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorageACL</span><span class="p">,</span><span class="w"> </span><span class="nx">CloudStorageAction</span><span class="p">,</span><span class="w"> </span><span class="nx">CopyObjectAction</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">buffer?</span><span class="o">:</span><span class="w"> </span><span class="kt">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">contentType?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">metadata?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span>
@@ -170,7 +172,7 @@
 <span class="w">    </span><span class="nx">acl?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorageDownload</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorageAction</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorageDownload</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorageAction</span><span class="p">,</span><span class="w"> </span><span class="nx">CopyObjectAction</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">keyname?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">versionId?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
@@ -181,6 +183,13 @@
 </div>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.13.0: </span></p>
+<ul class="simple">
+<li><p><em>CloudStorageUpload</em> property <strong>copyObject</strong> for alternate bucket location was implemented.</p></li>
+<li><p><em>CloudStorageDownload</em> property <strong>copyObject</strong> for emulating move/rename and delete semantics was implemented.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.0: </span></p>
 <ul class="simple">
@@ -260,7 +269,21 @@
 <span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Part size of a parallel upload operation</span>
 <span class="w">      </span><span class="nt">&quot;chunkLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="c1">// Concurrent parts uploading</span>
 
-<span class="w">      </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://hostname/nodejs-001&quot;</span><span class="w"> </span><span class="c1">// Required when different from credential</span>
+<span class="w">      </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://hostname/nodejs-001&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required when different from credential</span>
+
+<span class="w">      </span><span class="nt">&quot;copyObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;bucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs-002&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/2024/picture.png (required)</span>
+<span class="w">        </span><span class="cm">/* OR */</span>
+<span class="w">        </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/2024/001.png</span>
+<span class="w">        </span><span class="cm">/* OR */</span>
+<span class="w">        </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;images&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/images/001.png</span>
+<span class="w">        </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001.png&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="cm">/* OR */</span>
+<span class="w">        </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/001.png (override &quot;2024&quot;)</span>
+<span class="w">        </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001.png&quot;</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;download&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;alternate.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
@@ -286,7 +309,9 @@
 <span class="w">      </span><span class="nt">&quot;keyname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;picture.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// bucket/picture.png to download/images/alternate.png</span>
 
 <span class="w">      </span><span class="nt">&quot;deleteObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Delete from bucket after successful download</span>
-<span class="w">      </span><span class="nt">&quot;deleteObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">}</span>
+<span class="w">      </span><span class="nt">&quot;deleteObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span>
+
+<span class="w">      </span><span class="nt">&quot;copyObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* same as upload */</span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}]</span>
 <span class="p">}</span>

@@ -89,6 +89,10 @@ Interface
 Changelog
 =========
 
+.. versionremoved:: 0.13.0
+
+  - *Zstd* decompression support for **Content-Encoding** uses only native zlib module from NodeJS :alt:`(22.15.0)`.
+
 .. versionadded:: 0.12.3
 
   - *RequestConstructor* :alt:`function` **isRclone** for URI detection was created.
@@ -217,7 +221,12 @@ Settings
           };
           check_first?: boolean;
           checksum?: boolean;
+          combined?: string;
+          csv?: boolean;
+          differ?: string;
+          error?: string;
           cutoff_mode?: "HARD" | "SOFT" | "CAUTIOUS";
+          hash: "md5" | "SHA-1" | "DropboxHash";
           ignore_case_sync?: boolean;
           ignore_checksum?: boolean;
           ignore_existing?: boolean;
@@ -237,8 +246,10 @@ Settings
           no_check_dest?: boolean;
           no_traverse?: boolean;
           no_update_dir_modtime?: boolean;
+          no_update_modtime?: boolean;
           refresh_times?: boolean;
           size_only?: boolean;
+          streaming_upload_cutoff?: string;
           update?: boolean;
           fast_list?: boolean;
           bind?: string;

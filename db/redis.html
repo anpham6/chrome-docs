@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redis &mdash; E-mc 0.12.6 documentation</title>
+  <title>Redis &mdash; E-mc 0.12.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=0e3da525"></script>
+      <script src="../_static/documentation_options.js?v=aa45213c"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -107,8 +107,7 @@
 <h1>Redis<a class="headerlink" href="#redis" title="Link to this heading"></a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://redis.io/downloads/#redis-stack-downloads">Redis Stack</a></p></li>
-<li><p><strong>npm</strong> i <em>&#64;pi-r/redis</em> <em class="alt">(4.x)</em></p></li>
-<li><p><strong>npm</strong> i <em>&#64;pi-r2/redis</em> <em class="alt">(5.x)</em></p></li>
+<li><p><strong>npm</strong> i <em>&#64;pi-r/redis</em></p></li>
 </ul>
 <section id="interface">
 <h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
@@ -123,8 +122,7 @@
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FtSearchOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@redis/search/dist/lib/commands/SEARCH&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">RedisDataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 4.x</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;@pi-r2/redis&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 5.x</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span>
 
 <span class="w">    </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// redis://&lt;username&gt;:&lt;password&gt;@hostname:6379</span>
 <span class="w">    </span><span class="nx">username?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// redis://hostname:6379</span>
@@ -138,8 +136,7 @@
 <span class="w">    </span><span class="nx">path?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// JSONPath</span>
 
 <span class="w">    </span><span class="cm">/* Scan */</span>
-<span class="w">    </span><span class="nx">cursor?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">[];</span><span class="w"> </span><span class="c1">// 4.x</span>
-<span class="w">    </span><span class="nx">cursor?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisArgument</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">RedisArgument</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">[];</span><span class="w"> </span><span class="c1">// 5.x</span>
+<span class="w">    </span><span class="nx">cursor?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisArgument</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">RedisArgument</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">iterations?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">[];</span>
 
 <span class="w">    </span><span class="nx">search</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
@@ -155,7 +152,7 @@
 
 <span class="w">    </span><span class="nx">options</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">client?</span><span class="o">:</span><span class="w"> </span><span class="kt">RedisClientOptions</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">command?</span><span class="o">:</span><span class="w"> </span><span class="kt">CommandOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// client.commandOptions (5.x)</span>
+<span class="w">        </span><span class="nx">command?</span><span class="o">:</span><span class="w"> </span><span class="kt">CommandOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// client.commandOptions</span>
 <span class="w">        </span><span class="nx">get?</span><span class="o">:</span><span class="w"> </span><span class="kt">JsonGetOptions</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">search?</span><span class="o">:</span><span class="w"> </span><span class="kt">FtSearchOptions</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">aggregate?</span><span class="o">:</span><span class="w"> </span><span class="kt">FtAggregateOptions</span><span class="p">;</span>
@@ -184,23 +181,6 @@
 </div>
 <section id="pool">
 <h3>Pool<a class="headerlink" href="#pool" title="Link to this heading"></a></h3>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">4.x</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RedisClientOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span>
-
-<span class="kd">interface</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// using isolationPoolOptions</span>
-<span class="w">    </span><span class="nx">min?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// min</span>
-<span class="w">    </span><span class="nx">max?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// max</span>
-<span class="w">    </span><span class="nx">idle?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// idleTimeoutMillis</span>
-<span class="w">    </span><span class="nx">queue_max?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// maxWaitingClients</span>
-<span class="w">    </span><span class="nx">queue_idle?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// softIdleTimeoutMillis</span>
-<span class="w">    </span><span class="nx">timeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// acquireTimeoutMillis</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">5.x</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RedisPoolOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// using RedisPoolOptions</span>
@@ -210,13 +190,12 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
 </section>
 </section>
 <section id="authentication">
 <h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading"></a></h2>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">squared.db.json</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">squared.db.json</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;redis&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -300,15 +279,7 @@
 <span class="w">      </span><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item_alt&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;usePool&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;client&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;isolationPoolOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 4.x</span>
-<span class="w">          </span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;usePool&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -343,10 +314,10 @@
 </section>
 <section id="pi-r2-redis">
 <h2>&#64;pi-r2/redis<a class="headerlink" href="#pi-r2-redis" title="Link to this heading"></a></h2>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 0.3.0: </span></p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.3.0: </span></p>
 <ul class="simple">
-<li><p>Package will be published and developed under <code class="docutils literal notranslate"><span class="pre">&#64;pi-r/redis</span></code> for future releases.</p></li>
+<li><p>Package will be published under <code class="docutils literal notranslate"><span class="pre">&#64;pi-r/redis</span></code> and developed under <code class="docutils literal notranslate"><span class="pre">pi-r2/src/db/redis</span></code> for future releases.</p></li>
 </ul>
 </div>
 <div class="versionadded">

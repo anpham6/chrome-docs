@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Options &mdash; E-mc 0.12.6 documentation</title>
+  <title>Build Options &mdash; E-mc 0.12.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=0e3da525"></script>
+      <script src="_static/documentation_options.js?v=aa45213c"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -342,6 +342,10 @@
 <li><p><strong>npm</strong> i <em>firebase</em> (username|token)</p></li>
 <li><p><strong>npm</strong> i <em>firebase-admin</em> (uid|token)</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NPM package <code class="docutils literal notranslate"><span class="pre">squared-express-firebase</span></code> is the recommended way to use <em>Firebase</em>. Starting with <strong>squared-express 4.1.0</strong> the provider was converted into an extension.</p>
+</div>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">squared.auth.json</span><a class="headerlink" href="#id11" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -362,6 +366,13 @@
 <span class="w">    </span><span class="nt">&quot;cognito&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./cloud/auth/aws/cognito.cjs&quot;</span><span class="w"> </span><span class="c1">// User extension method</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;session&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;serve.auth.firebase.js&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="cm">/* OR */</span>
+<span class="w">        </span><span class="s2">&quot;npm:squared-express-firebase&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;exclude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;realm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;firebase-admin&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Use only username and not domain (e.g. username@domain.com)</span>
 <span class="w">      </span><span class="nt">&quot;users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;osaka&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1">// Do not permit user &quot;osaka&quot; from authenticating</span>

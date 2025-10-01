@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/request &mdash; E-mc 0.12.6 documentation</title>
+  <title>@e-mc/request &mdash; E-mc 0.12.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=0e3da525"></script>
+      <script src="../_static/documentation_options.js?v=aa45213c"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -194,6 +194,12 @@
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 0.13.0: </span></p>
+<ul class="simple">
+<li><p><em>Zstd</em> decompression support for <strong>Content-Encoding</strong> uses only native zlib module from NodeJS <em class="alt">(22.15.0)</em>.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.12.3: </span></p>
 <ul class="simple">
@@ -337,7 +343,12 @@
 <span class="w">        </span><span class="p">};</span>
 <span class="w">        </span><span class="nx">check_first?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">checksum?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">combined?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">csv?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">differ?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">error?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">cutoff_mode</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;HARD&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;SOFT&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;CAUTIOUS&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;md5&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;SHA-1&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;DropboxHash&quot;</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">ignore_case_sync?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">ignore_checksum?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">ignore_existing?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
@@ -357,8 +368,10 @@
 <span class="w">        </span><span class="nx">no_check_dest?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">no_traverse?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">no_update_dir_modtime?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">no_update_modtime?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">refresh_times?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">size_only?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">streaming_upload_cutoff?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">fast_list?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">bind?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>

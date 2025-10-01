@@ -3,8 +3,7 @@ Image
 =====
 
 - https://jimp-dev.github.io/jimp
-- **npm** i *@pi-r/jimp* :alt:`(0.x)`
-- **npm** i *@pi-r2/jimp* :alt:`(1.x)`
+- **npm** i *@pi-r/jimp*
 
 .. note:: *Jimp* is used as the reference implementation for an **Image** module.
 
@@ -24,7 +23,6 @@ Example configuration
           "rotate_clockwise": false,
           "cache_expires": "1w",
           "gifwrap_quantize": "none",
-          /* 1.x */
           "options": {
             "decode": {
               "image/jpeg": { // @jimp/js-jpeg{DecodeJpegOptions}
@@ -145,11 +143,6 @@ Methods use simple bracket matching and does not fully check inside quoted strin
 Method aliases [#]_
 ===================
 
-0.x and 1.x
------------
-
-Methods in *italic* are ``0.x`` only.
-
 .. list-table::
   :width: 600px
   :widths: 25 8 25 8 25 8
@@ -158,60 +151,48 @@ Methods in *italic* are ``0.x`` only.
     - **au**
     - background
     - **bg**
-    - *backgroundQuiet*
-    - **bq**
-  * - blit
+    - blit
     - **bt**
-    - blur
+  * - blur
     - **bl**
     - brightness
     - **br**
-  * - circle
+    - circle
     - **ci**
-    - color
+  * - color
     - **co**
-    - *colorType*
-    - **ce**
-  * - composite [#]_
+    - composite [#]_
     - **cp**
     - contain [#]_
     - **ct**
-    - contrast
+  * - contrast
     - **cn**
-  * - convolute
+    - convolute
     - **cl**
     - convolution
     - **cu**
-    - cover
+  * - cover
     - **cv**
-  * - crop
+    - crop
     - **cr**
-    - *cropQuiet*
-    - **cq**
-    - *deflateLevel*
-    - **dl**
-  * - displace
+    - displace
     - **dp**
-    - *dither565*
+  * - dither
     - **dt**
     - fade
     - **fa**
-  * - *filterType*
-    - **ft**
-    - *fishEye*
+    - fisheye
     - **fe**
-    - flip
+  * - flip
     - **fl**
-  * - gaussian
+    - gaussian
     - **ga**
     - greyscale
     - **gr**
-    - invert
+  * - invert
     - **in**
-  * - mask
+    - mask
     - **ma**
-    - *mirror*
-    - **mi**
     - normalize
     - **no**
   * - opacity
@@ -222,48 +203,22 @@ Methods in *italic* are ``0.x`` only.
     - **px**
   * - posterize
     - **po**
-    - resize
+    - print
+    - **pr**
+    - quantize
+    - **qu**    
+  * - resize
     - **re**
-    - *rgba*
-    - **rg**
-  * - rotate
+    - rotate
     - **ro**
     - scale
     - **sc**
-    - scaleToFit
+  * - scaleToFit
     - **sf**
-  * - sepia
+    - sepia
     - **se**
-    - *shadow*
-    - **sh**
     - threshold
     - **th**
-
-1.x only
---------
-
-.. list-table::
-  :width: 600px
-  :widths: 25 8 25 8 25 8
-
-  * - dither
-    - **dt**
-    - fisheye
-    - **fe**
-    - quantize
-    - **qu**
-
-Behavior differences
-====================
-
-================ ========= =======
- Command         0.x       1.x
-================ ========= =======
-ResizeStrategy   nearest   none
-Workers          none      0.2.0
-DecodeOptions    none      0.2.0
-EncodeOptions    none      0.2.0
-================ ========= =======
 
 data-chrome-commands
 ====================
@@ -302,6 +257,24 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 .. versionadded:: 0.11.0
 
   - *NPM* package ``jimp`` was upgraded to **1.6.0**.
+  - *Jimp* plugin method **print** supports built-in fonts as :alt:`string` using these names:
+
+    .. hlist::
+      :columns: 3
+
+      - SANS_8_BLACK
+      - SANS_10_BLACK
+      - SANS_12_BLACK
+      - SANS_14_BLACK
+      - SANS_16_BLACK
+      - SANS_32_BLACK
+      - SANS_64_BLACK
+      - SANS_128_BLACK
+      - SANS_8_WHITE
+      - SANS_16_WHITE
+      - SANS_32_WHITE
+      - SANS_64_WHITE
+      - SANS_128_WHITE
 
 .. versionadded:: 0.10.0
 
@@ -328,7 +301,7 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 
 .. versionchanged:: 0.3.0
 
-  - Package will be published under ``@pi-r/jimp`` and developed under ``@pi-r2/jimp`` for future releases.
+  - Package will be published under ``@pi-r/jimp`` and developed under ``pi-r2/src/module/jimp`` for future releases.
 
 .. versionadded:: 0.2.0
 

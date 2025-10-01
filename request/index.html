@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request &mdash; E-mc 0.12.6 documentation</title>
+  <title>Request &mdash; E-mc 0.12.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=0e3da525"></script>
+      <script src="../_static/documentation_options.js?v=aa45213c"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -255,8 +255,13 @@
 <span class="w">      </span><span class="p">},</span>
 <span class="w">      </span><span class="nt">&quot;check_first&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;checksum&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;cutoff_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HARD&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ignore_case_sync&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="hll"><span class="w">      </span><span class="nt">&quot;combined&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">      </span><span class="nt">&quot;csv&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span class="w">      </span><span class="nt">&quot;cutoff_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HARD&quot;</span><span class="p">,</span>
+<span class="hll"><span class="w">      </span><span class="nt">&quot;differ&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">      </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">      </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span class="w">      </span><span class="nt">&quot;ignore_case_sync&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;ignore_checksum&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;ignore_existing&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;ignore_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
@@ -275,9 +280,11 @@
 <span class="w">      </span><span class="nt">&quot;no_check_dest&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;no_traverse&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;no_update_dir_modtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;refresh_times&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="hll"><span class="w">      </span><span class="nt">&quot;no_update_modtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span class="w">      </span><span class="nt">&quot;refresh_times&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;size_only&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="hll"><span class="w">      </span><span class="nt">&quot;streaming_upload_cutoff&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100Ki&quot;</span><span class="p">,</span>
+</span><span class="w">      </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;fast_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;bind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;contimeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
@@ -357,16 +364,15 @@
 <li><p>–interactive</p></li>
 <li><p>–dry-run</p></li>
 <li><p>–partial-suffix</p></li>
-</ul>
-</td><td><ul class="simple">
 <li><p>–verbose</p></li>
 <li><p>–links</p></li>
-<li><p>–delete-excluded</p></li>
 </ul>
 </td><td><ul class="simple">
+<li><p>–delete-excluded</p></li>
 <li><p>–interactive</p></li>
 <li><p>–log-level</p></li>
 <li><p>–use-json-log</p></li>
+<li><p>–name-transform</p></li>
 </ul>
 </td></tr></table>
 <aside class="footnote-list brackets">

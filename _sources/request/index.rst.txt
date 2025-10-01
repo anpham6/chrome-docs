@@ -140,6 +140,7 @@ Commands
 
 .. code-block::
   :caption: squared.json [#opt]_
+  :emphasize-lines: 11-12,14-16,36,39
 
   {
     "download": {
@@ -151,7 +152,12 @@ Commands
         },
         "check_first": false,
         "checksum": false,
+        "combined": "",
+        "csv": false,
         "cutoff_mode": "HARD",
+        "differ": "",
+        "error": "",
+        "hash": "",
         "ignore_case_sync": false,
         "ignore_checksum": false,
         "ignore_existing": false,
@@ -171,8 +177,10 @@ Commands
         "no_check_dest": false,
         "no_traverse": false,
         "no_update_dir_modtime": false,
+        "no_update_modtime": false,
         "refresh_times": false,
         "size_only": false,
+        "streaming_upload_cutoff": "100Ki",
         "update": false,
         "fast_list": false,
         "bind": "",
@@ -245,7 +253,7 @@ Unsupported options
 -------------------
 
 .. hlist::
-  :columns: 3
+  :columns: 2
 
   * --interactive
   * --dry-run
@@ -256,5 +264,6 @@ Unsupported options
   * --interactive
   * --log-level
   * --use-json-log
+  * --name-transform
 
 .. [#opt] Default options can be overriden by **binOpts**.

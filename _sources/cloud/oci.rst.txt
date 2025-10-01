@@ -197,6 +197,10 @@ Example usage
 @pi-r/oci
 =========
 
+.. versionadded:: 0.11.0
+
+  - *OCIStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject`.
+
 .. versionadded:: 0.10.0
 
   - *OCIDatabaseQuery* property **update** for *SODA.insertMany* as :alt:`Record<string, any>[]` was implemented.

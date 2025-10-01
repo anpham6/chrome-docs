@@ -302,6 +302,10 @@ Example usage
 @pi-r/aws-v3
 ============
 
+.. versionadded:: 0.11.0
+
+  - *AWSStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject`.
+
 .. versionadded:: 0.10.0
 
   - *DynamoDB* send method **TransactGetCommand** using *TransactGetItemsCommandInput* was implemented.

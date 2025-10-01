@@ -9,10 +9,11 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 20,78
 
   import type { IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
-  import type { BucketWebsiteOptions, CloudDatabase, CloudFeatures, CloudFunctions, CloudService, CloudStorage, CloudStorageDownload, CloudStorageUpload, DeleteObjectsOptions } from "./cloud";
+  import type { BucketWebsiteOptions, CloudDatabase, CloudFeatures, CloudFunctions, CloudService, CloudStorage, CloudStorageDownload, CloudStorageUpload, CopyObjectOptions, DeleteObjectsOptions } from "./cloud";
   import type { ClientDbConstructor, IClientDb } from "./core";
   import type { BatchQueryResult, QueryResult } from "./db";
   import type { LogMessageOptions } from "./logger";
@@ -29,6 +30,7 @@ Interface
       setBucketWebsite(service: string, credential: unknown, bucket: string, options: BucketWebsiteOptions): Promise<boolean>;
       deleteObjects(service: string, credential: unknown, bucket: string, options: DeleteObjectsOptions): Promise<void>;
       deleteObjects(service: string, credential: unknown, bucket: string, recursive?: boolean | DeleteObjectsOptions): Promise<void>;
+      copyObject(service: string, credential: unknown, bucketSource: string, keySource: string, bucket: string, key: string, options?: CopyObjectOptions): Promise<void>;
       uploadObject(service: string, credential: unknown, bucket: string, upload: CloudStorageUpload, localUri: string, beforeResolve?: ((value: string) => Promise<void> | void)): Promise<string>;
       downloadObject(service: string, credential: unknown, bucket: string, download: CloudStorageDownload, beforeResolve?: ((value: Buffer | string | null) => Promise<string | undefined> | void)): Promise<Buffer | string>;
       getStorage(action: CloudFunctions, data: CloudStorage[] | undefined): CloudStorage | undefined;
@@ -85,13 +87,23 @@ Interface
       deleteObjects?(this: IModule, credential: unknown, bucket: string, service?: string, sdk?: string, recursive?: boolean): Promise<void>;
       /** @deprecated */
       deleteObjectsV2?(this: IModule, credential: unknown, bucket: string, recursive?: boolean, service?: string, sdk?: string): Promise<void>;
-      deleteObjectsV3?(this: IModule, credential: U, bucket: string, options?: DeleteObjectsOptions, service?: string, sdk?: string): Promise<void>;
+      deleteObjectsV3?(this: IModule, credential: unknown, bucket: string, options?: DeleteObjectsOptions, service?: string, sdk?: string): Promise<void>;
+      copyObject?(this: IModule, credential: unknown, bucketSource: string, keySource: string, bucket: string, key: string, options?: unknown, service?: string, sdk?: string): Promise<void>;      
       executeQuery?(this: ICloud, credential: unknown, data: CloudDatabase, sessionKey?: string): Promise<QueryResult>;
       executeBatchQuery?(this: ICloud, credential: unknown, batch: CloudDatabase[], sessionKey?: string): Promise<BatchQueryResult>;
   }
 
 Changelog
 =========
+
+.. versionadded:: 0.13.0
+
+  - *ICloud* :alt:`function` **copyObject** was created.
+  - *ICloudServiceClient* :alt:`function` **copyObject** :alt:`(optional)` was created.
+
+.. versionchanged:: 0.13.0
+
+  - ``BREAKING`` *CloudConstructor* :alt:`function` **joinPath** overrides *ModuleConstructor* to resolve :target:`object` paths with spaces on a *Win32* platform.
 
 .. versionadded:: 0.11.0
 
@@ -140,9 +152,7 @@ Settings
       "aws-v3"?: CloudStoredCredentials;
       azure?: CloudStoredCredentials; // az
       gcp?: CloudStoredCredentials; // gcloud
-      ibm?: CloudStoredCredentials;
       oci?: CloudStoredCredentials;
-      minio?: CloudStoredCredentials;
       settings?: {
           broadcast_id?: string | string[];
           users?: Record<string, Record<string, unknown>>;
@@ -156,9 +166,7 @@ Settings
           "aws-v3"?: CloudServiceOptions;
           azure?: CloudServiceOptions;
           gcp?: CloudServiceOptions;
-          ibm?: CloudServiceOptions;
           oci?: CloudServiceOptions;
-          minio?: CloudServiceOptions;
       };
       permission?: PermittedDirectories;
   }

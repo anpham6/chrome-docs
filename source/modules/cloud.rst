@@ -88,7 +88,7 @@ Interface
       /** @deprecated */
       deleteObjectsV2?(this: IModule, credential: unknown, bucket: string, recursive?: boolean, service?: string, sdk?: string): Promise<void>;
       deleteObjectsV3?(this: IModule, credential: unknown, bucket: string, options?: DeleteObjectsOptions, service?: string, sdk?: string): Promise<void>;
-      copyObject?(this: IModule, credential: unknown, bucketSource: string, keySource: string, bucket: string, key: string, options?: unknown, service?: string, sdk?: string): Promise<void>;      
+      copyObject?(this: IModule, credential: unknown, bucketSource: string, keySource: string, bucket: string, key: string, options?: unknown, service?: string, sdk?: string): Promise<void>;
       executeQuery?(this: ICloud, credential: unknown, data: CloudDatabase, sessionKey?: string): Promise<QueryResult>;
       executeBatchQuery?(this: ICloud, credential: unknown, batch: CloudDatabase[], sessionKey?: string): Promise<BatchQueryResult>;
   }

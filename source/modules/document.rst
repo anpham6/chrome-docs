@@ -66,7 +66,7 @@ Interface
       get imports(): StringMap;
       get watching(): boolean;
       set host(value);
-      get host(): IFileManager | null;     
+      get host(): IFileManager | null;
   }
 
   interface DocumentConstructor extends ModuleConstructor {
@@ -85,6 +85,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.13.0
+
+  - Hash object based function transformers by :target:`format` name can be exported including a **default** export for :ref:`document plugins <document-plugins-settings-es6-hash>`.
 
 .. versionadded:: 0.12.0
 

@@ -120,7 +120,7 @@ The suffix "**-output**" is used to create the variable ``options.outputConfig``
               "terser": { // npm i @pi-r/terser
                 "minify-example": "async (terser, value, options, require) => await terser.minify(value, options.outputConfig).code;", // Asynchronous
                 "minify-example-output": {
-                  "keep_classnames": true // "minify-example-output" 
+                  "keep_classnames": true // "minify-example-output"
                 }
               }
             },
@@ -154,15 +154,15 @@ Using local file
           "transform": {
             "js": {
               "@babel/core": { // npm i @pi-r/babel
-                "es5-example": "./es5.js", // JS extension uses Function constructor
-                "es5-example-output": {
-                  "presets": ["@babel/preset-env"]
-                },
                 "es5-debug": "./es5-debug.cjs", // CJS extension loaded using "require"
                 "es5-debug-output": {
                   "presets": ["@babel/preset-env"]
                 },
                 "es6-example": "./es6.mjs", // MJS extension loaded using dynamic "import"
+                "es5-legacy": "./es5-legacy.js", // JS extension uses Function constructor
+                "es5-legacy-output": {
+                  "presets": ["@babel/preset-env"]
+                }
               }
             }
           }
@@ -172,23 +172,13 @@ Using local file
   }
 
 .. code-block:: javascript
-  :caption: es5.js (function only)
-
-  function (context, value, options, resolve, require) {
-    const path = require("path");
-    context.transform(value, options.outputConfig, function (err, result) {
-      resolve(!err && result ? result.code : "");
-    });
-  }
-
-.. code-block:: javascript
   :caption: es5-debug.cjs
 
   const path = require("path");
   let ID = 0;
 
   module.exports = async function (context, value, options) {
-    return await context.transform(`/* ${ID++} */` + value, options.outputConfig).code;
+    return (await context.transform(`/* ${ID++} */` + value, options.outputConfig)).code;
   }
 
 .. code-block:: javascript
@@ -198,7 +188,42 @@ Using local file
   let ID = 0;
 
   export default async function (context, value, options) {
-    return await context.transform(`/* ${ID++} */` + value, options.outputConfig).code;
+    return (await context.transform(`/* ${ID++} */` + value, options.outputConfig)).code;
+  }
+
+.. _document-plugins-settings-es6-hash:
+
+.. code-block:: javascript
+  :caption: es6-hash.mjs
+
+  import prettier from "prettier";
+
+  export async function as_html(context, value, options) { // format: as_html | as-html
+    const baseConfig = options.toBaseConfig();
+    baseConfig.parser = "html";
+    return prettier.format(value, baseConfig);
+  }
+
+  export async function as_css(context, value, options) { // format: as_css | as-css
+    const baseConfig = options.toBaseConfig();
+    baseConfig.parser = "css";
+    return prettier.format(value, baseConfig);
+  }
+
+  export default async function (context, value, options) { // format: any (except as_html | as-html | as_css | as-css)
+    const baseConfig = options.toBaseConfig();
+    baseConfig.parser = "typescript";
+    return prettier.format(value, baseConfig);
+  }
+
+.. code-block:: javascript
+  :caption: es5-legacy.js (inline)
+
+  function (context, value, options, resolve, require) {
+    const path = require("path");
+    context.transform(value, options.outputConfig, function (err, result) {
+      resolve(!err && result ? result.code : "");
+    });
   }
 
 .. caution:: The ``.js`` extension uses the "**type**" value in your *package.json* to determine which module loader to use. It is better to be explicit using either ``.cjs`` or ``.mjs``.

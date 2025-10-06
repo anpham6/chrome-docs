@@ -87,8 +87,8 @@ Changelog
 
 .. versionadded:: 0.13.0
 
-  - *CloudStorageUpload* property **copyObject** for alternate bucket location was implemented.
-  - *CloudStorageDownload* property **copyObject** for emulating move/rename and delete semantics was implemented.
+  - *CloudStorageUpload* property **copyObject | copyObject[] ** for alternate bucket location was implemented.
+  - *CloudStorageDownload* property **copyObject | copyObject[] ** for emulating move/rename and delete semantics was implemented.
 
 .. versionadded:: 0.11.0
 
@@ -168,7 +168,7 @@ Storage
 
         "endpoint": "http://hostname/nodejs-001", // Required when different from credential
 
-        "copyObject": {
+        "copyObject": [{
           "bucket": "nodejs-002", // nodejs-002/2024/picture.png (required)
           /* OR */
           "filename": "001.png", // nodejs-002/2024/001.png
@@ -180,7 +180,7 @@ Storage
           "filename": "001.png",
 
           "options": {/* service-interface */}
-        }
+        }]
       },
       "download": {
         "filename": "alternate.png", // Required
@@ -208,7 +208,7 @@ Storage
         "deleteObject": true, // Delete from bucket after successful download
         "deleteObject": {/* service-interface */},
 
-        "copyObject": {/* same as upload */}
+        "copyObject": [{/* same as upload */}]
       }
     }]
   }

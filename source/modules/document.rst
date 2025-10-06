@@ -28,7 +28,7 @@ Interface
       init(assets: ExternalAsset[], config?: HostInitConfig): this;
       customize(options?: CustomizeOptions): void;
       findConfig(data: object, name: string, type?: string): PluginConfig;
-      loadConfig(data: object, name: string): ConfigOrTransformer | null | undefined;
+      loadConfig(data: object, name: string): ConfigOrTransformer | undefined;
       asSourceFile(value: string, cache: boolean): unknown;
       asSourceFile(value: string, options?: AsSourceFileOptions): unknown;
       findVersion(name: string | string[], fallback?: string): string;

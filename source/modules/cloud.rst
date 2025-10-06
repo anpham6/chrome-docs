@@ -9,14 +9,14 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 20,78
+  :emphasize-lines: 20,41,54,80
 
   import type { IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
   import type { BucketWebsiteOptions, CloudDatabase, CloudFeatures, CloudFunctions, CloudService, CloudStorage, CloudStorageDownload, CloudStorageUpload, CopyObjectOptions, DeleteObjectsOptions } from "./cloud";
   import type { ClientDbConstructor, IClientDb } from "./core";
   import type { BatchQueryResult, QueryResult } from "./db";
-  import type { LogMessageOptions } from "./logger";
+  import type { LogFailOptions, LogMessageOptions } from "./logger";
   import type { CloudAuthSettings, CloudModule, CloudServiceOptions, CloudSettings, DbCoerceSettings } from "./settings";
 
   interface ICloud extends IClientDb<IHost, CloudModule, CloudDatabase, CloudServiceOptions, DbCoerceSettings & CloudAuthSettings> {
@@ -51,6 +51,7 @@ Interface
   }
 
   interface CloudConstructor extends ClientDbConstructor<IHost> {
+      LOG_CLOUD_SUCCESS: LogMessageOptions;
       LOG_CLOUD_FAIL: LogMessageOptions;
       LOG_CLOUD_COMMAND: LogMessageOptions;
       LOG_CLOUD_WARN: LogMessageOptions;
@@ -63,6 +64,7 @@ Interface
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, ignoreProcess: boolean): Promise<void>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, contentType?: string, ignoreProcess?: boolean): Promise<void>[];
       sanitizeAssets(assets: ExternalAsset[]): ExternalAsset[];
+      optionsLogMessage(type: "SUCCESS" | "FAIL" | "COMMAND" | "WARN" | "UPLOAD" | "DOWNLOAD" | "DELETE" | "DELAYED", options?: LogMessageOptions & LogFailOptions): LogMessageOptions & LogFailOptions;
       readonly prototype: ICloud;
       new(module?: CloudModule, database?: CloudDatabase[], ...args: unknown[]): ICloud;
   }
@@ -100,6 +102,7 @@ Changelog
 
   - *ICloud* :alt:`function` **copyObject** was created.
   - *ICloudServiceClient* :alt:`function` **copyObject** :alt:`(optional)` was created.
+  - *CloudConstructor* :alt:`function` **optionsLogMessage** was created.
 
 .. versionchanged:: 0.13.0
 

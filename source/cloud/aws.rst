@@ -286,7 +286,7 @@ Example usage
 
 .. versionadded:: 0.11.0
 
-  - *AWSStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject`.
+  - *AWSStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject | copyObject[]`.
 
 .. versionadded:: 0.10.0
 

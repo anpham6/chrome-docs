@@ -260,6 +260,10 @@ Example usage
 @pi-r2/ibm
 ==========
 
+.. versionadded:: 0.3.0
+
+  - NPM: Unmaintained and untested source with :alt:`@ibm-cloud/cloudant 0.12.9` was released.
+
 .. versionadded:: 0.1.0
 
   - NPM: Unmaintained and untested source with :alt:`@ibm-cloud/cloudant 0.12.2` was released.

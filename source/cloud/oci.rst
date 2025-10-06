@@ -199,7 +199,7 @@ Example usage
 
 .. versionadded:: 0.11.0
 
-  - *OCIStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject`.
+  - *OCIStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject | copyObject[]`.
 
 .. versionadded:: 0.10.0
 

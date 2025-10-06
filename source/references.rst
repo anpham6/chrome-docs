@@ -81,6 +81,7 @@ https://unpkg.com/@e-mc/types/lib/cloud.d.ts
   | `CloudDatabase <search.html?q=CloudDatabase>`_
   | `CloudService <search.html?q=CloudService>`_
   | `CloudStorage <search.html?q=CloudStorage>`_
+  | `CopyObjectAction <search.html?q=CopyObjectAction>`_
 
 .. _references-e-mc-types-lib-node:
 .. rst-class:: block-list

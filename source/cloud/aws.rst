@@ -288,6 +288,10 @@ Example usage
 
   - *AWSStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject | copyObject[]`.
 
+.. versionchanged:: 0.11.0
+
+  - *ICloudServiceClient* method **deleteObjectsV3** overrides :target:`Bucket` property in :alt:`ListObjectsRequest` with method parameter *Bucket*.
+
 .. versionadded:: 0.10.0
 
   - *DynamoDB* method **transactGet** using *TransactGetItemsInput* was implemented.

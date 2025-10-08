@@ -87,8 +87,8 @@ Changelog
 
 .. versionadded:: 0.13.0
 
-  - *CloudStorageUpload* property **copyObject | copyObject[] ** for alternate bucket location was implemented.
-  - *CloudStorageDownload* property **copyObject | copyObject[] ** for emulating move/rename and delete semantics was implemented.
+  - *CloudStorageUpload* property **copyObject | copyObject[]** for alternate bucket location was implemented.
+  - *CloudStorageDownload* property **copyObject | copyObject[]** for emulating move/rename and delete semantics was implemented.
 
 .. versionadded:: 0.11.0
 

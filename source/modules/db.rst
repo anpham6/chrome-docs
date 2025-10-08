@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 36-41
 
   import type { DbDataSource } from "./squared";
 
@@ -43,6 +44,14 @@ Interface
       getPoolConfig(source: string, uuidKey?: string): Required<PoolConfig> | undefined;
       get sourceType(): DB_TYPE;
       get commandType(): SQL_COMMAND;
+
+      /* EventEmitter */
+      on(event: "db:result", listener: (result: BatchQueryResult) => void): this;
+      on(event: "db:fail", listener: (err: unknown, item: DbDataSource) => void): this;
+      once(event: "db:result", listener: (result: BatchQueryResult) => void): this;
+      once(event: "db:fail", listener: (err: unknown, item: DbDataSource) => void): this;
+      emit(event: "db:result", result: BatchQueryResult): boolean;
+      emit(event: "db:fail", err: unknown, item: DbDataSource): boolean;
   }
 
   interface DbConstructor extends ClientDbConstructor<IHost> {
@@ -100,6 +109,16 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.13.0
+
+  - *IDb* :alt:`class` **EventEmitter** can send and receive events from:
+
+    .. hlist::
+      :columns: 1
+
+      - db:result
+      - db:fail
 
 .. versionadded:: 0.12.0
 

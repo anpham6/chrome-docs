@@ -270,7 +270,7 @@ Changelog
 .. versionchanged:: 0.11.7
 
   - ``BREAKING`` Method **decryptUTF8** did not consistently reproduce data output from **encryptUTF8**.
- 
+
 .. versionadded:: 0.11.2
 
   - :alt:`interface` **THRESHOLD** property **LOGGER_METER_INCREMENT** was created.

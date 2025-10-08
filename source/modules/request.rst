@@ -12,7 +12,7 @@ Interface
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { HttpAdapterConstructor, HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
-  import type { ApplyOptions, Aria2Options, FormDataPart, HeadersOnCallback, HostConfig, OpenOptions, PostOptions, ProxySettings, PutOptions, ReadExpectType, RequestInit, RcloneOptions, StatusOnCallback } from "./request";
+  import type { ApplyOptions, Aria2Options, FormDataPart, HeadersOnCallback, HostConfig, OpenOptions, PostOptions, ProxySettings, PutOptions, RcloneOptions, ReadExpectType, RequestInit, StatusOnCallback } from "./request";
   import type { DnsLookupSettings, RequestModule, RequestSettings } from "./settings";
 
   import type { ClientRequest, OutgoingHttpHeaders } from "node:http";
@@ -91,7 +91,7 @@ Changelog
 
 .. versionremoved:: 0.13.0
 
-  - *Zstd* decompression support for **Content-Encoding** uses only native zlib module from NodeJS :alt:`(22.15.0)`.
+  - *NPM* package **zstd-codec** is no longer available for :target:`Zstd` compression. :alt:`NodeJS 22.15.0` or later is required for *Content-Encoding*.
 
 .. versionadded:: 0.12.3
 
@@ -105,10 +105,10 @@ Changelog
 
   - *IRequest* :alt:`property` setter **adapter** for the local HTTP implementation as :alt:`IHttpAdapter` was created.
   - *RequestConstructor* :alt:`function` **defineHttpAdapter** for the global HTTP implementation as :alt:`IHttpAdapter` was created.
-  - *IRequest* :alt:`function` **get** supports :target:`Zstd` decompression for *accept-encoding* when using at least :alt:`NodeJS v23.8.0`.
+  - *IRequest* :alt:`function` **get** supports :target:`Zstd` decompression for *Content-Encoding* when using at least :alt:`NodeJS 22.15.0`.
 
 .. deprecated:: 0.11.0
-  
+
   - *RequestConstructor* :alt:`function` **fromURL** | **fromStatusCode** were relocated into the utility package.
 
 .. versionadded:: 0.10.3
@@ -137,8 +137,8 @@ Settings
   import type { SecureConfig } from "./http";
   import type { PurgeComponent } from "./settings";
 
-  import type { LookupAddress } from "dns";
-  import type { OutgoingHttpHeaders } from "http";
+  import type { LookupAddress } from "node:dns";
+  import type { OutgoingHttpHeaders } from "node:http";
 
   interface RequestModule {
       handler: "@e-mc/request";

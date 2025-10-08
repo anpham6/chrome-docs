@@ -68,7 +68,7 @@ Changelog
 
 .. versionremoved:: 0.11.0
 
-  - *WatchConstructor* :alt:`function` **isConnectionError** for identifying retryable errors was created. 
+  - *WatchConstructor* :alt:`function` **isConnectionError** for identifying retryable errors was created.
 
 .. versionremoved:: 0.9.0
 

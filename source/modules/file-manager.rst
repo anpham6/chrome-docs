@@ -9,13 +9,14 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 86-88,91,122,145,147,149
 
-  import type { DataSource, IncrementalMatch, TaskAction } from "./squared";
+  import type { ChecksumValue, DataSource, IncrementalMatch, TaskAction } from "./squared";
 
   import type { DocumentConstructor, HostConstructor, ICloud, ICompress, IDocument, IHost, IImage, IModule, IRequest, ITask, IWatch, ImageConstructor, TaskConstructor, WatchConstructor } from "./index";
   import type { ExternalAsset, FileCommand, FileData, IFileThread, OutputFinalize } from "./asset";
   import type { IPermission, PermissionReadWrite } from "./core";
-  import type { AssetContentOptions, ChecksumOptions, DeleteFileAddendum, FileOutput, FinalizeResult, FindAssetOptions, IHttpDiskCache, IHttpMemoryCache, InstallData, PostFinalizeCallback, ReplaceOptions } from "./filemanager";
+  import type { AssetContentOptions, CheckHashOptions, ChecksumOptions, DeleteFileAddendum, FileOutput, FinalizeResult, FindAssetOptions, IHttpDiskCache, IHttpMemoryCache, InstallData, PostFinalizeCallback, ReplaceOptions } from "./filemanager";
   import type { ExecCommand } from "./logger";
   import type { CopyFileOptions, CreateDirOptions, DeleteFileOptions, MoveFileOptions, ReadFileOptions, RemoveDirOptions, WriteFileOptions } from "./module";
   import type { RequestData, Settings } from "./node";
@@ -95,8 +96,12 @@ Interface
       addDownload(value: number | Buffer | string, encoding: BufferEncoding): number;
       addDownload(value: number | Buffer | string, type?: number | BufferEncoding, encoding?: BufferEncoding): number;
       getDownload(type?: number): [number, number];
+      checkHash(checksum: ChecksumValue, options: CheckHashOptions): boolean;
+      checkHash(checksum: ChecksumValue, data: Bufferable | null, uri: string | URL | undefined): boolean;
+      checkHash(checksum: ChecksumValue, data: Bufferable, options?: CheckHashOptions): boolean;
       transformAsset(data: IFileThread, parent?: ExternalAsset, override?: boolean): Promise<boolean>;
       addCopy(data: FileCommand<ExternalAsset>, saveAs?: string, replace?: boolean): string | undefined;
+      handleFilePermission(file: ExternalAsset): void;
       findMime(file: ExternalAsset, rename?: boolean): Promise<string>;
       getUTF8String(file: ExternalAsset, uri?: string): string;
       getBuffer(file: ExternalAsset, minStreamSize?: number): Promise<Buffer | null> | Buffer | null;
@@ -127,6 +132,7 @@ Interface
       finalizeChecksum(): Promise<void>;
       finalizeCleanup(): Promise<void>;
       finalize(): Promise<void>;
+      removeFiles(): void;
       close(): void;
       reset(): boolean;
       get baseDirectory(): string;
@@ -149,35 +155,11 @@ Interface
 
       /* EventEmitter */
       on(event: "end", listener: PostFinalizeCallback): this;
-      on(event: "exec", listener: (command: ExecCommand, options?: SpawnOptions) => void): this;
-      on(event: "error", listener: (err: Error) => void): this;
-      on(event: "file:read", listener: (src: string, data: Buffer | string, options?: ReadFileOptions) => void): this;
-      on(event: "file:write", listener: (src: string, options?: WriteFileOptions) => void): this;
-      on(event: "file:delete", listener: (src: string, options?: DeleteFileOptions) => void): this;
-      on(event: "file:copy", listener: (dest: string, options?: CopyFileOptions) => void): this;
-      on(event: "file:move", listener: (dest: string, options?: MoveFileOptions) => void): this;
-      on(event: "dir:create", listener: (src: string, options?: CreateDirOptions) => void): this;
-      on(event: "dir:remove", listener: (src: string, options?: RemoveDirOptions) => void): this;
+      on(event: "asset:permission", listener: (file: ExternalAsset) => void): this;
       once(event: "end", listener: PostFinalizeCallback): this;
-      once(event: "exec", listener: (command: ExecCommand, options?: SpawnOptions) => void): this;
-      once(event: "error", listener: (err: Error) => void): this;
-      once(event: "file:read", listener: (src: string, data: Buffer | string, options?: ReadFileOptions) => void): this;
-      once(event: "file:write", listener: (src: string, options?: WriteFileOptions) => void): this;
-      once(event: "file:delete", listener: (src: string, options?: DeleteFileOptions) => void): this;
-      once(event: "file:copy", listener: (dest: string, options?: CopyFileOptions) => void): this;
-      once(event: "file:move", listener: (dest: string, options?: MoveFileOptions) => void): this;
-      once(event: "dir:create", listener: (src: string, options?: CreateDirOptions) => void): this;
-      once(event: "dir:remove", listener: (src: string, options?: RemoveDirOptions) => void): this;
+      once(event: "asset:permission", listener: (file: ExternalAsset) => void): this;
       emit(event: "end", result: FinalizeResult): boolean;
-      emit(event: "exec", command: ExecCommand, options?: SpawnOptions): boolean;
-      emit(event: "error", err: Error): boolean;
-      emit(event: "file:read", src: string, data: Buffer | string, options?: ReadFileOptions): boolean;
-      emit(event: "file:write", src: string, options?: WriteFileOptions): boolean;
-      emit(event: "file:delete", src: string, options?: DeleteFileOptions): boolean;
-      emit(event: "file:copy", dest: string, options?: CopyFileOptions): boolean;
-      emit(event: "file:move", dest: string, options?: MoveFileOptions): boolean;
-      emit(event: "dir:create", src: string, options?: CreateDirOptions): boolean;
-      emit(event: "dir:remove", src: string, options?: RemoveDirOptions): boolean;
+      emit(event: "asset:permission", file: ExternalAsset): boolean;
   }
 
   interface FileManagerConstructor extends HostConstructor {
@@ -201,6 +183,24 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.13.0
+
+  - *IFileManager* :alt:`function` **checkHash** for file integrity validation was created.
+  - *IFileManager* :alt:`function` **removeFiles** for deleting unused files queued as :alt:`filesToRemove` was created.
+  - *IFileManager* :alt:`function` **handleFilePermission** for emitting event :alt:`file:permission` was created.
+  - *IFileManager* :alt:`class` **EventEmitter** can send and receive events from:
+
+    .. hlist::
+      :columns: 1
+
+      - asset:permission
+
+.. versionchanged:: 0.13.0
+
+  - *FileManagerConstructor* :alt:`function` **writeChecksum** | **verifyChecksum** options property :target:`include` as :alt:`string[]` can be prefixed with "**!**" to negate a subset of glob paths.
+
+.. note:: All glob paths are evaluated with negation acting as a secondary filter.
+
 .. versionchanged:: 0.12.0
 
   - *IFileManager* :alt:`function` **fetchFiles** using the :target:`rclone:?` protocol supports `Rclone <https://rclone.org>`_ copy commands.
@@ -208,7 +208,7 @@ Changelog
 
 .. versionchanged:: 0.11.0
 
-  - *FileManagerConstructor* :alt:`function` **verifyChecksum** with :alt:`ChecksumOptions` property :target:`exclude` can be prefixed with "**!**" to negate a subset of glob paths.
+  - *FileManagerConstructor* :alt:`function` **writeChecksum** | **verifyChecksum** options property :target:`exclude` as :alt:`string[]` can be prefixed with "**!**" to negate a subset of glob paths.
   - *IFileManager* :alt:`function` **install** with name :alt:`watch` injected with an *NPM* package or *Watch* constructor was implemented.
   - *IFileManager* :alt:`property` **cacheToDisk** | **cacheToMemory** were made :alt:`readonly` references.
 
@@ -307,9 +307,9 @@ Settings
 Changelog
 ---------
 
-.. versionchanged:: 0.12.0
+.. deprecated:: 0.12.0
 
-  - *ErrorModule* property **recursion_limit** :alt:`(deprecated)` was renamed :target:`retry_limit`.
+  - *ErrorModule* property **recursion_limit** was renamed :target:`retry_limit`.
 
 .. versionadded:: 0.10.0
 
@@ -317,7 +317,7 @@ Changelog
 
 .. versionadded:: 0.9.0
 
-  - *ProcessModule* setting **thread.sub_limit** for maximum simultaneous downloads was implemented.
+  - *ProcessModule* sub-property **thread.sub_limit** for maximum simultaneous downloads was implemented.
 
 Example usage
 -------------

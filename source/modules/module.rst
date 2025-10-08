@@ -9,14 +9,14 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 186
+  :emphasize-lines: 127,130,138,141,149,152,188,192
 
   import type { LogStatus } from "./squared";
 
   import type { IHost } from "./index";
   import type { IAbortComponent, IPermission } from "./core";
   import type { ExecCommand, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, LoggerFormat, StatusType } from "./logger";
-  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, GetTempDirOptions, GlobDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
+  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, DirectoryActionType, FileActionType, GetTempDirOptions, GlobDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
   import type { ErrorCode, Settings } from "./node";
   import type { LoggerFormatSettings } from "./settings";
 
@@ -137,8 +137,10 @@ Interface
       on(event: "file:delete", listener: (src: string, options?: DeleteFileOptions) => void): this;
       on(event: "file:copy", listener: (dest: string, options?: CopyFileOptions) => void): this;
       on(event: "file:move", listener: (dest: string, options?: MoveFileOptions) => void): this;
+      on(event: "file:permission", listener: (src: string, type?: FileActionType) => void): this;
       on(event: "dir:create", listener: (src: string, options?: CreateDirOptions) => void): this;
       on(event: "dir:remove", listener: (src: string, options?: RemoveDirOptions) => void): this;
+      on(event: "dir:permission", listener: (src: string, type?: DirectoryActionType) => void): this;
       once(event: "exec", listener: (command: ExecCommand, options?: SpawnOptions) => void): this;
       once(event: "error", listener: (err: Error) => void): this;
       once(event: "file:read", listener: (src: string, data: Buffer | string, options?: ReadFileOptions) => void): this;
@@ -146,8 +148,10 @@ Interface
       once(event: "file:delete", listener: (src: string, options?: DeleteFileOptions) => void): this;
       once(event: "file:copy", listener: (dest: string, options?: CopyFileOptions) => void): this;
       once(event: "file:move", listener: (dest: string, options?: MoveFileOptions) => void): this;
+      once(event: "file:permission", listener: (src: string, type?: FileActionType) => void): this;
       once(event: "dir:create", listener: (src: string, options?: CreateDirOptions) => void): this;
       once(event: "dir:remove", listener: (src: string, options?: RemoveDirOptions) => void): this;
+      once(event: "dir:permission", listener: (src: string, type?: DirectoryActionType) => void): this;
       emit(event: "exec", command: ExecCommand, options?: SpawnOptions): boolean;
       emit(event: "error", err: Error): boolean;
       emit(event: "file:read", src: string, data: Buffer | string, options?: ReadFileOptions): boolean;
@@ -155,8 +159,10 @@ Interface
       emit(event: "file:delete", src: string, options?: DeleteFileOptions): boolean;
       emit(event: "file:copy", dest: string, options?: CopyFileOptions): boolean;
       emit(event: "file:move", dest: string, options?: MoveFileOptions): boolean;
+      emit(event: "file:permission", src: string, type?: FileActionType): boolean;
       emit(event: "dir:create", src: string, options?: CreateDirOptions): boolean;
       emit(event: "dir:remove", src: string, options?: RemoveDirOptions): boolean;
+      emit(event: "dir:permission", src: string, type?: DirectoryActionType): boolean;
   }
 
   interface ModuleConstructor {
@@ -192,7 +198,7 @@ Interface
       hasLogType(value: LogType): boolean;
       isURL(value: string, ...exclude: string[]): boolean;
       isFile(value: string | URL, type?: ProtocolType): boolean;
-      isDir(value: string | URL): boolean;
+      isDir(value: string | URL, absolute?: boolean): boolean;
       isPath(value: string | URL, type?: "unc" | "unc-exists"): boolean;
       isPath(value: string | URL, isFile?: boolean): boolean;
       /** @deprecated @e-mc/types */
@@ -249,6 +255,20 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.13.0
+
+  - *IModule* :alt:`class` **EventEmitter** can send and receive events from:
+
+    .. hlist::
+      :columns: 1
+
+      - file\:permission
+      - dir:permission
+
+.. versionchanged:: 0.13.0
+
+  - *ModuleConstructor* :alt:`function` **isDir** argument :target:`absolute` as :alt:`boolean` was created.
+
 .. deprecated:: 0.13.0
 
   - *ModuleConstructor* :alt:`function` **isErrorCode** was relocated into :doc:`types`.
@@ -257,13 +277,13 @@ Changelog
 
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **joinPath** preseves leading and trailing spaces for non-Windows paths.
 
-.. versionchanged:: 0.12.2/0.11.9/0.10.13 
+.. versionchanged:: 0.12.2/0.11.9/0.10.13
 
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **isURL** no longer uses :target:`URL.canParse` for validation.
 
 .. versionadded:: 0.12.0
 
-  - *Node.js Permission Model* was implemented with one compatibility difference. **moveFile** uses :alt:`fs-read` and :alt:`fs-write` with :target:`--permission`.
+  - *Node.js Permission Model* was implemented with one compatibility difference. **moveFile** uses :alt:`fs-read` and :alt:`fs-write` on the source file with :target:`--permission`.
   - *ModuleConstructor* :alt:`function` **constructorOf** for universal detection using symbols was created.
   - *IModule* :alt:`function` **hasPermission** for context resolution was created.
 
@@ -294,7 +314,7 @@ Changelog
   - *IModule* :alt:`property` accessor **silent** for console messages was created.
 
 .. versionchanged:: 0.10.0
-  
+
   - *ModuleConstructor* :alt:`function` **asHash** argument :target:`minLength` was replaced with :target:`digest` as :alt:`BinaryToTextEncoding`.
 
 .. deprecated:: 0.10.0
@@ -306,13 +326,13 @@ Changelog
   - *ModuleConstructor* :alt:`property` **LOG_FORMAT** was created.
 
 .. versionchanged:: 0.9.0
-  
+
   - *IModule* :alt:`function` **src** and **dest** arguments can accept :ref:`URL <references-nodejs-url>` object:
 
     .. hlist::
       :columns: 4
 
-      - canRead       
+      - canRead
       - canWrite
       - readFile
       - writeFile
@@ -500,6 +520,10 @@ Settings
 
 Changelog
 ---------
+
+.. versionchanged:: 0.13.0
+
+  - *MemoryModule* settings property **cache_disk.include** can be prefixed with "**!**" to negate a subset of glob paths.
 
 .. versionchanged:: 0.12.0
 

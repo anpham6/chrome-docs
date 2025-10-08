@@ -29,7 +29,7 @@ Interface
       createGzip(file: string | Buffer, options?: CompressLevel): Gzip;
       createBrotliCompress(file: string | Buffer, options?: BrotliCompressLevel): BrotliCompress;
       createWriteStreamAsGzip(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
-      createWriteStreamAsBrotli(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
+      createWriteStreamAsBrotli(file: string | Buffer, output: string, options?: BrotliCompressLevel): WriteStream;
       intoGzipStream(output: string, options?: ZlibOptions): WriteStream;
       intoBrotliStream(output: string, options?: BrotliOptions): WriteStream;
       writeGzip(file: string | Buffer, output: string, options?: CompressLevel): Promise<void>;
@@ -53,6 +53,11 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.13.0
+
+  - *ICompress* :alt:`interface` **CompressLevel** has extended :target:`ZlibOptions`.
+  - *ICompress* :alt:`interface` **BrotliCompressLevel** has extended :target:`BrotliOptions`.
 
 .. versionadded:: 0.12.0
 
@@ -81,8 +86,11 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 12
 
-  import type { BrotliOptions, ZlibOptions } from "zlib";
+  import type { CacheDirAction } from "./settings";
+
+  import type { BrotliOptions, ZlibOptions } from "node:zlib";
   import type { Options as ZopfliOptions } from "node-zopfli";
 
   interface CompressModule {
@@ -91,7 +99,7 @@ Settings
       zopfli?: ZopfliOptions;
       settings?: {
           broadcast_id?: string | string[];
-          cache?: boolean;
+          cache?: boolean | CacheDirAction & { font?: string | number | boolean; image?: string | number | boolean; };
           cache_expires?: number | string;
           gzip_level?: number;
           brotli_quality?: number;
@@ -102,6 +110,10 @@ Settings
 
 Changelog
 ---------
+
+.. versionchanged:: 0.13.0
+
+  - *CompressModule* settings property **cache** as :alt:`CacheDirAction` for categorized cache expiration was implemented.
 
 .. versionremoved:: 0.10.0
 

@@ -39,7 +39,7 @@ Interface
 
       worker?: boolean | number; // image + font + raw assets
 
-      checksum?: string | { algorithm: string; value: string; digest?: string }; // Download URI (default is "sha256")
+      checksum?: string | { algorithm: string; value: string; digestEncoding?: string }; // Download URI (default is "sha256")
       checksumOutput?: string | {/* Same */}; // Expected locally transformed result
 
       incremental?: false | "none" | "staging" | "etag" | "exists"; // Will override parent.incremental
@@ -83,6 +83,10 @@ Changelog
 .. versionadded:: 0.12.0
 
   - *AssetCommand* property **worker** for images and fonts was created.
+
+.. deprecated:: 0.12.0
+
+  - *AssetCommand* sub-property **checksum.digest** was renamed **checksum.digestEncoding**.
 
 .. versionadded:: 0.10.0
 

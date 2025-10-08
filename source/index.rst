@@ -18,7 +18,7 @@ E-mc 0.12
   references
   versions
 
-Examples use **squared** :alt:`5` and **chrome** as the reference framework. These concepts can be used with any NodeJS :alt:`18+` application.
+Examples use **squared** :alt:`5` and **chrome** as the reference framework. These concepts can be used with any :alt:`NodeJS 18+` application.
 
 .. note:: Using :external+android:doc:`squared <index>` or squared-express is not required.
 

@@ -2,6 +2,14 @@
     height: 130px;
 }
 
+.wy-nav-content-wrap .wy-nav-content {
+    max-width: 900px;
+}
+
+.wy-menu-vertical li .reference code {
+    font-size: 90%;
+}
+
 .rst-content div > section:first-child h1 {
     display: flex;
     flex-direction: row-reverse;
@@ -83,4 +91,8 @@
 .rst-content .footnote-reference {
     top: -0.5em;
     font-size: 75%;
+}
+
+.rst-content .admonition em.alt {
+    font-size: 100%;
 }

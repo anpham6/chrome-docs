@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 127,130,138,141,149,152,188,192
+  :emphasize-lines: 82-84,129,132,140,143,151,154,190,194
 
   import type { LogStatus } from "./squared";
 
@@ -92,7 +92,9 @@ Interface
       checkFail(message: unknown, options: LogFailOptions): LogArguments | false | undefined;
       writeLog(component: LogComponent, queue?: boolean): void;
       writeLog(type: StatusType, value: unknown, options: LogOptions): void;
-      writeLog(type: StatusType, value: unknown, timeStamp?: LogDate, duration?: number): void;
+      writeLog(type: StatusType, value: unknown, from: string, source?: string): void;
+      writeLog(type: StatusType, value: unknown, timeStamp?: LogDate, from?: string, source?: string): void;
+      writeLog(type: StatusType, value: unknown, timeStamp?: LogDate, duration?: number, from?: string, source?: string): void;
       addLog(component: LogComponent, queue?: boolean): void;
       addLog(type: StatusType, value: unknown, options: LogOptions): void;
       addLog(type: StatusType, value: unknown, from: string, source?: string): void;
@@ -268,6 +270,7 @@ Changelog
 .. versionchanged:: 0.13.0
 
   - *ModuleConstructor* :alt:`function` **isDir** argument :target:`absolute` as :alt:`boolean` was created.
+  - *IModule* :alt:`function` **writeLog** uses same method signature as :alt:`function` **addLog**.
 
 .. deprecated:: 0.13.0
 
@@ -327,7 +330,7 @@ Changelog
 
 .. versionchanged:: 0.9.0
 
-  - *IModule* :alt:`function` **src** and **dest** arguments can accept :ref:`URL <references-nodejs-url>` object:
+  - *IModule* :alt:`function` **src** and **dest** arguments can accept a :ref:`URL <references-nodejs-url>` instance:
 
     .. hlist::
       :columns: 4

@@ -197,9 +197,10 @@ Changelog
 
 .. versionchanged:: 0.13.0
 
+  - ``BREAKING`` *IFileManager* when parsing an invalid encoding :alt:`(BufferEncoding)` will process the file as a `Buffer <https://nodejs.org/api/buffer.html#buffers-and-typedarrays>`_ instead of assuming "**utf-8**".
   - *FileManagerConstructor* :alt:`function` **writeChecksum** | **verifyChecksum** options property :target:`include` as :alt:`string[]` can be prefixed with "**!**" to negate a subset of glob paths.
 
-.. note:: All glob paths are evaluated with negation acting as a secondary filter.
+.. note:: All glob paths are evaluated with negation acting as a secondary subset filter.
 
 .. versionchanged:: 0.12.0
 

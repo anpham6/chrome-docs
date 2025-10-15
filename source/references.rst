@@ -125,6 +125,7 @@ https://nodejs.org/api/modules.html
 .. rst-class:: block-list
 
 https://nodejs.org/api/buffer.html
+  | `Buffer <search.html?q=Buffer>`_
   | `BufferEncoding <search.html?q=BufferEncoding>`_
 
 .. _references-nodejs-crypto:

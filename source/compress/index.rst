@@ -46,7 +46,7 @@ Imagemin
 ========
 
 - https://github.com/imagemin/imagemin
-- **npm** i *@pi-r2/imagemin*
+- **npm** i *@pi-r/imagemin*
 
 Images are transcoded locally using *MIME* detection to automatically choose the appropriate plugin. 
 
@@ -59,7 +59,6 @@ Images are transcoded locally using *MIME* detection to automatically choose the
         "mozjpeg": {/* default */}, // https://npmjs.com/package/imagemin-mozjpeg#api
         "jpegtran": null, // https://npmjs.com/package/imagemin-jpegtran#api
         "pngquant": {/* default */}, // https://npmjs.com/package/imagemin-pngquant#api
-        "optipng": null, // https://npmjs.com/package/imagemin-optipng#api
         "webp": {/* default */}, // https://npmjs.com/package/imagemin-webp#api
         "gifsicle": {/* default */}, // https://npmjs.com/package/imagemin-gifsicle#api
         "svgo": {/* default */} // https://npmjs.com/package/imagemin-svgo#api
@@ -75,24 +74,24 @@ Images are transcoded locally using *MIME* detection to automatically choose the
     "selector": "p > img",
     "compress": [
       {
-        "format": "png", // Recommended
+        "format": "jpeg", // Recommended
         "plugin": "imagemin",
-        "worker": true, // Experimental
+        "worker": true,
         "options": {
-          "speed": 11, // imagemin-pngquant (default)
-          "quality": [0.3, 0.5]
+          "quality": 75, // imagemin-mozjpeg (default)
+          "smooth": 60
         }
       },
       {
-        "format": "png",
+        "format": "jpeg",
         "plugin": "imagemin",
         "metadata": {
-          "package": "imagemin-optipng", // Alias "optipng"
-          "mimeType": "image/png" // Optional (auto-detect)
+          "package": "imagemin-jpegtran", // Alias "jpegtran"
+          "mimeType": "image/jpeg" // Optional (auto-detect)
         },
         "options": {
-          "optimizationLevel": 7,
-          "interlaced": true
+          "progressive": true,
+          "arithmetic": true
         }
       }
     ]
@@ -109,10 +108,10 @@ Other formats can be compressed similarly using *imagemin-like* plugins directly
     "compress": [
       {
         "format": "png",
-        "plugin": "imagemin-gif2webp", // npm i imagemin-gif2webp
+        "plugin": "imagemin-optipng", // npm i imagemin-optipng
         "options": {
-          "lossy": true,
-          "quality": 75
+          "speed": 11,
+          "quality": [0.3, 0.5]
         }
       },
       /* OR */
@@ -120,13 +119,13 @@ Other formats can be compressed similarly using *imagemin-like* plugins directly
         "format": "png",
         "plugin": "imagemin",
         "metadata": {
-          "package": "imagemin-gif2webp" // With settings "gif2webp"
+          "package": "imagemin-optipng" // With settings "optipng"
         }
       }
     ]
   }
 
-.. important:: Settings are used only when **options** is ``undefined``.
+.. important:: Settings are applied only when **options** is ``undefined``.
 
 Environment Variables
 =====================

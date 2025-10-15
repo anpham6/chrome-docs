@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 20,41,54,80
+  :emphasize-lines: 20,53,55
 
   import type { IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -63,6 +63,7 @@ Interface
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, options: UploadAssetOptions): Promise<void>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, ignoreProcess: boolean): Promise<void>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, contentType?: string, ignoreProcess?: boolean): Promise<void>[];
+      uploadAssetSuccess(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, active?: boolean): (value: string) => Promise<void> | void;
       sanitizeAssets(assets: ExternalAsset[]): ExternalAsset[];
       optionsLogMessage(type: "SUCCESS" | "FAIL" | "COMMAND" | "WARN" | "UPLOAD" | "DOWNLOAD" | "DELETE" | "DELAYED", options?: LogMessageOptions & LogFailOptions): LogMessageOptions & LogFailOptions;
       readonly prototype: ICloud;
@@ -103,10 +104,20 @@ Changelog
   - *ICloud* :alt:`function` **copyObject** was created.
   - *ICloudServiceClient* :alt:`function` **copyObject** :alt:`(optional)` was created.
   - *CloudConstructor* :alt:`function` **optionsLogMessage** was created.
+  - *CloudConstructor* :alt:`function` **uploadAssetSuccess** for alternate post-upload file management was created.
 
 .. versionchanged:: 0.13.0
 
-  - ``BREAKING`` *CloudConstructor* :alt:`function` **joinPath** overrides *ModuleConstructor* to resolve :target:`object` paths with spaces on a *Win32* platform.
+  - ``BREAKING`` *CloudConstructor* :target:`override` :alt:`function` **toPosix** for preserving backslashes and spaces in :target:`object` paths when transacting from a *Win32* platform.
+
+    .. hlist::
+      :columns: 1
+
+      - joinPath
+      - normalizePath
+      - globDir
+
+.. caution:: Using these static methods outside a **Cloud** environment is not recommended. These methods can be called from other modules :alt:`(e.g. FileManager)` with no change in behavior.
 
 .. versionadded:: 0.11.0
 

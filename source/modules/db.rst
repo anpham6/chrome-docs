@@ -46,11 +46,11 @@ Interface
       get commandType(): SQL_COMMAND;
 
       /* EventEmitter */
-      on(event: "db:result", listener: (result: BatchQueryResult) => void): this;
+      on(event: "db:result", listener: (batch: DbDataSource[], result: BatchQueryResult) => void): this;
       on(event: "db:fail", listener: (err: unknown, item: DbDataSource) => void): this;
-      once(event: "db:result", listener: (result: BatchQueryResult) => void): this;
+      once(event: "db:result", listener: (batch: DbDataSource[], result: BatchQueryResult) => void): this;
       once(event: "db:fail", listener: (err: unknown, item: DbDataSource) => void): this;
-      emit(event: "db:result", result: BatchQueryResult): boolean;
+      emit(event: "db:result", batch: DbDataSource[], result: BatchQueryResult): boolean;
       emit(event: "db:fail", err: unknown, item: DbDataSource): boolean;
   }
 

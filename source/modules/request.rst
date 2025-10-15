@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 29,31
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { HttpAdapterConstructor, HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
@@ -38,9 +39,9 @@ Interface
       headersOn(name: string | string[], callback: HeadersOnCallback): void;
       headersOn(name: string | string[], globUrl: string, callback: HeadersOnCallback): void;
       headersOf(uri: string): OutgoingHttpHeaders | undefined;
-      aria2c(uri: string | URL, pathname: string): Promise<string[]>;
+      aria2c(uri: string | URL, pathname: string | URL): Promise<string[]>;
       aria2c(uri: string | URL, options?: Aria2Options): Promise<string[]>;
-      rclone(uri: string, pathname: string): Promise<string[]>;
+      rclone(uri: string, pathname: string | URL): Promise<string[]>;
       rclone(uri: string, options?: RcloneOptions): Promise<string[]>;
       json(uri: string | URL, options?: OpenOptions): Promise<object | null>;
       pipe(uri: string | URL, to: Writable, options?: OpenOptions): Promise<null>;
@@ -92,6 +93,10 @@ Changelog
 .. versionremoved:: 0.13.0
 
   - *NPM* package **zstd-codec** is no longer available for :target:`Zstd` compression. :alt:`NodeJS 22.15.0` or later is required for *Content-Encoding*.
+
+.. versionchanged:: 0.13.0
+
+  - *IRequest* :alt:`function` **aria2c** | **rclone** argument :target:`pathname` can accept a :ref:`URL <references-nodejs-url>` instance.
 
 .. versionadded:: 0.12.3
 

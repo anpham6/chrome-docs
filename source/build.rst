@@ -99,7 +99,7 @@ The entire page can be transformed as a group with the same functionality as JSO
 .. code-block::
   :emphasize-lines: 8-9,33
 
-  squared.copyTo("/path/to/target", {    
+  squared.copyTo("/path/to/target", {
     saveAs: {
       html: { filename: "index.html", process: ["beautify"], attributes: { lang: "en" } },
       script: {
@@ -267,7 +267,7 @@ The hash key ``**/example*\\.html`` will only match either 1 and 2 or 3 and 4.
 
     "/project/example.html*": { // Glob
       "ordinal": 1,
-      "useOriginalHtmlPage": true
+      "useOriginalHtmlPage": true,
       "elements": [{
         "selector": "html",
         "type": "html",
@@ -333,7 +333,7 @@ The order of precedence when using :target:`inherit` is resolved through the ass
 Example data source
 -------------------
 
-There is no difference between using :doc:`data sources <document/data>` for a web page and for configuration. *JSON* stored in ``key-value`` document format is the same as unstructured *JSON* stored in a file.
+There is no difference when using :doc:`data sources <document/data>` for writing an HTML page and for configuring the output properties.
 
 .. code-block::
   :caption: DB
@@ -365,7 +365,7 @@ There is no difference between using :doc:`data sources <document/data>` for a w
     }
   });
 
-.. tip:: When using "**preserve**" the first config is used as the base. Each subsequent config fills :target:`undefined` properties to existing objects and creates new objects.
+.. tip:: When using "**preserve**" the first config is used as the base. Each subsequent config fills :target:`undefined` properties in existing objects or creates new objects.
 
 .. code-block::
   :caption: Cloud
@@ -394,18 +394,13 @@ There is no difference between using :doc:`data sources <document/data>` for a w
         "limit": 1
       },
       {
-        "source": "cloud",
-        "service": "gcp",
-        "credential": "firestore-config",
-        "query": "demo",
-        "orderBy": [
-          [
-            "orderByKey"
-          ],
-          [
-            "limitToFirst",
-            1
-          ]
+        source: "cloud",
+        service: "gcp",
+        credential: "firestore-config",
+        query: "demo",
+        orderBy: [
+          ["orderByKey"],
+          ["limitToFirst", 1]
         ]
       }]
     }

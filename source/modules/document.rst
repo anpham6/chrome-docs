@@ -67,7 +67,7 @@ Interface
       get imports(): StringMap;
       get watching(): boolean;
       set host(value);
-      get host(): IFileManager | null;     
+      get host(): IFileManager | null;
   }
 
   interface DocumentConstructor extends ModuleConstructor {

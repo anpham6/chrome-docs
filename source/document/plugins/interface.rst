@@ -18,6 +18,9 @@ Interface
 
 .. code-block::
 
+  import type { IModule } from "../../types/lib";
+  import type { ChunkData, SourceInput, SourceMap } from "../../types/document";
+
   interface ITransformSeries extends IModule, TransformOutput {
       type: "html" | "css" | "js";
       baseConfig: PlainObject;
@@ -25,15 +28,18 @@ Interface
       sourceMap: SourceMap; // Primary sourceMap
       code: string;
       metadata: PlainObject; // Custom request values and modifiable per transformer
+      options: TransformOutput;
       productionRelease: boolean;
       supplementChunks: ChunkData[];
       imported: boolean; // ESM detected
       createSourceMap(code: string): SourceMap; // Use "nextMap" method for sourceMap (additional sourceMaps)
-      upgrade(context: unknown, dirname?: string, pkgname?: string): unknown; // Use exact dependency installed with package
+      toBaseConfig(all?: boolean): PlainObject;
+      upgrade(context: unknown, startDir?: string, packageName?: string): unknown; // Use exact dependency installed with package
+      findModule(startDir: string, packageName?: string): string;
 
       /* ESM */
-      getMainFile(code?: string, imports?: StringMap): SourceInput<string> | undefined;
-      getSourceFiles(imports?: StringMap): SourceInput<[string, string?, string?][]> | undefined;
+      getMainFile(code?: string, imports?: Record<string, string>): SourceInput<string> | undefined;
+      getSourceFiles(imports?: Record<string, string>): SourceInput<[string, string?, string?][]> | undefined;
       upgradeESM(context: unknown, dirname?: string, pkgname?: string): Promise<unknown>; // Dynamic import with "require" fallback
 
       /* Return values */
@@ -50,9 +56,10 @@ Interface
       packageName: string;
       packageVersion: string; // Context version
 
-      /* Module */
+      /* IModule */
       host: IFileManager;
       username: string;
+      getTempDir(): string; // pathname: packageName + createDir: true
   }
 
 Changelog

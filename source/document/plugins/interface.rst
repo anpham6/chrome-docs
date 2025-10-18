@@ -43,7 +43,7 @@ Interface
       getMainFile(code?: string, imports?: Record<string, string>): SourceInput<string> | undefined;
       getSourceFiles(imports?: Record<string, string>): SourceInput<[string, string?, string?][]> | undefined;
       upgradeESM(context: unknown, options: FindModuleOptions): Promise<unknown>; // Dynamic import with "require" fallback
-      upgradeESM(context: unknown, dirname?: string, pkgname?: string): Promise<unknown>;
+      upgradeESM(context: unknown, dirname?: string, pkgname?: string, version?: string): Promise<unknown>;
 
       /* Return values */
       out: {
@@ -81,6 +81,7 @@ Changelog
     RegExp ^   "^1\\\\.[0-9]\\\\."
     RegExp $   "\\\\.[0-9]\\\\.\\\\d+$"
     ========== ========================
+  - *ITransformSeries* symbol name for :alt:`constructorOf` was changed from **transformseries** to :target:`document:transform:series`.
 
 .. versionadded:: 0.10.0
 

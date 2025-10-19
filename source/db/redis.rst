@@ -106,11 +106,6 @@ Authentication
         "password": "",
         "database": 0 // SELECT index (number > 0)
       }
-    },
-    "settings": {
-      "imports": {
-        "redis": "@pi-r2/redis" // Optional
-      }
     }
   }
 

@@ -4,10 +4,35 @@ Interface
 
 .. code-block:: typescript
 
-  import type { DbDataSource } from "../db/interface";
   import type { DeleteObjectsOptions } from "../types/cloud";
 
-  interface CloudDatabase extends Omit<DbDataSource, "parallel" | "withCommand" | "usePool"> {
+  interface DataSource {
+      source: string;
+      uri?: string;
+      index?: number;
+      limit?: number;
+      query?: unknown;
+      postQuery?: string | (...args: unknown[]) => unknown;
+      preRender?: string | (...args: unknown[]) => unknown;
+      whenEmpty?: string | (...args: unknown[]) => unknown;
+      removeEmpty?: boolean;
+      ignoreCache?: boolean | number | number[];
+      transactionState?: number;
+      transactionFail?: boolean;
+  }
+
+  interface DbDataSource extends DataSource {
+      name?: string;
+      table?: string;
+      credential?: string | unknown;
+      options?: unknown;
+      update?: unknown;
+      flat?: number;
+      willAbort?: boolean;
+      streamRow?: boolean | string | ((row: unknown) => Error | false | void) | null;
+  }
+
+  interface CloudDatabase extends DbDataSource {
       source: "cloud";
       service: string;
       id?: string;

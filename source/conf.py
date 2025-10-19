@@ -9,7 +9,7 @@
 project = 'E-mc'
 copyright = 'squared 2025'
 author = 'An Pham'
-release = '0.12.9'
+release = '0.13.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -38,7 +38,7 @@ rst_prolog = """
 
 html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
-  'style_nav_header_background': 'url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);',
+  'style_nav_header_background': 'url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);',
   'navigation_depth': 3,
   'includehidden': False,
 }

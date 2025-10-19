@@ -1,5 +1,5 @@
 =========
-E-mc 0.12
+E-mc 0.13
 =========
 
 .. toctree::
@@ -21,6 +21,11 @@ E-mc 0.12
 Examples use **squared** :alt:`5` and **chrome** as the reference framework. These concepts can be used with any :alt:`NodeJS 18+` application.
 
 .. note:: Using :external+android:doc:`squared <index>` or squared-express is not required.
+
+NodeJS 18 LTS
+=============
+
+- `0.13.0 <https://github.com/anpham6/e-mc/releases/tag/v0.13.0>`_
 
 NodeJS 18
 =========

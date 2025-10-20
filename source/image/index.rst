@@ -312,4 +312,4 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 .. [#] https://jimp-dev.github.io/jimp/api/jimp/classes/jimp
 .. [#] srcOver | dstOver | multiply | add | screen | overlay | darken | lighten | hardLight | difference | exclusion
 .. [#] left - 1 | center - 2 | right - 4 | top - 8 | middle - 16 | bottom - 32
-.. [#] Limitations: Methods with 0 arguments + 1 rotation only + Native read/write
+.. [#] Limitations: 1 rotation only + Native read/write

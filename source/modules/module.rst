@@ -257,6 +257,10 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.13.2/0.12.10
+
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **isDir** will resolve symbolic links as directories.
+
 .. versionadded:: 0.13.0
 
   - *IModule* :alt:`class` **EventEmitter** can send and receive events from:

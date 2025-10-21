@@ -183,6 +183,10 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.13.2
+
+  - *FileManagerConstructor* :alt:`function` **writeChecksum** | **verifyChecksum** options properties **ignore** | **ignoreRoot** as :alt:`string[]` can evaluate relative glob patterns.
+
 .. versionadded:: 0.13.0
 
   - *IFileManager* :alt:`function` **checkHash** for file integrity validation was created.

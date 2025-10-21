@@ -11,6 +11,10 @@ table.versions td {
     text-align: right;
 }
 
+table.nodejs-support th {
+    text-align: center;
+}
+
 table.center-data th.head {
     text-align: center;
 }

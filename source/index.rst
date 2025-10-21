@@ -22,26 +22,35 @@ Examples use **squared** :alt:`5` and **chrome** as the reference framework. The
 
 .. note:: Using :external+android:doc:`squared <index>` or squared-express is not required.
 
-NodeJS 18 LTS
-=============
+NodeJS Support
+==============
 
-- `0.13.0 <https://github.com/anpham6/e-mc/releases/tag/v0.13.0>`_
+.. rst-class:: nodejs-support
 
-NodeJS 18
-=========
+.. list-table::
+  :width: 500px
+  :widths: 25 15 15 15 15 15
+  :header-rows: 1
+  :stub-columns: 1
 
-- `0.12.9 <https://github.com/anpham6/e-mc/releases/tag/v0.12.9>`_
-
-NodeJS 16 LTS
-=============
-
-- `0.11.11 <https://github.com/anpham6/e-mc/releases/tag/v0.11.11>`_
-
-NodeJS 16
-=========
-
-- `0.10.15 <https://github.com/anpham6/e-mc/releases/tag/v0.10.15>`_
-- `0.9.23 <https://github.com/anpham6/e-mc/releases/tag/v0.9.23>`_
+  * - 
+    - 24.x
+    - 22.x
+    - 20.x
+    - 18.x
+    - 16.x
+  * - Base
+    - `0.13.1 <https://github.com/anpham6/e-mc/releases/tag/v0.13.1>`_
+    - `0.13.1 <https://github.com/anpham6/e-mc/releases/tag/v0.13.1>`_
+    - `0.13.1 <https://github.com/anpham6/e-mc/releases/tag/v0.13.1>`_
+    - `0.12.9 <https://github.com/anpham6/e-mc/releases/tag/v0.12.9>`_
+    - `0.10.15 <https://github.com/anpham6/e-mc/releases/tag/v0.10.15>`_
+  * - LTS
+    - `0.13.1 <https://github.com/anpham6/e-mc/releases/tag/v0.13.1>`_
+    - `0.13.1 <https://github.com/anpham6/e-mc/releases/tag/v0.13.1>`_
+    - `0.13.1 <https://github.com/anpham6/e-mc/releases/tag/v0.13.1>`_
+    - `0.13.1 <https://github.com/anpham6/e-mc/releases/tag/v0.13.1>`_
+    - `0.11.11 <https://github.com/anpham6/e-mc/releases/tag/v0.11.11>`_
 
 License
 =======

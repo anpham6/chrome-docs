@@ -257,10 +257,6 @@ Interface
 Changelog
 =========
 
-.. versionchanged:: 0.13.2/0.12.10
-
-  - ``BREAKING`` *ModuleConstructor* :alt:`function` **isDir** will resolve symbolic links as directories.
-
 .. versionadded:: 0.13.0
 
   - *IModule* :alt:`class` **EventEmitter** can send and receive events from:
@@ -282,11 +278,11 @@ Changelog
 
 .. versionchanged:: 0.12.7/0.11.10/0.10.14/0.9.22
 
-  - ``BREAKING`` *ModuleConstructor* :alt:`function` **joinPath** preseves leading and trailing spaces for non-Windows paths.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **joinPath** did not preserve leading and trailing spaces for Unix paths.
 
 .. versionchanged:: 0.12.2/0.11.9/0.10.13
 
-  - ``BREAKING`` *ModuleConstructor* :alt:`function` **isURL** no longer uses :target:`URL.canParse` for validation.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **isURL** no longer uses :target:`URL.canParse` for validation. The native method accepted values without the "**://**" convention.
 
 .. versionadded:: 0.12.0
 

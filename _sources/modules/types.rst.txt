@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 28,30-31,33
+  :emphasize-lines: 28,30-31,33,49
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -56,7 +56,8 @@ Interface
   function alignSize(value: unknown, kb?: number, factor?: number): number;
   function cascadeObject(data: object, query: string, fallback?: unknown): unknown;
   function cloneObject(data: unknown, deep: boolean): unknown;
-  function cloneObject(data: unknown, deepIgnore: WeakSet<object>): unknown;
+  /** @deprecated WeakMap<object> */
+  function cloneObject(data: unknown, deepIgnore: WeakSet<object> | WeakMap<object, object>): unknown;
   function cloneObject(data: unknown, options?: CloneObjectOptions<unknown>): unknown;
   function coerceObject(data: unknown, cache: boolean): unknown;
   function coerceObject(data: unknown, parseString?: (...args: [string]) => unknown, cache?: boolean): unknown;
@@ -210,6 +211,10 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.13.4/0.12.11
+
+  - ``BREAKING`` :alt:`function` **cloneObject** uses a :target:`WeakMap<object, object>` for reference tracking and does not contain any references from the source object.
+
 .. versionadded:: 0.13.0
 
   - :alt:`function` **isErrorCode** for checking *Error* properties was imported from :doc:`module`.
@@ -270,14 +275,35 @@ Changelog
 .. versionchanged:: 0.11.7
 
   - ``BREAKING`` Method **decryptUTF8** did not consistently reproduce data output from **encryptUTF8**.
- 
+
 .. versionadded:: 0.11.2
 
   - :alt:`interface` **THRESHOLD** property **LOGGER_METER_INCREMENT** was created.
 
+.. versionadded:: 0.11.1
+
+  - :alt:`function` **escapePattern** argument :target:`symbols` as :alt:`boolean` will also escape these optional characters:
+
+    .. hlist::
+      :columns: 4
+
+      - \\x26 &
+      - \\x21 !
+      - \\x23 #
+      - \\x25 %
+      - \\x2c ,
+      - \\x3a :
+      - \\x3b ;
+      - \\x3c <
+      - \\x3d =
+      - \\x3e >
+      - \\x40 @
+      - \\x60 \`
+      - \\x7e ~
+
 .. versionchanged:: 0.11.1
 
-  - ``BREAKING`` Method **escapePattern** argument :target:`lookBehind` was replaced with :target:`symbols` as :alt:`boolean`.
+  - ``BREAKING`` :alt:`function` **escapePattern** optional argument :target:`lookBehind` was removed since it could not produce a deterministic result. The intent of an escape character can not always be determined when possibly given a Windows path.
   - :alt:`function` **supported** argument :target:`lts` as :alt:`boolean` can be used as the :target:`patch` argument.
 
 .. versionchanged:: 0.11.0

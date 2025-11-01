@@ -3,7 +3,7 @@ Image
 =====
 
 - https://jimp-dev.github.io/jimp
-- **npm** i *@pi-r/jimp*
+- **npm** i *@pi-r/jimp* [#]_
 
 .. note:: *Jimp* is used as the reference implementation for an **Image** module.
 
@@ -85,7 +85,7 @@ WebP
 .. rst-class:: center-data
 
 ========== = = ==================== ========== =======
-Library    R W         NPM           CJS [#]_    ESM
+Library    R W         NPM           CJS         ESM
 ========== = = ==================== ========== =======
 dwebp      x   dwebp-bin [#webp]_   1.0.0       2.0.0
 cwebp        x cwebp-bin [#webp]_   6.0.0       8.0.0
@@ -240,7 +240,7 @@ You can use image commands with **saveTo** (directory) on any element where the 
        data-chrome-commands="png(10000,75000)(800x600[bezier]^contain[right|bottom])::webp|0.5|">
 
 .. code-block:: html
-  :caption: Workers (timeout 10s) [#v1]_
+  :caption: Workers (timeout 10s)
 
   <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/harbour1.jpg"
        data-chrome-file="saveAs:images/harbour.png"
@@ -257,6 +257,10 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 .. versionadded:: 0.11.0
 
   - *NPM* package ``jimp`` was upgraded to **1.6.0**.
+  - *ImageModule* settings **jimp.options** for MIME-based decode and encode optimizations was implemented.
+  - Workers for native Jimp commands was implemented. [#]_
+  - *ImageModule* settings **jimp.worker** for available threads was implemented.
+  - *NPM* binaries for **WebP** :alt:`(ESM)` are supported.  
   - *Jimp* plugin method **print** supports built-in fonts as :alt:`string` using these names:
 
     .. hlist::
@@ -275,6 +279,10 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
       - SANS_32_WHITE
       - SANS_64_WHITE
       - SANS_128_WHITE
+
+.. versionchanged:: 0.11.0
+
+ - Package will be developed under `pi-r2 <https://github.com/anpham6/pi-r2/tree/master/src/module/jimp>`_ for future releases.
 
 .. versionadded:: 0.10.0
 
@@ -296,31 +304,12 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
       - dekker
       - none
 
-@pi-r2/jimp
-===========
-
-.. versionchanged:: 0.3.0
-
-  - Package will be published under ``@pi-r/jimp`` and developed under ``pi-r2/src/module/jimp`` for future releases.
-
-.. versionadded:: 0.2.0
-
-  - *ImageModule* settings **jimp.options** for MIME-based decode and encode optimizations was implemented.
-  - Workers :alt:`(experimental)` for native Jimp commands was implemented. [#]_
-  - *ImageModule* settings **jimp.worker** for available threads was implemented.
-  - *NPM* binaries for **WebP** :alt:`(ESM)` are supported.
-
-.. versionadded:: 0.1.0
-
-  - Experimental package for the ``1.x`` releases was created.
-
 .. [#webp] https://developers.google.com/speed/webp/download
-.. [#v1] Jimp 1.x
-.. [#] Until: pi-r 0.9.4 | pi-r2 0.2
+.. [#] https://github.com/anpham6/pi-r2/tree/master/src/module/jimp
 .. [#] cwebp options: -q -preset -near_lossless
 .. [#] Method with no arguments. (e.g. sepia)
 .. [#] No expressions or native objects.
 .. [#] https://jimp-dev.github.io/jimp/api/jimp/classes/jimp
 .. [#] srcOver | dstOver | multiply | add | screen | overlay | darken | lighten | hardLight | difference | exclusion
 .. [#] left - 1 | center - 2 | right - 4 | top - 8 | middle - 16 | bottom - 32
-.. [#] Limitations: Methods with 0 arguments + 1 rotation only + Native read/write
+.. [#] Limitations: 1 rotation only + Native read/write

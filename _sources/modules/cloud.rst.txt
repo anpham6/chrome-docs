@@ -9,14 +9,14 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 20,78
+  :emphasize-lines: 20,53,55
 
   import type { IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
   import type { BucketWebsiteOptions, CloudDatabase, CloudFeatures, CloudFunctions, CloudService, CloudStorage, CloudStorageDownload, CloudStorageUpload, CopyObjectOptions, DeleteObjectsOptions } from "./cloud";
   import type { ClientDbConstructor, IClientDb } from "./core";
   import type { BatchQueryResult, QueryResult } from "./db";
-  import type { LogMessageOptions } from "./logger";
+  import type { LogFailOptions, LogMessageOptions } from "./logger";
   import type { CloudAuthSettings, CloudModule, CloudServiceOptions, CloudSettings, DbCoerceSettings } from "./settings";
 
   interface ICloud extends IClientDb<IHost, CloudModule, CloudDatabase, CloudServiceOptions, DbCoerceSettings & CloudAuthSettings> {
@@ -51,6 +51,7 @@ Interface
   }
 
   interface CloudConstructor extends ClientDbConstructor<IHost> {
+      LOG_CLOUD_SUCCESS: LogMessageOptions;
       LOG_CLOUD_FAIL: LogMessageOptions;
       LOG_CLOUD_COMMAND: LogMessageOptions;
       LOG_CLOUD_WARN: LogMessageOptions;
@@ -62,7 +63,9 @@ Interface
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, options: UploadAssetOptions): Promise<void>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, ignoreProcess: boolean): Promise<void>[];
       uploadAsset(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, contentType?: string, ignoreProcess?: boolean): Promise<void>[];
+      uploadAssetSuccess(state: IScopeOrigin<IFileManager, ICloud>, file: ExternalAsset, active?: boolean): (value: string) => Promise<void> | void;
       sanitizeAssets(assets: ExternalAsset[]): ExternalAsset[];
+      optionsLogMessage(type: "SUCCESS" | "FAIL" | "COMMAND" | "WARN" | "UPLOAD" | "DOWNLOAD" | "DELETE" | "DELAYED", options?: LogMessageOptions & LogFailOptions): LogMessageOptions & LogFailOptions;
       readonly prototype: ICloud;
       new(module?: CloudModule, database?: CloudDatabase[], ...args: unknown[]): ICloud;
   }
@@ -88,7 +91,7 @@ Interface
       /** @deprecated */
       deleteObjectsV2?(this: IModule, credential: unknown, bucket: string, recursive?: boolean, service?: string, sdk?: string): Promise<void>;
       deleteObjectsV3?(this: IModule, credential: unknown, bucket: string, options?: DeleteObjectsOptions, service?: string, sdk?: string): Promise<void>;
-      copyObject?(this: IModule, credential: unknown, bucketSource: string, keySource: string, bucket: string, key: string, options?: unknown, service?: string, sdk?: string): Promise<void>;      
+      copyObject?(this: IModule, credential: unknown, bucketSource: string, keySource: string, bucket: string, key: string, options?: unknown, service?: string, sdk?: string): Promise<void>;
       executeQuery?(this: ICloud, credential: unknown, data: CloudDatabase, sessionKey?: string): Promise<QueryResult>;
       executeBatchQuery?(this: ICloud, credential: unknown, batch: CloudDatabase[], sessionKey?: string): Promise<BatchQueryResult>;
   }
@@ -100,10 +103,21 @@ Changelog
 
   - *ICloud* :alt:`function` **copyObject** was created.
   - *ICloudServiceClient* :alt:`function` **copyObject** :alt:`(optional)` was created.
+  - *CloudConstructor* :alt:`function` **optionsLogMessage** was created.
+  - *CloudConstructor* :alt:`function` **uploadAssetSuccess** for alternate post-upload file management was created.
 
 .. versionchanged:: 0.13.0
 
-  - ``BREAKING`` *CloudConstructor* :alt:`function` **joinPath** overrides *ModuleConstructor* to resolve :target:`object` paths with spaces on a *Win32* platform.
+  - ``BREAKING`` *CloudConstructor* :target:`override` :alt:`function` **toPosix** for preserving backslashes and spaces in :target:`object` paths when transacting from a *Win32* platform.
+
+    .. hlist::
+      :columns: 1
+
+      - joinPath
+      - normalizePath
+      - globDir
+
+.. caution:: Using these static methods outside a **Cloud** environment is not recommended. These methods can be called from other modules :alt:`(e.g. FileManager)` with no change in behavior.
 
 .. versionadded:: 0.11.0
 

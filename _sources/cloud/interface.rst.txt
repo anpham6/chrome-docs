@@ -4,10 +4,35 @@ Interface
 
 .. code-block:: typescript
 
-  import type { DbDataSource } from "../db/interface";
   import type { DeleteObjectsOptions } from "../types/cloud";
 
-  interface CloudDatabase extends Omit<DbDataSource, "parallel" | "withCommand" | "usePool"> {
+  interface DataSource {
+      source: string;
+      uri?: string;
+      index?: number;
+      limit?: number;
+      query?: unknown;
+      postQuery?: string | (...args: unknown[]) => unknown;
+      preRender?: string | (...args: unknown[]) => unknown;
+      whenEmpty?: string | (...args: unknown[]) => unknown;
+      removeEmpty?: boolean;
+      ignoreCache?: boolean | number | number[];
+      transactionState?: number;
+      transactionFail?: boolean;
+  }
+
+  interface DbDataSource extends DataSource {
+      name?: string;
+      table?: string;
+      credential?: string | unknown;
+      options?: unknown;
+      update?: unknown;
+      flat?: number;
+      willAbort?: boolean;
+      streamRow?: boolean | string | ((row: unknown) => Error | false | void) | null;
+  }
+
+  interface CloudDatabase extends DbDataSource {
       source: "cloud";
       service: string;
       id?: string;
@@ -87,8 +112,8 @@ Changelog
 
 .. versionadded:: 0.13.0
 
-  - *CloudStorageUpload* property **copyObject** for alternate bucket location was implemented.
-  - *CloudStorageDownload* property **copyObject** for emulating move/rename and delete semantics was implemented.
+  - *CloudStorageUpload* property **copyObject | copyObject[]** for alternate bucket location was implemented.
+  - *CloudStorageDownload* property **copyObject | copyObject[]** for emulating move/rename and delete semantics was implemented.
 
 .. versionadded:: 0.11.0
 
@@ -168,7 +193,7 @@ Storage
 
         "endpoint": "http://hostname/nodejs-001", // Required when different from credential
 
-        "copyObject": {
+        "copyObject": [{
           "bucket": "nodejs-002", // nodejs-002/2024/picture.png (required)
           /* OR */
           "filename": "001.png", // nodejs-002/2024/001.png
@@ -180,7 +205,7 @@ Storage
           "filename": "001.png",
 
           "options": {/* service-interface */}
-        }
+        }]
       },
       "download": {
         "filename": "alternate.png", // Required
@@ -208,7 +233,7 @@ Storage
         "deleteObject": true, // Delete from bucket after successful download
         "deleteObject": {/* service-interface */},
 
-        "copyObject": {/* same as upload */}
+        "copyObject": [{/* same as upload */}]
       }
     }]
   }

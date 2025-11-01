@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interface &mdash; E-mc 0.12.7 documentation</title>
+  <title>Interface &mdash; E-mc 0.13.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/role.css?v=7d609451" />
-      <link rel="stylesheet" type="text/css" href="../../_static/content.css?v=2121b98c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../../_static/override.css?v=02443a00" />
+      <link rel="stylesheet" type="text/css" href="../../_static/override.css?v=c5bd8d2d" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=aa45213c"></script>
+      <script src="../../_static/documentation_options.js?v=27e171c2"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
 
           
           
@@ -84,7 +84,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">E-mc</a>
       </nav>
@@ -118,24 +118,32 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">ITransformSeries</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">IModule</span><span class="p">,</span><span class="w"> </span><span class="nx">TransformOutput</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IModule</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../../types/lib&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ChunkData</span><span class="p">,</span><span class="w"> </span><span class="nx">FindModuleOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">SourceInput</span><span class="p">,</span><span class="w"> </span><span class="nx">SourceMap</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../../types/document&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">ITransformSeries</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">IModule</span><span class="p">,</span><span class="w"> </span><span class="nx">TransformOutput</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;css&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;js&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">baseConfig</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">outputConfig</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">;</span><span class="w"> </span><span class="c1">// Same as baseConfig when using an inline transformer</span>
 <span class="w">    </span><span class="nx">sourceMap</span><span class="o">:</span><span class="w"> </span><span class="kt">SourceMap</span><span class="p">;</span><span class="w"> </span><span class="c1">// Primary sourceMap</span>
 <span class="w">    </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">metadata</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">;</span><span class="w"> </span><span class="c1">// Custom request values and modifiable per transformer</span>
+<span class="w">    </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">TransformOutput</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">productionRelease</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">supplementChunks</span><span class="o">:</span><span class="w"> </span><span class="kt">ChunkData</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">imported</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// ESM detected</span>
 <span class="w">    </span><span class="nx">createSourceMap</span><span class="p">(</span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">SourceMap</span><span class="p">;</span><span class="w"> </span><span class="c1">// Use &quot;nextMap&quot; method for sourceMap (additional sourceMaps)</span>
-<span class="w">    </span><span class="nx">upgrade</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">dirname?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">pkgname?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span><span class="w"> </span><span class="c1">// Use exact dependency installed with package</span>
+<span class="w">    </span><span class="nx">toBaseConfig</span><span class="p">(</span><span class="nx">all?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">PlainObject</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">upgrade</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">FindModuleOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span><span class="w"> </span><span class="c1">// Use exact dependency installed with package</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">upgrade</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">startDir?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">packageName?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">version?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">findModule</span><span class="p">(</span><span class="nx">startDir</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">packageName?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">version?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 
 <span class="w">    </span><span class="cm">/* ESM */</span>
-<span class="w">    </span><span class="nx">getMainFile</span><span class="p">(</span><span class="nx">code?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">imports?</span><span class="o">:</span><span class="w"> </span><span class="kt">StringMap</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">SourceInput</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">getSourceFiles</span><span class="p">(</span><span class="nx">imports?</span><span class="o">:</span><span class="w"> </span><span class="kt">StringMap</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">SourceInput</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">?</span><span class="p">][]</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">upgradeESM</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">dirname?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">pkgname?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Dynamic import with &quot;require&quot; fallback</span>
-
+<span class="w">    </span><span class="nx">getMainFile</span><span class="p">(</span><span class="nx">code?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">imports?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">SourceInput</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">getSourceFiles</span><span class="p">(</span><span class="nx">imports?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">SourceInput</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">?</span><span class="p">][]</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">upgradeESM</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">FindModuleOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Dynamic import with &quot;require&quot; fallback</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">upgradeESM</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">dirname?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">pkgname?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">version?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
+</span>
 <span class="w">    </span><span class="cm">/* Return values */</span>
 <span class="w">    </span><span class="nx">out</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">sourceFiles?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span><span class="w"> </span><span class="c1">// ESM (e.g. files to watch)</span>
@@ -150,18 +158,51 @@
 <span class="w">    </span><span class="nx">packageName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">packageVersion</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Context version</span>
 
-<span class="w">    </span><span class="cm">/* Module */</span>
+<span class="w">    </span><span class="cm">/* IModule */</span>
 <span class="w">    </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="kt">IFileManager</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">getTempDir</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// pathname: packageName + createDir: true</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.13.0: </span></p>
+<ul>
+<li><p><em>ITransformSeries</em> <em class="alt">function</em> <strong>upgrade</strong> | <strong>upgradeESM</strong> can specify a version range to locate a hoisted package:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>first</p></td>
+<td><p>latest</p></td>
+</tr>
+<tr class="row-odd"><td><p>exact</p></td>
+<td><p>1.1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>startsWith</p></td>
+<td><p>1.1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RegExp ^</p></td>
+<td><p>”^1\\.[0-9]\\.”</p></td>
+</tr>
+<tr class="row-even"><td><p>RegExp $</p></td>
+<td><p>”\\.[0-9]\\.\\d+$”</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p><em>ITransformSeries</em> symbol name for <em class="alt">constructorOf</em> was changed from <strong>transformseries</strong> to <em class="target">document:transform:series</em>.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>ITransformSeries</em> method <strong>upgradeESM</strong> for using internal dependencies was created.</p></li>
+<li><p><em>ITransformSeries</em> <em class="alt">function</em> <strong>upgradeESM</strong> for using internal dependencies was created.</p></li>
 </ul>
 </div>
 </section>

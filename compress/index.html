@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Compress &mdash; E-mc 0.12.7 documentation</title>
+  <title>Compress &mdash; E-mc 0.13.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
-      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=2121b98c" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=02443a00" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=c5bd8d2d" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=aa45213c"></script>
+      <script src="../_static/documentation_options.js?v=27e171c2"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
 
           
           
@@ -70,7 +70,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -135,7 +135,7 @@
 <h2>Imagemin<a class="headerlink" href="#imagemin" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/imagemin/imagemin">https://github.com/imagemin/imagemin</a></p></li>
-<li><p><strong>npm</strong> i <em>&#64;pi-r2/imagemin</em></p></li>
+<li><p><strong>npm</strong> i <em>&#64;pi-r/imagemin</em></p></li>
 </ul>
 <p>Images are transcoded locally using <em>MIME</em> detection to automatically choose the appropriate plugin.</p>
 <div class="literal-block-wrapper docutils container" id="id4">
@@ -146,7 +146,6 @@
 <span class="w">      </span><span class="nt">&quot;mozjpeg&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-mozjpeg#api</span>
 <span class="w">      </span><span class="nt">&quot;jpegtran&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-jpegtran#api</span>
 <span class="w">      </span><span class="nt">&quot;pngquant&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-pngquant#api</span>
-<span class="w">      </span><span class="nt">&quot;optipng&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-optipng#api</span>
 <span class="w">      </span><span class="nt">&quot;webp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-webp#api</span>
 <span class="w">      </span><span class="nt">&quot;gifsicle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-gifsicle#api</span>
 <span class="w">      </span><span class="nt">&quot;svgo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">}</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-svgo#api</span>
@@ -164,24 +163,24 @@
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p &gt; img&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;compress&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Recommended</span>
+<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jpeg&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Recommended</span>
 <span class="w">      </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;worker&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Experimental</span>
+<span class="w">      </span><span class="nt">&quot;worker&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;speed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="c1">// imagemin-pngquant (default)</span>
-<span class="w">        </span><span class="nt">&quot;quality&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">]</span>
+<span class="w">        </span><span class="nt">&quot;quality&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="c1">// imagemin-mozjpeg (default)</span>
+<span class="w">        </span><span class="nt">&quot;smooth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;png&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jpeg&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;package&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin-optipng&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Alias &quot;optipng&quot;</span>
-<span class="w">        </span><span class="nt">&quot;mimeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="w"> </span><span class="c1">// Optional (auto-detect)</span>
+<span class="w">        </span><span class="nt">&quot;package&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin-jpegtran&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Alias &quot;jpegtran&quot;</span>
+<span class="w">        </span><span class="nt">&quot;mimeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/jpeg&quot;</span><span class="w"> </span><span class="c1">// Optional (auto-detect)</span>
 <span class="w">      </span><span class="p">},</span>
 <span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;optimizationLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;interlaced&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">        </span><span class="nt">&quot;progressive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;arithmetic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
@@ -198,10 +197,10 @@
 <span class="w">  </span><span class="nt">&quot;compress&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;png&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin-gif2webp&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// npm i imagemin-gif2webp</span>
+<span class="w">      </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin-optipng&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// npm i imagemin-optipng</span>
 <span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;lossy&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;quality&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span>
+<span class="w">        </span><span class="nt">&quot;speed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;quality&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">]</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
@@ -209,7 +208,7 @@
 <span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;png&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;package&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin-gif2webp&quot;</span><span class="w"> </span><span class="c1">// With settings &quot;gif2webp&quot;</span>
+<span class="w">        </span><span class="nt">&quot;package&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin-optipng&quot;</span><span class="w"> </span><span class="c1">// With settings &quot;optipng&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
@@ -218,7 +217,7 @@
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Settings are used only when <strong>options</strong> is <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+<p>Settings are applied only when <strong>options</strong> is <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
 </div>
 </section>
 <section id="environment-variables">

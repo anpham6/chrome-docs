@@ -34,6 +34,7 @@ Pool
   interface PoolConfig {
       max?: number; // connectionLimit
       idle?: number; // idleTimeout
+      idle_max?: number; // maxIdle
       queue_max?: number; // queueLimit
       timeout?: number; // connectTimeout
   }
@@ -105,6 +106,10 @@ Example usage
 
 @pi-r/mysql
 ===========
+
+.. versionadded:: 0.11.0
+
+  - *PoolConfig* property **idle_max** as :alt:`maxIdle` was implemented.
 
 .. versionadded:: 0.10.0
 

@@ -297,7 +297,7 @@ Example usage
 
 .. versionadded:: 0.11.0
 
-  - *AzureStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject`.
+  - *AzureStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject | copyObject[]`.
 
 .. versionchanged:: 0.11.0
 

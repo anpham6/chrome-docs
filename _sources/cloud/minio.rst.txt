@@ -168,6 +168,10 @@ Example usage
 @pi-r2/minio
 ============
 
+.. versionadded:: 0.3.0
+
+  - NPM: Unmaintained and untested source with :alt:`minio 8.0.6` was released.
+
 .. versionadded:: 0.1.0
 
   - NPM: Unmaintained and untested source with :alt:`minio 8.0.4` was released.

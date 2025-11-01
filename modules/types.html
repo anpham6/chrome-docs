@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/types &mdash; E-mc 0.12.7 documentation</title>
+  <title>@e-mc/types &mdash; E-mc 0.13.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
-      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=2121b98c" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=02443a00" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=c5bd8d2d" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=aa45213c"></script>
+      <script src="../_static/documentation_options.js?v=27e171c2"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
 
           
           
@@ -86,7 +86,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -159,8 +159,9 @@
 <span class="kd">function</span><span class="w"> </span><span class="nx">alignSize</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">kb?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">factor?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">cascadeObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">object</span><span class="p">,</span><span class="w"> </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">fallback?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">cloneObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">deep</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">cloneObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">deepIgnore</span><span class="o">:</span><span class="w"> </span><span class="kt">WeakSet</span><span class="o">&lt;</span><span class="nx">object</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">cloneObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">CloneObjectOptions</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+<span class="cm">/** @deprecated WeakMap&lt;object&gt; */</span>
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">cloneObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">deepIgnore</span><span class="o">:</span><span class="w"> </span><span class="kt">WeakSet</span><span class="o">&lt;</span><span class="nx">object</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">WeakMap</span><span class="o">&lt;</span><span class="nx">object</span><span class="p">,</span><span class="w"> </span><span class="nx">object</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+</span><span class="kd">function</span><span class="w"> </span><span class="nx">cloneObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">CloneObjectOptions</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">coerceObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">cache</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">coerceObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">parseString</span><span class="o">?:</span><span class="w"> </span><span class="p">(...</span><span class="nx">args</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">cache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">getEncoding</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">fallback?</span><span class="o">:</span><span class="w"> </span><span class="kt">BufferEncoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">BufferEncoding</span><span class="p">;</span>
@@ -315,6 +316,12 @@
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.13.4/0.12.11: </span></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>cloneObject</strong> uses a <em class="target">WeakMap&lt;object, object&gt;</em> for reference tracking and does not contain any references from the source object.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.13.0: </span></p>
 <ul class="simple">
@@ -410,10 +417,39 @@
 <li><p><em class="alt">interface</em> <strong>THRESHOLD</strong> property <strong>LOGGER_METER_INCREMENT</strong> was created.</p></li>
 </ul>
 </div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.1: </span></p>
+<ul>
+<li><p><em class="alt">function</em> <strong>escapePattern</strong> argument <em class="target">symbols</em> as <em class="alt">boolean</em> will also escape these optional characters:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>\x26 &amp;</p></li>
+<li><p>\x21 !</p></li>
+<li><p>\x23 #</p></li>
+<li><p>\x25 %</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>\x2c ,</p></li>
+<li><p>\x3a :</p></li>
+<li><p>\x3b ;</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>\x3c &lt;</p></li>
+<li><p>\x3d =</p></li>
+<li><p>\x3e &gt;</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>\x40 &#64;</p></li>
+<li><p>\x60 `</p></li>
+<li><p>\x7e ~</p></li>
+</ul>
+</td></tr></table>
+</li>
+</ul>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.11.1: </span></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> Method <strong>escapePattern</strong> argument <em class="target">lookBehind</em> was replaced with <em class="target">symbols</em> as <em class="alt">boolean</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>escapePattern</strong> optional argument <em class="target">lookBehind</em> was removed since it could not produce a deterministic result. The intent of an escape character can not always be determined when possibly given a Windows path.</p></li>
 <li><p><em class="alt">function</em> <strong>supported</strong> argument <em class="target">lts</em> as <em class="alt">boolean</em> can be used as the <em class="target">patch</em> argument.</p></li>
 </ul>
 </div>

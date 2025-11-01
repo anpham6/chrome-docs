@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Options &mdash; E-mc 0.12.7 documentation</title>
+  <title>Build Options &mdash; E-mc 0.13.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/role.css?v=7d609451" />
-      <link rel="stylesheet" type="text/css" href="_static/content.css?v=2121b98c" />
+      <link rel="stylesheet" type="text/css" href="_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="_static/override.css?v=02443a00" />
+      <link rel="stylesheet" type="text/css" href="_static/override.css?v=c5bd8d2d" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=aa45213c"></script>
+      <script src="_static/documentation_options.js?v=27e171c2"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
 
           
           
@@ -78,7 +78,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/005.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">E-mc</a>
       </nav>
@@ -442,7 +442,7 @@ http://hostname/path/sub/example4.html
 
 <span class="w">  </span><span class="nt">&quot;/project/example.html*&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Glob</span>
 <span class="w">    </span><span class="nt">&quot;ordinal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;useOriginalHtmlPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="nt">&quot;useOriginalHtmlPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;elements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
 <span class="w">      </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
@@ -515,7 +515,7 @@ http://hostname/path/sub/example4.html
 </section>
 <section id="example-data-source">
 <h3>Example data source<a class="headerlink" href="#example-data-source" title="Link to this heading"></a></h3>
-<p>There is no difference between using <a class="reference internal" href="document/data.html"><span class="doc">data sources</span></a> for a web page and for configuration. <em>JSON</em> stored in <code class="docutils literal notranslate"><span class="pre">key-value</span></code> document format is the same as unstructured <em>JSON</em> stored in a file.</p>
+<p>There is no difference when using <a class="reference internal" href="document/data.html"><span class="doc">data sources</span></a> for writing an HTML page and for configuring the output properties.</p>
 <div class="literal-block-wrapper docutils container" id="id21">
 <div class="code-block-caption"><span class="caption-text">DB</span><a class="headerlink" href="#id21" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">&quot;/path/output&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
@@ -549,7 +549,7 @@ http://hostname/path/sub/example4.html
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>When using “<strong>preserve</strong>” the first config is used as the base. Each subsequent config fills <em class="target">undefined</em> properties to existing objects and creates new objects.</p>
+<p>When using “<strong>preserve</strong>” the first config is used as the base. Each subsequent config fills <em class="target">undefined</em> properties in existing objects or creates new objects.</p>
 </div>
 <div class="literal-block-wrapper docutils container" id="id22">
 <div class="code-block-caption"><span class="caption-text">Cloud</span><a class="headerlink" href="#id22" title="Link to this code"></a></div>
@@ -582,13 +582,8 @@ http://hostname/path/sub/example4.html
 <span class="w">      </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;firestore-config&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">orderBy</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span>
-<span class="w">          </span><span class="s2">&quot;orderByKey&quot;</span>
-<span class="w">        </span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span>
-<span class="w">          </span><span class="s2">&quot;limitToFirst&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="mf">1</span>
-<span class="w">        </span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;orderByKey&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;limitToFirst&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">]</span>
 <span class="w">      </span><span class="p">]</span>
 <span class="w">    </span><span class="p">}]</span>
 <span class="w">  </span><span class="p">}</span>

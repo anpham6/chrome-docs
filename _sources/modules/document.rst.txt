@@ -28,7 +28,7 @@ Interface
       init(assets: ExternalAsset[], config?: HostInitConfig): this;
       customize(options?: CustomizeOptions): void;
       findConfig(data: object, name: string, type?: string): PluginConfig;
-      loadConfig(data: object, name: string): ConfigOrTransformer | null | undefined;
+      loadConfig(data: object, name: string): ConfigOrTransformer | undefined;
       asSourceFile(value: string, cache: boolean): unknown;
       asSourceFile(value: string, options?: AsSourceFileOptions): unknown;
       findVersion(name: string | string[], fallback?: string): string;
@@ -66,7 +66,7 @@ Interface
       get imports(): StringMap;
       get watching(): boolean;
       set host(value);
-      get host(): IFileManager | null;     
+      get host(): IFileManager | null;
   }
 
   interface DocumentConstructor extends ModuleConstructor {
@@ -85,6 +85,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.13.0
+
+  - Hash object based function transformers by :target:`format` name can be exported including a **default** export for :ref:`document plugins <document-plugins-settings-es6-hash>`.
 
 .. versionadded:: 0.12.0
 

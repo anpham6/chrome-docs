@@ -137,13 +137,14 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 14,16,43
 
   import type { PermittedDirectories } from "./core";
   import type { SecureConfig } from "./http";
   import type { PurgeComponent } from "./settings";
 
   import type { LookupAddress } from "node:dns";
-  import type { OutgoingHttpHeaders } from "node:http";
+  import type { AgentOptions, OutgoingHttpHeaders } from "node:http";
 
   interface RequestModule {
       handler: "@e-mc/request";
@@ -151,7 +152,9 @@ Settings
       read_timeout?: number | string;
       agent?: {
           keep_alive?: boolean;
+          keep_alive_interval?: number | string;
           timeout?: number | string;
+          proxy_env?: AgentOptions["proxyEnv"];
       };
       connect?: {
           timeout?: number | string;
@@ -178,6 +181,7 @@ Settings
           include?: string[];
           exclude?: string[];
           keep_alive?: boolean;
+          keep_alive_interval?: number | string;
       };
       headers: Record<string, OutgoingHttpHeaders>;
       certs?: Record<string, SecureConfig<string | string[]>>;
@@ -267,6 +271,11 @@ Settings
 
 Changelog
 ---------
+
+.. versionchanged:: 0.13.5
+
+  - *RequestModule* :target:`agent` properties **keep_alive_interval** | **proxy_env** for configuring the HTTP/s global Agent instance were created.
+  - *RequestModule* property **proxy.keep_alive_interval** for throttling the keep alive packets :alt:`(ms)` was created.
 
 .. versionchanged:: 0.12.0
 

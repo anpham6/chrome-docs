@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/core &mdash; E-mc 0.13.4 documentation</title>
+  <title>@e-mc/core &mdash; E-mc 0.13.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=ec68e10f"></script>
+      <script src="../_static/documentation_options.js?v=48106516"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -175,8 +175,8 @@
 <span class="w">    </span><span class="nx">getThreadCount</span><span class="p">(</span><span class="nx">full</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">ThreadCountStat</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">getThreadCount</span><span class="p">(</span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">iv?</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">ThreadCountStat</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">getThreadCount</span><span class="p">(</span><span class="nx">username?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span><span class="w"> </span><span class="nx">iv?</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">getPermissionFromSettings</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">IPermission</span><span class="p">;</span>
-<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IHost</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">getPermissionFromSettings</span><span class="p">(</span><span class="nx">freeze?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IPermission</span><span class="p">;</span>
+</span><span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IHost</span><span class="p">;</span>
 <span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="nx">config?</span><span class="o">:</span><span class="w"> </span><span class="kt">HostInitConfig</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IHost</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -359,6 +359,12 @@
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.13.5/0.12.13/0.11.13/0.10.17/0.9.25: </span></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>HostConstructor</em> <em class="alt">function</em> <strong>getPermissionFromSettings</strong> returns a completely frozen <em class="target">Permission</em> global instance. Any attempt to modify the object will silently be denied access.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.12.0: </span></p>
 <ul class="simple">

@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 63
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -72,7 +73,7 @@ Interface
       getThreadCount(full: true): ThreadCountStat;
       getThreadCount(username: string, iv?: BinaryLike): ThreadCountStat;
       getThreadCount(username?: string | boolean, iv?: BinaryLike): number;
-      getPermissionFromSettings(): IPermission;
+      getPermissionFromSettings(freeze?: boolean): IPermission;
       readonly prototype: IHost;
       new(config?: HostInitConfig): IHost;
   }
@@ -253,6 +254,10 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.13.5/0.12.13/0.11.13/0.10.17/0.9.25
+
+  - ``BREAKING`` *HostConstructor* :alt:`function` **getPermissionFromSettings** returns a completely frozen :target:`Permission` global instance. Any attempt to modify the object will silently be denied access.
 
 .. versionadded:: 0.12.0
 

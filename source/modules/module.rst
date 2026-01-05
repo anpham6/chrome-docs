@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 82-84,129,132,140,143,151,154,190,194
+  :emphasize-lines: 24,82-84,129,132,140,143,151,154,190,194
 
   import type { LogStatus } from "./squared";
 
@@ -34,7 +34,7 @@ Interface
       readonly status: LogStatus<StatusType>[];
       readonly errors: unknown[];
       supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
-      supports(name: string, value?: boolean): boolean;
+      supports(name: string, value?: boolean, locked?: boolean): boolean;
       getTempDir(options: GetTempDirOptions): string;
       getTempDir(uuidDir: boolean, createDir: boolean): string;
       getTempDir(pathname: string, createDir: boolean): string;
@@ -256,6 +256,17 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.13.6
+
+  - *IModule* :alt:`function` **supports** argument :target:`locked` as :alt:`boolean` can **permanently** lock these properties:
+
+    .. hlist::
+      :columns: 1
+
+      - sessionId
+      - broadcastId
+      - permission
 
 .. versionadded:: 0.13.0
 

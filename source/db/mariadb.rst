@@ -9,6 +9,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :emphasize-lines: 9
 
   import type { PoolConfig, QueryConfig } from "mariadb";
   import type { SecureContextOptions } from "tls";
@@ -18,6 +19,7 @@ Interface
       credential: string | MariaDBCredential;
       query?: string | QueryConfig;
       params?: unknown;
+      preparedStatement?: boolean;
   }
 
   interface MariaDBCredential extends ServerAuth, PoolConfig {
@@ -74,7 +76,7 @@ Authentication
 Example usage
 =============
 
-- `Query <https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/master/documentation/promise-api.md#connection-api>`_
+- `Query <https://mariadb.com/docs/connectors/mariadb-connector-nodejs/connector-nodejs-promise-api>`_
 
 ::
 
@@ -106,8 +108,17 @@ Example usage
     }
   }
 
+- `Prepared Statements <https://mariadb.com/docs/connectors/mariadb-connector-nodejs/connector-nodejs-promise-api#connection.execute-sql-values-promise>`_
+
+  See :ref:`MySQL <mysql-prepared-statements>`.
+
+
 @pi-r/mariadb
 =============
+
+.. versionadded:: 0.11.1
+
+  - *MariaDBDataSource* property **preparedStatement** as :alt:`boolean` for initiating a series of repetitive queries was created.
 
 .. versionadded:: 0.10.0
 

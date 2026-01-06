@@ -186,7 +186,7 @@ Example usage
 .. versionadded:: 0.11.0
 
   - *NPM* package ``redis`` was upgraded to **5.8.0**.
-  - *RedisDataSource* property **streams** as :alt:`XReadStreams` was implemented.
+  - *RedisDataSource* property **streams** as :alt:`XReadStreams` was created.
   - *RedisDataSource* property **format** with type "**SMEMBERS**" using :target:`key` as :alt:`string` was implemented.
 
 .. versionchanged:: 0.11.0

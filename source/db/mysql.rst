@@ -9,6 +9,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :emphasize-lines: 9
 
   import type { PoolOptions, QueryOptions } from "mysql2/promise";
   import type { SecureContextOptions } from "tls";
@@ -18,6 +19,7 @@ Interface
       credential: string | MySQLCredential;
       query?: string | QueryOptions;
       params?: unknown;
+      preparedStatement?: boolean;
   }
 
   interface MySQLCredential extends ServerAuth, PoolOptions {
@@ -104,8 +106,31 @@ Example usage
     }
   }
 
+.. _mysql-prepared-statements:
+
+- `Prepared Statements <https://sidorares.github.io/node-mysql2/docs/examples/queries/prepared-statements>`_
+
+::
+
+  [
+    { "query": "SELECT 1" }, // 1
+    { "query": "SELECT * FROM `users` WHERE `name` = ?", "params": ["John"], "preparedStatement": true }, // OK
+    { "params": ["Herbert"] }, // OK
+    { "query": "SELECT 1", "params": ["Cactus"] }, // 1
+    { "query": "SELECT * FROM `users` WHERE `age` > ?", "params": [33], "preparedStatement": true }, // OK
+    { "params": ["Phillip"] }, // ERROR
+    { "query": "SELECT 1", "preparedStatement": false }, // 1
+    { "params": [36] } // ERROR
+  ]
+
+.. note:: Queries cannot be run in **parallel** and only with **connectOnce** enabled.
+
 @pi-r/mysql
 ===========
+
+.. versionadded:: 0.11.1
+
+  - *MySQLDataSource* property **preparedStatement** as :alt:`boolean` for initiating a series of repetitive queries was created.
 
 .. versionadded:: 0.11.0
 

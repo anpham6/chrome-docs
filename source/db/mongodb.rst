@@ -185,8 +185,8 @@ Example usage
 
 .. versionadded:: 0.10.2
 
-  - *MongoDBDataSource* property **distinct** for values for a specified field across a single collection was implemented.
-  - *MongoDBDataSource* property **driverInfo** for driver information :alt:`(name/version/platform)` was implemented.
+  - *MongoDBDataSource* property **distinct** for values for a specified field across a single collection was created.
+  - *MongoDBDataSource* property **driverInfo** for driver information :alt:`(name/version/platform)` was created.
 
 .. versionadded:: 0.10.0
 
@@ -194,7 +194,7 @@ Example usage
 
 .. versionadded:: 0.9.0
 
-  - *MongoDBDataSource* property **bulkWrite** for multiple writes in a series as :alt:`ClientBulkWriteModel[]` was implemented.
+  - *MongoDBDataSource* property **bulkWrite** for multiple writes in a series as :alt:`ClientBulkWriteModel[]` was created.
 
 .. versionadded:: 0.8.0
 

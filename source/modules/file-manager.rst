@@ -186,6 +186,7 @@ Changelog
 
 .. versionchanged:: 0.13.6
 
+  - ``BREAKING`` *IFileManager* properties **permission** | **sessionId** are permanently locked in the constructor.
   - *FileManagerConstructor* :alt:`function` **generateSessionId** for host sessionId tracking was created.
 
 .. versionchanged:: 0.13.2

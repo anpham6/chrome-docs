@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 63
+  :emphasize-lines: 63,124-126
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -134,7 +134,9 @@ Interface
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, cache: DbCacheValue): QueryResult;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, cache: DbCacheValue | undefined, options?: StoreResultOptions): QueryResult;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, sessionKey?: string, sessionExpires?: number): QueryResult;
-      purgeResult(prefix?: string): Promise<number>;
+      findSession(source: string, user: string, key: string): unknown;
+      storeSession(source: string, user: string, key: string, result: unknown, expires?: number): void;      
+      purgeResult(prefix?: string, lru?: boolean | number): Promise<number>;
       extractUUID(credential: unknown): string;
       setPoolConfig(value: unknown): void;
       getPoolConfig(source: string): unknown;
@@ -255,7 +257,20 @@ Interface
 Changelog
 =========
 
-.. versionchanged:: 0.13.5/0.12.13/0.11.13/0.10.17/0.9.25
+.. versionadded:: 0.13.6
+
+  - *ClientDbConstructor* :alt:`function` **storeSession** for single expiration based caching was created.
+  - *ClientDbConstructor* :alt:`function` **findSession** for single expiration based caching retrieval was created.
+
+.. versionchanged:: 0.13.6
+
+  - *ClientDbConstructor* :alt:`function` **purgeResult** optional argument **lru** as :alt:`boolean | number` can initiate garbage collection by source provider.
+
+.. versionchanged:: 0.13.6/0.12.15/0.11.15/0.10.19/0.9.28/0.8.29
+
+  - ``BREAKING`` *IClientDb* :alt:`function` **setQueryResult** did not apply property :target:`cacheDir` when memory permission was disabled.
+
+.. versionchanged:: 0.13.5/0.12.13/0.11.13/0.10.17/0.9.25/0.8.28
 
   - ``BREAKING`` *HostConstructor* :alt:`function` **getPermissionFromSettings** returns a completely frozen :target:`Permission` global instance. Any attempt to modify the object will silently be denied access.
 

@@ -65,9 +65,11 @@ Interface
 Changelog
 =========
 
-.. versionadded:: 0.13.6/0.12.14/0.11.14/0.10.18/0.9.27/0.8.28 [#]_
+.. versionadded:: 0.13.6
 
   - *DataSource* property **ignoreCache** as :alt:`number[]` can bypass storage and retrieval when result length is not within the specified range.
+
+.. note:: Backported: 0.12.14 / 0.11.14 / 0.10.18 / 0.9.27 / 0.8.28 [#]_
 
 .. versionadded:: 0.10.1
 

@@ -287,13 +287,17 @@ Changelog
 
   - *ModuleConstructor* :alt:`function` **isErrorCode** was relocated into :doc:`types`.
 
-.. versionchanged:: 0.12.7/0.11.10/0.10.14/0.9.22
+.. versionchanged:: 0.12.7
 
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **joinPath** did not preserve leading and trailing spaces for Unix paths.
 
-.. versionchanged:: 0.12.2/0.11.9/0.10.13
+.. note:: Backported: 0.11.10 / 0.10.14 / 0.9.22
+
+.. versionchanged:: 0.12.2
 
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **isURL** no longer uses :target:`URL.canParse` for validation. The native method accepted values without the "**://**" convention.
+
+.. note:: Backported: 0.11.9 / 0.10.13
 
 .. versionadded:: 0.12.0
 

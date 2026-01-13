@@ -14,7 +14,7 @@ release = '0.13.6'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.intersphinx']
+extensions = ['sphinx.ext.intersphinx', 'sphinx_list_items']
 
 intersphinx_mapping = {
   'android': ('https://squared.readthedocs.io/en/latest', None),

@@ -258,9 +258,11 @@ Interface
 Changelog
 =========
 
-.. versionadded:: 0.13.7/0.12.15
+.. versionadded:: 0.13.7
 
   - *HostConstructor* :alt:`function` **parseIp** for IPV4/IPV6 conversion was created.
+
+.. note:: Backported: 0.12.15
 
 .. versionchanged:: 0.13.7
 
@@ -275,13 +277,17 @@ Changelog
 
   - *ClientDbConstructor* :alt:`function` **purgeResult** optional argument **lru** as :alt:`boolean | number` can initiate garbage collection by source provider.
 
-.. versionchanged:: 0.13.6/0.12.15/0.11.15/0.10.19/0.9.28/0.8.29
+.. versionchanged:: 0.13.6
 
   - ``BREAKING`` *IClientDb* :alt:`function` **setQueryResult** did not apply property :target:`cacheDir` when memory permission was disabled.
 
-.. versionchanged:: 0.13.5/0.12.13/0.11.13/0.10.17/0.9.25/0.8.28
+.. note:: Backported: 0.12.15 / 0.11.15 / 0.10.19 / 0.9.28 / 0.8.29
+
+.. versionchanged:: 0.13.5
 
   - ``BREAKING`` *HostConstructor* :alt:`function` **getPermissionFromSettings** returns a completely frozen :target:`Permission` global instance. Any attempt to modify the object will silently be denied access.
+
+.. note:: Backported: 0.12.13 / 0.11.13 / 0.10.17 / 0.9.25 / 0.8.28
 
 .. versionadded:: 0.12.0
 

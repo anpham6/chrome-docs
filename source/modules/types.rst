@@ -211,9 +211,11 @@ Interface
 Changelog
 =========
 
-.. versionchanged:: 0.13.4/0.12.11
+.. versionchanged:: 0.13.4
 
   - ``BREAKING`` :alt:`function` **cloneObject** uses a :target:`WeakMap<object, object>` for reference tracking and does not contain any references from the source object.
+
+.. note:: Backported: 0.12.11
 
 .. versionadded:: 0.13.0
 

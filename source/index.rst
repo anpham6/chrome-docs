@@ -15,6 +15,7 @@ E-mc 0.13
   compress/index
   build
   modules/index
+  release/index
   references
   versions
 

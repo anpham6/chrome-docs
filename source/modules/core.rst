@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 63,124-126
+  :emphasize-lines: 63-64,125-127
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -73,6 +73,7 @@ Interface
       getThreadCount(full: true): ThreadCountStat;
       getThreadCount(username: string, iv?: BinaryLike): ThreadCountStat;
       getThreadCount(username?: string | boolean, iv?: BinaryLike): number;
+      parseIp(value: unknown, kind?: "ipv4" | "ipv6"): string;
       getPermissionFromSettings(freeze?: boolean): IPermission;
       readonly prototype: IHost;
       new(config?: HostInitConfig): IHost;
@@ -256,6 +257,14 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.13.7/0.12.15
+
+  - *HostConstructor* :alt:`function` **parseIp** for IPV4/IPV6 conversion was created.
+
+.. versionchanged:: 0.13.7
+
+  - *HostConstructor* property **cacheDir** can be permanently locked.
 
 .. versionadded:: 0.13.6
 

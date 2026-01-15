@@ -366,6 +366,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 49-53
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -414,6 +415,11 @@ Settings
               include?: string[];
               exclude?: string[];
               expires?: number | string;
+          };
+          gc?: {
+              expires?: number | string;
+              expires_limit?: number | string;
+              interval?: number | string;
           };
       };
   }
@@ -534,6 +540,10 @@ Settings
 
 Changelog
 ---------
+
+.. versionadded:: 0.13.7
+
+  - *MemoryModule* settings group **gc** for garbage collection expiration and interval was created.
 
 .. versionchanged:: 0.13.0
 

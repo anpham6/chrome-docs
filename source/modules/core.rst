@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 63-64,125-127
+  :emphasize-lines: 63-64,126-128
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -102,11 +102,11 @@ Interface
       hasCache(source: string, sessionKey?: string): boolean;
       hasCoerce(source: string, component: keyof DbCoerceSettings, uuidKey: string | undefined): boolean;
       hasCoerce(source: string, component: keyof DbCoerceSettings, credential?: unknown): boolean;
+      getQueryResult(source: string, credential: unknown, queryString: string, options: CacheOptions): QueryResult | undefined;
       getQueryResult(source: string, credential: unknown, queryString: string, renewCache: boolean): QueryResult | undefined;
-      getQueryResult(source: string, credential: unknown, queryString: string, sessionKey: string | undefined, renewCache?: boolean): QueryResult | undefined;
-      getQueryResult(source: string, credential: unknown, queryString: string, options?: CacheOptions, renewCache?: boolean): QueryResult | undefined;
-      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, sessionKey: string | undefined): QueryResult;
-      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, options?: CacheOptions): QueryResult;
+      getQueryResult(source: string, credential: unknown, queryString: string, sessionKey?: string, renewCache?: boolean): QueryResult | undefined;
+      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, options: CacheOptions): QueryResult;
+      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, sessionKey?: string): QueryResult;
       getCacheResult(source: string, credential: unknown, queryString: string, cacheValue: CacheOptions, ignoreCache?: unknown): QueryResult | undefined;
       applyState(items: DataSource | DataSource[], value: number, as?: boolean): void;
       commit(items?: DataSource[]): Promise<boolean>;
@@ -130,7 +130,8 @@ Interface
       loadSettings(settings: Pick<Settings, "process" | "memory">, password?: string) : boolean;
       getTimeout(value: number | string | TimeoutAction | undefined): number;
       convertTime(value: number | string): number;
-      findResult(source: string, credential: unknown, queryString: string, timeout: number, sessionKey?: string | boolean, renewCache?: boolean): QueryResult | undefined;
+      findResult(source: string, credential: unknown, queryString: string, timeout: number, renewCache: boolean): QueryResult | undefined;
+      findResult(source: string, credential: unknown, queryString: string, timeout: number, sessionKey?: string, renewCache?: boolean): QueryResult | undefined;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, options: StoreResultOptions): QueryResult;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, cache: DbCacheValue): QueryResult;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, cache: DbCacheValue | undefined, options?: StoreResultOptions): QueryResult;

@@ -370,6 +370,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 49
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -419,6 +420,7 @@ Settings
               exclude?: string[];
               expires?: number | string;
           };
+          timeout?: number | string;
       };
   }
 
@@ -538,6 +540,10 @@ Settings
 
 Changelog
 ---------
+
+.. versionadded:: 0.13.7
+
+  - *MemoryModule* settings property **timeout** for maximum expiration in seconds was created.
 
 .. versionchanged:: 0.13.0
 

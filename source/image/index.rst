@@ -256,7 +256,7 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 
 .. versionadded:: 0.11.0
 
-  - *NPM* package ``jimp`` was upgraded to **1.6.0**.
+  - *NPM* package **jimp** was upgraded to **1.6.0**.
   - *ImageModule* settings **jimp.options** for MIME-based decode and encode optimizations was implemented.
   - Workers for native Jimp commands was implemented. [#]_
   - *ImageModule* settings **jimp.worker** for available threads was implemented.

@@ -9,7 +9,6 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 24,82-84,129,132,140,143,151,154,190,194
 
   import type { LogStatus } from "./squared";
 

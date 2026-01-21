@@ -9,7 +9,6 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 9
 
   import type { PoolConfig, QueryConfig } from "mariadb";
   import type { SecureContextOptions } from "tls";

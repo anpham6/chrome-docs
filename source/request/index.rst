@@ -140,7 +140,6 @@ Commands
 
 .. code-block::
   :caption: squared.json [#opt]_
-  :emphasize-lines: 11-12,14-16,36,39
 
   {
     "download": {

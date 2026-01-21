@@ -9,7 +9,6 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 9
 
   import type { PoolOptions, QueryOptions } from "mysql2/promise";
   import type { SecureContextOptions } from "tls";

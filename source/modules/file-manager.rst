@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 86-88,91,122,145,147,149,165
+  :emphasize-lines: 165
 
   import type { ChecksumValue, DataSource, IncrementalMatch, TaskAction } from "./squared";
 

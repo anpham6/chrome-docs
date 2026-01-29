@@ -288,12 +288,18 @@ Non-JWT access is supported when using **squared-express** [#]_ and `Express 5 <
 .. tip:: Use ``squared.auth.cjs`` to define inline asynchronous methods for any authentication provider.
 
 .. code-block::
+  :caption: Global [#]_
+
+  squared.auth({ username: "mongo", password: "87094", realm: "firebase" }, true /* Required */);
+  squared.saveAs("output.zip");
+
+.. code-block::
   :caption: Username
 
   squared.saveAs("output.zip", {
     auth: {
-      username: "mongodb",
-      password: "fighters",
+      username: "mongo",
+      password: "87094",
       realm: "firebase" // Same as authProvider
     }
   });
@@ -486,3 +492,4 @@ There is no difference when using :doc:`data sources <document/data>` for writin
 .. [#] npm i json5
 .. [#] npm i smol-toml (0.13.7/0.12.15) | npm i toml (deprecated)
 .. [#] squared-express 4.0 + sqd-serve 0.18
+.. [#] squared 5.7.2

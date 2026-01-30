@@ -229,11 +229,17 @@ Interface
       readBuffer(value: string | URL, cache?: boolean | ReadBufferOptions): Buffer | null;
       resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer): Promise<FileTypeResult | undefined>;
       lookupMime(value: string, extension?: boolean): string;
+      /** @deprecated class */
       initCpuUsage(instance?: IModule): CpuUsage;
+      /** @deprecated private */
       getCpuUsage(start: CpuUsage, format: true): string;
+      /** @deprecated private */
       getCpuUsage(start: CpuUsage, format?: boolean): number;
-      getMemUsage(format: true): string;
-      getMemUsage(format?: boolean): number;
+      /** @deprecated private */
+      getMemUsage(format: true, free?: boolean): string;
+      /** @deprecated private */
+      getMemUsage(format?: boolean, free?: boolean): number;
+      /** @deprecated private */
       formatCpuMem(start: CpuUsage, all?: boolean): string;
       getPackageVersion(name: string | [string, string], options?: PackageVersionOptions): string;
       checkSemVer(name: string | [string, string], options: CheckSemVerOptions): boolean;
@@ -256,6 +262,18 @@ Interface
 
 Changelog
 =========
+
+.. deprecated:: 0.13.8
+
+  - *ModuleConstructor* :alt:`function` will be converted into :target:`private` class methods:
+
+    .. hlist::
+      :columns: 1
+
+      - initCpuUsage :alt:`(public)`
+      - getCpuUsage
+      - getMemUsage
+      - formatCpuMem
 
 .. versionchanged:: 0.13.6
 
@@ -589,3 +607,4 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
 
 * https://www.npmjs.com/package/@types/node
+* https://www.npmjs.com/package/file-type

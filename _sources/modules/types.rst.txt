@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 28,30-31,33,49
+  :emphasize-lines: 49
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -211,9 +211,11 @@ Interface
 Changelog
 =========
 
-.. versionchanged:: 0.13.4/0.12.11
+.. versionchanged:: 0.13.4
 
   - ``BREAKING`` :alt:`function` **cloneObject** uses a :target:`WeakMap<object, object>` for reference tracking and does not contain any references from the source object.
+
+.. note:: Backported: 0.12.11
 
 .. versionadded:: 0.13.0
 

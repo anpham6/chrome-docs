@@ -1,0 +1,1116 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Added &mdash; E-mc 0.13.7 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
+      <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=e35e4f9d" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=db906b65"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changed" href="changed.html" />
+    <link rel="prev" title="Release" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            E-mc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../document/index.html">Document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../image/index.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../request/index.html">Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compress/index.html">Compress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Release</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Added</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">0.13.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">0.13.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">0.13.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">0.12.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">0.12.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">0.11.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">0.11.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">0.11.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">0.10.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">0.10.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">0.10.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">0.10.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">0.10.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">0.9.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">0.8.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">0.8.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">0.8.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">0.8.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">0.8.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">0.8.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">0.7.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">0.7.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">0.6.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">0.6.2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changed.html">Changed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="removed.html">Removed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html">Deprecated</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E-mc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Release</a></li>
+      <li class="breadcrumb-item active">Added</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="list-items" id="added">
+<h1>Added<a class="headerlink" href="#added" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>0.13.7<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/core</p></td>
+<td><p>HostConstructor function parseIp for IPV4/IPV6 conversion was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/document</p></td>
+<td><p>IDocument function tryParse argument format as toml supports NPM package smol-toml with options.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>MemoryModule settings group gc for garbage collection expiration and interval was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h2>0.13.6<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>db/interface</p></td>
+<td><p>DataSource property ignoreCache as number[] can bypass storage and retrieval when result length is not within the specified range.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/core</p></td>
+<td><p>ClientDbConstructor function storeSession for single expiration based caching was created.
+
+ClientDbConstructor function findSession for single expiration based caching retrieval was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id3">
+<h2>0.13.0<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/interface</p></td>
+<td><p>CloudStorageUpload property copyObject | copyObject[] for alternate bucket location was implemented.
+
+CloudStorageDownload property copyObject | copyObject[] for emulating move/rename and delete semantics was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/cloud</p></td>
+<td><p>ICloud function copyObject was created.
+
+ICloudServiceClient function copyObject (optional) was created.
+
+CloudConstructor function optionsLogMessage was created.
+
+CloudConstructor function uploadAssetSuccess for alternate post-upload file management was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/compress</p></td>
+<td><p>ICompress interface CompressLevel has extended ZlibOptions.
+
+ICompress interface BrotliCompressLevel has extended BrotliOptions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/db</p></td>
+<td><p>IDb class EventEmitter can send and receive events from:
+
+db:result
+
+db:fail</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/document</p></td>
+<td><p>Hash object based function transformers by format name can be exported including a default export for document plugins.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/file-manager</p></td>
+<td><p>IFileManager function checkHash for file integrity validation was created.
+
+IFileManager function removeFiles for deleting unused files queued as filesToRemove was created.
+
+IFileManager function handleFilePermission for emitting event file:permission was created.
+
+IFileManager class EventEmitter can send and receive events from:
+
+asset:permission</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>IModule class EventEmitter can send and receive events from:
+
+file:permission
+
+dir:permission</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/types</p></td>
+<td><p>function isErrorCode for checking Error properties was imported from module.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h2>0.12.3<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/request</p></td>
+<td><p>RequestConstructor function isRclone for URI detection was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h2>0.12.0<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>document/interface</p></td>
+<td><p>AssetCommand property worker for images and fonts was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/compress</p></td>
+<td><p>ICompress function intoGzipStream | intoBrotliStream were created.
+
+CompressConstructor function asBuffer was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/core</p></td>
+<td><p>IWorkerChannel and WorkerChannelConstructor were created.
+
+IWorkerGroup and WorkerGroupConstructor were created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/core</p></td>
+<td><p>ProcessModule property group workers for channel throttling was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/db</p></td>
+<td><p>DbPoolConstructor property CACHE_IGNORE for non-cacheable pool attributes was created.
+
+DbPoolConstructor function canCache for non-cacheable credentials was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/document</p></td>
+<td><p>ViewEngine function compile | compileSync can be called with an Array of arguments (options.compile).</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/image</p></td>
+<td><p>ImageConstructor function asBuffer was created.
+
+ImageConstructor property getters for MIME types:
+
+MIME_JPEG
+
+MIME_PNG
+
+MIME_WEBP
+
+MIME_SVG
+
+MIME_GIF
+
+MIME_BMP
+
+MIME_TIFF
+
+IImage function parseWorker for transform capabilities was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/module</p></td>
+<td><p>Node.js Permission Model was implemented with one compatibility difference. moveFile uses fs-read and fs-write on the source file with –permission.
+
+ModuleConstructor function constructorOf for universal detection using symbols was created.
+
+IModule function hasPermission for context resolution was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/request</p></td>
+<td><p>IRequest function rclone for pre-configured cloud storage transfers was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/types</p></td>
+<td><p>function sanitizeCmd | sanitizeArgs for escaping shell characters were imported from module.
+
+interface CloneObjectOptions property structured for using the native structuredClone was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/watch</p></td>
+<td><p>IWatch function getRecursiveFiles for collecting directory watchers (fs.watch) was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id6">
+<h2>0.11.2<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>NodeModule group posix property strict for mixed pattern expressions with Windows was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/types</p></td>
+<td><p>interface THRESHOLD property LOGGER_METER_INCREMENT was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id7">
+<h2>0.11.1<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>db/mariadb</p></td>
+<td><p>MariaDBDataSource property preparedStatement as boolean for initiating a series of repetitive queries was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/mysql</p></td>
+<td><p>MySQLDataSource property preparedStatement as boolean for initiating a series of repetitive queries was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/types</p></td>
+<td><p>function escapePattern argument symbols as boolean will also escape these optional characters:
+
+\x26 &amp;
+
+\x21 !
+
+\x23 #
+
+\x25 %
+
+\x2c ,
+
+\x3a :
+
+\x3b ;
+
+\x3c &lt;
+
+\x3d =
+
+\x3e &gt;
+
+\x40 &#64;
+
+\x60 `
+
+\x7e ~</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id8">
+<h2>0.11.0<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/aws</p></td>
+<td><p>AWSStorage properties upload | download extended CopyObjectAction as copyObject | copyObject[].</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/aws-v3</p></td>
+<td><p>AWSStorage properties upload | download extended CopyObjectAction as copyObject | copyObject[].</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/azure</p></td>
+<td><p>AzureStorage properties upload | download extended CopyObjectAction as copyObject | copyObject[].</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/gcp</p></td>
+<td><p>GCPStorage properties upload | download extended CopyObjectAction as copyObject | copyObject[].</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/interface</p></td>
+<td><p>CloudStorageAdmin property emptyBucket for directory listing with DeleteObjectsOptions was amended.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/oci</p></td>
+<td><p>OCIStorage properties upload | download extended CopyObjectAction as copyObject | copyObject[].</p></td>
+</tr>
+<tr class="row-even"><td><p>db/mysql</p></td>
+<td><p>PoolConfig property idle_max as maxIdle was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/redis</p></td>
+<td><p>NPM package redis was upgraded to 5.8.0.
+
+RedisDataSource property streams as XReadStreams was created.
+
+RedisDataSource property format with type “SMEMBERS” using key as string was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>image/index</p></td>
+<td><p>NPM package jimp was upgraded to 1.6.0.
+
+ImageModule settings jimp.options for MIME-based decode and encode optimizations was implemented.
+
+Workers for native Jimp commands was implemented. 9
+
+ImageModule settings jimp.worker for available threads was implemented.
+
+NPM binaries for WebP (ESM) are supported.
+
+Jimp plugin method print supports built-in fonts as string using these names:
+
+SANS_8_BLACK
+
+SANS_10_BLACK
+
+SANS_12_BLACK
+
+SANS_14_BLACK
+
+SANS_16_BLACK
+
+SANS_32_BLACK
+
+SANS_64_BLACK
+
+SANS_128_BLACK
+
+SANS_8_WHITE
+
+SANS_16_WHITE
+
+SANS_32_WHITE
+
+SANS_64_WHITE
+
+SANS_128_WHITE</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/cloud</p></td>
+<td><p>ICloudServiceClient function deleteObjectsV3 (optional) was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/core</p></td>
+<td><p>IHost property getters ipV4 | ipV6 for remote client address were created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/image</p></td>
+<td><p>IImage property outputType for storing MIME write was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>TempModule property os for system global temp directory was created.
+
+ErrorModule settings property trap_exceptions for global process error handling was created.
+
+NodeModule settings property package_manager for module installations was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/request</p></td>
+<td><p>IRequest property setter adapter for the local HTTP implementation as IHttpAdapter was created.
+
+RequestConstructor function defineHttpAdapter for the global HTTP implementation as IHttpAdapter was created.
+
+IRequest function get supports Zstd decompression for Content-Encoding when using at least NodeJS 22.15.0.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id9">
+<h2>0.10.5<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>ModuleConstructor function globDir for recursive file searches was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id10">
+<h2>0.10.3<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/request</p></td>
+<td><p>IRequest function put for HTTP method PUT was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id11">
+<h2>0.10.2<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/azure</p></td>
+<td><p>AzureDatabaseQuery property params as OperationInput[] for Bulk API was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/mongodb</p></td>
+<td><p>MongoDBDataSource property distinct for values for a specified field across a single collection was created.
+
+MongoDBDataSource property driverInfo for driver information (name/version/platform) was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id12">
+<h2>0.10.1<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/gcp</p></td>
+<td><p>Spanner method runStream for SQL requests was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/interface</p></td>
+<td><p>DbDataSource property flat for concatenating multiple results was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>db/redis</p></td>
+<td><p>DbPool static property CACHE_IGNORE through &#64;pi-r/redis/client/pool as keyof RedisClientOptions was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/request</p></td>
+<td><p>RequestModule property proxy.origin is a combined alias for address and port.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id13">
+<h2>0.10.0<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/aws</p></td>
+<td><p>DynamoDB method transactGet using TransactGetItemsInput was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/aws-v3</p></td>
+<td><p>DynamoDB send method TransactGetCommand using TransactGetItemsCommandInput was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/azure</p></td>
+<td><p>AzureStorageCredential property defaultAzureOptions | clientOptions for blob client initialization was implemented.
+
+Cloud instance abort signal is attached to every Cosmos DB SQL query.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/oci</p></td>
+<td><p>OCIDatabaseQuery property update for SODA.insertMany as Record&lt;string, any&gt;[] was implemented.
+
+OCIDatabaseQuery property updateType for SODA.insertOne as 3 was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>db/mariadb</p></td>
+<td><p>DbPool static property CACHE_IGNORE through &#64;pi-r/mariadb/client/pool as keyof PoolConfig was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/mongodb</p></td>
+<td><p>DbPool static property CACHE_IGNORE through &#64;pi-r/mongodb/client/pool as keyof MongoClientOptions was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>db/mysql</p></td>
+<td><p>DbPool static property CACHE_IGNORE through &#64;pi-r/mysql/client/pool as keyof PoolOptions was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/oracle</p></td>
+<td><p>DbPool static property CACHE_IGNORE through &#64;pi-r/oracle/client/pool as keyof PoolAttributes was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>document/data</p></td>
+<td><p>NPM package image-size for detecting dimensions is default installed.
+
+NPM package jsonpath-plus for filtering JSON results is optionally installed.
+
+ViewEngine property expires for compiled template cache removal was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>document/interface</p></td>
+<td><p>AssetCommand property hash with value as ripemd was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>document/miscellaneous</p></td>
+<td><p>NPM package image-size is pre-installed and used exclusively for image dimensions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>document/plugins/interface</p></td>
+<td><p>ITransformSeries function upgradeESM for using internal dependencies was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>image/index</p></td>
+<td><p>Jimp rotate strategy mode nearest | none were implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/core</p></td>
+<td><p>IClientDb function getCacheResult was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/db</p></td>
+<td><p>DbPoolConstructor property CACHE_UNUSED for unused pool attributes was created.
+
+DbPoolConstructor function asString | sanitize | removeUUIDKey for pool keys were created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/file-manager</p></td>
+<td><p>IFileManager function checkFilename for duplicate destination renames was created.
+
+IFileManager function finalizeChecksum for directory hash validation was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/file-manager</p></td>
+<td><p>LoggerModule property group progress for summary data was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/module</p></td>
+<td><p>ModuleConstructor property PLATFORM_WIN32 was created.
+
+IModule property accessor silent for console messages was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>LoggerModule group format block error for output display was created.
+
+LoggerModule group format property braces for text separation was implemented.
+
+LoggerModule group progress for summary data was created.
+
+TempModule property env for system user local temp directory was  was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/request</p></td>
+<td><p>DownloadModule property check_integrity in aria2 for hash validation was implemented.
+
+RequestModule property write_stream for stream size (kb) configuration by host was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/types</p></td>
+<td><p>function hashKey for single-pass encoding was created.
+
+function supported for NodeJS versioning was imported from module.
+
+function importESM for dynamic module loading was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/watch</p></td>
+<td><p>WatchModule group secure property ciphers was implemented.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id14">
+<h2>0.9.0<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/aws</p></td>
+<td><p>AWSStorage property emptyBucket for directory listing as ListObjectsRequest was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/aws-v3</p></td>
+<td><p>AWSStorage property emptyBucket for directory listing as ListObjectsRequest was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/azure</p></td>
+<td><p>AzureStorage property emptyBucket for directory listing as ContainerListBlobsOptions was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/gcp</p></td>
+<td><p>GCPStorage property emptyBucket for directory listing as GetListOptions was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/interface</p></td>
+<td><p>CloudStorageAction property chunkSize | chunkLimit for parallel multipart operations were created.
+
+CloudStorageDownload property options for the provider client was created.
+
+CloudStorageDownload property keyname for file to be downloaded and subsequently renamed to filename.</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/mongodb</p></td>
+<td><p>MongoDBDataSource property bulkWrite for multiple writes in a series as ClientBulkWriteModel[] was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/cloud</p></td>
+<td><p>ICloud function setBucketTagging was created.
+
+ICloudServiceClient global CLOUD_UPLOAD_DISK replaced CLOUD_UPLOAD_FROMDISK.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/compress</p></td>
+<td><p>ICompress function writeGzip | writeBrotli were created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/core</p></td>
+<td><p>IHost function were created:
+
+pauseLog
+
+delayMessage
+
+resumeLog
+
+hasLog
+
+updateProgress
+
+IHost property getter logState was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/file-manager</p></td>
+<td><p>IFileManager function transformAsset argument override as boolean was created.
+
+IFileManager function were created:
+
+scheduleTask
+
+setTaskLimit
+
+updateProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/file-manager</p></td>
+<td><p>ProcessModule sub-property thread.sub_limit for maximum simultaneous downloads was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/module</p></td>
+<td><p>ModuleConstructor property LOG_FORMAT was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/types</p></td>
+<td><p>enum LOG_STATE for queuing console output was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id15">
+<h2>0.8.7<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>IModule function getPackageVersion argument baseDir as string was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id16">
+<h2>0.8.6<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>PermissionModule properties home_read | home_write were implemented.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id17">
+<h2>0.8.4<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/types</p></td>
+<td><p>function alignSize was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id18">
+<h2>0.8.2<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/azure</p></td>
+<td><p>AzureStorageCredential property accountSas for URL authentication using SAS was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/oci</p></td>
+<td><p>OCIDatabaseQuery property id for multiple keys as string[] was implemented.
+
+OCIDatabaseQuery property updateType for invoked replacement method was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/request</p></td>
+<td><p>IRequest function statusOn was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id19">
+<h2>0.8.1<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/atlas</p></td>
+<td><p>MongoDB authentication mechanisms were implemented:
+
+MONGODB-X509
+
+MONGODB-AWS
+
+PLAIN</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/aws-v3</p></td>
+<td><p>S3 bucket names with the format {base-name}–{zone}–x-s3 are created as directory buckets.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/azure</p></td>
+<td><p>Cosmo DB items method upsert document as Record&lt;string, unknown&gt; was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>image/index</p></td>
+<td><p>ImageModule settings property jimp.gifwrap_quantize was implemented using these method types:
+
+sorokin
+
+wu
+
+dekker
+
+none</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/request</p></td>
+<td><p>IRequest function headersOn was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id20">
+<h2>0.8.0<a class="headerlink" href="#id20" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/aws-v3</p></td>
+<td><p>DynamoDB PartiQL using ExecuteStatementCommand performing one SELECT statement is supported.
+
+DynamoDB PartiQL using ExecuteStatementCommand performing one INSERT | DELETE | UPDATE statement without parameters is supported.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/gcp</p></td>
+<td><p>GCPStorage action download using createReadStream with chunkLimit was implemented.
+
+Firestore method findNearest as a VectorQuery and Query is supported.
+
+Firestore property update supports using FieldValue&lt;”vector” | “arrayUnion” | “arrayRemove”&gt; methods.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/ibm</p></td>
+<td><p>Cloudant method postExplain as a single ExplainResult is supported.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/oci</p></td>
+<td><p>OCIDatabaseCredential properties connectString | connectionString with Centralized Configuration Providers is supported.</p></td>
+</tr>
+<tr class="row-even"><td><p>db/mariadb</p></td>
+<td><p>DbPool static property CACHE_UNUSED through &#64;pi-r/mariadb/client/pool as keyof PoolConfig was implemented.
+
+SecureContextOptions (NodeJS.tls) property ca with Amazon RDS CA 1 cert for host rds.amazonaws.com is attached when installed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/mongodb</p></td>
+<td><p>DbPool static property CACHE_UNUSED through &#64;pi-r/mongodb/client/pool as keyof MongoClientOptions was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>db/mssql</p></td>
+<td><p>Azure authentication validation was implemented:
+
+azure-active-directory-default
+
+azure-active-directory-password
+
+azure-active-directory-access-token
+
+azure-active-directory-msi-vm
+
+azure-active-directory-msi-app-service
+
+azure-active-directory-service-principal-secret
+
+token-credential</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/mysql</p></td>
+<td><p>DbPool static property CACHE_UNUSED through &#64;pi-r/mysql/client/pool as keyof PoolOptions was implemented.
+
+SslOptions property ca with Amazon RDS CA 1 cert for host rds.amazonaws.com is attached when installed.</p></td>
+</tr>
+<tr class="row-even"><td><p>db/oracle</p></td>
+<td><p>DbPool static property CACHE_UNUSED through &#64;pi-r/oracle/client/pool as keyof PoolAttributes was implemented.
+
+OracleCredential property connectString | connectionString with Centralized Configuration Providers is supported.</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/postgres</p></td>
+<td><p>DbPool static property CACHE_UNUSED through &#64;pi-r/postgres/client/pool as string[] was implemented.
+
+ConnectionOptions (NodeJS.tls) property ca with Amazon RDS CA 1 cert for host rds.amazonaws.com is attached when installed.</p></td>
+</tr>
+<tr class="row-even"><td><p>db/redis</p></td>
+<td><p>RedisDataSource property format with type “HSCAN” and optional argument cursor | iterations was implemented.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id21">
+<h2>0.7.1<a class="headerlink" href="#id21" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/gcp</p></td>
+<td><p>Firestore methods where | orderBy | select supports using FieldPath params.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id22">
+<h2>0.7.0<a class="headerlink" href="#id22" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/aws</p></td>
+<td><p>CLOUD_UPLOAD_STREAM attribute in ICloudServiceClient was enabled.
+
+CLOUD_UPLOAD_CHUNK attribute in ICloudServiceClient was enabled.
+
+chunkSize | chunkLimit in CloudStorageUpload were implemented.
+
+configBucket.tags using PutBucketTaggingRequest was implemented.
+
+configBucket.cors using CORSConfiguration was implemented.
+
+configBucket.lifecycle using LifecycleConfiguration was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/aws-v3</p></td>
+<td><p>CLOUD_UPLOAD_STREAM attribute in ICloudServiceClient was enabled.
+
+CLOUD_UPLOAD_CHUNK attribute in ICloudServiceClient was enabled.
+
+chunkSize | chunkLimit in CloudStorageUpload were implemented.
+
+configBucket.tags using PutBucketTaggingRequest was implemented.
+
+configBucket.cors using CORSConfiguration was implemented.
+
+configBucket.lifecycle using BucketLifecycleConfiguration was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/azure</p></td>
+<td><p>CLOUD_UPLOAD_STREAM attribute in ICloudServiceClient was enabled.
+
+CLOUD_UPLOAD_CHUNK attribute in ICloudServiceClient was enabled.
+
+CLOUD_DOWNLOAD_CHUNK attribute in ICloudServiceClient was enabled.
+
+chunkSize | chunkLimit in CloudStorageUpload were implemented.
+
+chunkSize | chunkLimit in CloudStorageDownload were implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/gcp</p></td>
+<td><p>CLOUD_UPLOAD_STREAM attribute in ICloudServiceClient was enabled.
+
+CLOUD_UPLOAD_CHUNK attribute in ICloudServiceClient was enabled.
+
+CLOUD_DOWNLOAD_CHUNK attribute in ICloudServiceClient was enabled.
+
+chunkSize | chunkLimit in CloudStorageUpload were implemented.
+
+chunkSize | chunkLimit in CloudStorageDownload were implemented.
+
+GCPStorage configBucket.tags using Metadata was implemented.
+
+GCPStorage configBucket.cors using Cors was implemented.
+
+GCPStorage configBucket.lifecycle using LifecycleRule was implemented.
+
+Firestore property update supports using FieldValue&lt;”delete” | “increment” | “serverTimestamp”&gt; methods.
+
+Firestore property update supports using property updateType enum values.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/ibm</p></td>
+<td><p>CLOUD_UPLOAD_STREAM attribute in ICloudServiceClient was enabled.
+
+CLOUD_UPLOAD_CHUNK attribute in ICloudServiceClient was enabled.
+
+configBucket.cors using CORSConfiguration was implemented.
+
+configBucket.lifecycle using LifecycleConfiguration was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/minio</p></td>
+<td><p>CLOUD_UPLOAD_STREAM attribute in ICloudServiceClient was enabled.
+
+configBucket.tags using TagList was implemented.
+
+configBucket.lifecycle using LifecycleConfig was implemented.
+
+configBucket.create functionality was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/oci</p></td>
+<td><p>CLOUD_UPLOAD_STREAM attribute in ICloudServiceClient was enabled.
+
+CLOUD_UPLOAD_CHUNK attribute in ICloudServiceClient was enabled.
+
+configBucket.tags using PutBucketTaggingRequest was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>document/data</p></td>
+<td><p>DataSource property ignoreCoerce was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id23">
+<h2>0.6.3<a class="headerlink" href="#id23" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/gcp</p></td>
+<td><p>Firestore property id supports multiple document references.
+
+Firestore property query supports using Filter&lt;”and” | “or”&gt; conditional groups for where.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id24">
+<h2>0.6.2<a class="headerlink" href="#id24" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/aws</p></td>
+<td><p>Default providers web identity token and remote credentials environment variables are detected.
+
+AWS_SDK_LOAD_CONFIG is enabled with any non empty value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/aws-v3</p></td>
+<td><p>Credential providers “from” methods through the property provider were implemented.
+
+Credential expiration as a date string in the property credentials is supported.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/azure</p></td>
+<td><p>Identity authentication with Azure AD (aadCredentials) was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/gcp</p></td>
+<td><p>GoogleAuthOptions properties authClient and credentials were not detected during credential validation.
+
+Datastore method createQuery with namespace and kind parameter is supported.</p></td>
+</tr>
+<tr class="row-even"><td><p>db/mariadb</p></td>
+<td><p>PoolConfig property queue_idle was implemented.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Release" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="changed.html" class="btn btn-neutral float-right" title="Changed" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

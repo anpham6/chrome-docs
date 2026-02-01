@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 63
+  :emphasize-lines: 63-64,126-128
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -73,6 +73,7 @@ Interface
       getThreadCount(full: true): ThreadCountStat;
       getThreadCount(username: string, iv?: BinaryLike): ThreadCountStat;
       getThreadCount(username?: string | boolean, iv?: BinaryLike): number;
+      parseIp(value: unknown, kind?: "ipv4" | "ipv6"): string;
       getPermissionFromSettings(freeze?: boolean): IPermission;
       readonly prototype: IHost;
       new(config?: HostInitConfig): IHost;
@@ -101,11 +102,11 @@ Interface
       hasCache(source: string, sessionKey?: string): boolean;
       hasCoerce(source: string, component: keyof DbCoerceSettings, uuidKey: string | undefined): boolean;
       hasCoerce(source: string, component: keyof DbCoerceSettings, credential?: unknown): boolean;
+      getQueryResult(source: string, credential: unknown, queryString: string, options: CacheOptions): QueryResult | undefined;
       getQueryResult(source: string, credential: unknown, queryString: string, renewCache: boolean): QueryResult | undefined;
-      getQueryResult(source: string, credential: unknown, queryString: string, sessionKey: string | undefined, renewCache?: boolean): QueryResult | undefined;
-      getQueryResult(source: string, credential: unknown, queryString: string, options?: CacheOptions, renewCache?: boolean): QueryResult | undefined;
-      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, sessionKey: string | undefined): QueryResult;
-      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, options?: CacheOptions): QueryResult;
+      getQueryResult(source: string, credential: unknown, queryString: string, sessionKey?: string, renewCache?: boolean): QueryResult | undefined;
+      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, options: CacheOptions): QueryResult;
+      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, sessionKey?: string): QueryResult;
       getCacheResult(source: string, credential: unknown, queryString: string, cacheValue: CacheOptions, ignoreCache?: unknown): QueryResult | undefined;
       applyState(items: DataSource | DataSource[], value: number, as?: boolean): void;
       commit(items?: DataSource[]): Promise<boolean>;
@@ -129,12 +130,15 @@ Interface
       loadSettings(settings: Pick<Settings, "process" | "memory">, password?: string) : boolean;
       getTimeout(value: number | string | TimeoutAction | undefined): number;
       convertTime(value: number | string): number;
-      findResult(source: string, credential: unknown, queryString: string, timeout: number, sessionKey?: string | boolean, renewCache?: boolean): QueryResult | undefined;
+      findResult(source: string, credential: unknown, queryString: string, timeout: number, renewCache: boolean): QueryResult | undefined;
+      findResult(source: string, credential: unknown, queryString: string, timeout: number, sessionKey?: string, renewCache?: boolean): QueryResult | undefined;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, options: StoreResultOptions): QueryResult;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, cache: DbCacheValue): QueryResult;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, cache: DbCacheValue | undefined, options?: StoreResultOptions): QueryResult;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, sessionKey?: string, sessionExpires?: number): QueryResult;
-      purgeResult(prefix?: string): Promise<number>;
+      findSession(source: string, user: string, key: string): unknown;
+      storeSession(source: string, user: string, key: string, result: unknown, expires?: number): void;      
+      purgeResult(prefix?: string, lru?: boolean | number): Promise<number>;
       extractUUID(credential: unknown): string;
       setPoolConfig(value: unknown): void;
       getPoolConfig(source: string): unknown;
@@ -255,9 +259,36 @@ Interface
 Changelog
 =========
 
-.. versionchanged:: 0.13.5/0.12.13/0.11.13/0.10.17/0.9.25
+.. versionadded:: 0.13.7
+
+  - *HostConstructor* :alt:`function` **parseIp** for IPV4/IPV6 conversion was created.
+
+.. note:: Backported: 0.12.15
+
+.. versionchanged:: 0.13.7
+
+  - *HostConstructor* property **cacheDir** can be permanently locked.
+
+.. versionadded:: 0.13.6
+
+  - *ClientDbConstructor* :alt:`function` **storeSession** for single expiration based caching was created.
+  - *ClientDbConstructor* :alt:`function` **findSession** for single expiration based caching retrieval was created.
+
+.. versionchanged:: 0.13.6
+
+  - *ClientDbConstructor* :alt:`function` **purgeResult** optional argument **lru** as :alt:`boolean | number` can initiate garbage collection by source provider.
+
+.. versionchanged:: 0.13.6
+
+  - ``BREAKING`` *IClientDb* :alt:`function` **setQueryResult** did not apply property :target:`cacheDir` when memory permission was disabled.
+
+.. note:: Backported: 0.12.15 / 0.11.15 / 0.10.19 / 0.9.28 / 0.8.29
+
+.. versionchanged:: 0.13.5
 
   - ``BREAKING`` *HostConstructor* :alt:`function` **getPermissionFromSettings** returns a completely frozen :target:`Permission` global instance. Any attempt to modify the object will silently be denied access.
+
+.. note:: Backported: 0.12.13 / 0.11.13 / 0.10.17 / 0.9.25 / 0.8.28
 
 .. versionadded:: 0.12.0
 

@@ -37,7 +37,7 @@ Changelog
 
 .. versionchanged:: 0.10.0
 
-  - *TaskConstructor* :alt:`function` **finalize** return value was modified to :target:`Promise<void>`.
+  - *TaskConstructor* :alt:`function` **finalize** return value was modified to :alt:`Promise<void>`.
 
 Settings
 ========

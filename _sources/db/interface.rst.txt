@@ -4,7 +4,8 @@ Interface
 
 .. highlight:: typescript
 
-::
+.. code-block::
+  :emphasize-lines: 11
 
   interface DataSource {
       source: string;
@@ -16,7 +17,7 @@ Interface
 
       ignoreCache?: boolean; // Bypass cache without saving
       ignoreCache?: 0 | 1; // 0 - renew cache expiration | 1 - purge cache with saving
-      ignoreCache?: [number, number?, number?]; // <= min + max > + renew|purge
+      ignoreCache?: [number, number?, number?]; // n <= min | n > max | renew=0,bypass=1,purge=2
 
       /* Module: Document */
       index?: number; // Pick one specific row
@@ -30,7 +31,7 @@ Interface
       transactionFail?: boolean;
   }
 
-.. code-block::
+::
 
   interface DbDataSource extends DataSource {
       source: string; // Built-in alias | NPM package name
@@ -64,6 +65,12 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.13.6
+
+  - *DataSource* property **ignoreCache** as :alt:`number[]` can bypass storage and retrieval when result length is not within the specified range.
+
+.. note:: Backported: 0.12.14 / 0.11.14 / 0.10.18 / 0.9.27 / 0.8.28 [#]_
+
 .. versionadded:: 0.10.1
 
   - *DbDataSource* property **flat** for concatenating multiple results was created.
@@ -85,4 +92,5 @@ Global
 
 .. attention:: Enabling **usePool** with a *UUID* key will also copy the value into ``credential.uuidKey`` [#]_.
 
+.. [#] Purging is supported only when using **0.13.x**.
 .. [#] Does not override other existing uuidKey sessions.

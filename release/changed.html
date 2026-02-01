@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changed &mdash; E-mc 0.13.7 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
+      <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=e35e4f9d" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=db906b65"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Removed" href="removed.html" />
+    <link rel="prev" title="Added" href="added.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            E-mc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../document/index.html">Document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../image/index.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../request/index.html">Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compress/index.html">Compress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Release</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="added.html">Added</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Changed</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">0.13.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">0.13.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">0.13.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">0.13.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">0.13.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">0.13.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">0.12.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">0.12.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">0.12.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">0.12.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">0.12.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">0.11.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">0.11.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">0.11.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">0.10.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">0.9.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">0.9.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">0.8.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">0.7.0</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="removed.html">Removed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html">Deprecated</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E-mc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Release</a></li>
+      <li class="breadcrumb-item active">Changed</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="list-items" id="changed">
+<h1>Changed<a class="headerlink" href="#changed" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>0.13.7<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/core</p></td>
+<td><p>HostConstructor property cacheDir can be permanently locked.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h2>0.13.6<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/core</p></td>
+<td><p>ClientDbConstructor function purgeResult optional argument lru as boolean | number can initiate garbage collection by source provider.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/core</p></td>
+<td><p>BREAKING IClientDb function setQueryResult did not apply property cacheDir when memory permission was disabled.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/file-manager</p></td>
+<td><p>BREAKING IFileManager properties permission | sessionId are permanently locked in the constructor.
+
+FileManagerConstructor function generateSessionId for host sessionId tracking was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/module</p></td>
+<td><p>IModule function supports optional argument locked as boolean can permanently prevent modification to these properties:
+
+sessionId
+
+broadcastId
+
+permission</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id3">
+<h2>0.13.5<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/core</p></td>
+<td><p>BREAKING HostConstructor function getPermissionFromSettings returns a completely frozen Permission global instance. Any attempt to modify the object will silently be denied access.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/request</p></td>
+<td><p>RequestModule agent properties keep_alive_interval | proxy_env for configuring the HTTP/s global Agent instance were created.
+
+RequestModule property proxy.keep_alive_interval for throttling the keep alive packets (ms) was created.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h2>0.13.4<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/types</p></td>
+<td><p>BREAKING function cloneObject uses a WeakMap&lt;object, object&gt; for reference tracking and does not contain any references from the source object.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h2>0.13.2<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/file-manager</p></td>
+<td><p>FileManagerConstructor function writeChecksum | verifyChecksum options properties ignore | ignoreRoot as string[] can evaluate relative glob patterns.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id6">
+<h2>0.13.0<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>document/plugins/interface</p></td>
+<td><p>ITransformSeries function upgrade | upgradeESM can specify a version range to locate a hoisted package:
+
+
+
+
+
+Type
+
+Version
+
+first
+
+latest
+
+exact
+
+1.1.0
+
+startsWith
+
+1.1.
+
+RegExp ^
+
+”^1\\.[0-9]\\.”
+
+RegExp $
+
+”\\.[0-9]\\.\\d+$”
+
+ITransformSeries symbol name for constructorOf was changed from transformseries to document:transform:series.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/cloud</p></td>
+<td><p>BREAKING CloudConstructor override function toPosix for preserving backslashes and spaces in object paths when transacting from a Win32 platform.
+
+joinPath
+
+normalizePath
+
+globDir</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/compress</p></td>
+<td><p>CompressModule settings property cache as CacheDirAction for categorized cache expiration was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/file-manager</p></td>
+<td><p>BREAKING IFileManager when parsing an invalid encoding (BufferEncoding) will process the file as a Buffer instead of assuming “utf-8”.
+
+FileManagerConstructor function writeChecksum | verifyChecksum options property include as string[] can be prefixed with “!” to negate a subset of glob paths.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>ModuleConstructor function isDir argument absolute as boolean was created.
+
+IModule function writeLog uses same method signature as function addLog.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/module</p></td>
+<td><p>MemoryModule settings property cache_disk.include can be prefixed with “!” to negate a subset of glob paths.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/request</p></td>
+<td><p>IRequest function aria2c | rclone argument pathname can accept a URL instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/types</p></td>
+<td><p>function parseTime argument epoch as true for starting the interval from Unix or Epoch time.
+
+function parseTime argument negative as false for including plus and minus operators.
+
+function parseExpires argument epoch as true for starting the interval from Unix or Epoch time.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id7">
+<h2>0.12.7<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>BREAKING ModuleConstructor function joinPath did not preserve leading and trailing spaces for Unix paths.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id8">
+<h2>0.12.5<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/types</p></td>
+<td><p>function importESM argument options as ImportAttributes was implemented.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id9">
+<h2>0.12.4<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/types</p></td>
+<td><p>function getTempDir argument create as boolean using fs.mkdtemp was implemented.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id10">
+<h2>0.12.2<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>BREAKING ModuleConstructor function isURL no longer uses URL.canParse for validation. The native method accepted values without the “://” convention.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/types</p></td>
+<td><p>function sanitizeCmd optionally concatenates arguments without altering the supplied values.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id11">
+<h2>0.12.0<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/compress</p></td>
+<td><p>ICompress function tryFile | tryImage enforce read (file) and write (output) permissions.
+
+BREAKING type PluginCompressor argument mimeType as string was replaced with metadata as PlainObject.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/core</p></td>
+<td><p>BREAKING Permission glob matchers picomatch | minimatch do not set any initial options other than nocase for Windows.
+
+HostConstructor function kill can be called without iv when using a pre-encrypted username.
+
+IPermission function setters can be called with a boolean:
+
+setDiskRead
+
+setDiskWrite
+
+setUNCRead
+
+setUNCWrite</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/document</p></td>
+<td><p>IDocument function watchModified argument recursive as [string, string[]][] for directory watchers was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/file-manager</p></td>
+<td><p>IFileManager function fetchFiles using the rclone:? protocol supports Rclone copy commands.
+
+IFileManager property getter retryLimit for failed attempts was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>IModule function isFatal validates error objects are an instance of Error.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/module</p></td>
+<td><p>NodeModule property posix.strict was enabled by default.
+
+LoggerProcessSettings property enabled was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/request</p></td>
+<td><p>RequestModule settings section rclone for cloud storage copying was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/types</p></td>
+<td><p>function getTempDir optionally concatenates path segments (path.join) without creating any directories.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id12">
+<h2>0.11.7<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/types</p></td>
+<td><p>BREAKING Method decryptUTF8 did not consistently reproduce data output from encryptUTF8.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id13">
+<h2>0.11.1<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/types</p></td>
+<td><p>BREAKING function escapePattern optional argument lookBehind was removed since it could not produce a deterministic result. The intent of an escape character can not always be determined when possibly given a Windows path.
+
+function supported argument lts as boolean can be used as the patch argument.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id14">
+<h2>0.11.0<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/aws</p></td>
+<td><p>ICloudServiceClient method deleteObjectsV3 overrides Bucket property in ListObjectsRequest with method parameter Bucket.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/aws-v3</p></td>
+<td><p>ICloudServiceClient method deleteObjectsV3 overrides Bucket property in ListObjectsRequest with method parameter Bucket.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/azure</p></td>
+<td><p>EnvironmentCredential from &#64;azure/identity is enforced when qualified for default authentication.</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/redis</p></td>
+<td><p>Package will be developed under pi-r2 for future releases.</p></td>
+</tr>
+<tr class="row-even"><td><p>image/index</p></td>
+<td><p>Package will be developed under pi-r2 for future releases.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/cloud</p></td>
+<td><p>ICloud function deleteObjects argument recursive was supplemented with options as DeleteObjectsOptions.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/file-manager</p></td>
+<td><p>FileManagerConstructor function writeChecksum | verifyChecksum options property exclude as string[] can be prefixed with “!” to negate a subset of glob paths.
+
+IFileManager function install with name watch injected with an NPM package or Watch constructor was implemented.
+
+IFileManager property cacheToDisk | cacheToMemory were made readonly references.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/module</p></td>
+<td><p>MemoryModule settings property cache_disk.exclude can be prefixed with “!” to negate a subset of glob paths.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/request</p></td>
+<td><p>RequestModule property proxy.exclude can be prefixed with “!” to negate a subset of glob addresses.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/types</p></td>
+<td><p>type HighResolutionTime in object with bigint primitive was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/watch</p></td>
+<td><p>Permissions are required to watch externally added supplementary source files.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id15">
+<h2>0.10.0<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/gcp</p></td>
+<td><p>GCPStorage property admin.configBucket.retentionPolicy as 0 calls the method removeRetentionPeriod.
+
+Firebase Admin authentication using a path to a JSON file or an object representing a service account key is supported.
+
+Firestore aggregate and collection group partition queries are supported.
+
+Firestore method findNearest for vector queries as VectorQueryOptions was implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/cloud</p></td>
+<td><p>CloudConstructor function finalize return value was modified to Promise&lt;void&gt;.
+
+CloudConstructor function uploadAsset return value was modified to Promise&lt;void&gt;[].</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/compress</p></td>
+<td><p>ICompress property chunkSize was converted into a 1KB aligned accessor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/core</p></td>
+<td><p>IHost function pauseLog | resumeLog argument type as string was implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/file-manager</p></td>
+<td><p>IFileManager function return value was modified to Promise&lt;void&gt;:
+
+finalize
+
+finalizeCompress
+
+finalizeCleanup
+
+finalizeCloud
+
+finalizeDocument
+
+finalizeTask</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/module</p></td>
+<td><p>ModuleConstructor function asHash argument minLength was replaced with digest as BinaryToTextEncoding.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/task</p></td>
+<td><p>TaskConstructor function finalize return value was modified to Promise&lt;void&gt;.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/types</p></td>
+<td><p>function createAbortError uses built-in DOMException (NodeJS 17) with name “AbortError” and code 20.
+
+function formatTime with argument char as “:” displays using digital clock format.
+
+interface CloneObjectOptions in module was relocated to types.
+
+type Writeable was renamed Writable.
+
+interface GetTempDirOptions in module was renamed TempDirOptions.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id16">
+<h2>0.9.4<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>image/index</p></td>
+<td><p>NPM binaries for WebP (ESM) are supported.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id17">
+<h2>0.9.0<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>modules/db</p></td>
+<td><p>IDb function executeQuery | executeBatchQuery with argument callback as ErrorQueryCallback.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/document</p></td>
+<td><p>IDocument property config was made abstract.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/file-manager</p></td>
+<td><p>IFileManager function install with name “image” and target as ImageConstructor.
+
+IFileManager function install with name “document” | “image” | “task” and handler as string.
+
+IFileManager function transformAsset return value was modified to Promise&lt;boolean&gt;.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/module</p></td>
+<td><p>IModule function src and dest arguments can accept a URL instance:
+
+canRead
+
+canWrite
+
+readFile
+
+writeFile
+
+deleteFile
+
+copyFile
+
+moveFile
+
+createDir
+
+removeDir
+
+streamFile (static)</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/request</p></td>
+<td><p>RequestInit property requestTimeout was renamed readTimeout.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/types</p></td>
+<td><p>type StringOfArray was renamed ArrayOf&lt;string&gt;.
+
+type BufferContent was renamed Bufferable.
+
+interface PoolConfig in db was relocated to settings.
+
+interface LoggerFormat in logger was relocated to settings.
+
+interface AddEventListenerOptions in dom was relocated to core.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id18">
+<h2>0.8.0<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/ibm</p></td>
+<td><p>NPM packages upgraded with a minimum NodeJS 18 requirement:
+
+
+
+
+
+
+
+Package
+
+From
+
+To
+
+&#64;ibm-cloud/cloudant
+
+0.9
+
+0.10
+
+ibm-cloud-sdk-core
+
+4.3
+
+5.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>db/mssql</p></td>
+<td><p>NPM package tedious was upgraded from 16.7 to 18.3 with a NodeJS 18 requirement.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id19">
+<h2>0.7.0<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Docname</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cloud/aws-v3</p></td>
+<td><p>NPM dependency &#64;pi-r/aws was replaced with &#64;pi-r/aws-lib.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="added.html" class="btn btn-neutral float-left" title="Added" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="removed.html" class="btn btn-neutral float-right" title="Removed" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

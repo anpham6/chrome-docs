@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 82-84,129,132,140,143,151,154,190,194
+  :emphasize-lines: 219-230
 
   import type { LogStatus } from "./squared";
 
@@ -34,7 +34,7 @@ Interface
       readonly status: LogStatus<StatusType>[];
       readonly errors: unknown[];
       supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
-      supports(name: string, value?: boolean): boolean;
+      supports(name: string, value?: boolean, locked?: boolean): boolean;
       getTempDir(options: GetTempDirOptions): string;
       getTempDir(uuidDir: boolean, createDir: boolean): string;
       getTempDir(pathname: string, createDir: boolean): string;
@@ -229,11 +229,17 @@ Interface
       readBuffer(value: string | URL, cache?: boolean | ReadBufferOptions): Buffer | null;
       resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer): Promise<FileTypeResult | undefined>;
       lookupMime(value: string, extension?: boolean): string;
+      /** @deprecated class */
       initCpuUsage(instance?: IModule): CpuUsage;
+      /** @deprecated private */
       getCpuUsage(start: CpuUsage, format: true): string;
+      /** @deprecated private */
       getCpuUsage(start: CpuUsage, format?: boolean): number;
-      getMemUsage(format: true): string;
-      getMemUsage(format?: boolean): number;
+      /** @deprecated private */
+      getMemUsage(format: true, free?: boolean): string;
+      /** @deprecated private */
+      getMemUsage(format?: boolean, free?: boolean): number;
+      /** @deprecated private */
       formatCpuMem(start: CpuUsage, all?: boolean): string;
       getPackageVersion(name: string | [string, string], options?: PackageVersionOptions): string;
       checkSemVer(name: string | [string, string], options: CheckSemVerOptions): boolean;
@@ -257,6 +263,29 @@ Interface
 Changelog
 =========
 
+.. deprecated:: 0.14.0
+
+  - *ModuleConstructor* :alt:`function` are to be converted into :target:`private` class methods:
+
+    .. hlist::
+      :columns: 1
+
+      - initCpuUsage :alt:`(public)`
+      - getCpuUsage
+      - getMemUsage
+      - formatCpuMem
+
+.. versionchanged:: 0.13.6
+
+  - *IModule* :alt:`function` **supports** optional argument :target:`locked` as :alt:`boolean` can **permanently** prevent modification to these properties:
+
+    .. hlist::
+      :columns: 1
+
+      - sessionId
+      - broadcastId
+      - permission
+
 .. versionadded:: 0.13.0
 
   - *IModule* :alt:`class` **EventEmitter** can send and receive events from:
@@ -276,13 +305,17 @@ Changelog
 
   - *ModuleConstructor* :alt:`function` **isErrorCode** was relocated into :doc:`types`.
 
-.. versionchanged:: 0.12.7/0.11.10/0.10.14/0.9.22
+.. versionchanged:: 0.12.7
 
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **joinPath** did not preserve leading and trailing spaces for Unix paths.
 
-.. versionchanged:: 0.12.2/0.11.9/0.10.13
+.. note:: Backported: 0.11.10 / 0.10.14 / 0.9.22
+
+.. versionchanged:: 0.12.2
 
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **isURL** no longer uses :target:`URL.canParse` for validation. The native method accepted values without the "**://**" convention.
+
+.. note:: Backported: 0.11.9 / 0.10.13
 
 .. versionadded:: 0.12.0
 
@@ -355,6 +388,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 49-53
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -403,6 +437,11 @@ Settings
               include?: string[];
               exclude?: string[];
               expires?: number | string;
+          };
+          gc?: {
+              expires?: number | string;
+              expires_limit?: number | string;
+              interval?: number | string;
           };
       };
   }
@@ -523,6 +562,10 @@ Settings
 
 Changelog
 ---------
+
+.. versionadded:: 0.13.7
+
+  - *MemoryModule* settings group **gc** for garbage collection expiration and interval was created.
 
 .. versionchanged:: 0.13.0
 

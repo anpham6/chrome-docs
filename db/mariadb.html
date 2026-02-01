@@ -6,20 +6,20 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MariaDB &mdash; E-mc 0.13.5 documentation</title>
+  <title>MariaDB &mdash; E-mc 0.13.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=c5bd8d2d" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=e35e4f9d" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=48106516"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/documentation_options.js?v=db906b65"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -74,6 +74,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../compress/index.html">Compress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
 </ul>
@@ -118,6 +119,7 @@
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">MariaDBCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">QueryConfig</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">preparedStatement?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">MariaDBCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">ServerAuth</span><span class="p">,</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">{</span>
@@ -175,7 +177,7 @@
 <section id="example-usage">
 <h2>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/master/documentation/promise-api.md#connection-api">Query</a></p></li>
+<li><p><a class="reference external" href="https://mariadb.com/docs/connectors/mariadb-connector-nodejs/connector-nodejs-promise-api">Query</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;img&quot;</span><span class="p">,</span>
@@ -206,9 +208,20 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+<ul>
+<li><p><a class="reference external" href="https://mariadb.com/docs/connectors/mariadb-connector-nodejs/connector-nodejs-promise-api#connection.execute-sql-values-promise">Prepared Statements</a></p>
+<p>See <a class="reference internal" href="mysql.html#mysql-prepared-statements"><span class="std std-ref">MySQL</span></a>.</p>
+</li>
+</ul>
 </section>
 <section id="pi-r-mariadb">
 <h2>&#64;pi-r/mariadb<a class="headerlink" href="#pi-r-mariadb" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.1: </span></p>
+<ul class="simple">
+<li><p><em>MariaDBDataSource</em> property <strong>preparedStatement</strong> as <em class="alt">boolean</em> for initiating a series of repetitive queries was created.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.0: </span></p>
 <ul class="simple">

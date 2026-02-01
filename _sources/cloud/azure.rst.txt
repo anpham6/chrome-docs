@@ -181,7 +181,6 @@ Interface
 ---------
 
 .. code-block:: typescript
-  :emphasize-lines: 10
 
   import type { CosmosClientOptions, FeedOptions, OperationInput, PartitionKey, PatchRequestBody, RequestOptions, SqlQuerySpec } from "@azure/cosmos";
 

@@ -494,7 +494,7 @@ Changelog
 
 .. [#] npm i json5
 .. [#] npm i fast-xml-parser
-.. [#] npm i toml
+.. [#] npm i smol-toml (0.13.7/0.12.15) | npm i toml (deprecated)
 .. [#] npm i jsonpath
 .. [#] npm i jsonpath-plus
 .. [#] npm i jmespath

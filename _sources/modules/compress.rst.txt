@@ -86,7 +86,6 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 12
 
   import type { CacheDirAction } from "./settings";
 

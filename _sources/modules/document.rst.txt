@@ -86,6 +86,12 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.13.7
+
+  - *IDocument* :alt:`function` **tryParse** argument :target:`format` as :alt:`toml` supports *NPM* package **smol-toml** with options.
+
+.. note:: Backported: 0.12.15
+
 .. versionadded:: 0.13.0
 
   - Hash object based function transformers by :target:`format` name can be exported including a **default** export for :ref:`document plugins <document-plugins-settings-es6-hash>`.

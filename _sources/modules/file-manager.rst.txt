@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 86-88,91,122,145,147,149
+  :emphasize-lines: 165
 
   import type { ChecksumValue, DataSource, IncrementalMatch, TaskAction } from "./squared";
 
@@ -175,6 +175,7 @@ Interface
       setTimeout(options: Record<string, number | string>): void;
       defineHttpCache(options: HttpMemorySettings, disk?: boolean): void;
       defineHttpConnect(options: HttpConnectSettings): void;
+      generateSessionId(): string;
       readonly prototype: IFileManager;
       new(baseDirectory: string, config: RequestData, postFinalize?: PostFinalizeCallback): IFileManager;
       new(baseDirectory: string, config: RequestData, permission?: IPermission | null, postFinalize?: PostFinalizeCallback): IFileManager;
@@ -182,6 +183,11 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.13.6
+
+  - ``BREAKING`` *IFileManager* properties **permission** | **sessionId** are permanently locked in the constructor.
+  - *FileManagerConstructor* :alt:`function` **generateSessionId** for host sessionId tracking was created.
 
 .. versionchanged:: 0.13.2
 

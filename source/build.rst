@@ -290,8 +290,11 @@ Non-JWT access is supported when using **squared-express** [#]_ and `Express 5 <
 .. code-block::
   :caption: Global [#]_
 
-  squared.auth({ username: "mongo", password: "87094", realm: "firebase" }, true /* Required */);
+  squared.auth(true, { username: "mongo", password: "89064", realm: "hokkaido" });
   squared.saveAs("output.zip");
+
+  squared.auth("chrome", { username: "redis", password: "1022", realm: "tohoku" });
+  squared.saveAs("output.zip", { auth: "chrome" });
 
 .. code-block::
   :caption: Username

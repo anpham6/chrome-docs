@@ -172,7 +172,6 @@ Example usage
 References
 ==========
 
-- https://www.unpkg.com/@e-mc/types/lib/squared.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/compress.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
 

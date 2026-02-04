@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 49
+  :emphasize-lines: 49,69
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -77,6 +77,7 @@ Interface
   function supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
   function importESM(name: string | URL, isDefault: boolean, fromPath?: boolean): Promise<unknown>;
   function importESM(name: string | URL, options?: ImportAttributes, fromPath?: boolean): Promise<unknown>;
+  function requireESM(name: string, expect?: string): unknown;
   function purgeMemory(percent?: number): number;
 
   interface LOG_TYPE {
@@ -210,6 +211,12 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.13.8
+
+  - :alt:`function` **requireESM** for extracting a default export was created.
+
+.. note:: Backported: 0.12.16
 
 .. versionchanged:: 0.13.4
 

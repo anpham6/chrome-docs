@@ -230,11 +230,11 @@ Interface
       resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer): Promise<FileTypeResult | undefined>;
       lookupMime(value: string, extension?: boolean): string;
       /** @deprecated class */
-      initCpuUsage(instance?: IModule): CpuUsage;
+      initCpuUsage(instance?: IModule, thread?: boolean): CpuUsage;
       /** @deprecated private */
-      getCpuUsage(start: CpuUsage, format: true): string;
+      getCpuUsage(start: CpuUsage, format: true, thread?: boolean): string;
       /** @deprecated private */
-      getCpuUsage(start: CpuUsage, format?: boolean): number;
+      getCpuUsage(start: CpuUsage, format?: boolean, thread?: boolean): number;
       /** @deprecated private */
       getMemUsage(format: true, free?: boolean): string;
       /** @deprecated private */
@@ -600,6 +600,7 @@ Changelog
 References
 ==========
 
+- https://www.unpkg.com/@e-mc/types/lib/squared.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/core.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/module.d.ts

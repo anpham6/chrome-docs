@@ -13,7 +13,7 @@ Interface
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { HttpAdapterConstructor, HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
-  import type { ApplyOptions, Aria2Options, FormDataPart, HeadersOnCallback, HostConfig, OpenOptions, PostOptions, ProxySettings, PutOptions, RcloneOptions, ReadExpectType, RequestInit, StatusOnCallback } from "./request";
+  import type { ApplyOptions, Aria2Options, HeadersOnCallback, HostConfig, OpenOptions, PostFileParts, PostOptions, ProxySettings, PutOptions, RcloneOptions, ReadExpectType, RequestInit, StatusOnCallback } from "./request";
   import type { DnsLookupSettings, RequestModule, RequestSettings } from "./settings";
 
   import type { ClientRequest, OutgoingHttpHeaders } from "node:http";
@@ -50,8 +50,8 @@ Interface
       head(uri: string | URL, options?: OpenOptions): ClientRequest;
       put(uri: string | URL, data: unknown, options: PutOptions): Promise<Buffer | string | null>;
       put(uri: string | URL, data: unknown, contentType?: string, options?: PutOptions): Promise<Buffer | string | null>;
-      post(uri: string | URL, parts: FormDataPart[]): Promise<Buffer | string | null>;
-      post(uri: string | URL, form: Record<string, unknown>, parts: FormDataPart[]): Promise<Buffer | string | null>;
+      post(uri: string | URL, parts: PostFileParts): Promise<Buffer | string | null>;
+      post(uri: string | URL, form: Record<string, unknown>, parts: PostFileParts): Promise<Buffer | string | null>;
       post(uri: string | URL, data: unknown, options: PostOptions): Promise<Buffer | string | null>;
       post(uri: string | URL, data: unknown, contentType?: string, options?: PostOptions): Promise<Buffer | string | null>;
       get(uri: string | URL, options?: OpenOptions): Promise<Buffer | object | string | null>;
@@ -92,7 +92,7 @@ Changelog
 
 .. versionremoved:: 0.13.0
 
-  - *NPM* package **zstd-codec** is no longer available for :target:`Zstd` compression. :alt:`NodeJS 22.15.0` or later is required for *Content-Encoding*.
+  - *NPM* package **zstd-codec** is no longer available for :target:`Zstd` compression. [#zstd]_
 
 .. versionchanged:: 0.13.0
 
@@ -110,7 +110,7 @@ Changelog
 
   - *IRequest* :alt:`property` setter **adapter** for the local HTTP implementation as :alt:`IHttpAdapter` was created.
   - *RequestConstructor* :alt:`function` **defineHttpAdapter** for the global HTTP implementation as :alt:`IHttpAdapter` was created.
-  - *IRequest* :alt:`function` **get** supports :target:`Zstd` decompression for *Content-Encoding* when using at least :alt:`NodeJS 22.15.0`.
+  - *IRequest* :alt:`function` **get** supports :target:`Zstd` decompression for *Content-Encoding*. [#zstd]_
 
 .. deprecated:: 0.11.0
 
@@ -339,3 +339,5 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
 
 * https://www.npmjs.com/package/@types/node
+
+.. [#zstd] NodeJS 22.15 has native support for *Zstandard*.

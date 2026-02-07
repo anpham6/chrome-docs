@@ -406,8 +406,8 @@ Settings
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
 
-  import type { BinaryLike, CipherGCMTypes } from "crypto";
-  import type { SecureVersion } from "tls";
+  import type { BinaryLike, CipherGCMTypes } from "node:crypto";
+  import type { SecureVersion } from "node:tls";
 
   interface NodeModule {
       process?: {

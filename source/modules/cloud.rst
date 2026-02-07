@@ -10,7 +10,7 @@ Interface
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
 
-  import type { IHost, IScopeOrigin } from "./index";
+  import type { IFileManager, IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
   import type { BucketWebsiteOptions, CloudDatabase, CloudFeatures, CloudFunctions, CloudService, CloudStorage, CloudStorageDownload, CloudStorageUpload, CopyObjectOptions, DeleteObjectsOptions } from "./cloud";
   import type { ClientDbConstructor, IClientDb } from "./core";

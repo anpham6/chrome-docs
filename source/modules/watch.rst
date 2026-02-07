@@ -82,7 +82,7 @@ Settings
 
   import type { PermittedDirectories } from "./core";
 
-  import type { SecureVersion } from "tls";
+  import type { SecureVersion } from "node:tls";
 
   interface WatchModule {
       // handler: "@e-mc/watch";

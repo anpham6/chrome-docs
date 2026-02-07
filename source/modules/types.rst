@@ -382,4 +382,5 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/module.d.ts
 
+* https://developer.mozilla.org/en-US/docs/Web/API/DOMException
 * https://www.npmjs.com/package/@types/bytes

@@ -289,9 +289,9 @@ Changelog
 
   - :alt:`interface` **THRESHOLD** property **LOGGER_METER_INCREMENT** was created.
 
-.. versionadded:: 0.11.1
+.. versionchanged:: 0.11.1
 
-  - :alt:`function` **escapePattern** argument :target:`symbols` as :alt:`boolean` will also escape these optional characters:
+  - ``BREAKING`` :alt:`function` **escapePattern** optional argument :target:`lookBehind` was replaced with :target:`symbols` as :alt:`boolean`:
 
     .. hlist::
       :columns: 4
@@ -309,10 +309,8 @@ Changelog
       - \\x40 @
       - \\x60 \`
       - \\x7e ~
+      - \\x22 " :alt:`(0.13.8)`
 
-.. versionchanged:: 0.11.1
-
-  - ``BREAKING`` :alt:`function` **escapePattern** optional argument :target:`lookBehind` was removed since it could not produce a deterministic result. The intent of an escape character can not always be determined when possibly given a Windows path.
   - :alt:`function` **supported** argument :target:`lts` as :alt:`boolean` can be used as the :target:`patch` argument.
 
 .. versionchanged:: 0.11.0

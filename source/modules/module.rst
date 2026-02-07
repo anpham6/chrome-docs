@@ -263,12 +263,12 @@ Interface
 Changelog
 =========
 
-.. deprecated:: 0.14.0
+.. deprecated:: 0.13.8
 
-  - *ModuleConstructor* :alt:`function` are to be converted into :target:`private` class methods:
+  - *ModuleConstructor* :alt:`function` will be converted into :target:`private` class methods:
 
     .. hlist::
-      :columns: 1
+      :columns: 4
 
       - initCpuUsage :alt:`(public)`
       - getCpuUsage
@@ -280,7 +280,7 @@ Changelog
   - *IModule* :alt:`function` **supports** optional argument :target:`locked` as :alt:`boolean` can **permanently** prevent modification to these properties:
 
     .. hlist::
-      :columns: 1
+      :columns: 3
 
       - sessionId
       - broadcastId
@@ -291,7 +291,7 @@ Changelog
   - *IModule* :alt:`class` **EventEmitter** can send and receive events from:
 
     .. hlist::
-      :columns: 1
+      :columns: 2
 
       - file\:permission
       - dir:permission
@@ -313,7 +313,7 @@ Changelog
 
 .. versionchanged:: 0.12.2
 
-  - ``BREAKING`` *ModuleConstructor* :alt:`function` **isURL** no longer uses :target:`URL.canParse` for validation. The native method accepted values without the "**://**" convention.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **isURL** no longer uses :target:`URL.canParse` for validation. The native method accepts values without the "**://**" protocol.
 
 .. note:: Backported: 0.11.9 / 0.10.13
 
@@ -329,7 +329,14 @@ Changelog
 
 .. versionremoved:: 0.12.0
 
-  - ``BREAKING`` *ModuleConstructor* :alt:`function` **getPackageVersion** optional arguments **unstable** | **startDir** | **baseDir** are only available in :target:`options` as :alt:`PackageVersionOptions`.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **getPackageVersion** optional arguments are only available in :target:`options` as :alt:`PackageVersionOptions`:
+
+    .. hlist::
+      :columns: 3
+
+      - unstable
+      - startDir
+      - baseDir
 
 .. deprecated:: 0.12.0
 
@@ -338,7 +345,13 @@ Changelog
 
 .. versionremoved:: 0.11.0
 
-  - ``BREAKING`` *ModuleConstructor* :alt:`function` **checkSemVer** optional arguments **unstable** | **startDir** are only available in :target:`options` as :alt:`CheckSemVerOptions`.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **checkSemVer** optional arguments are only available in :target:`options` as :alt:`CheckSemVerOptions`:
+
+    .. hlist::
+      :columns: 2
+
+      - unstable
+      - startDir
 
 .. versionadded:: 0.10.5
 
@@ -612,3 +625,4 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
 
 * https://www.npmjs.com/package/@types/node
+* https://www.npmjs.com/package/file-type

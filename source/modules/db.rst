@@ -114,7 +114,7 @@ Changelog
   - *IDb* :alt:`class` **EventEmitter** can send and receive events from:
 
     .. hlist::
-      :columns: 1
+      :columns: 2
 
       - db:result
       - db:fail

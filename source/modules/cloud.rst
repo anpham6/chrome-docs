@@ -107,10 +107,10 @@ Changelog
 
 .. versionchanged:: 0.13.0
 
-  - ``BREAKING`` *CloudConstructor* :target:`override` :alt:`function` **toPosix** for preserving backslashes and spaces in :target:`object` paths when transacting from a *Win32* platform.
+  - ``BREAKING`` *CloudConstructor* :target:`override` :alt:`function` **toPosix** preserves backslashes and spaces when transacting from a *Win32* platform. Additional static methods affected:
 
     .. hlist::
-      :columns: 1
+      :columns: 3
 
       - joinPath
       - normalizePath

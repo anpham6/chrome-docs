@@ -77,7 +77,7 @@ Interface
   function supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
   function importESM(name: string | URL, isDefault: boolean, fromPath?: boolean): Promise<unknown>;
   function importESM(name: string | URL, options?: ImportAttributes, fromPath?: boolean): Promise<unknown>;
-  function requireESM(name: string, expect?: string): unknown;
+  function requireESM(name: string, url?: string | URL, expect?: string): unknown;
   function purgeMemory(percent?: number): number;
 
   interface LOG_TYPE {
@@ -212,7 +212,7 @@ Interface
 Changelog
 =========
 
-.. versionadded:: 0.13.8
+.. versionadded:: 0.13.9
 
   - :alt:`function` **requireESM** for extracting a default export was created.
 

@@ -4,6 +4,13 @@
 Added
 =====
 
+0.13.9
+======
+
+.. list-items:: versionadded
+   :table: docname, text
+   :version: 0.13.9
+
 0.13.7
 ======
 

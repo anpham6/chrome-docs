@@ -116,7 +116,7 @@ Changelog
       - normalizePath
       - globDir
 
-.. caution:: Using these static methods outside a **Cloud** environment is not recommended. These methods can be called from other modules :alt:`(e.g. FileManager)` with no change in behavior.
+.. caution:: Using these outside a **Cloud** environment is not recommended. Calling them from other modules :alt:`(e.g. FileManager)` have no change in behavior.
 
 .. versionadded:: 0.11.0
 

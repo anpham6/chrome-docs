@@ -3,7 +3,7 @@ Image
 =====
 
 - https://jimp-dev.github.io/jimp
-- **npm** i *@pi-r/jimp* [#]_
+- **npm** i *@pi-r/jimp*
 
 .. note:: *Jimp* is used as the reference implementation for an **Image** module.
 
@@ -254,6 +254,10 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 @pi-r/jimp
 ==========
 
+.. versionchanged:: 0.12.0
+
+ - Package will be developed under `pi-r <https://github.com/anpham6/pi-r/tree/master/src/module/jimp>`_ for future releases. [#]_
+
 .. versionadded:: 0.11.0
 
   - *NPM* package **jimp** was upgraded to **1.6.0**.
@@ -282,7 +286,7 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
 
 .. versionchanged:: 0.11.0
 
- - Package will be developed under `pi-r2 <https://github.com/anpham6/pi-r2/tree/master/src/module/jimp>`_ for future releases.
+ - Package will be developed under `pi-r2 <https://github.com/anpham6/pi-r2/tree/master/src/module/jimp>`_ for future releases. [#]_
 
 .. versionadded:: 0.10.0
 
@@ -305,11 +309,12 @@ Transformations are given a *UUID* filename except when "**@**" or "**%**" are u
       - none
 
 .. [#webp] https://developers.google.com/speed/webp/download
-.. [#] https://github.com/anpham6/pi-r2/tree/master/src/module/jimp
 .. [#] cwebp options: -q -preset -near_lossless
 .. [#] Method with no arguments. (e.g. sepia)
 .. [#] No expressions or native objects.
 .. [#] https://jimp-dev.github.io/jimp/api/jimp/classes/jimp
 .. [#] srcOver | dstOver | multiply | add | screen | overlay | darken | lighten | hardLight | difference | exclusion
 .. [#] left - 1 | center - 2 | right - 4 | top - 8 | middle - 16 | bottom - 32
+.. [#] Typescript 6.0 - module/preserve
 .. [#] Limitations: 1 rotation only + Native read/write
+.. [#] Typescript 5.9 - commonjs/preserve

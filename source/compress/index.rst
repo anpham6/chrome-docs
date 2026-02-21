@@ -139,3 +139,17 @@ EMC_COMPRESS_WORKER_TIMEOUT  minute
 ============================ =======
 
 .. [#] Metadata interface is plugin independent.
+
+@pi-r/imagemin
+==============
+
+.. versionchanged:: 0.12.0
+
+ - Package will be developed under `pi-r <https://github.com/anpham6/pi-r/tree/master/src/compress/imagemin>`_ for future releases. [#]_
+
+.. versionadded:: 0.10.0
+
+ - Initial package was created in `pi-r2 <https://github.com/anpham6/pi-r2/tree/master/src/compress/imagemin>`_. [#]_
+
+.. [#] Typescript 6.0 - module/preserve
+.. [#] Typescript 5.8 - commonjs/preserve

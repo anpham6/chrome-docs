@@ -91,7 +91,7 @@ Changelog
 
 .. deprecated:: 0.14.0
 
-  - *DocumentConstructor* :alt:`function` **updateGradle** will be available only in :external+android:doc:`@pi-r/android <document/android>`.
+  - *DocumentConstructor* :alt:`function` **updateGradle** will be available only in :external+android:doc:`@pi-r/android <document/android/index>`.
 
 .. versionadded:: 0.13.7
 

@@ -76,7 +76,7 @@ data-chrome-options
 * compress (array)
     - image: tinify + imagemin [#]_
     - font: woff + woff2
-    - gz: Gzip + *Zopfli* [#]_
+    - gz: Gzip
     - br: Brotli
 * static
     - all: Remove query string from URL
@@ -156,7 +156,6 @@ Inline commands are usually sufficient for simple web pages. More advanced confi
 .. [#] Do not use the built-in transformers per document.
 .. [#] boolean - config | "no-module" - inline
 .. [#] @pi-r/tinify | @pi-r2/imagemin
-.. [#] npm i node-zopfli
 .. [#] "true" - explicit | "false"
 .. [#] filename + content hash (productionRelease=true)
 .. [#] Value can be limited to the starting prefix. (e.g. md5[8] - Minimum is 4)

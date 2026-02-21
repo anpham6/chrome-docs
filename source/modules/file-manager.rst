@@ -318,7 +318,7 @@ Settings
 Changelog
 ---------
 
-.. deprecated:: 0.12.0
+.. versionremoved:: 0.14.0
 
   - *ErrorModule* property **recursion_limit** was renamed :target:`retry_limit`.
 

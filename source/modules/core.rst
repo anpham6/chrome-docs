@@ -22,7 +22,7 @@ Interface
 
   import type { TransferListItem, Worker, WorkerOptions } from "node:worker_threads";
 
-  import type * as EventEmitter from "node:events";
+  import type EventEmitter from "node:events";
 
   interface IHost extends IModule {
       restartable: boolean;

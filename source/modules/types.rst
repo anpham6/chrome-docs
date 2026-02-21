@@ -212,6 +212,21 @@ Interface
 Changelog
 =========
 
+.. versionremoved:: 0.14.0
+
+  - :alt:`global` types in :target:`object` were deleted:
+
+    .. hlist::
+      :columns: 4
+
+      - Point
+      - Dimension
+      - AuthValue
+      - ErrorCode
+      - HighResolutionTime
+      - MinMax
+      - KeyValue
+
 .. versionadded:: 0.13.9
 
   - :alt:`function` **requireESM** for extracting a default export was created.
@@ -262,11 +277,11 @@ Changelog
     .. hlist::
       :columns: 2
 
-      - lib/image: **Point** | **Dimension**
-      - lib/http: **AuthValue**
-      - lib/node: **ErrorCode** | **HighResolutionTime**
-      - lib/settings: **MinMax**
-      - lib/squared: **KeyValue**
+      - lib/image: Point | Dimension
+      - lib/http: AuthValue
+      - lib/node: ErrorCode | HighResolutionTime
+      - lib/settings: MinMax
+      - lib/squared: KeyValue
 
 .. versionremoved:: 0.12.0
 
@@ -276,10 +291,10 @@ Changelog
     .. hlist::
       :columns: 4
 
-      - **Undef**
-      - **Null**
-      - **NumString**
-      - **TupleOf**
+      - Undef
+      - Null
+      - NumString
+      - TupleOf
 
 .. versionchanged:: 0.11.7
 

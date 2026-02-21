@@ -25,7 +25,7 @@ Interface
   import type { NoParamCallback } from "node:fs";
   import type { FileTypeResult } from "file-type";
 
-  import type * as EventEmitter from "node:events";
+  import type EventEmitter from "node:events";
 
   type BufferView = Buffer | string | NodeJS.ArrayBufferView;
   type CpuUsage = NodeJS.CpuUsage;

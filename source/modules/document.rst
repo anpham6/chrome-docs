@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 65-68
 
   import type { DataSource, ViewEngine } from "./squared";
 
@@ -74,7 +75,9 @@ Interface
       createSourceMap(code: string, remove: boolean): SourceMap;
       createSourceMap(code: string, uri?: string, remove?: boolean): SourceMap;
       writeSourceMap(uri: string, data: SourceCode, options?: SourceMapOptions): string | undefined;
+      /** @deprecated */
       updateGradle(source: string, namespaces: string[], value: string, upgrade: boolean): string;
+      /** @deprecated */
       updateGradle(source: string, namespaces: string[], value: string, options?: UpdateGradleOptions): string;
       generateLintTable(messages: LintMessage[], options: GenerateLintTableOptions): LogComponent[];
       cleanup?(this: IFileManager, instance: IDocument): Promise<unknown>;
@@ -85,6 +88,10 @@ Interface
 
 Changelog
 =========
+
+.. deprecated:: 0.14.0
+
+  - *DocumentConstructor* :alt:`function` **updateGradle** will be available only in :external+android:doc:`@pi-r/android <document/android>`.
 
 .. versionadded:: 0.13.7
 

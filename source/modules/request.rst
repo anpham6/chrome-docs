@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 34
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { HttpAdapterConstructor, HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
@@ -43,6 +44,7 @@ Interface
       rclone(uri: string, pathname: string | URL): Promise<string[]>;
       rclone(uri: string, options?: RcloneOptions): Promise<string[]>;
       json(uri: string | URL, options?: OpenOptions): Promise<object | null>;
+      blob(uri: string | URL, options?: OpenOptions): Promise<Blob | null>;
       pipe(uri: string | URL, to: Writable, options?: OpenOptions): Promise<null>;
       opts(url: string | URL, options?: OpenOptions): HostConfig;
       open(uri: string | URL, options: OpenOptions): HttpRequestClient;
@@ -88,6 +90,12 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.13.9
+
+  - *IRequest* :alt:`function` **blob** for native :target:`Blob/File` buffer instance was created.
+
+.. note:: Backported: 0.12.16
 
 .. versionremoved:: 0.13.0
 
@@ -136,7 +144,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 14,16,43
+  :emphasize-lines: 12
 
   import type { PermittedDirectories } from "./core";
   import type { SecureConfig } from "./http";
@@ -149,6 +157,7 @@ Settings
       handler: "@e-mc/request";
       timeout?: number | string;
       read_timeout?: number | string;
+      max_concurrent_streams?: number | string;
       agent?: {
           keep_alive?: boolean;
           keep_alive_interval?: number | string;
@@ -271,9 +280,13 @@ Settings
 Changelog
 ---------
 
+.. versionadded:: 0.13.9
+
+  - *RequestModule* property **max_concurrent_streams** for limiting *HTTP2* connections per group session was created.
+
 .. versionchanged:: 0.13.5
 
-  - *RequestModule* :target:`agent` properties **keep_alive_interval** | **proxy_env** for configuring the HTTP/s global Agent instance were created.
+  - *RequestModule* :target:`agent` properties **keep_alive_interval** | **proxy_env** for configuring the HTTP/s global :target:`Agent` instance were created.
   - *RequestModule* property **proxy.keep_alive_interval** for throttling the keep alive packets :alt:`(ms)` was created.
 
 .. versionchanged:: 0.12.0

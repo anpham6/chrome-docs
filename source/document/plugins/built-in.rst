@@ -116,33 +116,33 @@ Environment Variables
 
 .. rst-class:: first-center
 
-========== =================================== ============
-  Plugin    Name                                Value
-========== =================================== ============
-eslint     ESLINT_USE_FLAT_CONFIG              boolean
-eslint     ESLINT_FORMATTER_NAME               any
-sass [#]_  SASS_OPTIONS_IMPORTER_NODE_PACKAGE  path/boolean
-stylelint  STYLELINT_OPTIONS_CWD               path
-stylelint  STYLELINT_OPTIONS_CONFIG_FILE       path
-stylelint  STYLELINT_OPTIONS_CONFIG_BASEDIR    path
-stylelint  STYLELINT_OPTIONS_VALIDATE          boolean
-stylelint  STYLELINT_OPTIONS_FIX               boolean
-stylelint  STYLELINT_OPTIONS_FORMATTER         string
-========== =================================== ============
+============ =================================== ============
+  Plugin     Name                                Value
+============ =================================== ============
+eslint [#]_  ESLINT_USE_FLAT_CONFIG              boolean
+eslint       ESLINT_FORMATTER_NAME               any
+sass [#]_    SASS_OPTIONS_IMPORTER_NODE_PACKAGE  path/boolean
+stylelint    STYLELINT_OPTIONS_CWD               path
+stylelint    STYLELINT_OPTIONS_CONFIG_FILE       path
+stylelint    STYLELINT_OPTIONS_CONFIG_BASEDIR    path
+stylelint    STYLELINT_OPTIONS_VALIDATE          boolean
+stylelint    STYLELINT_OPTIONS_FIX               boolean
+stylelint    STYLELINT_OPTIONS_FORMATTER         string
+============ =================================== ============
 
 Pre-Installed
 =============
 
 .. rst-class:: first-center
 
-========== ================================ ============ =======
+========== ================================ ============ ======
   Plugin    Name                             Alias        Pi-r
-========== ================================ ============ =======
-postcss    autoprefixer                                   0.10.0
-postcss    postcss-import                   import        0.10.0
-rollup     @rollup/plugin-commonjs          commonjs      0.10.0
-rollup     @rollup/plugin-node-resolve      node-resolve  0.10.0
-========== ================================ ============ =======
+========== ================================ ============ ======
+postcss    autoprefixer                                   0.10
+postcss    postcss-import                   import        0.10
+rollup     @rollup/plugin-commonjs          commonjs      0.10
+rollup     @rollup/plugin-node-resolve      node-resolve  0.10
+========== ================================ ============ ======
 
 .. code-block::
   :caption: squared.json
@@ -171,4 +171,5 @@ rollup     @rollup/plugin-node-resolve      node-resolve  0.10.0
 
 .. [#] settings.transform.imports
 .. [#Y] Package with dependencies (e.g. @e-mc/document)
+.. [#] ESLint 10.0 (not available)
 .. [#] metadata: { "__nodepackageimporter__": true }

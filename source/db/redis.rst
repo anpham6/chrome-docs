@@ -83,12 +83,14 @@ Pool
 ----
 
 .. code-block:: typescript
+  :emphasize-lines: 6
 
   import type { RedisPoolOptions } from "redis";
 
   interface PoolConfig { // using RedisPoolOptions
       min?: number; // minimum
       max?: number; // maximum
+      idle?: number; // cleanupDelay
       timeout?: number; // acquireTimeout
   }
 
@@ -193,6 +195,7 @@ Example usage
 .. versionadded:: 0.12.0
 
   - **FT.HYBRID** for combining full-text and vector-based searches using :target:`options.hybrid` as :alt:`FtHybridOptions` was implemented.
+  - *PoolConfig* property **idle** as :alt:`cleanupDelay` was implemented.
 
 .. versionchanged:: 0.12.0
 
@@ -200,7 +203,7 @@ Example usage
 
 .. versionadded:: 0.11.0
 
-  - *NPM* package **redis** was upgraded to **5.8.0**.
+  - *NPM* package **redis** was upgraded  from *4.7* to :target:`5.8` with a :alt:`NodeJS 18` requirement.
   - *RedisDataSource* property **streams** as :alt:`XReadStreams` was created.
   - *RedisDataSource* property **format** with type "**SMEMBERS**" using :target:`key` as :alt:`string` was implemented.
 

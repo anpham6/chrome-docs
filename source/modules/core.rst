@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 63-64,126-128
+  :emphasize-lines: 63-64,117,127-129
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -127,6 +127,7 @@ Interface
       readonly TRANSACTION_TERMINATE: number;
       readonly TRANSACTION_ABORT: number;
       readonly TRANSACTION_FAIL: number;
+      readonly HASH_ALGORITHM: string | undefined;
       loadSettings(settings: Pick<Settings, "process" | "memory">, password?: string) : boolean;
       getTimeout(value: number | string | TimeoutAction | undefined): number;
       convertTime(value: number | string): number;
@@ -258,6 +259,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.14.0
+
+  - *ClientDbConstructor* :alt:`property` getter **HASH_ALGORITHM** for results cache key generation was created.
 
 .. versionadded:: 0.13.7
 

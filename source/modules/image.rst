@@ -73,6 +73,7 @@ Changelog
       - MIME_GIF
       - MIME_BMP
       - MIME_TIFF
+
   - *IImage* :alt:`function` **parseWorker** for transform capabilities was created.
 
 .. versionremoved:: 0.12.0

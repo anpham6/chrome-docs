@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 49,69
+  :emphasize-lines: 53,69
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -56,12 +56,12 @@ Interface
   function alignSize(value: unknown, kb?: number, factor?: number): number;
   function cascadeObject(data: object, query: string, fallback?: unknown): unknown;
   function cloneObject(data: unknown, deep: boolean): unknown;
-  /** @deprecated WeakMap<object> */
-  function cloneObject(data: unknown, deepIgnore: WeakSet<object> | WeakMap<object, object>): unknown;
+  function cloneObject(data: unknown, deepIgnore: WeakMap<object, object>): unknown;
   function cloneObject(data: unknown, options?: CloneObjectOptions<unknown>): unknown;
   function coerceObject(data: unknown, cache: boolean): unknown;
   function coerceObject(data: unknown, parseString?: (...args: [string]) => unknown, cache?: boolean): unknown;
   function getEncoding(value: unknown, fallback?: BufferEncoding): BufferEncoding;
+  function getAlgorithm(value: unknown, fallback?: string): string | undefined;
   function encryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
   function decryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
   function hashKey(data: BinaryLike, algorithm?: string, encoding?: BinaryToTextEncoding): string;
@@ -211,6 +211,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.14.0
+
+  - :alt:`function` **getAlgorithm** for validating a supported hash algorithm was created.
 
 .. versionremoved:: 0.14.0
 

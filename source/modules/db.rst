@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 45-46
 
   import type { DbDataSource } from "./squared";
 
@@ -16,7 +17,7 @@ Interface
   import type { ClientDbConstructor, IClientDb } from "./core";
   import type { DB_TYPE, SQL_COMMAND, BatchQueryResult, ErrorQueryCallback, ExecuteBatchQueryOptions, ExecuteQueryOptions, HandleFailOptions, ProcessRowsOptions, QueryResult } from "./db";
   import type { AuthValue } from "./http";
-  import type { DbCoerceSettings, DbModule, DbSourceOptions, PoolConfig } from "./settings";
+  import type { DbCoerceSettings, DbModule, DbSettings, DbSourceOptions, PoolConfig } from "./settings";
 
   import type { SecureContextOptions } from "node:tls";
 
@@ -54,6 +55,8 @@ Interface
   }
 
   interface DbConstructor extends ClientDbConstructor<IHost> {
+      readonly HASH_ALGORITHM: string;
+      loadSettings(settings: Settings & { db?: DbSettings }, password?: string): boolean;
       setPoolConfig(value: Record<string, PoolConfig>): void;
       getPoolConfig(source: string): Required<PoolConfig> | undefined;
       readonly prototype: IDb;
@@ -109,6 +112,10 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.14.0
+
+  - *DbConstructor* :alt:`property` getter **HASH_ALGORITHM** for results cache key generation was created.
+
 .. versionadded:: 0.13.0
 
   - *IDb* :alt:`class` **EventEmitter** can send and receive events from:
@@ -138,6 +145,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.db.json>`_
+  :emphasize-lines: 15-18
 
   import type { DbSourceOptions, PurgeComponent } from "./settings";
 
@@ -153,7 +161,10 @@ Settings
       settings?: {
           broadcast_id?: string | string[];
           users?: Record<string, Record<string, unknown>>;
-          cache_dir?: string;
+          cache?: {
+              dir?: string;
+              algorithm?: string;
+          };
           session_expires?: number;
           user_key?: Record<string, DbSourceOptions>;
           imports?: StringMap;
@@ -169,6 +180,13 @@ Settings
   }
 
   type DbStoredCredentials = Record<string, Record<string, unknown>>;
+
+Changelog
+=========
+
+.. versionadded:: 0.14.0
+
+  - *DbModule* settings group **cache** for storing results more securely was created.
 
 Example usage
 -------------

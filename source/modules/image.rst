@@ -60,7 +60,7 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - *ImageConstructor* :alt:`function` **asBuffer** was created.
+  - *ImageConstructor* :alt:`function` **asBuffer** for copying a :target:`Uint8Array` was created.
   - *ImageConstructor* :alt:`property` getters for **MIME** types:
 
     .. hlist::
@@ -73,6 +73,7 @@ Changelog
       - MIME_GIF
       - MIME_BMP
       - MIME_TIFF
+
   - *IImage* :alt:`function` **parseWorker** for transform capabilities was created.
 
 .. versionremoved:: 0.12.0

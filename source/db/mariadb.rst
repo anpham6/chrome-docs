@@ -112,7 +112,6 @@ Example usage
 
   See :ref:`MySQL <mysql-prepared-statements>`.
 
-
 @pi-r/mariadb
 =============
 

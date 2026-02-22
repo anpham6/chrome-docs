@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 28,30-31,33,49
+  :emphasize-lines: 28,30-31,33,49,63-66
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -71,13 +71,15 @@ Interface
   function sanitizeArgs(value: string, doubleQuote?: boolean): string;
   function sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
   function randomString(format: string, dictionary?: string): string;
-  function errorValue(value: string, hint?: string): Error;
-  function errorMessage(title: number | string, value: string, hint?: string): Error;
+  function errorValue(value: string, cause: unknown): Error;
+  function errorValue(value: string, hint?: string, cause?: unknown): Error;
+  function errorMessage(title: number | string, value: string, cause: unknown): Error;
+  function errorMessage(title: number | string, value: string, hint?: string, cause?: unknown): Error;
   function supported(major: number, minor: number, lts: boolean): boolean;
   function supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
   function importESM(name: string | URL, isDefault: boolean, fromPath?: boolean): Promise<unknown>;
   function importESM(name: string | URL, options?: ImportAttributes, fromPath?: boolean): Promise<unknown>;
-  function requireESM(name: string, expect?: string): unknown;
+  function requireESM(name: string, url?: string | URL, expect?: string): unknown;
   function purgeMemory(percent?: number): number;
 
   interface LOG_TYPE {
@@ -212,9 +214,10 @@ Interface
 Changelog
 =========
 
-.. versionadded:: 0.13.8/0.12.16
+.. versionadded:: 0.13.9/0.12.16
 
   - :alt:`function` **requireESM** for extracting a default export was created.
+  - :alt:`function` **errorValue** | **errorMessage** argument :target:`cause` as :alt:`unknown` was implemented.
 
 .. versionchanged:: 0.13.4/0.12.11
 

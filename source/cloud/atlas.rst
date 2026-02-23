@@ -116,6 +116,10 @@ Example usage
 @pi-r/atlas
 ===========
 
+.. versionchanged:: 0.11.0
+
+  - NPM package **mongodb** was upgraded from *6.2* to :target:`7.1` with a :alt:`NodeJS 20.19` requirement.
+
 .. versionadded:: 0.8.1
 
   - *MongoDB* authentication mechanisms were implemented:

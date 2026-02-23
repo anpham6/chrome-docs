@@ -211,11 +211,13 @@ Interface
 ---------
 
 .. code-block:: typescript
+  :emphasize-lines: 20
 
-  import type { GoogleAuthOptions } from "google-auth-library";
   import type { AggregateSpec } from "@google-cloud/firestore";
   import type { PathType } from "@google-cloud/datastore";
   import type { entity } from "@google-cloud/datastore/build/src/entity";
+  import type { GoogleAuthOptions } from "google-auth-library";
+  import type { FirebaseOptions } from "@firebase/app";  
 
   interface GCPDatabaseQuery extends CloudDatabase {
       source: "cloud";
@@ -231,10 +233,14 @@ Interface
       kind?: string | string[];
       orderBy?: unknown[][];
       aggregateSpec?: AggregateSpec;
+      pipeline?: boolean;
       flags?: number;
   }
 
-  interface GCPDatabaseCredential extends GoogleAuthOptions {/* Empty */}
+  interface GCPDatabaseCredential extends GoogleAuthOptions, FirebaseOptions {
+      product?: "firebase";
+      admin?: boolean | string | ServiceAccount;
+  }
 
   type DatastoreKey = string | PathType[] | entity.KeyOptions;
   type Document = Record<string, any>;
@@ -343,11 +349,15 @@ Firestore
     }
   }
 
+Query
+"""""
+
 .. hlist::
   :columns: 4
 
   - endAt
   - endBefore
+  - findNearest
   - limit
   - limitToLast
   - offset
@@ -359,6 +369,29 @@ Firestore
   - **whereAnd**
   - **whereOr**
   - withConverter
+
+Pipeline
+""""""""
+
+.. hlist::
+  :columns: 4
+
+  - aggregate
+  - distinct
+  - findNearest
+  - limit
+  - offset
+  - rawStage
+  - removeFields
+  - replaceWith
+  - sample
+  - select
+  - sort
+  - union
+  - unnest
+  - **whereAnd**
+  - **whereOr**
+  - where
 
 BigQuery
 ^^^^^^^^

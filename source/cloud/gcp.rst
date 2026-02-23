@@ -224,7 +224,7 @@ Interface
       service: "gcp" | "gcloud";
       credential: string | GCPDatabaseCredential;
       product?: "firestore" | "bigquery" | "bigtable" | "datastore" | "spanner" | "firebase";
-      id?: string | string[] | number;
+      id?: string | string[] | number | boolean;
       params?: string | unknown[] | Document;
       database?: string;
       updateType?: 0 | 1 | 2 | 3;
@@ -306,32 +306,6 @@ Firestore
         "distanceMeasure": "EUCLIDEAN"
       },
       /* OR */
-      "query": [
-        ["where", "group", "==", "Firestore"],
-        ["where", "id", "==", "8Qnt83DSNW0eNykpuzcQ"],
-        ["findNearest", "column", [1, 2], { "limit": 1000, "distanceMeasure": "EUCLIDEAN" }],
-        ["limitToLast", 2],
-        ["orderBy", "title", "asc"]
-      ],
-      "query": [
-        ["whereAnd", // Unofficial
-          ["group", "==", "Firestore"],
-          ["id", "==", "8Qnt83DSNW0eNykpuzcQ"]
-        ],
-        ["limitToLast", 2]
-      ],
-      "query": [
-        ["whereOr", // Unofficial
-          ["id", "==", "8Qnt83DSNW0eNykpuzcQ"],
-          ["id", "==", "aahiEBE4qHM73JE7jom3"]
-        ],
-        ["orderBy", "title", "asc"]
-      ],
-      "orderBy": [
-        ["title", "asc"]
-      ],
-      "id": 1, // b.getPartitions(id){number}
-      /* OR */
       "aggregateSpec": {/* AggregateSpec */}, // (a | b).aggregate (not cached)
 
       "updateType": 0, // 0 - update{exists} | 1 - create | 2 - set | 3 - set{merge}
@@ -352,6 +326,38 @@ Firestore
 Query
 """""
 
+::
+
+  {
+    "dataSource": {
+      "query": [
+        ["where", "group", "==", "Firestore"],
+        ["where", "id", "==", "8Qnt83DSNW0eNykpuzcQ"],
+        ["findNearest", "column", [1, 2], { "limit": 1000, "distanceMeasure": "EUCLIDEAN" }],
+        ["limitToLast", 2],
+        ["orderBy", "title", "asc"]
+      ],
+      "query": [
+        ["whereAnd",
+          ["group", "==", "Firestore"],
+          ["id", "==", "8Qnt83DSNW0eNykpuzcQ"]
+        ],
+        ["limitToLast", 2]
+      ],
+      "query": [
+        ["whereOr",
+          ["id", "==", "8Qnt83DSNW0eNykpuzcQ"],
+          ["id", "==", "aahiEBE4qHM73JE7jom3"]
+        ],
+        ["orderBy", "title", "asc"]
+      ],
+      "orderBy": [
+        ["title", "asc"]
+      ],
+      "id": 1 // b.getPartitions(id){number} // Group only (optional)
+    }
+  }
+
 .. hlist::
   :columns: 4
 
@@ -366,32 +372,76 @@ Query
   - startAfter
   - startAt
   - where
-  - **whereAnd**
-  - **whereOr**
+  - whereAnd :alt:`(unofficial)`
+  - whereOr :alt:`(unofficial)`
   - withConverter
 
 Pipeline
 """"""""
+
+::
+
+  {
+    "dataSource": {
+      "query": [
+        ["aggregate", ["rating", "average", "averageRating"]], // field("rating").average().as("averageRating")
+        ["aggregate", ["countAll", "totalBooks"]], // countAll().as("totalBooks")
+        ["aggregate", ["name", ["startsWith", "Mr."], "countIf"]] // countIf(field("name").startsWith("Mr."))
+      ],
+      "query": [
+        ["replaceWith", { "status": "active" }] // replaceWith(map({ status: "active" }))
+      ],
+      "query": [
+        ["select", ["firstName", ["field", "lastName"], ["address", "toUpper", ["as", "upperAddress"]]]] // "firstName", field("lastName"), field("address").toUpper().as("upperAddress")
+        ["distinct", [["author", "authorName"], "publishedAt"]] // field("author").as("authorName"), "publishedAt"
+      ],
+      "query": [
+        ["sort", ["rating", ["title", true]]] // field("rating").ascending(), field("title").descending()
+      ],
+      "query": [
+        ["unnest", ["tagIndex", ["tags", "tag", /* indexField? */]]] // "tagIndex", field("tags").as("tag")
+      ],
+      "query": [
+        ["where", [
+          ["rating", "lessThanOrEqual", 3.15], // field("rating").lessThanOrEqual(3.15)
+          ["genre", ["toLower", ["equal", "Fun Facts"]]] // field("genre").toLower().equal("fun facts")
+        ]]
+      ],
+      "query": [
+        ["whereAnd",
+          ["rating", "lessThanOrEqual", 3.15], // and(field("rating").lessThanOrEqual(3.15), field("genre").toLower().equal("fun facts"))
+          ["genre", ["toLower", ["equal", "Fun Facts"]]]
+        ],
+        ["whereOr",
+          ["rating", "lessThanOrEqual", 3.15], // or(field("rating").lessThanOrEqual(3.15), field("genre").toLower().equal("fun facts"))
+          ["genre", ["toLower", ["equal", "Fun Facts"]]]
+        ]
+      ],
+      "options": {/* PipelineExecuteOptions */}
+    }
+  }
 
 .. hlist::
   :columns: 4
 
   - aggregate
   - distinct
-  - findNearest
-  - limit
-  - offset
-  - rawStage
-  - removeFields
+  - *findNearest*
+  - *limit*
+  - *offset*
+  - *rawStage*
+  - *removeFields*
   - replaceWith
-  - sample
+  - *sample*
   - select
   - sort
-  - union
+  - *union*
   - unnest
-  - **whereAnd**
-  - **whereOr**
+  - whereAnd :alt:`(unofficial)`
+  - whereOr :alt:`(unofficial)`
   - where
+
+.. note:: Methods in *italic* have their **query** parameters passed in directly without modification.
 
 BigQuery
 ^^^^^^^^
@@ -628,6 +678,10 @@ Realtime Database
 @pi-r/gcp
 =========
 
+.. versionadded:: 0.12.0
+
+  - *Firestore* pipeline :alt:`(beta)` queries are supported.
+
 .. versionadded:: 0.11.0
 
   - *GCPStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject | copyObject[]`.
@@ -639,8 +693,8 @@ Realtime Database
 .. versionchanged:: 0.10.0
 
   - *GCPStorage* property **admin.configBucket.retentionPolicy** as `0` calls the method :target:`removeRetentionPeriod`.
-  - *Firebase Admin* authentication using a path to a JSON file or an object representing a service account key is supported.
-  - *Firestore* aggregate and collection group partition queries are supported. 
+  - *Firebase* :alt:`(admin)` authentication using a JSON file or an object with a service account key is supported.
+  - *Firestore* aggregate and collection group partition queries are supported.
   - *Firestore* method **findNearest** for vector queries as :alt:`VectorQueryOptions` was implemented.
 
 .. versionadded:: 0.9.0
@@ -677,7 +731,7 @@ Realtime Database
 .. versionadded:: 0.6.3
 
   - *Firestore* property **id** supports multiple document references.
-  - *Firestore* property **query** supports using *Filter<"and" | "or">* conditional groups for *where*.
+  - *Firestore* property **query** supports using *Filter<"and" | "or">* conditional groups.
 
 .. versionadded:: 0.6.2
 

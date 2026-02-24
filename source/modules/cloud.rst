@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 76,79-80
 
   import type { IFileManager, IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -85,10 +86,10 @@ Interface
       setBucketPolicy?(this: IModule, credential: unknown, bucket: string, options: unknown, service?: string, sdk?: string): Promise<boolean>;
       setBucketTagging?(this: IModule, credential: unknown, bucket: string, options: unknown, service?: string, sdk?: string): Promise<boolean>;
       setBucketWebsite?(this: IModule, credential: unknown, bucket: string, options: BucketWebsiteOptions, service?: string, sdk?: string): Promise<boolean>;
-      /** @deprecated */
-      deleteObjects?(this: IModule, credential: unknown, bucket: string, service?: string, sdk?: string, recursive?: boolean): Promise<void>;
+      deleteObjects?(this: IModule, credential: unknown, bucket: string, options?: DeleteObjectsOptions, service?: string, sdk?: string): Promise<void>;
       /** @deprecated */
       deleteObjectsV2?(this: IModule, credential: unknown, bucket: string, recursive?: boolean, service?: string, sdk?: string): Promise<void>;
+      /** @deprecated */
       deleteObjectsV3?(this: IModule, credential: unknown, bucket: string, options?: DeleteObjectsOptions, service?: string, sdk?: string): Promise<void>;
       copyObject?(this: IModule, credential: unknown, bucketSource: string, keySource: string, bucket: string, key: string, options?: unknown, service?: string, sdk?: string): Promise<void>;
       executeQuery?(this: ICloud, credential: unknown, data: CloudDatabase, sessionKey?: string): Promise<QueryResult>;
@@ -97,6 +98,10 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.14.0
+
+  - ``BREAKING`` *ICloudServiceClient* :alt:`function` **deleteObjects** is an alias method to :target:`deleteObjectsV3`.
 
 .. versionadded:: 0.13.0
 

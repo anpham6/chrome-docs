@@ -7,12 +7,12 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 53,63-66,71
+  :emphasize-lines: 28,54,57,64-67,72
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
 
-  import type { BinaryLike, BinaryToTextEncoding, CipherGCMTypes, Encoding, RandomUUIDOptions } from "node:crypto";
+  import type { BinaryLike, BinaryToTextEncoding, CipherGCMTypes, Encoding } from "node:crypto";
   import type { BytesOptions } from "bytes";
 
   function createAbortError(reject: true): Promise<never>;
@@ -36,6 +36,7 @@ Interface
   function isPlainObject(value: unknown): value is Record<string | number | symbol, unknown>;
   function isString(value: unknown): value is string;
   function isEmpty(value: unknown): boolean;
+  function isError(err: unknown, ...name: string[]): err is Error;
   function isErrorCode(err: unknown, ...code: unknown[]): err is Required<ErrorCode>;
   function asFunction(value: unknown, sync?: boolean): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
   function parseTime(value: number | string, epoch: true): number;
@@ -217,6 +218,11 @@ Changelog
 .. versionadded:: 0.14.0
 
   - :alt:`function` **getAlgorithm** for validating a supported hash algorithm was created.
+  - :alt:`function` **isError** for detecting a native :target:`Error` instance was created.
+
+.. versionchanged:: 0.14.0
+
+  - ``BREAKING`` :alt:`function` **hashKey** optional argument :target:`algorithm` uses "**sha256**" instead of "**md5**" as default value.
 
 .. versionremoved:: 0.14.0
 
@@ -402,7 +408,9 @@ References
 
 - https://www.unpkg.com/@e-mc/types/index.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
-- https://www.unpkg.com/@e-mc/types/lib/module.d.ts
+- https://www.unpkg.com/@e-mc/types@0.13.8/lib/node.d.ts
 
-* https://developer.mozilla.org/en-US/docs/Web/API/DOMException
+* https://www.npmjs.com/package/@types/node
 * https://www.npmjs.com/package/@types/bytes
+
+- https://developer.mozilla.org/en-US/docs/Web/API/DOMException

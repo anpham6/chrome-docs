@@ -17,7 +17,6 @@ Interface
   }
 
 .. code-block::
-  :emphasize-lines: 17-18,24-25
 
   import type { IModule } from "../../types/lib";
   import type { ChunkData, FindModuleOptions, SourceInput, SourceMap } from "../../types/document";
@@ -81,6 +80,7 @@ Changelog
     RegExp ^   "^1\\\\.[0-9]\\\\."
     RegExp $   "\\\\.[0-9]\\\\.\\\\d+$"
     ========== ========================
+
   - *ITransformSeries* symbol name for :alt:`constructorOf` was changed from **transformseries** to :target:`document:transform:series`.
 
 .. versionadded:: 0.10.0

@@ -114,7 +114,7 @@ Changelog
 
 .. versionadded:: 0.14.0
 
-  - *DbConstructor* :alt:`property` getter **HASH_ALGORITHM** for results cache key generation was created.
+  - *DbConstructor* :alt:`property` getter **HASH_ALGORITHM** as :target:`sha256` for results cache key generation was created.
 
 .. versionadded:: 0.13.0
 

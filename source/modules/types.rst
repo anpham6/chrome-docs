@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 53,69
+  :emphasize-lines: 53,63-66,71
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -71,8 +71,10 @@ Interface
   function sanitizeArgs(value: string, doubleQuote?: boolean): string;
   function sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
   function randomString(format: string, dictionary?: string): string;
-  function errorValue(value: string, hint?: string): Error;
-  function errorMessage(title: number | string, value: string, hint?: string): Error;
+  function errorValue(value: string, cause: unknown): Error;
+  function errorValue(value: string, hint?: string, cause?: unknown): Error;
+  function errorMessage(title: number | string, value: string, cause: unknown): Error;
+  function errorMessage(title: number | string, value: string, hint?: string, cause?: unknown): Error;
   function supported(major: number, minor: number, lts: boolean): boolean;
   function supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
   function importESM(name: string | URL, isDefault: boolean, fromPath?: boolean): Promise<unknown>;
@@ -234,6 +236,7 @@ Changelog
 .. versionadded:: 0.13.9
 
   - :alt:`function` **requireESM** for extracting a default export was created.
+  - :alt:`function` **errorValue** | **errorMessage** argument :target:`cause` as :alt:`unknown` was implemented.
 
 .. note:: Backported: 0.12.16
 

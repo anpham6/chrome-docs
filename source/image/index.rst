@@ -100,7 +100,7 @@ There can be transparency issues for *WebP* animated transformations due to the 
 Command syntax
 ==============
 
-Placing an "**@**" symbol after the **format** :alt:`(e.g. png@)` will replace the original file inside the project. Using the "**%**" symbol will choose the smaller of the two files.
+Placing an ":lower:`@`" symbol after the **format** :alt:`(e.g. png@)` will replace the original file inside the project. Using the ":lower:`%`" symbol will choose the smaller of the two files.
 
 All segments are optional except **format**. Outer groupings and inner brackets are required.
 
@@ -126,7 +126,7 @@ All segments are optional except **format**. Outer groupings and inner brackets 
 Example commands
 ================
 
-Methods use simple bracket matching and does not fully check inside quoted strings. Unescaped "**\\\\**" with unpaired ("**{}**" or "**[]**") will fail to parse.
+Methods use simple bracket matching and does not fully check inside quoted strings. Unescaped ":lower:`\\\\`" with unpaired (":lower:`{}`" or ":lower:`[]`") will fail to parse.
 
 .. code-block:: none
 
@@ -138,7 +138,7 @@ Methods use simple bracket matching and does not fully check inside quoted strin
   webp~800w(800x600)
   webp~2x(1024x768)
 
-.. tip:: The "**~**" is used to target the ``<img srcset>`` attribute.
+.. tip:: The ":lower:`~`" is used to target the ``<img srcset>`` attribute.
 
 Method aliases [#]_
 ===================
@@ -247,9 +247,9 @@ You can use image commands with **saveTo** (directory) on any element where the 
        data-chrome-commands="png@!sepia{45}"
        data-chrome-options='{ "worker": 10000 }'>
 
-.. tip:: Multiple transformations use "**::**" as the separator.
+.. tip:: Multiple transformations use ":lower:`::`" as the separator.
 
-Transformations are given a *UUID* filename except when "**@**" or "**%**" are used. Leaving **data-chrome-file** empty will save the transformations to the current image directory.
+Transformations are given a *UUID* filename except when ":lower:`@`" or ":lower:`%`" are used. Leaving **data-chrome-file** empty will save the transformations to the current image directory.
 
 @pi-r/jimp
 ==========

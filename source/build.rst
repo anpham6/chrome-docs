@@ -187,7 +187,7 @@ Example cloud storage
     }
   });
 
-.. tip:: Use "**endpoint**" when your uploaded files are not used by other buckets or web pages.
+.. tip:: Use ":lower:`endpoint`" when your uploaded files are not used by other buckets or web pages.
 
 Example remote configuration
 ============================
@@ -450,7 +450,7 @@ There is no difference when using :doc:`data sources <document/data>` for writin
     }
   });
 
-.. tip:: When using "**preserve**" the first config is used as the base. Each subsequent config fills :target:`undefined` properties in existing objects or creates new objects.
+.. tip:: When using ":lower:`preserve`" the first config is used as the base. Each subsequent config fills :target:`undefined` properties in existing objects or creates new objects.
 
 .. code-block::
   :caption: Cloud

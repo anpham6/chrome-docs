@@ -2,7 +2,7 @@
 Appending source
 ================
 
-You can **append** or **prepend** a sibling element :lower:`(not child)` to be processed as a typical ``script`` or ``link`` element.
+You can **append** or **prepend** a sibling element :alt:`(not child)` to be processed as a typical ``script`` or ``link`` element.
 
 .. code-block:: html
 
@@ -56,6 +56,6 @@ The current state of the *DOM* is sent including any updates made with JavaScrip
 useOriginalHtmlPage = true 
 --------------------------
 
-Will attempt to parse the page as it stored on file. Dynamic content :alt:`(e.g. php)` that create additional elements are not supported. Scripts which insert elements as the page is loading should be performed after parsing the document. Errors can also occur with ``<p>`` tags when they contain block-level elements. If you are having problems using this option then make sure your page is a valid `HTML5 <https://validator.w3.org>`_ document. As a last resort you can try adding an element "**id**" to directly inject the content.
+Will attempt to parse the page as it stored on file. Dynamic content :alt:`(e.g. php)` that create additional elements are not supported. Scripts which insert elements as the page is loading should be performed after parsing the document. Errors can also occur with ``<p>`` tags when they contain block-level elements. If you are having problems using this option then make sure your page is a valid `HTML5 <https://validator.w3.org>`_ document. As a last resort you can try adding an element ":lower:`id`" to directly inject the content.
 
 .. [#] All commands in relation to the base type are supported.

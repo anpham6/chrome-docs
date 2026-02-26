@@ -222,7 +222,7 @@ Changelog
 
 .. versionchanged:: 0.14.0
 
-  - ``BREAKING`` :alt:`function` **hashKey** optional argument :target:`algorithm` uses "**sha256**" instead of "**md5**" as default value.
+  - ``BREAKING`` :alt:`function` **hashKey** optional argument :target:`algorithm` uses ":lower:`sha256`" instead of ":lower:`md5`" as default value.
 
 .. versionremoved:: 0.14.0
 
@@ -362,8 +362,8 @@ Changelog
 
 .. versionchanged:: 0.10.0
 
-  - :alt:`function` **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name "**AbortError**" and code **20**.
-  - :alt:`function` **formatTime** with argument :target:`char` as "**:**" displays using digital clock format.
+  - :alt:`function` **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name ":lower:`AbortError**`" and code **20**.
+  - :alt:`function` **formatTime** with argument :target:`char` as ":lower:`:`" displays using digital clock format.
   - :alt:`interface` **CloneObjectOptions** in :alt:`module` was relocated to :target:`types`.
   - :alt:`type` **Writeable** was renamed :target:`Writable`.
   - :alt:`interface` **GetTempDirOptions** in :alt:`module` was renamed :target:`TempDirOptions`.

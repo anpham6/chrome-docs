@@ -313,7 +313,7 @@ Changelog
 
 .. versionchanged:: 0.12.2
 
-  - ``BREAKING`` *ModuleConstructor* :alt:`function` **isURL** no longer uses :target:`URL.canParse` for validation. The native method accepts values without the "**://**" protocol.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **isURL** no longer uses :target:`URL.canParse` for validation. The native method accepts values without the ":lower:`://`" protocol.
 
 .. note:: Backported: 0.11.9 / 0.10.13
 
@@ -582,7 +582,7 @@ Changelog
 
 .. versionchanged:: 0.13.0
 
-  - *MemoryModule* settings property **cache_disk.include** can be prefixed with "**!**" to negate a subset of glob paths.
+  - *MemoryModule* settings property **cache_disk.include** can be prefixed with ":lower:`!`" to negate a subset of glob paths.
 
 .. versionchanged:: 0.12.0
 
@@ -601,7 +601,7 @@ Changelog
 
 .. versionchanged:: 0.11.0
 
-  - *MemoryModule* settings property **cache_disk.exclude** can be prefixed with "**!**" to negate a subset of glob paths.
+  - *MemoryModule* settings property **cache_disk.exclude** can be prefixed with ":lower:`!`" to negate a subset of glob paths.
 
 .. versionadded:: 0.10.0
 

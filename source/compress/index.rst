@@ -66,7 +66,7 @@ Images are transcoded locally using *MIME* detection to automatically choose the
     }
   }
 
-.. note:: Any ``null`` values being truthy will override the default transformer when "**metadata.package**" [#]_ is ``undefined``.
+.. note:: Any ``null`` values being truthy will override the default transformer when ":lower:`metadata.package`" [#]_ is ``undefined``.
 
 ::
 

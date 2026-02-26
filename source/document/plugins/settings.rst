@@ -106,7 +106,7 @@ External plugins per package have to be pre-installed from NPM and may not be av
 Using inline function [#]_
 ==========================
 
-The suffix "**-output**" is used to create the variable ``options.outputConfig``.
+The suffix ":lower:`-output`" is used to create the variable ``options.outputConfig``.
 
 .. code-block::
   :emphasize-lines: 8,16
@@ -226,7 +226,7 @@ Using local file
     });
   }
 
-.. caution:: The ``.js`` extension uses the "**type**" value in your *package.json* to determine which module loader to use. It is better to be explicit using either ``.cjs`` or ``.mjs``.
+.. caution:: The ``.js`` extension uses the ":lower:`type`" value in your *package.json* to determine which module loader to use. It is better to be explicit using either ``.cjs`` or ``.mjs``.
 
 Using custom package
 ====================

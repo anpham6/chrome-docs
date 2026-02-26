@@ -206,8 +206,8 @@ Changelog
 
 .. versionchanged:: 0.13.0
 
-  - ``BREAKING`` *IFileManager* when parsing an invalid encoding :alt:`(BufferEncoding)` will process the file as a `Buffer <https://nodejs.org/api/buffer.html#buffers-and-typedarrays>`_ instead of assuming "**utf-8**".
-  - *FileManagerConstructor* :alt:`function` **writeChecksum** | **verifyChecksum** options property :target:`include` as :alt:`string[]` can be prefixed with "**!**" to negate a subset of glob paths.
+  - ``BREAKING`` *IFileManager* when parsing an invalid encoding :alt:`(BufferEncoding)` will process the file as a `Buffer <https://nodejs.org/api/buffer.html#buffers-and-typedarrays>`_ instead of assuming ":lower:`utf-8`".
+  - *FileManagerConstructor* :alt:`function` **writeChecksum** | **verifyChecksum** options property :target:`include` as :alt:`string[]` can be prefixed with ":lower:`!`" to negate a subset of glob paths.
 
 .. note:: All glob paths are evaluated with negation acting as a secondary subset filter.
 
@@ -218,7 +218,7 @@ Changelog
 
 .. versionchanged:: 0.11.0
 
-  - *FileManagerConstructor* :alt:`function` **writeChecksum** | **verifyChecksum** options property :target:`exclude` as :alt:`string[]` can be prefixed with "**!**" to negate a subset of glob paths.
+  - *FileManagerConstructor* :alt:`function` **writeChecksum** | **verifyChecksum** options property :target:`exclude` as :alt:`string[]` can be prefixed with ":lower:`!`" to negate a subset of glob paths.
   - *IFileManager* :alt:`function` **install** with name :alt:`watch` injected with an *NPM* package or *Watch* constructor was implemented.
   - *IFileManager* :alt:`property` **cacheToDisk** | **cacheToMemory** were made :alt:`readonly` references.
 

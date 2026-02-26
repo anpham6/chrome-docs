@@ -125,7 +125,7 @@ Remote file "uri"
 Example usage
 -------------
 
-Reusing configuration templates is possible with URL search parameters. All parameters :lower:`(excluding "value")` from any source can be replaced using the **{{param}}** syntax.
+Reusing configuration templates is possible with URL search parameters. All parameters :alt:`(excluding "value")` from any source can be replaced using the **{{param}}** syntax.
 
 .. code-block::
   :caption: *http://localhost:3000/project/index.html?file=demo&format=json*
@@ -231,7 +231,7 @@ Example usage
 
 To completely remove an element all *AND* conditions have to be ``true`` and one *OR* per group is ``true``. Using a view engine is recommended if you require a more advanced statement.
 
-Returning an empty result or a blank string :lower:`(view engine)` is ``false``.
+Returning an empty result or a blank string :alt:`(view engine)` is ``false``.
 
 External source "export"
 ========================
@@ -489,7 +489,7 @@ Changelog
 .. versionadded:: 0.6.4
 
   - *UriDataSource* property **contentType** | **body** for HTTP method *POST* was implemented.
-  - *DataSource* property **source** option "**json**" as *JSONDataSource* was implemented.
+  - *DataSource* property **source** option value ":lower:`json`" as *JSONDataSource* was implemented.
   - *TextDataSource* property **leadingText** | **trailingText** were created.
 
 .. [#] npm i json5

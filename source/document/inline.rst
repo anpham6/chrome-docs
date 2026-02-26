@@ -66,14 +66,14 @@ data-chrome-options
     - etag
     - exist
 * extract
-    - css: @import rules are inlined into parent file :lower:`(same origin)`
+    - css: @import rules are inlined into parent file :alt:`(same origin)`
 * blob
     - image: HTML and CSS from **base64**
     - font: CSS from **base64**
 * dynamic
     - image: "srcset" uses query parameters with an image resizer
     - element :lower:`(non-void)`: mixed content which uses a view engine template :alt:`(e.g. ejs)`
-* compress (array)
+* compress :lower:`(array)`
     - image: tinify + imagemin [#]_
     - font: woff + woff2
     - gz: Gzip
@@ -98,11 +98,11 @@ data-chrome-options
 * remove
     - all: Remove element during finalization
 * charset :lower:`(string)`
-    - utf-8 :lower:`(default)`
+    - utf-8 :alt:`(default)`
     - utf-16
     - utf-16le
     - latin1
-    - utf-16be :lower:`(unsupported)`
+    - utf-16be :alt:`(unsupported)`
 
 .. code-block::
   :caption: JSON [#]_

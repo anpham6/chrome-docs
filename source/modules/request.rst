@@ -295,7 +295,7 @@ Changelog
 
 .. versionchanged:: 0.11.0
 
-  - *RequestModule* property **proxy.exclude** can be prefixed with "**!**" to negate a subset of glob addresses.
+  - *RequestModule* property **proxy.exclude** can be prefixed with ":lower:`!`" to negate a subset of glob addresses.
 
 .. versionadded:: 0.10.1
 

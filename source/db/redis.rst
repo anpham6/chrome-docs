@@ -205,7 +205,7 @@ Example usage
 
   - *NPM* package **redis** was upgraded  from *4.7* to :target:`5.8` with a :alt:`NodeJS 18` requirement.
   - *RedisDataSource* property **streams** as :alt:`XReadStreams` was created.
-  - *RedisDataSource* property **format** with type "**SMEMBERS**" using :target:`key` as :alt:`string` was implemented.
+  - *RedisDataSource* property **format** with type ":lower:`SMEMBERS`" using :target:`key` as :alt:`string` was implemented.
 
 .. versionchanged:: 0.11.0
 
@@ -217,7 +217,7 @@ Example usage
 
 .. versionadded:: 0.8.0
 
-  - *RedisDataSource* property **format** with type "**HSCAN**" and optional argument :alt:`cursor` | :alt:`iterations` was implemented.
+  - *RedisDataSource* property **format** with type ":lower:`HSCAN`" and optional argument :alt:`cursor` | :alt:`iterations` was implemented.
 
 .. [#] Typescript 6.0 - module/preserve
 .. [#] Typescript 5.9 - commonjs/preserve

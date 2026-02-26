@@ -114,7 +114,7 @@ data-chrome-watch
   <!-- OR -->
   <link rel="stylesheet" href="/common/util.css" data-chrome-watch="~::~::[secure|always]">
 
-.. tip:: "**~**" can be used between "**::**" for default server value.
+.. tip:: ":lower:`~`" can be used between ":lower:`::`" for default server value.
 
 Build Options
 =============
@@ -155,6 +155,6 @@ Elements that are configured :alt:`(e.g. dataSource)` are not editable as the or
 
   <p class="active" style="display: none;">content</p>
 
-.. attention:: If you configure an ``<img>`` tag :lower:`(or any tag group)` then you cannot add or remove other ``<img>`` elements without adding an element "**id**" to every element in the group.
+.. attention:: If you configure an ``<img>`` tag :alt:`(or any tag group)` then you cannot add or remove other ``<img>`` elements without adding an element ":lower:`id`" to every element in the group.
 
 .. [#] data-chrome-watch='*"interval": 100, "expires": "1w 1d 1h 1m 1s", "reload": { "port": 443, "secure": true }*'

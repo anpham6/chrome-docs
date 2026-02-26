@@ -77,19 +77,7 @@ These are the latest server default settings for the :target:`chrome` framework.
             "redis": {
               "abort": false,
               "local_file": 0
-            },
-            "mysql": {
-              "abort": false,
-              "local_file": 0
-            },
-            "postgres": {
-              "abort": false,
-              "local_file": 0
-            },
-            "oracle": {
-              "abort": false,
-              "local_file": 0
-            },
+            },            
             "json": {
               "coerce": true,
               "abort": false
@@ -126,8 +114,6 @@ These are the latest server default settings for the :target:`chrome` framework.
           "transform": {
             "imports": {
               "@babel/core": "@pi-r/babel",
-              "clean-css": "@pi-r/clean-css",
-              "csso": "@pi-r/csso",
               "eslint": "@pi-r/eslint",
               "html-validate": "@pi-r/html-validate",
               "postcss": "@pi-r/postcss",
@@ -164,23 +150,6 @@ These are the latest server default settings for the :target:`chrome` framework.
                   "plugins": []
                 }
               },
-              "csso": {
-                "minify": {
-                  "restructure": true,
-                  "comments": false,
-                  "sourceMap": false
-                }
-              },
-              "clean-css": {
-                "beautify": {
-                  "format": "beautify"
-                },
-                "minify-v4": {
-                  "inline": ["none"],
-                  "level": 1,
-                  "sourceMap": false
-                }
-              },
               "stylelint": {
                 "lint": {
                   "extends": []
@@ -203,22 +172,6 @@ These are the latest server default settings for the :target:`chrome` framework.
               },
               "eslint": {
                 "lint": {
-                  "baseConfig": {
-                    "extends": ["eslint:recommended"],
-                    "parserOptions": {
-                      "ecmaVersion": "latest"
-                    },
-                    "env": {
-                      "es2018": true
-                    },
-                    "plugins": [],
-                    "rules": {}
-                  },
-                  "overrideConfig": null,
-                  "plugins": null,
-                  "useEslintrc": false
-                },
-                "lint-v9": {
                   "fix": false,
                   "fixTypes": null,
                   "allowInlineConfig": true,

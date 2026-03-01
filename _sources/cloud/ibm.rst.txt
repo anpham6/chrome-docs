@@ -11,7 +11,7 @@ Storage
 
 - https://www.ibm.com/products/cloud-object-storage
 
-.. note:: Uses :doc:`S3 <aws>` [#]_ compatibility API :lower:`(AWS v2)` and signature **iam**.
+.. note:: Uses :doc:`S3 <aws>` [#]_ compatibility API :alt:`(AWS v2)` and signature **iam**.
 
 Interface
 ---------

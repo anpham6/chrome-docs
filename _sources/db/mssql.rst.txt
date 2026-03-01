@@ -168,6 +168,10 @@ Example usage
 @pi-r/mssql
 ===========
 
+.. versionchanged:: 0.11.0
+
+  - NPM package **tedious** was upgraded from *18.6* to :target:`19.2` with a :alt:`NodeJS 18.17` requirement.
+
 .. versionadded:: 0.8.0
 
   - Azure authentication validation was implemented:

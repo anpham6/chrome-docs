@@ -182,6 +182,10 @@ Example usage
 @pi-r/mongodb
 =============
 
+.. versionchanged:: 0.11.0
+
+  - NPM package **mongodb** was upgraded from *6.2* to :target:`7.1` with a :alt:`NodeJS 20.19` requirement.
+
 .. versionadded:: 0.10.2
 
   - *MongoDBDataSource* property **distinct** for values for a specified field across a single collection was created.

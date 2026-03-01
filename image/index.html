@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Image &mdash; E-mc 0.13.7 documentation</title>
+  <title>Image &mdash; E-mc 0.13.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=e35e4f9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=db906b65"></script>
+      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -69,7 +69,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../compress/index.html">Compress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/index.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
 </ul>
@@ -101,7 +101,7 @@
 <h1>Image<a class="headerlink" href="#image" title="Link to this heading"></a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jimp-dev.github.io/jimp">https://jimp-dev.github.io/jimp</a></p></li>
-<li><p><strong>npm</strong> i <em>&#64;pi-r/jimp</em> <a class="footnote-reference brackets" href="#id13" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+<li><p><strong>npm</strong> i <em>&#64;pi-r/jimp</em></p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -109,8 +109,8 @@
 </div>
 <section id="example-configuration">
 <h2>Example configuration<a class="headerlink" href="#example-configuration" title="Link to this heading"></a></h2>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id21" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id23" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;handler&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/jimp&quot;</span><span class="p">,</span>
@@ -213,14 +213,14 @@
 <tr class="row-even"><td><p>dwebp</p></td>
 <td><p>x</p></td>
 <td></td>
-<td><p>dwebp-bin <a class="footnote-reference brackets" href="#id12" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>dwebp-bin <a class="footnote-reference brackets" href="#id13" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1.0.0</p></td>
 <td><p>2.0.0</p></td>
 </tr>
 <tr class="row-odd"><td><p>cwebp</p></td>
 <td></td>
 <td><p>x</p></td>
-<td><p>cwebp-bin <a class="footnote-reference brackets" href="#id12" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>cwebp-bin <a class="footnote-reference brackets" href="#id13" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>6.0.0</p></td>
 <td><p>8.0.0</p></td>
 </tr>
@@ -243,13 +243,13 @@
 <p>There can be transparency issues for <em>WebP</em> animated transformations due to the <em>WebP</em> compression algorithm. <strong>node-webpmux</strong> is used to extract the raw data from the <em>WebP</em> image and to reconstruct the frames.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>libwebp</strong> <a class="footnote-reference brackets" href="#id12" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> is supported locally for <em>WebP</em> transforms through <code class="docutils literal notranslate"><span class="pre">settings.webp.path</span></code>.</p>
+<p><strong>libwebp</strong> <a class="footnote-reference brackets" href="#id13" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> is supported locally for <em>WebP</em> transforms through <code class="docutils literal notranslate"><span class="pre">settings.webp.path</span></code>.</p>
 </div>
 </section>
 </section>
 <section id="command-syntax">
 <h2>Command syntax<a class="headerlink" href="#command-syntax" title="Link to this heading"></a></h2>
-<p>Placing an “<strong>&#64;</strong>” symbol after the <strong>format</strong> <em class="alt">(e.g. png&#64;)</em> will replace the original file inside the project. Using the “<strong>%</strong>” symbol will choose the smaller of the two files.</p>
+<p>Placing an “<em class="lower">&#64;</em>” symbol after the <strong>format</strong> <em class="alt">(e.g. png&#64;)</em> will replace the original file inside the project. Using the “<em class="lower">%</em>” symbol will choose the smaller of the two files.</p>
 <p>All segments are optional except <strong>format</strong>. Outer groupings and inner brackets are required.</p>
 <ul class="simple">
 <li><p><em class="target">format</em></p></li>
@@ -272,18 +272,18 @@
 <dt>| <em>choose one</em> |</dt><dd><ul>
 <li><p>opacity(<em class="lower">0.0-1.0</em>)</p></li>
 <li><p>jpeg_quality(<em class="lower">0-100</em>)</p></li>
-<li><p>webp_quality(<em class="lower">0-100?[photo|picture|drawing|icon|text]?[0-100]?</em>) <a class="footnote-reference brackets" href="#id14" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
+<li><p>webp_quality(<em class="lower">0-100?[photo|picture|drawing|icon|text]?[0-100]?</em>) <a class="footnote-reference brackets" href="#id14" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p>!method <a class="footnote-reference brackets" href="#id15" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></li>
-<li><p>!method(<em class="lower">1, “string_arg2”, [1, 2], true, { “a”: 1, “b”: “\}” }, …args?</em>) <a class="footnote-reference brackets" href="#id16" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p></li>
+<li><p>!method <a class="footnote-reference brackets" href="#id15" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></li>
+<li><p>!method(<em class="lower">1, “string_arg2”, [1, 2], true, { “a”: 1, “b”: “\}” }, …args?</em>) <a class="footnote-reference brackets" href="#id16" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></li>
 </ul>
 </section>
 <section id="example-commands">
 <h2>Example commands<a class="headerlink" href="#example-commands" title="Link to this heading"></a></h2>
-<p>Methods use simple bracket matching and does not fully check inside quoted strings. Unescaped “<strong>\\</strong>” with unpaired (”<strong>{}</strong>” or “<strong>[]</strong>”) will fail to parse.</p>
+<p>Methods use simple bracket matching and does not fully check inside quoted strings. Unescaped “<em class="lower">\\</em>” with unpaired (”<em class="lower">{}</em>” or “<em class="lower">[]</em>”) will fail to parse.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>webp(50000)(800x600[bezier]^contain[right|bottom]#FFFFFF)(-50,50|200x200){45,-45,215,315#FFFFFF}|0.5||100[photo][75]|!sepia
 
 webp!opacity(0.5)
@@ -295,11 +295,11 @@ webp~2x(1024x768)
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The “<strong>~</strong>” is used to target the <code class="docutils literal notranslate"><span class="pre">&lt;img</span> <span class="pre">srcset&gt;</span></code> attribute.</p>
+<p>The “<em class="lower">~</em>” is used to target the <code class="docutils literal notranslate"><span class="pre">&lt;img</span> <span class="pre">srcset&gt;</span></code> attribute.</p>
 </div>
 </section>
 <section id="method-aliases">
-<h2>Method aliases <a class="footnote-reference brackets" href="#id17" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a><a class="headerlink" href="#method-aliases" title="Link to this heading"></a></h2>
+<h2>Method aliases <a class="footnote-reference brackets" href="#id17" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a><a class="headerlink" href="#method-aliases" title="Link to this heading"></a></h2>
 <table class="docutils align-default" style="width: 600px">
 <colgroup>
 <col style="width: 25.3%" />
@@ -326,9 +326,9 @@ webp~2x(1024x768)
 </tr>
 <tr class="row-odd"><td><p>color</p></td>
 <td><p><strong>co</strong></p></td>
-<td><p>composite <a class="footnote-reference brackets" href="#id18" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p></td>
+<td><p>composite <a class="footnote-reference brackets" href="#id18" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p></td>
 <td><p><strong>cp</strong></p></td>
-<td><p>contain <a class="footnote-reference brackets" href="#id19" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p></td>
+<td><p>contain <a class="footnote-reference brackets" href="#id19" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p></td>
 <td><p><strong>ct</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>contrast</p></td>
@@ -399,8 +399,8 @@ webp~2x(1024x768)
 </section>
 <section id="data-chrome-commands">
 <h2>data-chrome-commands<a class="headerlink" href="#data-chrome-commands" title="Link to this heading"></a></h2>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text">img | video | audio | source | track | object | embed | iframe</span><a class="headerlink" href="#id22" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text">img | video | audio | source | track | object | embed | iframe</span><a class="headerlink" href="#id24" title="Link to this code"></a></div>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/harbour1.jpg&quot;</span>
      <span class="na">data-chrome-file</span><span class="o">=</span><span class="s">&quot;saveAs:images/harbour.webp&quot;</span>
      <span class="na">data-chrome-options</span><span class="o">=</span><span class="s">&quot;inline&quot;</span><span class="p">&gt;</span> <span class="cm">&lt;!-- data:image/webp;base64 --&gt;</span>
@@ -408,16 +408,16 @@ webp~2x(1024x768)
 </div>
 </div>
 <p>You can use image commands with <strong>saveTo</strong> (directory) on any element where the image is the primary display output.</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text">img | object | embed | iframe</span><a class="headerlink" href="#id23" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text">img | object | embed | iframe</span><a class="headerlink" href="#id25" title="Link to this code"></a></div>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/harbour1.jpg&quot;</span>
      <span class="na">data-chrome-file</span><span class="o">=</span><span class="s">&quot;saveTo:../images/harbour&quot;</span>
      <span class="na">data-chrome-commands</span><span class="o">=</span><span class="s">&quot;png(10000,75000)(800x600[bezier]^contain[right|bottom])::webp|0.5|&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text">Workers (timeout 10s)</span><a class="headerlink" href="#id24" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text">Workers (timeout 10s)</span><a class="headerlink" href="#id26" title="Link to this code"></a></div>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/harbour1.jpg&quot;</span>
      <span class="na">data-chrome-file</span><span class="o">=</span><span class="s">&quot;saveAs:images/harbour.png&quot;</span>
      <span class="na">data-chrome-commands</span><span class="o">=</span><span class="s">&quot;png@!sepia{45}&quot;</span>
@@ -427,18 +427,24 @@ webp~2x(1024x768)
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Multiple transformations use “<strong>::</strong>” as the separator.</p>
+<p>Multiple transformations use “<em class="lower">::</em>” as the separator.</p>
 </div>
-<p>Transformations are given a <em>UUID</em> filename except when “<strong>&#64;</strong>” or “<strong>%</strong>” are used. Leaving <strong>data-chrome-file</strong> empty will save the transformations to the current image directory.</p>
+<p>Transformations are given a <em>UUID</em> filename except when “<em class="lower">&#64;</em>” or “<em class="lower">%</em>” are used. Leaving <strong>data-chrome-file</strong> empty will save the transformations to the current image directory.</p>
 </section>
 <section id="pi-r-jimp">
 <h2>&#64;pi-r/jimp<a class="headerlink" href="#pi-r-jimp" title="Link to this heading"></a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
+<ul class="simple">
+<li><p>Package will be developed under <a class="reference external" href="https://github.com/anpham6/pi-r/tree/master/src/module/jimp">pi-r</a> for future releases. <a class="footnote-reference brackets" href="#id20" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.0: </span></p>
 <ul>
 <li><p><em>NPM</em> package <strong>jimp</strong> was upgraded to <strong>1.6.0</strong>.</p></li>
 <li><p><em>ImageModule</em> settings <strong>jimp.options</strong> for MIME-based decode and encode optimizations was implemented.</p></li>
-<li><p>Workers for native Jimp commands was implemented. <a class="footnote-reference brackets" href="#id20" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p></li>
+<li><p>Workers for native Jimp commands was implemented. <a class="footnote-reference brackets" href="#id21" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p></li>
 <li><p><em>ImageModule</em> settings <strong>jimp.worker</strong> for available threads was implemented.</p></li>
 <li><p><em>NPM</em> binaries for <strong>WebP</strong> <em class="alt">(ESM)</em> are supported.</p></li>
 <li><p><em>Jimp</em> plugin method <strong>print</strong> supports built-in fonts as <em class="alt">string</em> using these names:</p>
@@ -468,7 +474,7 @@ webp~2x(1024x768)
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p>Package will be developed under <a class="reference external" href="https://github.com/anpham6/pi-r2/tree/master/src/module/jimp">pi-r2</a> for future releases.</p></li>
+<li><p>Package will be developed under <a class="reference external" href="https://github.com/anpham6/pi-r2/tree/master/src/module/jimp">pi-r2</a> for future releases. <a class="footnote-reference brackets" href="#id22" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p></li>
 </ul>
 </div>
 <div class="versionadded">
@@ -504,42 +510,46 @@ webp~2x(1024x768)
 </ul>
 </div>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id12" role="doc-footnote">
+<aside class="footnote brackets" id="id13" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id3">2</a>,<a role="doc-backlink" href="#id4">3</a>)</span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>)</span>
 <p><a class="reference external" href="https://developers.google.com/speed/webp/download">https://developers.google.com/speed/webp/download</a></p>
 </aside>
-<aside class="footnote brackets" id="id13" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">2</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://github.com/anpham6/pi-r2/tree/master/src/module/jimp">https://github.com/anpham6/pi-r2/tree/master/src/module/jimp</a></p>
-</aside>
 <aside class="footnote brackets" id="id14" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
 <p>cwebp options: -q -preset -near_lossless</p>
 </aside>
 <aside class="footnote brackets" id="id15" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
 <p>Method with no arguments. (e.g. sepia)</p>
 </aside>
 <aside class="footnote brackets" id="id16" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">5</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
 <p>No expressions or native objects.</p>
 </aside>
 <aside class="footnote brackets" id="id17" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">6</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">5</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://jimp-dev.github.io/jimp/api/jimp/classes/jimp">https://jimp-dev.github.io/jimp/api/jimp/classes/jimp</a></p>
 </aside>
 <aside class="footnote brackets" id="id18" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">7</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">6</a><span class="fn-bracket">]</span></span>
 <p>srcOver | dstOver | multiply | add | screen | overlay | darken | lighten | hardLight | difference | exclusion</p>
 </aside>
 <aside class="footnote brackets" id="id19" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">8</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">7</a><span class="fn-bracket">]</span></span>
 <p>left - 1 | center - 2 | right - 4 | top - 8 | middle - 16 | bottom - 32</p>
 </aside>
 <aside class="footnote brackets" id="id20" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">8</a><span class="fn-bracket">]</span></span>
+<p>Typescript 6.0 - module/preserve</p>
+</aside>
+<aside class="footnote brackets" id="id21" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">9</a><span class="fn-bracket">]</span></span>
 <p>Limitations: 1 rotation only + Native read/write</p>
+</aside>
+<aside class="footnote brackets" id="id22" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">10</a><span class="fn-bracket">]</span></span>
+<p>Typescript 5.9 - commonjs/preserve</p>
 </aside>
 </aside>
 </section>

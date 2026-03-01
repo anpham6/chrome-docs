@@ -7,7 +7,7 @@ Miscellaneous
 Merge conflicts
 ===============
 
-Only one command per element is supported :lower:`(except data sources)` when using :ref:`sqd.config <build-using-sqd-config>`. The last selector always takes precedence except when **mergeType** is defined. [#]_
+Only one command per element is supported :alt:`(except data sources)` when using :ref:`sqd.config <build-using-sqd-config>`. The last selector always takes precedence except when **mergeType** is defined. [#]_
 
 .. code-block::
   :caption: "ordinal": 1 | index.html*
@@ -135,7 +135,7 @@ Element content
   <p>paragraph 2</p>
   <p class="active"><b>content</b></p>
 
-.. caution:: Editing local files with complex :ref:`nested tag content <document-append-build-options>` is not recommended. Try using an element "**id**" when there are errors building.
+.. caution:: Editing local files with complex :ref:`nested tag content <document-append-build-options>` is not recommended. Try using an element ":lower:`id`" when there are errors building.
 
 .. _document-miscellaneous-manifest:
 

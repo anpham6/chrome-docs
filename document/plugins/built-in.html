@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Built-In &mdash; E-mc 0.13.7 documentation</title>
+  <title>Built-In &mdash; E-mc 0.13.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../../_static/role.css?v=464a7380" />
       <link rel="stylesheet" type="text/css" href="../../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../../_static/override.css?v=e35e4f9d" />
+      <link rel="stylesheet" type="text/css" href="../../_static/override.css?v=46102404" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=db906b65"></script>
+      <script src="../../_static/documentation_options.js?v=338ac8a7"></script>
       <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -76,7 +76,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../compress/index.html">Compress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../build.html">Build Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/index.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../versions.html">Versions</a></li>
 </ul>
@@ -200,7 +200,7 @@
 </tr>
 </tbody>
 </table>
-<p>These plugins can be configured using a plain object in <code class="docutils literal notranslate"><span class="pre">settings.transform</span></code>. Import maps <a class="footnote-reference brackets" href="#id6" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.</p>
+<p>These plugins can be configured using a plain object in <code class="docutils literal notranslate"><span class="pre">settings.transform</span></code>. Import maps <a class="footnote-reference brackets" href="#id7" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> are available for plugins which resolve imports through the file system. Other non-builtin transpilers can similarly be integrated by defining a custom function.</p>
 <ul class="simple">
 <li><p>NPM custom package</p></li>
 <li><p>Local file using module.exports <em class="alt">(e.g. “.cjs”)</em></p></li>
@@ -260,7 +260,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>eslint</p></td>
+<tr class="row-even"><td><p>eslint <a class="footnote-reference brackets" href="#id8" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
 <td><p>ESLINT_USE_FLAT_CONFIG</p></td>
 <td><p>boolean</p></td>
 </tr>
@@ -268,7 +268,7 @@
 <td><p>ESLINT_FORMATTER_NAME</p></td>
 <td><p>any</p></td>
 </tr>
-<tr class="row-even"><td><p>sass <a class="footnote-reference brackets" href="#id7" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>sass <a class="footnote-reference brackets" href="#id9" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></td>
 <td><p>SASS_OPTIONS_IMPORTER_NODE_PACKAGE</p></td>
 <td><p>path/boolean</p></td>
 </tr>
@@ -313,27 +313,27 @@
 <tr class="row-even"><td><p>postcss</p></td>
 <td><p>autoprefixer</p></td>
 <td></td>
-<td><p>0.10.0</p></td>
+<td><p>0.10</p></td>
 </tr>
 <tr class="row-odd"><td><p>postcss</p></td>
 <td><p>postcss-import</p></td>
 <td><p>import</p></td>
-<td><p>0.10.0</p></td>
+<td><p>0.10</p></td>
 </tr>
 <tr class="row-even"><td><p>rollup</p></td>
 <td><p>&#64;rollup/plugin-commonjs</p></td>
 <td><p>commonjs</p></td>
-<td><p>0.10.0</p></td>
+<td><p>0.10</p></td>
 </tr>
 <tr class="row-odd"><td><p>rollup</p></td>
 <td><p>&#64;rollup/plugin-node-resolve</p></td>
 <td><p>node-resolve</p></td>
-<td><p>0.10.0</p></td>
+<td><p>0.10</p></td>
 </tr>
 </tbody>
 </table>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id10" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;rollup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;bundle-es6&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -358,7 +358,7 @@
 </div>
 </div>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id6" role="doc-footnote">
+<aside class="footnote brackets" id="id7" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
 <p>settings.transform.imports</p>
 </aside>
@@ -367,8 +367,12 @@
 <span class="backrefs">(<a role="doc-backlink" href="#id3">1</a>,<a role="doc-backlink" href="#id4">2</a>)</span>
 <p>Package with dependencies (e.g. &#64;e-mc/document)</p>
 </aside>
-<aside class="footnote brackets" id="id7" role="doc-footnote">
+<aside class="footnote brackets" id="id8" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
+<p>ESLint 10.0 (not available)</p>
+</aside>
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
 <p>metadata: { “__nodepackageimporter__”: true }</p>
 </aside>
 </aside>

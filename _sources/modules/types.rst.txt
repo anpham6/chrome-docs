@@ -7,12 +7,12 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 49
+  :emphasize-lines: 28,54,57,64-67,72
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
 
-  import type { BinaryLike, BinaryToTextEncoding, CipherGCMTypes, Encoding, RandomUUIDOptions } from "node:crypto";
+  import type { BinaryLike, BinaryToTextEncoding, CipherGCMTypes, Encoding } from "node:crypto";
   import type { BytesOptions } from "bytes";
 
   function createAbortError(reject: true): Promise<never>;
@@ -36,6 +36,7 @@ Interface
   function isPlainObject(value: unknown): value is Record<string | number | symbol, unknown>;
   function isString(value: unknown): value is string;
   function isEmpty(value: unknown): boolean;
+  function isError(err: unknown, ...name: string[]): err is Error;
   function isErrorCode(err: unknown, ...code: unknown[]): err is Required<ErrorCode>;
   function asFunction(value: unknown, sync?: boolean): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
   function parseTime(value: number | string, epoch: true): number;
@@ -56,12 +57,12 @@ Interface
   function alignSize(value: unknown, kb?: number, factor?: number): number;
   function cascadeObject(data: object, query: string, fallback?: unknown): unknown;
   function cloneObject(data: unknown, deep: boolean): unknown;
-  /** @deprecated WeakMap<object> */
-  function cloneObject(data: unknown, deepIgnore: WeakSet<object> | WeakMap<object, object>): unknown;
+  function cloneObject(data: unknown, deepIgnore: WeakMap<object, object>): unknown;
   function cloneObject(data: unknown, options?: CloneObjectOptions<unknown>): unknown;
   function coerceObject(data: unknown, cache: boolean): unknown;
   function coerceObject(data: unknown, parseString?: (...args: [string]) => unknown, cache?: boolean): unknown;
   function getEncoding(value: unknown, fallback?: BufferEncoding): BufferEncoding;
+  function getAlgorithm(value: unknown, fallback?: string): string | undefined;
   function encryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
   function decryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
   function hashKey(data: BinaryLike, algorithm?: string, encoding?: BinaryToTextEncoding): string;
@@ -71,12 +72,15 @@ Interface
   function sanitizeArgs(value: string, doubleQuote?: boolean): string;
   function sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
   function randomString(format: string, dictionary?: string): string;
-  function errorValue(value: string, hint?: string): Error;
-  function errorMessage(title: number | string, value: string, hint?: string): Error;
+  function errorValue(value: string, cause: unknown): Error;
+  function errorValue(value: string, hint?: string, cause?: unknown): Error;
+  function errorMessage(title: number | string, value: string, cause: unknown): Error;
+  function errorMessage(title: number | string, value: string, hint?: string, cause?: unknown): Error;
   function supported(major: number, minor: number, lts: boolean): boolean;
   function supported(major: number, minor?: number, patch?: number, lts?: boolean): boolean;
   function importESM(name: string | URL, isDefault: boolean, fromPath?: boolean): Promise<unknown>;
   function importESM(name: string | URL, options?: ImportAttributes, fromPath?: boolean): Promise<unknown>;
+  function requireESM(name: string, url?: string | URL, expect?: string): unknown;
   function purgeMemory(percent?: number): number;
 
   interface LOG_TYPE {
@@ -211,6 +215,37 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.14.0
+
+  - :alt:`function` **getAlgorithm** for validating a supported hash algorithm was created.
+  - :alt:`function` **isError** for detecting a native :target:`Error` instance was created.
+
+.. versionchanged:: 0.14.0
+
+  - ``BREAKING`` :alt:`function` **hashKey** optional argument :target:`algorithm` uses ":lower:`sha256`" instead of ":lower:`md5`" as default value.
+
+.. versionremoved:: 0.14.0
+
+  - :alt:`global` types in :target:`object` were deleted:
+
+    .. hlist::
+      :columns: 4
+
+      - Point
+      - Dimension
+      - AuthValue
+      - ErrorCode
+      - HighResolutionTime
+      - MinMax
+      - KeyValue
+
+.. versionadded:: 0.13.9
+
+  - :alt:`function` **requireESM** for extracting a default export was created.
+  - :alt:`function` **errorValue** | **errorMessage** argument :target:`cause` as :alt:`unknown` was implemented.
+
+.. note:: Backported: 0.12.16
+
 .. versionchanged:: 0.13.4
 
   - ``BREAKING`` :alt:`function` **cloneObject** uses a :target:`WeakMap<object, object>` for reference tracking and does not contain any references from the source object.
@@ -255,11 +290,11 @@ Changelog
     .. hlist::
       :columns: 2
 
-      - lib/image: **Point** | **Dimension**
-      - lib/http: **AuthValue**
-      - lib/node: **ErrorCode** | **HighResolutionTime**
-      - lib/settings: **MinMax**
-      - lib/squared: **KeyValue**
+      - lib/image: Point | Dimension
+      - lib/http: AuthValue
+      - lib/node: ErrorCode | HighResolutionTime
+      - lib/settings: MinMax
+      - lib/squared: KeyValue
 
 .. versionremoved:: 0.12.0
 
@@ -269,10 +304,10 @@ Changelog
     .. hlist::
       :columns: 4
 
-      - **Undef**
-      - **Null**
-      - **NumString**
-      - **TupleOf**
+      - Undef
+      - Null
+      - NumString
+      - TupleOf
 
 .. versionchanged:: 0.11.7
 
@@ -282,9 +317,9 @@ Changelog
 
   - :alt:`interface` **THRESHOLD** property **LOGGER_METER_INCREMENT** was created.
 
-.. versionadded:: 0.11.1
+.. versionchanged:: 0.11.1
 
-  - :alt:`function` **escapePattern** argument :target:`symbols` as :alt:`boolean` will also escape these optional characters:
+  - ``BREAKING`` :alt:`function` **escapePattern** optional argument :target:`lookBehind` was replaced with :target:`symbols` as :alt:`boolean`:
 
     .. hlist::
       :columns: 4
@@ -302,10 +337,8 @@ Changelog
       - \\x40 @
       - \\x60 \`
       - \\x7e ~
+      - \\x22 " :alt:`(0.13.8)`
 
-.. versionchanged:: 0.11.1
-
-  - ``BREAKING`` :alt:`function` **escapePattern** optional argument :target:`lookBehind` was removed since it could not produce a deterministic result. The intent of an escape character can not always be determined when possibly given a Windows path.
   - :alt:`function` **supported** argument :target:`lts` as :alt:`boolean` can be used as the :target:`patch` argument.
 
 .. versionchanged:: 0.11.0
@@ -329,8 +362,8 @@ Changelog
 
 .. versionchanged:: 0.10.0
 
-  - :alt:`function` **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name "**AbortError**" and code **20**.
-  - :alt:`function` **formatTime** with argument :target:`char` as "**:**" displays using digital clock format.
+  - :alt:`function` **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name ":lower:`AbortError**`" and code **20**.
+  - :alt:`function` **formatTime** with argument :target:`char` as ":lower:`:`" displays using digital clock format.
   - :alt:`interface` **CloneObjectOptions** in :alt:`module` was relocated to :target:`types`.
   - :alt:`type` **Writeable** was renamed :target:`Writable`.
   - :alt:`interface` **GetTempDirOptions** in :alt:`module` was renamed :target:`TempDirOptions`.
@@ -375,6 +408,9 @@ References
 
 - https://www.unpkg.com/@e-mc/types/index.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
-- https://www.unpkg.com/@e-mc/types/lib/module.d.ts
+- https://www.unpkg.com/@e-mc/types@0.13.8/lib/node.d.ts
 
+* https://www.npmjs.com/package/@types/node
 * https://www.npmjs.com/package/@types/bytes
+
+- https://developer.mozilla.org/en-US/docs/Web/API/DOMException

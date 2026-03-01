@@ -62,7 +62,7 @@ Configuation
     }
   }
 
-.. tip:: Local user installations are supported. Setting "**bin**" to ``false`` will disable auto-detection by `which <https://www.npmjs.com/package/which>`_.
+.. tip:: Local user installations are supported. Setting ":lower:`bin`" to ``false`` will disable auto-detection by `which <https://www.npmjs.com/package/which>`_.
 
 Example Usage
 -------------

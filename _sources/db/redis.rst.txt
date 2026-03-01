@@ -3,12 +3,13 @@ Redis
 =====
 
 - `Redis Stack <https://redis.io/downloads/#redis-stack-downloads>`_
-- **npm** i *@pi-r/redis* [#]_
+- **npm** i *@pi-r/redis*
 
 Interface
 =========
 
 .. code-block:: typescript
+  :emphasize-lines: 45
 
   import type { RediSearchSchema, RedisClientOptions, SearchOptions } from "redis";
 
@@ -18,6 +19,7 @@ Interface
   import type { JsonGetOptions } from "@redis/json/dist/lib/commands/GET";
   import type { CreateOptions } from "@redis/search/dist/lib/commands/CREATE";
   import type { FtAggregateOptions } from "@redis/search/dist/lib/commands/AGGREGATE";
+  import type { FtHybridOptions } from "@redis/search/dist/lib/commands/HYBRID";
   import type { FtSearchOptions } from "@redis/search/dist/lib/commands/SEARCH";
 
   interface RedisDataSource extends DbDataSource {
@@ -51,9 +53,9 @@ Interface
 
       options?: {
           client?: RedisClientOptions;
-          command?: CommandOptions; // client.commandOptions
           get?: JsonGetOptions;
           search?: FtSearchOptions;
+          hybrid?: FtHybridOptions;
           aggregate?: FtAggregateOptions;
           xread?: XReadOptions;
           scan?: ScanOptions;
@@ -81,12 +83,14 @@ Pool
 ----
 
 .. code-block:: typescript
+  :emphasize-lines: 6
 
   import type { RedisPoolOptions } from "redis";
 
   interface PoolConfig { // using RedisPoolOptions
       min?: number; // minimum
       max?: number; // maximum
+      idle?: number; // cleanupDelay
       timeout?: number; // acquireTimeout
   }
 
@@ -167,6 +171,11 @@ Example usage
           "PREFIX": "noderedis:demo"
         }
       },
+      "options": {
+        "search": {/* FtSearchOptions */}, // Optional
+        /* OR */
+        "hybrid": { "SEARCH": {}, "VSIM": {} } // Used with search.query (required)
+      },
 
       /* Result: { "item_src": "redis.png", "item_alt": "Redis" } */
       "value": {
@@ -183,15 +192,24 @@ Example usage
 @pi-r/redis
 ===========
 
+.. versionadded:: 0.12.0
+
+  - **FT.HYBRID** for combining full-text and vector-based searches using :target:`options.hybrid` as :alt:`FtHybridOptions` was implemented.
+  - *PoolConfig* property **idle** as :alt:`cleanupDelay` was implemented.
+
+.. versionchanged:: 0.12.0
+
+  - Package will be developed under `pi-r <https://github.com/anpham6/pi-r/tree/master/src/db/redis>`_ for future releases. [#]_
+
 .. versionadded:: 0.11.0
 
-  - *NPM* package **redis** was upgraded to **5.8.0**.
+  - *NPM* package **redis** was upgraded  from *4.7* to :target:`5.8` with a :alt:`NodeJS 18` requirement.
   - *RedisDataSource* property **streams** as :alt:`XReadStreams` was created.
-  - *RedisDataSource* property **format** with type "**SMEMBERS**" using :target:`key` as :alt:`string` was implemented.
+  - *RedisDataSource* property **format** with type ":lower:`SMEMBERS`" using :target:`key` as :alt:`string` was implemented.
 
 .. versionchanged:: 0.11.0
 
- - Package will be developed under `pi-r2 <https://github.com/anpham6/pi-r2/tree/master/src/db/redis>`_ for future releases.
+  - Package will be developed under `pi-r2 <https://github.com/anpham6/pi-r2/tree/master/src/db/redis>`_ for future releases. [#]_
 
 .. versionadded:: 0.10.1
 
@@ -199,6 +217,7 @@ Example usage
 
 .. versionadded:: 0.8.0
 
-  - *RedisDataSource* property **format** with type "**HSCAN**" and optional argument :target:`cursor` | :target:`iterations` was implemented.
+  - *RedisDataSource* property **format** with type ":lower:`HSCAN`" and optional argument :alt:`cursor` | :alt:`iterations` was implemented.
 
-.. [#] https://github.com/anpham6/pi-r2/tree/master/src/db/redis
+.. [#] Typescript 6.0 - module/preserve
+.. [#] Typescript 5.9 - commonjs/preserve

@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Cloud Platform &mdash; E-mc 0.13.7 documentation</title>
+  <title>Google Cloud Platform &mdash; E-mc 0.13.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=e35e4f9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=db906b65"></script>
+      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -73,7 +73,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../compress/index.html">Compress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/index.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
 </ul>
@@ -318,17 +318,18 @@
 <h2>Database<a class="headerlink" href="#database" title="Link to this heading"></a></h2>
 <section id="id1">
 <h3>Interface<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GoogleAuthOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;google-auth-library&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AggregateSpec</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/firestore&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AggregateSpec</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/firestore&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PathType</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/datastore&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">entity</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/datastore/build/src/entity&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GoogleAuthOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;google-auth-library&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FirebaseOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@firebase/app&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">GCPDatabaseQuery</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudDatabase</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;gcloud&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">GCPDatabaseCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">product</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;firestore&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;bigquery&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;bigtable&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;datastore&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;spanner&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;firebase&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">unknown</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Document</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">database?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">updateType?</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
@@ -336,11 +337,15 @@
 <span class="w">    </span><span class="nx">keys?</span><span class="o">:</span><span class="w"> </span><span class="kt">DatastoreKey</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">DatastoreKey</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">kind?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">orderBy?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[][];</span>
-<span class="w">    </span><span class="nx">aggregateSpec?</span><span class="o">:</span><span class="w"> </span><span class="kt">AggregateSpec</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">aggregateSpec?</span><span class="o">:</span><span class="w"> </span><span class="kt">AggregateSpec</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">pipeline?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">flags?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">GCPDatabaseCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">GoogleAuthOptions</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Empty */</span><span class="p">}</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">GCPDatabaseCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">GoogleAuthOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">FirebaseOptions</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">product</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;firebase&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">admin?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ServiceAccount</span><span class="p">;</span>
+<span class="p">}</span>
 
 <span class="kr">type</span><span class="w"> </span><span class="nx">DatastoreKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">PathType</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">entity</span><span class="p">.</span><span class="nx">KeyOptions</span><span class="p">;</span>
 <span class="kr">type</span><span class="w"> </span><span class="nx">Document</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
@@ -404,32 +409,6 @@
 <span class="w">      </span><span class="nt">&quot;distanceMeasure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EUCLIDEAN&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;where&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;group&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Firestore&quot;</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;where&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;findNearest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;column&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;distanceMeasure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EUCLIDEAN&quot;</span><span class="w"> </span><span class="p">}],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;limitToLast&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;orderBy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;asc&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereAnd&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Unofficial</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Firestore&quot;</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="p">]</span>
-<span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;limitToLast&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereOr&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Unofficial</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;aahiEBE4qHM73JE7jom3&quot;</span><span class="p">]</span>
-<span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;orderBy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;asc&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;orderBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;asc&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// b.getPartitions(id){number}</span>
-<span class="w">    </span><span class="cm">/* OR */</span>
 <span class="w">    </span><span class="nt">&quot;aggregateSpec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* AggregateSpec */</span><span class="p">},</span><span class="w"> </span><span class="c1">// (a | b).aggregate (not cached)</span>
 
 <span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0 - update{exists} | 1 - create | 2 - set | 3 - set{merge}</span>
@@ -448,13 +427,47 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+<section id="query">
+<h5>Query<a class="headerlink" href="#query" title="Link to this heading"></a></h5>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;where&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;group&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Firestore&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;where&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;findNearest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;column&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;distanceMeasure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EUCLIDEAN&quot;</span><span class="w"> </span><span class="p">}],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;limitToLast&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;orderBy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;asc&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereAnd&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Firestore&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;limitToLast&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereOr&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;aahiEBE4qHM73JE7jom3&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;orderBy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;asc&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;orderBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;asc&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">// b.getPartitions(id){number} // Group only (optional)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>endAt</p></li>
 <li><p>endBefore</p></li>
+<li><p>findNearest</p></li>
 <li><p>limit</p></li>
-<li><p>limitToLast</p></li>
 </ul>
 </td><td><ul class="simple">
+<li><p>limitToLast</p></li>
 <li><p>offset</p></li>
 <li><p>orderBy</p></li>
 <li><p>select</p></li>
@@ -465,11 +478,85 @@
 <li><p>where</p></li>
 </ul>
 </td><td><ul class="simple">
-<li><p><strong>whereAnd</strong></p></li>
-<li><p><strong>whereOr</strong></p></li>
+<li><p>whereAnd <em class="alt">(unofficial)</em></p></li>
+<li><p>whereOr <em class="alt">(unofficial)</em></p></li>
 <li><p>withConverter</p></li>
 </ul>
 </td></tr></table>
+</section>
+<section id="pipeline">
+<h5>Pipeline<a class="headerlink" href="#pipeline" title="Link to this heading"></a></h5>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;aggregate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;average&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;averageRating&quot;</span><span class="p">]],</span><span class="w"> </span><span class="c1">// field(&quot;rating&quot;).average().as(&quot;averageRating&quot;)</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;aggregate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;countAll&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;totalBooks&quot;</span><span class="p">]],</span><span class="w"> </span><span class="c1">// countAll().as(&quot;totalBooks&quot;)</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;aggregate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;startsWith&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mr.&quot;</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;countIf&quot;</span><span class="p">]]</span><span class="w"> </span><span class="c1">// countIf(field(&quot;name&quot;).startsWith(&quot;Mr.&quot;))</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;replaceWith&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// replaceWith(map({ status: &quot;active&quot; }))</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;select&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;field&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lastName&quot;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;address&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;toUpper&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;as&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;upperAddress&quot;</span><span class="p">]]]]</span><span class="w"> </span><span class="c1">// &quot;firstName&quot;, field(&quot;lastName&quot;), field(&quot;address&quot;).toUpper().as(&quot;upperAddress&quot;)</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;distinct&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;author&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;authorName&quot;</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;publishedAt&quot;</span><span class="p">]]</span><span class="w"> </span><span class="c1">// field(&quot;author&quot;).as(&quot;authorName&quot;), &quot;publishedAt&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;sort&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">]]]</span><span class="w"> </span><span class="c1">// field(&quot;rating&quot;).ascending(), field(&quot;title&quot;).descending()</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;unnest&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tagIndex&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tags&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tag&quot;</span><span class="p">,</span><span class="w"> </span><span class="cm">/* indexField? */</span><span class="p">]]]</span><span class="w"> </span><span class="c1">// &quot;tagIndex&quot;, field(&quot;tags&quot;).as(&quot;tag&quot;)</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;where&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lessThanOrEqual&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.15</span><span class="p">],</span><span class="w"> </span><span class="c1">// field(&quot;rating&quot;).lessThanOrEqual(3.15)</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;genre&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;toLower&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Fun Facts&quot;</span><span class="p">]]]</span><span class="w"> </span><span class="c1">// field(&quot;genre&quot;).toLower().equal(&quot;fun facts&quot;)</span>
+<span class="w">      </span><span class="p">]]</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereAnd&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lessThanOrEqual&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.15</span><span class="p">],</span><span class="w"> </span><span class="c1">// and(field(&quot;rating&quot;).lessThanOrEqual(3.15), field(&quot;genre&quot;).toLower().equal(&quot;fun facts&quot;))</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;genre&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;toLower&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Fun Facts&quot;</span><span class="p">]]]</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereOr&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lessThanOrEqual&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.15</span><span class="p">],</span><span class="w"> </span><span class="c1">// or(field(&quot;rating&quot;).lessThanOrEqual(3.15), field(&quot;genre&quot;).toLower().equal(&quot;fun facts&quot;))</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;genre&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;toLower&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Fun Facts&quot;</span><span class="p">]]]</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* PipelineExecuteOptions */</span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>aggregate</p></li>
+<li><p>distinct</p></li>
+<li><p><em>findNearest</em></p></li>
+<li><p><em>limit</em></p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p><em>offset</em></p></li>
+<li><p><em>rawStage</em></p></li>
+<li><p><em>removeFields</em></p></li>
+<li><p>replaceWith</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p><em>sample</em></p></li>
+<li><p>select</p></li>
+<li><p>sort</p></li>
+<li><p><em>union</em></p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>unnest</p></li>
+<li><p>whereAnd <em class="alt">(unofficial)</em></p></li>
+<li><p>whereOr <em class="alt">(unofficial)</em></p></li>
+<li><p>where</p></li>
+</ul>
+</td></tr></table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Methods in <em>italic</em> have their <strong>query</strong> parameters passed in directly without modification.</p>
+</div>
+</section>
 </section>
 <section id="bigquery">
 <h4>BigQuery<a class="headerlink" href="#bigquery" title="Link to this heading"></a></h4>
@@ -728,6 +815,12 @@
 <section id="pi-r-gcp">
 <h2>&#64;pi-r/gcp<a class="headerlink" href="#pi-r-gcp" title="Link to this heading"></a></h2>
 <div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.12.0: </span></p>
+<ul class="simple">
+<li><p><em>Firestore</em> pipeline <em class="alt">(beta)</em> queries are supported.</p></li>
+</ul>
+</div>
+<div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.0: </span></p>
 <ul class="simple">
 <li><p><em>GCPStorage</em> properties <strong>upload</strong> | <strong>download</strong> extended <em class="target">CopyObjectAction</em> as <em class="alt">copyObject | copyObject[]</em>.</p></li>
@@ -743,7 +836,7 @@
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul class="simple">
 <li><p><em>GCPStorage</em> property <strong>admin.configBucket.retentionPolicy</strong> as <cite>0</cite> calls the method <em class="target">removeRetentionPeriod</em>.</p></li>
-<li><p><em>Firebase Admin</em> authentication using a path to a JSON file or an object representing a service account key is supported.</p></li>
+<li><p><em>Firebase</em> <em class="alt">(admin)</em> authentication using a JSON file or an object with a service account key is supported.</p></li>
 <li><p><em>Firestore</em> aggregate and collection group partition queries are supported.</p></li>
 <li><p><em>Firestore</em> method <strong>findNearest</strong> for vector queries as <em class="alt">VectorQueryOptions</em> was implemented.</p></li>
 </ul>
@@ -793,7 +886,7 @@
 <p><span class="versionmodified added">Added in version 0.6.3: </span></p>
 <ul class="simple">
 <li><p><em>Firestore</em> property <strong>id</strong> supports multiple document references.</p></li>
-<li><p><em>Firestore</em> property <strong>query</strong> supports using <em>Filter&lt;”and” | “or”&gt;</em> conditional groups for <em>where</em>.</p></li>
+<li><p><em>Firestore</em> property <strong>query</strong> supports using <em>Filter&lt;”and” | “or”&gt;</em> conditional groups.</p></li>
 </ul>
 </div>
 <div class="versionadded">

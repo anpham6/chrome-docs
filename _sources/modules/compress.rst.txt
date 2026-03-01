@@ -54,6 +54,10 @@ Interface
 Changelog
 =========
 
+.. versionremoved:: 0.14.0
+
+  - *ICompress* compression format **zopfli** as :alt:`gzip` is no longer supported.
+
 .. versionadded:: 0.13.0
 
   - *ICompress* :alt:`interface` **CompressLevel** has extended :target:`ZlibOptions`.
@@ -90,25 +94,26 @@ Settings
   import type { CacheDirAction } from "./settings";
 
   import type { BrotliOptions, ZlibOptions } from "node:zlib";
-  import type { Options as ZopfliOptions } from "node-zopfli";
 
   interface CompressModule {
       gzip?: ZlibOptions;
       brotli?: BrotliOptions;
-      zopfli?: ZopfliOptions;
       settings?: {
           broadcast_id?: string | string[];
           cache?: boolean | CacheDirAction & { font?: string | number | boolean; image?: string | number | boolean; };
           cache_expires?: number | string;
           gzip_level?: number;
           brotli_quality?: number;
-          zopfli_iterations?: number;
           chunk_size?: number | string;
       };
   }
 
 Changelog
 ---------
+
+.. versionremoved:: 0.14.0
+
+  - *CompressModule* settings for **zopfli** compression format were deleted.
 
 .. versionchanged:: 0.13.0
 
@@ -172,9 +177,7 @@ Example usage
 References
 ==========
 
-- https://www.unpkg.com/@e-mc/types/lib/squared.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/compress.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts
 
 * https://www.npmjs.com/package/@types/node
-* https://www.npmjs.com/package/@types/node-zopfli

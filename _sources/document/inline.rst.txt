@@ -66,17 +66,17 @@ data-chrome-options
     - etag
     - exist
 * extract
-    - css: @import rules are inlined into parent file :lower:`(same origin)`
+    - css: @import rules are inlined into parent file :alt:`(same origin)`
 * blob
     - image: HTML and CSS from **base64**
     - font: CSS from **base64**
 * dynamic
     - image: "srcset" uses query parameters with an image resizer
     - element :lower:`(non-void)`: mixed content which uses a view engine template :alt:`(e.g. ejs)`
-* compress (array)
+* compress :lower:`(array)`
     - image: tinify + imagemin [#]_
     - font: woff + woff2
-    - gz: Gzip + *Zopfli* [#]_
+    - gz: Gzip
     - br: Brotli
 * static
     - all: Remove query string from URL
@@ -98,11 +98,11 @@ data-chrome-options
 * remove
     - all: Remove element during finalization
 * charset :lower:`(string)`
-    - utf-8 :lower:`(default)`
+    - utf-8 :alt:`(default)`
     - utf-16
     - utf-16le
     - latin1
-    - utf-16be :lower:`(unsupported)`
+    - utf-16be :alt:`(unsupported)`
 
 .. code-block::
   :caption: JSON [#]_
@@ -156,7 +156,6 @@ Inline commands are usually sufficient for simple web pages. More advanced confi
 .. [#] Do not use the built-in transformers per document.
 .. [#] boolean - config | "no-module" - inline
 .. [#] @pi-r/tinify | @pi-r2/imagemin
-.. [#] npm i node-zopfli
 .. [#] "true" - explicit | "false"
 .. [#] filename + content hash (productionRelease=true)
 .. [#] Value can be limited to the starting prefix. (e.g. md5[8] - Minimum is 4)

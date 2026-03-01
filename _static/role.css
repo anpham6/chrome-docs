@@ -1,5 +1,5 @@
 em.alt {
-    font-size: 90%;
+    font-size: 13px;
     color: lightslategray;
 }
 
@@ -9,5 +9,7 @@ em.target {
 }
 
 em.lower {
-    font-size: 90%;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
 }

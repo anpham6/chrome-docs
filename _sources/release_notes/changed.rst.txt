@@ -4,6 +4,13 @@
 Changed
 =======
 
+0.14.0
+======
+
+.. list-items:: versionchanged
+   :table: docname, text
+   :version: 0.14.0
+
 0.13.7
 ======
 

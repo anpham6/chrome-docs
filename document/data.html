@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Sources &mdash; E-mc 0.13.7 documentation</title>
+  <title>Data Sources &mdash; E-mc 0.13.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=e35e4f9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=db906b65"></script>
+      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -80,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../compress/index.html">Compress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/index.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
 </ul>
@@ -230,7 +230,7 @@
 </div>
 <section id="id7">
 <h3>Example usage<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
-<p>Reusing configuration templates is possible with URL search parameters. All parameters <em class="lower">(excluding “value”)</em> from any source can be replaced using the <strong>{{param}}</strong> syntax.</p>
+<p>Reusing configuration templates is possible with URL search parameters. All parameters <em class="alt">(excluding “value”)</em> from any source can be replaced using the <strong>{{param}}</strong> syntax.</p>
 <div class="literal-block-wrapper docutils container" id="id20">
 <div class="code-block-caption"><span class="caption-text"><em>http://localhost:3000/project/index.html?file=demo&amp;format=json</em></span><a class="headerlink" href="#id20" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -339,7 +339,7 @@
 </div>
 </div>
 <p>To completely remove an element all <em>AND</em> conditions have to be <code class="docutils literal notranslate"><span class="pre">true</span></code> and one <em>OR</em> per group is <code class="docutils literal notranslate"><span class="pre">true</span></code>. Using a view engine is recommended if you require a more advanced statement.</p>
-<p>Returning an empty result or a blank string <em class="lower">(view engine)</em> is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>Returning an empty result or a blank string <em class="alt">(view engine)</em> is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </section>
 </section>
 <section id="external-source-export">
@@ -607,7 +607,7 @@
 <p><span class="versionmodified added">Added in version 0.6.4: </span></p>
 <ul class="simple">
 <li><p><em>UriDataSource</em> property <strong>contentType</strong> | <strong>body</strong> for HTTP method <em>POST</em> was implemented.</p></li>
-<li><p><em>DataSource</em> property <strong>source</strong> option “<strong>json</strong>” as <em>JSONDataSource</em> was implemented.</p></li>
+<li><p><em>DataSource</em> property <strong>source</strong> option value “<em class="lower">json</em>” as <em>JSONDataSource</em> was implemented.</p></li>
 <li><p><em>TextDataSource</em> property <strong>leadingText</strong> | <strong>trailingText</strong> were created.</p></li>
 </ul>
 </div>

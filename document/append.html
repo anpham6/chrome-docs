@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Appending source &mdash; E-mc 0.13.7 documentation</title>
+  <title>Appending source &mdash; E-mc 0.13.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=e35e4f9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=db906b65"></script>
+      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -73,7 +73,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../compress/index.html">Compress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/index.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
 </ul>
@@ -104,7 +104,7 @@
              
   <section id="appending-source">
 <h1>Appending source<a class="headerlink" href="#appending-source" title="Link to this heading"></a></h1>
-<p>You can <strong>append</strong> or <strong>prepend</strong> a sibling element <em class="lower">(not child)</em> to be processed as a typical <code class="docutils literal notranslate"><span class="pre">script</span></code> or <code class="docutils literal notranslate"><span class="pre">link</span></code> element.</p>
+<p>You can <strong>append</strong> or <strong>prepend</strong> a sibling element <em class="alt">(not child)</em> to be processed as a typical <code class="docutils literal notranslate"><span class="pre">script</span></code> or <code class="docutils literal notranslate"><span class="pre">link</span></code> element.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -149,7 +149,7 @@
 </section>
 <section id="useoriginalhtmlpage-true">
 <h3>useOriginalHtmlPage = true<a class="headerlink" href="#useoriginalhtmlpage-true" title="Link to this heading"></a></h3>
-<p>Will attempt to parse the page as it stored on file. Dynamic content <em class="alt">(e.g. php)</em> that create additional elements are not supported. Scripts which insert elements as the page is loading should be performed after parsing the document. Errors can also occur with <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tags when they contain block-level elements. If you are having problems using this option then make sure your page is a valid <a class="reference external" href="https://validator.w3.org">HTML5</a> document. As a last resort you can try adding an element “<strong>id</strong>” to directly inject the content.</p>
+<p>Will attempt to parse the page as it stored on file. Dynamic content <em class="alt">(e.g. php)</em> that create additional elements are not supported. Scripts which insert elements as the page is loading should be performed after parsing the document. Errors can also occur with <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tags when they contain block-level elements. If you are having problems using this option then make sure your page is a valid <a class="reference external" href="https://validator.w3.org">HTML5</a> document. As a last resort you can try adding an element “<em class="lower">id</em>” to directly inject the content.</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>

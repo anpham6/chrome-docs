@@ -5,7 +5,6 @@ Interface
 .. highlight:: typescript
 
 .. code-block::
-  :emphasize-lines: 11
 
   interface DataSource {
       source: string;

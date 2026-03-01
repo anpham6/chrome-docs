@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/module &mdash; E-mc 0.13.7 documentation</title>
+  <title>@e-mc/module &mdash; E-mc 0.13.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=e35e4f9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=db906b65"></script>
+      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -79,7 +79,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#esm-imports">ESM imports</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/index.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
 </ul>
@@ -128,7 +128,7 @@
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">NoParamCallback</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:fs&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FileTypeResult</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;file-type&quot;</span><span class="p">;</span>
 
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:events&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:events&quot;</span><span class="p">;</span>
 
 <span class="kr">type</span><span class="w"> </span><span class="nx">BufferView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">NodeJS</span><span class="p">.</span><span class="nx">ArrayBufferView</span><span class="p">;</span>
 <span class="kr">type</span><span class="w"> </span><span class="nx">CpuUsage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">NodeJS</span><span class="p">.</span><span class="nx">CpuUsage</span><span class="p">;</span>
@@ -333,11 +333,11 @@
 <span class="w">    </span><span class="nx">resolveMime</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">Uint8Array</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">ArrayBuffer</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">FileTypeResult</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">lookupMime</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">extension?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="hll"><span class="w">    </span><span class="cm">/** @deprecated class */</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">initCpuUsage</span><span class="p">(</span><span class="nx">instance?</span><span class="o">:</span><span class="w"> </span><span class="kt">IModule</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">CpuUsage</span><span class="p">;</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">initCpuUsage</span><span class="p">(</span><span class="nx">instance?</span><span class="o">:</span><span class="w"> </span><span class="kt">IModule</span><span class="p">,</span><span class="w"> </span><span class="nx">thread?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">CpuUsage</span><span class="p">;</span>
 </span><span class="hll"><span class="w">    </span><span class="cm">/** @deprecated private */</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">getCpuUsage</span><span class="p">(</span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="kt">CpuUsage</span><span class="p">,</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">getCpuUsage</span><span class="p">(</span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="kt">CpuUsage</span><span class="p">,</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">thread?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 </span><span class="hll"><span class="w">    </span><span class="cm">/** @deprecated private */</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">getCpuUsage</span><span class="p">(</span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="kt">CpuUsage</span><span class="p">,</span><span class="w"> </span><span class="nx">format?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">getCpuUsage</span><span class="p">(</span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="kt">CpuUsage</span><span class="p">,</span><span class="w"> </span><span class="nx">format?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span><span class="w"> </span><span class="nx">thread?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 </span><span class="hll"><span class="w">    </span><span class="cm">/** @deprecated private */</span>
 </span><span class="hll"><span class="w">    </span><span class="nx">getMemUsage</span><span class="p">(</span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">free?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 </span><span class="hll"><span class="w">    </span><span class="cm">/** @deprecated private */</span>
@@ -369,13 +369,19 @@
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 0.14.0: </span></p>
+<p><span class="versionmodified deprecated">Deprecated since version 0.13.8: </span></p>
 <ul>
-<li><p><em>ModuleConstructor</em> <em class="alt">function</em> are to be converted into <em class="target">private</em> class methods:</p>
+<li><p><em>ModuleConstructor</em> <em class="alt">function</em> will be converted into <em class="target">private</em> class methods:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>initCpuUsage <em class="alt">(public)</em></p></li>
+</ul>
+</td><td><ul class="simple">
 <li><p>getCpuUsage</p></li>
+</ul>
+</td><td><ul class="simple">
 <li><p>getMemUsage</p></li>
+</ul>
+</td><td><ul class="simple">
 <li><p>formatCpuMem</p></li>
 </ul>
 </td></tr></table>
@@ -388,7 +394,11 @@
 <li><p><em>IModule</em> <em class="alt">function</em> <strong>supports</strong> optional argument <em class="target">locked</em> as <em class="alt">boolean</em> can <strong>permanently</strong> prevent modification to these properties:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>sessionId</p></li>
+</ul>
+</td><td><ul class="simple">
 <li><p>broadcastId</p></li>
+</ul>
+</td><td><ul class="simple">
 <li><p>permission</p></li>
 </ul>
 </td></tr></table>
@@ -401,6 +411,8 @@
 <li><p><em>IModule</em> <em class="alt">class</em> <strong>EventEmitter</strong> can send and receive events from:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>file:permission</p></li>
+</ul>
+</td><td><ul class="simple">
 <li><p>dir:permission</p></li>
 </ul>
 </td></tr></table>
@@ -433,7 +445,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.12.2: </span></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>ModuleConstructor</em> <em class="alt">function</em> <strong>isURL</strong> no longer uses <em class="target">URL.canParse</em> for validation. The native method accepted values without the “<strong>://</strong>” convention.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>ModuleConstructor</em> <em class="alt">function</em> <strong>isURL</strong> no longer uses <em class="target">URL.canParse</em> for validation. The native method accepts values without the “<em class="lower">://</em>” protocol.</p></li>
 </ul>
 </div>
 <div class="admonition note">
@@ -456,8 +468,19 @@
 </div>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.12.0: </span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>ModuleConstructor</em> <em class="alt">function</em> <strong>getPackageVersion</strong> optional arguments <strong>unstable</strong> | <strong>startDir</strong> | <strong>baseDir</strong> are only available in <em class="target">options</em> as <em class="alt">PackageVersionOptions</em>.</p></li>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>ModuleConstructor</em> <em class="alt">function</em> <strong>getPackageVersion</strong> optional arguments are only available in <em class="target">options</em> as <em class="alt">PackageVersionOptions</em>:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>unstable</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>startDir</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>baseDir</p></li>
+</ul>
+</td></tr></table>
+</li>
 </ul>
 </div>
 <div class="deprecated">
@@ -469,8 +492,16 @@
 </div>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.11.0: </span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>ModuleConstructor</em> <em class="alt">function</em> <strong>checkSemVer</strong> optional arguments <strong>unstable</strong> | <strong>startDir</strong> are only available in <em class="target">options</em> as <em class="alt">CheckSemVerOptions</em>.</p></li>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>ModuleConstructor</em> <em class="alt">function</em> <strong>checkSemVer</strong> optional arguments are only available in <em class="target">options</em> as <em class="alt">CheckSemVerOptions</em>:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>unstable</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>startDir</p></li>
+</ul>
+</td></tr></table>
+</li>
 </ul>
 </div>
 <div class="versionadded">
@@ -544,8 +575,8 @@
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BackgroundColor</span><span class="p">,</span><span class="w"> </span><span class="nx">ForegroundColor</span><span class="p">,</span><span class="w"> </span><span class="nx">LogMessageOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">LogTypeValue</span><span class="p">,</span><span class="w"> </span><span class="nx">LoggerProgress</span><span class="p">,</span><span class="w"> </span><span class="nx">LoggerStatus</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./logger&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LoggerProcessSettings</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./settings&quot;</span><span class="p">;</span>
 
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">CipherGCMTypes</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;crypto&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">SecureVersion</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;tls&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">CipherGCMTypes</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:crypto&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">SecureVersion</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:tls&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">NodeModule</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">process</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
@@ -724,7 +755,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.13.0: </span></p>
 <ul class="simple">
-<li><p><em>MemoryModule</em> settings property <strong>cache_disk.include</strong> can be prefixed with “<strong>!</strong>” to negate a subset of glob paths.</p></li>
+<li><p><em>MemoryModule</em> settings property <strong>cache_disk.include</strong> can be prefixed with “<em class="lower">!</em>” to negate a subset of glob paths.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
@@ -751,7 +782,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em>MemoryModule</em> settings property <strong>cache_disk.exclude</strong> can be prefixed with “<strong>!</strong>” to negate a subset of glob paths.</p></li>
+<li><p><em>MemoryModule</em> settings property <strong>cache_disk.exclude</strong> can be prefixed with “<em class="lower">!</em>” to negate a subset of glob paths.</p></li>
 </ul>
 </div>
 <div class="versionadded">
@@ -774,6 +805,7 @@
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
 <ul class="simple">
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/squared.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/squared.d.ts</a></p></li>
 <li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/core.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/core.d.ts</a></p></li>
 <li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/logger.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/logger.d.ts</a></p></li>
 <li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/module.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/module.d.ts</a></p></li>
@@ -782,6 +814,7 @@
 </ul>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.npmjs.com/package/&#64;types/node">https://www.npmjs.com/package/&#64;types/node</a></p></li>
+<li><p><a class="reference external" href="https://www.npmjs.com/package/file-type">https://www.npmjs.com/package/file-type</a></p></li>
 </ul>
 </section>
 </section>

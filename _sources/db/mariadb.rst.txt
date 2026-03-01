@@ -111,7 +111,6 @@ Example usage
 
   See :ref:`MySQL <mysql-prepared-statements>`.
 
-
 @pi-r/mariadb
 =============
 
@@ -130,6 +129,6 @@ Example usage
 
 .. versionadded:: 0.6.2
 
-  - *PoolConfig* property **queue_idle** was implemented.
-  
+  - *PoolConfig* property **queue_idle** as :alt:`acquireTimeout` was implemented.
+
 .. [#] npm i aws-ssl-profiles

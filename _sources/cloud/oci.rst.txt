@@ -9,7 +9,7 @@ Storage
 
 - https://www.oracle.com/cloud/storage/object-storage
 
-.. note:: Uses :doc:`S3 <aws>` [#s3]_ compatibility API :lower:`(AWS v2)` and signature **v4**.
+.. note:: Uses :doc:`S3 <aws>` [#s3]_ compatibility API :alt:`(AWS v2)` and signature **v4**.
 
 Interface
 ---------

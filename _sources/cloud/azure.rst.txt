@@ -304,7 +304,7 @@ Example usage
 
 .. versionadded:: 0.10.2
 
-  - *AzureDatabaseQuery* property **params** as :target:`OperationInput[]` for Bulk API was implemented.
+  - *AzureDatabaseQuery* property **params** as :target:`OperationInput[]` for use with *Bulk Operations API* is supported.
 
 .. versionadded:: 0.10.0
 

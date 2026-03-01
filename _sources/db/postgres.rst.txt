@@ -9,6 +9,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :emphasize-lines: 8
 
   import type { QueryArrayConfig, PoolConfig } from "pg";
 
@@ -17,6 +18,7 @@ Interface
       credential: string | PostgresCredential;
       query?: string | QueryArrayConfig;
       params?: unknown[];
+      options?: QueryStreamConfig;
   }
 
   interface PostgresCredential extends ServerAuth, PoolConfig {
@@ -31,6 +33,7 @@ Pool
   import type { PoolConfig } from "pg";
 
   interface PoolConfig {
+      min?: number; // min
       max?: number; // max
       idle?: number; // idleTimeoutMillis
       timeout?: number; // connectionTimeoutMillis
@@ -78,6 +81,10 @@ Example usage
 
       "params": [1, "escaped"],
 
+      "streamRow": true,
+      "query": "SELECT * FROM table", // string
+      "options": { "batchSize": 10 }, // QueryStreamConfig
+
       /* Result: { "item_src": "postgres.png", "item_alt": "PostgreSQL" } */
       "value": {
         "src": "item_src",
@@ -95,9 +102,9 @@ Example usage
 @pi-r/postgres
 ==============
 
-.. versionremoved:: 0.10.0
+.. versionadded:: 0.12.0
 
-  - *PoolConfig* property **min** is no longer supported by ``pg`` client library.
+  - *QueryStream* constructor supports using property **options** as :alt:`QueryStreamConfig`.
 
 .. versionadded:: 0.8.0
 

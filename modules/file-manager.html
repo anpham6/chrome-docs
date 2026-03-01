@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/file-manager &mdash; E-mc 0.13.7 documentation</title>
+  <title>@e-mc/file-manager &mdash; E-mc 0.13.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=e35e4f9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=db906b65"></script>
+      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -79,7 +79,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#esm-imports">ESM imports</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/index.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
 </ul>
@@ -278,8 +278,8 @@
 <span class="w">    </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">defineHttpCache</span><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">HttpMemorySettings</span><span class="p">,</span><span class="w"> </span><span class="nx">disk?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">defineHttpConnect</span><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">HttpConnectSettings</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
-<span class="hll"><span class="w">    </span><span class="nx">generateSessionId</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-</span><span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IFileManager</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">generateSessionId</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IFileManager</span><span class="p">;</span>
 <span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="nx">baseDirectory</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="kt">RequestData</span><span class="p">,</span><span class="w"> </span><span class="nx">postFinalize?</span><span class="o">:</span><span class="w"> </span><span class="kt">PostFinalizeCallback</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IFileManager</span><span class="p">;</span>
 <span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="nx">baseDirectory</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="kt">RequestData</span><span class="p">,</span><span class="w"> </span><span class="nx">permission?</span><span class="o">:</span><span class="w"> </span><span class="kt">IPermission</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">postFinalize?</span><span class="o">:</span><span class="w"> </span><span class="kt">PostFinalizeCallback</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IFileManager</span><span class="p">;</span>
 <span class="p">}</span>
@@ -319,8 +319,8 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.13.0: </span></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>IFileManager</em> when parsing an invalid encoding <em class="alt">(BufferEncoding)</em> will process the file as a <a class="reference external" href="https://nodejs.org/api/buffer.html#buffers-and-typedarrays">Buffer</a> instead of assuming “<strong>utf-8</strong>”.</p></li>
-<li><p><em>FileManagerConstructor</em> <em class="alt">function</em> <strong>writeChecksum</strong> | <strong>verifyChecksum</strong> options property <em class="target">include</em> as <em class="alt">string[]</em> can be prefixed with “<strong>!</strong>” to negate a subset of glob paths.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>IFileManager</em> when parsing an invalid encoding <em class="alt">(BufferEncoding)</em> will process the file as a <a class="reference external" href="https://nodejs.org/api/buffer.html#buffers-and-typedarrays">Buffer</a> instead of assuming “<em class="lower">utf-8</em>”.</p></li>
+<li><p><em>FileManagerConstructor</em> <em class="alt">function</em> <strong>writeChecksum</strong> | <strong>verifyChecksum</strong> options property <em class="target">include</em> as <em class="alt">string[]</em> can be prefixed with “<em class="lower">!</em>” to negate a subset of glob paths.</p></li>
 </ul>
 </div>
 <div class="admonition note">
@@ -337,7 +337,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em>FileManagerConstructor</em> <em class="alt">function</em> <strong>writeChecksum</strong> | <strong>verifyChecksum</strong> options property <em class="target">exclude</em> as <em class="alt">string[]</em> can be prefixed with “<strong>!</strong>” to negate a subset of glob paths.</p></li>
+<li><p><em>FileManagerConstructor</em> <em class="alt">function</em> <strong>writeChecksum</strong> | <strong>verifyChecksum</strong> options property <em class="target">exclude</em> as <em class="alt">string[]</em> can be prefixed with “<em class="lower">!</em>” to negate a subset of glob paths.</p></li>
 <li><p><em>IFileManager</em> <em class="alt">function</em> <strong>install</strong> with name <em class="alt">watch</em> injected with an <em>NPM</em> package or <em>Watch</em> constructor was implemented.</p></li>
 <li><p><em>IFileManager</em> <em class="alt">property</em> <strong>cacheToDisk</strong> | <strong>cacheToMemory</strong> were made <em class="alt">readonly</em> references.</p></li>
 </ul>
@@ -455,8 +455,8 @@
 </div>
 <section id="id1">
 <h3>Changelog<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 0.12.0: </span></p>
+<div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 0.14.0: </span></p>
 <ul class="simple">
 <li><p><em>ErrorModule</em> property <strong>recursion_limit</strong> was renamed <em class="target">retry_limit</em>.</p></li>
 </ul>

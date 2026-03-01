@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/types &mdash; E-mc 0.13.7 documentation</title>
+  <title>@e-mc/types &mdash; E-mc 0.13.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=7d609451" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
-      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=e35e4f9d" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=db906b65"></script>
+      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -78,7 +78,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#esm-imports">ESM imports</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/index.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
 </ul>
@@ -116,7 +116,7 @@
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LogArguments</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./lib/logger&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ErrorCode</span><span class="p">,</span><span class="w"> </span><span class="nx">HighResolutionTime</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./lib/node&quot;</span><span class="p">;</span>
 
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">BinaryToTextEncoding</span><span class="p">,</span><span class="w"> </span><span class="nx">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">Encoding</span><span class="p">,</span><span class="w"> </span><span class="nx">RandomUUIDOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:crypto&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">BinaryToTextEncoding</span><span class="p">,</span><span class="w"> </span><span class="nx">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">Encoding</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:crypto&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BytesOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;bytes&quot;</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">createAbortError</span><span class="p">(</span><span class="nx">reject</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">never</span><span class="o">&gt;</span><span class="p">;</span>
@@ -140,7 +140,8 @@
 <span class="kd">function</span><span class="w"> </span><span class="nx">isPlainObject</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">symbol</span><span class="p">,</span><span class="w"> </span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">isString</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">isEmpty</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">isErrorCode</span><span class="p">(</span><span class="nx">err</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">...code</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">Required</span><span class="o">&lt;</span><span class="nx">ErrorCode</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">isError</span><span class="p">(</span><span class="nx">err</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">...name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
+</span><span class="kd">function</span><span class="w"> </span><span class="nx">isErrorCode</span><span class="p">(</span><span class="nx">err</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">...code</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">Required</span><span class="o">&lt;</span><span class="nx">ErrorCode</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">asFunction</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">sync?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="p">((</span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">unknown</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">parseTime</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">epoch</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">parseTime</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">negative</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
@@ -160,28 +161,31 @@
 <span class="kd">function</span><span class="w"> </span><span class="nx">alignSize</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">kb?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">factor?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">cascadeObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">object</span><span class="p">,</span><span class="w"> </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">fallback?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">cloneObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">deep</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
-<span class="cm">/** @deprecated WeakMap&lt;object&gt; */</span>
-<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">cloneObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">deepIgnore</span><span class="o">:</span><span class="w"> </span><span class="kt">WeakSet</span><span class="o">&lt;</span><span class="nx">object</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">WeakMap</span><span class="o">&lt;</span><span class="nx">object</span><span class="p">,</span><span class="w"> </span><span class="nx">object</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
-</span><span class="kd">function</span><span class="w"> </span><span class="nx">cloneObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">CloneObjectOptions</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">cloneObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">deepIgnore</span><span class="o">:</span><span class="w"> </span><span class="kt">WeakMap</span><span class="o">&lt;</span><span class="nx">object</span><span class="p">,</span><span class="w"> </span><span class="nx">object</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">cloneObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">CloneObjectOptions</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">coerceObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">cache</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">coerceObject</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">parseString</span><span class="o">?:</span><span class="w"> </span><span class="p">(...</span><span class="nx">args</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">cache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">getEncoding</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">fallback?</span><span class="o">:</span><span class="w"> </span><span class="kt">BufferEncoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">BufferEncoding</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">encryptUTF8</span><span class="p">(</span><span class="nx">algorithm</span><span class="o">:</span><span class="w"> </span><span class="kt">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">iv</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">Encoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">getAlgorithm</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">fallback?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+</span><span class="kd">function</span><span class="w"> </span><span class="nx">encryptUTF8</span><span class="p">(</span><span class="nx">algorithm</span><span class="o">:</span><span class="w"> </span><span class="kt">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">iv</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">Encoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">decryptUTF8</span><span class="p">(</span><span class="nx">algorithm</span><span class="o">:</span><span class="w"> </span><span class="kt">CipherGCMTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">iv</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">Encoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">hashKey</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">algorithm?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryToTextEncoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">incrementUUID</span><span class="p">(</span><span class="nx">restart?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">hashKey</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryLike</span><span class="p">,</span><span class="w"> </span><span class="nx">algorithm?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">BinaryToTextEncoding</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="kd">function</span><span class="w"> </span><span class="nx">incrementUUID</span><span class="p">(</span><span class="nx">restart?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">validateUUID</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">sanitizeCmd</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">sanitizeArgs</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">doubleQuote?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">sanitizeArgs</span><span class="p">(</span><span class="nx">values</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[],</span><span class="w"> </span><span class="nx">doubleQuote?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">randomString</span><span class="p">(</span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">dictionary?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">errorValue</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">hint?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">errorMessage</span><span class="p">(</span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">hint?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">supported</span><span class="p">(</span><span class="nx">major</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">minor</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">lts</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">errorValue</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cause</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
+</span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">errorValue</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">hint?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cause?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
+</span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">errorMessage</span><span class="p">(</span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cause</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
+</span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">errorMessage</span><span class="p">(</span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">hint?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cause?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
+</span><span class="kd">function</span><span class="w"> </span><span class="nx">supported</span><span class="p">(</span><span class="nx">major</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">minor</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">lts</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">supported</span><span class="p">(</span><span class="nx">major</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">minor?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">patch?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">lts?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">importESM</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">isDefault</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span><span class="w"> </span><span class="nx">fromPath?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">importESM</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ImportAttributes</span><span class="p">,</span><span class="w"> </span><span class="nx">fromPath?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">purgeMemory</span><span class="p">(</span><span class="nx">percent?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">requireESM</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">url?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">expect?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+</span><span class="kd">function</span><span class="w"> </span><span class="nx">purgeMemory</span><span class="p">(</span><span class="nx">percent?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">LOG_TYPE</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">UNKNOWN</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">;</span>
@@ -317,6 +321,53 @@
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.0: </span></p>
+<ul class="simple">
+<li><p><em class="alt">function</em> <strong>getAlgorithm</strong> for validating a supported hash algorithm was created.</p></li>
+<li><p><em class="alt">function</em> <strong>isError</strong> for detecting a native <em class="target">Error</em> instance was created.</p></li>
+</ul>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.14.0: </span></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>hashKey</strong> optional argument <em class="target">algorithm</em> uses “<em class="lower">sha256</em>” instead of “<em class="lower">md5</em>” as default value.</p></li>
+</ul>
+</div>
+<div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 0.14.0: </span></p>
+<ul>
+<li><p><em class="alt">global</em> types in <em class="target">object</em> were deleted:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>Point</p></li>
+<li><p>Dimension</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>AuthValue</p></li>
+<li><p>ErrorCode</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>HighResolutionTime</p></li>
+<li><p>MinMax</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>KeyValue</p></li>
+</ul>
+</td></tr></table>
+</li>
+</ul>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.13.9: </span></p>
+<ul class="simple">
+<li><p><em class="alt">function</em> <strong>requireESM</strong> for extracting a default export was created.</p></li>
+<li><p><em class="alt">function</em> <strong>errorValue</strong> | <strong>errorMessage</strong> argument <em class="target">cause</em> as <em class="alt">unknown</em> was implemented.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Backported: 0.12.16</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.13.4: </span></p>
 <ul class="simple">
@@ -377,13 +428,13 @@
 <ul>
 <li><p><em class="alt">global</em> types in <em class="target">object</em> were relocated:</p>
 <table class="hlist"><tr><td><ul class="simple">
-<li><p>lib/image: <strong>Point</strong> | <strong>Dimension</strong></p></li>
-<li><p>lib/http: <strong>AuthValue</strong></p></li>
-<li><p>lib/node: <strong>ErrorCode</strong> | <strong>HighResolutionTime</strong></p></li>
+<li><p>lib/image: Point | Dimension</p></li>
+<li><p>lib/http: AuthValue</p></li>
+<li><p>lib/node: ErrorCode | HighResolutionTime</p></li>
 </ul>
 </td><td><ul class="simple">
-<li><p>lib/settings: <strong>MinMax</strong></p></li>
-<li><p>lib/squared: <strong>KeyValue</strong></p></li>
+<li><p>lib/settings: MinMax</p></li>
+<li><p>lib/squared: KeyValue</p></li>
 </ul>
 </td></tr></table>
 </li>
@@ -395,16 +446,16 @@
 <li><p><em class="alt">function</em> <strong>generateUUID</strong> was an alias for <em class="target">crypto.randomUUID</em>.</p></li>
 <li><p><em class="alt">global</em> types in <em class="target">types</em>:</p>
 <table class="hlist"><tr><td><ul class="simple">
-<li><p><strong>Undef</strong></p></li>
+<li><p>Undef</p></li>
 </ul>
 </td><td><ul class="simple">
-<li><p><strong>Null</strong></p></li>
+<li><p>Null</p></li>
 </ul>
 </td><td><ul class="simple">
-<li><p><strong>NumString</strong></p></li>
+<li><p>NumString</p></li>
 </ul>
 </td><td><ul class="simple">
-<li><p><strong>TupleOf</strong></p></li>
+<li><p>TupleOf</p></li>
 </ul>
 </td></tr></table>
 </li>
@@ -422,10 +473,10 @@
 <li><p><em class="alt">interface</em> <strong>THRESHOLD</strong> property <strong>LOGGER_METER_INCREMENT</strong> was created.</p></li>
 </ul>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">Added in version 0.11.1: </span></p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.11.1: </span></p>
 <ul>
-<li><p><em class="alt">function</em> <strong>escapePattern</strong> argument <em class="target">symbols</em> as <em class="alt">boolean</em> will also escape these optional characters:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>escapePattern</strong> optional argument <em class="target">lookBehind</em> was replaced with <em class="target">symbols</em> as <em class="alt">boolean</em>:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>\x26 &amp;</p></li>
 <li><p>\x21 !</p></li>
@@ -436,25 +487,20 @@
 <li><p>\x2c ,</p></li>
 <li><p>\x3a :</p></li>
 <li><p>\x3b ;</p></li>
+<li><p>\x3c &lt;</p></li>
 </ul>
 </td><td><ul class="simple">
-<li><p>\x3c &lt;</p></li>
 <li><p>\x3d =</p></li>
 <li><p>\x3e &gt;</p></li>
+<li><p>\x40 &#64;</p></li>
 </ul>
 </td><td><ul class="simple">
-<li><p>\x40 &#64;</p></li>
 <li><p>\x60 `</p></li>
 <li><p>\x7e ~</p></li>
+<li><p>\x22 “ <em class="alt">(0.13.8)</em></p></li>
 </ul>
 </td></tr></table>
 </li>
-</ul>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 0.11.1: </span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>escapePattern</strong> optional argument <em class="target">lookBehind</em> was removed since it could not produce a deterministic result. The intent of an escape character can not always be determined when possibly given a Windows path.</p></li>
 <li><p><em class="alt">function</em> <strong>supported</strong> argument <em class="target">lts</em> as <em class="alt">boolean</em> can be used as the <em class="target">patch</em> argument.</p></li>
 </ul>
 </div>
@@ -488,8 +534,8 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em class="alt">function</em> <strong>createAbortError</strong> uses built-in <em>DOMException</em> <em class="alt">(NodeJS 17)</em> with name “<strong>AbortError</strong>” and code <strong>20</strong>.</p></li>
-<li><p><em class="alt">function</em> <strong>formatTime</strong> with argument <em class="target">char</em> as “<strong>:</strong>” displays using digital clock format.</p></li>
+<li><p><em class="alt">function</em> <strong>createAbortError</strong> uses built-in <em>DOMException</em> <em class="alt">(NodeJS 17)</em> with name “<em class="lower">AbortError**</em>” and code <strong>20</strong>.</p></li>
+<li><p><em class="alt">function</em> <strong>formatTime</strong> with argument <em class="target">char</em> as “<em class="lower">:</em>” displays using digital clock format.</p></li>
 <li><p><em class="alt">interface</em> <strong>CloneObjectOptions</strong> in <em class="alt">module</em> was relocated to <em class="target">types</em>.</p></li>
 <li><p><em class="alt">type</em> <strong>Writeable</strong> was renamed <em class="target">Writable</em>.</p></li>
 <li><p><em class="alt">interface</em> <strong>GetTempDirOptions</strong> in <em class="alt">module</em> was renamed <em class="target">TempDirOptions</em>.</p></li>
@@ -552,10 +598,14 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/index.d.ts">https://www.unpkg.com/&#64;e-mc/types/index.d.ts</a></p></li>
 <li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/logger.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/logger.d.ts</a></p></li>
-<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/module.d.ts">https://www.unpkg.com/&#64;e-mc/types/lib/module.d.ts</a></p></li>
+<li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types&#64;0.13.8/lib/node.d.ts">https://www.unpkg.com/&#64;e-mc/types&#64;0.13.8/lib/node.d.ts</a></p></li>
 </ul>
 <ul class="simple">
+<li><p><a class="reference external" href="https://www.npmjs.com/package/&#64;types/node">https://www.npmjs.com/package/&#64;types/node</a></p></li>
 <li><p><a class="reference external" href="https://www.npmjs.com/package/&#64;types/bytes">https://www.npmjs.com/package/&#64;types/bytes</a></p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/DOMException">https://developer.mozilla.org/en-US/docs/Web/API/DOMException</a></p></li>
 </ul>
 </section>
 </section>

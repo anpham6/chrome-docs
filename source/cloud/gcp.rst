@@ -379,6 +379,20 @@ Query
 Pipeline
 """"""""
 
+These methods ``query`` parameters are interpreted when every item is an **Array**:
+
+.. hlist::
+  :columns: 4
+
+  - aggregate
+  - distinct
+  - select
+  - sort
+  - unnest
+  - where
+  - whereAnd :alt:`(unofficial)`
+  - whereOr :alt:`(unofficial)`
+
 ::
 
   {
@@ -387,9 +401,6 @@ Pipeline
         ["aggregate", ["rating", "average", "averageRating"]], // field("rating").average().as("averageRating")
         ["aggregate", ["countAll", "totalBooks"]], // countAll().as("totalBooks")
         ["aggregate", ["name", ["startsWith", "Mr."], "countIf"]] // countIf(field("name").startsWith("Mr."))
-      ],
-      "query": [
-        ["replaceWith", { "status": "active" }] // replaceWith(map({ status: "active" }))
       ],
       "query": [
         ["select", ["firstName", ["field", "lastName"], ["address", "toUpper", ["as", "upperAddress"]]]] // "firstName", field("lastName"), field("address").toUpper().as("upperAddress")
@@ -408,40 +419,43 @@ Pipeline
         ]]
       ],
       "query": [
-        ["whereAnd",
+        ["whereAnd", [
           ["rating", "lessThanOrEqual", 3.15], // and(field("rating").lessThanOrEqual(3.15), field("genre").toLower().equal("fun facts"))
           ["genre", ["toLower", ["equal", "Fun Facts"]]]
-        ],
-        ["whereOr",
+        ]],
+        ["whereOr", [
           ["rating", "lessThanOrEqual", 3.15], // or(field("rating").lessThanOrEqual(3.15), field("genre").toLower().equal("fun facts"))
           ["genre", ["toLower", ["equal", "Fun Facts"]]]
-        ]
+        ]]
       ],
       "options": {/* PipelineExecuteOptions */}
     }
   }
 
+These methods ``query`` parameters are passed in directly without modification:
+
 .. hlist::
   :columns: 4
 
-  - aggregate
-  - distinct
-  - *findNearest*
-  - *limit*
-  - *offset*
-  - *rawStage*
-  - *removeFields*
+  - findNearest
+  - limit
+  - offset
+  - rawStage
+  - removeFields
   - replaceWith
-  - *sample*
-  - select
-  - sort
-  - *union*
-  - unnest
-  - whereAnd :alt:`(unofficial)`
-  - whereOr :alt:`(unofficial)`
-  - where
+  - sample
+  - union
 
-.. note:: Methods in *italic* have their **query** parameters passed in directly without modification.
+::
+
+  {
+    "dataSource": {
+      "query": [
+        ["limit", 50], // limit(50)
+        ["limit", { "limit": 75 }] // limit({ limit: 75 })
+      ]
+    }
+  }
 
 BigQuery
 ^^^^^^^^

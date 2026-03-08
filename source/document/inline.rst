@@ -78,6 +78,7 @@ data-chrome-options
     - font: woff + woff2
     - gz: Gzip
     - br: Brotli
+    - zst: Zstandard
 * static
     - all: Remove query string from URL
 * crossorigin

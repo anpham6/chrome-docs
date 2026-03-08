@@ -277,7 +277,7 @@ Changelog
 
 .. versionchanged:: 0.13.6
 
-  - *IModule* :alt:`function` **supports** optional argument :target:`locked` as :alt:`boolean` can **permanently** prevent modification to these properties:
+  - *IModule* :alt:`function` **supports** argument :target:`locked` as :alt:`boolean` can **permanently** prevent modification to these properties:
 
     .. hlist::
       :columns: 3

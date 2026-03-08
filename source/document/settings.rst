@@ -13,7 +13,9 @@ These are the latest server default settings for the :target:`chrome` framework.
       "chrome": {
         "handler": "@pi-r/chrome",
         "namespace": "",
-        "extensions": [],
+        "extensions": [
+          "@pi-r/chrome/extensions/css/unused"
+        ],
         "eval": {
           "function": true,
           "absolute": false,

@@ -15,7 +15,7 @@ Interface
 
   import type { IFileManager, IScopeOrigin } from "./index";
   import type { ExternalAsset, FileCommand, IFileThread, OutputFinalize } from "./asset";
-  import type { HostInitConfig, IClient } from "./core";
+  import type { ClientConstructor, HostInitConfig, IClient } from "./core";
   import type { AsSourceFileOptions, ConfigOrTransformer, CustomizeOptions, GenerateLintTableOptions, LintMessage, PluginConfig, SourceCode, SourceInput, SourceMap, SourceMapOptions, TransformAction, TransformCallback, TransformOutput, TransformResult, UpdateGradleOptions } from "./document";
   import type { PostFinalizeCallback } from "./filemanager";
   import type { LogComponent } from "./logger";
@@ -70,7 +70,7 @@ Interface
       get host(): IFileManager | null;
   }
 
-  interface DocumentConstructor extends ModuleConstructor {
+  interface DocumentConstructor extends ClientConstructor {
       finalize(this: IFileManager, instance: IDocument): Promise<unknown>;
       createSourceMap(code: string, remove: boolean): SourceMap;
       createSourceMap(code: string, uri?: string, remove?: boolean): SourceMap;

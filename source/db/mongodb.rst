@@ -76,7 +76,7 @@ Pool
 Authentication
 ==============
 
-- `Connection <https://www.mongodb.com/docs/drivers/node/current/fundamentals/authentication/mechanisms>`__
+- `Connection <https://www.mongodb.com/docs/drivers/node/current/security/authentication>`_
 
 ::
 
@@ -123,7 +123,7 @@ Authentication
 Example usage
 =============
 
-- `Query <https://www.mongodb.com/docs/compass/master/query/filter>`__
+- `Query <https://www.mongodb.com/docs/compass/query/filter>`_
 
 ::
 

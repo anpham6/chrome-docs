@@ -266,7 +266,7 @@ Firestore
 ^^^^^^^^^
 
 - https://cloud.google.com/firestore
-- `Client API <https://googleapis.dev/nodejs/firestore/latest>`__
+- `Client API <https://googleapis.dev/nodejs/firestore/latest>`_
 
 ::
 
@@ -364,7 +364,7 @@ BigQuery
 ^^^^^^^^
 
 - https://cloud.google.com/bigquery
-- `Client API <https://googleapis.dev/nodejs/bigquery/latest>`__
+- `Client API <https://googleapis.dev/nodejs/bigquery/latest>`_
 
 .. note:: **npm** i *@google-cloud/bigquery*
 
@@ -396,7 +396,7 @@ Datastore
 ^^^^^^^^^
 
 - https://cloud.google.com/datastore
-- `Client API <https://googleapis.dev/nodejs/datastore/latest>`__
+- `Client API <https://googleapis.dev/nodejs/datastore/latest>`_
 
 .. note:: **npm** i *@google-cloud/datastore*
 
@@ -454,7 +454,7 @@ Bigtable
 ^^^^^^^^
 
 - https://cloud.google.com/bigtable
-- `Client API <https://googleapis.dev/nodejs/bigtable/latest>`__
+- `Client API <https://googleapis.dev/nodejs/bigtable/latest>`_
 
 .. note:: **npm** i *@google-cloud/bigtable*
 
@@ -488,7 +488,7 @@ Spanner
 ^^^^^^^
 
 - https://cloud.google.com/spanner
-- `Client API <https://googleapis.dev/nodejs/spanner/latest>`__
+- `Client API <https://googleapis.dev/nodejs/spanner/latest>`_
 
 .. note:: **npm** i *@google-cloud/spanner*
 
@@ -548,7 +548,7 @@ Realtime Database
 ^^^^^^^^^^^^^^^^^
 
 - https://firebase.google.com/products/realtime-database
-- `Client API <https://firebase.google.com/docs/reference/js/database.md#database_package>`__
+- `Client API <https://firebase.google.com/docs/reference/js/database.md#database_package>`_
 
 .. note:: **npm** i *firebase* && **npm** i *firebase-admin* (optional)
 

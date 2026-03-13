@@ -11,6 +11,7 @@ Interface
 =========
 
 .. code-block:: typescript
+  :emphasize-lines: 14,38
 
   import type * as "m" from "mongodb";
 
@@ -25,6 +26,8 @@ Interface
       id?: string; // Uses ObjectId
       query?: m.Filter<m.Document>;
       query?: { value: m.Filter<m.Document>, options?: m.CommandOperationOptions };
+      withFields?: m.Document; // FindCursor.project
+
       aggregate?: m.Document[] | { pipeline: m.Document[], options: m.AggregateOptions };
       distinct?: keyof m.WithId<m.Document> | [keyof m.WithId<m.Document>, Filter<m.Document>?, m.DistinctOptions?];
 
@@ -47,6 +50,7 @@ Interface
       };
 
       sort?: string | m.Sort | { value: m.Sort, direction: m.SortDirection };
+      timeoutMS?: number; // Overrides MongoClient.timeoutMS
 
       driverInfo?: m.DriverInfo; // appendMetadata
   }
@@ -182,13 +186,31 @@ Example usage
 @pi-r/mongodb
 =============
 
+.. versionadded:: 0.12.0
+
+  - *MongoDBDataSource* property **withFields** for use with projections was created.
+  - *MongoDBDataSource* property **timeoutMS** for limiting the duration of a single command operation was created.
+  - `MongoDB Stable API <https://www.mongodb.com/docs/drivers/node/current/connect/connection-options/stable-api>`_ can be applied globally to every *MongoClient* instance through **MONGODB_SERVER_API** as :alt:`JSON`. [#]_
+
+.. versionchanged:: 0.12.0
+
+  - ``BREAKING`` *MongoDB* object **CommandOperationOptions** properties are no longer coerced into native objects.
+  - **Db** instance abort signal is attached to these commands:
+
+    .. hlist::
+      :columns: 2
+
+      - collection.find
+      - collection.aggregate
+      - db.command
+
 .. versionchanged:: 0.11.0
 
   - NPM package **mongodb** was upgraded from *6.2* to :target:`7.1` with a :alt:`NodeJS 20.19` requirement.
 
 .. versionadded:: 0.10.2
 
-  - *MongoDBDataSource* property **distinct** for values for a specified field across a single collection was created.
+  - *MongoDBDataSource* property **distinct** for using a specified field across a single collection was created.
   - *MongoDBDataSource* property **driverInfo** for driver information :alt:`(name/version/platform)` was created.
 
 .. versionadded:: 0.10.0
@@ -202,3 +224,5 @@ Example usage
 .. versionadded:: 0.8.0
 
   - *DbPool* static property **CACHE_UNUSED** through :target:`@pi-r/mongodb/client/pool` as :alt:`keyof MongoClientOptions` was implemented.
+
+.. [#] MONGODB_SERVER_API='{"version":"1","strict":true,"deprecationErrors":true}' | MONGODB_SERVER_API=1

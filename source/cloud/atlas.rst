@@ -26,7 +26,7 @@ Interface
 Authentication
 ==============
 
-- `Connection <https://www.mongodb.com/docs/drivers/node/current/fundamentals/authentication/mechanisms>`_
+- `Connection <https://www.mongodb.com/docs/drivers/node/current/security/authentication>`_
 
 ::
 
@@ -68,7 +68,7 @@ Authentication
 Example usage
 =============
 
-- `Query <https://www.mongodb.com/docs/compass/master/query/filter>`_
+- `Query <https://www.mongodb.com/docs/compass/query/filter>`_
 
 ::
 
@@ -116,9 +116,19 @@ Example usage
 @pi-r/atlas
 ===========
 
+.. versionadded:: 0.12.0
+
+  - *AtlasDatabaseQuery* property **withFields** for use with projections was created.
+  - *AtlasDatabaseQuery* property **timeoutMS** for limiting the duration of a single command operation was created.
+
 .. versionchanged:: 0.11.0
 
   - NPM package **mongodb** was upgraded from *6.2* to :target:`7.1` with a :alt:`NodeJS 20.19` requirement.
+
+.. versionadded:: 0.10.2
+
+  - *AtlasDatabaseQuery* property **distinct** for using a specified field across a single collection was created.
+  - *AtlasDatabaseQuery* property **driverInfo** for driver information :alt:`(name/version/platform)` was created.
 
 .. versionadded:: 0.8.1
 

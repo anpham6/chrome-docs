@@ -211,9 +211,9 @@ Interface
 ---------
 
 .. code-block:: typescript
-  :emphasize-lines: 20
+  :emphasize-lines: 19-20
 
-  import type { AggregateSpec } from "@google-cloud/firestore";
+  import type { AggregateSpec, FieldPath } from "@google-cloud/firestore";
   import type { PathType } from "@google-cloud/datastore";
   import type { entity } from "@google-cloud/datastore/build/src/entity";
   import type { GoogleAuthOptions } from "google-auth-library";
@@ -231,7 +231,7 @@ Interface
       columns?: string[];
       keys?: DatastoreKey | DatastoreKey[];
       kind?: string | string[];
-      orderBy?: unknown[][];
+      orderBy?: (string | FieldPath | unknown[])[] | string | FieldPath;
       aggregateSpec?: AggregateSpec;
       pipeline?: boolean;
       flags?: number;

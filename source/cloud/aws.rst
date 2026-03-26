@@ -284,6 +284,10 @@ Example usage
 @pi-r/aws
 =========
 
+.. versionchanged:: 0.12.0
+
+ - ``BREAKING`` There is no special handling when uploading the file extension ":lower:`.map`". *CloudStorageUpload* property **descendantsGroup** as :alt:`[".map"]` can be used to restore the old behavior.
+
 .. versionadded:: 0.11.0
 
   - *AWSStorage* properties **upload** | **download** extended :target:`CopyObjectAction` as :alt:`copyObject | copyObject[]`.

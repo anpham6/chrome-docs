@@ -40,6 +40,7 @@ Interface
   }
 
 .. code-block:: typescript
+  :emphasize-lines: 49
 
   import type { CopyObjectAction } from "../types/cloud";
 
@@ -89,6 +90,7 @@ Interface
       tags?: Record<string, string> | false;
       options?: unknown;
       fileGroup?: [Buffer | string, string, string?][];
+      descendantsGroup?: string[];
       localStorage?: boolean;
       endpoint?: string;
       all?: boolean;
@@ -109,6 +111,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.14.0
+
+  - *CloudStorageUpload* property **descendantsGroup** for file extensions which are not renamed if the parent file is renamed was implemented.
 
 .. versionadded:: 0.13.0
 

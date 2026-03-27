@@ -43,14 +43,14 @@ NodeJS Support
     - `0.13.9 <https://github.com/anpham6/e-mc/releases/tag/v0.13.9>`_
     - `0.13.9 <https://github.com/anpham6/e-mc/releases/tag/v0.13.9>`_
     - `0.13.9 <https://github.com/anpham6/e-mc/releases/tag/v0.13.9>`_
-    - `0.12.15 <https://github.com/anpham6/e-mc/releases/tag/v0.12.15>`_
-    - `0.10.19 <https://github.com/anpham6/e-mc/releases/tag/v0.10.19>`_
+    - `0.12.16 <https://github.com/anpham6/e-mc/releases/tag/v0.12.16>`_
+    - `0.10.20 <https://github.com/anpham6/e-mc/releases/tag/v0.10.20>`_
   * - LTS
     - `0.13.9 <https://github.com/anpham6/e-mc/releases/tag/v0.13.9>`_
     - `0.13.9 <https://github.com/anpham6/e-mc/releases/tag/v0.13.9>`_
     - `0.13.9 <https://github.com/anpham6/e-mc/releases/tag/v0.13.9>`_
     - `0.13.9 <https://github.com/anpham6/e-mc/releases/tag/v0.13.9>`_
-    - `0.11.16 <https://github.com/anpham6/e-mc/releases/tag/v0.11.16>`_
+    - `0.11.17 <https://github.com/anpham6/e-mc/releases/tag/v0.11.17>`_
 
 License
 =======

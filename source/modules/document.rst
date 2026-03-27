@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 65-68
+  :emphasize-lines: 66,68
 
   import type { DataSource, ViewEngine } from "./squared";
 

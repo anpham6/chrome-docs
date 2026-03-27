@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 76,79-80
+  :emphasize-lines: 76,80
 
   import type { IFileManager, IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -133,11 +133,11 @@ Changelog
 
 .. deprecated:: 0.11.0
 
-  - :alt:`interface` **ICloudServiceClient** :alt:`function` **deleteObjectsV2** is changing to the V3 signature.
+  - :alt:`interface` **ICloudServiceClient** :alt:`function` **deleteObjectsV2** is changing to the **V3** signature.
 
 .. deprecated:: 0.10.2
 
-  - :alt:`interface` **ICloudServiceClient** :alt:`function` **createBucket** | **deleteObjects** are changing to the V2 signature.
+  - :alt:`interface` **ICloudServiceClient** :alt:`function` **createBucket** | **deleteObjects** are changing to the **V2** signature.
 
 .. versionchanged:: 0.10.0
 

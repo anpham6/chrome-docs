@@ -297,8 +297,6 @@ aws                  X                  X
 aws-v3               X                  X                  
 azure                X                  X                   X
 gcp                  X                  X                   X
-ibm                  X                  X                  
-minio                X
 oci                  X                  X                  
 =========== =================== ================== ====================
 

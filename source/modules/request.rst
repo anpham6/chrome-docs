@@ -282,7 +282,7 @@ Changelog
 
 .. versionadded:: 0.13.9
 
-  - *RequestModule* property **max_concurrent_streams** for limiting *HTTP2* connections per group session was created.
+  - *RequestModule* property **max_concurrent_streams** for limiting *HTTP2* connections per session group was created.
 
 .. versionchanged:: 0.13.5
 

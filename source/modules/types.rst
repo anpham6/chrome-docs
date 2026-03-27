@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 28,55,58,65-68,73
+  :emphasize-lines: 28,55,58,65-68,74,96
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -104,6 +104,7 @@ Interface
       TIMEOUT: 16384;
       STDOUT: 32768;
       DB: 65536;
+      USER: 131072;
   }
 
   interface LOG_STATE {
@@ -221,6 +222,7 @@ Changelog
 
   - :alt:`function` **getAlgorithm** for validating a supported hash algorithm was created.
   - :alt:`function` **isError** for detecting a native :target:`Error` instance was created.
+  - :alt:`enum` **LOG_STATE** with :target:`USER` for authenticated sessions was created. 
 
 .. versionchanged:: 0.14.0
 
@@ -244,7 +246,7 @@ Changelog
 
 .. deprecated:: 0.14.0
 
-  - :alt:`function` **escapePattern** | **randomString** will be removed when ``NodeJS 24`` is the baseline release.
+  - :alt:`function` **escapePattern** | **randomString** will be removed when the baseline release is ``NodeJS 24``.
 
 .. versionadded:: 0.13.9
 
@@ -408,7 +410,7 @@ Changelog
 
 .. versionadded:: 0.8.4
 
-  - :alt:`function` **alignSize** was created.
+  - :alt:`function` **alignSize** for byte memory alignment was created.
 
 References
 ==========

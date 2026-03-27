@@ -147,6 +147,6 @@ Besides static methods there is an additional utility library within these modul
 - `@e-mc/request/util <https://www.unpkg.com/@e-mc/request/util.d.ts>`_
 
 .. [#] squared-express 4.2 + sqd-serve 0.20
-.. [#] https://devblogs.microsoft.com/typescript/announcing-typescript-6-0-rc
+.. [#] https://devblogs.microsoft.com/typescript/announcing-typescript-6-0
 .. [#] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties
 .. [#] squared-express 3.5 + sqd-serve 0.17

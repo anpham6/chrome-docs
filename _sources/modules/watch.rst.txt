@@ -12,7 +12,7 @@ Interface
 
   import type { IFileManager, ModuleConstructor } from "./index";
   import type { ExternalAsset } from "./asset";
-  import type { HostInitConfig, IClient, IPermission } from "./core";
+  import type { ClientConstructor, HostInitConfig, IClient, IPermission } from "./core";
   import type { FinalizeResult, PostFinalizeCallback } from "./filemanager";
   import type { WatchModule } from "./settings";
   import type { IFileGroup, ModifiedPostFinalizeListener, SecureOptions } from "./watch";
@@ -44,7 +44,7 @@ Interface
       get host(): IFileManager | null;
   }
 
-  interface WatchConstructor extends ModuleConstructor {
+  interface WatchConstructor extends ClientConstructor {
       createServer(port: number, active: boolean): ws.Server | null;
       createServer(port: number, secure?: SecureOptions | null, active?: boolean): ws.Server | null;
       shutdown(): void;

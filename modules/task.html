@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/task &mdash; E-mc 0.13.8 documentation</title>
+  <title>@e-mc/task &mdash; E-mc 0.13.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
+      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -75,6 +75,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="types.html">&#64;e-mc/types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="watch.html">&#64;e-mc/watch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#esm-export">ESM export</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#private-members">Private members</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#esm-imports">ESM imports</a></li>
 </ul>
@@ -116,7 +117,7 @@
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/index.d.ts">View Source</a></span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IFileManager</span><span class="p">,</span><span class="w"> </span><span class="nx">IHost</span><span class="p">,</span><span class="w"> </span><span class="nx">ModuleConstructor</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./index&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ExternalAsset</span><span class="p">,</span><span class="w"> </span><span class="nx">IFileThread</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./asset&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./core&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ClientConstructor</span><span class="p">,</span><span class="w"> </span><span class="nx">IClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./core&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">TaskModule</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./settings&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Command</span><span class="p">,</span><span class="w"> </span><span class="nx">SpawnResult</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./task&quot;</span><span class="p">;</span>
 
@@ -130,7 +131,7 @@
 <span class="w">    </span><span class="nx">execute</span><span class="o">?</span><span class="p">(</span><span class="nx">manager</span><span class="o">:</span><span class="w"> </span><span class="kt">IFileManager</span><span class="p">,</span><span class="w"> </span><span class="nx">task</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">value?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">TaskConstructor</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">ModuleConstructor</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">TaskConstructor</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">ClientConstructor</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">finalize</span><span class="p">(</span><span class="nx">this</span><span class="o">:</span><span class="w"> </span><span class="kt">IHost</span><span class="p">,</span><span class="w"> </span><span class="nx">instance</span><span class="o">:</span><span class="w"> </span><span class="kt">ITask</span><span class="p">,</span><span class="w"> </span><span class="nx">assets</span><span class="o">:</span><span class="w"> </span><span class="kt">ExternalAsset</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">ITask</span><span class="p">;</span>
 <span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="kr">module</span><span class="nx">?</span><span class="o">:</span><span class="w"> </span><span class="nx">TaskModule</span><span class="p">,</span><span class="w"> </span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nx">ITask</span><span class="p">;</span>
@@ -144,7 +145,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em>TaskConstructor</em> <em class="alt">function</em> <strong>finalize</strong> return value was modified to <em class="alt">Promise&lt;void&gt;</em>.</p></li>
+<li><p><em>TaskConstructor</em> <em class="alt">function</em> <strong>finalize</strong> return value was changed to <em class="alt">Promise&lt;void&gt;</em>.</p></li>
 </ul>
 </div>
 </section>

@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/module &mdash; E-mc 0.13.8 documentation</title>
+  <title>@e-mc/module &mdash; E-mc 0.13.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
+      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -75,6 +75,7 @@
 <li class="toctree-l2"><a class="reference internal" href="task.html">&#64;e-mc/task</a></li>
 <li class="toctree-l2"><a class="reference internal" href="types.html">&#64;e-mc/types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="watch.html">&#64;e-mc/watch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#esm-export">ESM export</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#private-members">Private members</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#esm-imports">ESM imports</a></li>
 </ul>
@@ -332,19 +333,19 @@
 <span class="w">    </span><span class="nx">readBuffer</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">cache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ReadBufferOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">resolveMime</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">Uint8Array</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">ArrayBuffer</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">FileTypeResult</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">lookupMime</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">extension?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="hll"><span class="w">    </span><span class="cm">/** @deprecated class */</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">initCpuUsage</span><span class="p">(</span><span class="nx">instance?</span><span class="o">:</span><span class="w"> </span><span class="kt">IModule</span><span class="p">,</span><span class="w"> </span><span class="nx">thread?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">CpuUsage</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="cm">/** @deprecated private */</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">getCpuUsage</span><span class="p">(</span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="kt">CpuUsage</span><span class="p">,</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">thread?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="cm">/** @deprecated private */</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">getCpuUsage</span><span class="p">(</span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="kt">CpuUsage</span><span class="p">,</span><span class="w"> </span><span class="nx">format?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span><span class="w"> </span><span class="nx">thread?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="cm">/** @deprecated private */</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">getMemUsage</span><span class="p">(</span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">free?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="cm">/** @deprecated private */</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">getMemUsage</span><span class="p">(</span><span class="nx">format?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span><span class="w"> </span><span class="nx">free?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="cm">/** @deprecated private */</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">formatCpuMem</span><span class="p">(</span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="kt">CpuUsage</span><span class="p">,</span><span class="w"> </span><span class="nx">all?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-</span><span class="w">    </span><span class="nx">getPackageVersion</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">],</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">PackageVersionOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** @deprecated class */</span>
+<span class="w">    </span><span class="nx">initCpuUsage</span><span class="p">(</span><span class="nx">instance?</span><span class="o">:</span><span class="w"> </span><span class="kt">IModule</span><span class="p">,</span><span class="w"> </span><span class="nx">thread?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">CpuUsage</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** @deprecated private */</span>
+<span class="w">    </span><span class="nx">getCpuUsage</span><span class="p">(</span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="kt">CpuUsage</span><span class="p">,</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">thread?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** @deprecated private */</span>
+<span class="w">    </span><span class="nx">getCpuUsage</span><span class="p">(</span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="kt">CpuUsage</span><span class="p">,</span><span class="w"> </span><span class="nx">format?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span><span class="w"> </span><span class="nx">thread?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** @deprecated private */</span>
+<span class="w">    </span><span class="nx">getMemUsage</span><span class="p">(</span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">free?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** @deprecated private */</span>
+<span class="w">    </span><span class="nx">getMemUsage</span><span class="p">(</span><span class="nx">format?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span><span class="w"> </span><span class="nx">free?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** @deprecated private */</span>
+<span class="w">    </span><span class="nx">formatCpuMem</span><span class="p">(</span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="kt">CpuUsage</span><span class="p">,</span><span class="w"> </span><span class="nx">all?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">getPackageVersion</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">],</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">PackageVersionOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">checkSemVer</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">],</span><span class="w"> </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">CheckSemVerOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">checkSemVer</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">],</span><span class="w"> </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">max?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">checkSemVer</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">],</span><span class="w"> </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">Omit</span><span class="o">&lt;</span><span class="nx">CheckSemVerOptions</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;min&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;max&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;equals&quot;</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
@@ -391,7 +392,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.13.6: </span></p>
 <ul>
-<li><p><em>IModule</em> <em class="alt">function</em> <strong>supports</strong> optional argument <em class="target">locked</em> as <em class="alt">boolean</em> can <strong>permanently</strong> prevent modification to these properties:</p>
+<li><p><em>IModule</em> <em class="alt">function</em> <strong>supports</strong> argument <em class="target">locked</em> as <em class="alt">boolean</em> can <strong>permanently</strong> prevent modification to these properties:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>sessionId</p></li>
 </ul>
@@ -620,12 +621,12 @@
 <span class="w">            </span><span class="nx">exclude?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
 <span class="w">            </span><span class="nx">expires?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="p">};</span>
-<span class="hll"><span class="w">        </span><span class="nx">gc</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">            </span><span class="nx">expires?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-</span><span class="hll"><span class="w">            </span><span class="nx">expires_limit?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-</span><span class="hll"><span class="w">            </span><span class="nx">interval?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-</span><span class="hll"><span class="w">        </span><span class="p">};</span>
-</span><span class="w">    </span><span class="p">};</span>
+<span class="w">        </span><span class="nx">gc</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">expires?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">expires_limit?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">interval?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">};</span>
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">PermissionModule</span><span class="w"> </span><span class="p">{</span>
@@ -733,7 +734,8 @@
 <span class="w">    </span><span class="nx">file?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">LoggerColor</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">cloud?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">LoggerColor</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">db?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">LoggerColor</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">time_elapsed?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">LoggerColor</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">user?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">LoggerColor</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">time_elapsed?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">LoggerColor</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">time_process?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">LoggerColor</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">exec?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">LoggerColor</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">http?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">LoggerColor</span><span class="p">;</span>
@@ -746,6 +748,12 @@
 </div>
 <section id="id1">
 <h3>Changelog<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.0: </span></p>
+<ul class="simple">
+<li><p><em>LoggerModule</em> property <strong>user</strong> for tracking authenticated sessions was created.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.13.7: </span></p>
 <ul class="simple">
@@ -791,7 +799,7 @@
 <li><p><em>LoggerModule</em> group <strong>format</strong> block <em class="target">error</em> for output display was created.</p></li>
 <li><p><em>LoggerModule</em> group <strong>format</strong> property <strong>braces</strong> for text separation was implemented.</p></li>
 <li><p><em>LoggerModule</em> group <strong>progress</strong> for summary data was created.</p></li>
-<li><p><em>TempModule</em> property <strong>env</strong> for system user local temp directory was  was created.</p></li>
+<li><p><em>TempModule</em> property <strong>env</strong> for system user local temp directory was created.</p></li>
 </ul>
 </div>
 <div class="versionadded">

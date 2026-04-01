@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interface &mdash; E-mc 0.13.8 documentation</title>
+  <title>Interface &mdash; E-mc 0.13.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
+      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -188,7 +188,8 @@
 <span class="w">    </span><span class="nx">tags?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">fileGroup</span><span class="o">?:</span><span class="w"> </span><span class="p">[</span><span class="nx">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">?</span><span class="p">][];</span>
-<span class="w">    </span><span class="nx">localStorage?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">descendantsGroup?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+</span><span class="w">    </span><span class="nx">localStorage?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">endpoint?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">all?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="p">}</span>
@@ -209,6 +210,12 @@
 </div>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.0: </span></p>
+<ul class="simple">
+<li><p><em>CloudStorageUpload</em> property <strong>descendantsGroup</strong> for file extensions which are not renamed if the parent file is renamed was implemented.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.13.0: </span></p>
 <ul class="simple">
@@ -418,16 +425,6 @@
 <td><p>X</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-</tr>
-<tr class="row-even"><td><p>ibm</p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>minio</p></td>
-<td><p>X</p></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="row-even"><td><p>oci</p></td>
 <td><p>X</p></td>

@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Added &mdash; E-mc 0.13.8 documentation</title>
+  <title>Added &mdash; E-mc 0.13.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
+      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -130,19 +130,37 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>modules/core</p></td>
-<td><p>ClientDbConstructor property getter HASH_ALGORITHM for results cache key generation was created.</p></td>
+<tr class="row-even"><td><p>cloud/interface</p></td>
+<td><p>CloudStorageUpload property descendantsGroup for file extensions which are not renamed if the parent file is renamed was implemented.</p></td>
 </tr>
-<tr class="row-odd"><td><p>modules/db</p></td>
-<td><p>DbConstructor property getter HASH_ALGORITHM as sha256 for results cache key generation was created.</p></td>
+<tr class="row-odd"><td><p>modules/compress</p></td>
+<td><p>ICompress function tryFile options property format as zst is conditionally supported.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/compress</p></td>
+<td><p>CompressModule settings for Zstandard compression format (experimental) is supported.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/core</p></td>
+<td><p>ClientDbConstructor property getter HASH_ALGORITHM for results cache key generation was created.
+
+IClient function extensionsOf for type-based instance processing was created.
+
+ClientConstructor function signExtensionType for grouping extensions in a series was created.</p></td>
 </tr>
 <tr class="row-even"><td><p>modules/db</p></td>
+<td><p>DbConstructor property getter HASH_ALGORITHM as sha256 for results cache key generation was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modules/db</p></td>
 <td><p>DbModule settings group cache for storing results more securely was created.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/module</p></td>
+<td><p>LoggerModule property user for tracking authenticated sessions was created.</p></td>
 </tr>
 <tr class="row-odd"><td><p>modules/types</p></td>
 <td><p>function getAlgorithm for validating a supported hash algorithm was created.
 
-function isError for detecting a native Error instance was created.</p></td>
+function isError for detecting a native Error instance was created.
+
+enum LOG_STATE with USER for authenticated sessions was created.</p></td>
 </tr>
 </tbody>
 </table>
@@ -160,7 +178,7 @@ function isError for detecting a native Error instance was created.</p></td>
 <td><p>IRequest function blob for native Blob/File buffer instance was created.</p></td>
 </tr>
 <tr class="row-odd"><td><p>modules/request</p></td>
-<td><p>RequestModule property max_concurrent_streams for limiting HTTP2 connections per group session was created.</p></td>
+<td><p>RequestModule property max_concurrent_streams for limiting HTTP2 connections per session group was created.</p></td>
 </tr>
 <tr class="row-even"><td><p>modules/types</p></td>
 <td><p>function requireESM for extracting a default export was created.
@@ -297,8 +315,20 @@ dir:permission</p></td>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>cloud/gcp</p></td>
+<tr class="row-even"><td><p>cloud/atlas</p></td>
+<td><p>AtlasDatabaseQuery property withFields for use with projections was created.
+
+AtlasDatabaseQuery property timeoutMS for limiting the duration of a single command operation was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/gcp</p></td>
 <td><p>Firestore pipeline (beta) queries are supported.</p></td>
+</tr>
+<tr class="row-even"><td><p>db/mongodb</p></td>
+<td><p>MongoDBDataSource property withFields for use with projections was created.
+
+MongoDBDataSource property timeoutMS for limiting the duration of a single command operation was created.
+
+MongoDB Stable API can be applied globally to every MongoClient instance through MONGODB_SERVER_API as JSON. 1</p></td>
 </tr>
 <tr class="row-odd"><td><p>db/postgres</p></td>
 <td><p>QueryStream constructor supports using property options as QueryStreamConfig.</p></td>
@@ -551,11 +581,16 @@ IRequest function get supports Zstd decompression for Content-Encoding. 1</p></t
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>cloud/azure</p></td>
+<tr class="row-even"><td><p>cloud/atlas</p></td>
+<td><p>AtlasDatabaseQuery property distinct for using a specified field across a single collection was created.
+
+AtlasDatabaseQuery property driverInfo for driver information (name/version/platform) was created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/azure</p></td>
 <td><p>AzureDatabaseQuery property params as OperationInput[] for use with Bulk Operations API is supported.</p></td>
 </tr>
-<tr class="row-odd"><td><p>db/mongodb</p></td>
-<td><p>MongoDBDataSource property distinct for values for a specified field across a single collection was created.
+<tr class="row-even"><td><p>db/mongodb</p></td>
+<td><p>MongoDBDataSource property distinct for using a specified field across a single collection was created.
 
 MongoDBDataSource property driverInfo for driver information (name/version/platform) was created.</p></td>
 </tr>
@@ -673,7 +708,7 @@ LoggerModule group format property braces for text separation was implemented.
 
 LoggerModule group progress for summary data was created.
 
-TempModule property env for system user local temp directory was  was created.</p></td>
+TempModule property env for system user local temp directory was created.</p></td>
 </tr>
 <tr class="row-even"><td><p>modules/request</p></td>
 <td><p>DownloadModule property check_integrity in aria2 for hash validation was implemented.
@@ -810,7 +845,7 @@ updateProgress</p></td>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>modules/types</p></td>
-<td><p>function alignSize was created.</p></td>
+<td><p>function alignSize for byte memory alignment was created.</p></td>
 </tr>
 </tbody>
 </table>
@@ -947,7 +982,7 @@ OracleCredential property connectString | connectionString with Centralized Conf
 ConnectionOptions (NodeJS.tls) property ca with Amazon RDS CA 1 cert for host rds.amazonaws.com is attached when installed.</p></td>
 </tr>
 <tr class="row-even"><td><p>db/redis</p></td>
-<td><p>RedisDataSource property format with type “HSCAN” and optional argument cursor | iterations was implemented.</p></td>
+<td><p>RedisDataSource property format with type “HSCAN” and argument cursor | iterations was implemented.</p></td>
 </tr>
 </tbody>
 </table>

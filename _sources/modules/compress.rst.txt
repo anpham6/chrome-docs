@@ -54,6 +54,12 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.14.0
+
+  - *ICompress* :alt:`function` **tryFile** options property :target:`format` as :alt:`zst` is conditionally supported.
+
+.. note:: NodeJS 22.15.0
+
 .. versionremoved:: 0.14.0
 
   - *ICompress* compression format **zopfli** as :alt:`gzip` is no longer supported.
@@ -90,26 +96,33 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 8,15
 
   import type { CacheDirAction } from "./settings";
 
-  import type { BrotliOptions, ZlibOptions } from "node:zlib";
+  import type { BrotliOptions, ZlibOptions, ZstdOptions } from "node:zlib";
 
   interface CompressModule {
       gzip?: ZlibOptions;
       brotli?: BrotliOptions;
+      zstd?: ZstdOptions;
       settings?: {
           broadcast_id?: string | string[];
           cache?: boolean | CacheDirAction & { font?: string | number | boolean; image?: string | number | boolean; };
           cache_expires?: number | string;
           gzip_level?: number;
           brotli_quality?: number;
+          zstd_compression_level?: number | string;
           chunk_size?: number | string;
       };
   }
 
 Changelog
 ---------
+
+.. versionadded:: 0.14.0
+
+  - *CompressModule* settings for **Zstandard** compression format :alt:`(experimental)` is supported.
 
 .. versionremoved:: 0.14.0
 

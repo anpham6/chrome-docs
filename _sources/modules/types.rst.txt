@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 28,54,57,64-67,72
+  :emphasize-lines: 28,55,58,65-68,74,96
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -28,7 +28,7 @@ Interface
   function existsFlag(value: unknown): boolean;
   function getLogCurrent(): LogArguments | null;
   function setLogCurrent(value: LogArguments): void;
-  function setTempDir(value: string): boolean;
+  function setTempDir(value: string, lock?: boolean): boolean;
   function getTempDir(create: true, prefix?: string): string;
   function getTempDir(...values: string[]): string;
   function isArray(value: unknown): value is unknown[];
@@ -50,6 +50,7 @@ Interface
   function convertTime(value: HighResolutionTime, format: true): string;
   function convertTime(value: HighResolutionTime, format?: boolean): number;
   function hasGlob(value: string): boolean;
+  /** @deprecated RegExp.escape */
   function escapePattern(value: unknown, symbols?: boolean): string;
   function renameExt(value: string, ext: string, when?: string): string;
   function formatSize(value: string): number;
@@ -71,6 +72,7 @@ Interface
   function sanitizeCmd(value: string, ...args: unknown[]): string;
   function sanitizeArgs(value: string, doubleQuote?: boolean): string;
   function sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
+  /** @deprecated crypto.randomUUID */
   function randomString(format: string, dictionary?: string): string;
   function errorValue(value: string, cause: unknown): Error;
   function errorValue(value: string, hint?: string, cause?: unknown): Error;
@@ -102,6 +104,7 @@ Interface
       TIMEOUT: 16384;
       STDOUT: 32768;
       DB: 65536;
+      USER: 131072;
   }
 
   interface LOG_STATE {
@@ -219,10 +222,12 @@ Changelog
 
   - :alt:`function` **getAlgorithm** for validating a supported hash algorithm was created.
   - :alt:`function` **isError** for detecting a native :target:`Error` instance was created.
+  - :alt:`enum` **LOG_STATE** with :target:`USER` for authenticated sessions was created. 
 
 .. versionchanged:: 0.14.0
 
-  - ``BREAKING`` :alt:`function` **hashKey** optional argument :target:`algorithm` uses ":lower:`sha256`" instead of ":lower:`md5`" as default value.
+  - ``BREAKING`` :alt:`function` **hashKey** argument :target:`algorithm` uses ":lower:`sha256`" instead of ":lower:`md5`" as default value.
+  - :alt:`function` **setTempDir** argument :target:`lock` as :alt:`boolean` can be used at initialization to prevent unauthorized modification.
 
 .. versionremoved:: 0.14.0
 
@@ -238,6 +243,10 @@ Changelog
       - HighResolutionTime
       - MinMax
       - KeyValue
+
+.. deprecated:: 0.14.0
+
+  - :alt:`function` **escapePattern** | **randomString** will be removed when the baseline release is ``NodeJS 24``.
 
 .. versionadded:: 0.13.9
 
@@ -319,7 +328,7 @@ Changelog
 
 .. versionchanged:: 0.11.1
 
-  - ``BREAKING`` :alt:`function` **escapePattern** optional argument :target:`lookBehind` was replaced with :target:`symbols` as :alt:`boolean`:
+  - ``BREAKING`` :alt:`function` **escapePattern** argument :target:`lookBehind` was replaced with :target:`symbols` as :alt:`boolean`:
 
     .. hlist::
       :columns: 4
@@ -401,7 +410,7 @@ Changelog
 
 .. versionadded:: 0.8.4
 
-  - :alt:`function` **alignSize** was created.
+  - :alt:`function` **alignSize** for byte memory alignment was created.
 
 References
 ==========

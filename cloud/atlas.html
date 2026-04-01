@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MongoDB Atlas &mdash; E-mc 0.13.8 documentation</title>
+  <title>MongoDB Atlas &mdash; E-mc 0.13.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
+      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -129,7 +129,7 @@
 <section id="authentication">
 <h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.mongodb.com/docs/drivers/node/current/fundamentals/authentication/mechanisms">Connection</a></p></li>
+<li><p><a class="reference external" href="https://www.mongodb.com/docs/drivers/node/current/security/authentication">Connection</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -173,7 +173,7 @@
 <section id="example-usage">
 <h2>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.mongodb.com/docs/compass/master/query/filter">Query</a></p></li>
+<li><p><a class="reference external" href="https://www.mongodb.com/docs/compass/query/filter">Query</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;img&quot;</span><span class="p">,</span>
@@ -220,10 +220,24 @@
 </section>
 <section id="pi-r-atlas">
 <h2>&#64;pi-r/atlas<a class="headerlink" href="#pi-r-atlas" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.12.0: </span></p>
+<ul class="simple">
+<li><p><em>AtlasDatabaseQuery</em> property <strong>withFields</strong> for use with projections was created.</p></li>
+<li><p><em>AtlasDatabaseQuery</em> property <strong>timeoutMS</strong> for limiting the duration of a single command operation was created.</p></li>
+</ul>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
 <ul class="simple">
 <li><p>NPM package <strong>mongodb</strong> was upgraded from <em>6.2</em> to <em class="target">7.1</em> with a <em class="alt">NodeJS 20.19</em> requirement.</p></li>
+</ul>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.2: </span></p>
+<ul class="simple">
+<li><p><em>AtlasDatabaseQuery</em> property <strong>distinct</strong> for using a specified field across a single collection was created.</p></li>
+<li><p><em>AtlasDatabaseQuery</em> property <strong>driverInfo</strong> for driver information <em class="alt">(name/version/platform)</em> was created.</p></li>
 </ul>
 </div>
 <div class="versionadded">

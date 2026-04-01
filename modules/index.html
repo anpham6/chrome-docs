@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modules &mdash; E-mc 0.13.8 documentation</title>
+  <title>Modules &mdash; E-mc 0.13.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
+      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -69,6 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="task.html">&#64;e-mc/task</a></li>
 <li class="toctree-l2"><a class="reference internal" href="types.html">&#64;e-mc/types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="watch.html">&#64;e-mc/watch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#esm-export">ESM export</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#private-members">Private members</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#esm-imports">ESM imports</a></li>
 </ul>
@@ -119,11 +120,57 @@
 <li class="toctree-l1"><a class="reference internal" href="watch.html">&#64;e-mc/watch</a></li>
 </ul>
 </div>
+<section id="esm-export">
+<h2>ESM export<a class="headerlink" href="#esm-export" title="Link to this heading"></a></h2>
+<p>Many modules use conditionally loaded functions inside a synchronous context. Only <code class="docutils literal notranslate"><span class="pre">require</span></code> supports loading packages or files <em class="alt">(cjs)</em> without using an async/await chain all the way to the top-level <em class="alt">(e.g. squared-express)</em>. NodeJS/NPM packages themselves rarely use top-level await and can load <em>ESM</em> packages synchronously with <code class="docutils literal notranslate"><span class="pre">require</span></code> as of these versions:</p>
+<ul class="simple">
+<li><p>24+</p></li>
+<li><p>22.12</p></li>
+<li><p>20.19</p></li>
+</ul>
+<p>E-mc will detect <em class="target">default</em> exports in these versions:</p>
+<ul class="simple">
+<li><p>14+ <a class="footnote-reference brackets" href="#id5" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p>13.10</p></li>
+<li><p>12.16</p></li>
+</ul>
+<p>There is not much difference between a “<em class="lower">.cjs</em>” and a “<em class="lower">.mjs</em>” file except <strong>TypeScript 6/7</strong> no longer supports <em>CommonJS</em>.</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">ESM</span><a class="headerlink" href="#id9" title="Link to this code"></a></div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">terser</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;terser&quot;</span><span class="p">;</span>
+
+<span class="hll"><span class="k">import</span><span class="w"> </span><span class="nx">util</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@e-mc/document/util&quot;</span><span class="p">;</span>
+</span>
+<span class="hll"><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">transform</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">typeof</span><span class="w"> </span><span class="nx">terser</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">terser.MinifyOptions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">    </span><span class="nx">options</span><span class="p">.</span><span class="nx">plugins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">util</span><span class="p">.</span><span class="nx">loadPlugins</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">plugins</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">minify</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)).</span><span class="nx">code</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">CJS</span><a class="headerlink" href="#id10" title="Link to this code"></a></div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">terser</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;terser&quot;</span><span class="p">;</span>
+
+<span class="hll"><span class="k">import</span><span class="w"> </span><span class="nx">util</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/document/util&quot;</span><span class="p">);</span>
+</span>
+<span class="hll"><span class="k">export</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">transform</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">typeof</span><span class="w"> </span><span class="nx">terser</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">terser.MinifyOptions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">    </span><span class="nx">options</span><span class="p">.</span><span class="nx">plugins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">util</span><span class="p">.</span><span class="nx">loadPlugins</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">plugins</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">minify</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)).</span><span class="nx">code</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>E-mc</em> is shipped only as <strong>CJS</strong> modules until <strong>1.0.0</strong>. The source repository <em class="target">module</em> system did change from “<em class="lower">commonjs</em>” to “<em class="lower">preserve</em>” in <strong>E-mc 0.14</strong>. <a class="footnote-reference brackets" href="#id6" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+</div>
+</section>
 <section id="private-members">
 <h2>Private members<a class="headerlink" href="#private-members" title="Link to this heading"></a></h2>
-<p><a class="reference internal" href="../references.html#references-mdn-symbol"><span class="std std-ref">Symbols</span></a> for semi-privacy were replaced with JavaScript private properties <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> in <strong>E-mc 0.12</strong>.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">0.11.0</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
+<p><a class="reference internal" href="../references.html#references-mdn-symbol"><span class="std std-ref">Symbols</span></a> for semi-privacy were replaced with JavaScript private properties <a class="footnote-reference brackets" href="#id7" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> in <strong>E-mc 0.12</strong>.</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">0.11.0</span><a class="headerlink" href="#id11" title="Link to this code"></a></div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">kConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
 
 <span class="kd">class</span><span class="w"> </span><span class="nx">Host</span><span class="w"> </span><span class="p">{</span>
@@ -139,8 +186,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">0.12.0</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">0.12.0</span><a class="headerlink" href="#id12" title="Link to this code"></a></div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">Host</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="n">#config</span><span class="o">:</span><span class="w"> </span><span class="nx">Readonly</span><span class="o">&lt;</span><span class="nx">HostInitConfig</span><span class="o">&gt;</span><span class="p">;</span>
 
@@ -155,13 +202,13 @@
 </pre></div>
 </div>
 </div>
-<p>The <em class="target">username</em> property in particular requires pre-encryption <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> using the <code class="docutils literal notranslate"><span class="pre">encryptUTF8</span></code> method exported from the <a class="reference internal" href="types.html"><span class="doc">Types</span></a> package.</p>
+<p>The <em class="target">username</em> property in particular requires pre-encryption <a class="footnote-reference brackets" href="#id8" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> using the <code class="docutils literal notranslate"><span class="pre">encryptUTF8</span></code> method exported from the <a class="reference internal" href="types.html"><span class="doc">Types</span></a> package.</p>
 </section>
 <section id="esm-imports">
 <h2>ESM imports<a class="headerlink" href="#esm-imports" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">default</span></code> convention for all packages was removed in <strong>E-mc 0.9</strong>. It is auto-generated by the <abbr title="TypeScript">TSC</abbr> compiler and is not necessary for out-of-source tree usage.</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">0.8.0</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">0.8.0</span><a class="headerlink" href="#id13" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">Module</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@e-mc/module&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// OK</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">Module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/module&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK</span>
 
@@ -174,8 +221,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">0.9.0</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">0.9.0</span><a class="headerlink" href="#id14" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">Module</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@e-mc/module&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// OK</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">Module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/module&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK</span>
 
@@ -196,12 +243,20 @@
 <li><p><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/request/util.d.ts">&#64;e-mc/request/util</a></p></li>
 </ul>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="doc-footnote">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>squared-express 4.2 + sqd-serve 0.20</p>
+</aside>
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://devblogs.microsoft.com/typescript/announcing-typescript-6-0">https://devblogs.microsoft.com/typescript/announcing-typescript-6-0</a></p>
+</aside>
+<aside class="footnote brackets" id="id7" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties</a></p>
 </aside>
-<aside class="footnote brackets" id="id4" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
 <p>squared-express 3.5 + sqd-serve 0.17</p>
 </aside>
 </aside>

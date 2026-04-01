@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changed &mdash; E-mc 0.13.8 documentation</title>
+  <title>Changed &mdash; E-mc 0.13.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
+      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -128,7 +128,9 @@
 <td><p>BREAKING ICloudServiceClient function deleteObjects is an alias method to deleteObjectsV3.</p></td>
 </tr>
 <tr class="row-odd"><td><p>modules/types</p></td>
-<td><p>BREAKING function hashKey optional argument algorithm uses “sha256” instead of “md5” as default value.</p></td>
+<td><p>BREAKING function hashKey argument algorithm uses “sha256” instead of “md5” as default value.
+
+function setTempDir argument lock as boolean can be used at initialization to prevent unauthorized modification.</p></td>
 </tr>
 </tbody>
 </table>
@@ -158,7 +160,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>modules/core</p></td>
-<td><p>ClientDbConstructor function purgeResult optional argument lru as boolean | number can initiate garbage collection by source provider.</p></td>
+<td><p>ClientDbConstructor function purgeResult argument lru as boolean | number can initiate garbage collection by source provider.</p></td>
 </tr>
 <tr class="row-odd"><td><p>modules/core</p></td>
 <td><p>BREAKING IClientDb function setQueryResult did not apply property cacheDir when memory permission was disabled.</p></td>
@@ -169,7 +171,7 @@
 FileManagerConstructor function generateSessionId for host sessionId tracking was created.</p></td>
 </tr>
 <tr class="row-odd"><td><p>modules/module</p></td>
-<td><p>IModule function supports optional argument locked as boolean can permanently prevent modification to these properties:
+<td><p>IModule function supports argument locked as boolean can permanently prevent modification to these properties:
 
 sessionId
 
@@ -382,8 +384,34 @@ function parseExpires argument epoch as true for starting the interval from Unix
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>compress/index</p></td>
+<tr class="row-even"><td><p>cloud/aws</p></td>
+<td><p>BREAKING There is no special handling when uploading the file extension “.map”. CloudStorageUpload property descendantsGroup as [“.map”] can be used to restore the old behavior.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/aws-v3</p></td>
+<td><p>BREAKING There is no special handling when uploading the file extension “.map”. CloudStorageUpload property descendantsGroup as [“.map”] can be used to restore the old behavior.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/azure</p></td>
+<td><p>BREAKING There is no special handling when uploading the file extension “.map”. CloudStorageUpload property descendantsGroup as [“.map”] can be used to restore the old behavior.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cloud/gcp</p></td>
+<td><p>BREAKING There is no special handling when uploading the file extension “.map”. CloudStorageUpload property descendantsGroup as [“.map”] can be used to restore the old behavior.</p></td>
+</tr>
+<tr class="row-even"><td><p>cloud/oci</p></td>
+<td><p>BREAKING There is no special handling when uploading the file extension “.map”. CloudStorageUpload property descendantsGroup as [“.map”] can be used to restore the old behavior.</p></td>
+</tr>
+<tr class="row-odd"><td><p>compress/index</p></td>
 <td><p>Package will be developed under pi-r for future releases. 2</p></td>
+</tr>
+<tr class="row-even"><td><p>db/mongodb</p></td>
+<td><p>BREAKING MongoDB object CommandOperationOptions properties are no longer coerced into native objects.
+
+Db instance abort signal is attached to these commands:
+
+collection.find
+
+collection.aggregate
+
+db.command</p></td>
 </tr>
 <tr class="row-odd"><td><p>db/redis</p></td>
 <td><p>Package will be developed under pi-r for future releases. 1</p></td>
@@ -461,7 +489,7 @@ LoggerProcessSettings property enabled was implemented.</p></td>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>modules/types</p></td>
-<td><p>BREAKING function escapePattern optional argument lookBehind was replaced with symbols as boolean:
+<td><p>BREAKING function escapePattern argument lookBehind was replaced with symbols as boolean:
 
 \x26 &amp;
 
@@ -602,7 +630,7 @@ finalizeTask</p></td>
 <td><p>ModuleConstructor function asHash argument minLength was replaced with digest as BinaryToTextEncoding.</p></td>
 </tr>
 <tr class="row-even"><td><p>modules/task</p></td>
-<td><p>TaskConstructor function finalize return value was modified to Promise&lt;void&gt;.</p></td>
+<td><p>TaskConstructor function finalize return value was changed to Promise&lt;void&gt;.</p></td>
 </tr>
 <tr class="row-odd"><td><p>modules/types</p></td>
 <td><p>function createAbortError uses built-in DOMException (NodeJS 17) with name “AbortError**” and code 20.

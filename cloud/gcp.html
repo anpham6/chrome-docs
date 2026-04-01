@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Cloud Platform &mdash; E-mc 0.13.8 documentation</title>
+  <title>Google Cloud Platform &mdash; E-mc 0.13.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
+      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -152,8 +152,8 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://cloud.google.com/docs/authentication/client-libraries">Credentials</a></p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">using process.env</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">using process.env</span><a class="headerlink" href="#id9" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">GOOGLE_APPLICATION_CREDENTIALS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -318,7 +318,7 @@
 <h2>Database<a class="headerlink" href="#database" title="Link to this heading"></a></h2>
 <section id="id1">
 <h3>Interface<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AggregateSpec</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/firestore&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AggregateSpec</span><span class="p">,</span><span class="w"> </span><span class="nx">FieldPath</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/firestore&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PathType</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/datastore&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">entity</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/datastore/build/src/entity&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GoogleAuthOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;google-auth-library&quot;</span><span class="p">;</span>
@@ -336,8 +336,8 @@
 <span class="w">    </span><span class="nx">columns?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">keys?</span><span class="o">:</span><span class="w"> </span><span class="kt">DatastoreKey</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">DatastoreKey</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">kind?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
-<span class="w">    </span><span class="nx">orderBy?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[][];</span>
-<span class="hll"><span class="w">    </span><span class="nx">aggregateSpec?</span><span class="o">:</span><span class="w"> </span><span class="kt">AggregateSpec</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">orderBy</span><span class="o">?:</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">FieldPath</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">unknown</span><span class="p">[])[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">FieldPath</span><span class="p">;</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">aggregateSpec?</span><span class="o">:</span><span class="w"> </span><span class="kt">AggregateSpec</span><span class="p">;</span>
 </span><span class="w">    </span><span class="nx">pipeline?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">flags?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="p">}</span>
@@ -486,15 +486,30 @@
 </section>
 <section id="pipeline">
 <h5>Pipeline<a class="headerlink" href="#pipeline" title="Link to this heading"></a></h5>
+<p>These methods <code class="docutils literal notranslate"><span class="pre">query</span></code> parameters are interpreted when every item is an <strong>Array</strong>:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>aggregate</p></li>
+<li><p>distinct</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>select</p></li>
+<li><p>sort</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>unnest</p></li>
+<li><p>where</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>whereAnd <em class="alt">(unofficial)</em></p></li>
+<li><p>whereOr <em class="alt">(unofficial)</em></p></li>
+</ul>
+</td></tr></table>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">[</span><span class="s2">&quot;aggregate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;average&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;averageRating&quot;</span><span class="p">]],</span><span class="w"> </span><span class="c1">// field(&quot;rating&quot;).average().as(&quot;averageRating&quot;)</span>
 <span class="w">      </span><span class="p">[</span><span class="s2">&quot;aggregate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;countAll&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;totalBooks&quot;</span><span class="p">]],</span><span class="w"> </span><span class="c1">// countAll().as(&quot;totalBooks&quot;)</span>
 <span class="w">      </span><span class="p">[</span><span class="s2">&quot;aggregate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;startsWith&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mr.&quot;</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;countIf&quot;</span><span class="p">]]</span><span class="w"> </span><span class="c1">// countIf(field(&quot;name&quot;).startsWith(&quot;Mr.&quot;))</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;replaceWith&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// replaceWith(map({ status: &quot;active&quot; }))</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">[</span><span class="s2">&quot;select&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;field&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lastName&quot;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;address&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;toUpper&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;as&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;upperAddress&quot;</span><span class="p">]]]]</span><span class="w"> </span><span class="c1">// &quot;firstName&quot;, field(&quot;lastName&quot;), field(&quot;address&quot;).toUpper().as(&quot;upperAddress&quot;)</span>
@@ -513,48 +528,47 @@
 <span class="w">      </span><span class="p">]]</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereAnd&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereAnd&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lessThanOrEqual&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.15</span><span class="p">],</span><span class="w"> </span><span class="c1">// and(field(&quot;rating&quot;).lessThanOrEqual(3.15), field(&quot;genre&quot;).toLower().equal(&quot;fun facts&quot;))</span>
 <span class="w">        </span><span class="p">[</span><span class="s2">&quot;genre&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;toLower&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Fun Facts&quot;</span><span class="p">]]]</span>
-<span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereOr&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="p">]],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereOr&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lessThanOrEqual&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.15</span><span class="p">],</span><span class="w"> </span><span class="c1">// or(field(&quot;rating&quot;).lessThanOrEqual(3.15), field(&quot;genre&quot;).toLower().equal(&quot;fun facts&quot;))</span>
 <span class="w">        </span><span class="p">[</span><span class="s2">&quot;genre&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;toLower&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Fun Facts&quot;</span><span class="p">]]]</span>
-<span class="w">      </span><span class="p">]</span>
+<span class="w">      </span><span class="p">]]</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* PipelineExecuteOptions */</span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>These methods <code class="docutils literal notranslate"><span class="pre">query</span></code> parameters are passed in directly without modification:</p>
 <table class="hlist"><tr><td><ul class="simple">
-<li><p>aggregate</p></li>
-<li><p>distinct</p></li>
-<li><p><em>findNearest</em></p></li>
-<li><p><em>limit</em></p></li>
+<li><p>findNearest</p></li>
+<li><p>limit</p></li>
 </ul>
 </td><td><ul class="simple">
-<li><p><em>offset</em></p></li>
-<li><p><em>rawStage</em></p></li>
-<li><p><em>removeFields</em></p></li>
+<li><p>offset</p></li>
+<li><p>rawStage</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>removeFields</p></li>
 <li><p>replaceWith</p></li>
 </ul>
 </td><td><ul class="simple">
-<li><p><em>sample</em></p></li>
-<li><p>select</p></li>
-<li><p>sort</p></li>
-<li><p><em>union</em></p></li>
-</ul>
-</td><td><ul class="simple">
-<li><p>unnest</p></li>
-<li><p>whereAnd <em class="alt">(unofficial)</em></p></li>
-<li><p>whereOr <em class="alt">(unofficial)</em></p></li>
-<li><p>where</p></li>
+<li><p>sample</p></li>
+<li><p>union</p></li>
 </ul>
 </td></tr></table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Methods in <em>italic</em> have their <strong>query</strong> parameters passed in directly without modification.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">],</span><span class="w"> </span><span class="c1">// limit(50)</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// limit({ limit: 75 })</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </section>
 </section>
@@ -818,6 +832,12 @@
 <p><span class="versionmodified added">Added in version 0.12.0: </span></p>
 <ul class="simple">
 <li><p><em>Firestore</em> pipeline <em class="alt">(beta)</em> queries are supported.</p></li>
+</ul>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> There is no special handling when uploading the file extension “<em class="lower">.map</em>”. <em>CloudStorageUpload</em> property <strong>descendantsGroup</strong> as <em class="alt">[“.map”]</em> can be used to restore the old behavior.</p></li>
 </ul>
 </div>
 <div class="versionadded">

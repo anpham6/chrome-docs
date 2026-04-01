@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/core &mdash; E-mc 0.13.8 documentation</title>
+  <title>@e-mc/core &mdash; E-mc 0.13.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
+      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -75,6 +75,7 @@
 <li class="toctree-l2"><a class="reference internal" href="task.html">&#64;e-mc/task</a></li>
 <li class="toctree-l2"><a class="reference internal" href="types.html">&#64;e-mc/types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="watch.html">&#64;e-mc/watch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#esm-export">ESM export</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#private-members">Private members</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#esm-imports">ESM imports</a></li>
 </ul>
@@ -186,7 +187,8 @@
 <span class="w">    </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="kt">ClientModule</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">init</span><span class="p">(</span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">getUserSettings</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">settings</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">ClientSettings</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">extensionsOf</span><span class="p">(</span><span class="kr">type</span><span class="nx">?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Function</span><span class="p">[];</span>
+</span><span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">settings</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">ClientSettings</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">cacheDir</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">cacheDir</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">extensions</span><span class="p">(</span><span class="nx">values</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[]);</span>
@@ -194,7 +196,8 @@
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">ClientConstructor</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">ModuleConstructor</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IClient</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">signExtensionType</span><span class="p">(</span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="kt">FunctionReturn</span><span class="p">,</span><span class="w"> </span><span class="nx">...type</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nx">FunctionReturn</span><span class="p">;</span>
+</span><span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IClient</span><span class="p">;</span>
 <span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="kr">module</span><span class="nx">?</span><span class="o">:</span><span class="w"> </span><span class="nx">ClientModule</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IClient</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -369,6 +372,8 @@
 <p><span class="versionmodified added">Added in version 0.14.0: </span></p>
 <ul class="simple">
 <li><p><em>ClientDbConstructor</em> <em class="alt">property</em> getter <strong>HASH_ALGORITHM</strong> for results cache key generation was created.</p></li>
+<li><p><em>IClient</em> <em class="alt">function</em> <strong>extensionsOf</strong> for type-based instance processing was created.</p></li>
+<li><p><em>ClientConstructor</em> <em class="alt">function</em> <strong>signExtensionType</strong> for grouping extensions in a series was created.</p></li>
 </ul>
 </div>
 <div class="versionadded">
@@ -397,7 +402,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.13.6: </span></p>
 <ul class="simple">
-<li><p><em>ClientDbConstructor</em> <em class="alt">function</em> <strong>purgeResult</strong> optional argument <strong>lru</strong> as <em class="alt">boolean | number</em> can initiate garbage collection by source provider.</p></li>
+<li><p><em>ClientDbConstructor</em> <em class="alt">function</em> <strong>purgeResult</strong> argument <strong>lru</strong> as <em class="alt">boolean | number</em> can initiate garbage collection by source provider.</p></li>
 </ul>
 </div>
 <div class="versionchanged">

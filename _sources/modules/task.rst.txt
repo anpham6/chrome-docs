@@ -12,7 +12,7 @@ Interface
 
   import type { IFileManager, IHost, ModuleConstructor } from "./index";
   import type { ExternalAsset, IFileThread } from "./asset";
-  import type { IClient } from "./core";
+  import type { ClientConstructor, IClient } from "./core";
   import type { TaskModule } from "./settings";
   import type { Command, SpawnResult } from "./task";
 
@@ -26,7 +26,7 @@ Interface
       execute?(manager: IFileManager, task: PlainObject, callback: (value?: unknown) => void): void;
   }
 
-  interface TaskConstructor extends ModuleConstructor {
+  interface TaskConstructor extends ClientConstructor {
       finalize(this: IHost, instance: ITask, assets: ExternalAsset[]): Promise<void>;
       readonly prototype: ITask;
       new(module?: TaskModule, ...args: unknown[]): ITask;
@@ -37,7 +37,7 @@ Changelog
 
 .. versionchanged:: 0.10.0
 
-  - *TaskConstructor* :alt:`function` **finalize** return value was modified to :alt:`Promise<void>`.
+  - *TaskConstructor* :alt:`function` **finalize** return value was changed to :alt:`Promise<void>`.
 
 Settings
 ========

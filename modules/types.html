@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/types &mdash; E-mc 0.13.8 documentation</title>
+  <title>@e-mc/types &mdash; E-mc 0.13.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
+      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -74,6 +74,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="watch.html">&#64;e-mc/watch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#esm-export">ESM export</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#private-members">Private members</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#esm-imports">ESM imports</a></li>
 </ul>
@@ -132,7 +133,7 @@
 <span class="kd">function</span><span class="w"> </span><span class="nx">existsFlag</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">getLogCurrent</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">LogArguments</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">setLogCurrent</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">LogArguments</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">setTempDir</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">setTempDir</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">lock?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">getTempDir</span><span class="p">(</span><span class="nx">create</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">prefix?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">getTempDir</span><span class="p">(</span><span class="nx">...values</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">isArray</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">unknown</span><span class="p">[];</span>
@@ -154,6 +155,7 @@
 <span class="kd">function</span><span class="w"> </span><span class="nx">convertTime</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">HighResolutionTime</span><span class="p">,</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">convertTime</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">HighResolutionTime</span><span class="p">,</span><span class="w"> </span><span class="nx">format?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">hasGlob</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="cm">/** @deprecated RegExp.escape */</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">escapePattern</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">symbols?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">renameExt</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">ext</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">when?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">formatSize</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
@@ -175,12 +177,13 @@
 <span class="kd">function</span><span class="w"> </span><span class="nx">sanitizeCmd</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">sanitizeArgs</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">doubleQuote?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">sanitizeArgs</span><span class="p">(</span><span class="nx">values</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[],</span><span class="w"> </span><span class="nx">doubleQuote?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">randomString</span><span class="p">(</span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">dictionary?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">errorValue</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cause</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
+<span class="cm">/** @deprecated crypto.randomUUID */</span>
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">randomString</span><span class="p">(</span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">dictionary?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">errorValue</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cause</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
 </span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">errorValue</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">hint?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cause?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
 </span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">errorMessage</span><span class="p">(</span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cause</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
-</span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">errorMessage</span><span class="p">(</span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">hint?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cause?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
-</span><span class="kd">function</span><span class="w"> </span><span class="nx">supported</span><span class="p">(</span><span class="nx">major</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">minor</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">lts</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+</span><span class="kd">function</span><span class="w"> </span><span class="nx">errorMessage</span><span class="p">(</span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">hint?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cause?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ne">Error</span><span class="p">;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">supported</span><span class="p">(</span><span class="nx">major</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">minor</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">lts</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">supported</span><span class="p">(</span><span class="nx">major</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">minor?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">patch?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">lts?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">importESM</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">isDefault</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span><span class="w"> </span><span class="nx">fromPath?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">importESM</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ImportAttributes</span><span class="p">,</span><span class="w"> </span><span class="nx">fromPath?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
@@ -206,7 +209,8 @@
 <span class="w">    </span><span class="nx">TIMEOUT</span><span class="o">:</span><span class="w"> </span><span class="kt">16384</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">STDOUT</span><span class="o">:</span><span class="w"> </span><span class="kt">32768</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">DB</span><span class="o">:</span><span class="w"> </span><span class="kt">65536</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="hll"><span class="w">    </span><span class="nx">USER</span><span class="o">:</span><span class="w"> </span><span class="kt">131072</span><span class="p">;</span>
+</span><span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">LOG_STATE</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">STDIN</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">;</span>
@@ -326,12 +330,14 @@
 <ul class="simple">
 <li><p><em class="alt">function</em> <strong>getAlgorithm</strong> for validating a supported hash algorithm was created.</p></li>
 <li><p><em class="alt">function</em> <strong>isError</strong> for detecting a native <em class="target">Error</em> instance was created.</p></li>
+<li><p><em class="alt">enum</em> <strong>LOG_STATE</strong> with <em class="target">USER</em> for authenticated sessions was created.</p></li>
 </ul>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.14.0: </span></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>hashKey</strong> optional argument <em class="target">algorithm</em> uses “<em class="lower">sha256</em>” instead of “<em class="lower">md5</em>” as default value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>hashKey</strong> argument <em class="target">algorithm</em> uses “<em class="lower">sha256</em>” instead of “<em class="lower">md5</em>” as default value.</p></li>
+<li><p><em class="alt">function</em> <strong>setTempDir</strong> argument <em class="target">lock</em> as <em class="alt">boolean</em> can be used at initialization to prevent unauthorized modification.</p></li>
 </ul>
 </div>
 <div class="versionremoved">
@@ -355,6 +361,12 @@
 </ul>
 </td></tr></table>
 </li>
+</ul>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 0.14.0: </span></p>
+<ul class="simple">
+<li><p><em class="alt">function</em> <strong>escapePattern</strong> | <strong>randomString</strong> will be removed when the baseline release is <code class="docutils literal notranslate"><span class="pre">NodeJS</span> <span class="pre">24</span></code>.</p></li>
 </ul>
 </div>
 <div class="versionadded">
@@ -476,7 +488,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.11.1: </span></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>escapePattern</strong> optional argument <em class="target">lookBehind</em> was replaced with <em class="target">symbols</em> as <em class="alt">boolean</em>:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>escapePattern</strong> argument <em class="target">lookBehind</em> was replaced with <em class="target">symbols</em> as <em class="alt">boolean</em>:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>\x26 &amp;</p></li>
 <li><p>\x21 !</p></li>
@@ -589,7 +601,7 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.4: </span></p>
 <ul class="simple">
-<li><p><em class="alt">function</em> <strong>alignSize</strong> was created.</p></li>
+<li><p><em class="alt">function</em> <strong>alignSize</strong> for byte memory alignment was created.</p></li>
 </ul>
 </div>
 </section>

@@ -217,7 +217,7 @@ Example usage
 
 .. versionadded:: 0.8.0
 
-  - *RedisDataSource* property **format** with type ":lower:`HSCAN`" and optional argument :alt:`cursor` | :alt:`iterations` was implemented.
+  - *RedisDataSource* property **format** with type ":lower:`HSCAN`" and argument :alt:`cursor` | :alt:`iterations` was implemented.
 
 .. [#] Typescript 6.0 - module/preserve
 .. [#] Typescript 5.9 - commonjs/preserve

@@ -6,10 +6,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MongoDB &mdash; E-mc 0.13.8 documentation</title>
+  <title>MongoDB &mdash; E-mc 0.13.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=464a7380" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
       <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
       <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
       <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=338ac8a7"></script>
+      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -128,6 +128,8 @@
 <span class="w">    </span><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Uses ObjectId</span>
 <span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Filter</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">query</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Filter</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.CommandOperationOptions</span><span class="w"> </span><span class="p">};</span>
+<span class="hll"><span class="w">    </span><span class="nx">withFields?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Document</span><span class="p">;</span><span class="w"> </span><span class="c1">// FindCursor.project</span>
+</span>
 <span class="w">    </span><span class="nx">aggregate?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Document</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">pipeline</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Document</span><span class="p">[],</span><span class="w"> </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">m.AggregateOptions</span><span class="w"> </span><span class="p">};</span>
 <span class="w">    </span><span class="nx">distinct?</span><span class="o">:</span><span class="w"> </span><span class="kt">keyof</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">WithId</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="nx">keyof</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">WithId</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">Filter</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;?</span><span class="p">,</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">DistinctOptions</span><span class="o">?</span><span class="p">];</span>
 
@@ -150,7 +152,8 @@
 <span class="w">    </span><span class="p">};</span>
 
 <span class="w">    </span><span class="nx">sort?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">Sort</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Sort</span><span class="p">,</span><span class="w"> </span><span class="nx">direction</span><span class="o">:</span><span class="w"> </span><span class="kt">m.SortDirection</span><span class="w"> </span><span class="p">};</span>
-
+<span class="hll"><span class="w">    </span><span class="nx">timeoutMS?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Overrides MongoClient.timeoutMS</span>
+</span>
 <span class="w">    </span><span class="nx">driverInfo?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.DriverInfo</span><span class="p">;</span><span class="w"> </span><span class="c1">// appendMetadata</span>
 <span class="p">}</span>
 
@@ -178,7 +181,7 @@
 <section id="authentication">
 <h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.mongodb.com/docs/drivers/node/current/fundamentals/authentication/mechanisms">Connection</a></p></li>
+<li><p><a class="reference external" href="https://www.mongodb.com/docs/drivers/node/current/security/authentication">Connection</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -225,7 +228,7 @@
 <section id="example-usage">
 <h2>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.mongodb.com/docs/compass/master/query/filter">Query</a></p></li>
+<li><p><a class="reference external" href="https://www.mongodb.com/docs/compass/query/filter">Query</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;img&quot;</span><span class="p">,</span>
@@ -285,6 +288,30 @@
 </section>
 <section id="pi-r-mongodb">
 <h2>&#64;pi-r/mongodb<a class="headerlink" href="#pi-r-mongodb" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.12.0: </span></p>
+<ul class="simple">
+<li><p><em>MongoDBDataSource</em> property <strong>withFields</strong> for use with projections was created.</p></li>
+<li><p><em>MongoDBDataSource</em> property <strong>timeoutMS</strong> for limiting the duration of a single command operation was created.</p></li>
+<li><p><a class="reference external" href="https://www.mongodb.com/docs/drivers/node/current/connect/connection-options/stable-api">MongoDB Stable API</a> can be applied globally to every <em>MongoClient</em> instance through <strong>MONGODB_SERVER_API</strong> as <em class="alt">JSON</em>. <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>MongoDB</em> object <strong>CommandOperationOptions</strong> properties are no longer coerced into native objects.</p></li>
+<li><p><strong>Db</strong> instance abort signal is attached to these commands:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>collection.find</p></li>
+<li><p>collection.aggregate</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>db.command</p></li>
+</ul>
+</td></tr></table>
+</li>
+</ul>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
 <ul class="simple">
@@ -294,7 +321,7 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.2: </span></p>
 <ul class="simple">
-<li><p><em>MongoDBDataSource</em> property <strong>distinct</strong> for values for a specified field across a single collection was created.</p></li>
+<li><p><em>MongoDBDataSource</em> property <strong>distinct</strong> for using a specified field across a single collection was created.</p></li>
 <li><p><em>MongoDBDataSource</em> property <strong>driverInfo</strong> for driver information <em class="alt">(name/version/platform)</em> was created.</p></li>
 </ul>
 </div>
@@ -316,6 +343,12 @@
 <li><p><em>DbPool</em> static property <strong>CACHE_UNUSED</strong> through <em class="target">&#64;pi-r/mongodb/client/pool</em> as <em class="alt">keyof MongoClientOptions</em> was implemented.</p></li>
 </ul>
 </div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>MONGODB_SERVER_API=’{“version”:”1”,”strict”:true,”deprecationErrors”:true}’ | MONGODB_SERVER_API=1</p>
+</aside>
+</aside>
 </section>
 </section>
 

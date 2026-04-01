@@ -18,6 +18,53 @@ Modules
   types
   watch
 
+ESM export
+==========
+
+Many modules use conditionally loaded functions inside a synchronous context. Only ``require`` supports loading packages or files :alt:`(cjs)` without using an async/await chain all the way to the top-level :alt:`(e.g. squared-express)`. NodeJS/NPM packages themselves rarely use top-level await and can load *ESM* packages synchronously with ``require`` as of these versions:
+
+* 24+
+* 22.12
+* 20.19
+
+E-mc will detect :target:`default` exports in these versions:
+
+* 14+ [#]_
+* 13.10
+* 12.16
+
+There is not much difference between a ":lower:`.cjs`" and a ":lower:`.mjs`" file except **TypeScript 6/7** no longer supports *CommonJS*.
+
+.. highlight:: typescript
+
+.. code-block::
+  :caption: ESM
+  :emphasize-lines: 3,5
+
+  import type * as terser from "terser";
+
+  import util from "@e-mc/document/util";
+
+  export default async function transform(context: typeof terser, value: string, options: terser.MinifyOptions) {
+      options.plugins = util.loadPlugins(options.plugins);
+      return (await context.minify(value, options)).code;
+  }
+
+.. code-block::
+  :caption: CJS
+  :emphasize-lines: 3,5
+
+  import type * as terser from "terser";
+
+  import util = require("@e-mc/document/util");
+
+  export = async function transform(context: typeof terser, value: string, options: terser.MinifyOptions) {
+      options.plugins = util.loadPlugins(options.plugins);
+      return (await context.minify(value, options)).code;
+  }
+
+.. note:: *E-mc* is shipped only as **CJS** modules until **1.0.0**. The source repository :target:`module` system did change from ":lower:`commonjs`" to ":lower:`preserve`" in **E-mc 0.14**. [#]_
+
 Private members
 ===============
 
@@ -99,5 +146,7 @@ Besides static methods there is an additional utility library within these modul
 - `@e-mc/document/util <https://www.unpkg.com/@e-mc/document/util.d.ts>`_
 - `@e-mc/request/util <https://www.unpkg.com/@e-mc/request/util.d.ts>`_
 
+.. [#] squared-express 4.2 + sqd-serve 0.20
+.. [#] https://devblogs.microsoft.com/typescript/announcing-typescript-6-0
 .. [#] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties
 .. [#] squared-express 3.5 + sqd-serve 0.17

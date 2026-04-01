@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 117
+  :emphasize-lines: 73,82,119
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -83,6 +83,7 @@ Interface
       module: ClientModule;
       init(...args: unknown[]): this;
       getUserSettings(): unknown;
+      extensionsOf(type?: string, cache?: boolean): Function[];
       get settings(): ClientSettings;
       set cacheDir(value: string);
       get cacheDir(): string;
@@ -91,6 +92,7 @@ Interface
   }
 
   interface ClientConstructor extends ModuleConstructor {
+      signExtensionType(method: FunctionReturn, ...type: string[]): FunctionReturn;
       readonly prototype: IClient;
       new(module?: ClientModule): IClient;
   }
@@ -263,6 +265,8 @@ Changelog
 .. versionadded:: 0.14.0
 
   - *ClientDbConstructor* :alt:`property` getter **HASH_ALGORITHM** for results cache key generation was created.
+  - *IClient* :alt:`function` **extensionsOf** for type-based instance processing was created.
+  - *ClientConstructor* :alt:`function` **signExtensionType** for grouping extensions in a series was created.
 
 .. versionadded:: 0.13.7
 
@@ -281,7 +285,7 @@ Changelog
 
 .. versionchanged:: 0.13.6
 
-  - *ClientDbConstructor* :alt:`function` **purgeResult** optional argument **lru** as :alt:`boolean | number` can initiate garbage collection by source provider.
+  - *ClientDbConstructor* :alt:`function` **purgeResult** argument **lru** as :alt:`boolean | number` can initiate garbage collection by source provider.
 
 .. versionchanged:: 0.13.6
 

@@ -9,7 +9,6 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 219-230
 
   import type { LogStatus } from "./squared";
 
@@ -277,7 +276,7 @@ Changelog
 
 .. versionchanged:: 0.13.6
 
-  - *IModule* :alt:`function` **supports** optional argument :target:`locked` as :alt:`boolean` can **permanently** prevent modification to these properties:
+  - *IModule* :alt:`function` **supports** argument :target:`locked` as :alt:`boolean` can **permanently** prevent modification to these properties:
 
     .. hlist::
       :columns: 3
@@ -401,7 +400,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 49-53
+  :emphasize-lines: 162
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -564,6 +563,7 @@ Settings
       file?: boolean | LoggerColor;
       cloud?: boolean | LoggerColor;
       db?: boolean | LoggerColor;
+      user?: boolean | LoggerColor;
       time_elapsed?: boolean | LoggerColor;
       time_process?: boolean | LoggerColor;
       exec?: boolean | LoggerColor;
@@ -575,6 +575,10 @@ Settings
 
 Changelog
 ---------
+
+.. versionadded:: 0.14.0
+
+  - *LoggerModule* property **user** for tracking authenticated sessions was created.
 
 .. versionadded:: 0.13.7
 
@@ -608,7 +612,7 @@ Changelog
   - *LoggerModule* group **format** block :target:`error` for output display was created.
   - *LoggerModule* group **format** property **braces** for text separation was implemented.
   - *LoggerModule* group **progress** for summary data was created.
-  - *TempModule* property **env** for system user local temp directory was  was created.
+  - *TempModule* property **env** for system user local temp directory was created.
 
 .. versionadded:: 0.8.6
 

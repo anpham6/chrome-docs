@@ -211,9 +211,9 @@ Interface
 ---------
 
 .. code-block:: typescript
-  :emphasize-lines: 20
+  :emphasize-lines: 19-20
 
-  import type { AggregateSpec } from "@google-cloud/firestore";
+  import type { AggregateSpec, FieldPath } from "@google-cloud/firestore";
   import type { PathType } from "@google-cloud/datastore";
   import type { entity } from "@google-cloud/datastore/build/src/entity";
   import type { GoogleAuthOptions } from "google-auth-library";
@@ -231,7 +231,7 @@ Interface
       columns?: string[];
       keys?: DatastoreKey | DatastoreKey[];
       kind?: string | string[];
-      orderBy?: unknown[][];
+      orderBy?: (string | FieldPath | unknown[])[] | string | FieldPath;
       aggregateSpec?: AggregateSpec;
       pipeline?: boolean;
       flags?: number;
@@ -272,7 +272,7 @@ Firestore
 ^^^^^^^^^
 
 - https://cloud.google.com/firestore
-- `Client API <https://googleapis.dev/nodejs/firestore/latest>`__
+- `Client API <https://googleapis.dev/nodejs/firestore/latest>`_
 
 ::
 
@@ -379,6 +379,20 @@ Query
 Pipeline
 """"""""
 
+These methods ``query`` parameters are interpreted when every item is an **Array**:
+
+.. hlist::
+  :columns: 4
+
+  - aggregate
+  - distinct
+  - select
+  - sort
+  - unnest
+  - where
+  - whereAnd :alt:`(unofficial)`
+  - whereOr :alt:`(unofficial)`
+
 ::
 
   {
@@ -387,9 +401,6 @@ Pipeline
         ["aggregate", ["rating", "average", "averageRating"]], // field("rating").average().as("averageRating")
         ["aggregate", ["countAll", "totalBooks"]], // countAll().as("totalBooks")
         ["aggregate", ["name", ["startsWith", "Mr."], "countIf"]] // countIf(field("name").startsWith("Mr."))
-      ],
-      "query": [
-        ["replaceWith", { "status": "active" }] // replaceWith(map({ status: "active" }))
       ],
       "query": [
         ["select", ["firstName", ["field", "lastName"], ["address", "toUpper", ["as", "upperAddress"]]]] // "firstName", field("lastName"), field("address").toUpper().as("upperAddress")
@@ -408,46 +419,49 @@ Pipeline
         ]]
       ],
       "query": [
-        ["whereAnd",
+        ["whereAnd", [
           ["rating", "lessThanOrEqual", 3.15], // and(field("rating").lessThanOrEqual(3.15), field("genre").toLower().equal("fun facts"))
           ["genre", ["toLower", ["equal", "Fun Facts"]]]
-        ],
-        ["whereOr",
+        ]],
+        ["whereOr", [
           ["rating", "lessThanOrEqual", 3.15], // or(field("rating").lessThanOrEqual(3.15), field("genre").toLower().equal("fun facts"))
           ["genre", ["toLower", ["equal", "Fun Facts"]]]
-        ]
+        ]]
       ],
       "options": {/* PipelineExecuteOptions */}
     }
   }
 
+These methods ``query`` parameters are passed in directly without modification:
+
 .. hlist::
   :columns: 4
 
-  - aggregate
-  - distinct
-  - *findNearest*
-  - *limit*
-  - *offset*
-  - *rawStage*
-  - *removeFields*
+  - findNearest
+  - limit
+  - offset
+  - rawStage
+  - removeFields
   - replaceWith
-  - *sample*
-  - select
-  - sort
-  - *union*
-  - unnest
-  - whereAnd :alt:`(unofficial)`
-  - whereOr :alt:`(unofficial)`
-  - where
+  - sample
+  - union
 
-.. note:: Methods in *italic* have their **query** parameters passed in directly without modification.
+::
+
+  {
+    "dataSource": {
+      "query": [
+        ["limit", 50], // limit(50)
+        ["limit", { "limit": 75 }] // limit({ limit: 75 })
+      ]
+    }
+  }
 
 BigQuery
 ^^^^^^^^
 
 - https://cloud.google.com/bigquery
-- `Client API <https://googleapis.dev/nodejs/bigquery/latest>`__
+- `Client API <https://googleapis.dev/nodejs/bigquery/latest>`_
 
 .. note:: **npm** i *@google-cloud/bigquery*
 
@@ -479,7 +493,7 @@ Datastore
 ^^^^^^^^^
 
 - https://cloud.google.com/datastore
-- `Client API <https://googleapis.dev/nodejs/datastore/latest>`__
+- `Client API <https://googleapis.dev/nodejs/datastore/latest>`_
 
 .. note:: **npm** i *@google-cloud/datastore*
 
@@ -537,7 +551,7 @@ Bigtable
 ^^^^^^^^
 
 - https://cloud.google.com/bigtable
-- `Client API <https://googleapis.dev/nodejs/bigtable/latest>`__
+- `Client API <https://googleapis.dev/nodejs/bigtable/latest>`_
 
 .. note:: **npm** i *@google-cloud/bigtable*
 
@@ -571,7 +585,7 @@ Spanner
 ^^^^^^^
 
 - https://cloud.google.com/spanner
-- `Client API <https://googleapis.dev/nodejs/spanner/latest>`__
+- `Client API <https://googleapis.dev/nodejs/spanner/latest>`_
 
 .. note:: **npm** i *@google-cloud/spanner*
 
@@ -631,7 +645,7 @@ Realtime Database
 ^^^^^^^^^^^^^^^^^
 
 - https://firebase.google.com/products/realtime-database
-- `Client API <https://firebase.google.com/docs/reference/js/database.md#database_package>`__
+- `Client API <https://firebase.google.com/docs/reference/js/database.md#database_package>`_
 
 .. note:: **npm** i *firebase* && **npm** i *firebase-admin* (optional)
 
@@ -681,6 +695,10 @@ Realtime Database
 .. versionadded:: 0.12.0
 
   - *Firestore* pipeline :alt:`(beta)` queries are supported.
+
+.. versionchanged:: 0.12.0
+
+ - ``BREAKING`` There is no special handling when uploading the file extension ":lower:`.map`". *CloudStorageUpload* property **descendantsGroup** as :alt:`[".map"]` can be used to restore the old behavior.
 
 .. versionadded:: 0.11.0
 

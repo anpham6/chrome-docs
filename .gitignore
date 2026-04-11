@@ -1,2 +1,4 @@
+.bundle/
 .venv/
 build/
+Gemfile.lock

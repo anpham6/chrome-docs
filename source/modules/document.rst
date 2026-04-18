@@ -76,9 +76,9 @@ Interface
       createSourceMap(code: string, uri?: string, remove?: boolean): SourceMap;
       writeSourceMap(uri: string, data: SourceCode, options?: SourceMapOptions): string | undefined;
       /** @deprecated */
-      updateGradle(source: string, namespaces: string[], value: string, upgrade: boolean): string;
+      updateGradle(source: string, namespaces: (string | RegExp)[], value: string | string[], upgrade: boolean): string;
       /** @deprecated */
-      updateGradle(source: string, namespaces: string[], value: string, options?: UpdateGradleOptions): string;
+      updateGradle(source: string, namespaces: (string | RegExp)[], value: string | string[], options?: UpdateGradleOptions): string;
       generateLintTable(messages: LintMessage[], options: GenerateLintTableOptions): LogComponent[];
       cleanup?(this: IFileManager, instance: IDocument): Promise<unknown>;
       sanitizeAssets?(assets: ExternalAsset[], exclusions?: unknown[]): ExternalAsset[];
@@ -91,7 +91,7 @@ Changelog
 
 .. deprecated:: 0.14.0
 
-  - *DocumentConstructor* :alt:`function` **updateGradle** will be available only in :external+android:doc:`@pi-r/android <document/android/index>`.
+  - *DocumentConstructor* :alt:`function` **updateGradle** will be converted into a class method for :external+android:doc:`@pi-r/android <document/android/index>`.
 
 .. versionadded:: 0.13.7
 

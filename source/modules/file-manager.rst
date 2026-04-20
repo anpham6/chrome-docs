@@ -233,7 +233,7 @@ Changelog
 
 .. versionchanged:: 0.10.0
 
-  - *IFileManager* :alt:`function` return value was modified to :target:`Promise<void>`:
+  - *IFileManager* :alt:`function` return value as :alt:`Promise<unknown>` was changed to :target:`Promise<void>`:
 
     .. hlist::
       :columns: 3

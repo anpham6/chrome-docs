@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 28,55,58,65-68,74,96
+  :emphasize-lines: 28,31,56,59,66-69,75,97
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -39,6 +39,7 @@ Interface
   function isError(err: unknown, ...name: string[]): err is Error;
   function isErrorCode(err: unknown, ...code: unknown[]): err is Required<ErrorCode>;
   function asFunction(value: unknown, sync?: boolean): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
+  function asExt(value: string): string;
   function parseTime(value: number | string, epoch: true): number;
   function parseTime(value: number | string, negative: false): number;
   function parseTime(value: number | string, start?: number): number;
@@ -222,6 +223,7 @@ Changelog
 
   - :alt:`function` **getAlgorithm** for validating a supported hash algorithm was created.
   - :alt:`function` **isError** for detecting a native :target:`Error` instance was created.
+  - :alt:`function` **asExt** for extracting only the extension name was created.
   - :alt:`enum` **LOG_STATE** with :target:`USER` for authenticated sessions was created. 
 
 .. versionchanged:: 0.14.0

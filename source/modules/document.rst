@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 66,68
+  :emphasize-lines: 23-24,26-27,54,66,68
 
   import type { DataSource, ViewEngine } from "./squared";
 
@@ -19,7 +19,7 @@ Interface
   import type { AsSourceFileOptions, ConfigOrTransformer, CustomizeOptions, GenerateLintTableOptions, LintMessage, PluginConfig, SourceCode, SourceInput, SourceMap, SourceMapOptions, TransformAction, TransformCallback, TransformOutput, TransformResult, UpdateGradleOptions } from "./document";
   import type { PostFinalizeCallback } from "./filemanager";
   import type { LogComponent } from "./logger";
-  import type { DocumentComponent, DocumentComponentOption, DocumentModule } from "./settings";
+  import type { DocumentComponent, DocumentComponentOption, DocumentModule, ImportModule } from "./settings";
   import type { IFileGroup, WatchInitResult } from "./watch";
 
   interface IDocument extends IClient<IFileManager, DocumentModule, TransformCallback<IFileManager, ExternalAsset>> {
@@ -33,11 +33,11 @@ Interface
       asSourceFile(value: string, cache: boolean): unknown;
       asSourceFile(value: string, options?: AsSourceFileOptions): unknown;
       findVersion(name: string | string[], fallback?: string): string;
-      findSourceScope(uri: string, imports: Record<string, unknown>): StringMap[];
-      findSourceRoot(uri: string, imports?: StringMap): string | undefined;
+      findSourceScope(uri: string, imports: ImportModule): StringMap[];
+      findSourceRoot(uri: string, imports?: ImportModule): string | undefined;
       resolveDir(name: string, ...paths: string[]): string | undefined;
-      locateSourceFiles(file: ExternalAsset, code?: string, bundleContent?: string[]): ((imports?: StringMap) => SourceInput | undefined);
-      resolveSourceFile(file: ExternalAsset): ((code?: string, imports?: StringMap) => SourceInput<string> | undefined);
+      locateSourceFiles(file: ExternalAsset, code?: string, bundleContent?: string[]): ((imports?: ImportModule) => SourceInput | undefined);
+      resolveSourceFile(file: ExternalAsset): ((code?: string, imports?: ImportModule) => SourceInput<string> | undefined);
       tryParse(source: string, format: string, options?: PlainObject): unknown;
       forDb(item: DataSource): boolean;
       hasEval(name: string): boolean;
@@ -64,7 +64,7 @@ Interface
       set dataSource(value: DataSource[]);
       get dataSource(): DataSource[];
       set imports(value);
-      get imports(): StringMap;
+      get imports(): ImportModule;
       get watching(): boolean;
       set host(value);
       get host(): IFileManager | null;
@@ -89,13 +89,22 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.14.0
+
+  - *IDocument* :alt:`property` accessor **imports** as :alt:`StringMap` was changed to :target:`ImportModule`:
+  - *IDocument* :alt:`function` parameter **imports** as :alt:`StringMap` was changed to :target:`ImportModule`:
+
+    .. hlist::
+      :columns: 4
+
+      - findSourceScope
+      - findSourceRoot
+      - locateSourceFiles
+      - resolveSourceFile
+
 .. deprecated:: 0.14.0
 
   - *DocumentConstructor* :alt:`function` **updateGradle** will be converted into a class method for :external+android:doc:`@pi-r/android <document/android/index>`.
-
-.. versionadded:: 0.13.7
-
-  - *IDocument* :alt:`function` **tryParse** argument :target:`format` as :alt:`toml` supports *NPM* package **smol-toml** with options.
 
 .. note:: Backported: 0.12.15
 

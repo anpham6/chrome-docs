@@ -21,9 +21,9 @@ Encoding
 - Gzip
 - Deflate
 - Brotli :alt:`(br)`
-- Zstandard :alt:`(zstd)` [#]_
+- Zstandard :alt:`(zst)` [#]_
 
 .. [#] { socketPath: "/tmp/static0.sock", uri: "file:///path/filename" }
 .. [#] apt install aria2 | pacman -S aria2
 .. [#] apt install rclone | pacman -S rclone
-.. [#] npm i zstd-codec (until E-mc 0.12/NodeJS 22.15)
+.. [#] NodeJS 22.15

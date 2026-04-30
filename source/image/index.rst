@@ -286,7 +286,7 @@ Transformations are given a *UUID* filename except when ":lower:`@`" or ":lower:
 
 .. versionchanged:: 0.11.0
 
- - Package will be developed under `pi-r2 <https://github.com/anpham6/pi-r2/tree/master/src/module/jimp>`_ for future releases. [#]_
+ - Package will be developed under `pi-r2 <https://github.com/anpham6/pi-r2/tree/0.3.0/src/module/jimp>`_ for future releases. [#]_
 
 .. versionadded:: 0.10.0
 

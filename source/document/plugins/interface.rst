@@ -20,6 +20,7 @@ Interface
 
   import type { IModule } from "../../types/lib";
   import type { ChunkData, FindModuleOptions, SourceInput, SourceMap } from "../../types/document";
+  import type { ImportModule } from "../../types/settings";
 
   interface ITransformSeries extends IModule, TransformOutput {
       type: "html" | "css" | "js";
@@ -39,8 +40,8 @@ Interface
       findModule(startDir: string, packageName?: string, version?: string): string;
 
       /* ESM */
-      getMainFile(code?: string, imports?: Record<string, string>): SourceInput<string> | undefined;
-      getSourceFiles(imports?: Record<string, string>): SourceInput<[string, string?, string?][]> | undefined;
+      getMainFile(code?: string, imports?: ImportModule): SourceInput<string> | undefined;
+      getSourceFiles(imports?: ImportModule): SourceInput<[string, string?, string?][]> | undefined;
       upgradeESM(context: unknown, options: FindModuleOptions): Promise<unknown>; // Dynamic import with "require" fallback
       upgradeESM(context: unknown, dirname?: string, pkgname?: string, version?: string): Promise<unknown>;
 

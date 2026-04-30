@@ -183,6 +183,10 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.14.1
+
+ - *IRequest* :alt:`global settings` **headers** with an :target:`Authorization` header is no longer cached except when the response includes a :ref:`Cache-Control <references-mdn-cache-control>` header.
+
 .. versionchanged:: 0.13.6
 
   - ``BREAKING`` *IFileManager* properties **permission** | **sessionId** are permanently locked in the constructor.

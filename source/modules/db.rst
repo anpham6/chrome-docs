@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 45-46
+  :emphasize-lines: 28,31,47-48,92
 
   import type { DbDataSource } from "./squared";
 
@@ -17,11 +17,11 @@ Interface
   import type { ClientDbConstructor, IClientDb } from "./core";
   import type { DB_TYPE, SQL_COMMAND, BatchQueryResult, ErrorQueryCallback, ExecuteBatchQueryOptions, ExecuteQueryOptions, HandleFailOptions, ProcessRowsOptions, QueryResult } from "./db";
   import type { AuthValue } from "./http";
-  import type { DbCoerceSettings, DbModule, DbSettings, DbSourceOptions, PoolConfig } from "./settings";
+  import type { DbCacheSettings, DbCoerceSettings, DbModule, DbSettings, DbSourceOptions, PoolConfig } from "./settings";
 
   import type { SecureContextOptions } from "node:tls";
 
-  interface IDb extends IClientDb<IHost, DbModule, DbDataSource, DbSourceOptions, DbCoerceSettings> {
+  interface IDb extends IClientDb<IHost, DbModule, DbDataSource, DbSourceOptions, DbCoerceSettings & DbCacheSettings> {
       setCredential(item: DbDataSource): Promise<void>;
       getCredential(item: DbDataSource): PlainObject;
       hasSource(source: string, ...type: number[]): boolean;
@@ -38,8 +38,10 @@ Interface
       readTLSCert(value: unknown, cache?: boolean): string;
       readTLSConfig(options: SecureContextOptions, cache?: boolean): void;
       settingsOf(source: string, name: keyof Omit<DbSourceOptions, "coerce">): unknown;
+      settingsOf(source: string, name: "cache", component: keyof DbCacheSettings): unknown;
       settingsOf(source: string, name: "coerce", component: keyof DbCoerceSettings): unknown;
       settingsKey(source: string, name: keyof Omit<DbSourceOptions, "coerce">): unknown;
+      settingsKey(source: string, name: "cache", component: keyof DbCacheSettings): unknown;
       settingsKey(source: string, name: "coerce", component: keyof DbCoerceSettings): unknown;
       getPoolConfig(source: string, uuidKey?: string): Required<PoolConfig> | undefined;
       get sourceType(): DB_TYPE;
@@ -100,7 +102,7 @@ Interface
       CACHE_IGNORE: readonly string[];
       asString(credential: unknown): string;
       canCache(credential: unknown): boolean;
-      sanitize(credential: unknown): unknown;
+      sanitize(credential: unknown, sort?: boolean): unknown;
       removeUUIDKey(credential: unknown): unknown;
       findKey(pools: Record<string, IDbPool>, uuidKey: unknown, poolKey: string | undefined, ...items: DbDataSource[]): Record<string, IDbPool> | null;
       validateKey(pools: Record<string, IDbPool>, username: string, uuidKey: unknown): [string, Record<string, IDbPool> | null];
@@ -111,6 +113,10 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.14.1
+
+  - *DbPoolConstructor* :alt:`function` **sanitize** argument :target:`sort` as :alt:`boolean` for deterministic cache keys was created.
 
 .. versionadded:: 0.14.0
 
@@ -138,7 +144,7 @@ Changelog
 
 .. versionchanged:: 0.9.0
 
-  - *IDb* :alt:`function` **executeQuery** | **executeBatchQuery** with argument :target:`callback` as :alt:`ErrorQueryCallback`.
+  - *IDb* :alt:`function` **executeQuery** | **executeBatchQuery** argument :target:`callback` as :alt:`ErrorQueryCallback`.
 
 Settings
 ========
@@ -147,7 +153,7 @@ Settings
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.db.json>`_
   :emphasize-lines: 15-18
 
-  import type { DbSourceOptions, PurgeComponent } from "./settings";
+  import type { DbSourceOptions, ImportModule, PurgeComponent } from "./settings";
 
   interface DbModule {
       // handler: "@e-mc/db";
@@ -167,7 +173,7 @@ Settings
           };
           session_expires?: number;
           user_key?: Record<string, DbSourceOptions>;
-          imports?: StringMap;
+          imports?: ImportModule;
           purge?: PurgeComponent;
           mariadb?: DbSourceOptions;
           mongodb?: DbSourceOptions;

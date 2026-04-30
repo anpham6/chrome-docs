@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 28,31,56,59,66-69,75,97
+  :emphasize-lines: 28,31,56,59,66-69,75,77-78,99
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -85,6 +85,8 @@ Interface
   function importESM(name: string | URL, options?: ImportAttributes, fromPath?: boolean): Promise<unknown>;
   function requireESM(name: string, url?: string | URL, expect?: string): unknown;
   function purgeMemory(percent?: number): number;
+  function manageGlobalObject(value: object): boolean;
+  function freeGlobalObject(value: object): boolean;
 
   interface LOG_TYPE {
       UNKNOWN: 0;
@@ -219,6 +221,10 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.14.1
+
+  - :alt:`function` **manageGlobalObject** | **freeGlobalObject** for releasing cached memory was created.
+
 .. versionadded:: 0.14.0
 
   - :alt:`function` **getAlgorithm** for validating a supported hash algorithm was created.
@@ -228,7 +234,7 @@ Changelog
 
 .. versionchanged:: 0.14.0
 
-  - ``BREAKING`` :alt:`function` **hashKey** argument :target:`algorithm` uses ":lower:`sha256`" instead of ":lower:`md5`" as default value.
+  - ``BREAKING`` :alt:`function` **hashKey** argument :target:`algorithm` default value was changed from ":lower:`md5`" to ":lower:`sha256`".
   - :alt:`function` **setTempDir** argument :target:`lock` as :alt:`boolean` can be used at initialization to prevent unauthorized modification.
 
 .. versionremoved:: 0.14.0
@@ -259,7 +265,7 @@ Changelog
 
 .. versionchanged:: 0.13.4
 
-  - ``BREAKING`` :alt:`function` **cloneObject** uses a :target:`WeakMap<object, object>` for reference tracking and does not contain any references from the source object.
+  - ``BREAKING`` :alt:`function` **cloneObject** uses a :target:`WeakMap<object, object>` internally for reference tracking.
 
 .. note:: Backported: 0.12.11
 

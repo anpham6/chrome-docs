@@ -256,12 +256,13 @@ Unsupported options
 -------------------
 
 .. hlist::
-  :columns: 2
+  :columns: 3
 
   * --interactive
   * --dry-run
   * --partial-suffix
   * --verbose
+  * --files-only
   * --links
   * --delete-excluded
   * --interactive

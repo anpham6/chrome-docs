@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 23-24,26-27,54,66,68
+  :emphasize-lines: 23-24,26-28,55,67,69
 
   import type { DataSource, ViewEngine } from "./squared";
 
@@ -38,6 +38,7 @@ Interface
       resolveDir(name: string, ...paths: string[]): string | undefined;
       locateSourceFiles(file: ExternalAsset, code?: string, bundleContent?: string[]): ((imports?: ImportModule) => SourceInput | undefined);
       resolveSourceFile(file: ExternalAsset): ((code?: string, imports?: ImportModule) => SourceInput<string> | undefined);
+      resolvePackageJSONExports(uri: string, base?: string | URL): string | undefined;
       tryParse(source: string, format: string, options?: PlainObject): unknown;
       forDb(item: DataSource): boolean;
       hasEval(name: string): boolean;
@@ -89,6 +90,10 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.14.1
+
+  - :alt:`function` **resolvePackageJSONExports** for using export specifiers from *package.json* was created.
+
 .. versionchanged:: 0.14.0
 
   - *IDocument* :alt:`property` accessor **imports** as :alt:`StringMap` was changed to :target:`ImportModule`:
@@ -129,9 +134,10 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 28-30,37-39
 
   import type { PermittedDirectories } from "./core";
-  import type { DbModule, DbSettings, DocumentComponentOptions, PurgeComponent } from "./settings";
+  import type { DbModule, DbSettings, DocumentComponentOptions, ImportModule, PurgeComponent } from "./settings";
 
   interface DocumentModule {
       // handler: "@pi-r/chrome";
@@ -150,19 +156,25 @@ Settings
               filename?: string;
           };
       };
-      imports?: StringMap;
+      imports?: ImportModule;
       settings?: {
           broadcast_id?: string | string[];
           users?: Record<string, {
               extensions?: string[] | null;
-              imports?: StringMap;
+              imports?: ImportModule;
               imports_strict?: boolean;
+              package_json?: {
+                  exports?: boolean | string;
+              };
               pages?: unknown;
               transform?: unknown;
               view_engine?: unknown;
           }>;
           cache_dir?: string;
           imports_strict?: boolean;
+          package_json?: {
+              exports?: boolean | string;
+          };
           directory?: {
               template?: string;
               data?: string;
@@ -183,6 +195,13 @@ Settings
       };
       permission?: PermittedDirectories;
   }
+
+Changelog
+---------
+
+.. versionadded:: 0.14.1
+
+  - *DocumentModule* settings group **package_json** for additional metadata available during processing was created.
 
 Example usage
 -------------

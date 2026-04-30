@@ -128,6 +128,7 @@ stylelint    STYLELINT_OPTIONS_CONFIG_BASEDIR    path
 stylelint    STYLELINT_OPTIONS_VALIDATE          boolean
 stylelint    STYLELINT_OPTIONS_FIX               boolean
 stylelint    STYLELINT_OPTIONS_FORMATTER         string
+prettier     PRETTIER_OPTIONS_CONFIG             path/boolean
 ============ =================================== ============
 
 Pre-Installed
@@ -146,12 +147,13 @@ rollup     @rollup/plugin-node-resolve      node-resolve  0.10
 
 .. code-block::
   :caption: squared.json
-  :emphasize-lines: 6-8,15
+  :emphasize-lines: 5
 
   {
     "rollup": {
       "bundle-es6": {
         "treeshake": true,
+        "external": "/\\.js$/", // String with /[^|$]/ is parsed as a RegExp
         "plugins": [
           "node-resolve",
           "@rollup/plugin-commonjs", // "commonjs"

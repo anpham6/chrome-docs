@@ -144,7 +144,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 12
+  :emphasize-lines: 12,97-99,122
 
   import type { PermittedDirectories } from "./core";
   import type { SecureConfig } from "./http";
@@ -242,8 +242,11 @@ Settings
           csv?: boolean;
           differ?: string;
           error?: string;
-          cutoff_mode?: "HARD" | "SOFT" | "CAUTIOUS";
+          format?: string;
+          separator?: string;
+          timeformat?: string;
           hash: "md5" | "SHA-1" | "DropboxHash";
+          cutoff_mode?: "HARD" | "SOFT" | "CAUTIOUS";
           ignore_case_sync?: boolean;
           ignore_checksum?: boolean;
           ignore_existing?: boolean;
@@ -264,6 +267,7 @@ Settings
           no_traverse?: boolean;
           no_update_dir_modtime?: boolean;
           no_update_modtime?: boolean;
+          order_by?: string;
           refresh_times?: boolean;
           size_only?: boolean;
           streaming_upload_cutoff?: string;
@@ -279,6 +283,18 @@ Settings
 
 Changelog
 ---------
+
+.. versionadded:: 0.14.0
+
+  - *DownloadModule* section **rclone** properties were created:
+
+    .. hlist::
+      :columns: 4
+
+      - format
+      - separator
+      - timeformat
+      - order_by
 
 .. versionadded:: 0.13.9
 

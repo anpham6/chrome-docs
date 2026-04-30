@@ -189,3 +189,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 https://developer.mozilla.org/en-US/docs/Web/API/DOMException
   | `DOMException <search.html?q=DOMException>`_
+
+.. _references-mdn-cache-control:
+.. rst-class:: block-list
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control
+  | `Cache-Control header <search.html?q=Cache-Control>`_

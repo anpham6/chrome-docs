@@ -60,7 +60,7 @@ Example configuration
 Example gulpfile.js
 ===================
 
-Renaming files with *Gulp* is not recommended since it will not appear in the output manifest. It is better to use the **saveAs** or **filename** properties in order for the references to be found when the asset is part of the document.
+Renaming files with *Gulp* is not recommended since it will not appear in the output manifest. It is better to use the **saveAs** or **filename** properties when the asset is part of the *HTML* document.
 
 .. code-block:: javascript
   :emphasize-lines: 5,7
@@ -88,7 +88,7 @@ Tasks can be performed immediately after the asset has been downloaded :alt:`(pr
 
   <script
     src="/common/util.js"
-    data-chrome-tasks='[{ handler: "gulp", task: "minify" }, { handler: "gulp", task: "lint", preceding: "true" }]'>
+    data-chrome-tasks='[{ "handler": "gulp", "task": "minify" }, { "handler": "gulp", "task": "lint", "preceding": true }]'>
   </script>
 
 .. code-block:: html

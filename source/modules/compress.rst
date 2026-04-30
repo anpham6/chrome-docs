@@ -58,7 +58,7 @@ Changelog
 
   - *ICompress* :alt:`function` **tryFile** options property :target:`format` as :alt:`zst` is conditionally supported.
 
-.. note:: NodeJS 22.15.0
+.. note:: NodeJS 22.15
 
 .. versionremoved:: 0.14.0
 

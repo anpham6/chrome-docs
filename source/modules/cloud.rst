@@ -160,7 +160,7 @@ Settings
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.cloud.json>`_
 
   import type { PermittedDirectories } from "./core";
-  import type { CloudServiceOptions, DbSourceOptions, PurgeComponent } from "./settings";
+  import type { CloudServiceOptions, DbSourceOptions, ImportModule, PurgeComponent } from "./settings";
 
   interface CloudModule {
       // handler: "@e-mc/cloud";
@@ -177,7 +177,7 @@ Settings
           cache_dir?: string;
           session_expires?: number;
           user_key?: Record<string, DbSourceOptions>;
-          imports?: StringMap;
+          imports?: ImportModule;
           purge?: PurgeComponent;
           atlas?: CloudServiceOptions;
           aws?: CloudServiceOptions;

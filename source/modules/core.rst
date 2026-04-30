@@ -112,9 +112,9 @@ Interface
       getCacheResult(source: string, credential: unknown, queryString: string, cacheValue: CacheOptions, ignoreCache?: unknown): QueryResult | undefined;
       applyState(items: DataSource | DataSource[], value: number, as?: boolean): void;
       commit(items?: DataSource[]): Promise<boolean>;
-      valueOfKey(credential: unknown, name: keyof DbSourceOptions, component?: keyof DbCoerceSettings): unknown;
-      settingsOf(source: string, name: keyof DbSourceOptions, component?: keyof DbCoerceSettings): unknown;
-      settingsKey(uuidKey: string, name: keyof DbSourceOptions, component?: keyof DbCoerceSettings): unknown;
+      valueOfKey(credential: unknown, name: keyof DbSourceOptions, component?: string): unknown;
+      settingsOf(source: string, name: keyof DbSourceOptions, component?: string): unknown;
+      settingsKey(uuidKey: string, name: keyof DbSourceOptions, component?: string): unknown;
       get pending(): DataSource[];
       get committed(): DataSource[];
       get failed(): DataSource[];

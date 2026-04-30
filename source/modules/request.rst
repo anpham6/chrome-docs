@@ -289,6 +289,21 @@ Changelog
   - *RequestModule* :target:`agent` properties **keep_alive_interval** | **proxy_env** for configuring the HTTP/s global :target:`Agent` instance were created.
   - *RequestModule* property **proxy.keep_alive_interval** for throttling the keep alive packets :alt:`(ms)` was created.
 
+.. versionadded:: 0.13.0
+
+  - *DownloadModule* section **rclone** properties were created:
+
+    .. hlist::
+      :columns: 4
+
+      - combined
+      - csv
+      - differ
+      - error
+      - hash
+      - no_update_modtime
+      - streaming_upload_cutoff
+
 .. versionchanged:: 0.12.0
 
   - *RequestModule* settings section **rclone** for cloud storage copying was created.

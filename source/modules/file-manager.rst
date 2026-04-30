@@ -224,7 +224,7 @@ Changelog
 
 .. versionremoved:: 0.11.0
 
-  - *IFileManager* :alt:`function` **install** with name :alt:`watch` injected with spread parameters does not conform with *Client* constructor.
+  - *IFileManager* :alt:`function` **install** with name :alt:`watch` injected with spread parameters did not conform with *Client* constructor.
 
 .. versionadded:: 0.10.0
 
@@ -259,8 +259,8 @@ Changelog
 
 .. versionchanged:: 0.9.0
 
-  - *IFileManager* :alt:`function` **install** with **name** :alt:`"image"` and **target** as :alt:`ImageConstructor`.
-  - *IFileManager* :alt:`function` **install** with **name** :alt:`"document" | "image" | "task"` and **handler** as :alt:`string`.
+  - *IFileManager* :alt:`function` **install** with **name** ":lower:`image`" and **target** as :alt:`ImageConstructor` were implemented.
+  - *IFileManager* :alt:`function` **install** with **name** ":lower:`document`" | ":lower:`image`" | ":lower:`task`" and **handler** as :alt:`string` were implemented.
   - *IFileManager* :alt:`function` **transformAsset** return value was modified to :target:`Promise<boolean>`.
 
 Settings

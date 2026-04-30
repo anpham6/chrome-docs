@@ -114,7 +114,7 @@ Changelog
 
 .. versionadded:: 0.12.0
 
-  - *ViewEngine* :alt:`function` **compile** | **compileSync** can be called with an Array of arguments :alt:`(options.compile)`.
+  - *ViewEngine* :alt:`function` **compile** | **compileSync** can be called with an *Array* of arguments :alt:`(options.compile)`.
 
 .. versionchanged:: 0.12.0
 

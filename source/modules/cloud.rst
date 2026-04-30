@@ -101,7 +101,7 @@ Changelog
 
 .. versionchanged:: 0.14.0
 
-  - ``BREAKING`` *ICloudServiceClient* :alt:`function` **deleteObjects** is an alias method to :target:`deleteObjectsV3`.
+  - ``BREAKING`` *ICloudServiceClient* :alt:`function` **deleteObjects** is an alias for :target:`deleteObjectsV3`.
 
 .. versionadded:: 0.13.0
 
@@ -112,7 +112,7 @@ Changelog
 
 .. versionchanged:: 0.13.0
 
-  - ``BREAKING`` *CloudConstructor* :target:`override` :alt:`function` **toPosix** preserves backslashes and spaces when transacting from a *Win32* platform. Additional static methods affected:
+  - ``BREAKING`` *CloudConstructor* :target:`override` :alt:`function` **toPosix** preserves backslashes when transacting from a *Win32* platform. Additional dependent static methods affected:
 
     .. hlist::
       :columns: 3
@@ -129,15 +129,15 @@ Changelog
 
 .. versionchanged:: 0.11.0
 
-  - *ICloud* :alt:`function` **deleteObjects** argument :target:`recursive` was supplemented with :target:`options` as :alt:`DeleteObjectsOptions`.
+  - *ICloud* :alt:`function` **deleteObjects** argument :target:`recursive` is a union with :target:`options` as :alt:`DeleteObjectsOptions`.
 
 .. deprecated:: 0.11.0
 
-  - :alt:`interface` **ICloudServiceClient** :alt:`function` **deleteObjectsV2** is changing to the **V3** signature.
+  - :alt:`interface` **ICloudServiceClient** :alt:`function` **deleteObjects** is changing to the **V3** signature.
 
 .. deprecated:: 0.10.2
 
-  - :alt:`interface` **ICloudServiceClient** :alt:`function` **createBucket** | **deleteObjects** are changing to the **V2** signature.
+  - :alt:`interface` **ICloudServiceClient** :alt:`function` **createBucket** is changing to the **V2** signature.
 
 .. versionchanged:: 0.10.0
 

@@ -84,13 +84,13 @@ These plugins can be configured using a plain object in ``settings.transform``. 
 Unmaintained
 ------------
 
-The source for these packages are located in a separate repository `Pi-r2 <https://github.com/anpham6/pi-r2>`_. Once per year they are published with each major NodeJS release in April.
+The source for these packages are located in a separate repository `Pi-r2 <https://github.com/anpham6/pi-r2>`_. They are re-published with each NodeJS major release transistion.
 
 .. list-table::
   :width: 300px
   :widths: 70 20 10
 
-  * - @pi-r/html-minifier
+  * - @pi-r/html-minifier[-next]
     - 0.7.x
     - N
   * - @pi-r/uglify-js

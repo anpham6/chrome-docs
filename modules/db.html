@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/db &mdash; E-mc 0.13.9 documentation</title>
+  <title>@e-mc/db &mdash; E-mc 0.14.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
+      <script src="../_static/documentation_options.js?v=9e420a66"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
 
           
           
@@ -90,7 +90,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -205,8 +205,8 @@
 <span class="w">    </span><span class="nx">CACHE_IGNORE</span><span class="o">:</span><span class="w"> </span><span class="kt">readonly</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">asString</span><span class="p">(</span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">canCache</span><span class="p">(</span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">sanitize</span><span class="p">(</span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">removeUUIDKey</span><span class="p">(</span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">sanitize</span><span class="p">(</span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">sort?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
+</span><span class="w">    </span><span class="nx">removeUUIDKey</span><span class="p">(</span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">findKey</span><span class="p">(</span><span class="nx">pools</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">IDbPool</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">uuidKey</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">,</span><span class="w"> </span><span class="nx">poolKey</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="nx">...items</span><span class="o">:</span><span class="w"> </span><span class="kt">DbDataSource</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">IDbPool</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">validateKey</span><span class="p">(</span><span class="nx">pools</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">IDbPool</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">uuidKey</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">IDbPool</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">];</span>
 <span class="w">    </span><span class="nx">checkTimeout</span><span class="p">(</span><span class="nx">pools</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">IDbPool</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">limit?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span>
@@ -219,6 +219,12 @@
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.14.1: </span></p>
+<ul class="simple">
+<li><p><em>DbPoolConstructor</em> <em class="alt">function</em> <strong>sanitize</strong> argument <em class="target">sort</em> as <em class="alt">boolean</em> for deterministic cache keys was created.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.14.0: </span></p>
 <ul class="simple">
@@ -256,7 +262,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.9.0: </span></p>
 <ul class="simple">
-<li><p><em>IDb</em> <em class="alt">function</em> <strong>executeQuery</strong> | <strong>executeBatchQuery</strong> with argument <em class="target">callback</em> as <em class="alt">ErrorQueryCallback</em>.</p></li>
+<li><p><em>IDb</em> <em class="alt">function</em> <strong>executeQuery</strong> | <strong>executeBatchQuery</strong> argument <em class="target">callback</em> as <em class="alt">ErrorQueryCallback</em>.</p></li>
 </ul>
 </div>
 </section>
@@ -264,7 +270,7 @@
 <h2>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h2>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/squared-express/dist/squared.db.json">View JSON</a></span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DbSourceOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">PurgeComponent</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./settings&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DbSourceOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">ImportModule</span><span class="p">,</span><span class="w"> </span><span class="nx">PurgeComponent</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./settings&quot;</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">DbModule</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// handler: &quot;@e-mc/db&quot;;</span>
@@ -284,7 +290,7 @@
 </span><span class="hll"><span class="w">        </span><span class="p">};</span>
 </span><span class="w">        </span><span class="nx">session_expires?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">user_key?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">DbSourceOptions</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">imports?</span><span class="o">:</span><span class="w"> </span><span class="kt">StringMap</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">imports?</span><span class="o">:</span><span class="w"> </span><span class="kt">ImportModule</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">purge?</span><span class="o">:</span><span class="w"> </span><span class="kt">PurgeComponent</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">mariadb?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbSourceOptions</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">mongodb?</span><span class="o">:</span><span class="w"> </span><span class="kt">DbSourceOptions</span><span class="p">;</span>

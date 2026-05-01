@@ -183,6 +183,10 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.14.1
+
+ - *IRequest* :alt:`global settings` **headers** with an :target:`Authorization` header is no longer cached except when combined with a :target:`Cache-Control` header.
+
 .. versionchanged:: 0.13.6
 
   - ``BREAKING`` *IFileManager* properties **permission** | **sessionId** are permanently locked in the constructor.
@@ -224,7 +228,7 @@ Changelog
 
 .. versionremoved:: 0.11.0
 
-  - *IFileManager* :alt:`function` **install** with name :alt:`watch` injected with spread parameters does not conform with *Client* constructor.
+  - *IFileManager* :alt:`function` **install** with name :alt:`watch` injected with spread parameters did not conform with *Client* constructor.
 
 .. versionadded:: 0.10.0
 
@@ -233,7 +237,7 @@ Changelog
 
 .. versionchanged:: 0.10.0
 
-  - *IFileManager* :alt:`function` return value was modified to :target:`Promise<void>`:
+  - *IFileManager* :alt:`function` return value as :alt:`Promise<unknown>` was changed to :target:`Promise<void>`:
 
     .. hlist::
       :columns: 3
@@ -259,8 +263,8 @@ Changelog
 
 .. versionchanged:: 0.9.0
 
-  - *IFileManager* :alt:`function` **install** with **name** :alt:`"image"` and **target** as :alt:`ImageConstructor`.
-  - *IFileManager* :alt:`function` **install** with **name** :alt:`"document" | "image" | "task"` and **handler** as :alt:`string`.
+  - *IFileManager* :alt:`function` **install** with **name** ":lower:`image`" and **target** as :alt:`ImageConstructor` were implemented.
+  - *IFileManager* :alt:`function` **install** with **name** ":lower:`document`" | ":lower:`image`" | ":lower:`task`" and **handler** as :alt:`string` were implemented.
   - *IFileManager* :alt:`function` **transformAsset** return value was modified to :target:`Promise<boolean>`.
 
 Settings

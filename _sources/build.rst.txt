@@ -493,6 +493,6 @@ There is no difference when using :doc:`data sources <document/data>` for writin
 
 .. [#] https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap
 .. [#] npm i json5
-.. [#] npm i smol-toml (0.13.7/0.12.15) | npm i toml (deprecated)
+.. [#] npm i toml
 .. [#] squared-express 4.0 + sqd-serve 0.18
 .. [#] squared 5.7.2

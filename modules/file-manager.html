@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/file-manager &mdash; E-mc 0.13.9 documentation</title>
+  <title>@e-mc/file-manager &mdash; E-mc 0.14.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
+      <script src="../_static/documentation_options.js?v=9e420a66"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
 
           
           
@@ -89,7 +89,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -291,6 +291,12 @@
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
 <div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.14.1: </span></p>
+<ul class="simple">
+<li><p><em>IRequest</em> <em class="alt">global settings</em> <strong>headers</strong> with an <em class="target">Authorization</em> header is no longer cached except when combined with a <em class="target">Cache-Control</em> header.</p></li>
+</ul>
+</div>
+<div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.13.6: </span></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>IFileManager</em> properties <strong>permission</strong> | <strong>sessionId</strong> are permanently locked in the constructor.</p></li>
@@ -346,7 +352,7 @@
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>install</strong> with name <em class="alt">watch</em> injected with spread parameters does not conform with <em>Client</em> constructor.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>install</strong> with name <em class="alt">watch</em> injected with spread parameters did not conform with <em>Client</em> constructor.</p></li>
 </ul>
 </div>
 <div class="versionadded">
@@ -359,7 +365,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul>
-<li><p><em>IFileManager</em> <em class="alt">function</em> return value was modified to <em class="target">Promise&lt;void&gt;</em>:</p>
+<li><p><em>IFileManager</em> <em class="alt">function</em> return value as <em class="alt">Promise&lt;unknown&gt;</em> was changed to <em class="target">Promise&lt;void&gt;</em>:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>finalize</p></li>
 <li><p>finalizeCompress</p></li>
@@ -397,8 +403,8 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.9.0: </span></p>
 <ul class="simple">
-<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>install</strong> with <strong>name</strong> <em class="alt">“image”</em> and <strong>target</strong> as <em class="alt">ImageConstructor</em>.</p></li>
-<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>install</strong> with <strong>name</strong> <em class="alt">“document” | “image” | “task”</em> and <strong>handler</strong> as <em class="alt">string</em>.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>install</strong> with <strong>name</strong> “<em class="lower">image</em>” and <strong>target</strong> as <em class="alt">ImageConstructor</em> were implemented.</p></li>
+<li><p><em>IFileManager</em> <em class="alt">function</em> <strong>install</strong> with <strong>name</strong> “<em class="lower">document</em>” | “<em class="lower">image</em>” | “<em class="lower">task</em>” and <strong>handler</strong> as <em class="alt">string</em> were implemented.</p></li>
 <li><p><em>IFileManager</em> <em class="alt">function</em> <strong>transformAsset</strong> return value was modified to <em class="target">Promise&lt;boolean&gt;</em>.</p></li>
 </ul>
 </div>

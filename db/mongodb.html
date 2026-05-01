@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MongoDB &mdash; E-mc 0.13.9 documentation</title>
+  <title>MongoDB &mdash; E-mc 0.14.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
+      <script src="../_static/documentation_options.js?v=9e420a66"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
 
           
           
@@ -83,7 +83,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -141,14 +141,14 @@
 
 <span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.MongoClientOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">UpdateFilter</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">OptionalUnlessRequiredId</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">client</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">db?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.DbOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used as options with &quot;name&quot;</span>
-<span class="w">        </span><span class="nx">collection?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.CollectionOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used as options with &quot;table&quot;</span>
-<span class="w">        </span><span class="nx">command?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.RunCommandOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used as options with &quot;command&quot;</span>
-<span class="w">        </span><span class="nx">bulkWrite?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.ClientBulkWriteOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used as options with &quot;bulkWrite&quot;</span>
+<span class="w">        </span><span class="nx">db?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.DbOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;name&quot;</span>
+<span class="w">        </span><span class="nx">collection?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.CollectionOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;table&quot;</span>
+<span class="w">        </span><span class="nx">command?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.RunCommandOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;command&quot;</span>
+<span class="w">        </span><span class="nx">bulkWrite?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.ClientBulkWriteOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;bulkWrite&quot;</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="w">    </span><span class="nx">execute</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">insert?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.BulkWriteOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used as options with &quot;update - insert&quot;</span>
-<span class="w">        </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.UpdateOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used as options with &quot;update&quot;</span>
+<span class="w">        </span><span class="nx">insert?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.BulkWriteOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;update - insert&quot;</span>
+<span class="w">        </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.UpdateOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;update&quot;</span>
 <span class="w">    </span><span class="p">};</span>
 
 <span class="w">    </span><span class="nx">sort?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">Sort</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Sort</span><span class="p">,</span><span class="w"> </span><span class="nx">direction</span><span class="o">:</span><span class="w"> </span><span class="kt">m.SortDirection</span><span class="w"> </span><span class="p">};</span>
@@ -299,7 +299,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>MongoDB</em> object <strong>CommandOperationOptions</strong> properties are no longer coerced into native objects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em>MongoDB</em> object <strong>CommandOperationOptions</strong> is no longer coerced into <em>JS</em> native objects.</p></li>
 <li><p><strong>Db</strong> instance abort signal is attached to these commands:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>collection.find</p></li>

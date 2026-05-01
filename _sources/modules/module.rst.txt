@@ -192,7 +192,7 @@ Interface
       asString(value: unknown, cacheKey?: boolean | "throws"): string;
       asHash(data: BinaryLike, options?: AsHashOptions): string;
       asHash(data: BinaryLike, algorithm?: string, options?: HashOptions): string;
-      asHash(data: BinaryLike, algorithm?: string, digest?: BinaryToTextEncoding): string;
+      asHash(data: BinaryLike, algorithm?: string, encoding?: BufferEncoding): string;
       readHash(value: string | URL, options?: ReadHashOptions): Promise<string>;
       toPosix(value: unknown, normalize: boolean): string;
       toPosix(value: unknown, filename?: string, normalize?: boolean): string;

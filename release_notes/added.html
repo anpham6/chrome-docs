@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Added &mdash; E-mc 0.13.9 documentation</title>
+  <title>Added &mdash; E-mc 0.14.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
+      <script src="../_static/documentation_options.js?v=9e420a66"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
 
           
           
@@ -99,7 +99,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -155,10 +155,23 @@ ClientConstructor function signExtensionType for grouping extensions in a series
 <tr class="row-even"><td><p>modules/module</p></td>
 <td><p>LoggerModule property user for tracking authenticated sessions was created.</p></td>
 </tr>
-<tr class="row-odd"><td><p>modules/types</p></td>
+<tr class="row-odd"><td><p>modules/request</p></td>
+<td><p>DownloadModule section rclone properties were created:
+
+format
+
+separator
+
+timeformat
+
+order_by</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/types</p></td>
 <td><p>function getAlgorithm for validating a supported hash algorithm was created.
 
 function isError for detecting a native Error instance was created.
+
+function asExt for extracting only the extension name was created.
 
 enum LOG_STATE with USER for authenticated sessions was created.</p></td>
 </tr>
@@ -200,10 +213,7 @@ function errorValue | errorMessage argument cause as unknown was implemented.</p
 <tr class="row-even"><td><p>modules/core</p></td>
 <td><p>HostConstructor function parseIp for IPV4/IPV6 conversion was created.</p></td>
 </tr>
-<tr class="row-odd"><td><p>modules/document</p></td>
-<td><p>IDocument function tryParse argument format as toml supports NPM package smol-toml with options.</p></td>
-</tr>
-<tr class="row-even"><td><p>modules/module</p></td>
+<tr class="row-odd"><td><p>modules/module</p></td>
 <td><p>MemoryModule settings group gc for garbage collection expiration and interval was created.</p></td>
 </tr>
 </tbody>
@@ -222,9 +232,7 @@ function errorValue | errorMessage argument cause as unknown was implemented.</p
 <td><p>DataSource property ignoreCache as number[] can bypass storage and retrieval when result length is not within the specified range.</p></td>
 </tr>
 <tr class="row-odd"><td><p>modules/core</p></td>
-<td><p>ClientDbConstructor function storeSession for single expiration based caching was created.
-
-ClientDbConstructor function findSession for single expiration based caching retrieval was created.</p></td>
+<td><p>ClientDbConstructor function storeSession | findSession for single expiration based caching was created.</p></td>
 </tr>
 </tbody>
 </table>
@@ -285,7 +293,24 @@ file:permission
 
 dir:permission</p></td>
 </tr>
-<tr class="row-odd"><td><p>modules/types</p></td>
+<tr class="row-odd"><td><p>modules/request</p></td>
+<td><p>DownloadModule section rclone properties were created:
+
+combined
+
+csv
+
+differ
+
+error
+
+hash
+
+no_update_modtime
+
+streaming_upload_cutoff</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/types</p></td>
 <td><p>function isErrorCode for checking Error properties was imported from module.</p></td>
 </tr>
 </tbody>

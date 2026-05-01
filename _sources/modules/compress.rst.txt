@@ -89,7 +89,7 @@ Changelog
 
 .. versionremoved:: 0.9.0
 
-  - *ICompress* :alt:`function` **tryFile** | **tryImage** argument :target:`callback` as :alt:`function`.
+  - *ICompress* :alt:`function` **tryFile** | **tryImage** argument :target:`callback` as :alt:`function` is no longer available.
 
 Settings
 ========

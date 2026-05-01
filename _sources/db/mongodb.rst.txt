@@ -39,14 +39,14 @@ Interface
 
       options?: m.MongoClientOptions | m.UpdateFilter<m.Document> | m.OptionalUnlessRequiredId<unknown>[];
       client?: {
-          db?: m.DbOptions; // Used as options with "name"
-          collection?: m.CollectionOptions; // Used as options with "table"
-          command?: m.RunCommandOptions; // Used as options with "command"
-          bulkWrite?: m.ClientBulkWriteOptions; // Used as options with "bulkWrite"
+          db?: m.DbOptions; // Used with "name"
+          collection?: m.CollectionOptions; // Used with "table"
+          command?: m.RunCommandOptions; // Used with "command"
+          bulkWrite?: m.ClientBulkWriteOptions; // Used with "bulkWrite"
       };
       execute?: {
-          insert?: m.BulkWriteOptions; // Used as options with "update - insert"
-          update?: m.UpdateOptions; // Used as options with "update"
+          insert?: m.BulkWriteOptions; // Used with "update - insert"
+          update?: m.UpdateOptions; // Used with "update"
       };
 
       sort?: string | m.Sort | { value: m.Sort, direction: m.SortDirection };
@@ -194,7 +194,7 @@ Example usage
 
 .. versionchanged:: 0.12.0
 
-  - ``BREAKING`` *MongoDB* object **CommandOperationOptions** properties are no longer coerced into native objects.
+  - ``BREAKING`` *MongoDB* object **CommandOperationOptions** is no longer coerced into *JS* native objects.
   - **Db** instance abort signal is attached to these commands:
 
     .. hlist::

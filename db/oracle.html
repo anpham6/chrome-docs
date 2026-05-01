@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oracle &mdash; E-mc 0.13.9 documentation</title>
+  <title>Oracle &mdash; E-mc 0.14.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
+      <script src="../_static/documentation_options.js?v=9e420a66"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
 
           
           
@@ -84,7 +84,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -227,29 +227,37 @@
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>These are not official Oracle environment variables and are used to initialize the client only when the module is first loaded.</p>
+<p>These are not official Oracle environment variables and are used during module initialization.</p>
 </div>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">InitialiseOptions</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * This specifies the directory in which the Optional Oracle Net Configuration and Optional Oracle Client Configuration files reside. It is equivalent to setting the Oracle environment variable TNS_ADMIN to this value. Any value in that environment variable prior to the call to oracledb.initOracleClient() is ignored. If this attribute is not set, Oracle’s default configuration file search heuristics are used.</span>
+<span class="cm">     * This specifies the directory in which the Optional Oracle Net Configuration and Optional Oracle Client Configuration files reside.</span>
+<span class="cm">     * It is equivalent to setting the Oracle environment variable TNS_ADMIN to this value. Any value in that environment variable prior to the call to oracledb.initOracleClient() is ignored. If this attribute is not set, Oracle’s default configuration file search heuristics are used.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="nx">configDir?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * This specifies the driver name value shown in database views, such as V$SESSION_CONNECT_INFO. It can be used by applications to identify themselves for tracing and monitoring purposes. The convention is to separate the product name from the product version by a colon and single space characters. If this attribute is not specified, the value “node-oracledb : version” is used.</span>
+<span class="cm">     * This specifies the driver name value shown in database views, such as V$SESSION_CONNECT_INFO.</span>
+<span class="cm">     * It can be used by applications to identify themselves for tracing and monitoring purposes.</span>
+<span class="cm">     * The convention is to separate the product name from the product version by a colon and single space characters.</span>
+<span class="cm">     * If this attribute is not specified, the value “node-oracledb : version” is used.</span>
 <span class="cm">     *</span>
-<span class="cm">     * @see https://oracle.github.io/node-oracledb/doc/api.html#otherinit</span>
+<span class="cm">     * @see https://node-oracledb.readthedocs.io/en/latest/user_guide/initialization.html#otherinit</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="nx">driverName?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * This specifies the URL that is included in the node-oracledb exception message if the Oracle Client libraries cannot be loaded. This allows applications that use node-oracledb to refer users to application-specific installation instructions. If this attribute is not specified, then the node-oracledb installation instructions URL is used.</span>
+<span class="cm">     * This specifies the URL that is included in the node-oracledb exception message if the Oracle Client libraries cannot be loaded.</span>
+<span class="cm">     * This allows applications that use node-oracledb to refer users to application-specific installation instructions.</span>
+<span class="cm">     * If this attribute is not specified, then the node-oracledb installation instructions URL is used.</span>
 <span class="cm">     *</span>
-<span class="cm">     * @see https://oracle.github.io/node-oracledb/doc/api.html#otherinit</span>
+<span class="cm">     * @see https://node-oracledb.readthedocs.io/en/latest/user_guide/initialization.html#otherinit</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="nx">errorUrl?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * This specifies the directory containing the Oracle Client libraries. If libDir is not specified, the default library search mechanism is used. If your client libraries are in a full Oracle Client or Oracle Database installation, such as Oracle Database “XE” Express Edition, then you must have previously set environment variables like ORACLE_HOME before calling initOracleClient().</span>
+<span class="cm">     * This specifies the directory containing the Oracle Client libraries.</span>
+<span class="cm">     * If libDir is not specified, the default library search mechanism is used.</span>
+<span class="cm">     * If your client libraries are in a full Oracle Client or Oracle Database installation, such as Oracle Database “XE” Express Edition, then you must have previously set environment variables like ORACLE_HOME before calling initOracleClient().</span>
 <span class="cm">     *</span>
-<span class="cm">     * @see https://oracle.github.io/node-oracledb/doc/api.html#oracleclientloading</span>
+<span class="cm">     * @see https://node-oracledb.readthedocs.io/en/latest/user_guide/initialization.html#oracleclientloading</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="nx">libDir?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
 <span class="p">}</span>

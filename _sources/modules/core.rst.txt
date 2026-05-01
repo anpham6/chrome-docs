@@ -280,8 +280,7 @@ Changelog
 
 .. versionadded:: 0.13.6
 
-  - *ClientDbConstructor* :alt:`function` **storeSession** for single expiration based caching was created.
-  - *ClientDbConstructor* :alt:`function` **findSession** for single expiration based caching retrieval was created.
+  - *ClientDbConstructor* :alt:`function` **storeSession** | **findSession** for single expiration based caching was created.
 
 .. versionchanged:: 0.13.6
 

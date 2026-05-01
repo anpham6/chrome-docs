@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/request &mdash; E-mc 0.13.9 documentation</title>
+  <title>@e-mc/request &mdash; E-mc 0.14.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=97f24cbe"></script>
+      <script src="../_static/documentation_options.js?v=9e420a66"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -31,7 +31,7 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
 
           
           
@@ -89,7 +89,7 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/006.png);" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">E-mc</a>
       </nav>
@@ -370,8 +370,11 @@
 <span class="w">        </span><span class="nx">csv?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">differ?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">error?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="hll"><span class="w">        </span><span class="nx">format?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="hll"><span class="w">        </span><span class="nx">separator?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="hll"><span class="w">        </span><span class="nx">timeformat?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="w">        </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;md5&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;SHA-1&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;DropboxHash&quot;</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">cutoff_mode</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;HARD&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;SOFT&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;CAUTIOUS&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;md5&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;SHA-1&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;DropboxHash&quot;</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">ignore_case_sync?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">ignore_checksum?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">ignore_existing?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
@@ -392,7 +395,8 @@
 <span class="w">        </span><span class="nx">no_traverse?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">no_update_dir_modtime?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">no_update_modtime?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">refresh_times?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="hll"><span class="w">        </span><span class="nx">order_by?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="w">        </span><span class="nx">refresh_times?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">size_only?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">streaming_upload_cutoff?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
@@ -410,6 +414,26 @@
 <section id="id3">
 <h3>Changelog<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.0: </span></p>
+<ul>
+<li><p><em>DownloadModule</em> section <strong>rclone</strong> properties were created:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>format</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>separator</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>timeformat</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>order_by</p></li>
+</ul>
+</td></tr></table>
+</li>
+</ul>
+</div>
+<div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.13.9: </span></p>
 <ul class="simple">
 <li><p><em>RequestModule</em> property <strong>max_concurrent_streams</strong> for limiting <em>HTTP2</em> connections per session group was created.</p></li>
@@ -420,6 +444,29 @@
 <ul class="simple">
 <li><p><em>RequestModule</em> <em class="target">agent</em> properties <strong>keep_alive_interval</strong> | <strong>proxy_env</strong> for configuring the HTTP/s global <em class="target">Agent</em> instance were created.</p></li>
 <li><p><em>RequestModule</em> property <strong>proxy.keep_alive_interval</strong> for throttling the keep alive packets <em class="alt">(ms)</em> was created.</p></li>
+</ul>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.13.0: </span></p>
+<ul>
+<li><p><em>DownloadModule</em> section <strong>rclone</strong> properties were created:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>combined</p></li>
+<li><p>csv</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>differ</p></li>
+<li><p>error</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>hash</p></li>
+<li><p>no_update_modtime</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>streaming_upload_cutoff</p></li>
+</ul>
+</td></tr></table>
+</li>
 </ul>
 </div>
 <div class="versionchanged">

@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 28,31,56,59,66-69,75,77-78,99
+  :emphasize-lines: 28,31,56,59,66-69,75-80,102
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -84,7 +84,9 @@ Interface
   function importESM(name: string | URL, isDefault: boolean, fromPath?: boolean): Promise<unknown>;
   function importESM(name: string | URL, options?: ImportAttributes, fromPath?: boolean): Promise<unknown>;
   function requireESM(name: string, url?: string | URL, expect?: string): unknown;
-  function purgeMemory(percent?: number): number;
+  function purgeMemory(type: 1, exclude?: unknown[]): number;
+  function purgeMemory(type: 0): number;
+  function purgeMemory(type?: number, exclude?: unknown[]): number;
   function manageGlobalObject(value: object): boolean;
   function freeGlobalObject(value: object): boolean;
 
@@ -224,6 +226,10 @@ Changelog
 .. versionadded:: 0.14.1
 
   - :alt:`function` **manageGlobalObject** | **freeGlobalObject** for releasing cached memory was created.
+
+.. versionchanged:: 0.14.1
+
+  - ``BREAKING`` :alt:`function` **purgeMemory** unimplemented argument :target:`percent` was replaced with :target:`type` as :alt:`0 | 1`.
 
 .. versionadded:: 0.14.0
 
@@ -379,7 +385,7 @@ Changelog
 
 .. versionchanged:: 0.10.0
 
-  - :alt:`function` **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name ":lower:`AbortError**`" and code **20**.
+  - :alt:`function` **createAbortError** uses native *DOMException* with name ":lower:`AbortError`" and code **20**.
   - :alt:`function` **formatTime** with argument :target:`char` as ":lower:`:`" displays using digital clock format.
   - :alt:`interface` **CloneObjectOptions** in :alt:`module` was relocated to :target:`types`.
   - :alt:`type` **Writeable** was renamed :target:`Writable`.

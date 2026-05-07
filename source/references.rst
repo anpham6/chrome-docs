@@ -149,6 +149,12 @@ https://nodejs.org/api/worker_threads.html
 https://nodejs.org/api/tls.html
   | `SecureVersion <search.html?q=SecureVersion>`_
 
+.. _references-nodejs-http:
+.. rst-class:: block-list
+
+https://nodejs.org/api/http.html
+  | `OutgoingHttpHeaders <search.html?q=OutgoingHttpHeaders>`_
+
 .. _references-nodejs-url:
 .. rst-class:: block-list
 

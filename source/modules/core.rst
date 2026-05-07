@@ -151,7 +151,7 @@ Interface
   }
 
   interface IWorkerGroup {
-      [Symbol.iterator](): IteratorObject<IWorkerChannel, BuiltinIteratorReturn>;
+      [Symbol.iterator](): IterableIterator<IWorkerChannel>;
       add(name: string, item: IWorkerChannel, priority?: number): this;
       get(name: string, force?: boolean | number): IWorkerChannel | undefined;
       delete(name: string | IWorkerChannel): boolean;
@@ -175,7 +175,7 @@ Interface
   }
 
   interface IWorkerChannel extends EventEmitter {
-      [Symbol.iterator](): IteratorObject<Worker, BuiltinIteratorReturn>;
+      [Symbol.iterator](): IterableIterator<Worker>;
       sendObject(data: unknown, transferList?: TransferListItem[], callback?: WorkerChannelResponse<unknown>, ...returnArgs: unknown[]): Worker;
       sendBuffer(data: Buffer, shared?: boolean, callback?: WorkerChannelResponse<unknown>, ...returnArgs: unknown[]): Worker | null;
       send(data: unknown, transferList?: TransferListItem[]): Promise<unknown>;

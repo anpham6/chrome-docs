@@ -76,7 +76,7 @@ Renaming files with *Gulp* is not recommended since it will not appear in the ou
   
   gulp.task("default", gulp.series("minify"));
 
-.. caution:: ``src`` :alt:`(temp)` and ``dest`` :alt:`(original)` always read and write to the current directory.
+.. caution:: ``src`` :alt:`(temp)` and ``dest`` :alt:`(original)` always read and write to the current asset directory.
 
 data-chrome-tasks
 =================

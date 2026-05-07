@@ -165,7 +165,6 @@ TypeScript
 
 https://github.com/microsoft/TypeScript/blob/main/src/lib/es2015.iterable.d.ts
   | `IteratorObject <search.html?q=IteratorObject>`_
-  | `BuiltinIteratorReturn <search.html?q=BuiltinIteratorReturn>`_
 
 .. _references-mdn:
 

@@ -37,9 +37,9 @@ Example configuration
             }
           },
           "worker": { // Settings will override process.env
-            "min": 2, // PIR2_JIMP_WORKER_MIN
-            "max": 8, // PIR2_JIMP_WORKER_MAX
-            "expires": "1m" // PIR2_JIMP_WORKER_TIMEOUT
+            "min": 2, // PIR_JIMP_WORKER_MIN
+            "max": 8, // PIR_JIMP_WORKER_MAX
+            "expires": "1m" // PIR_JIMP_WORKER_TIMEOUT
           }
         },
         "webp": {

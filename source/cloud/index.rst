@@ -12,14 +12,3 @@ Cloud
   Google <gcp>
   atlas
   Oracle <oci>
-
-----
-
-.. rst-class:: unmaintained
-
-.. toctree::
-  :caption: Unmaintained
-  :maxdepth: 1
-
-  IBM <ibm>
-  minio

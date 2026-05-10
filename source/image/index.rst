@@ -254,10 +254,6 @@ Transformations are given a *UUID* filename except when ":lower:`@`" or ":lower:
 @pi-r/jimp
 ==========
 
-.. versionchanged:: 0.12.0
-
- - Package will be developed under `pi-r <https://github.com/anpham6/pi-r/tree/master/src/module/jimp>`_ for future releases. [#]_
-
 .. versionadded:: 0.11.0
 
   - *NPM* package **jimp** was upgraded to **1.6.0**.
@@ -283,10 +279,6 @@ Transformations are given a *UUID* filename except when ":lower:`@`" or ":lower:
       - SANS_32_WHITE
       - SANS_64_WHITE
       - SANS_128_WHITE
-
-.. versionchanged:: 0.11.0
-
- - Package will be developed under `pi-r2 <https://github.com/anpham6/pi-r2/tree/0.3.0/src/module/jimp>`_ for future releases. [#]_
 
 .. versionadded:: 0.10.0
 
@@ -315,6 +307,4 @@ Transformations are given a *UUID* filename except when ":lower:`@`" or ":lower:
 .. [#] https://jimp-dev.github.io/jimp/api/jimp/classes/jimp
 .. [#] srcOver | dstOver | multiply | add | screen | overlay | darken | lighten | hardLight | difference | exclusion
 .. [#] left - 1 | center - 2 | right - 4 | top - 8 | middle - 16 | bottom - 32
-.. [#] Typescript 6.0 - module/preserve
 .. [#] Limitations: 1 rotation only + Native read/write
-.. [#] Typescript 5.9 - commonjs/preserve

@@ -81,36 +81,6 @@ These plugins can be configured using a plain object in ``settings.transform``. 
 - Local plain file with single function :alt:`(e.g. ".js")`
 - Inline function
 
-Unmaintained
-------------
-
-The source for these packages are located in a separate repository `Pi-r2 <https://github.com/anpham6/pi-r2>`_. They are re-published with each NodeJS major release transistion.
-
-.. list-table::
-  :width: 300px
-  :widths: 70 20 10
-
-  * - @pi-r/html-minifier[-next]
-    - 0.7.x
-    - N
-  * - @pi-r/uglify-js
-    - 0.7.x
-    - Y [#Y]_
-  * - @pi-r/html-minifier-terser
-    - 0.8.x
-    - N
-  * - @pi-r/svgo
-    - 0.8.x
-    - Y [#Y]_
-  * - @pi-r/clean-css
-    - 0.9.x
-    - N
-  * - @pi-r/csso
-    - 0.9.x
-    - N
-
-.. tip:: `Pi-r2` packages are compatible with the latest `E-mc` and can be used as is without any problems.
-
 Environment Variables
 =====================
 
@@ -172,6 +142,5 @@ rollup     @rollup/plugin-node-resolve      node-resolve  0.10
   }
 
 .. [#] settings.transform.imports
-.. [#Y] Package with dependencies (e.g. @e-mc/document)
 .. [#] ESLint 10.0 (not available)
 .. [#] metadata: { "__nodepackageimporter__": true }

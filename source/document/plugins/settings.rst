@@ -279,14 +279,6 @@ You can create aliases with your own handling routine to wrap any *NPM* package.
               /* @pi-r - e-mc + squared-express */
               "@babel/core": "@pi-r/babel",
 
-              /* @pi-r2 - e-mc */
-              "clean-css": "@pi-r2/clean-css", // Unmaintained
-              "csso": "@pi-r2/clean-css",
-              "html-minifier": "@pi-r2/html-minifier",
-              "html-minifier-terser": "@pi-r2/html-minifier-terser",
-              "svgo": "@pi-r2/svgo",
-              "uglify-js": "@pi-r2/uglify-js",
-
               /* Custom - Add */
               "webpack": "webpack-custom",
 

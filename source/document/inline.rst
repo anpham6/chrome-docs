@@ -156,7 +156,7 @@ Inline commands are usually sufficient for simple web pages. More advanced confi
 .. [#] data-chrome-file='*"exportAs": "css/prod.css", "process": ["lint", "beautify"]*'
 .. [#] Do not use the built-in transformers per document.
 .. [#] boolean - config | "no-module" - inline
-.. [#] @pi-r/tinify | @pi-r2/imagemin
+.. [#] @pi-r/tinify | @pi-r/imagemin
 .. [#] "true" - explicit | "false"
 .. [#] filename + content hash (productionRelease=true)
 .. [#] Value can be limited to the starting prefix. (e.g. md5[8] - Minimum is 4)

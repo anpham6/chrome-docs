@@ -183,9 +183,13 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.14.1
+
+  - *ExternalAsset* property **headers** as :alt:`OutgoingHttpHeaders` was implemented.
+
 .. versionchanged:: 0.14.1
 
- - *IRequest* :alt:`global settings` **headers** with an :target:`Authorization` header is no longer cached except when combined with a :target:`Cache-Control` header.
+ - *IRequest* :alt:`OpenOptions` property **headers** with an :target:`Authorization` request header is no longer cached without a :ref:`Cache-Control <references-mdn-cache-control>` response header.
 
 .. versionchanged:: 0.13.6
 

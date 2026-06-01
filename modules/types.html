@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/types &mdash; E-mc 0.14.0 documentation</title>
+  <title>@e-mc/types &mdash; E-mc 0.14.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=9e420a66"></script>
+      <script src="../_static/documentation_options.js?v=0dc20415"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -189,8 +189,12 @@
 <span class="kd">function</span><span class="w"> </span><span class="nx">importESM</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">isDefault</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span><span class="w"> </span><span class="nx">fromPath?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">importESM</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">ImportAttributes</span><span class="p">,</span><span class="w"> </span><span class="nx">fromPath?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">requireESM</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">url?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">expect?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unknown</span><span class="p">;</span>
-</span><span class="kd">function</span><span class="w"> </span><span class="nx">purgeMemory</span><span class="p">(</span><span class="nx">percent?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
-
+</span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">purgeMemory</span><span class="p">(</span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">exclude?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+</span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">purgeMemory</span><span class="p">(</span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+</span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">purgeMemory</span><span class="p">(</span><span class="kr">type</span><span class="nx">?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">exclude?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+</span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">manageGlobalObject</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">object</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+</span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">freeGlobalObject</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">object</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+</span>
 <span class="kd">interface</span><span class="w"> </span><span class="nx">LOG_TYPE</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">UNKNOWN</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">SYSTEM</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">;</span>
@@ -210,9 +214,9 @@
 <span class="w">    </span><span class="nx">TIMEOUT</span><span class="o">:</span><span class="w"> </span><span class="kt">16384</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">STDOUT</span><span class="o">:</span><span class="w"> </span><span class="kt">32768</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">DB</span><span class="o">:</span><span class="w"> </span><span class="kt">65536</span><span class="p">;</span>
-<span class="hll"><span class="w">    </span><span class="nx">USER</span><span class="o">:</span><span class="w"> </span><span class="kt">131072</span><span class="p">;</span>
-</span><span class="p">}</span>
-
+<span class="w">    </span><span class="nx">USER</span><span class="o">:</span><span class="w"> </span><span class="kt">131072</span><span class="p">;</span>
+<span class="hll"><span class="p">}</span>
+</span>
 <span class="kd">interface</span><span class="w"> </span><span class="nx">LOG_STATE</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">STDIN</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">STDOUT</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">;</span>
@@ -327,6 +331,18 @@
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
 <div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.1: </span></p>
+<ul class="simple">
+<li><p><em class="alt">function</em> <strong>manageGlobalObject</strong> | <strong>freeGlobalObject</strong> for releasing cached memory was created.</p></li>
+</ul>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.14.1: </span></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>purgeMemory</strong> unimplemented argument <em class="target">percent</em> was replaced with <em class="target">type</em> as <em class="alt">0 | 1</em>.</p></li>
+</ul>
+</div>
+<div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.14.0: </span></p>
 <ul class="simple">
 <li><p><em class="alt">function</em> <strong>getAlgorithm</strong> for validating a supported hash algorithm was created.</p></li>
@@ -338,7 +354,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.14.0: </span></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>hashKey</strong> argument <em class="target">algorithm</em> uses “<em class="lower">sha256</em>” instead of “<em class="lower">md5</em>” as default value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>hashKey</strong> argument <em class="target">algorithm</em> default value was changed from “<em class="lower">md5</em>” to “<em class="lower">sha256</em>”.</p></li>
 <li><p><em class="alt">function</em> <strong>setTempDir</strong> argument <em class="target">lock</em> as <em class="alt">boolean</em> can be used at initialization to prevent unauthorized modification.</p></li>
 </ul>
 </div>
@@ -385,7 +401,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.13.4: </span></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>cloneObject</strong> uses a <em class="target">WeakMap&lt;object, object&gt;</em> for reference tracking and does not contain any references from the source object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAKING</span></code> <em class="alt">function</em> <strong>cloneObject</strong> uses a <em class="target">WeakMap&lt;object, object&gt;</em> internally for reference tracking.</p></li>
 </ul>
 </div>
 <div class="admonition note">
@@ -548,7 +564,7 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.10.0: </span></p>
 <ul class="simple">
-<li><p><em class="alt">function</em> <strong>createAbortError</strong> uses built-in <em>DOMException</em> <em class="alt">(NodeJS 17)</em> with name “<em class="lower">AbortError**</em>” and code <strong>20</strong>.</p></li>
+<li><p><em class="alt">function</em> <strong>createAbortError</strong> uses native <em>DOMException</em> with name “<em class="lower">AbortError</em>” and code <strong>20</strong>.</p></li>
 <li><p><em class="alt">function</em> <strong>formatTime</strong> with argument <em class="target">char</em> as “<em class="lower">:</em>” displays using digital clock format.</p></li>
 <li><p><em class="alt">interface</em> <strong>CloneObjectOptions</strong> in <em class="alt">module</em> was relocated to <em class="target">types</em>.</p></li>
 <li><p><em class="alt">type</em> <strong>Writeable</strong> was renamed <em class="target">Writable</em>.</p></li>

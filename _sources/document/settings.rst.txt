@@ -6,6 +6,7 @@ These are the latest server default settings for the :target:`chrome` framework.
 
 .. code-block::
   :caption: squared.json [#]_
+  :emphasize-lines: 8,28-30,104-106
 
   {
     "apiVersion": "1.5.0",
@@ -14,7 +15,7 @@ These are the latest server default settings for the :target:`chrome` framework.
         "handler": "@pi-r/chrome",
         "namespace": "",
         "extensions": [
-          "@pi-r/chrome/extensions/css/unused"
+          "@pi-r/chrome/extensions/css/remove-unused"
         ],
         "eval": {
           "function": true,
@@ -34,6 +35,9 @@ These are the latest server default settings for the :target:`chrome` framework.
           "broadcast_id": "",
           "cache_dir": "",
           "imports_strict": false,
+          "package_json": {
+            "exports": false
+          },
           "directory": {
             "template": "",
             "data": "",
@@ -107,6 +111,9 @@ These are the latest server default settings for the :target:`chrome` framework.
               "extensions": null,
               "imports": {},
               "imports_strict": false,
+              "package_json": {
+                "exports": false
+              },
               "pages": {},
               "transform": {},
               "view_engine": {}
@@ -239,18 +246,26 @@ These are the latest server default settings for the :target:`chrome` framework.
     }
   }
 
-Changelog
-=========
+@pi-r/chrome
+============
 
-.. versionremoved:: 5.4.0
+.. versionadded:: 0.12.1
+
+  - *Settings* group property **package_json.exports** as :alt:`boolean | string` was created. 
+
+.. versionadded:: 0.12.0
+
+  - *CSS* extension **remove-unused** was created.
+
+.. versionremoved:: 0.9.0
+
+  - Transform plugins **clean-css** | **csso** are no longer supported.
+
+.. versionremoved:: 0.8.0
 
   - Transform plugins **html-minifier-terser** | **svgo** are no longer supported.
 
-.. versionadded:: 5.3.0
-
-  - Transform plugin **eslint** format configuration :target:`lint-v9` was created.
-
-.. versionremoved:: 5.3.0
+.. versionremoved:: 0.7.0
 
   - Transform plugins **html-minifier** | **uglify-js** are no longer supported.
 

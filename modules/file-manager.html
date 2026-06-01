@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/file-manager &mdash; E-mc 0.14.0 documentation</title>
+  <title>@e-mc/file-manager &mdash; E-mc 0.14.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=9e420a66"></script>
+      <script src="../_static/documentation_options.js?v=0dc20415"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -290,10 +290,16 @@
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.1: </span></p>
+<ul class="simple">
+<li><p><em>ExternalAsset</em> property <strong>headers</strong> as <em class="alt">OutgoingHttpHeaders</em> was implemented.</p></li>
+</ul>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.14.1: </span></p>
 <ul class="simple">
-<li><p><em>IRequest</em> <em class="alt">global settings</em> <strong>headers</strong> with an <em class="target">Authorization</em> header is no longer cached except when combined with a <em class="target">Cache-Control</em> header.</p></li>
+<li><p><em>IRequest</em> <em class="alt">OpenOptions</em> property <strong>headers</strong> with an <em class="target">Authorization</em> request header is no longer cached without a <a class="reference internal" href="../references.html#references-mdn-cache-control"><span class="std std-ref">Cache-Control</span></a> response header.</p></li>
 </ul>
 </div>
 <div class="versionchanged">

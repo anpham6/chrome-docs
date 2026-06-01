@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Settings &mdash; E-mc 0.14.0 documentation</title>
+  <title>Settings &mdash; E-mc 0.14.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=9e420a66"></script>
+      <script src="../_static/documentation_options.js?v=0dc20415"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -60,7 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="broadcast.html">Broadcast</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finalize.html">Finalize</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Settings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#changelog">Changelog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pi-r-chrome">&#64;pi-r/chrome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
@@ -115,8 +115,8 @@
 <span class="w">      </span><span class="nt">&quot;handler&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/chrome&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;namespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;@pi-r/chrome/extensions/css/unused&quot;</span>
-<span class="w">      </span><span class="p">],</span>
+<span class="hll"><span class="w">        </span><span class="s2">&quot;@pi-r/chrome/extensions/css/remove-unused&quot;</span>
+</span><span class="w">      </span><span class="p">],</span>
 <span class="w">      </span><span class="nt">&quot;eval&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;function&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;absolute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
@@ -135,7 +135,10 @@
 <span class="w">        </span><span class="nt">&quot;broadcast_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;cache_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;imports_strict&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">        </span><span class="nt">&quot;package_json&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">          </span><span class="nt">&quot;exports&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span class="hll"><span class="w">        </span><span class="p">},</span>
+</span><span class="w">        </span><span class="nt">&quot;directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">          </span><span class="nt">&quot;template&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">          </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">          </span><span class="nt">&quot;export&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
@@ -208,7 +211,10 @@
 <span class="w">            </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;imports&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
 <span class="w">            </span><span class="nt">&quot;imports_strict&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;pages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;package_json&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">              </span><span class="nt">&quot;exports&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span class="hll"><span class="w">            </span><span class="p">},</span>
+</span><span class="w">            </span><span class="nt">&quot;pages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
 <span class="w">            </span><span class="nt">&quot;transform&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
 <span class="w">            </span><span class="nt">&quot;view_engine&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
 <span class="w">          </span><span class="p">}</span>
@@ -342,22 +348,34 @@
 </pre></div>
 </div>
 </div>
-<section id="changelog">
-<h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
+<section id="pi-r-chrome">
+<h2>&#64;pi-r/chrome<a class="headerlink" href="#pi-r-chrome" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.12.1: </span></p>
+<ul class="simple">
+<li><p><em>Settings</em> group property <strong>package_json.exports</strong> as <em class="alt">boolean | string</em> was created.</p></li>
+</ul>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.12.0: </span></p>
+<ul class="simple">
+<li><p><em>CSS</em> extension <strong>remove-unused</strong> was created.</p></li>
+</ul>
+</div>
 <div class="versionremoved">
-<p><span class="versionmodified removed">Removed in version 5.4.0: </span></p>
+<p><span class="versionmodified removed">Removed in version 0.9.0: </span></p>
+<ul class="simple">
+<li><p>Transform plugins <strong>clean-css</strong> | <strong>csso</strong> are no longer supported.</p></li>
+</ul>
+</div>
+<div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 0.8.0: </span></p>
 <ul class="simple">
 <li><p>Transform plugins <strong>html-minifier-terser</strong> | <strong>svgo</strong> are no longer supported.</p></li>
 </ul>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">Added in version 5.3.0: </span></p>
-<ul class="simple">
-<li><p>Transform plugin <strong>eslint</strong> format configuration <em class="target">lint-v9</em> was created.</p></li>
-</ul>
-</div>
 <div class="versionremoved">
-<p><span class="versionmodified removed">Removed in version 5.3.0: </span></p>
+<p><span class="versionmodified removed">Removed in version 0.7.0: </span></p>
 <ul class="simple">
 <li><p>Transform plugins <strong>html-minifier</strong> | <strong>uglify-js</strong> are no longer supported.</p></li>
 </ul>

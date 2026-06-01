@@ -197,19 +197,11 @@ Example usage
   - **FT.HYBRID** for combining full-text and vector-based searches using :target:`options.hybrid` as :alt:`FtHybridOptions` was implemented.
   - *PoolConfig* property **idle** as :alt:`cleanupDelay` was implemented.
 
-.. versionchanged:: 0.12.0
-
-  - Package will be developed under `pi-r <https://github.com/anpham6/pi-r/tree/master/src/db/redis>`_ for future releases. [#]_
-
 .. versionadded:: 0.11.0
 
   - *NPM* package **redis** was upgraded  from *4.7* to :target:`5.8` with a :alt:`NodeJS 18` requirement.
   - *RedisDataSource* property **streams** as :alt:`XReadStreams` was created.
   - *RedisDataSource* property **format** with type ":lower:`SMEMBERS`" using :target:`key` as :alt:`string` was implemented.
-
-.. versionchanged:: 0.11.0
-
-  - Package will be developed under `pi-r2 <https://github.com/anpham6/pi-r2/tree/master/src/db/redis>`_ for future releases. [#]_
 
 .. versionadded:: 0.10.1
 
@@ -218,6 +210,3 @@ Example usage
 .. versionadded:: 0.8.0
 
   - *RedisDataSource* property **format** with type ":lower:`HSCAN`" and argument :alt:`cursor` | :alt:`iterations` was implemented.
-
-.. [#] Typescript 6.0 - module/preserve
-.. [#] Typescript 5.9 - commonjs/preserve

@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 45-46,90
+  :emphasize-lines: 28,31,47-48,92
 
   import type { DbDataSource } from "./squared";
 
@@ -17,11 +17,11 @@ Interface
   import type { ClientDbConstructor, IClientDb } from "./core";
   import type { DB_TYPE, SQL_COMMAND, BatchQueryResult, ErrorQueryCallback, ExecuteBatchQueryOptions, ExecuteQueryOptions, HandleFailOptions, ProcessRowsOptions, QueryResult } from "./db";
   import type { AuthValue } from "./http";
-  import type { DbCoerceSettings, DbModule, DbSettings, DbSourceOptions, PoolConfig } from "./settings";
+  import type { DbCacheSettings, DbCoerceSettings, DbModule, DbSettings, DbSourceOptions, PoolConfig } from "./settings";
 
   import type { SecureContextOptions } from "node:tls";
 
-  interface IDb extends IClientDb<IHost, DbModule, DbDataSource, DbSourceOptions, DbCoerceSettings> {
+  interface IDb extends IClientDb<IHost, DbModule, DbDataSource, DbSourceOptions, DbCoerceSettings & DbCacheSettings> {
       setCredential(item: DbDataSource): Promise<void>;
       getCredential(item: DbDataSource): PlainObject;
       hasSource(source: string, ...type: number[]): boolean;
@@ -38,8 +38,10 @@ Interface
       readTLSCert(value: unknown, cache?: boolean): string;
       readTLSConfig(options: SecureContextOptions, cache?: boolean): void;
       settingsOf(source: string, name: keyof Omit<DbSourceOptions, "coerce">): unknown;
+      settingsOf(source: string, name: "cache", component: keyof DbCacheSettings): unknown;
       settingsOf(source: string, name: "coerce", component: keyof DbCoerceSettings): unknown;
       settingsKey(source: string, name: keyof Omit<DbSourceOptions, "coerce">): unknown;
+      settingsKey(source: string, name: "cache", component: keyof DbCacheSettings): unknown;
       settingsKey(source: string, name: "coerce", component: keyof DbCoerceSettings): unknown;
       getPoolConfig(source: string, uuidKey?: string): Required<PoolConfig> | undefined;
       get sourceType(): DB_TYPE;

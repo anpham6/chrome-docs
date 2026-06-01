@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changed &mdash; E-mc 0.14.0 documentation</title>
+  <title>Changed &mdash; E-mc 0.14.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=9e420a66"></script>
+      <script src="../_static/documentation_options.js?v=0dc20415"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -129,7 +129,10 @@
 <td><p>DbPoolConstructor function sanitize argument sort as boolean for deterministic cache keys was created.</p></td>
 </tr>
 <tr class="row-odd"><td><p>modules/file-manager</p></td>
-<td><p>IRequest global settings headers with an Authorization header is no longer cached except when combined with a Cache-Control header.</p></td>
+<td><p>IRequest OpenOptions property headers with an Authorization request header is no longer cached without a Cache-Control response header.</p></td>
+</tr>
+<tr class="row-even"><td><p>modules/types</p></td>
+<td><p>BREAKING function purgeMemory unimplemented argument percent was replaced with type as 0 | 1.</p></td>
 </tr>
 </tbody>
 </table>
@@ -160,7 +163,7 @@ locateSourceFiles
 resolveSourceFile</p></td>
 </tr>
 <tr class="row-even"><td><p>modules/types</p></td>
-<td><p>BREAKING function hashKey argument algorithm uses “sha256” instead of “md5” as default value.
+<td><p>BREAKING function hashKey argument algorithm default value was changed from “md5” to “sha256”.
 
 function setTempDir argument lock as boolean can be used at initialization to prevent unauthorized modification.</p></td>
 </tr>
@@ -244,7 +247,7 @@ RequestModule property proxy.keep_alive_interval for throttling the keep alive p
 </thead>
 <tbody>
 <tr class="row-even"><td><p>modules/types</p></td>
-<td><p>BREAKING function cloneObject uses a WeakMap&lt;object, object&gt; for reference tracking and does not contain any references from the source object.</p></td>
+<td><p>BREAKING function cloneObject uses a WeakMap&lt;object, object&gt; internally for reference tracking.</p></td>
 </tr>
 </tbody>
 </table>
@@ -431,10 +434,7 @@ function parseExpires argument epoch as true for starting the interval from Unix
 <tr class="row-even"><td><p>cloud/oci</p></td>
 <td><p>BREAKING There is no special handling when uploading the file extension “.map”. CloudStorageUpload property descendantsGroup as [“.map”] can be used to restore the old behavior.</p></td>
 </tr>
-<tr class="row-odd"><td><p>compress/index</p></td>
-<td><p>Package will be developed under pi-r for future releases. 2</p></td>
-</tr>
-<tr class="row-even"><td><p>db/mongodb</p></td>
+<tr class="row-odd"><td><p>db/mongodb</p></td>
 <td><p>BREAKING MongoDB object CommandOperationOptions is no longer coerced into JS native objects.
 
 Db instance abort signal is attached to these commands:
@@ -445,18 +445,12 @@ collection.aggregate
 
 db.command</p></td>
 </tr>
-<tr class="row-odd"><td><p>db/redis</p></td>
-<td><p>Package will be developed under pi-r for future releases. 1</p></td>
-</tr>
-<tr class="row-even"><td><p>image/index</p></td>
-<td><p>Package will be developed under pi-r for future releases. 8</p></td>
-</tr>
-<tr class="row-odd"><td><p>modules/compress</p></td>
+<tr class="row-even"><td><p>modules/compress</p></td>
 <td><p>ICompress function tryFile | tryImage enforce read (file) and write (output) permissions.
 
 BREAKING type PluginCompressor argument mimeType as string was replaced with metadata as PlainObject.</p></td>
 </tr>
-<tr class="row-even"><td><p>modules/core</p></td>
+<tr class="row-odd"><td><p>modules/core</p></td>
 <td><p>BREAKING Permission glob matchers picomatch | minimatch do not set any initial options other than nocase for Windows.
 
 HostConstructor function kill can be called without iv when using a pre-encrypted username.
@@ -471,26 +465,26 @@ setUNCRead
 
 setUNCWrite</p></td>
 </tr>
-<tr class="row-odd"><td><p>modules/document</p></td>
+<tr class="row-even"><td><p>modules/document</p></td>
 <td><p>IDocument function watchModified argument recursive as [string, string[]][] for directory watchers was created.</p></td>
 </tr>
-<tr class="row-even"><td><p>modules/file-manager</p></td>
+<tr class="row-odd"><td><p>modules/file-manager</p></td>
 <td><p>IFileManager function fetchFiles using the rclone:? protocol supports Rclone copy commands.
 
 IFileManager property getter retryLimit for failed attempts was created.</p></td>
 </tr>
-<tr class="row-odd"><td><p>modules/module</p></td>
+<tr class="row-even"><td><p>modules/module</p></td>
 <td><p>IModule function isFatal validates error objects are an instance of Error.</p></td>
 </tr>
-<tr class="row-even"><td><p>modules/module</p></td>
+<tr class="row-odd"><td><p>modules/module</p></td>
 <td><p>NodeModule property posix.strict was enabled by default.
 
 LoggerProcessSettings property enabled was implemented.</p></td>
 </tr>
-<tr class="row-odd"><td><p>modules/request</p></td>
+<tr class="row-even"><td><p>modules/request</p></td>
 <td><p>RequestModule settings section rclone for cloud storage copying was created.</p></td>
 </tr>
-<tr class="row-even"><td><p>modules/types</p></td>
+<tr class="row-odd"><td><p>modules/types</p></td>
 <td><p>function getTempDir optionally concatenates path segments (path.join) without creating any directories.</p></td>
 </tr>
 </tbody>
@@ -583,12 +577,6 @@ function supported argument lts as boolean can be used as the patch argument.</p
 <tr class="row-odd"><td><p>db/mssql</p></td>
 <td><p>NPM package tedious was upgraded from 18.6 to 19.2 with a NodeJS 18.17 requirement.</p></td>
 </tr>
-<tr class="row-even"><td><p>db/redis</p></td>
-<td><p>Package will be developed under pi-r2 for future releases. 2</p></td>
-</tr>
-<tr class="row-odd"><td><p>image/index</p></td>
-<td><p>Package will be developed under pi-r2 for future releases. 10</p></td>
-</tr>
 <tr class="row-even"><td><p>modules/cloud</p></td>
 <td><p>ICloud function deleteObjects argument recursive is a union with options as DeleteObjectsOptions.</p></td>
 </tr>
@@ -665,7 +653,7 @@ finalizeTask</p></td>
 <td><p>TaskConstructor function finalize return value was changed to Promise&lt;void&gt;.</p></td>
 </tr>
 <tr class="row-odd"><td><p>modules/types</p></td>
-<td><p>function createAbortError uses built-in DOMException (NodeJS 17) with name “AbortError**” and code 20.
+<td><p>function createAbortError uses native DOMException with name “AbortError” and code 20.
 
 function formatTime with argument char as “:” displays using digital clock format.
 
@@ -764,34 +752,7 @@ interface AddEventListenerOptions in dom was relocated to core.</p></td>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>cloud/ibm</p></td>
-<td><p>NPM packages upgraded with a minimum NodeJS 18 requirement:
-
-
-
-
-
-
-
-Package
-
-From
-
-To
-
-&#64;ibm-cloud/cloudant
-
-0.9
-
-0.10
-
-ibm-cloud-sdk-core
-
-4.3
-
-5.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>db/mssql</p></td>
+<tr class="row-even"><td><p>db/mssql</p></td>
 <td><p>NPM package tedious was upgraded from 16.7 to 18.3 with a NodeJS 18 requirement.</p></td>
 </tr>
 </tbody>

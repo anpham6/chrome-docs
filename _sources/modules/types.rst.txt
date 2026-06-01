@@ -7,7 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 28,31,56,59,66-69,75,97
+  :emphasize-lines: 28,31,56,59,66-69,75-80,102
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -84,7 +84,11 @@ Interface
   function importESM(name: string | URL, isDefault: boolean, fromPath?: boolean): Promise<unknown>;
   function importESM(name: string | URL, options?: ImportAttributes, fromPath?: boolean): Promise<unknown>;
   function requireESM(name: string, url?: string | URL, expect?: string): unknown;
-  function purgeMemory(percent?: number): number;
+  function purgeMemory(type: 1, exclude?: unknown[]): number;
+  function purgeMemory(type: 0): number;
+  function purgeMemory(type?: number, exclude?: unknown[]): number;
+  function manageGlobalObject(value: object): boolean;
+  function freeGlobalObject(value: object): boolean;
 
   interface LOG_TYPE {
       UNKNOWN: 0;
@@ -219,6 +223,14 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.14.1
+
+  - :alt:`function` **manageGlobalObject** | **freeGlobalObject** for releasing cached memory was created.
+
+.. versionchanged:: 0.14.1
+
+  - ``BREAKING`` :alt:`function` **purgeMemory** unimplemented argument :target:`percent` was replaced with :target:`type` as :alt:`0 | 1`.
+
 .. versionadded:: 0.14.0
 
   - :alt:`function` **getAlgorithm** for validating a supported hash algorithm was created.
@@ -228,7 +240,7 @@ Changelog
 
 .. versionchanged:: 0.14.0
 
-  - ``BREAKING`` :alt:`function` **hashKey** argument :target:`algorithm` uses ":lower:`sha256`" instead of ":lower:`md5`" as default value.
+  - ``BREAKING`` :alt:`function` **hashKey** argument :target:`algorithm` default value was changed from ":lower:`md5`" to ":lower:`sha256`".
   - :alt:`function` **setTempDir** argument :target:`lock` as :alt:`boolean` can be used at initialization to prevent unauthorized modification.
 
 .. versionremoved:: 0.14.0
@@ -259,7 +271,7 @@ Changelog
 
 .. versionchanged:: 0.13.4
 
-  - ``BREAKING`` :alt:`function` **cloneObject** uses a :target:`WeakMap<object, object>` for reference tracking and does not contain any references from the source object.
+  - ``BREAKING`` :alt:`function` **cloneObject** uses a :target:`WeakMap<object, object>` internally for reference tracking.
 
 .. note:: Backported: 0.12.11
 
@@ -373,7 +385,7 @@ Changelog
 
 .. versionchanged:: 0.10.0
 
-  - :alt:`function` **createAbortError** uses built-in *DOMException* :alt:`(NodeJS 17)` with name ":lower:`AbortError**`" and code **20**.
+  - :alt:`function` **createAbortError** uses native *DOMException* with name ":lower:`AbortError`" and code **20**.
   - :alt:`function` **formatTime** with argument :target:`char` as ":lower:`:`" displays using digital clock format.
   - :alt:`interface` **CloneObjectOptions** in :alt:`module` was relocated to :target:`types`.
   - :alt:`type` **Writeable** was renamed :target:`Writable`.

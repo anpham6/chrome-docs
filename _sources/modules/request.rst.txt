@@ -9,11 +9,11 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 34
+  :emphasize-lines: 34,41-42
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { HttpAdapterConstructor, HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
-  import type { ApplyOptions, Aria2Options, HeadersOnCallback, HostConfig, OpenOptions, PostFileParts, PostOptions, ProxySettings, PutOptions, RcloneOptions, ReadExpectType, RequestInit, StatusOnCallback } from "./request";
+  import type { ApplyOptions, Aria2Options, HeadersOnCallback, HostConfig, OpenOptions, PatchOptions, PostFileParts, PostOptions, ProxySettings, PutOptions, RcloneOptions, ReadExpectType, RequestInit, StatusOnCallback } from "./request";
   import type { DnsLookupSettings, RequestModule, RequestSettings } from "./settings";
 
   import type { ClientRequest, OutgoingHttpHeaders } from "node:http";
@@ -51,6 +51,8 @@ Interface
       head(uri: string | URL, options?: OpenOptions): ClientRequest;
       put(uri: string | URL, data: unknown, options: PutOptions): Promise<Buffer | string | null>;
       put(uri: string | URL, data: unknown, contentType?: string, options?: PutOptions): Promise<Buffer | string | null>;
+      patch(uri: string | URL, data: unknown, options: PatchOptions): Promise<Buffer | string | null>;
+      patch(uri: string | URL, data: unknown, contentType?: string, options?: PatchOptions): Promise<Buffer | string | null>;
       post(uri: string | URL, parts: PostFileParts): Promise<Buffer | string | null>;
       post(uri: string | URL, form: Record<string, unknown>, parts: PostFileParts): Promise<Buffer | string | null>;
       post(uri: string | URL, data: unknown, options: PostOptions): Promise<Buffer | string | null>;
@@ -90,6 +92,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.14.3
+
+  - *IRequest* :alt:`function` **patch** for *HTTP* method :target:`PATCH` was created.
 
 .. versionadded:: 0.13.9
 

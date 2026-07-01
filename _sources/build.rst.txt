@@ -37,6 +37,7 @@ Example usage
 
     stripCommentsAndCDATA: true, // Remove unused code and non-void tags from HTML
     stripCommentsAndCDATA: "script|picture", // Additional tags to remove using RegExp group notation
+    stripStyleComments: false, // Remove all CSS comments
 
     /* Use when there are parsing errors */
     normalizeHtmlOutput: true, // Escape illegal tags and remove unnecessary trailing spaces

@@ -42,17 +42,17 @@ NodeJS Support
     - 18.x
     - 16.x
   * - Base
-    - `0.14.4 <https://github.com/anpham6/e-mc/releases/tag/v0.14.4>`_
-    - `0.14.4 <https://github.com/anpham6/e-mc/releases/tag/v0.14.4>`_
-    - `0.14.4 <https://github.com/anpham6/e-mc/releases/tag/v0.14.4>`_
-    - `0.14.4 <https://github.com/anpham6/e-mc/releases/tag/v0.14.4>`_
+    - `0.14.5 <https://github.com/anpham6/e-mc/releases/tag/v0.14.5>`_
+    - `0.14.5 <https://github.com/anpham6/e-mc/releases/tag/v0.14.5>`_
+    - `0.14.5 <https://github.com/anpham6/e-mc/releases/tag/v0.14.5>`_
+    - `0.14.5 <https://github.com/anpham6/e-mc/releases/tag/v0.14.5>`_
     - `0.12.17 <https://github.com/anpham6/e-mc/releases/tag/v0.12.17>`_
     - `0.10.21 <https://github.com/anpham6/e-mc/releases/tag/v0.10.21>`_
   * - LTS
     - :alt:`0.15.0`
-    - `0.14.4 <https://github.com/anpham6/e-mc/releases/tag/v0.14.4>`_
-    - `0.14.4 <https://github.com/anpham6/e-mc/releases/tag/v0.14.4>`_
-    - `0.14.4 <https://github.com/anpham6/e-mc/releases/tag/v0.14.4>`_
+    - `0.14.5 <https://github.com/anpham6/e-mc/releases/tag/v0.14.5>`_
+    - `0.14.5 <https://github.com/anpham6/e-mc/releases/tag/v0.14.5>`_
+    - `0.14.5 <https://github.com/anpham6/e-mc/releases/tag/v0.14.5>`_
     - `0.13.11 <https://github.com/anpham6/e-mc/releases/tag/v0.13.11>`_
     - `0.11.18 <https://github.com/anpham6/e-mc/releases/tag/v0.11.18>`_
 

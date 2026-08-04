@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 73,82,119
+  :emphasize-lines: 73,82,113,120,124
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -123,6 +123,7 @@ Interface
   interface ClientDbConstructor extends ClientConstructor<IHost, ClientModule> {
       STORE_RESULT_PARTITION_SIZE: number;
       STORE_RESULT_PARTITION_MULT: number;
+      STORE_RESULT_KEY_SEPARATOR: string;
       readonly TRANSACTION_ACTIVE: number;
       readonly TRANSACTION_PARTIAL: number;
       readonly TRANSACTION_COMMIT: number;
@@ -133,6 +134,7 @@ Interface
       loadSettings(settings: Pick<Settings, "process" | "memory">, password?: string) : boolean;
       getTimeout(value: number | string | TimeoutAction | undefined): number;
       convertTime(value: number | string): number;
+      keyForResult(...items: unknown[]): string;
       findResult(source: string, credential: unknown, queryString: string, timeout: number, renewCache: boolean): QueryResult | undefined;
       findResult(source: string, credential: unknown, queryString: string, timeout: number, sessionKey?: string, renewCache?: boolean): QueryResult | undefined;
       storeResult(source: string, credential: unknown, queryString: string, result: QueryResult, options: StoreResultOptions): QueryResult;
@@ -261,6 +263,11 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.14.6
+
+  - *ClientDbConstructor* :alt:`function` **keyForResult** for creating cache keys with placeholders was created.
+  - *ClientDbConstructor* :alt:`property` **STORE_RESULT_KEY_SEPARATOR** for delimiting cache key items was created.
 
 .. versionadded:: 0.14.0
 

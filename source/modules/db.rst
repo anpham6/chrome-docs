@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 28,31,47-48,92
+  :emphasize-lines: 28,31,47-48,52,94
 
   import type { DbDataSource } from "./squared";
 
@@ -57,10 +57,12 @@ Interface
   }
 
   interface DbConstructor extends ClientDbConstructor<IHost> {
+      REFESH_AHEAD_GC_INTERVAL: number;
       readonly HASH_ALGORITHM: string;
       loadSettings(settings: Settings & { db?: DbSettings }, password?: string): boolean;
       setPoolConfig(value: Record<string, PoolConfig>): void;
       getPoolConfig(source: string): Required<PoolConfig> | undefined;
+      clearInterval(uuidKey: string): void;
       readonly prototype: IDb;
       new(module?: DbModule, database?: DbDataSource[], ...args: unknown[]): IDb;
   }
@@ -113,6 +115,11 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.14.6
+
+  - *DbConstructor* :alt:`function` **clearInterval** for key-based cache eviction was created.
+  - *DbConstructor* :alt:`property` **REFESH_AHEAD_GC_INTERVAL** for garbage collection frequency was created.
 
 .. versionchanged:: 0.14.1
 
@@ -189,6 +196,10 @@ Settings
 
 Changelog
 =========
+
+.. versionadded:: 0.14.6
+
+  - *DbModule* settings group item property **user_key["uuid"].refresh_ahead** as :alt:`RefreshAheadInterval` was implemented.
 
 .. versionadded:: 0.14.0
 

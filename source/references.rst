@@ -72,6 +72,7 @@ https://unpkg.com/@e-mc/types/lib/document.d.ts
 
 https://unpkg.com/@e-mc/types/lib/db.d.ts
   | `CascadeAction <search.html?q=CascadeAction>`_
+  | `RefreshAheadInterval <search.html?q=RefreshAheadInterval>`_
   | `ServerAuth <search.html?q=ServerAuth>`_
 
 .. _references-e-mc-types-lib-cloud:

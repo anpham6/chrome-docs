@@ -69,7 +69,7 @@ Interface
   function decryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
   function hashKey(data: BinaryLike, algorithm?: string, encoding?: BinaryToTextEncoding): string;
   function incrementUUID(restart?: boolean): string;
-  function validateUUID(value: unknown): boolean;
+  function validateUUID(value: unknown): value is string;
   function sanitizeCmd(value: string, ...args: unknown[]): string;
   function sanitizeArgs(value: string, doubleQuote?: boolean): string;
   function sanitizeArgs(values: string[], doubleQuote?: boolean): string[];

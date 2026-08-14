@@ -14,8 +14,8 @@ Interface
       query?: unknown; // SELECT statement or equivalent syntax
       encoding?: BufferEncoding;
 
-      ignoreCache?: boolean; // Bypass cache without saving
-      ignoreCache?: 0 | 1; // 0 - renew cache expiration | 1 - purge cache with saving
+      ignoreCache?: boolean; // Bypass write-through cache
+      ignoreCache?: 0 | 1; // 0 - renew expiration | 1 - bypass read continue with write-through
       ignoreCache?: [number, number?, number?]; // n <= min | n > max | renew=0,bypass=1,purge=2
 
       /* Module: Document */
@@ -89,7 +89,4 @@ Global
       password?: string;
   }
 
-.. attention:: Enabling **usePool** with a *UUID* key will also copy the value into ``credential.uuidKey`` [#]_.
-
 .. [#] Purging is supported only when using **0.13.x**.
-.. [#] Does not override other existing uuidKey sessions.

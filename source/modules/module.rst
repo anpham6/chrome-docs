@@ -400,7 +400,6 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 162
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";

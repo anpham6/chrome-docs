@@ -7,7 +7,6 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
-  :emphasize-lines: 28,31,56,59,66-69,75-80,102
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";

@@ -211,7 +211,6 @@ Interface
 ---------
 
 .. code-block:: typescript
-  :emphasize-lines: 19-20
 
   import type { AggregateSpec, FieldPath } from "@google-cloud/firestore";
   import type { PathType } from "@google-cloud/datastore";

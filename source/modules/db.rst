@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 28,31,47-48,52,94
+  :emphasize-lines: 47,52
 
   import type { DbDataSource } from "./squared";
 
@@ -158,9 +158,9 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.db.json>`_
-  :emphasize-lines: 15-18
+  :emphasize-lines: 18,21
 
-  import type { DbSourceOptions, ImportModule, PurgeComponent } from "./settings";
+  import type { DbSourceOptions, ImportModule, PurgeComponent, RefreshAheadAction } from "./settings";
 
   interface DbModule {
       // handler: "@e-mc/db";
@@ -177,9 +177,10 @@ Settings
           cache?: {
               dir?: string;
               algorithm?: string;
+              refresh_ahead?: number | boolean;
           };
           session_expires?: number;
-          user_key?: Record<string, DbSourceOptions>;
+          user_key?: Record<string, DbSourceOptions & RefreshAheadAction>;
           imports?: ImportModule;
           purge?: PurgeComponent;
           mariadb?: DbSourceOptions;
@@ -199,7 +200,8 @@ Changelog
 
 .. versionadded:: 0.14.6
 
-  - *DbModule* settings group item property **user_key["uuid"].refresh_ahead** as :alt:`RefreshAheadInterval` was implemented.
+  - *DbModule* settings sub-property **cache.refresh_ahead** for garbage collection interval was implemented.
+  - *DbModule* settings group item sub-property **user_key["uuid"].refresh_ahead** as :alt:`RefreshAheadInterval` was implemented.
 
 .. versionadded:: 0.14.0
 

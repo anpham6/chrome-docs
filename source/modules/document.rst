@@ -9,7 +9,6 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 23-24,26-28,55,67,69
 
   import type { DataSource, ViewEngine } from "./squared";
 
@@ -136,7 +135,6 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 28-30,37-39
 
   import type { PermittedDirectories } from "./core";
   import type { DbModule, DbSettings, DocumentComponentOptions, ImportModule, PurgeComponent } from "./settings";

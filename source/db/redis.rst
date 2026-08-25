@@ -9,7 +9,6 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 45
 
   import type { RediSearchSchema, RedisClientOptions, SearchOptions } from "redis";
 
@@ -83,7 +82,6 @@ Pool
 ----
 
 .. code-block:: typescript
-  :emphasize-lines: 6
 
   import type { RedisPoolOptions } from "redis";
 

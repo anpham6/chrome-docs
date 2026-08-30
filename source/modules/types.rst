@@ -217,7 +217,7 @@ Interface
       LOGGER_METER_INCREMENT: number;
   }
 
-  const IMPORT_MAP: StringMap;
+  const IMPORT_MAP: Record<string, string | undefined>;
 
 Changelog
 =========

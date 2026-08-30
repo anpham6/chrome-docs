@@ -490,7 +490,7 @@ Settings
               bold?: boolean;
               justify?: "left" | "center" | "right";
               braces?: string;
-              as?: StringMap;
+              as?: Record<string, string | undefined>;
           };
           value?: {
               width?: number;
@@ -505,7 +505,7 @@ Settings
               bg_color?: BackgroundColor;
               bold?: boolean;
               braces?: [string, string];
-              as?: StringMap;
+              as?: Record<string, string | undefined>;
               unit?: "auto" | "s" | "ms";
           };
           message?: {

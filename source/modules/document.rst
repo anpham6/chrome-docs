@@ -32,7 +32,7 @@ Interface
       asSourceFile(value: string, cache: boolean): unknown;
       asSourceFile(value: string, options?: AsSourceFileOptions): unknown;
       findVersion(name: string | string[], fallback?: string): string;
-      findSourceScope(uri: string, imports: ImportModule): StringMap[];
+      findSourceScope(uri: string, imports: ImportModule): Record<string, string | undefined>[];
       findSourceRoot(uri: string, imports?: ImportModule): string | undefined;
       resolveDir(name: string, ...paths: string[]): string | undefined;
       locateSourceFiles(file: ExternalAsset, code?: string, bundleContent?: string[]): ((imports?: ImportModule) => SourceInput | undefined);
@@ -97,8 +97,8 @@ Changelog
 
 .. versionchanged:: 0.14.0
 
-  - *IDocument* :alt:`property` accessor **imports** as :alt:`StringMap` was changed to :target:`ImportModule`:
-  - *IDocument* :alt:`function` parameter **imports** as :alt:`StringMap` was changed to :target:`ImportModule`:
+  - *IDocument* :alt:`property` accessor **imports** as :alt:`Record<string, string | undefined>` was changed to :target:`ImportModule`:
+  - *IDocument* :alt:`function` parameter **imports** as :alt:`Record<string, string | undefined>` was changed to :target:`ImportModule`:
 
     .. hlist::
       :columns: 4

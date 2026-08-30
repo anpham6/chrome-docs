@@ -12,7 +12,6 @@ squared
 
 https://unpkg.com/squared/types/type.d.ts
   | `PlainObject <search.html?q=PlainObject>`_
-  | `StringMap <search.html?q=StringMap>`_
 
 .. _references-squared-base-resource:
 .. rst-class:: block-list

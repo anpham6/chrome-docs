@@ -16,7 +16,7 @@ Interface
       external?: PlainObject;
   }
 
-.. code-block::
+::
 
   import type { IModule } from "../../types/lib";
   import type { ChunkData, FindModuleOptions, SourceInput, SourceMap } from "../../types/document";

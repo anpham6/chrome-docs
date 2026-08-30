@@ -11,7 +11,7 @@ Example usage
 
 .. highlight:: javascript
 
-.. code-block::
+::
 
   squared.saveAs("index.zip", {
     productionRelease: true, // Ignore local URL rewriting and use actual path

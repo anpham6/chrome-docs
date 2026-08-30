@@ -4,7 +4,7 @@ Interface
 
 .. highlight:: typescript
 
-.. code-block::
+::
 
   interface DataSource {
       source: string;
@@ -30,7 +30,8 @@ Interface
       transactionFail?: boolean;
   }
 
-::
+.. code-block::
+  :emphasize-lines: 25
 
   interface DbDataSource extends DataSource {
       source: string; // Built-in alias | NPM package name
@@ -56,6 +57,7 @@ Interface
 
       usePool?: boolean; // Globally managed and released
       usePool?: string; // UUIDv1-5 shared session key (db.settings.user_key: username@server/database)
+      keyFor?: Record<string, string | undefined>; // UUIDv1-5 user key for referencing optional features
 
       /* Module: Document */
       willAbort?: boolean; // Abort is called bypassing settings
@@ -63,6 +65,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.14.6
+
+  - *DbDataSource* property **keyFor** as :alt:`Record<string, string | undefined>` for additional configuration through settings was created.
 
 .. versionadded:: 0.13.6
 

@@ -163,6 +163,10 @@ Thick Mode
 @pi-r/oracle
 ============
 
+.. versionadded:: 0.13.0
+
+  - *NPM* package **oracledb** was upgraded from *6.10* to :target:`7.0` with a :alt:`NodeJS 14.17` requirement.
+
 .. versionadded:: 0.10.0
 
   - *DbPool* static property **CACHE_IGNORE** through :target:`@pi-r/oracle/client/pool` as :alt:`keyof PoolAttributes` was implemented.

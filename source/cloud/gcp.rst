@@ -691,6 +691,11 @@ Realtime Database
 @pi-r/gcp
 =========
 
+.. versionadded:: 0.13.0
+
+  - *NPM* package **@google-cloud/firestore** was upgraded from *8.7* to :target:`9.0` with a :alt:`NodeJS 22` requirement.
+  - *NPM* package **@google-cloud/storage** was upgraded from *7.22* to :target:`8.0` with a :alt:`NodeJS 22` requirement.
+
 .. versionadded:: 0.12.0
 
   - *Firestore* pipeline :alt:`(beta)` queries are supported.

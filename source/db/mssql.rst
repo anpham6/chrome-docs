@@ -168,9 +168,13 @@ Example usage
 @pi-r/mssql
 ===========
 
-.. versionchanged:: 0.11.0
+.. versionadded:: 0.13.0
 
-  - NPM package **tedious** was upgraded from *18.6* to :target:`19.2` with a :alt:`NodeJS 18.17` requirement.
+  - *NPM* package **tedious** was upgraded from *19.2* to :target:`20.0` with a :alt:`NodeJS 22` requirement.
+
+.. versionadded:: 0.11.0
+
+  - *NPM* package **tedious** was upgraded from *18.6* to :target:`19.2` with a :alt:`NodeJS 18.17` requirement.
 
 .. versionadded:: 0.8.0
 
@@ -187,6 +191,6 @@ Example usage
       - azure-active-directory-service-principal-secret
       - token-credential
 
-.. versionchanged:: 0.8.0
+.. versionadded:: 0.8.0
 
-  - NPM package **tedious** was upgraded from *16.7* to :target:`18.3` with a :alt:`NodeJS 18` requirement.
+  - *NPM* package **tedious** was upgraded from *16.7* to :target:`18.3` with a :alt:`NodeJS 18` requirement.

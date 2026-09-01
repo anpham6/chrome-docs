@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MongoDB &mdash; E-mc 0.14.5 documentation</title>
+  <title>MongoDB &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -115,10 +115,10 @@
 </div>
 <section id="interface">
 <h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="s2">&quot;m&quot;</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;mongodb&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="s2">"m"</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"mongodb"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">MongoDBDataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mongodb&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"mongodb"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">table</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 
 <span class="w">    </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Connection string</span>
@@ -128,8 +128,8 @@
 <span class="w">    </span><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Uses ObjectId</span>
 <span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Filter</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">query</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Filter</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.CommandOperationOptions</span><span class="w"> </span><span class="p">};</span>
-<span class="hll"><span class="w">    </span><span class="nx">withFields?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Document</span><span class="p">;</span><span class="w"> </span><span class="c1">// FindCursor.project</span>
-</span>
+<span class="w">    </span><span class="nx">withFields?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Document</span><span class="p">;</span><span class="w"> </span><span class="c1">// FindCursor.project</span>
+
 <span class="w">    </span><span class="nx">aggregate?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Document</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">pipeline</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Document</span><span class="p">[],</span><span class="w"> </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">m.AggregateOptions</span><span class="w"> </span><span class="p">};</span>
 <span class="w">    </span><span class="nx">distinct?</span><span class="o">:</span><span class="w"> </span><span class="kt">keyof</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">WithId</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="nx">keyof</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">WithId</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">Filter</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;?</span><span class="p">,</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">DistinctOptions</span><span class="o">?</span><span class="p">];</span>
 
@@ -141,19 +141,19 @@
 
 <span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.MongoClientOptions</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">UpdateFilter</span><span class="o">&lt;</span><span class="nx">m</span><span class="p">.</span><span class="nx">Document</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">OptionalUnlessRequiredId</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">client</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">db?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.DbOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;name&quot;</span>
-<span class="w">        </span><span class="nx">collection?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.CollectionOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;table&quot;</span>
-<span class="w">        </span><span class="nx">command?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.RunCommandOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;command&quot;</span>
-<span class="w">        </span><span class="nx">bulkWrite?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.ClientBulkWriteOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;bulkWrite&quot;</span>
+<span class="w">        </span><span class="nx">db?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.DbOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with "name"</span>
+<span class="w">        </span><span class="nx">collection?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.CollectionOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with "table"</span>
+<span class="w">        </span><span class="nx">command?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.RunCommandOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with "command"</span>
+<span class="w">        </span><span class="nx">bulkWrite?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.ClientBulkWriteOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with "bulkWrite"</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="w">    </span><span class="nx">execute</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">insert?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.BulkWriteOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;update - insert&quot;</span>
-<span class="w">        </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.UpdateOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with &quot;update&quot;</span>
+<span class="w">        </span><span class="nx">insert?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.BulkWriteOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with "update - insert"</span>
+<span class="w">        </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.UpdateOptions</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used with "update"</span>
 <span class="w">    </span><span class="p">};</span>
 
 <span class="w">    </span><span class="nx">sort?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">Sort</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">m.Sort</span><span class="p">,</span><span class="w"> </span><span class="nx">direction</span><span class="o">:</span><span class="w"> </span><span class="kt">m.SortDirection</span><span class="w"> </span><span class="p">};</span>
-<span class="hll"><span class="w">    </span><span class="nx">timeoutMS?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Overrides MongoClient.timeoutMS</span>
-</span>
+<span class="w">    </span><span class="nx">timeoutMS?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Overrides MongoClient.timeoutMS</span>
+
 <span class="w">    </span><span class="nx">driverInfo?</span><span class="o">:</span><span class="w"> </span><span class="kt">m.DriverInfo</span><span class="p">;</span><span class="w"> </span><span class="c1">// appendMetadata</span>
 <span class="p">}</span>
 
@@ -162,7 +162,7 @@
 </div>
 <section id="pool">
 <h3>Pool<a class="headerlink" href="#pool" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MongoClientOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;mongodb&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MongoClientOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"mongodb"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">min?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// minPoolSize</span>
@@ -184,41 +184,41 @@
 <li><p><a class="reference external" href="https://www.mongodb.com/docs/drivers/node/current/security/authentication">Connection</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mongodb://&lt;username&gt;@&lt;password&gt;:localhost:27017&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mongodb://&lt;username&gt;@&lt;password&gt;:localhost:27017"</span><span class="p">,</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.db.json</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.db.json</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;server&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;localhost:27017&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// OR: 0.0.0.0</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost:27017"</span><span class="p">,</span><span class="w"> </span><span class="c1">// OR: 0.0.0.0</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;hostname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cluster0.abcdef.mongodb.net&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
-<span class="w">      </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8080</span><span class="p">,</span><span class="w"> </span><span class="c1">// Default is &quot;27017&quot;</span>
+<span class="w">      </span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cluster0.abcdef.mongodb.net"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
+<span class="w">      </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">8080</span><span class="p">,</span><span class="w"> </span><span class="c1">// Default is "27017"</span>
 
-<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span>
+<span class="w">      </span><span class="nt">"auth"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span>
 <span class="w">      </span><span class="p">},</span>
 
-<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* MongoClientOptions */</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* MongoClientOptions */</span><span class="p">},</span>
 
 <span class="w">      </span><span class="cm">/* Optional (override) */</span>
-<span class="w">      </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mongodb+srv:&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// &quot;mongodb:&quot; (default)</span>
+<span class="w">      </span><span class="nt">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mongodb+srv:"</span><span class="p">,</span><span class="w"> </span><span class="c1">// "mongodb:" (default)</span>
 
-<span class="w">      </span><span class="nt">&quot;authMechanism&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MONGODB-AWS&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;authMechanismProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;AWS_SESSION_TOKEN&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;authSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$external&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"authMechanism"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MONGODB-AWS"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"authMechanismProperties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"AWS_SESSION_TOKEN"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"authSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$external"</span><span class="p">,</span>
 
-<span class="w">      </span><span class="nt">&quot;tlsCertificateKeyFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/tls/x509/key.pem&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tlsCertificateKeyFilePassword&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tlsCAFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tlsCRLFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tlsAllowInvalidHostnames&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tlsAllowInvalidCertificates&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tlsInsecure&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">      </span><span class="nt">"tlsCertificateKeyFile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/path/to/tls/x509/key.pem"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tlsCertificateKeyFilePassword"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tlsCAFile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tlsCRLFile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tlsAllowInvalidHostnames"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tlsAllowInvalidCertificates"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tlsInsecure"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -231,56 +231,56 @@
 <li><p><a class="reference external" href="https://www.mongodb.com/docs/compass/query/filter">Query</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;img&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attribute&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mongodb&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"img"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attribute"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mongodb"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"table"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span>
 
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Database name (optional)</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Database name (optional)</span>
 
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Alias for &quot;_id&quot;</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Alias for "_id"</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;$eq&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"$eq"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;$regex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mongodb.*\\.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// $regex: /mongodb.*\.com/si</span>
-<span class="w">        </span><span class="nt">&quot;$options&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;si&quot;</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"$regex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mongodb.*\\.com"</span><span class="p">,</span><span class="w"> </span><span class="c1">// $regex: /mongodb.*\.com/si</span>
+<span class="w">        </span><span class="nt">"$options"</span><span class="p">:</span><span class="w"> </span><span class="s2">"si"</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;start_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;$gt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new Date(&#39;2021-01-01&#39;)&quot;</span><span class="w"> </span><span class="c1">// new Date(&quot;2021-01-01&quot;)</span>
+<span class="w">      </span><span class="nt">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"$gt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new Date('2021-01-01')"</span><span class="w"> </span><span class="c1">// new Date("2021-01-01")</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;$in&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;new RegExp(^mongodb, i)&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Quotes are optional [/^mongodb/i]</span>
-<span class="w">      </span><span class="nt">&quot;$where&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;function() { return this.name == &#39;mongodb.com&#39;; }&quot;</span><span class="w"> </span><span class="c1">// &quot;async&quot; is supported</span>
+<span class="w">      </span><span class="nt">"$in"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"new RegExp(^mongodb, i)"</span><span class="p">],</span><span class="w"> </span><span class="c1">// Quotes are optional [/^mongodb/i]</span>
+<span class="w">      </span><span class="nt">"$where"</span><span class="p">:</span><span class="w"> </span><span class="s2">"function() { return this.name == 'mongodb.com'; }"</span><span class="w"> </span><span class="c1">// "async" is supported</span>
 <span class="w">    </span><span class="p">},</span>
 
-<span class="w">    </span><span class="cm">/* Result: { &quot;item_src&quot;: &quot;mongo.png&quot;, &quot;item_alt&quot;: &quot;MongoDB&quot; } */</span>
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item_src&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item_alt&quot;</span>
+<span class="w">    </span><span class="cm">/* Result: { "item_src": "mongo.png", "item_alt": "MongoDB" } */</span>
+<span class="w">    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item_src"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item_alt"</span>
 <span class="w">    </span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;usePool&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;minPoolSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;maxPoolSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="nt">"usePool"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"minPoolSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"maxPoolSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
 <span class="w">    </span><span class="p">},</span>
 
 <span class="w">    </span><span class="cm">/* Update */</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item retrieved</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item retrieved</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Filter&lt;Document&gt; */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Filter&lt;Document&gt; */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.findOneAndUpdate</span>
-<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// limit &gt; 1 ? db.updateMany : db.findOneAndUpdate</span>
-<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.findOneAndReplace</span>
-<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.findOneAndDelete</span>
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* UpdateFilter&lt;Document&gt; */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"updateType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.findOneAndUpdate</span>
+<span class="w">    </span><span class="nt">"updateType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// limit &gt; 1 ? db.updateMany : db.findOneAndUpdate</span>
+<span class="w">    </span><span class="nt">"updateType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.findOneAndReplace</span>
+<span class="w">    </span><span class="nt">"updateType"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.findOneAndDelete</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* UpdateFilter&lt;Document&gt; */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* Document */</span><span class="p">,</span><span class="w"> </span><span class="cm">/* Document */</span><span class="p">]</span><span class="w"> </span><span class="c1">// Not related to query (db.insertMany)</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* Document */</span><span class="p">,</span><span class="w"> </span><span class="cm">/* Document */</span><span class="p">]</span><span class="w"> </span><span class="c1">// Not related to query (db.insertMany)</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -312,10 +312,10 @@
 </li>
 </ul>
 </div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.0: </span></p>
 <ul class="simple">
-<li><p>NPM package <strong>mongodb</strong> was upgraded from <em>6.2</em> to <em class="target">7.1</em> with a <em class="alt">NodeJS 20.19</em> requirement.</p></li>
+<li><p><em>NPM</em> package <strong>mongodb</strong> was upgraded from <em>6.2</em> to <em class="target">7.1</em> with a <em class="alt">NodeJS 20.19</em> requirement.</p></li>
 </ul>
 </div>
 <div class="versionadded">

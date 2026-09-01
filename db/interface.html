@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interface &mdash; E-mc 0.14.5 documentation</title>
+  <title>Interface &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -111,8 +111,8 @@
 <span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span><span class="w"> </span><span class="c1">// SELECT statement or equivalent syntax</span>
 <span class="w">    </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">BufferEncoding</span><span class="p">;</span>
 
-<span class="w">    </span><span class="nx">ignoreCache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Bypass cache without saving</span>
-<span class="w">    </span><span class="nx">ignoreCache?</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 0 - renew cache expiration | 1 - purge cache with saving</span>
+<span class="w">    </span><span class="nx">ignoreCache?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Bypass write-through cache</span>
+<span class="w">    </span><span class="nx">ignoreCache?</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 0 - renew expiration | 1 - bypass read continue with write-through</span>
 <span class="w">    </span><span class="nx">ignoreCache</span><span class="o">?:</span><span class="w"> </span><span class="p">[</span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="o">?</span><span class="p">];</span><span class="w"> </span><span class="c1">// n &lt;= min | n &gt; max | renew=0,bypass=1,purge=2</span>
 
 <span class="w">    </span><span class="cm">/* Module: Document */</span>
@@ -146,13 +146,14 @@
 <span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainObject</span><span class="p">;</span><span class="w"> </span><span class="c1">// Used to configure get commands</span>
 
 <span class="w">    </span><span class="cm">/* Module: Db */</span>
-<span class="w">    </span><span class="nx">withCommand?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">];</span><span class="w"> </span><span class="c1">// Will assign PlainObject from &quot;User = settings.users[username]&quot; to target</span>
+<span class="w">    </span><span class="nx">withCommand?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">];</span><span class="w"> </span><span class="c1">// Will assign PlainObject from "User = settings.users[username]" to target</span>
 <span class="w">    </span><span class="nx">withCommand</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Equivalent to [name:table || table || name || document, string]</span>
-<span class="w">    </span><span class="nx">withCommand</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">];</span><span class="w"> </span><span class="c1">// User.db.commands[&quot;0&quot;][&quot;1&quot;] = { query: unknown }</span>
+<span class="w">    </span><span class="nx">withCommand</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">];</span><span class="w"> </span><span class="c1">// User.db.commands["0"]["1"] = { query: unknown }</span>
 
 <span class="w">    </span><span class="nx">usePool?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Globally managed and released</span>
 <span class="w">    </span><span class="nx">usePool?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// UUIDv1-5 shared session key (db.settings.user_key: username@server/database)</span>
-
+<span class="hll"><span class="w">    </span><span class="nx">keyFor?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// UUIDv1-5 user key for referencing optional features</span>
+</span>
 <span class="w">    </span><span class="cm">/* Module: Document */</span>
 <span class="w">    </span><span class="nx">willAbort?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Abort is called bypassing settings</span>
 <span class="p">}</span>
@@ -161,6 +162,12 @@
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h2>
 <div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.6: </span></p>
+<ul class="simple">
+<li><p><em>DbDataSource</em> property <strong>keyFor</strong> as <em class="alt">Record&lt;string, string | undefined&gt;</em> for additional configuration through settings was created.</p></li>
+</ul>
+</div>
+<div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.13.6: </span></p>
 <ul class="simple">
 <li><p><em>DataSource</em> property <strong>ignoreCache</strong> as <em class="alt">number[]</em> can bypass storage and retrieval when result length is not within the specified range.</p></li>
@@ -168,7 +175,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Backported: 0.12.14 / 0.11.14 / 0.10.18 / 0.9.27 / 0.8.28 <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>Backported: 0.12.14 / 0.11.14 / 0.10.18 / 0.9.27 / 0.8.28 <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.10.1: </span></p>
@@ -190,18 +197,10 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Enabling <strong>usePool</strong> with a <em>UUID</em> key will also copy the value into <code class="docutils literal notranslate"><span class="pre">credential.uuidKey</span></code> <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
-</div>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="doc-footnote">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Purging is supported only when using <strong>0.13.x</strong>.</p>
-</aside>
-<aside class="footnote brackets" id="id4" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>Does not override other existing uuidKey sessions.</p>
 </aside>
 </aside>
 </section>

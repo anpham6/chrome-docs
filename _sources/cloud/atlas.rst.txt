@@ -121,9 +121,9 @@ Example usage
   - *AtlasDatabaseQuery* property **withFields** for use with projections was created.
   - *AtlasDatabaseQuery* property **timeoutMS** for limiting the duration of a single command operation was created.
 
-.. versionchanged:: 0.11.0
+.. versionadded:: 0.11.0
 
-  - NPM package **mongodb** was upgraded from *6.2* to :target:`7.1` with a :alt:`NodeJS 20.19` requirement.
+  - *NPM* package **mongodb** was upgraded from *6.2* to :target:`7.1` with a :alt:`NodeJS 20.19` requirement.
 
 .. versionadded:: 0.10.2
 

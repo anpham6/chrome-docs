@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Watch &mdash; E-mc 0.14.5 documentation</title>
+  <title>Watch &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -113,29 +113,29 @@
 <section id="using-json-config">
 <h2>Using JSON config<a class="headerlink" href="#using-json-config" title="Link to this heading"></a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;link&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;css&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// html | js | image</span>
-<span class="w">  </span><span class="nt">&quot;watch&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="c1">// Time between HTTP requests (ms)</span>
-<span class="w">    </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1m&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apr 29, 2024 5:00:00 PM&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Empty is immediate</span>
-<span class="w">    </span><span class="nt">&quot;expires&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1w 1d 1h 1m 1s&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Empty is never (includes &quot;start&quot;)</span>
-<span class="w">    </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// Will rebuild the entire bundle</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;watch1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Resets an existing watch when it is the first active socket</span>
-<span class="w">    </span><span class="nt">&quot;reload&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Uses server defaults</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"link"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"css"</span><span class="p">,</span><span class="w"> </span><span class="c1">// html | js | image</span>
+<span class="w">  </span><span class="nt">"watch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"interval"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="c1">// Time between HTTP requests (ms)</span>
+<span class="w">    </span><span class="nt">"interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1m"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apr 29, 2024 5:00:00 PM"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Empty is immediate</span>
+<span class="w">    </span><span class="nt">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1w 1d 1h 1m 1s"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Empty is never (includes "start")</span>
+<span class="w">    </span><span class="nt">"main"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// Will rebuild the entire bundle</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"watch1"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Resets an existing watch when it is the first active socket</span>
+<span class="w">    </span><span class="nt">"reload"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Uses server defaults</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;reload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;socketId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;111-111-111&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use same id to reload multiple pages</span>
-<span class="w">      </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;secure&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Requires TLS/SSL key and cert</span>
-<span class="w">      </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// &quot;img&quot; and &quot;link&quot; only</span>
-<span class="w">      </span><span class="nt">&quot;always&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// Ignore errors</span>
+<span class="w">    </span><span class="nt">"reload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"socketId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111-111-111"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use same id to reload multiple pages</span>
+<span class="w">      </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"secure"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Requires TLS/SSL key and cert</span>
+<span class="w">      </span><span class="nt">"module"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// "img" and "link" only</span>
+<span class="w">      </span><span class="nt">"always"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// Ignore errors</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;process&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;bundle&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;lint&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;minify&quot;</span>
+<span class="w">  </span><span class="nt">"process"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"bundle"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"lint"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"minify"</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
@@ -143,17 +143,17 @@
 </section>
 <section id="using-copyto-options">
 <h2>Using copyTo options<a class="headerlink" href="#using-copyto-options" title="Link to this heading"></a></h2>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">&quot;/local/user/www&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">"/local/user/www"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">watch</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">saveAs</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">script</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;../js&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">process</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;es5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;es5-minify&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">"../js"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">process</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"es5"</span><span class="p">,</span><span class="w"> </span><span class="s2">"es5-minify"</span><span class="p">],</span>
 <span class="w">      </span><span class="nx">watch</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nx">link</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;css&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">filename</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bundle.css&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">"css"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">filename</span><span class="o">:</span><span class="w"> </span><span class="s2">"bundle.css"</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">watch</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">interval</span><span class="o">:</span><span class="w"> </span><span class="mf">500</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
@@ -164,16 +164,16 @@
 <section id="using-jwt-authentication">
 <h2>Using JWT authentication<a class="headerlink" href="#using-jwt-authentication" title="Link to this heading"></a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;watch&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;http://localhost:3000/index.html&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Order of precedence</span>
-<span class="w">          </span><span class="nt">&quot;http://localhost:3000/**/*&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">},</span>
-<span class="w">          </span><span class="nt">&quot;/path/to/project/file&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Local</span>
-<span class="w">          </span><span class="nt">&quot;/path/to/project/**/*&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">},</span>
-<span class="w">          </span><span class="nt">&quot;image/png&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">},</span><span class="w"> </span><span class="c1">// MIME</span>
-<span class="w">          </span><span class="nt">&quot;image/*&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">}</span>
+<span class="w">  </span><span class="nt">"watch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"http://localhost:3000/index.html"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"interval"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Order of precedence</span>
+<span class="w">          </span><span class="nt">"http://localhost:3000/**/*"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">},</span>
+<span class="w">          </span><span class="nt">"/path/to/project/file"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Local</span>
+<span class="w">          </span><span class="nt">"/path/to/project/**/*"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">},</span>
+<span class="w">          </span><span class="nt">"image/png"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">},</span><span class="w"> </span><span class="c1">// MIME</span>
+<span class="w">          </span><span class="nt">"image/*"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
@@ -181,8 +181,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="s1">&#39;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&#39;</span><span class="p">);</span>
-<span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">&quot;/local/user/www&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="s1">'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'</span><span class="p">);</span>
+<span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">"/local/user/www"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">watch</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">saveAs</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">script</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">watch</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
@@ -196,23 +196,23 @@
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">JSON <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span>
-  <span class="na">src</span><span class="o">=</span><span class="s">&quot;/common/util.js&quot;</span>
-  <span class="na">data-chrome-watch</span><span class="o">=</span><span class="s">&#39;{ &quot;interval&quot;: 100, &quot;expires&quot;: &quot;1w 1d 1h 1m 1s&quot;, &quot;reload&quot;: { &quot;port&quot;: 443, &quot;secure&quot;: true } }&#39;</span><span class="p">&gt;</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">"/common/util.js"</span>
+  <span class="na">data-chrome-watch</span><span class="o">=</span><span class="s">'{ "interval": 100, "expires": "1w 1d 1h 1m 1s", "reload": { "port": 443, "secure": true } }'</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">interval :: expires :: reload</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/common/util.css&quot;</span> <span class="na">data-chrome-watch</span><span class="o">=</span><span class="s">&quot;1000::1h 30m::111-111-111:8080[module|secure|always]&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/common/util.css"</span> <span class="na">data-chrome-watch</span><span class="o">=</span><span class="s">"1000::1h 30m::111-111-111:8080[module|secure|always]"</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">Settings</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/common/util.css&quot;</span> <span class="na">data-chrome-watch</span><span class="o">=</span><span class="s">&quot;~&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/common/util.css"</span> <span class="na">data-chrome-watch</span><span class="o">=</span><span class="s">"~"</span><span class="p">&gt;</span>
 <span class="cm">&lt;!-- OR --&gt;</span>
-<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/common/util.css&quot;</span> <span class="na">data-chrome-watch</span><span class="o">=</span><span class="s">&quot;~::~::[secure|always]&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/common/util.css"</span> <span class="na">data-chrome-watch</span><span class="o">=</span><span class="s">"~::~::[secure|always]"</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -228,9 +228,9 @@
 <p><em>HTML</em> only has partial watch support since most local modifications will alter the original element index position stored in memory. Inline source <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;style&gt;</span></code> cannot be edited when they are part of a bundle.</p>
 <p>Elements that are configured <em class="alt">(e.g. dataSource)</em> are not editable as the original request values will be used on a reload.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -243,19 +243,19 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">Build output</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;active&quot;</span><span class="p">&gt;</span>content<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"active"</span><span class="p">&gt;</span>content<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">Edit source</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;inactive&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: none;&quot;</span><span class="p">&gt;</span>content<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"inactive"</span> <span class="na">style</span><span class="o">=</span><span class="s">"display: none;"</span><span class="p">&gt;</span>content<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text">Watch output</span><a class="headerlink" href="#id9" title="Link to this code"></a></div>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;active&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: none;&quot;</span><span class="p">&gt;</span>content<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"active"</span> <span class="na">style</span><span class="o">=</span><span class="s">"display: none;"</span><span class="p">&gt;</span>content<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Appending source &mdash; E-mc 0.14.5 documentation</title>
+  <title>Appending source &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -110,11 +110,11 @@
   <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
   <span class="cm">&lt;!-- Google Analytics --&gt;</span>
   <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">ga</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">ga</span><span class="o">||</span><span class="kd">function</span><span class="p">(){(</span><span class="nx">ga</span><span class="p">.</span><span class="nx">q</span><span class="o">=</span><span class="nx">ga</span><span class="p">.</span><span class="nx">q</span><span class="o">||</span><span class="p">[]).</span><span class="nx">push</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)};</span><span class="nx">ga</span><span class="p">.</span><span class="nx">l</span><span class="o">=+</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">;</span>
-<span class="w">  </span><span class="nx">ga</span><span class="p">(</span><span class="s1">&#39;create&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;UA-XXXXX-Y&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;auto&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">ga</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pageview&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nb">window</span><span class="p">.</span><span class="nx">ga</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">ga</span><span class="o">||</span><span class="kd">function</span><span class="p">(){(</span><span class="nx">ga</span><span class="p">.</span><span class="nx">q</span><span class="o">=</span><span class="nx">ga</span><span class="p">.</span><span class="nx">q</span><span class="o">||</span><span class="p">[]).</span><span class="nx">push</span><span class="p">(</span><span class="nb">arguments</span><span class="p">)};</span><span class="nx">ga</span><span class="p">.</span><span class="nx">l</span><span class="o">=+</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">ga</span><span class="p">(</span><span class="s1">'create'</span><span class="p">,</span><span class="w"> </span><span class="s1">'UA-XXXXX-Y'</span><span class="p">,</span><span class="w"> </span><span class="s1">'auto'</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">ga</span><span class="p">(</span><span class="s1">'send'</span><span class="p">,</span><span class="w"> </span><span class="s1">'pageview'</span><span class="p">);</span>
 <span class="w">  </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://www.google-analytics.com/analytics.js&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">src</span><span class="o">=</span><span class="s">'https://www.google-analytics.com/analytics.js'</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="cm">&lt;!-- End Google Analytics --&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -125,17 +125,17 @@
 <p>The equivalent command through a configuration file. <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;append/script&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// All tags except &quot;html&quot;</span>
-<span class="w">    </span><span class="nt">&quot;textContent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;\\nwindow.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;\\nga(&#39;create&#39;, &#39;UA-XXXXX-Y&#39;, &#39;auto&#39;);\\nga(&#39;send&#39;, &#39;pageview&#39;);\\n&quot;</span>
+<span class="w">    </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"title"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"append/script"</span><span class="p">,</span><span class="w"> </span><span class="c1">// All tags except "html"</span>
+<span class="w">    </span><span class="nt">"textContent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"\\nwindow.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;\\nga('create', 'UA-XXXXX-Y', 'auto');\\nga('send', 'pageview');\\n"</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;append/js&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// prepend/css</span>
-<span class="w">    </span><span class="nt">&quot;download&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Explicit &quot;false&quot;</span>
-<span class="w">    </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.google-analytics.com/analytics.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// CSS: href (required)</span>
-<span class="w">      </span><span class="nt">&quot;async&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"title"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"append/js"</span><span class="p">,</span><span class="w"> </span><span class="c1">// prepend/css</span>
+<span class="w">    </span><span class="nt">"download"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Explicit "false"</span>
+<span class="w">    </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.google-analytics.com/analytics.js"</span><span class="p">,</span><span class="w"> </span><span class="c1">// CSS: href (required)</span>
+<span class="w">      </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>

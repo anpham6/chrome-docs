@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request &mdash; E-mc 0.14.5 documentation</title>
+  <title>Request &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -127,36 +127,36 @@
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">squared.json <a class="footnote-reference brackets" href="#opt" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;download&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;aria2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;bin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;exec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;uid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;gid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="nt">"download"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"aria2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"bin"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"exec"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"gid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;update_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;broadcast_only&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">      </span><span class="nt">"update_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"interval"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"broadcast_only"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;max_concurrent_downloads&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;max_connection_per_server&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;check_integrity&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;min_split_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;lowest_speed_limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;bt_stop_timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;bt_tracker_connect_timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;bt_tracker_timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;disk_cache&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;always_resume&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;file_allocation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;proxy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;http&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;https&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;ftp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;all&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">      </span><span class="nt">"max_concurrent_downloads"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"max_connection_per_server"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"check_integrity"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"min_split_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"lowest_speed_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"bt_stop_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"bt_tracker_connect_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"bt_tracker_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"disk_cache"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"always_resume"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"file_allocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"proxy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"http"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"https"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"ftp"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"all"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;no_proxy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;conf_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">      </span><span class="nt">"no_proxy"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"conf_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -173,36 +173,36 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://aria2.github.io/manual/en/html/aria2c.html#options">Options</a></p></li>
 </ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/request&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"@e-mc/request"</span><span class="p">);</span>
 
-<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">aria2c</span><span class="p">(</span><span class="s2">&quot;https://example.com/file.torrent&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copyto&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;images/&quot;</span><span class="p">,</span>
+<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">aria2c</span><span class="p">(</span><span class="s2">"https://example.com/file.torrent"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">"copyto"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">"images/"</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">shellExpansion</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">binOpts</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s1">&#39;--conf-path=&quot;$HOME/.aria2/aria2.conf&quot;&#39;</span>
+<span class="w">    </span><span class="s1">'--conf-path="$HOME/.aria2/aria2.conf"'</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">});</span>
 
 <span class="cm">/* OR */</span>
 
 <span class="p">{</span>
-<span class="w">  </span><span class="s2">&quot;pathname&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;images/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FileManager</span>
-<span class="w">  </span><span class="s2">&quot;uri&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;magnet:?xt=urn:btih:a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;uri&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/file.torrent&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;uri&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sftp://example.com/file.metalink&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"pathname"</span><span class="o">:</span><span class="w"> </span><span class="s2">"images/"</span><span class="p">,</span><span class="w"> </span><span class="c1">// FileManager</span>
+<span class="w">  </span><span class="s2">"uri"</span><span class="o">:</span><span class="w"> </span><span class="s2">"magnet:?xt=urn:btih:a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"uri"</span><span class="o">:</span><span class="w"> </span><span class="s2">"https://example.com/file.torrent"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"uri"</span><span class="o">:</span><span class="w"> </span><span class="s2">"sftp://example.com/file.metalink"</span><span class="p">,</span>
 
 <span class="w">  </span><span class="cm">/* Optional */</span>
-<span class="w">  </span><span class="s2">&quot;shellExpansion&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;binOpts&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;--conf-path=\&quot;$HOME/.aria2/aria2.conf\&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;--keep-unfinished-download-result&quot;</span>
+<span class="w">  </span><span class="s2">"shellExpansion"</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"binOpts"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"--conf-path=\"$HOME/.aria2/aria2.conf\""</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"--keep-unfinished-download-result"</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="s2">&quot;mimeType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;headers&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;Authorization&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bearer &lt;token&gt;&quot;</span>
+<span class="w">  </span><span class="s2">"mimeType"</span><span class="o">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"headers"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">"Authorization"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Bearer &lt;token&gt;"</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="s2">&quot;silent&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="s2">"silent"</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -247,55 +247,55 @@
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">squared.json <a class="footnote-reference brackets" href="#opt" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;download&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;rclone&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;bin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;exec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;uid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;gid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="nt">"download"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"rclone"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"bin"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"exec"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"gid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;check_first&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;checksum&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;combined&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;csv&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;differ&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;separator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;timeformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;cutoff_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HARD&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ignore_case_sync&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ignore_checksum&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ignore_existing&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ignore_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ignore_times&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;immutable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;inplace&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;max_backlog&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;max_duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0s&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;max_transfer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;off&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;modify_window&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1ns&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;multi_thread_chunk_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;64Mi&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;multi_thread_cutoff&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;256Mi&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;multi_thread_streams&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;multi_thread_write_buffer_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;128Ki&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;no_check_dest&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;no_traverse&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;no_update_dir_modtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;no_update_modtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;order_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;refresh_times&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;size_only&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;streaming_upload_cutoff&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100Ki&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;fast_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;bind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;contimeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;disable_http2&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">      </span><span class="nt">"check_first"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"checksum"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"combined"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"csv"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"differ"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"separator"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"timeformat"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"cutoff_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HARD"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"ignore_case_sync"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"ignore_checksum"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"ignore_existing"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"ignore_size"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"ignore_times"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"immutable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"inplace"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"max_backlog"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"max_duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0s"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"max_transfer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"off"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"modify_window"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ns"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"multi_thread_chunk_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64Mi"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"multi_thread_cutoff"</span><span class="p">:</span><span class="w"> </span><span class="s2">"256Mi"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"multi_thread_streams"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"multi_thread_write_buffer_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"128Ki"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"no_check_dest"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"no_traverse"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"no_update_dir_modtime"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"no_update_modtime"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"order_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"refresh_times"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"size_only"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"streaming_upload_cutoff"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100Ki"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"fast_list"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"bind"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"contimeout"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"disable_http2"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"config"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -307,17 +307,17 @@
 <h3>Example Usage<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text">copy</span><a class="headerlink" href="#id9" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/request&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"@e-mc/request"</span><span class="p">);</span>
 
-<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">rclone</span><span class="p">(</span><span class="s2">&quot;gdrive:Archive&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copy&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional (default)</span>
-<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive&quot;</span><span class="p">,</span>
+<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">rclone</span><span class="p">(</span><span class="s2">"gdrive:Archive"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">"copy"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional (default)</span>
+<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">"/home/user/cloud/Archive"</span><span class="p">,</span>
 
 <span class="w">  </span><span class="cm">/* Optional */</span>
 <span class="w">  </span><span class="nx">shellExpansion</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">binOpts</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s1">&#39;--config=&quot;$HOME/.config/rclone/rclone.conf&quot;&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="s1">&#39;--inplace=false&#39;</span>
+<span class="w">    </span><span class="s1">'--config="$HOME/.config/rclone/rclone.conf"'</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">'--inplace=false'</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">});</span>
 </pre></div>
@@ -325,19 +325,19 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">copyto</span><a class="headerlink" href="#id10" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/request&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"@e-mc/request"</span><span class="p">);</span>
 
-<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">rclone</span><span class="p">(</span><span class="s2">&quot;gdrive:Archive/file.tar.gz&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copyto&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive/out.tar.gz&quot;</span>
+<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">rclone</span><span class="p">(</span><span class="s2">"gdrive:Archive/file.tar.gz"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">"copyto"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">"/home/user/cloud/Archive/out.tar.gz"</span>
 <span class="p">});</span>
 
 <span class="cm">/* OR */</span>
 
 <span class="p">{</span>
-<span class="w">  </span><span class="s2">&quot;pathname&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FileManager</span>
-<span class="w">  </span><span class="s2">&quot;filename&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;out.tar.gz&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;uri&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rclone:?gdrive:Archive/file.tar.gz&quot;</span>
+<span class="w">  </span><span class="s2">"pathname"</span><span class="o">:</span><span class="w"> </span><span class="s2">"/home/user/cloud/Archive"</span><span class="p">,</span><span class="w"> </span><span class="c1">// FileManager</span>
+<span class="w">  </span><span class="s2">"filename"</span><span class="o">:</span><span class="w"> </span><span class="s2">"out.tar.gz"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"uri"</span><span class="o">:</span><span class="w"> </span><span class="s2">"rclone:?gdrive:Archive/file.tar.gz"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -348,15 +348,15 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">copyurl</span><a class="headerlink" href="#id11" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@e-mc/request&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">Request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"@e-mc/request"</span><span class="p">);</span>
 
-<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">rclone</span><span class="p">(</span><span class="s2">&quot;https://example.com/file.tar.gz&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;copyurl&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/home/user/cloud/Archive/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Explicit &quot;/&quot; is recommended</span>
+<span class="ow">new</span><span class="w"> </span><span class="nx">Request</span><span class="p">().</span><span class="nx">rclone</span><span class="p">(</span><span class="s2">"https://example.com/file.tar.gz"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s2">"copyurl"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">"/home/user/cloud/Archive/"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Explicit "/" is recommended</span>
 <span class="w">  </span><span class="nx">binOpts</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;--auto-filename&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;--contimeout=30s&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;--disable-http2&quot;</span>
+<span class="w">    </span><span class="s2">"--auto-filename"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"--contimeout=30s"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"--disable-http2"</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">});</span>
 </pre></div>

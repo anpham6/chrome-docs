@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Broadcast &mdash; E-mc 0.14.5 documentation</title>
+  <title>Broadcast &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -120,7 +120,7 @@
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">BroadcastResponse</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;broadcast&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;close&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">"broadcast"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"close"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"error"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">socketId?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
 <span class="w">    </span><span class="kr">type</span><span class="nx">?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">encoding?</span><span class="o">:</span><span class="w"> </span><span class="kt">BufferEncoding</span><span class="p">;</span>
@@ -135,13 +135,13 @@
 </section>
 <section id="example-usage">
 <h2>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h2>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;111-111-111&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Messages from &quot;project-1&quot; project</span>
-<span class="nx">squared</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">socketId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;222-222-222&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">socketKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;socket_id&quot;</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// Messages sent from another channel (default is &quot;socketId&quot;)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s2">"111-111-111"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Messages from "project-1" project</span>
+<span class="nx">squared</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">socketId</span><span class="o">:</span><span class="w"> </span><span class="s2">"222-222-222"</span><span class="p">,</span><span class="w"> </span><span class="nx">socketKey</span><span class="o">:</span><span class="w"> </span><span class="s2">"socket_id"</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// Messages sent from another channel (default is "socketId")</span>
 
-<span class="k">await</span><span class="w"> </span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">&quot;/path/to/project&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">projectId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;project-1&quot;</span><span class="p">,</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">"/path/to/project"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">projectId</span><span class="o">:</span><span class="w"> </span><span class="s2">"project-1"</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">log</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useColor</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Chromium</span>
-<span class="w">  </span><span class="nx">broadcastId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;111-111-111&quot;</span><span class="w"> </span><span class="c1">// Specific use alias for &quot;socketId&quot;</span>
+<span class="w">  </span><span class="nx">broadcastId</span><span class="o">:</span><span class="w"> </span><span class="s2">"111-111-111"</span><span class="w"> </span><span class="c1">// Specific use alias for "socketId"</span>
 <span class="p">});</span>
 </pre></div>
 </div>

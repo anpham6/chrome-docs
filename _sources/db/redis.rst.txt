@@ -9,7 +9,7 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 45
+  :emphasize-lines: 57,59
 
   import type { RediSearchSchema, RedisClientOptions, SearchOptions } from "redis";
 
@@ -67,9 +67,9 @@ Interface
           key: string;
           value: unknown | unknown[]; // https://docs.redis.com/latest/stack/json/commands
 
-          command?: "DEL" | "FORGET" | "MERGE" | "MSET" | "NUMINCRBY" | "NUMMULTBY" | "SET" | "STRAPPEND"; // Default is "SET"
+          command?: "DEL" | "FORGET" | "MERGE" | "MSET" | "NUMINCRBY" | "NUMMULTBY" | "SET" | "STRAPPEND" | "STRLEN"; // Default is "SET"
 
-          command?: "ARRAPPEND" | "ARRINDEX" | "ARRINSERT" | "ARRPOP" | "ARRTRIM";
+          command?: "ARRAPPEND" | "ARRINDEX" | "ARRINSERT" | "ARRLEN" | "ARRPOP" | "ARRTRIM";
           start?: number;
           stop?: number;
           index?: number;
@@ -83,7 +83,6 @@ Pool
 ----
 
 .. code-block:: typescript
-  :emphasize-lines: 6
 
   import type { RedisPoolOptions } from "redis";
 
@@ -192,6 +191,12 @@ Example usage
 @pi-r/redis
 ===========
 
+.. versionadded:: 0.13.0
+
+  - *NPM* package **redis** was upgraded from *5.1* to :target:`6.0` with a :alt:`NodeJS 20` requirement.
+  - *RedisClientOptions* property **RESP** can be globally set through **NODE_REDIS_CLIENT_RESP** as :alt:`2 | 3` for all client connections.
+  - *RedisJSONValue* property **command** as types ":lower:`ARRLEN`" | ":lower:`STRLEN`" were implemented.
+
 .. versionadded:: 0.12.0
 
   - **FT.HYBRID** for combining full-text and vector-based searches using :target:`options.hybrid` as :alt:`FtHybridOptions` was implemented.
@@ -199,7 +204,7 @@ Example usage
 
 .. versionadded:: 0.11.0
 
-  - *NPM* package **redis** was upgraded  from *4.7* to :target:`5.8` with a :alt:`NodeJS 18` requirement.
+  - *NPM* package **redis** was upgraded from *4.7* to :target:`5.8` with a :alt:`NodeJS 18` requirement.
   - *RedisDataSource* property **streams** as :alt:`XReadStreams` was created.
   - *RedisDataSource* property **format** with type ":lower:`SMEMBERS`" using :target:`key` as :alt:`string` was implemented.
 

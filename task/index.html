@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Task &mdash; E-mc 0.14.5 documentation</title>
+  <title>Task &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -108,20 +108,20 @@
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;gulp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;handler&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/gulp&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;minify&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./gulpfile.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Executes task named &quot;minify&quot;</span>
-<span class="w">        </span><span class="nt">&quot;users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;minify&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./username/gulpfile.js&quot;</span><span class="w"> </span><span class="c1">// Overrides parent task &quot;minify&quot;</span>
+<span class="w">  </span><span class="nt">"task"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"gulp"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@pi-r/gulp"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"minify"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./gulpfile.js"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Executes task named "minify"</span>
+<span class="w">        </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"minify"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./username/gulpfile.js"</span><span class="w"> </span><span class="c1">// Overrides parent task "minify"</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;minify-css&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./gulpfile.css.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
-<span class="w">          </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;lint&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;minify&quot;</span><span class="p">],</span>
-<span class="w">          </span><span class="nt">&quot;opts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--series&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--continue&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1">// CLI</span>
+<span class="w">        </span><span class="nt">"minify-css"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./gulpfile.css.js"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
+<span class="w">          </span><span class="nt">"tasks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lint"</span><span class="p">,</span><span class="w"> </span><span class="s2">"minify"</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">"opts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"--series"</span><span class="p">,</span><span class="w"> </span><span class="s2">"--continue"</span><span class="p">]</span><span class="w"> </span><span class="c1">// CLI</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
@@ -135,17 +135,17 @@
 <p>To use <em>Gulp</em> in a user directory requires a global installation. <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;head &gt; script:nth-of-type(1)&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;js&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;handler&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gulp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;minify&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Execute tasks last before writing to destination</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;handler&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gulp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;beautify&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;preceding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Execute tasks first before transformations</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"head &gt; script:nth-of-type(1)"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"js"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"tasks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gulp"</span><span class="p">,</span><span class="w"> </span><span class="nt">"task"</span><span class="p">:</span><span class="w"> </span><span class="s2">"minify"</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Execute tasks last before writing to destination</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gulp"</span><span class="p">,</span><span class="w"> </span><span class="nt">"task"</span><span class="p">:</span><span class="w"> </span><span class="s2">"beautify"</span><span class="p">,</span><span class="w"> </span><span class="nt">"preceding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Execute tasks first before transformations</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;handler&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gulp&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;../gulp/transform.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// User defined uses file permissions</span>
-<span class="w">        </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;minify&quot;</span><span class="p">],</span>
-<span class="w">        </span><span class="nt">&quot;opts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--verify&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="nt">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gulp"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"task"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../gulp/transform.js"</span><span class="p">,</span><span class="w"> </span><span class="c1">// User defined uses file permissions</span>
+<span class="w">        </span><span class="nt">"tasks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"minify"</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">"opts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"--verify"</span><span class="p">]</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
@@ -156,16 +156,16 @@
 <section id="example-gulpfile-js">
 <h2>Example gulpfile.js<a class="headerlink" href="#example-gulpfile-js" title="Link to this heading"></a></h2>
 <p>Renaming files with <em>Gulp</em> is not recommended since it will not appear in the output manifest. It is better to use the <strong>saveAs</strong> or <strong>filename</strong> properties when the asset is part of the <em>HTML</em> document.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">gulp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;gulp&quot;</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">uglify</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;gulp-uglify&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">gulp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"gulp"</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">uglify</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"gulp-uglify"</span><span class="p">);</span>
 
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">&quot;minify&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"minify"</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s2">"*"</span><span class="p">)</span>
 </span><span class="w">    </span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">())</span>
-<span class="hll"><span class="w">    </span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s2">&quot;./&quot;</span><span class="p">));</span>
+<span class="hll"><span class="w">    </span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s2">"./"</span><span class="p">));</span>
 </span><span class="p">});</span>
 
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">gulp</span><span class="p">.</span><span class="nx">series</span><span class="p">(</span><span class="s2">&quot;minify&quot;</span><span class="p">));</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"default"</span><span class="p">,</span><span class="w"> </span><span class="nx">gulp</span><span class="p">.</span><span class="nx">series</span><span class="p">(</span><span class="s2">"minify"</span><span class="p">));</span>
 </pre></div>
 </div>
 <div class="admonition caution">
@@ -179,15 +179,15 @@
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">JSON</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span>
-  <span class="na">src</span><span class="o">=</span><span class="s">&quot;/common/util.js&quot;</span>
-  <span class="na">data-chrome-tasks</span><span class="o">=</span><span class="s">&#39;[{ &quot;handler&quot;: &quot;gulp&quot;, &quot;task&quot;: &quot;minify&quot; }, { &quot;handler&quot;: &quot;gulp&quot;, &quot;task&quot;: &quot;lint&quot;, &quot;preceding&quot;: true }]&#39;</span><span class="p">&gt;</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">"/common/util.js"</span>
+  <span class="na">data-chrome-tasks</span><span class="o">=</span><span class="s">'[{ "handler": "gulp", "task": "minify" }, { "handler": "gulp", "task": "lint", "preceding": true }]'</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">handler : task : preceding? …+</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/common/util.js&quot;</span> <span class="na">data-chrome-tasks</span><span class="o">=</span><span class="s">&quot;gulp:minify+gulp:lint:true&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"/common/util.js"</span> <span class="na">data-chrome-tasks</span><span class="o">=</span><span class="s">"gulp:minify+gulp:lint:true"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>

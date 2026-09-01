@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oracle Cloud Infrastructure &mdash; E-mc 0.14.5 documentation</title>
+  <title>Oracle Cloud Infrastructure &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -116,10 +116,10 @@
 </div>
 <section id="interface">
 <h3>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConfigurationOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;aws-sdk/lib/core&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConfigurationOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"aws-sdk/lib/core"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">OCIStorage</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorage</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;oci&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">"oci"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">OCIStorageCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">bucket</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
@@ -140,17 +140,17 @@
 <li><p><a class="reference external" href="https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/s3compatibleapi.htm">Credentials</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;accessKeyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;secretAccessKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"accessKeyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"secretAccessKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;namespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Unofficial</span>
-<span class="w">      </span><span class="nt">&quot;region&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ap-tokyo-1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Unofficial</span>
+<span class="w">      </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ap-tokyo-1"</span><span class="p">,</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.oraclecloud.com&quot;</span>
+<span class="w">      </span><span class="nt">"endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.oraclecloud.com"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -163,17 +163,17 @@
 <li><p><a class="reference internal" href="aws.html"><span class="doc">AWS S3 v2</span></a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Any resource</span>
-<span class="w">  </span><span class="nt">&quot;cloudStorage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;oci&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;bucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs-001&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Any resource</span>
+<span class="w">  </span><span class="nt">"cloudStorage"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oci"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"bucket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs-001"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"admin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="cm">/* Same as AWS */</span>
-<span class="w">      </span><span class="nt">&quot;configBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Except &quot;policy&quot; | &quot;website&quot; | &quot;cors&quot; | &quot;lifecycle&quot; | &quot;retentionPolicy&quot; */</span><span class="p">}</span>
+<span class="w">      </span><span class="nt">"configBucket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Except "policy" | "website" | "cors" | "lifecycle" | "retentionPolicy" */</span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;upload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same as AWS - Except &quot;tags&quot; */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;download&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same as AWS */</span><span class="p">}</span>
+<span class="w">    </span><span class="nt">"upload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same as AWS - Except "tags" */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"download"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same as AWS */</span><span class="p">}</span>
 <span class="w">  </span><span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
@@ -195,11 +195,11 @@
 </div>
 <section id="id3">
 <h3>Interface<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BindParameters</span><span class="p">,</span><span class="w"> </span><span class="nx">ConnectionAttributes</span><span class="p">,</span><span class="w"> </span><span class="nx">ExecuteOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">InitialiseOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;oracledb&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BindParameters</span><span class="p">,</span><span class="w"> </span><span class="nx">ConnectionAttributes</span><span class="p">,</span><span class="w"> </span><span class="nx">ExecuteOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">InitialiseOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"oracledb"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">OCIDatabaseQuery</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudDatabase</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;oci&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">"oci"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">OCIDatabaseCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">table?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
@@ -221,21 +221,21 @@
 <li><p><a class="reference external" href="https://node-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connection-strings">Connection</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;walletLocation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/user/oracle/wallet&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
-<span class="w">      </span><span class="nt">&quot;walletPassword&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;connectString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tcps://adb.ap-tokyo-1.oraclecloud.com:1522/abcdefghijklmno_nodejs_high.adb.oraclecloud.com&quot;</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"walletLocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/home/user/oracle/wallet"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">      </span><span class="nt">"walletPassword"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"connectString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tcps://adb.ap-tokyo-1.oraclecloud.com:1522/abcdefghijklmno_nodejs_high.adb.oraclecloud.com"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;connectString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs_high&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;configDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/opt/oracle/config&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Location of user tnsnames.ora</span>
-<span class="w">      </span><span class="nt">&quot;libDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/opt/oracle/instantclient_19_11&quot;</span><span class="w"> </span><span class="c1">// Not recommended</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"connectString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs_high"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"configDir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/opt/oracle/config"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Location of user tnsnames.ora</span>
+<span class="w">      </span><span class="nt">"libDir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/opt/oracle/instantclient_19_11"</span><span class="w"> </span><span class="c1">// Not recommended</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -258,45 +258,45 @@
 <p>SELECT queries are compatible with the <a class="reference internal" href="../db/oracle.html"><span class="doc">&#64;pi-r/oracle</span></a> plugin.</p>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;oci&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"h1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oci"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"table"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span>
 <span class="w">    </span><span class="cm">/* AND */</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.key</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.key</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2"</span><span class="p">],</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;$eq&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span><span class="w">  </span><span class="c1">// SODA.filter</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"$eq"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span><span class="w">  </span><span class="c1">// SODA.filter</span>
 
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM demo WHERE id = :id AND value = :value&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// oracledb.execute</span>
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;escaped&quot;</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* ExecuteOptions */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT * FROM demo WHERE id = :id AND value = :value"</span><span class="p">,</span><span class="w"> </span><span class="c1">// oracledb.execute</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"escaped"</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* ExecuteOptions */</span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT d.* from demo NESTED json_document COLUMNS(id, title, description) d WHERE d.id = :id&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.execute (&quot;thick&quot; mode)</span>
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* ExecuteOptions */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT d.* from demo NESTED json_document COLUMNS(id, title, description) d WHERE d.id = :id"</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.execute ("thick" mode)</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* ExecuteOptions */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;b&gt;${title}&lt;/b&gt;: ${description}&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;b&gt;${title}&lt;/b&gt;: ${description}"</span><span class="p">,</span>
 
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Record&lt;string, any&gt; */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.replaceOne (append)</span>
-<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.insertOneAndGet</span>
-<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.replaceOne</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1">// Only first one is updated</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Record&lt;string, any&gt; */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"updateType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.replaceOne (append)</span>
+<span class="w">    </span><span class="nt">"updateType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.insertOneAndGet</span>
+<span class="w">    </span><span class="nt">"updateType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// SODA.replaceOne</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2"</span><span class="p">]</span><span class="w"> </span><span class="c1">// Only first one is updated</span>
 
 <span class="w">    </span><span class="cm">/* SODA.createCollection */</span>
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span><span class="cm">/* Record&lt;string, any&gt; */</span><span class="p">},</span>
 <span class="w">      </span><span class="p">{</span><span class="cm">/* Record&lt;string, any&gt; */</span><span class="p">}</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Record&lt;string, any&gt; */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="c1">// SODA.insertOne</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Record&lt;string, any&gt; */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"updateType"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="c1">// SODA.insertOne</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -309,6 +309,12 @@
 </section>
 <section id="pi-r-oci">
 <h2>&#64;pi-r/oci<a class="headerlink" href="#pi-r-oci" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.13.0: </span></p>
+<ul class="simple">
+<li><p><em>NPM</em> package <strong>oracledb</strong> was upgraded from <em>6.10</em> to <em class="target">7.0</em> with a <em class="alt">NodeJS 14.17</em> requirement.</p></li>
+</ul>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.12.0: </span></p>
 <ul class="simple">

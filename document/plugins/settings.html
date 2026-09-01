@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Settings &mdash; E-mc 0.14.5 documentation</title>
+  <title>Settings &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -110,26 +110,26 @@
 <h1>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h1>
 <p>All packages can be customized per authenticated username using the <code class="docutils literal notranslate"><span class="pre">settings.users</span></code> block. The base settings are then searched until something is found.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;document&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;chrome&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;handler&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/chrome&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;eval&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;function&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Enable inline functions</span>
-<span class="w">        </span><span class="nt">&quot;absolute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Enable absolute paths to local files</span>
-<span class="w">        </span><span class="nt">&quot;template&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Enable external template functions</span>
-<span class="w">        </span><span class="nt">&quot;userconfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// Enable functions inside local files from user queries</span>
+<span class="w">  </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"chrome"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@pi-r/chrome"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"eval"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"function"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Enable inline functions</span>
+<span class="w">        </span><span class="nt">"absolute"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Enable absolute paths to local files</span>
+<span class="w">        </span><span class="nt">"template"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Enable external template functions</span>
+<span class="w">        </span><span class="nt">"userconfig"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// Enable functions inside local files from user queries</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;package&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;../packages&quot;</span><span class="w"> </span><span class="c1">// Override built-in plugins (base directory/ + users/username/? + posthtml.js)</span>
+<span class="w">      </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"directory"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"package"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../packages"</span><span class="w"> </span><span class="c1">// Override built-in plugins (base directory/ + users/username/? + posthtml.js)</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;html&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;posthtml&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">}</span>
+<span class="w">        </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"html"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">"posthtml"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">}</span>
 <span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="nt">&quot;css&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;postcss&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">}</span>
+<span class="w">            </span><span class="nt">"css"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">"postcss"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
@@ -147,54 +147,54 @@
 <h2>Using built-in transformer<a class="headerlink" href="#using-built-in-transformer" title="Link to this heading"></a></h2>
 <p>External plugins per package have to be pre-installed from NPM and may not be available for auto-install.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;document&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;chrome&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;transform&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;html&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;posthtml&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/posthtml</span>
-<span class="w">              </span><span class="nt">&quot;transform&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="p">[</span><span class="s2">&quot;posthtml-doctype&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;doctype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTML 5&quot;</span><span class="w"> </span><span class="p">}],</span>
-<span class="w">                  </span><span class="p">[</span><span class="s2">&quot;posthtml-include&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;root&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;encoding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;utf-8&quot;</span><span class="w"> </span><span class="p">}],</span>
-<span class="w">                  </span><span class="s2">&quot;posthtml-attrs-sorter&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="p">[</span><span class="s2">&quot;htmlnano&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;collapseWhitespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;conservative&quot;</span><span class="w"> </span><span class="p">}]</span>
+<span class="w">  </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"chrome"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"transform"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"html"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"posthtml"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/posthtml</span>
+<span class="w">              </span><span class="nt">"transform"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">[</span><span class="s2">"posthtml-doctype"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"doctype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HTML 5"</span><span class="w"> </span><span class="p">}],</span>
+<span class="w">                  </span><span class="p">[</span><span class="s2">"posthtml-include"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./"</span><span class="p">,</span><span class="w"> </span><span class="nt">"encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"utf-8"</span><span class="w"> </span><span class="p">}],</span>
+<span class="w">                  </span><span class="s2">"posthtml-attrs-sorter"</span><span class="p">,</span>
+<span class="w">                  </span><span class="p">[</span><span class="s2">"htmlnano"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"collapseWhitespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"conservative"</span><span class="w"> </span><span class="p">}]</span>
 <span class="w">                </span><span class="p">]</span>
 <span class="w">              </span><span class="p">},</span>
-<span class="w">              </span><span class="nt">&quot;transform-output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;directives&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;?php&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;end&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&gt;&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">              </span><span class="nt">"transform-output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"directives"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"?php"</span><span class="p">,</span><span class="w"> </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;"</span><span class="p">,</span><span class="w"> </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;"</span><span class="w"> </span><span class="p">}</span>
 <span class="w">                </span><span class="p">]</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="nt">&quot;prettier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/prettier</span>
-<span class="w">              </span><span class="nt">&quot;beautify&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;parser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;printWidth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;tabWidth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">            </span><span class="nt">"prettier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/prettier</span>
+<span class="w">              </span><span class="nt">"beautify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"parser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"printWidth"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"tabWidth"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">          </span><span class="p">},</span>
-<span class="w">          </span><span class="nt">&quot;js&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;rollup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;plugin-example&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;@rollup/plugin-commonjs&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="p">[</span><span class="s2">&quot;@rollup/plugin-babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;__default__&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;babelHelpers&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bundled&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// __default__ (@pi-r property)</span>
+<span class="w">          </span><span class="nt">"js"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"rollup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">"plugin-example"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="s2">"@rollup/plugin-commonjs"</span><span class="p">,</span>
+<span class="w">                  </span><span class="p">[</span><span class="s2">"@rollup/plugin-babel"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"__default__"</span><span class="p">:</span><span class="w"> </span><span class="s2">"babel"</span><span class="p">,</span><span class="w"> </span><span class="nt">"babelHelpers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bundled"</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// __default__ (@pi-r property)</span>
 <span class="w">                </span><span class="p">]</span>
 <span class="w">              </span><span class="p">},</span>
-<span class="w">              </span><span class="nt">&quot;plugin-example-output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;es&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;@rollup/plugin-babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;__default__&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;getBabelOutputPlugin&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;presets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;@babel/preset-env&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}]</span>
+<span class="w">              </span><span class="nt">"plugin-example-output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"@rollup/plugin-babel"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"__default__"</span><span class="p">:</span><span class="w"> </span><span class="s2">"getBabelOutputPlugin"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"@babel/preset-env"</span><span class="p">]</span><span class="w"> </span><span class="p">}]</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">          </span><span class="p">},</span>
-<span class="w">          </span><span class="nt">&quot;css&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;postcss&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/postcss</span>
-<span class="w">              </span><span class="nt">&quot;transform&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;autoprefixer&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="p">[</span><span class="s2">&quot;cssnano&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;preset&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cssnano-preset-default&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;discardComments&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="p">}]</span>
+<span class="w">          </span><span class="nt">"css"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"postcss"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/postcss</span>
+<span class="w">              </span><span class="nt">"transform"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="s2">"autoprefixer"</span><span class="p">,</span>
+<span class="w">                  </span><span class="p">[</span><span class="s2">"cssnano"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"preset"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"cssnano-preset-default"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"discardComments"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="p">}]</span>
 <span class="w">                </span><span class="p">]</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
@@ -211,25 +211,25 @@
 <h2>Using inline function <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#using-inline-function" title="Link to this heading"></a></h2>
 <p>The suffix “<em class="lower">-output</em>” is used to create the variable <code class="docutils literal notranslate"><span class="pre">options.outputConfig</span></code>.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;document&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;chrome&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;transform&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;js&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;terser&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/terser</span>
-<span class="hll"><span class="w">              </span><span class="nt">&quot;minify-example&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;async (terser, value, options, require) =&gt; await terser.minify(value, options.outputConfig).code;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Asynchronous</span>
-</span><span class="w">              </span><span class="nt">&quot;minify-example-output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;keep_classnames&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// &quot;minify-example-output&quot;</span>
+<span class="w">  </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"chrome"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"transform"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"js"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"terser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/terser</span>
+<span class="hll"><span class="w">              </span><span class="nt">"minify-example"</span><span class="p">:</span><span class="w"> </span><span class="s2">"async (terser, value, options, require) =&gt; await terser.minify(value, options.outputConfig).code;"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Asynchronous</span>
+</span><span class="w">              </span><span class="nt">"minify-example-output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"keep_classnames"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// "minify-example-output"</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">          </span><span class="p">},</span>
-<span class="w">          </span><span class="nt">&quot;css&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;sass&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/sass</span>
-<span class="hll"><span class="w">              </span><span class="nt">&quot;sass-example&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;(sass, value, options, resolve, require) =&gt; resolve(sass.renderSync({ ...options.outputConfig, data: value }).css);&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Synchronous</span>
-</span><span class="w">              </span><span class="nt">&quot;sass-example-output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;outputStyle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;compressed&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;sourceMap&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;sourceMapContents&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">          </span><span class="nt">"css"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"sass"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/sass</span>
+<span class="hll"><span class="w">              </span><span class="nt">"sass-example"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(sass, value, options, resolve, require) =&gt; resolve(sass.renderSync({ ...options.outputConfig, data: value }).css);"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Synchronous</span>
+</span><span class="w">              </span><span class="nt">"sass-example-output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"outputStyle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"compressed"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"sourceMapContents"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">          </span><span class="p">}</span>
@@ -248,20 +248,20 @@
 <section id="using-local-file">
 <h2>Using local file<a class="headerlink" href="#using-local-file" title="Link to this heading"></a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;document&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;chrome&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;transform&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;js&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;@babel/core&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/babel</span>
-<span class="w">              </span><span class="nt">&quot;es5-debug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./es5-debug.cjs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// CJS extension loaded using &quot;require&quot;</span>
-<span class="w">              </span><span class="nt">&quot;es5-debug-output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;presets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;@babel/preset-env&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"chrome"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"transform"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"js"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"@babel/core"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// npm i @pi-r/babel</span>
+<span class="w">              </span><span class="nt">"es5-debug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./es5-debug.cjs"</span><span class="p">,</span><span class="w"> </span><span class="c1">// CJS extension loaded using "require"</span>
+<span class="w">              </span><span class="nt">"es5-debug-output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"@babel/preset-env"</span><span class="p">]</span>
 <span class="w">              </span><span class="p">},</span>
-<span class="w">              </span><span class="nt">&quot;es6-example&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./es6.mjs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// MJS extension loaded using dynamic &quot;import&quot;</span>
-<span class="w">              </span><span class="nt">&quot;es5-legacy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./es5-legacy.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// JS extension uses Function constructor</span>
-<span class="w">              </span><span class="nt">&quot;es5-legacy-output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;presets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;@babel/preset-env&quot;</span><span class="p">]</span>
+<span class="w">              </span><span class="nt">"es6-example"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./es6.mjs"</span><span class="p">,</span><span class="w"> </span><span class="c1">// MJS extension loaded using dynamic "import"</span>
+<span class="w">              </span><span class="nt">"es5-legacy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./es5-legacy.js"</span><span class="p">,</span><span class="w"> </span><span class="c1">// JS extension uses Function constructor</span>
+<span class="w">              </span><span class="nt">"es5-legacy-output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"@babel/preset-env"</span><span class="p">]</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">          </span><span class="p">}</span>
@@ -274,7 +274,7 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">es5-debug.cjs</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"path"</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -285,7 +285,7 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">es6.mjs</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:path&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"node:path"</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -296,23 +296,23 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id5">
 <span id="document-plugins-settings-es6-hash"></span><div class="code-block-caption"><span class="caption-text">es6-hash.mjs</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">prettier</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;prettier&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">prettier</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"prettier"</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">as_html</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// format: as_html | as-html</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">baseConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">toBaseConfig</span><span class="p">();</span>
-<span class="w">  </span><span class="nx">baseConfig</span><span class="p">.</span><span class="nx">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">baseConfig</span><span class="p">.</span><span class="nx">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"html"</span><span class="p">;</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">prettier</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">baseConfig</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">as_css</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// format: as_css | as-css</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">baseConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">toBaseConfig</span><span class="p">();</span>
-<span class="w">  </span><span class="nx">baseConfig</span><span class="p">.</span><span class="nx">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;css&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">baseConfig</span><span class="p">.</span><span class="nx">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"css"</span><span class="p">;</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">prettier</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">baseConfig</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// format: any (except as_html | as-html | as_css | as-css)</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">baseConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">toBaseConfig</span><span class="p">();</span>
-<span class="w">  </span><span class="nx">baseConfig</span><span class="p">.</span><span class="nx">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;typescript&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">baseConfig</span><span class="p">.</span><span class="nx">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"typescript"</span><span class="p">;</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">prettier</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">baseConfig</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
@@ -321,9 +321,9 @@
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">es5-legacy.js (inline)</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">,</span><span class="w"> </span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">require</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"path"</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">context</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">outputConfig</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">resolve</span><span class="p">(</span><span class="o">!</span><span class="nx">err</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">resolve</span><span class="p">(</span><span class="o">!</span><span class="nx">err</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">);</span>
 <span class="w">  </span><span class="p">});</span>
 <span class="p">}</span>
 </pre></div>
@@ -338,27 +338,27 @@
 <h2>Using custom package<a class="headerlink" href="#using-custom-package" title="Link to this heading"></a></h2>
 <p>You can create or use a package from NPM which will behave like a built-in transformer. The only difference is the context parameter being set to the <em>Document</em> module.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;document&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;chrome&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;transform&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;js&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"chrome"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"transform"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"js"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="cm">/* Override built-in transformer */</span>
-<span class="w">            </span><span class="nt">&quot;@babel/core&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"@babel/core"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">              </span><span class="cm">/* npm i babel-custom */</span>
-<span class="w">              </span><span class="nt">&quot;npm-example&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npm:babel-custom&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// function(Document, value, options) { const context = require(&quot;babel-custom&quot;); }</span>
-<span class="w">              </span><span class="nt">&quot;npm-example-output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;presets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;@babel/preset-env&quot;</span><span class="p">]</span>
+<span class="w">              </span><span class="nt">"npm-example"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm:babel-custom"</span><span class="p">,</span><span class="w"> </span><span class="c1">// function(Document, value, options) { const context = require("babel-custom"); }</span>
+<span class="w">              </span><span class="nt">"npm-example-output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"@babel/preset-env"</span><span class="p">]</span>
 <span class="w">              </span><span class="p">},</span>
 <span class="w">              </span><span class="cm">/* OR */</span>
-<span class="w">              </span><span class="nt">&quot;npm-example-output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npm:babel-custom-output&quot;</span><span class="w"> </span><span class="c1">// Not recommended (npm i babel-custom-output)</span>
+<span class="w">              </span><span class="nt">"npm-example-output"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm:babel-custom-output"</span><span class="w"> </span><span class="c1">// Not recommended (npm i babel-custom-output)</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">          </span><span class="p">},</span>
-<span class="w">          </span><span class="nt">&quot;css&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"css"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="cm">/* npm i sass-custom */</span>
-<span class="w">            </span><span class="nt">&quot;sass-custom&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;transform&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// options.baseConfig</span>
-<span class="w">                </span><span class="nt">&quot;sourceMap&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">            </span><span class="nt">"sass-custom"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">"transform"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// options.baseConfig</span>
+<span class="w">                </span><span class="nt">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">          </span><span class="p">}</span>
@@ -371,19 +371,19 @@
 </div>
 <p>You can create aliases with your own handling routine to wrap any <em>NPM</em> package.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;document&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;chrome&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;transform&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;imports&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"chrome"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"transform"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"imports"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="cm">/* @pi-r - e-mc + squared-express */</span>
-<span class="w">            </span><span class="nt">&quot;@babel/core&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@pi-r/babel&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"@babel/core"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@pi-r/babel"</span><span class="p">,</span>
 
 <span class="w">            </span><span class="cm">/* Custom - Add */</span>
-<span class="w">            </span><span class="nt">&quot;webpack&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;webpack-custom&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"webpack"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack-custom"</span><span class="p">,</span>
 
 <span class="w">            </span><span class="cm">/* Custom - Replace */</span>
-<span class="w">            </span><span class="nt">&quot;@babel/core&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;babel-custom&quot;</span>
+<span class="w">            </span><span class="nt">"@babel/core"</span><span class="p">:</span><span class="w"> </span><span class="s2">"babel-custom"</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}</span>
@@ -400,13 +400,13 @@
 <section id="using-page-template">
 <h2>Using page template<a class="headerlink" href="#using-page-template" title="Link to this heading"></a></h2>
 <p>The same concept can be used inline anywhere using a <code class="docutils literal notranslate"><span class="pre">script</span></code> tag with the <strong>type</strong> attribute set to “text/template”. The script template will be completely removed from the final output.</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/template&quot;</span> <span class="na">data-chrome-template</span><span class="o">=</span><span class="s">&quot;js::@babel/core::es5-example&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/template"</span> <span class="na">data-chrome-template</span><span class="o">=</span><span class="s">"js::@babel/core::es5-example"</span><span class="p">&gt;</span>
 </span><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">options</span><span class="p">.</span><span class="nx">toBaseConfig</span><span class="p">(),</span><span class="w"> </span><span class="nx">presets</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;@babel/preset-env&quot;</span><span class="p">],</span><span class="w"> </span><span class="nx">sourceMaps</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">options</span><span class="p">.</span><span class="nx">toBaseConfig</span><span class="p">(),</span><span class="w"> </span><span class="nx">presets</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"@babel/preset-env"</span><span class="p">],</span><span class="w"> </span><span class="nx">sourceMaps</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">};</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">map</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">options</span><span class="p">.</span><span class="nx">sourceMap</span><span class="p">.</span><span class="nx">nextMap</span><span class="p">(</span><span class="s2">&quot;babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">code</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">map</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">options</span><span class="p">.</span><span class="nx">sourceMap</span><span class="p">.</span><span class="nx">nextMap</span><span class="p">(</span><span class="s2">"babel"</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">code</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">map</span><span class="p">);</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">code</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
@@ -417,12 +417,12 @@
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">Alternate</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;js&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@babel/core&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;es5-example&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;async function (context, value, options) {/* Same */}&quot;</span><span class="w"> </span><span class="c1">// Arrow functions not supported</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"js"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@babel/core"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es5-example"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"async function (context, value, options) {/* Same */}"</span><span class="w"> </span><span class="c1">// Arrow functions not supported</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>

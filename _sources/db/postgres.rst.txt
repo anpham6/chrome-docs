@@ -9,7 +9,6 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 8
 
   import type { QueryArrayConfig, PoolConfig } from "pg";
 

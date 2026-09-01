@@ -40,7 +40,6 @@ Interface
   }
 
 .. code-block:: typescript
-  :emphasize-lines: 49
 
   import type { CopyObjectAction } from "../types/cloud";
 

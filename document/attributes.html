@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Attributes &mdash; E-mc 0.14.5 documentation</title>
+  <title>Attributes &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -102,40 +102,40 @@
   <section id="attributes">
 <h1>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h1>
 <p>There are possible scenarios when a transformation into another format will require new attribute values. <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;alternate&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/plain&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/dev.sass&quot;</span> <span class="p">/&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"alternate"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/plain"</span> <span class="na">href</span><span class="o">=</span><span class="s">"css/dev.sass"</span> <span class="p">/&gt;</span>
 </pre></div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">JSON</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;link[rel=alternate]&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;css&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prod.css&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;download&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required when rel=&quot;alternate&quot;</span>
-<span class="w">  </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;md5&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// prod-8ba5cde2c04d6628dd6b0d62b0a3cac9.css</span>
-<span class="w">  </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stylesheet&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/css&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;disabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"link[rel=alternate]"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"css"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod.css"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"download"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required when rel="alternate"</span>
+<span class="w">  </span><span class="nt">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"md5"</span><span class="p">,</span><span class="w"> </span><span class="c1">// prod-8ba5cde2c04d6628dd6b0d62b0a3cac9.css</span>
+<span class="w">  </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stylesheet"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/css"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">    </span><span class="cm">/* SRI */</span>
-<span class="w">    </span><span class="nt">&quot;integrity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sha512&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// CORS required (sha256 | sha384 | sha512)</span>
-<span class="w">    </span><span class="nt">&quot;crossorigin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;anonymous&quot;</span>
+<span class="w">    </span><span class="nt">"integrity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha512"</span><span class="p">,</span><span class="w"> </span><span class="c1">// CORS required (sha256 | sha384 | sha512)</span>
+<span class="w">    </span><span class="nt">"crossorigin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"anonymous"</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;process&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;compile&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">"process"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"compile"</span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">Inline</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;alternate&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/plain&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/dev.sass&quot;</span> <span class="na">data-chrome-file</span><span class="o">=</span><span class="s">&#39;{ &quot;saveAs&quot;: &quot;css/prod.css&quot;, &quot;process&quot;: [&quot;compile&quot;] }&#39;</span> <span class="na">data-chrome-attributes</span><span class="o">=</span><span class="s">&#39;{ &quot;rel&quot;: &quot;stylesheet&quot;, &quot;type&quot;: &quot;text/css&quot;, &quot;title&quot;: &quot;&quot;, &quot;disabled&quot;: null, &quot;integrity&quot;: &quot;sha512&quot;, &quot;crossorigin&quot;: &quot;anonymous&quot; }&#39;</span> <span class="na">data-chrome-options</span><span class="o">=</span><span class="s">&quot;download&quot;</span> <span class="p">/&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"alternate"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/plain"</span> <span class="na">href</span><span class="o">=</span><span class="s">"css/dev.sass"</span> <span class="na">data-chrome-file</span><span class="o">=</span><span class="s">'{ "saveAs": "css/prod.css", "process": ["compile"] }'</span> <span class="na">data-chrome-attributes</span><span class="o">=</span><span class="s">'{ "rel": "stylesheet", "type": "text/css", "title": "", "disabled": null, "integrity": "sha512", "crossorigin": "anonymous" }'</span> <span class="na">data-chrome-options</span><span class="o">=</span><span class="s">"download"</span> <span class="p">/&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">Output</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">disabled</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/prod.css&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha512-365M9279XHmH5iUcnWAVLXbLCqmntex51g5yp+jrzci79PhUOZyK/ebMIzoR46y7okDgZYZhTImDt7/06IhxQw==&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span> <span class="p">/&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="na">title</span><span class="o">=</span><span class="s">""</span> <span class="na">disabled</span> <span class="na">href</span><span class="o">=</span><span class="s">"css/prod.css"</span> <span class="na">integrity</span><span class="o">=</span><span class="s">"sha512-365M9279XHmH5iUcnWAVLXbLCqmntex51g5yp+jrzci79PhUOZyK/ebMIzoR46y7okDgZYZhTImDt7/06IhxQw=="</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span> <span class="p">/&gt;</span>
 </pre></div>
 </div>
 </div>

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interface &mdash; E-mc 0.14.5 documentation</title>
+  <title>Interface &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -102,7 +102,7 @@
              
   <section id="interface">
 <h1>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h1>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DeleteObjectsOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../types/cloud&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DeleteObjectsOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"../types/cloud"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">DataSource</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
@@ -131,14 +131,14 @@
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">CloudDatabase</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CopyObjectAction</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../types/cloud&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CopyObjectAction</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"../types/cloud"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">CloudStorage</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
@@ -186,8 +186,8 @@
 <span class="w">    </span><span class="nx">tags?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">fileGroup</span><span class="o">?:</span><span class="w"> </span><span class="p">[</span><span class="nx">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">?</span><span class="p">][];</span>
-<span class="hll"><span class="w">    </span><span class="nx">descendantsGroup?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
-</span><span class="w">    </span><span class="nx">localStorage?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">descendantsGroup?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">localStorage?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">endpoint?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">all?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="p">}</span>
@@ -247,102 +247,102 @@
 <section id="storage">
 <h3>Storage<a class="headerlink" href="#storage" title="Link to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;cloudStorage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Built-in alias | NPM package name</span>
-<span class="w">    </span><span class="nt">&quot;bucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs-001&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">}</span>
+<span class="w">  </span><span class="nt">"cloudStorage"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aws"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Built-in alias | NPM package name</span>
+<span class="w">    </span><span class="nt">"bucket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs-001"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">}</span>
 
-<span class="w">    </span><span class="nt">&quot;admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;publicRead&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Public access (before upload #3)</span>
+<span class="w">    </span><span class="nt">"admin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"publicRead"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Public access (before upload #3)</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;service-value&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// ACL access permissions</span>
+<span class="w">      </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service-value"</span><span class="p">,</span><span class="w"> </span><span class="c1">// ACL access permissions</span>
 
-<span class="w">      </span><span class="nt">&quot;emptyBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Delete all objects (before upload #1)</span>
-<span class="w">      </span><span class="nt">&quot;recursive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Default is &quot;true&quot; (emptyBucket)</span>
+<span class="w">      </span><span class="nt">"emptyBucket"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Delete all objects (before upload #1)</span>
+<span class="w">      </span><span class="nt">"recursive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Default is "true" (emptyBucket)</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;emptyBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"emptyBucket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="cm">/* service-interface */</span>
-<span class="w">        </span><span class="nt">&quot;recursive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">        </span><span class="nt">"recursive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Optional</span>
 <span class="w">      </span><span class="p">},</span>
 
-<span class="w">      </span><span class="nt">&quot;configBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span><span class="w"> </span><span class="c1">// New bucket (before upload #2)</span>
-<span class="w">        </span><span class="nt">&quot;retentionPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Bucket initialization (before upload #4)</span>
-<span class="w">        </span><span class="nt">&quot;policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Modify policy (after upload)</span>
+<span class="w">      </span><span class="nt">"configBucket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"create"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span><span class="w"> </span><span class="c1">// New bucket (before upload #2)</span>
+<span class="w">        </span><span class="nt">"retentionPolicy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Bucket initialization (before upload #4)</span>
+<span class="w">        </span><span class="nt">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Modify policy (after upload)</span>
 
-<span class="w">        </span><span class="nt">&quot;website&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Main HTML page only</span>
-<span class="w">           </span><span class="nt">&quot;indexPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Usage varies by service</span>
-<span class="w">           </span><span class="nt">&quot;errorPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;404.html&quot;</span><span class="p">,</span>
-<span class="w">           </span><span class="nt">&quot;indexPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;home.html&quot;</span><span class="p">,</span>
-<span class="w">           </span><span class="nt">&quot;errorPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;errors/404.html&quot;</span>
+<span class="w">        </span><span class="nt">"website"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Main HTML page only</span>
+<span class="w">           </span><span class="nt">"indexPage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.html"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Usage varies by service</span>
+<span class="w">           </span><span class="nt">"errorPage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404.html"</span><span class="p">,</span>
+<span class="w">           </span><span class="nt">"indexPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home.html"</span><span class="p">,</span>
+<span class="w">           </span><span class="nt">"errorPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"errors/404.html"</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;upload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will not overwrite ACL</span>
-<span class="w">      </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Rewrites &quot;src&quot; to storage location + Will overwrite ACL (public-read)</span>
-<span class="w">      </span><span class="nt">&quot;localStorage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove current file from archive or local disk</span>
+<span class="w">    </span><span class="nt">"upload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will not overwrite ACL</span>
+<span class="w">      </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Rewrites "src" to storage location + Will overwrite ACL (public-read)</span>
+<span class="w">      </span><span class="nt">"localStorage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove current file from archive or local disk</span>
 
-<span class="w">      </span><span class="nt">&quot;all&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Include descendants + transforms + torrents</span>
+<span class="w">      </span><span class="nt">"all"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Include descendants + transforms + torrents</span>
 
-<span class="w">      </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-001/2024/picture.png</span>
-<span class="w">      </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;picture.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Choose a different filename for bucket</span>
-<span class="w">      </span><span class="nt">&quot;overwrite&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// If exists then picture_{1,2,3}.png</span>
+<span class="w">      </span><span class="nt">"pathname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024"</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-001/2024/picture.png</span>
+<span class="w">      </span><span class="nt">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"picture.png"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Choose a different filename for bucket</span>
+<span class="w">      </span><span class="nt">"overwrite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// If exists then picture_{1,2,3}.png</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;overwrite&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Always use current filename</span>
+<span class="w">      </span><span class="nt">"overwrite"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Always use current filename</span>
 
-<span class="w">      </span><span class="nt">&quot;contentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Metadata has higher precedence (default is &quot;application/octet-stream&quot;)</span>
+<span class="w">      </span><span class="nt">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Metadata has higher precedence (default is "application/octet-stream")</span>
 
-<span class="w">      </span><span class="nt">&quot;minStreamSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// Always use readable stream</span>
-<span class="w">      </span><span class="nt">&quot;minStreamSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;512mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Detect when to use readable stream (not limited to 2gb)</span>
-<span class="w">      </span><span class="nt">&quot;minStreamSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="c1">// Prefer transfer by Buffer (small files)</span>
+<span class="w">      </span><span class="nt">"minStreamSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// Always use readable stream</span>
+<span class="w">      </span><span class="nt">"minStreamSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512mb"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Detect when to use readable stream (not limited to 2gb)</span>
+<span class="w">      </span><span class="nt">"minStreamSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="c1">// Prefer transfer by Buffer (small files)</span>
 
-<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Part size of a parallel upload operation</span>
-<span class="w">      </span><span class="nt">&quot;chunkLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="c1">// Concurrent parts uploading</span>
+<span class="w">      </span><span class="nt">"chunkSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8mb"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Part size of a parallel upload operation</span>
+<span class="w">      </span><span class="nt">"chunkLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="c1">// Concurrent parts uploading</span>
 
-<span class="w">      </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://hostname/nodejs-001&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required when different from credential</span>
+<span class="w">      </span><span class="nt">"endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hostname/nodejs-001"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required when different from credential</span>
 
-<span class="w">      </span><span class="nt">&quot;copyObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">        </span><span class="nt">&quot;bucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs-002&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/2024/picture.png (required)</span>
+<span class="w">      </span><span class="nt">"copyObject"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">"bucket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs-002"</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/2024/picture.png (required)</span>
 <span class="w">        </span><span class="cm">/* OR */</span>
-<span class="w">        </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/2024/001.png</span>
+<span class="w">        </span><span class="nt">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001.png"</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/2024/001.png</span>
 <span class="w">        </span><span class="cm">/* OR */</span>
-<span class="w">        </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;images&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/images/001.png</span>
-<span class="w">        </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001.png&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"pathname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"images"</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/images/001.png</span>
+<span class="w">        </span><span class="nt">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001.png"</span><span class="p">,</span>
 <span class="w">        </span><span class="cm">/* OR */</span>
-<span class="w">        </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/001.png (override &quot;2024&quot;)</span>
-<span class="w">        </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001.png&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"pathname"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="c1">// nodejs-002/001.png (override "2024")</span>
+<span class="w">        </span><span class="nt">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001.png"</span><span class="p">,</span>
 
-<span class="w">        </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">}</span>
+<span class="w">        </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">}</span>
 <span class="w">      </span><span class="p">}]</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;download&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;alternate.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
-<span class="w">      </span><span class="nt">&quot;versionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Retrieve a previous file snapshot</span>
+<span class="w">    </span><span class="nt">"download"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alternate.png"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
+<span class="w">      </span><span class="nt">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Retrieve a previous file snapshot</span>
 
-<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;32mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Part size of a parallel download operation</span>
-<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">33554432</span><span class="p">,</span><span class="w"> </span><span class="c1">// 32 * 1024 * 1024</span>
-<span class="w">      </span><span class="nt">&quot;chunkLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="c1">// Concurrent parts downloading</span>
+<span class="w">      </span><span class="nt">"chunkSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32mb"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Part size of a parallel download operation</span>
+<span class="w">      </span><span class="nt">"chunkSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">33554432</span><span class="p">,</span><span class="w"> </span><span class="c1">// 32 * 1024 * 1024</span>
+<span class="w">      </span><span class="nt">"chunkLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="c1">// Concurrent parts downloading</span>
 
-<span class="w">      </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;overwrite&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// If local file exists then skip download</span>
+<span class="w">      </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"overwrite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// If local file exists then skip download</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Always write file or replace local file when same extension</span>
+<span class="w">      </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Always write file or replace local file when same extension</span>
 
-<span class="w">      </span><span class="nt">&quot;waitStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Delay build until file is completely downloaded</span>
+<span class="w">      </span><span class="nt">"waitStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Delay build until file is completely downloaded</span>
 
-<span class="w">      </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;download/images&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Relative only (base directory/pathname)</span>
+<span class="w">      </span><span class="nt">"pathname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"download/images"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Relative only (base directory/pathname)</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;preservePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use base directory</span>
-<span class="w">      </span><span class="nt">&quot;preservePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use asset directory</span>
+<span class="w">      </span><span class="nt">"preservePath"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use base directory</span>
+<span class="w">      </span><span class="nt">"preservePath"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use asset directory</span>
 
-<span class="w">      </span><span class="nt">&quot;keyname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// bucket/alternate.png to download/images/alternate.png</span>
-<span class="w">      </span><span class="nt">&quot;keyname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;picture.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// bucket/picture.png to download/images/alternate.png</span>
+<span class="w">      </span><span class="nt">"keyname"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="c1">// bucket/alternate.png to download/images/alternate.png</span>
+<span class="w">      </span><span class="nt">"keyname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"picture.png"</span><span class="p">,</span><span class="w"> </span><span class="c1">// bucket/picture.png to download/images/alternate.png</span>
 
-<span class="w">      </span><span class="nt">&quot;deleteObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Delete from bucket after successful download</span>
-<span class="w">      </span><span class="nt">&quot;deleteObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"deleteObject"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Delete from bucket after successful download</span>
+<span class="w">      </span><span class="nt">"deleteObject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span>
 
-<span class="w">      </span><span class="nt">&quot;copyObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="cm">/* same as upload */</span><span class="p">}]</span>
+<span class="w">      </span><span class="nt">"copyObject"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="cm">/* same as upload */</span><span class="p">}]</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}]</span>
 <span class="p">}</span>
@@ -356,12 +356,12 @@
 <section id="database">
 <h3>Database<a class="headerlink" href="#database" title="Link to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// DbDataSource</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Built-in alias | NPM package name</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// DbDataSource</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aws"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Built-in alias | NPM package name</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* service-interface */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="c1">// Excluding &quot;parallel&quot; | &quot;withCommand&quot; | &quot;usePool&quot;</span>
+<span class="w">    </span><span class="c1">// Excluding "parallel" | "withCommand" | "usePool"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -380,11 +380,11 @@
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">squared.cloud.json</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;aws&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Default behavior</span>
-<span class="w">        </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// Explicit to disable</span>
+<span class="w">  </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"aws"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"auth"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"storage"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Default behavior</span>
+<span class="w">        </span><span class="nt">"database"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// Explicit to disable</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
@@ -444,7 +444,7 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Buffer</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">aws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@pi-r/aws&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">aws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"@pi-r/aws"</span><span class="p">);</span>
 <span class="nx">aws</span><span class="p">.</span><span class="nx">CLOUD_UPLOAD_STREAM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -459,7 +459,7 @@
 <p>Parallel transfers were enabled by default to accommodate large files. The old behavior is used when <strong>chunkSize</strong> is empty and will open one request per file.</p>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">Sequential</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">azure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;@pi-r/azure&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">azure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"@pi-r/azure"</span><span class="p">);</span>
 <span class="nx">azure</span><span class="p">.</span><span class="nx">CLOUD_UPLOAD_CHUNK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="nx">azure</span><span class="p">.</span><span class="nx">CLOUD_DOWNLOAD_CHUNK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 </pre></div>

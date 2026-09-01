@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Compress &mdash; E-mc 0.14.5 documentation</title>
+  <title>Compress &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -103,14 +103,14 @@
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;compress&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;tinify&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Default API key (optional)</span>
-<span class="w">      </span><span class="nt">&quot;proxy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;expires&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1h&quot;</span>
+<span class="w">  </span><span class="nt">"compress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"tinify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Default API key (optional)</span>
+<span class="w">      </span><span class="nt">"proxy"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1h"</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;tinify_api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="w"> </span><span class="c1">// Alternate</span>
+<span class="w">    </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"tinify_api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="w"> </span><span class="c1">// Alternate</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -118,14 +118,14 @@
 </div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p &gt; img&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;compress&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p &gt; img"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"compress"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// png | jpeg | webp</span>
-<span class="w">      </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tinify&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Overrides settings</span>
-<span class="w">        </span><span class="nt">&quot;expires&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;30m&quot;</span><span class="w"> </span><span class="c1">// Caches validation for multiple transactions</span>
+<span class="w">      </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"png"</span><span class="p">,</span><span class="w"> </span><span class="c1">// png | jpeg | webp</span>
+<span class="w">      </span><span class="nt">"plugin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tinify"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Overrides settings</span>
+<span class="w">        </span><span class="nt">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30m"</span><span class="w"> </span><span class="c1">// Caches validation for multiple transactions</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
@@ -143,14 +143,14 @@
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;compress&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;imagemin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;mozjpeg&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-mozjpeg#api</span>
-<span class="w">      </span><span class="nt">&quot;jpegtran&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-jpegtran#api</span>
-<span class="w">      </span><span class="nt">&quot;pngquant&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-pngquant#api</span>
-<span class="w">      </span><span class="nt">&quot;webp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-webp#api</span>
-<span class="w">      </span><span class="nt">&quot;gifsicle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-gifsicle#api</span>
-<span class="w">      </span><span class="nt">&quot;svgo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">}</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-svgo#api</span>
+<span class="w">  </span><span class="nt">"compress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"imagemin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"mozjpeg"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-mozjpeg#api</span>
+<span class="w">      </span><span class="nt">"jpegtran"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-jpegtran#api</span>
+<span class="w">      </span><span class="nt">"pngquant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-pngquant#api</span>
+<span class="w">      </span><span class="nt">"webp"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-webp#api</span>
+<span class="w">      </span><span class="nt">"gifsicle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">},</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-gifsicle#api</span>
+<span class="w">      </span><span class="nt">"svgo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* default */</span><span class="p">}</span><span class="w"> </span><span class="c1">// https://npmjs.com/package/imagemin-svgo#api</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -162,27 +162,27 @@
 <p>Any <code class="docutils literal notranslate"><span class="pre">null</span></code> values being truthy will override the default transformer when “<em class="lower">metadata.package</em>” <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> is <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p &gt; img&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;compress&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p &gt; img"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"compress"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jpeg&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Recommended</span>
-<span class="w">      </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;worker&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;quality&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="c1">// imagemin-mozjpeg (default)</span>
-<span class="w">        </span><span class="nt">&quot;smooth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span>
+<span class="w">      </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpeg"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Recommended</span>
+<span class="w">      </span><span class="nt">"plugin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imagemin"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"worker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"quality"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="c1">// imagemin-mozjpeg (default)</span>
+<span class="w">        </span><span class="nt">"smooth"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jpeg&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;package&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin-jpegtran&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Alias &quot;jpegtran&quot;</span>
-<span class="w">        </span><span class="nt">&quot;mimeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/jpeg&quot;</span><span class="w"> </span><span class="c1">// Optional (auto-detect)</span>
+<span class="w">      </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpeg"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"plugin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imagemin"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"package"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imagemin-jpegtran"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Alias "jpegtran"</span>
+<span class="w">        </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="w"> </span><span class="c1">// Optional (auto-detect)</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;progressive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;arithmetic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"progressive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"arithmetic"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
@@ -195,22 +195,22 @@
 </div>
 <p>Other formats can be compressed similarly using <em>imagemin-like</em> plugins directly.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p &gt; img&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;compress&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p &gt; img"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"compress"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;png&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin-optipng&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// npm i imagemin-optipng</span>
-<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;speed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;quality&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">]</span>
+<span class="w">      </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"png"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"plugin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imagemin-optipng"</span><span class="p">,</span><span class="w"> </span><span class="c1">// npm i imagemin-optipng</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"quality"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">]</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;png&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;package&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;imagemin-optipng&quot;</span><span class="w"> </span><span class="c1">// With settings &quot;optipng&quot;</span>
+<span class="w">      </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"png"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"plugin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imagemin"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"package"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imagemin-optipng"</span><span class="w"> </span><span class="c1">// With settings "optipng"</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>

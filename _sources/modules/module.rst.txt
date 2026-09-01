@@ -400,7 +400,6 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
-  :emphasize-lines: 162
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -491,7 +490,7 @@ Settings
               bold?: boolean;
               justify?: "left" | "center" | "right";
               braces?: string;
-              as?: StringMap;
+              as?: Record<string, string | undefined>;
           };
           value?: {
               width?: number;
@@ -506,7 +505,7 @@ Settings
               bg_color?: BackgroundColor;
               bold?: boolean;
               braces?: [string, string];
-              as?: StringMap;
+              as?: Record<string, string | undefined>;
               unit?: "auto" | "s" | "ms";
           };
           message?: {

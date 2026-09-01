@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MySQL &mdash; E-mc 0.14.5 documentation</title>
+  <title>MySQL &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -111,11 +111,11 @@
 </ul>
 <section id="interface">
 <h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PoolOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">QueryOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;mysql2/promise&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">SecureContextOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;tls&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PoolOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">QueryOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"mysql2/promise"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">SecureContextOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"tls"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">MySQLDataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mysql&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"mysql"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">MySQLCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">QueryOptions</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span>
@@ -129,7 +129,7 @@
 </div>
 <section id="pool">
 <h3>Pool<a class="headerlink" href="#pool" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PoolOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;mysql2/promise&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PoolOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"mysql2/promise"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">max?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// connectionLimit</span>
@@ -148,24 +148,24 @@
 <li><p><a class="reference external" href="https://sidorares.github.io/node-mysql2/docs/examples/connections/create-connection">Connection</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mysql://&lt;username&gt;:&lt;password&gt;@localhost:3306/&lt;database&gt;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mysql://&lt;username&gt;:&lt;password&gt;@localhost:3306/&lt;database&gt;"</span><span class="p">,</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.db.json</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.db.json</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
-<span class="w">      </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3306</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
-<span class="w">      </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
+<span class="w">      </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">3306</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
+<span class="w">      </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"database"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;socketPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/tmp/mysql.sock&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;example&quot;</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"socketPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/tmp/mysql.sock"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"database"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -178,29 +178,29 @@
 <li><p><a class="reference external" href="https://sidorares.github.io/node-mysql2/docs/examples/queries/simple-queries/select">Query</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;img&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attribute&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mysql&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"img"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attribute"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mysql"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM table WHERE id = ? AND value = ?&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./path/to/statement.sql&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Extension &quot;.sql&quot; (settings.directory.sql + users/username/?)</span>
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;escaped&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT * FROM table WHERE id = ? AND value = ?"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./path/to/statement.sql"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Extension ".sql" (settings.directory.sql + users/username/?)</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"escaped"</span><span class="p">],</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM table WHERE id = :id AND value = :value&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;escaped&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT * FROM table WHERE id = :id AND value = :value"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"escaped"</span><span class="w"> </span><span class="p">},</span>
 
-<span class="w">    </span><span class="cm">/* Result: { &quot;item_src&quot;: &quot;mysql.png&quot;, &quot;item_alt&quot;: &quot;MySQL&quot; } */</span>
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item_src&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item_alt&quot;</span>
+<span class="w">    </span><span class="cm">/* Result: { "item_src": "mysql.png", "item_alt": "MySQL" } */</span>
+<span class="w">    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item_src"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item_alt"</span>
 <span class="w">    </span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;usePool&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;connectionLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;waitForConnections&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="nt">"usePool"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"connectionLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"waitForConnections"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -210,14 +210,14 @@
 <li><p><a class="reference external" href="https://sidorares.github.io/node-mysql2/docs/examples/queries/prepared-statements">Prepared Statements</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT 1&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// 1</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM `users` WHERE `name` = ?&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">],</span><span class="w"> </span><span class="nt">&quot;preparedStatement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// OK</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Herbert&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// OK</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Cactus&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// 1</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM `users` WHERE `age` &gt; ?&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">33</span><span class="p">],</span><span class="w"> </span><span class="nt">&quot;preparedStatement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// OK</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Phillip&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// ERROR</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;preparedStatement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// 1</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">36</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// ERROR</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT 1"</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT * FROM `users` WHERE `name` = ?"</span><span class="p">,</span><span class="w"> </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"John"</span><span class="p">],</span><span class="w"> </span><span class="nt">"preparedStatement"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// OK</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Herbert"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// OK</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT 1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Cactus"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT * FROM `users` WHERE `age` &gt; ?"</span><span class="p">,</span><span class="w"> </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">33</span><span class="p">],</span><span class="w"> </span><span class="nt">"preparedStatement"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// OK</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Phillip"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// ERROR</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT 1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"preparedStatement"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">36</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// ERROR</span>
 <span class="p">]</span>
 </pre></div>
 </div>

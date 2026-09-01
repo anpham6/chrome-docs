@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changed &mdash; E-mc 0.14.5 documentation</title>
+  <title>Changed &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -79,8 +79,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id17">0.10.0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id18">0.9.4</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id19">0.9.0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id20">0.8.0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id21">0.7.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">0.7.0</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="removed.html">Removed</a></li>
@@ -150,9 +149,9 @@
 <td><p>BREAKING ICloudServiceClient function deleteObjects is an alias for deleteObjectsV3.</p></td>
 </tr>
 <tr class="row-odd"><td><p>modules/document</p></td>
-<td><p>IDocument property accessor imports as StringMap was changed to ImportModule:
+<td><p>IDocument property accessor imports as Record&lt;string, string | undefined&gt; was changed to ImportModule:
 
-IDocument function parameter imports as StringMap was changed to ImportModule:
+IDocument function parameter imports as Record&lt;string, string | undefined&gt; was changed to ImportModule:
 
 findSourceScope
 
@@ -559,44 +558,35 @@ function supported argument lts as boolean can be used as the patch argument.</p
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>cloud/atlas</p></td>
-<td><p>NPM package mongodb was upgraded from 6.2 to 7.1 with a NodeJS 20.19 requirement.</p></td>
-</tr>
-<tr class="row-odd"><td><p>cloud/aws</p></td>
+<tr class="row-even"><td><p>cloud/aws</p></td>
 <td><p>ICloudServiceClient method deleteObjectsV3 overrides Bucket property in ListObjectsRequest with method parameter Bucket.</p></td>
 </tr>
-<tr class="row-even"><td><p>cloud/aws-v3</p></td>
+<tr class="row-odd"><td><p>cloud/aws-v3</p></td>
 <td><p>ICloudServiceClient method deleteObjectsV3 overrides Bucket property in ListObjectsRequest with method parameter Bucket.</p></td>
 </tr>
-<tr class="row-odd"><td><p>cloud/azure</p></td>
+<tr class="row-even"><td><p>cloud/azure</p></td>
 <td><p>EnvironmentCredential from &#64;azure/identity is enforced when qualified for default authentication.</p></td>
 </tr>
-<tr class="row-even"><td><p>db/mongodb</p></td>
-<td><p>NPM package mongodb was upgraded from 6.2 to 7.1 with a NodeJS 20.19 requirement.</p></td>
-</tr>
-<tr class="row-odd"><td><p>db/mssql</p></td>
-<td><p>NPM package tedious was upgraded from 18.6 to 19.2 with a NodeJS 18.17 requirement.</p></td>
-</tr>
-<tr class="row-even"><td><p>modules/cloud</p></td>
+<tr class="row-odd"><td><p>modules/cloud</p></td>
 <td><p>ICloud function deleteObjects argument recursive is a union with options as DeleteObjectsOptions.</p></td>
 </tr>
-<tr class="row-odd"><td><p>modules/file-manager</p></td>
+<tr class="row-even"><td><p>modules/file-manager</p></td>
 <td><p>FileManagerConstructor function writeChecksum | verifyChecksum options property exclude as string[] can be prefixed with “!” to negate a subset of glob paths.
 
 IFileManager function install with name watch injected with an NPM package or Watch constructor was implemented.
 
 IFileManager property cacheToDisk | cacheToMemory were made readonly references.</p></td>
 </tr>
-<tr class="row-even"><td><p>modules/module</p></td>
+<tr class="row-odd"><td><p>modules/module</p></td>
 <td><p>MemoryModule settings property cache_disk.exclude can be prefixed with “!” to negate a subset of glob paths.</p></td>
 </tr>
-<tr class="row-odd"><td><p>modules/request</p></td>
+<tr class="row-even"><td><p>modules/request</p></td>
 <td><p>RequestModule property proxy.exclude can be prefixed with “!” to negate a subset of glob addresses.</p></td>
 </tr>
-<tr class="row-even"><td><p>modules/types</p></td>
+<tr class="row-odd"><td><p>modules/types</p></td>
 <td><p>type HighResolutionTime in object with bigint primitive was implemented.</p></td>
 </tr>
-<tr class="row-odd"><td><p>modules/watch</p></td>
+<tr class="row-even"><td><p>modules/watch</p></td>
 <td><p>Permissions are required to watch externally added supplementary source files.</p></td>
 </tr>
 </tbody>
@@ -744,22 +734,7 @@ interface AddEventListenerOptions in dom was relocated to core.</p></td>
 </table>
 </section>
 <section id="id20">
-<h2>0.8.0<a class="headerlink" href="#id20" title="Link to this heading"></a></h2>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Docname</p></th>
-<th class="head"><p>Text</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>db/mssql</p></td>
-<td><p>NPM package tedious was upgraded from 16.7 to 18.3 with a NodeJS 18 requirement.</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="id21">
-<h2>0.7.0<a class="headerlink" href="#id21" title="Link to this heading"></a></h2>
+<h2>0.7.0<a class="headerlink" href="#id20" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Docname</p></th>

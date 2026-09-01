@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Microsoft Azure &mdash; E-mc 0.14.5 documentation</title>
+  <title>Microsoft Azure &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -117,7 +117,7 @@
 <section id="interface">
 <h3>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h3>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">AzureStorage</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorage</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;az&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">"azure"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"az"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">AzureStorageCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">bucket</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
@@ -149,32 +149,32 @@
 </ul>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">EnvironmentCredential</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">AZURE_TENANT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-<span class="nx">AZURE_CLIENT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-<span class="nx">AZURE_CLIENT_SECRET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">AZURE_TENANT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<span class="nx">AZURE_CLIENT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<span class="nx">AZURE_CLIENT_SECRET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
 <span class="cm">/* OR */</span>
-<span class="nx">AZURE_TENANT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-<span class="nx">AZURE_CLIENT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-<span class="nx">AZURE_CLIENT_CERTIFICATE_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-<span class="nx">AZURE_CLIENT_CERTIFICATE_PASSWORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Optional</span>
-<span class="nx">AZURE_CLIENT_SEND_CERTIFICATE_CHAIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nx">AZURE_TENANT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<span class="nx">AZURE_CLIENT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<span class="nx">AZURE_CLIENT_CERTIFICATE_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<span class="nx">AZURE_CLIENT_CERTIFICATE_PASSWORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="nx">AZURE_CLIENT_SEND_CERTIFICATE_CHAIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;accountName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;accountKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"accountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"accountKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;accountName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;accountSas&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;?sv=2022-11-02&amp;sr=b...&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"accountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"accountSas"</span><span class="p">:</span><span class="w"> </span><span class="s2">"?sv=2022-11-02&amp;sr=b..."</span><span class="p">,</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;connectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DefaultEndpointsProtocol=http;AccountName=nodejs;AccountKey=**********;BlobEndpoint=http://127.0.0.1:10000/nodejs;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"connectionString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DefaultEndpointsProtocol=http;AccountName=nodejs;AccountKey=**********;BlobEndpoint=http://127.0.0.1:10000/nodejs;"</span><span class="p">,</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;sharedAccessSignature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://nodejs.blob.core.windows.net/bucket?...&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Full URL with SAS token</span>
+<span class="w">      </span><span class="nt">"sharedAccessSignature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://nodejs.blob.core.windows.net/bucket?..."</span><span class="p">,</span><span class="w"> </span><span class="c1">// Full URL with SAS token</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
 <span class="w">      </span><span class="c1">// DefaultAzureCredential from @azure/identity</span>
 <span class="w">    </span><span class="p">}</span>
@@ -184,10 +184,10 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">using process.env</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">AZURE_STORAGE_ACCOUNT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-<span class="nx">AZURE_STORAGE_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-<span class="nx">AZURE_STORAGE_CONNECTION_STRING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-<span class="nx">AZURE_STORAGE_SAS_TOKEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">AZURE_STORAGE_ACCOUNT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<span class="nx">AZURE_STORAGE_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<span class="nx">AZURE_STORAGE_CONNECTION_STRING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<span class="nx">AZURE_STORAGE_SAS_TOKEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -202,75 +202,75 @@
 <li><p><a class="reference external" href="https://learn.microsoft.com/en-us/javascript/api/&#64;azure/storage-blob">Storage Blob Client API</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Any resource</span>
-<span class="w">  </span><span class="nt">&quot;cloudStorage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;azure&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;bucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs-001&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;publicRead&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as &quot;blob&quot; (access)</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Any resource</span>
+<span class="w">  </span><span class="nt">"cloudStorage"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"azure"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"bucket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs-001"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"admin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"publicRead"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as "blob" (access)</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;container&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"container"</span><span class="p">,</span>
 
-<span class="w">      </span><span class="nt">&quot;emptyBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// azure.listBlobsFlat{ContainerListBlobsOptions}</span>
-<span class="w">        </span><span class="nt">&quot;recursive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">      </span><span class="nt">"emptyBucket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// azure.listBlobsFlat{ContainerListBlobsOptions}</span>
+<span class="w">        </span><span class="nt">"recursive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Optional</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;configBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;website&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// azure.setProperties{staticWebsite}</span>
-<span class="w">          </span><span class="nt">&quot;indexPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// indexDocument</span>
-<span class="w">          </span><span class="nt">&quot;indexPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;home.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// defaultIndexDocumentPath</span>
-<span class="w">          </span><span class="nt">&quot;errorPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;errors/404.html&quot;</span><span class="w"> </span><span class="c1">// errorDocument404Path</span>
+<span class="w">      </span><span class="nt">"configBucket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"website"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// azure.setProperties{staticWebsite}</span>
+<span class="w">          </span><span class="nt">"indexPage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.html"</span><span class="p">,</span><span class="w"> </span><span class="c1">// indexDocument</span>
+<span class="w">          </span><span class="nt">"indexPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home.html"</span><span class="p">,</span><span class="w"> </span><span class="c1">// defaultIndexDocumentPath</span>
+<span class="w">          </span><span class="nt">"errorPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"errors/404.html"</span><span class="w"> </span><span class="c1">// errorDocument404Path</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="cm">/* During call to &quot;upload&quot; */</span>
-<span class="w">        </span><span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// azure.create</span>
-<span class="w">          </span><span class="nt">&quot;access&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;container&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as &quot;acl&quot;</span>
-<span class="w">          </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">}</span>
+<span class="w">        </span><span class="cm">/* During call to "upload" */</span>
+<span class="w">        </span><span class="nt">"create"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// azure.create</span>
+<span class="w">          </span><span class="nt">"access"</span><span class="p">:</span><span class="w"> </span><span class="s2">"container"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as "acl"</span>
+<span class="w">          </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">}</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;retentionPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="c1">// azure.setAccessPolicy</span>
-<span class="w">          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;policy1&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;accessPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;expiresOn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new Date(&#39;2025-01-01&#39;)&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Permission &quot;coerce&quot; required when through web service</span>
-<span class="w">            </span><span class="nt">&quot;permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;startsOn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new Date(&#39;2024-01-01&#39;)&quot;</span>
+<span class="w">        </span><span class="nt">"retentionPolicy"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="c1">// azure.setAccessPolicy</span>
+<span class="w">          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"policy1"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"accessPolicy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"expiresOn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new Date('2025-01-01')"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Permission "coerce" required when through web service</span>
+<span class="w">            </span><span class="nt">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"startsOn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new Date('2024-01-01')"</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}]</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;upload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"upload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="cm">/* Not supported */</span>
-<span class="w">      </span><span class="nt">&quot;publicRead&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"publicRead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span>
 
-<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// BlockBlobUploadOptions</span>
-<span class="w">        </span><span class="nt">&quot;blobHTTPHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;blobContentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// BlockBlobUploadOptions</span>
+<span class="w">        </span><span class="nt">"blobHTTPHeaders"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"blobContentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="cm">/* All objects except when &quot;metadata&quot; or &quot;tags&quot; is defined */</span>
-<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Tags */</span><span class="p">}</span>
+<span class="w">        </span><span class="cm">/* All objects except when "metadata" or "tags" is defined */</span>
+<span class="w">        </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">},</span>
+<span class="w">        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Tags */</span><span class="p">}</span>
 <span class="w">      </span><span class="p">},</span>
 
 <span class="w">      </span><span class="cm">/* Primary object only */</span>
-<span class="w">      </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Tags */</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Tags */</span><span class="p">},</span>
 
 <span class="w">      </span><span class="cm">/* azure.uploadFile{maxSingleShotSize} */</span>
-<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;32mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Aligned to 1mb</span>
-<span class="w">      </span><span class="nt">&quot;chunkLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="c1">// Same as &quot;concurrency&quot;</span>
+<span class="w">      </span><span class="nt">"chunkSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32mb"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Aligned to 1mb</span>
+<span class="w">      </span><span class="nt">"chunkLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="c1">// Same as "concurrency"</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;download&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"download"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="cm">/* azure.downloadToFile */</span>
-<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2gb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Set to at least 2gb</span>
-<span class="w">      </span><span class="nt">&quot;versionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2011-03-09T01:42:34.9360000Z&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Alias for &quot;snapshot&quot; (optional)</span>
+<span class="w">      </span><span class="nt">"chunkSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2gb"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Set to at least 2gb</span>
+<span class="w">      </span><span class="nt">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2011-03-09T01:42:34.9360000Z"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Alias for "snapshot" (optional)</span>
 
 <span class="w">      </span><span class="cm">/* azure.downloadToBuffer{blockSize} */</span>
-<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;256mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Aligned to 1mb</span>
-<span class="w">      </span><span class="nt">&quot;chunkLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as &quot;concurrency&quot;</span>
-<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// BlobDownloadToBufferOptions</span>
-<span class="w">        </span><span class="nt">&quot;concurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">      </span><span class="nt">"chunkSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"256mb"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Aligned to 1mb</span>
+<span class="w">      </span><span class="nt">"chunkLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as "concurrency"</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// BlobDownloadToBufferOptions</span>
+<span class="w">        </span><span class="nt">"concurrency"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
 <span class="w">      </span><span class="p">},</span>
 
-<span class="w">      </span><span class="nt">&quot;deleteObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* ContainerDeleteMethodOptions */</span><span class="p">}</span><span class="w"> </span><span class="c1">// azure.delete</span>
+<span class="w">      </span><span class="nt">"deleteObject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* ContainerDeleteMethodOptions */</span><span class="p">}</span><span class="w"> </span><span class="c1">// azure.delete</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}]</span>
 <span class="p">}</span>
@@ -285,11 +285,11 @@
 </ul>
 <section id="id1">
 <h3>Interface<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CosmosClientOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">FeedOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">OperationInput</span><span class="p">,</span><span class="w"> </span><span class="nx">PartitionKey</span><span class="p">,</span><span class="w"> </span><span class="nx">PatchRequestBody</span><span class="p">,</span><span class="w"> </span><span class="nx">RequestOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">SqlQuerySpec</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@azure/cosmos&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CosmosClientOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">FeedOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">OperationInput</span><span class="p">,</span><span class="w"> </span><span class="nx">PartitionKey</span><span class="p">,</span><span class="w"> </span><span class="nx">PatchRequestBody</span><span class="p">,</span><span class="w"> </span><span class="nx">RequestOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">SqlQuerySpec</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@azure/cosmos"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">AzureDatabaseQuery</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudDatabase</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;az&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">"azure"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"az"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">AzureDatabaseCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">table</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
@@ -317,20 +317,20 @@
 <li><p><a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/azure.identity.usernamepasswordcredential.-ctor?view=azure-dotnet#azure-identity-usernamepasswordcredential-ctor(system-string-system-string-system-string-system-string)">Azure AD</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://nodejs.documents.azure.com:443&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://nodejs.documents.azure.com:443"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://nodejs.documents.azure.com:443&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Azure AD</span>
-<span class="w">      </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tenantId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;azure-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional with AZURE_TENANT_ID</span>
-<span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cosmos-id&quot;</span><span class="w"> </span><span class="c1">// Optional with AZURE_CLIENT_ID</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://nodejs.documents.azure.com:443"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Azure AD</span>
+<span class="w">      </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tenantId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"azure-id"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional with AZURE_TENANT_ID</span>
+<span class="w">      </span><span class="nt">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cosmos-id"</span><span class="w"> </span><span class="c1">// Optional with AZURE_CLIENT_ID</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -338,8 +338,8 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">using process.env</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">AZURE_COSMOS_ENDPOINT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-<span class="nx">AZURE_COSMOS_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">AZURE_COSMOS_ENDPOINT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<span class="nx">AZURE_COSMOS_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -356,44 +356,44 @@
 <li><p><a class="reference external" href="http://jsonpatch.com">JSON Patch</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;azure&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Database name</span>
-<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"h1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"azure"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Database name</span>
+<span class="w">    </span><span class="nt">"table"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span>
 
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;partitionKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pictures&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
-<span class="w">    </span><span class="nt">&quot;partitionKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Pictures&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Azure&quot;</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* RequestOptions */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"partitionKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pictures"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">    </span><span class="nt">"partitionKey"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Pictures"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Azure"</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* RequestOptions */</span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;storedProcedureId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;spGetItems&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;partitionKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pictures&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* RequestOptions */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"storedProcedureId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spGetItems"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"partitionKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pictures"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* RequestOptions */</span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM c WHERE c.id = &#39;1&#39;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Calls &quot;readAll&quot; when not defined</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// SqlQuerySpec</span>
-<span class="w">      </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM c WHERE c.lastName = @lastName AND c.address.state = @addressState&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@lastName&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wakefield&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@addressState&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CA&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT * FROM c WHERE c.id = '1'"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Calls "readAll" when not defined</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// SqlQuerySpec</span>
+<span class="w">      </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT * FROM c WHERE c.lastName = @lastName AND c.address.state = @addressState"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@lastName"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wakefield"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@addressState"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="w"> </span><span class="p">}</span>
 <span class="w">      </span><span class="p">]</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* FeedOptions */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* FeedOptions */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;b&gt;${title}&lt;/b&gt;: ${description}&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;b&gt;${title}&lt;/b&gt;: ${description}"</span><span class="p">,</span>
 
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* PatchRequestBody */</span><span class="p">},</span><span class="w"> </span><span class="c1">// JSON Patch</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* PatchRequestBody */</span><span class="p">},</span><span class="w"> </span><span class="c1">// JSON Patch</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM c WHERE c.id = &#39;1&#39;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Record&lt;string, unknown&gt; */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT * FROM c WHERE c.id = '1'"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Record&lt;string, unknown&gt; */</span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* WITH */</span>
-<span class="w">    </span><span class="nt">&quot;partitionKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pictures&quot;</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">    </span><span class="nt">"partitionKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pictures"</span><span class="w"> </span><span class="c1">// Optional</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>

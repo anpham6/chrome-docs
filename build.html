@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Options &mdash; E-mc 0.14.5 documentation</title>
+  <title>Build Options &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
@@ -107,43 +107,43 @@
 </div>
 <section id="example-usage">
 <h2>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h2>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;index.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"index.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">productionRelease</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Ignore local URL rewriting and use actual path</span>
-<span class="w">  </span><span class="nx">productionRelease</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/path/to/wwwroot/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Move assets outside base directory to server root directory</span>
+<span class="w">  </span><span class="nx">productionRelease</span><span class="o">:</span><span class="w"> </span><span class="s2">"/path/to/wwwroot/"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Move assets outside base directory to server root directory</span>
 <span class="w">  </span><span class="nx">serverRootMapping</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;images/&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;common/images&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// output/images/ -&gt; /path/to/wwwroot/common/images/ (move - no trailing slash)</span>
-<span class="w">    </span><span class="s2">&quot;images/png/&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;main/data/&quot;</span><span class="w"> </span><span class="c1">// output/images/png/ -&gt; /path/to/wwwroot/main/data/images/png/ (append)</span>
+<span class="w">    </span><span class="s2">"images/"</span><span class="o">:</span><span class="w"> </span><span class="s2">"common/images"</span><span class="p">,</span><span class="w"> </span><span class="c1">// output/images/ -&gt; /path/to/wwwroot/common/images/ (move - no trailing slash)</span>
+<span class="w">    </span><span class="s2">"images/png/"</span><span class="o">:</span><span class="w"> </span><span class="s2">"main/data/"</span><span class="w"> </span><span class="c1">// output/images/png/ -&gt; /path/to/wwwroot/main/data/images/png/ (append)</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nx">productionIncremental</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use cached data when processing transformed files</span>
 
 <span class="w">  </span><span class="nx">preserveCrossOrigin</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Ignore local assets hosted on other domains</span>
 <span class="w">  </span><span class="nx">preserveCrossOrigin</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// URL class attributes</span>
-<span class="w">    </span><span class="nx">hostname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;docs.github.com&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/repositories&quot;</span>
+<span class="w">    </span><span class="nx">hostname</span><span class="o">:</span><span class="w"> </span><span class="s2">"docs.github.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">"/repositories"</span>
 <span class="w">  </span><span class="p">},</span>
 
 <span class="w">  </span><span class="nx">useOriginalHtmlPage</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use browser validated in memory static page DOM for build</span>
-<span class="w">  </span><span class="nx">useOriginalHtmlPage</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;textarea|code&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Ignore tags causing parsing errors</span>
+<span class="w">  </span><span class="nx">useOriginalHtmlPage</span><span class="o">:</span><span class="w"> </span><span class="s2">"textarea|code"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Ignore tags causing parsing errors</span>
 
-<span class="w">  </span><span class="nx">useUnsafeReplace</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use when there are no element tags inside comments and &lt;script&gt;</span>
-<span class="w">  </span><span class="nx">useUnsafeReplace</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;css&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use when there are no comments or block delimiters inside property values (e.g. &quot;{&quot; &quot;}&quot;)</span>
-<span class="w">  </span><span class="nx">useUnsafeReplace</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Alias for [&quot;html&quot;, &quot;css&quot;]</span>
+<span class="w">  </span><span class="nx">useUnsafeReplace</span><span class="o">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use when there are no element tags inside comments and &lt;script&gt;</span>
+<span class="w">  </span><span class="nx">useUnsafeReplace</span><span class="o">:</span><span class="w"> </span><span class="s2">"css"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use when there are no comments or block delimiters inside property values (e.g. "{" "}")</span>
+<span class="w">  </span><span class="nx">useUnsafeReplace</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Alias for ["html", "css"]</span>
 
 <span class="w">  </span><span class="nx">stripCommentsAndCDATA</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove unused code and non-void tags from HTML</span>
-<span class="w">  </span><span class="nx">stripCommentsAndCDATA</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;script|picture&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Additional tags to remove using RegExp group notation</span>
+<span class="w">  </span><span class="nx">stripCommentsAndCDATA</span><span class="o">:</span><span class="w"> </span><span class="s2">"script|picture"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Additional tags to remove using RegExp group notation</span>
 <span class="w">  </span><span class="nx">stripStyleComments</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove all CSS comments</span>
 
 <span class="w">  </span><span class="cm">/* Use when there are parsing errors */</span>
 <span class="w">  </span><span class="nx">normalizeHtmlOutput</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Escape illegal tags and remove unnecessary trailing spaces</span>
-<span class="w">  </span><span class="nx">normalizeHtmlOutput</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;?%&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Tags to ignore using RegExp negated characters when escaping (e.g. &lt;?php ?&gt; | &lt;%= ejs %&gt;)</span>
+<span class="w">  </span><span class="nx">normalizeHtmlOutput</span><span class="o">:</span><span class="w"> </span><span class="s2">"?%"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Tags to ignore using RegExp negated characters when escaping (e.g. &lt;?php ?&gt; | &lt;%= ejs %&gt;)</span>
 
-<span class="w">  </span><span class="nx">escapeReservedCharacters</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Escape reserved characters inside attributes (e.g. &quot;&lt;&quot;)</span>
-<span class="w">  </span><span class="nx">ignoreServerCodeBlocks</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&lt;%&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;%&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&lt;?php&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&lt;?php&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;?&gt;&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// May produce better results with dynamic content (&lt;% %&gt; | &lt;?php ; | &lt;?php ?&gt;)</span>
-<span class="w">  </span><span class="nx">sanitizeFramework</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;android&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Remove global and android dataset UI attributes</span>
+<span class="w">  </span><span class="nx">escapeReservedCharacters</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Escape reserved characters inside attributes (e.g. "&lt;")</span>
+<span class="w">  </span><span class="nx">ignoreServerCodeBlocks</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"&lt;%"</span><span class="p">,</span><span class="w"> </span><span class="s2">"%&gt;"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;?php"</span><span class="p">,</span><span class="w"> </span><span class="s2">";"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;?php"</span><span class="p">,</span><span class="w"> </span><span class="s2">"?&gt;"</span><span class="p">],</span><span class="w"> </span><span class="c1">// May produce better results with dynamic content (&lt;% %&gt; | &lt;?php ; | &lt;?php ?&gt;)</span>
+<span class="w">  </span><span class="nx">sanitizeFramework</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">,</span><span class="w"> </span><span class="s2">"android"</span><span class="p">],</span><span class="w"> </span><span class="c1">// Remove global and android dataset UI attributes</span>
 
-<span class="w">  </span><span class="nx">removeBinaries</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove all script tags with src=&quot;squared.js&quot;</span>
+<span class="w">  </span><span class="nx">removeBinaries</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove all script tags with src="squared.js"</span>
 
-<span class="w">  </span><span class="nx">removeInlineStyles</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Strip style=&quot;&quot; attribute from all elements (useOriginalHtmlPage=false)</span>
+<span class="w">  </span><span class="nx">removeInlineStyles</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Strip style="" attribute from all elements (useOriginalHtmlPage=false)</span>
 <span class="w">  </span><span class="nx">removeUnusedClasses</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Selectors without :pseudo-class</span>
 <span class="w">  </span><span class="nx">removeUnusedPseudoClasses</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Selectors with :pseudo-class (lowercase only)</span>
 <span class="w">  </span><span class="nx">removeUnusedVariables</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// --custom-variables</span>
@@ -156,31 +156,31 @@
 
 <span class="w">  </span><span class="cm">/* Styles which are still being used */</span>
 <span class="w">  </span><span class="nx">retainUsedStyles</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;selectors&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="c1">// Same without separators</span>
-<span class="w">    </span><span class="s2">&quot;variables&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">    </span><span class="s2">&quot;pseudoClass&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will keep &quot;li a:hover&quot; + &quot;li a:visited&quot; when &quot;li a&quot; is a used selector</span>
-<span class="w">    </span><span class="s2">&quot;@font-face&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">    </span><span class="s2">&quot;@keyframes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">    </span><span class="s2">&quot;@media&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">    </span><span class="s2">&quot;@supports&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">    </span><span class="s2">&quot;@container&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">    </span><span class="s2">&quot;@scope&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">    </span><span class="s2">"selectors"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="c1">// Same without separators</span>
+<span class="w">    </span><span class="s2">"variables"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="s2">"pseudoClass"</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will keep "li a:hover" + "li a:visited" when "li a" is a used selector</span>
+<span class="w">    </span><span class="s2">"@font-face"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="s2">"@keyframes"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="s2">"@media"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="s2">"@supports"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="s2">"@container"</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="s2">"@scope"</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="cm">/* OR */</span>
 <span class="w">  </span><span class="nx">retainUsedStyles</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="cm">/* CSS selectors (string | RegExp) */</span><span class="p">,</span>
-<span class="w">    </span><span class="cm">/* CSS variables (string prefixed with &#39;--&#39;) */</span><span class="p">,</span>
-<span class="w">    </span><span class="cm">/* CSS @font-face (string enclosed within &#39;|font-face:Times New Roman|&#39;) */</span><span class="p">,</span>
-<span class="w">    </span><span class="cm">/* CSS @keyframes (string enclosed within &#39;|keyframes:animationName|&#39;) */</span><span class="p">,</span>
-<span class="w">    </span><span class="cm">/* CSS @media (string enclosed within &#39;|media:only screen and (min-width: 800px)|&#39;) */</span><span class="p">,</span>
-<span class="w">    </span><span class="cm">/* CSS @supports (string enclosed within &#39;|supports:(display: grid)|&#39;) */</span><span class="p">,</span>
-<span class="w">    </span><span class="cm">/* CSS @container (string enclosed within &#39;|container:(min-width: 800px)|&#39;) */</span><span class="p">,</span>
-<span class="w">    </span><span class="cm">/* CSS @scope (string enclosed within &#39;|scope:selector-start|&#39;) */</span>
+<span class="w">    </span><span class="cm">/* CSS variables (string prefixed with '--') */</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* CSS @font-face (string enclosed within '|font-face:Times New Roman|') */</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* CSS @keyframes (string enclosed within '|keyframes:animationName|') */</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* CSS @media (string enclosed within '|media:only screen and (min-width: 800px)|') */</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* CSS @supports (string enclosed within '|supports:(display: grid)|') */</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* CSS @container (string enclosed within '|container:(min-width: 800px)|') */</span><span class="p">,</span>
+<span class="w">    </span><span class="cm">/* CSS @scope (string enclosed within '|scope:selector-start|') */</span>
 <span class="w">  </span><span class="p">],</span>
 
 <span class="w">  </span><span class="nx">imports</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;http://localhost:3000/build/&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;./build&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Starts with &quot;http&quot;</span>
-<span class="w">    </span><span class="s2">&quot;http://localhost:3000/dist/chrome.framework.js&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/path/project/build/framework/chrome/src/main.js&quot;</span><span class="w"> </span><span class="c1">// Full file path</span>
+<span class="w">    </span><span class="s2">"http://localhost:3000/build/"</span><span class="o">:</span><span class="w"> </span><span class="s2">"./build"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Starts with "http"</span>
+<span class="w">    </span><span class="s2">"http://localhost:3000/dist/chrome.framework.js"</span><span class="o">:</span><span class="w"> </span><span class="s2">"/path/project/build/framework/chrome/src/main.js"</span><span class="w"> </span><span class="c1">// Full file path</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
@@ -193,45 +193,45 @@
 <section id="example-saveas">
 <h2>Example “saveAs”<a class="headerlink" href="#example-saveas" title="Link to this heading"></a></h2>
 <p>The entire page can be transformed as a group with the same functionality as JSON <em class="alt">(yaml)</em> configuration except where highlighted.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">&quot;/path/to/target&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">"/path/to/target"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">saveAs</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">filename</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">process</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;beautify&quot;</span><span class="p">],</span><span class="w"> </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">lang</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">filename</span><span class="o">:</span><span class="w"> </span><span class="s2">"index.html"</span><span class="p">,</span><span class="w"> </span><span class="nx">process</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"beautify"</span><span class="p">],</span><span class="w"> </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">lang</span><span class="o">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
 <span class="w">    </span><span class="nx">script</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;../js&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">filename</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bundle.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Only for first bundle</span>
-<span class="w">      </span><span class="nx">process</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;es5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;es5-minify&quot;</span><span class="p">],</span>
-<span class="hll"><span class="w">      </span><span class="nx">ignoring</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text/template&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// MIME types</span>
+<span class="w">      </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">"../js"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">filename</span><span class="o">:</span><span class="w"> </span><span class="s2">"bundle.js"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Only for first bundle</span>
+<span class="w">      </span><span class="nx">process</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"es5"</span><span class="p">,</span><span class="w"> </span><span class="s2">"es5-minify"</span><span class="p">],</span>
+<span class="hll"><span class="w">      </span><span class="nx">ignoring</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"text/template"</span><span class="p">],</span><span class="w"> </span><span class="c1">// MIME types</span>
 </span><span class="hll"><span class="w">      </span><span class="nx">inlineAction</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// script + link + image</span>
 </span><span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nx">link</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;css&quot;</span>
-<span class="w">      </span><span class="nx">filename</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bundle.css&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">"css"</span>
+<span class="w">      </span><span class="nx">filename</span><span class="o">:</span><span class="w"> </span><span class="s2">"bundle.css"</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">inline</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">preserve</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">rel</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;stylesheet&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">media</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;all&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">rel</span><span class="o">:</span><span class="w"> </span><span class="s2">"stylesheet"</span><span class="p">,</span><span class="w"> </span><span class="nx">media</span><span class="o">:</span><span class="w"> </span><span class="s2">"all"</span><span class="w"> </span><span class="p">},</span>
 <span class="w">      </span><span class="nx">inlineAction</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// merge + override</span>
-<span class="w">      </span><span class="nx">inlineAction</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;merge&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// { media: &quot;screen&quot; } -&gt; { rel: &quot;stylesheet&quot;, media: &quot;screen&quot; }</span>
-<span class="w">      </span><span class="nx">inlineAction</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;override&quot;</span><span class="w"> </span><span class="c1">// { rel: &quot;alternate&quot; } -&gt; { rel: &quot;alternate&quot; }</span>
+<span class="w">      </span><span class="nx">inlineAction</span><span class="o">:</span><span class="w"> </span><span class="s2">"merge"</span><span class="p">,</span><span class="w"> </span><span class="c1">// { media: "screen" } -&gt; { rel: "stylesheet", media: "screen" }</span>
+<span class="w">      </span><span class="nx">inlineAction</span><span class="o">:</span><span class="w"> </span><span class="s2">"override"</span><span class="w"> </span><span class="c1">// { rel: "alternate" } -&gt; { rel: "alternate" }</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nx">image</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">loading</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;lazy&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;detect&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;detect&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">      </span><span class="nx">commands</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;webp(480x300)&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Only valid for binary images</span>
-<span class="w">      </span><span class="nx">process</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;minify-svg&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Only valid for text based images (e.g. SVG)</span>
+<span class="w">      </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">loading</span><span class="o">:</span><span class="w"> </span><span class="s2">"lazy"</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="s2">"detect"</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s2">"detect"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">commands</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"webp(480x300)"</span><span class="p">],</span><span class="w"> </span><span class="c1">// Only valid for binary images</span>
+<span class="w">      </span><span class="nx">process</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"minify-svg"</span><span class="p">],</span><span class="w"> </span><span class="c1">// Only valid for text based images (e.g. SVG)</span>
 <span class="w">      </span><span class="nx">worker</span><span class="o">:</span><span class="w"> </span><span class="mf">10000</span><span class="w"> </span><span class="c1">// 10s timeout</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nx">font</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;fonts&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">compress</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;woff2&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// truetype | opentype | woff | woff2</span>
+<span class="w">      </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="s2">"fonts"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">compress</span><span class="o">:</span><span class="w"> </span><span class="s2">"woff2"</span><span class="p">,</span><span class="w"> </span><span class="c1">// truetype | opentype | woff | woff2</span>
 <span class="w">      </span><span class="nx">blob</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Save base64 as file</span>
-<span class="w">      </span><span class="nx">blob</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;fonts/blob&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Overrides pathname for blob only</span>
+<span class="w">      </span><span class="nx">blob</span><span class="o">:</span><span class="w"> </span><span class="s2">"fonts/blob"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Overrides pathname for blob only</span>
 <span class="w">      </span><span class="nx">inline</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Write file as data:font/ttf;base64</span>
 <span class="hll"><span class="w">      </span><span class="nx">worker</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </span><span class="w">      </span><span class="nx">customize</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">uri</span><span class="p">,</span><span class="w"> </span><span class="nx">mimeType</span><span class="p">,</span><span class="w"> </span><span class="nx">command</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// script | link | image | font</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">mimeType</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;font/ttf&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">mimeType</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"font/ttf"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">          </span><span class="nx">command</span><span class="p">.</span><span class="nx">blob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// Does not alter font object</span>
-<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;filename.ttf&quot;</span><span class="p">;</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="s2">"filename.ttf"</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Do not alter filename</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span><span class="w"> </span><span class="c1">// Do not alter filename</span>
 <span class="w">        </span><span class="cm">/* OR */</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ignore file</span>
 <span class="w">      </span><span class="p">}</span>
@@ -247,33 +247,33 @@
 </section>
 <section id="example-cloud-storage">
 <h2>Example cloud storage<a class="headerlink" href="#example-cloud-storage" title="Link to this heading"></a></h2>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;index.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:3000/chrome/bundle.yml&quot;</span><span class="p">,</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"index.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/chrome/bundle.yml"</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">saveAs</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nx">cloudStorage</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="c1">// Create static website</span>
-<span class="w">        </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;aws-v3&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">bucket</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;nodejs-001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">"aws-v3"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">bucket</span><span class="o">:</span><span class="w"> </span><span class="s2">"nodejs-001"</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">          </span><span class="nx">credentials</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nx">accessKeyId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Only access key logins are supported with v3</span>
-<span class="w">            </span><span class="nx">secretAccessKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nx">sessionToken</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">            </span><span class="nx">accessKeyId</span><span class="o">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Only access key logins are supported with v3</span>
+<span class="w">            </span><span class="nx">secretAccessKey</span><span class="o">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">sessionToken</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">          </span><span class="p">},</span>
-<span class="w">          </span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;us-west-2&quot;</span>
+<span class="w">          </span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="s2">"us-west-2"</span>
 <span class="w">        </span><span class="p">},</span>
 <span class="w">        </span><span class="nx">upload</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">          </span><span class="nx">active</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">endpoint</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://nodejs-001.s3.us-west-2.amazonaws.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">          </span><span class="nx">endpoint</span><span class="o">:</span><span class="w"> </span><span class="s2">"https://nodejs-001.s3.us-west-2.amazonaws.com"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
 <span class="w">          </span><span class="nx">overwrite</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}]</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nx">image</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Non-element images using url() method</span>
 <span class="w">      </span><span class="nx">cloudStorage</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">        </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">bucket</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;nodejs-001&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">"aws"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">bucket</span><span class="o">:</span><span class="w"> </span><span class="s2">"nodejs-001"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">upload</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">          </span><span class="nx">active</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">        </span><span class="p">}</span>
@@ -290,16 +290,16 @@
 </section>
 <section id="example-remote-configuration">
 <h2>Example remote configuration<a class="headerlink" href="#example-remote-configuration" title="Link to this heading"></a></h2>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;bundle.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;http://hostname/chrome/bundle.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;text/yaml&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// &quot;mimeType&quot; is optional</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"bundle.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="s2">"http://hostname/chrome/bundle.txt"</span><span class="p">,</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">"text/yaml"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// "mimeType" is optional</span>
 <span class="cm">/* OR */</span>
-<span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;bundle.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;http://hostname/chrome/bundle.yml&quot;</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// Detect by file extension (default is &quot;json&quot;)</span>
+<span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"bundle.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="s2">"http://hostname/chrome/bundle.yml"</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// Detect by file extension (default is "json")</span>
 </pre></div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text"><em>http://hostname/pathname/example.html -to- http://hostname/pathname/example.html.json</em></span><a class="headerlink" href="#id12" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;example.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"example.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">"json"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
 <span class="cm">/* OR */</span>
-<span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;example.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// json | yaml</span>
+<span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"example.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="s2">"json"</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// json | yaml</span>
 </pre></div>
 </div>
 </div>
@@ -311,25 +311,25 @@
 <section id="example-incremental">
 <h2>Example incremental<a class="headerlink" href="#example-incremental" title="Link to this heading"></a></h2>
 <p>Build time during development can be optimized at the global and asset level.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;example.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"example.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">incremental</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Cache is not used (explicit)</span>
-<span class="w">  </span><span class="nx">incremental</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will rebuild all assets and use available cache</span>
-<span class="w">  </span><span class="nx">incremental</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;staging&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as &quot;none&quot; but does not use cache (archive)</span>
-<span class="w">  </span><span class="nx">incremental</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;etag&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will use current file found only if the ETag is still the same</span>
-<span class="w">  </span><span class="nx">incremental</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;exists&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will always use current file if found at destination</span>
+<span class="w">  </span><span class="nx">incremental</span><span class="o">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will rebuild all assets and use available cache</span>
+<span class="w">  </span><span class="nx">incremental</span><span class="o">:</span><span class="w"> </span><span class="s2">"staging"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as "none" but does not use cache (archive)</span>
+<span class="w">  </span><span class="nx">incremental</span><span class="o">:</span><span class="w"> </span><span class="s2">"etag"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will use current file found only if the ETag is still the same</span>
+<span class="w">  </span><span class="nx">incremental</span><span class="o">:</span><span class="w"> </span><span class="s2">"exists"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will always use current file if found at destination</span>
 
 <span class="w">  </span><span class="nx">incrementalMap</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">pathname</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="s2">&quot;images/&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;exists&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Not recursive</span>
-<span class="w">      </span><span class="s2">&quot;js/**&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;etag&quot;</span><span class="w"> </span><span class="c1">// Glob is supported</span>
+<span class="w">      </span><span class="s2">"images/"</span><span class="o">:</span><span class="w"> </span><span class="s2">"exists"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Not recursive</span>
+<span class="w">      </span><span class="s2">"js/**"</span><span class="o">:</span><span class="w"> </span><span class="s2">"etag"</span><span class="w"> </span><span class="c1">// Glob is supported</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nx">extension</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">js</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;etag&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">js</span><span class="o">:</span><span class="w"> </span><span class="s2">"etag"</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">mjs</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nx">mime</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="s2">&quot;image/png&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;exists&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// First match will quit search</span>
-<span class="w">      </span><span class="s2">&quot;image/*&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;etag&quot;</span>
+<span class="w">      </span><span class="s2">"image/png"</span><span class="o">:</span><span class="w"> </span><span class="s2">"exists"</span><span class="p">,</span><span class="w"> </span><span class="c1">// First match will quit search</span>
+<span class="w">      </span><span class="s2">"image/*"</span><span class="o">:</span><span class="w"> </span><span class="s2">"etag"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nx">overwrite</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// Only when undefined</span>
 <span class="w">  </span><span class="p">}</span>
@@ -351,33 +351,33 @@
 <div class="literal-block-wrapper docutils container" id="id13">
 <div class="code-block-caption"><span class="caption-text">squared.auth.json</span><a class="headerlink" href="#id13" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;providers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;firebase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// FirebaseOptions</span>
-<span class="w">      </span><span class="nt">&quot;projectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;squared-123456&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// API Keys (https://console.cloud.google.com/apis/credentials)</span>
-<span class="w">      </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PbzaryCxqzE2smem1pPzvExwfJRaXA81h0FdB42&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;authDomain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;squared-123456.firebaseapp.com&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;storageBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;squared-123456.appspot.com&quot;</span>
+<span class="w">  </span><span class="nt">"providers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"firebase"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// FirebaseOptions</span>
+<span class="w">      </span><span class="nt">"projectId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"squared-123456"</span><span class="p">,</span><span class="w"> </span><span class="c1">// API Keys (https://console.cloud.google.com/apis/credentials)</span>
+<span class="w">      </span><span class="nt">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PbzaryCxqzE2smem1pPzvExwfJRaXA81h0FdB42"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"authDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"squared-123456.firebaseapp.com"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"storageBucket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"squared-123456.appspot.com"</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;firebase-admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// ServiceAccount</span>
-<span class="w">      </span><span class="nt">&quot;projectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;squared-123456&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Keys (https://console.cloud.google.com/iam-admin/serviceaccounts/details)</span>
-<span class="w">      </span><span class="nt">&quot;privateKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBK\n-----END PRIVATE KEY-----\n&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;clientEmail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;firebase-adminsdk-fbsvc@squared-123456.iam.gserviceaccount.com&quot;</span>
+<span class="w">    </span><span class="nt">"firebase-admin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// ServiceAccount</span>
+<span class="w">      </span><span class="nt">"projectId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"squared-123456"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Keys (https://console.cloud.google.com/iam-admin/serviceaccounts/details)</span>
+<span class="w">      </span><span class="nt">"privateKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBK\n-----END PRIVATE KEY-----\n"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"clientEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"firebase-adminsdk-fbsvc@squared-123456.iam.gserviceaccount.com"</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;firebase-admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./cloud/auth/gcp/squared-123456-4e1c2290e638.json&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;firebase-admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// FIREBASE_CONFIG</span>
-<span class="w">    </span><span class="nt">&quot;cognito&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./cloud/auth/aws/cognito.cjs&quot;</span><span class="w"> </span><span class="c1">// User extension method</span>
+<span class="w">    </span><span class="nt">"firebase-admin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./cloud/auth/gcp/squared-123456-4e1c2290e638.json"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"firebase-admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// FIREBASE_CONFIG</span>
+<span class="w">    </span><span class="nt">"cognito"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./cloud/auth/aws/cognito.cjs"</span><span class="w"> </span><span class="c1">// User extension method</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;session&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;serve.auth.firebase.js&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"serve.auth.firebase.js"</span><span class="p">,</span>
 <span class="w">        </span><span class="cm">/* OR */</span>
-<span class="w">        </span><span class="s2">&quot;npm:squared-express-firebase&quot;</span>
+<span class="w">        </span><span class="s2">"npm:squared-express-firebase"</span>
 <span class="w">      </span><span class="p">]</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;exclude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;realm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;firebase-admin&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Use only username and not domain (e.g. username@domain.com)</span>
-<span class="w">      </span><span class="nt">&quot;users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;osaka&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1">// Do not permit user &quot;osaka&quot; from authenticating</span>
+<span class="w">    </span><span class="nt">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"realm"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"firebase-admin"</span><span class="p">],</span><span class="w"> </span><span class="c1">// Use only username and not domain (e.g. username@domain.com)</span>
+<span class="w">      </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"osaka"</span><span class="p">]</span><span class="w"> </span><span class="c1">// Do not permit user "osaka" from authenticating</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -390,21 +390,21 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id14">
 <div class="code-block-caption"><span class="caption-text">Global <a class="footnote-reference brackets" href="#id11" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id14" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mongo&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;89064&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">realm</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;hokkaido&quot;</span><span class="w"> </span><span class="p">});</span>
-<span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;output.zip&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">"mongo"</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">"89064"</span><span class="p">,</span><span class="w"> </span><span class="nx">realm</span><span class="o">:</span><span class="w"> </span><span class="s2">"hokkaido"</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"output.zip"</span><span class="p">);</span>
 
-<span class="nx">squared</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="s2">&quot;chrome&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1022&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">realm</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;tohoku&quot;</span><span class="w"> </span><span class="p">});</span>
-<span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;output.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;chrome&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">squared</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="s2">"chrome"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">"redis"</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">"1022"</span><span class="p">,</span><span class="w"> </span><span class="nx">realm</span><span class="o">:</span><span class="w"> </span><span class="s2">"tohoku"</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"output.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="s2">"chrome"</span><span class="w"> </span><span class="p">});</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id15">
 <div class="code-block-caption"><span class="caption-text">Username</span><a class="headerlink" href="#id15" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;output.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"output.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mongo&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;87094&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">realm</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;firebase&quot;</span><span class="w"> </span><span class="c1">// Same as authProvider</span>
+<span class="w">    </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">"mongo"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">"87094"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">realm</span><span class="o">:</span><span class="w"> </span><span class="s2">"firebase"</span><span class="w"> </span><span class="c1">// Same as authProvider</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
@@ -412,18 +412,18 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id16">
 <div class="code-block-caption"><span class="caption-text">Custom JWT token</span><a class="headerlink" href="#id16" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;output.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;xxxxx.yyyyy.zzzzz&quot;</span>
-<span class="w">  </span><span class="nx">authProvider</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;firebase&quot;</span><span class="w"> </span><span class="c1">// Recommended</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"output.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="s2">"xxxxx.yyyyy.zzzzz"</span>
+<span class="w">  </span><span class="nx">authProvider</span><span class="o">:</span><span class="w"> </span><span class="s2">"firebase"</span><span class="w"> </span><span class="c1">// Recommended</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id17">
 <div class="code-block-caption"><span class="caption-text">UID</span><a class="headerlink" href="#id17" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;output.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;7EymzDz4X7UJKmDDITeqfZl0nNKv&quot;</span>
-<span class="w">  </span><span class="nx">authProvider</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;firebase-admin&quot;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"output.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="s2">"7EymzDz4X7UJKmDDITeqfZl0nNKv"</span>
+<span class="w">  </span><span class="nx">authProvider</span><span class="o">:</span><span class="w"> </span><span class="s2">"firebase-admin"</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -450,36 +450,36 @@ http://hostname/path/sub/example4.html
 <div class="literal-block-wrapper docutils container" id="id20">
 <div class="code-block-caption"><span class="caption-text">sqd.config</span><a class="headerlink" href="#id20" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;111-111-111&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="c1">// Key</span>
+<span class="w">  </span><span class="nt">"111-111-111"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="c1">// Key</span>
 
-<span class="w">  </span><span class="nt">&quot;/project/example.html*&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Glob</span>
-<span class="w">    </span><span class="nt">&quot;ordinal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;useOriginalHtmlPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;elements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">      </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;lang&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">"/project/example.html*"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Glob</span>
+<span class="w">    </span><span class="nt">"ordinal"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"useOriginalHtmlPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}]</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;/project/example.html?id=1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;ordinal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;elements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">      </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sha256&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;lang&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ja&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;mergeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// lang=en</span>
-<span class="w">      </span><span class="nt">&quot;mergeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;under&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// hash=sha256,lang=en</span>
-<span class="w">      </span><span class="nt">&quot;mergeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;preserve&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// hash=sha256,lang=en,class=main</span>
-<span class="w">      </span><span class="nt">&quot;mergeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;over&quot;</span><span class="w"> </span><span class="c1">// hash=sha256,lang=ja,class=main</span>
+<span class="w">  </span><span class="nt">"/project/example.html?id=1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"ordinal"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ja"</span><span class="p">,</span><span class="w"> </span><span class="nt">"class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"mergeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="c1">// lang=en</span>
+<span class="w">      </span><span class="nt">"mergeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"under"</span><span class="p">,</span><span class="w"> </span><span class="c1">// hash=sha256,lang=en</span>
+<span class="w">      </span><span class="nt">"mergeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"preserve"</span><span class="p">,</span><span class="w"> </span><span class="c1">// hash=sha256,lang=en,class=main</span>
+<span class="w">      </span><span class="nt">"mergeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"over"</span><span class="w"> </span><span class="c1">// hash=sha256,lang=ja,class=main</span>
 <span class="w">    </span><span class="p">}]</span>
 <span class="w">  </span><span class="p">},</span>
 
-<span class="w">  </span><span class="nt">&quot;example.html?id=1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="c1">// &quot;elements&quot;</span>
-<span class="w">  </span><span class="nt">&quot;example.html&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="c1">// Does not match &quot;?id=1&quot;</span>
+<span class="w">  </span><span class="nt">"example.html?id=1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="c1">// "elements"</span>
+<span class="w">  </span><span class="nt">"example.html"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="c1">// Does not match "?id=1"</span>
 
-<span class="w">  </span><span class="nt">&quot;**/*\\.html*&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="c1">// Glob</span>
-<span class="w">  </span><span class="nt">&quot;**/*\\.html\\?id=1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// Ignored without &quot;ordinal&quot; or &quot;inherit&quot;</span>
+<span class="w">  </span><span class="nt">"**/*\\.html*"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="w"> </span><span class="p">}],</span><span class="w"> </span><span class="c1">// Glob</span>
+<span class="w">  </span><span class="nt">"**/*\\.html\\?id=1"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// Ignored without "ordinal" or "inherit"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -493,17 +493,17 @@ http://hostname/path/sub/example4.html
 <p>The order of precedence when using <em class="target">inherit</em> is resolved through the asset command property <a class="reference internal" href="document/miscellaneous.html#document-miscellaneous-merge-conflicts"><span class="std std-ref">mergeType</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="id21">
 <div class="code-block-caption"><span class="caption-text">First glob match</span><a class="headerlink" href="#id21" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">&quot;/path/output&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// inherit is &quot;false&quot;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">"/path/output"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// inherit is "false"</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id22">
 <div class="code-block-caption"><span class="caption-text">Globs are concatenated</span><a class="headerlink" href="#id22" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">&quot;output.zip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="s2">"output.zip"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">inherit</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Duplicate selectors are replaced</span>
-<span class="w">    </span><span class="nx">inherit</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;append&quot;</span><span class="w"> </span><span class="c1">// Resolve duplicates with &quot;mergeType&quot;</span>
+<span class="w">    </span><span class="nx">inherit</span><span class="o">:</span><span class="w"> </span><span class="s2">"append"</span><span class="w"> </span><span class="c1">// Resolve duplicates with "mergeType"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
@@ -511,10 +511,10 @@ http://hostname/path/sub/example4.html
 </div>
 <div class="literal-block-wrapper docutils container" id="id23">
 <div class="code-block-caption"><span class="caption-text">Hash key</span><a class="headerlink" href="#id23" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">&quot;/path/output&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">"/path/output"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;111-111-111&quot;</span>
+<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">"111-111-111"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
@@ -530,29 +530,29 @@ http://hostname/path/sub/example4.html
 <p>There is no difference when using <a class="reference internal" href="document/data.html"><span class="doc">data sources</span></a> for writing an HTML page and for configuring the output properties.</p>
 <div class="literal-block-wrapper docutils container" id="id24">
 <div class="code-block-caption"><span class="caption-text">DB</span><a class="headerlink" href="#id24" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">&quot;/path/output&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">"/path/output"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">inherit</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nx">preserve</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Cascade into all object properties</span>
 <span class="w">      </span><span class="nx">append</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Concatenate arrays</span>
-<span class="w">      </span><span class="nx">depth</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="c1">// Nested arrays (e.g. &quot;elements&quot;)</span>
+<span class="w">      </span><span class="nx">depth</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="c1">// Nested arrays (e.g. "elements")</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nb">document</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;chrome&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required with DB</span>
+<span class="w">    </span><span class="nb">document</span><span class="o">:</span><span class="w"> </span><span class="s2">"chrome"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required with DB</span>
 <span class="w">    </span><span class="nx">dataSource</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">      </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;redis://redis-6379.redislabs.com:6379&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;squared&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;************&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;config:1&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;JSON&quot;</span>
+<span class="w">      </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"redis"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="s2">"redis://redis-6379.redislabs.com:6379"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">"squared"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">"************"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">"config:1"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">"JSON"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;redis&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;redis://redis-6379.redislabs.com:6379&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;squared&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;************&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;config:2&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;JSON&quot;</span>
+<span class="w">      </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"redis"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="s2">"redis://redis-6379.redislabs.com:6379"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">"squared"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">"************"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">"config:2"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">"JSON"</span>
 <span class="w">    </span><span class="p">}]</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">});</span>
@@ -565,37 +565,37 @@ http://hostname/path/sub/example4.html
 </div>
 <div class="literal-block-wrapper docutils container" id="id25">
 <div class="code-block-caption"><span class="caption-text">Cloud</span><a class="headerlink" href="#id25" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">&quot;/path/output&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">squared</span><span class="p">.</span><span class="nx">copyTo</span><span class="p">(</span><span class="s2">"/path/output"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">dataSource</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">      </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;aws-v3&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">"aws-v3"</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">credentials</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nx">accessKeyId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;************&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">secretAccessKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;************&quot;</span>
+<span class="w">          </span><span class="nx">accessKeyId</span><span class="o">:</span><span class="w"> </span><span class="s2">"************"</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">secretAccessKey</span><span class="o">:</span><span class="w"> </span><span class="s2">"************"</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nx">table</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">table</span><span class="o">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">KeyConditionExpression</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#name = :value&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">KeyConditionExpression</span><span class="o">:</span><span class="w"> </span><span class="s2">"#name = :value"</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">ExpressionAttributeNames</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="s2">&quot;#name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;id&quot;</span>
+<span class="w">          </span><span class="s2">"#name"</span><span class="o">:</span><span class="w"> </span><span class="s2">"id"</span>
 <span class="w">        </span><span class="p">},</span>
 <span class="w">        </span><span class="nx">ExpressionAttributeValues</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="s2">&quot;:value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+<span class="w">          </span><span class="s2">":value"</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">},</span>
 <span class="w">      </span><span class="nx">limit</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;firestore-config&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">"gcp"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="s2">"firestore-config"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">orderBy</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;orderByKey&quot;</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;limitToFirst&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"orderByKey"</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"limitToFirst"</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">]</span>
 <span class="w">      </span><span class="p">]</span>
 <span class="w">    </span><span class="p">}]</span>
 <span class="w">  </span><span class="p">}</span>

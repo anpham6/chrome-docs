@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@e-mc/image &mdash; E-mc 0.14.5 documentation</title>
+  <title>@e-mc/image &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -115,10 +115,10 @@
 <h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/&#64;e-mc/types/lib/index.d.ts">View Source</a></span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IHost</span><span class="p">,</span><span class="w"> </span><span class="nx">ModuleConstructor</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./index&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IFileThread</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./asset&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CommandData</span><span class="p">,</span><span class="w"> </span><span class="nx">CropData</span><span class="p">,</span><span class="w"> </span><span class="nx">QualityData</span><span class="p">,</span><span class="w"> </span><span class="nx">ResizeData</span><span class="p">,</span><span class="w"> </span><span class="nx">RotateData</span><span class="p">,</span><span class="w"> </span><span class="nx">TransformOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./image&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ImageModule</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./settings&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IHost</span><span class="p">,</span><span class="w"> </span><span class="nx">ModuleConstructor</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./index"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IFileThread</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./asset"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CommandData</span><span class="p">,</span><span class="w"> </span><span class="nx">CropData</span><span class="p">,</span><span class="w"> </span><span class="nx">QualityData</span><span class="p">,</span><span class="w"> </span><span class="nx">ResizeData</span><span class="p">,</span><span class="w"> </span><span class="nx">RotateData</span><span class="p">,</span><span class="w"> </span><span class="nx">TransformOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./image"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ImageModule</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./settings"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">IImage</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">IClient</span><span class="o">&lt;</span><span class="nx">IHost</span><span class="p">,</span><span class="w"> </span><span class="nx">ImageModule</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">resizeData?</span><span class="o">:</span><span class="w"> </span><span class="kt">ResizeData</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
@@ -157,7 +157,7 @@
 <span class="w">    </span><span class="nx">toABGR</span><span class="p">(</span><span class="nx">buffer</span><span class="o">:</span><span class="w"> </span><span class="kt">Uint8Array</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">asBuffer</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">Buffer</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">Uint8Array</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">;</span>
 <span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">prototype</span><span class="o">:</span><span class="w"> </span><span class="kt">IImage</span><span class="p">;</span>
-<span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="kr">module</span><span class="nx">?</span><span class="o">:</span><span class="w"> </span><span class="nx">ImageModule</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IImage</span><span class="p">;</span>
+<span class="w">    </span><span class="ow">new</span><span class="p">(</span><span class="nx">module?</span><span class="o">:</span><span class="w"> </span><span class="kt">ImageModule</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IImage</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -207,10 +207,10 @@
 <h2>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h2>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.unpkg.com/squared-express/dist/squared.json">View JSON</a></span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PermittedDirectories</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./core&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PermittedDirectories</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./core"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">ImageModule</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// handler: &quot;@pi-r/jimp&quot;;</span>
+<span class="w">    </span><span class="c1">// handler: "@pi-r/jimp";</span>
 <span class="w">    </span><span class="nx">webp?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">settings</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">broadcast_id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>

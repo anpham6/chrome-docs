@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Cloud Platform &mdash; E-mc 0.14.5 documentation</title>
+  <title>Google Cloud Platform &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -121,18 +121,18 @@
 </div>
 <section id="interface">
 <h3>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StorageOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/storage&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FirebaseOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@firebase/app&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ServiceAccount</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;firebase-admin/app&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StorageOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@google-cloud/storage"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FirebaseOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@firebase/app"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ServiceAccount</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"firebase-admin/app"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">GCPStorage</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudStorage</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;gcloud&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">"gcp"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"gcloud"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">GCPStorageCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">bucket</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">GCPStorageCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">StorageOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">FirebaseOptions</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">product</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;firebase&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">product</span><span class="o">?:</span><span class="w"> </span><span class="s2">"firebase"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">admin?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ServiceAccount</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -152,40 +152,40 @@
 </ul>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">using process.env</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">GOOGLE_APPLICATION_CREDENTIALS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">GOOGLE_APPLICATION_CREDENTIALS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;keyFilename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./gcp.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Path to JSON credentials</span>
-<span class="w">      </span><span class="nt">&quot;projectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"keyFilename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./gcp.json"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Path to JSON credentials</span>
+<span class="w">      </span><span class="nt">"projectId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;projectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;credentials&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;client_email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;private_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;service_account&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
-<span class="w">        </span><span class="nt">&quot;project_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"projectId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"credentials"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"client_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"private_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service_account"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">        </span><span class="nt">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;projectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// When using GOOGLE_APPLICATION_CREDENTIALS</span>
-<span class="w">      </span><span class="nt">&quot;scopes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.googleapis.com/auth/cloud-platform&quot;</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"projectId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span><span class="w"> </span><span class="c1">// When using GOOGLE_APPLICATION_CREDENTIALS</span>
+<span class="w">      </span><span class="nt">"scopes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.googleapis.com/auth/cloud-platform"</span><span class="w"> </span><span class="c1">// Optional</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;projectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;authDomain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;project-id&gt;.firebaseapp.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"projectId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"authDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;project-id&gt;.firebaseapp.com"</span><span class="p">,</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;firebase&quot;</span><span class="w"> </span><span class="c1">// When using GOOGLE_APPLICATION_CREDENTIALS</span>
+<span class="w">      </span><span class="nt">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"firebase"</span><span class="w"> </span><span class="c1">// When using GOOGLE_APPLICATION_CREDENTIALS</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -200,105 +200,105 @@
 <li><p><a class="reference external" href="https://cloud.google.com/nodejs/docs/reference/storage/latest/storage/acl">Class ACL</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Any resource</span>
-<span class="w">  </span><span class="nt">&quot;cloudStorage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;bucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs-001&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;publicRead&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// New buckets only</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Any resource</span>
+<span class="w">  </span><span class="nt">"cloudStorage"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcp"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"bucket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs-001"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"admin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"publicRead"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// New buckets only</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;private&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// See &quot;policy&quot;</span>
+<span class="w">      </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"private"</span><span class="p">,</span><span class="w"> </span><span class="c1">// See "policy"</span>
 
-<span class="w">      </span><span class="nt">&quot;emptyBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// gcp.(deleteFiles | getFiles){GetFilesOptions}</span>
-<span class="w">        </span><span class="nt">&quot;recursive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">      </span><span class="nt">"emptyBucket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// gcp.(deleteFiles | getFiles){GetFilesOptions}</span>
+<span class="w">        </span><span class="nt">"recursive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Optional</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;configBucket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// MakeBucketPrivateOptions</span>
-<span class="w">          </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;private&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// makePrivate + includeFiles + projectPrivate</span>
-<span class="w">          </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;projectPrivate&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// makePrivate + allUsers (delete) + allAuthenticatedUsers (delete)</span>
-<span class="w">          </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authenticatedRead&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// projectPrivate + allAuthenticatedUsers:READER</span>
-<span class="w">          </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;publicRead&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// makePublic + includeFiles</span>
-<span class="w">          </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;publicReadWrite&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// publicRead + allUsers:WRITER</span>
-<span class="w">          </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;entity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;allUsers&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;READER&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="cm">/* add */</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;entity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;allAuthenticatedUsers&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="cm">/* delete */</span><span class="p">],</span><span class="w"> </span><span class="c1">// Custom</span>
+<span class="w">      </span><span class="nt">"configBucket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// MakeBucketPrivateOptions</span>
+<span class="w">          </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"private"</span><span class="p">,</span><span class="w"> </span><span class="c1">// makePrivate + includeFiles + projectPrivate</span>
+<span class="w">          </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projectPrivate"</span><span class="p">,</span><span class="w"> </span><span class="c1">// makePrivate + allUsers (delete) + allAuthenticatedUsers (delete)</span>
+<span class="w">          </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authenticatedRead"</span><span class="p">,</span><span class="w"> </span><span class="c1">// projectPrivate + allAuthenticatedUsers:READER</span>
+<span class="w">          </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"publicRead"</span><span class="p">,</span><span class="w"> </span><span class="c1">// makePublic + includeFiles</span>
+<span class="w">          </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"publicReadWrite"</span><span class="p">,</span><span class="w"> </span><span class="c1">// publicRead + allUsers:WRITER</span>
+<span class="w">          </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">"entity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allUsers"</span><span class="p">,</span><span class="w"> </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"READER"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="cm">/* add */</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"entity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allAuthenticatedUsers"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="cm">/* delete */</span><span class="p">],</span><span class="w"> </span><span class="c1">// Custom</span>
 
 <span class="w">          </span><span class="cm">/* Unofficial aliases - gcp.setMetadata{iamConfiguration} */</span>
-<span class="w">          </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bucketAccessUniform&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Enable uniform bucket-level access</span>
-<span class="w">          </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bucketAccessACL&quot;</span><span class="w"> </span><span class="c1">// Revert uniform bucket-level access (within 90 days)</span>
+<span class="w">          </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bucketAccessUniform"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Enable uniform bucket-level access</span>
+<span class="w">          </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bucketAccessACL"</span><span class="w"> </span><span class="c1">// Revert uniform bucket-level access (within 90 days)</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// gcp.setMetadata{labels}</span>
-<span class="w">          </span><span class="nt">&quot;key_1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;key_2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span>
+<span class="w">        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// gcp.setMetadata{labels}</span>
+<span class="w">          </span><span class="nt">"key_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"key_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="c1">// gcp.setMetadata{labels=null}</span>
-<span class="w">        </span><span class="nt">&quot;website&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// gcp.setMetadata{website}</span>
-<span class="w">          </span><span class="nt">&quot;indexPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// mainPageSuffix</span>
-<span class="w">          </span><span class="nt">&quot;errorPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;404.html&quot;</span><span class="w"> </span><span class="c1">// notFoundPage</span>
+<span class="w">        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="c1">// gcp.setMetadata{labels=null}</span>
+<span class="w">        </span><span class="nt">"website"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// gcp.setMetadata{website}</span>
+<span class="w">          </span><span class="nt">"indexPage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.html"</span><span class="p">,</span><span class="w"> </span><span class="c1">// mainPageSuffix</span>
+<span class="w">          </span><span class="nt">"errorPage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404.html"</span><span class="w"> </span><span class="c1">// notFoundPage</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="cm">/* During call to &quot;upload&quot; */</span>
-<span class="w">        </span><span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// gcp.createBucket{CreateBucketRequest}</span>
-<span class="w">          </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ASIA&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;storageClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STANDARD&quot;</span><span class="w"> </span><span class="c1">// &quot;NEARLINE&quot; | &quot;COLDLINE&quot; | &quot;ARCHIVE&quot;</span>
+<span class="w">        </span><span class="cm">/* During call to "upload" */</span>
+<span class="w">        </span><span class="nt">"create"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// gcp.createBucket{CreateBucketRequest}</span>
+<span class="w">          </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASIA"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"storageClass"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STANDARD"</span><span class="w"> </span><span class="c1">// "NEARLINE" | "COLDLINE" | "ARCHIVE"</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* LifecycleRule */</span><span class="p">],</span><span class="w"> </span><span class="c1">// gcp.addLifecycleRule</span>
-<span class="w">        </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* LifecycleRule */</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span><span class="w"> </span><span class="c1">// options.append = false</span>
-<span class="w">        </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="c1">// Delete all rules</span>
-<span class="w">        </span><span class="nt">&quot;cors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* Cors */</span><span class="p">],</span><span class="w"> </span><span class="c1">// gcp.setCorsConfiguration</span>
-<span class="w">        </span><span class="nt">&quot;cors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="c1">// Delete all rules</span>
-<span class="w">        </span><span class="nt">&quot;retentionPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// gcp.removeRetentionPeriod</span>
-<span class="w">        </span><span class="nt">&quot;retentionPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">86400</span><span class="w"> </span><span class="c1">// gcp.setRetentionPeriod (seconds)</span>
+<span class="w">        </span><span class="nt">"lifecycle"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* LifecycleRule */</span><span class="p">],</span><span class="w"> </span><span class="c1">// gcp.addLifecycleRule</span>
+<span class="w">        </span><span class="nt">"lifecycle"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* LifecycleRule */</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span><span class="w"> </span><span class="c1">// options.append = false</span>
+<span class="w">        </span><span class="nt">"lifecycle"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="c1">// Delete all rules</span>
+<span class="w">        </span><span class="nt">"cors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* Cors */</span><span class="p">],</span><span class="w"> </span><span class="c1">// gcp.setCorsConfiguration</span>
+<span class="w">        </span><span class="nt">"cors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="c1">// Delete all rules</span>
+<span class="w">        </span><span class="nt">"retentionPolicy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// gcp.removeRetentionPeriod</span>
+<span class="w">        </span><span class="nt">"retentionPolicy"</span><span class="p">:</span><span class="w"> </span><span class="mi">86400</span><span class="w"> </span><span class="c1">// gcp.setRetentionPeriod (seconds)</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;upload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;publicRead&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will not clobber existing ACLs</span>
-<span class="w">      </span><span class="nt">&quot;publicRead&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove ACL without affecting other ACLs</span>
+<span class="w">    </span><span class="nt">"upload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"publicRead"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will not clobber existing ACLs</span>
+<span class="w">      </span><span class="nt">"publicRead"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove ACL without affecting other ACLs</span>
 <span class="w">      </span><span class="cm">/* OR */</span>
-<span class="w">      </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authenticatedRead&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// &quot;bucketOwnerFullControl&quot; | &quot;bucketOwnerRead&quot; | &quot;private&quot; | &quot;projectPrivate&quot; | &quot;publicRead&quot;</span>
+<span class="w">      </span><span class="nt">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authenticatedRead"</span><span class="p">,</span><span class="w"> </span><span class="c1">// "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead"</span>
 
 <span class="w">      </span><span class="cm">/* gcp.save */</span>
-<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// UploadOptions</span>
-<span class="w">        </span><span class="nt">&quot;contentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;predefinedAcl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;publicRead&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Supplementary are public</span>
-<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">}</span><span class="w"> </span><span class="c1">// All objects except when &quot;metadata&quot; is defined</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// UploadOptions</span>
+<span class="w">        </span><span class="nt">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"predefinedAcl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"publicRead"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Supplementary are public</span>
+<span class="w">        </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">}</span><span class="w"> </span><span class="c1">// All objects except when "metadata" is defined</span>
 <span class="w">      </span><span class="p">},</span>
 
 <span class="w">      </span><span class="cm">/* gcp.uploadFileInChunks{chunkSizeBytes} */</span>
-<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Aligned to 1mb</span>
-<span class="w">      </span><span class="nt">&quot;chunkLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as &quot;concurrencyLimit&quot;</span>
-<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;contentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"chunkSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8mb"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Aligned to 1mb</span>
+<span class="w">      </span><span class="nt">"chunkLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as "concurrencyLimit"</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">},</span>
 <span class="w">        </span><span class="cm">/* UploadFileInChunksOptions - shared */</span>
-<span class="w">        </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;Authorization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;x-goog-user-project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">        </span><span class="nt">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"Authorization"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"x-goog-user-project"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;maxQueueSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;concurrencyLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">        </span><span class="nt">"maxQueueSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"concurrencyLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
 <span class="w">      </span><span class="p">},</span>
 
 <span class="w">      </span><span class="cm">/* firebase.uploadBytes */</span>
-<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// UploadMetadata</span>
-<span class="w">        </span><span class="nt">&quot;contentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;customMetadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">}</span><span class="w"> </span><span class="c1">// All objects except when &quot;metadata&quot; is defined</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// UploadMetadata</span>
+<span class="w">        </span><span class="nt">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"customMetadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Metadata */</span><span class="p">}</span><span class="w"> </span><span class="c1">// All objects except when "metadata" is defined</span>
 <span class="w">      </span><span class="p">},</span>
 
 <span class="w">      </span><span class="cm">/* Primary object only */</span>
-<span class="w">      </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;key_delete&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">      </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"key_delete"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;download&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"download"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="cm">/* gcp.createReadStream */</span>
-<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Empty</span>
-<span class="w">      </span><span class="nt">&quot;chunkLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will only stream when value is 1</span>
+<span class="w">      </span><span class="nt">"chunkSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="c1">// Empty</span>
+<span class="w">      </span><span class="nt">"chunkLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will only stream when value is 1</span>
 
 <span class="w">      </span><span class="cm">/* gcp.downloadFileInChunks{chunkSizeBytes} */</span>
-<span class="w">      </span><span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;32mb&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Aligned to 1mb</span>
-<span class="w">      </span><span class="nt">&quot;chunkLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as &quot;concurrencyLimit&quot;</span>
-<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;concurrencyLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">      </span><span class="nt">"chunkSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32mb"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Aligned to 1mb</span>
+<span class="w">      </span><span class="nt">"chunkLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as "concurrencyLimit"</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"concurrencyLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">      </span><span class="cm">/* Same as interface - gcp.download + firebase.getDownloadURL */</span>
 <span class="w">    </span><span class="p">}</span>
@@ -316,17 +316,17 @@
 <h2>Database<a class="headerlink" href="#database" title="Link to this heading"></a></h2>
 <section id="id1">
 <h3>Interface<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AggregateSpec</span><span class="p">,</span><span class="w"> </span><span class="nx">FieldPath</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/firestore&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PathType</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/datastore&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">entity</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@google-cloud/datastore/build/src/entity&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GoogleAuthOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;google-auth-library&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FirebaseOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@firebase/app&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AggregateSpec</span><span class="p">,</span><span class="w"> </span><span class="nx">FieldPath</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@google-cloud/firestore"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PathType</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@google-cloud/datastore"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">entity</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@google-cloud/datastore/build/src/entity"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GoogleAuthOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"google-auth-library"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FirebaseOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@firebase/app"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">GCPDatabaseQuery</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">CloudDatabase</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;gcloud&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">"gcp"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"gcloud"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">GCPDatabaseCredential</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">product</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;firestore&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;bigquery&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;bigtable&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;datastore&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;spanner&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;firebase&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">product</span><span class="o">?:</span><span class="w"> </span><span class="s2">"firestore"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"bigquery"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"bigtable"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"datastore"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"spanner"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"firebase"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">unknown</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Document</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">database?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
@@ -334,14 +334,14 @@
 <span class="w">    </span><span class="nx">columns?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">keys?</span><span class="o">:</span><span class="w"> </span><span class="kt">DatastoreKey</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">DatastoreKey</span><span class="p">[];</span>
 <span class="w">    </span><span class="nx">kind?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
-<span class="hll"><span class="w">    </span><span class="nx">orderBy</span><span class="o">?:</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">FieldPath</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">unknown</span><span class="p">[])[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">FieldPath</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="nx">aggregateSpec?</span><span class="o">:</span><span class="w"> </span><span class="kt">AggregateSpec</span><span class="p">;</span>
-</span><span class="w">    </span><span class="nx">pipeline?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">orderBy</span><span class="o">?:</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">FieldPath</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">unknown</span><span class="p">[])[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">FieldPath</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">aggregateSpec?</span><span class="o">:</span><span class="w"> </span><span class="kt">AggregateSpec</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">pipeline?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">flags?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">GCPDatabaseCredential</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">GoogleAuthOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">FirebaseOptions</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">product</span><span class="o">?:</span><span class="w"> </span><span class="s2">&quot;firebase&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">product</span><span class="o">?:</span><span class="w"> </span><span class="s2">"firebase"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">admin?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ServiceAccount</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -353,16 +353,16 @@
 <section id="id2">
 <h3>Authentication<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.cloud.json</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same as Storage */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same as Storage */</span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;projectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;authDomain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;project-id&gt;.firebaseapp.com&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;databaseURL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://&lt;database-name&gt;.firebaseio.com&quot;</span><span class="w"> </span><span class="c1">// Required</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"projectId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"authDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;project-id&gt;.firebaseapp.com"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"databaseURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://&lt;database-name&gt;.firebaseio.com"</span><span class="w"> </span><span class="c1">// Required</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -378,49 +378,49 @@
 <li><p><a class="reference external" href="https://googleapis.dev/nodejs/firestore/latest">Firestore Client API</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;firestore&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"h1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcp"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"firestore"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"table"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span>
 
 <span class="w">    </span><span class="cm">/* a = fs.collection(table) | b = fs.collectionGroup(table){flags &amp; 1} */</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// a.doc</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8Qnt83DSNW0eNykpuzcQ"</span><span class="p">,</span><span class="w"> </span><span class="c1">// a.doc</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;aahiEBE4qHM73JE7jom3&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// fs.getAll (table/id)</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* ReadOptions */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"8Qnt83DSNW0eNykpuzcQ"</span><span class="p">,</span><span class="w"> </span><span class="s2">"aahiEBE4qHM73JE7jom3"</span><span class="p">],</span><span class="w"> </span><span class="c1">// fs.getAll (table/id)</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* ReadOptions */</span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;column&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;column.sub&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// a.findNearest</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
-<span class="w">      </span><span class="nt">&quot;distanceMeasure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EUCLIDEAN&quot;</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"column"</span><span class="p">,</span><span class="w"> </span><span class="s2">"column.sub"</span><span class="p">],</span><span class="w"> </span><span class="c1">// a.findNearest</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">      </span><span class="nt">"distanceMeasure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUCLIDEAN"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// a.findNearest{VectorQueryOptions} (not cached)</span>
-<span class="w">      </span><span class="nt">&quot;vectorField&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;column&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;queryVector&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
-<span class="w">      </span><span class="nt">&quot;distanceMeasure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EUCLIDEAN&quot;</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// a.findNearest{VectorQueryOptions} (not cached)</span>
+<span class="w">      </span><span class="nt">"vectorField"</span><span class="p">:</span><span class="w"> </span><span class="s2">"column"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"queryVector"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">      </span><span class="nt">"distanceMeasure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUCLIDEAN"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;aggregateSpec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* AggregateSpec */</span><span class="p">},</span><span class="w"> </span><span class="c1">// (a | b).aggregate (not cached)</span>
+<span class="w">    </span><span class="nt">"aggregateSpec"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* AggregateSpec */</span><span class="p">},</span><span class="w"> </span><span class="c1">// (a | b).aggregate (not cached)</span>
 
-<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0 - update{exists} | 1 - create | 2 - set | 3 - set{merge}</span>
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// fs.update</span>
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;key1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__delete__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.delete()</span>
-<span class="w">      </span><span class="nt">&quot;key2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__increment__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.increment(1)</span>
-<span class="w">      </span><span class="nt">&quot;key2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__increment&lt;number&gt;__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.increment(number)</span>
-<span class="w">      </span><span class="nt">&quot;key3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__serverTimestamp__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.serverTimestamp()</span>
-<span class="w">      </span><span class="nt">&quot;key4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__vector&lt;1, 2, 3&gt;__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.vector([1, 2, 3])</span>
-<span class="w">      </span><span class="nt">&quot;key4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__arrayUnion&lt;a, b, c&gt;__&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.arrayUnion(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</span>
-<span class="w">      </span><span class="nt">&quot;key4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__arrayRemove&lt;1, [2\\, 3\\, 4], 5&gt;__&quot;</span><span class="w"> </span><span class="c1">// FieldValue.arrayRemove(1, [2, 3, 4], 5)</span>
+<span class="w">    </span><span class="nt">"updateType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0 - update{exists} | 1 - create | 2 - set | 3 - set{merge}</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// fs.update</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"key1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"__delete__"</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.delete()</span>
+<span class="w">      </span><span class="nt">"key2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"__increment__"</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.increment(1)</span>
+<span class="w">      </span><span class="nt">"key2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"__increment&lt;number&gt;__"</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.increment(number)</span>
+<span class="w">      </span><span class="nt">"key3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"__serverTimestamp__"</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.serverTimestamp()</span>
+<span class="w">      </span><span class="nt">"key4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"__vector&lt;1, 2, 3&gt;__"</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.vector([1, 2, 3])</span>
+<span class="w">      </span><span class="nt">"key4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"__arrayUnion&lt;a, b, c&gt;__"</span><span class="p">,</span><span class="w"> </span><span class="c1">// FieldValue.arrayUnion("a", "b", "c")</span>
+<span class="w">      </span><span class="nt">"key4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"__arrayRemove&lt;1, [2\\, 3\\, 4], 5&gt;__"</span><span class="w"> </span><span class="c1">// FieldValue.arrayRemove(1, [2, 3, 4], 5)</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8Qnt83DSNW0eNykpuzcQ"</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -428,32 +428,32 @@
 <section id="query">
 <h5>Query<a class="headerlink" href="#query" title="Link to this heading"></a></h5>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;where&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;group&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Firestore&quot;</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;where&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;findNearest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;column&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;distanceMeasure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EUCLIDEAN&quot;</span><span class="w"> </span><span class="p">}],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;limitToLast&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;orderBy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;asc&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"where"</span><span class="p">,</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"> </span><span class="s2">"=="</span><span class="p">,</span><span class="w"> </span><span class="s2">"Firestore"</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"where"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"=="</span><span class="p">,</span><span class="w"> </span><span class="s2">"8Qnt83DSNW0eNykpuzcQ"</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"findNearest"</span><span class="p">,</span><span class="w"> </span><span class="s2">"column"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="nt">"distanceMeasure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUCLIDEAN"</span><span class="w"> </span><span class="p">}],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"limitToLast"</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"orderBy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"title"</span><span class="p">,</span><span class="w"> </span><span class="s2">"asc"</span><span class="p">]</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereAnd&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Firestore&quot;</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"whereAnd"</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"group"</span><span class="p">,</span><span class="w"> </span><span class="s2">"=="</span><span class="p">,</span><span class="w"> </span><span class="s2">"Firestore"</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"=="</span><span class="p">,</span><span class="w"> </span><span class="s2">"8Qnt83DSNW0eNykpuzcQ"</span><span class="p">]</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;limitToLast&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"limitToLast"</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereOr&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8Qnt83DSNW0eNykpuzcQ&quot;</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;aahiEBE4qHM73JE7jom3&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"whereOr"</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"=="</span><span class="p">,</span><span class="w"> </span><span class="s2">"8Qnt83DSNW0eNykpuzcQ"</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"=="</span><span class="p">,</span><span class="w"> </span><span class="s2">"aahiEBE4qHM73JE7jom3"</span><span class="p">]</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;orderBy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;asc&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"orderBy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"title"</span><span class="p">,</span><span class="w"> </span><span class="s2">"asc"</span><span class="p">]</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;orderBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;asc&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="nt">"orderBy"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"title"</span><span class="p">,</span><span class="w"> </span><span class="s2">"asc"</span><span class="p">]</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">// b.getPartitions(id){number} // Group only (optional)</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">// b.getPartitions(id){number} // Group only (optional)</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -503,39 +503,39 @@
 </ul>
 </td></tr></table>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;aggregate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;average&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;averageRating&quot;</span><span class="p">]],</span><span class="w"> </span><span class="c1">// field(&quot;rating&quot;).average().as(&quot;averageRating&quot;)</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;aggregate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;countAll&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;totalBooks&quot;</span><span class="p">]],</span><span class="w"> </span><span class="c1">// countAll().as(&quot;totalBooks&quot;)</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;aggregate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;startsWith&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mr.&quot;</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;countIf&quot;</span><span class="p">]]</span><span class="w"> </span><span class="c1">// countIf(field(&quot;name&quot;).startsWith(&quot;Mr.&quot;))</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"aggregate"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"rating"</span><span class="p">,</span><span class="w"> </span><span class="s2">"average"</span><span class="p">,</span><span class="w"> </span><span class="s2">"averageRating"</span><span class="p">]],</span><span class="w"> </span><span class="c1">// field("rating").average().as("averageRating")</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"aggregate"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"countAll"</span><span class="p">,</span><span class="w"> </span><span class="s2">"totalBooks"</span><span class="p">]],</span><span class="w"> </span><span class="c1">// countAll().as("totalBooks")</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"aggregate"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"name"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"startsWith"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Mr."</span><span class="p">],</span><span class="w"> </span><span class="s2">"countIf"</span><span class="p">]]</span><span class="w"> </span><span class="c1">// countIf(field("name").startsWith("Mr."))</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;select&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;field&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lastName&quot;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;address&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;toUpper&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;as&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;upperAddress&quot;</span><span class="p">]]]]</span><span class="w"> </span><span class="c1">// &quot;firstName&quot;, field(&quot;lastName&quot;), field(&quot;address&quot;).toUpper().as(&quot;upperAddress&quot;)</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;distinct&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;author&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;authorName&quot;</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;publishedAt&quot;</span><span class="p">]]</span><span class="w"> </span><span class="c1">// field(&quot;author&quot;).as(&quot;authorName&quot;), &quot;publishedAt&quot;</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"select"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"firstName"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"field"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lastName"</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">"address"</span><span class="p">,</span><span class="w"> </span><span class="s2">"toUpper"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"as"</span><span class="p">,</span><span class="w"> </span><span class="s2">"upperAddress"</span><span class="p">]]]]</span><span class="w"> </span><span class="c1">// "firstName", field("lastName"), field("address").toUpper().as("upperAddress")</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"distinct"</span><span class="p">,</span><span class="w"> </span><span class="p">[[</span><span class="s2">"author"</span><span class="p">,</span><span class="w"> </span><span class="s2">"authorName"</span><span class="p">],</span><span class="w"> </span><span class="s2">"publishedAt"</span><span class="p">]]</span><span class="w"> </span><span class="c1">// field("author").as("authorName"), "publishedAt"</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;sort&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">]]]</span><span class="w"> </span><span class="c1">// field(&quot;rating&quot;).ascending(), field(&quot;title&quot;).descending()</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"sort"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"rating"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"title"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">]]]</span><span class="w"> </span><span class="c1">// field("rating").ascending(), field("title").descending()</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;unnest&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tagIndex&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tags&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tag&quot;</span><span class="p">,</span><span class="w"> </span><span class="cm">/* indexField? */</span><span class="p">]]]</span><span class="w"> </span><span class="c1">// &quot;tagIndex&quot;, field(&quot;tags&quot;).as(&quot;tag&quot;)</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"unnest"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"tagIndex"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"tags"</span><span class="p">,</span><span class="w"> </span><span class="s2">"tag"</span><span class="p">,</span><span class="w"> </span><span class="cm">/* indexField? */</span><span class="p">]]]</span><span class="w"> </span><span class="c1">// "tagIndex", field("tags").as("tag")</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;where&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lessThanOrEqual&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.15</span><span class="p">],</span><span class="w"> </span><span class="c1">// field(&quot;rating&quot;).lessThanOrEqual(3.15)</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;genre&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;toLower&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Fun Facts&quot;</span><span class="p">]]]</span><span class="w"> </span><span class="c1">// field(&quot;genre&quot;).toLower().equal(&quot;fun facts&quot;)</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"where"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"rating"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lessThanOrEqual"</span><span class="p">,</span><span class="w"> </span><span class="mf">3.15</span><span class="p">],</span><span class="w"> </span><span class="c1">// field("rating").lessThanOrEqual(3.15)</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"genre"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"toLower"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"equal"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Fun Facts"</span><span class="p">]]]</span><span class="w"> </span><span class="c1">// field("genre").toLower().equal("fun facts")</span>
 <span class="w">      </span><span class="p">]]</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereAnd&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lessThanOrEqual&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.15</span><span class="p">],</span><span class="w"> </span><span class="c1">// and(field(&quot;rating&quot;).lessThanOrEqual(3.15), field(&quot;genre&quot;).toLower().equal(&quot;fun facts&quot;))</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;genre&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;toLower&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Fun Facts&quot;</span><span class="p">]]]</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"whereAnd"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"rating"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lessThanOrEqual"</span><span class="p">,</span><span class="w"> </span><span class="mf">3.15</span><span class="p">],</span><span class="w"> </span><span class="c1">// and(field("rating").lessThanOrEqual(3.15), field("genre").toLower().equal("fun facts"))</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"genre"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"toLower"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"equal"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Fun Facts"</span><span class="p">]]]</span>
 <span class="w">      </span><span class="p">]],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;whereOr&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lessThanOrEqual&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.15</span><span class="p">],</span><span class="w"> </span><span class="c1">// or(field(&quot;rating&quot;).lessThanOrEqual(3.15), field(&quot;genre&quot;).toLower().equal(&quot;fun facts&quot;))</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;genre&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;toLower&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Fun Facts&quot;</span><span class="p">]]]</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"whereOr"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"rating"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lessThanOrEqual"</span><span class="p">,</span><span class="w"> </span><span class="mf">3.15</span><span class="p">],</span><span class="w"> </span><span class="c1">// or(field("rating").lessThanOrEqual(3.15), field("genre").toLower().equal("fun facts"))</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"genre"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"toLower"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"equal"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Fun Facts"</span><span class="p">]]]</span>
 <span class="w">      </span><span class="p">]]</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* PipelineExecuteOptions */</span><span class="p">}</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* PipelineExecuteOptions */</span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -559,10 +559,10 @@
 </ul>
 </td></tr></table>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">],</span><span class="w"> </span><span class="c1">// limit(50)</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// limit({ limit: 75 })</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"limit"</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">],</span><span class="w"> </span><span class="c1">// limit(50)</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"limit"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// limit({ limit: 75 })</span>
 <span class="w">    </span><span class="p">]</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -581,24 +581,24 @@
 <p><strong>npm</strong> i <em>&#64;google-cloud/bigquery</em></p>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bigquery&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"h1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcp"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bigquery"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Dataset (optional)</span>
-<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Destination table (optional)</span>
+<span class="w">    </span><span class="nt">"database"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Dataset (optional)</span>
+<span class="w">    </span><span class="nt">"table"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Destination table (optional)</span>
 
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT name, count FROM `demo.names_2014` WHERE gender = &#39;M&#39; ORDER BY count DESC LIMIT 10&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// bq.getQueryResults</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT name, count FROM `demo.names_2014` WHERE gender = 'M' ORDER BY count DESC LIMIT 10"</span><span class="p">,</span><span class="w"> </span><span class="c1">// bq.getQueryResults</span>
 
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;arg0&quot;</span><span class="w"> </span><span class="cm">/* ? */</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;arg1&quot;</span><span class="w"> </span><span class="cm">/* ? */</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* IQuery */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"arg0"</span><span class="w"> </span><span class="cm">/* ? */</span><span class="p">,</span><span class="w"> </span><span class="s2">"arg1"</span><span class="w"> </span><span class="cm">/* ? */</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* IQuery */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT name, state FROM `bigquery-public-data.usa_names.usa_1910_current` LIMIT 10&quot;</span><span class="w"> </span><span class="c1">// &quot;database&quot; | &quot;database&quot; + &quot;table&quot; (bq.setMetadata)</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT name, state FROM `bigquery-public-data.usa_names.usa_1910_current` LIMIT 10"</span><span class="w"> </span><span class="c1">// "database" | "database" + "table" (bq.setMetadata)</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -615,37 +615,37 @@
 <p><strong>npm</strong> i <em>&#64;google-cloud/datastore</em></p>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;datastore&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"h1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcp"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"datastore"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;task&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// ds.get</span>
-<span class="w">    </span><span class="nt">&quot;keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;task&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sampletask1&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// PathType[]</span>
-<span class="w">    </span><span class="nt">&quot;keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// KeyOptions</span>
-<span class="w">      </span><span class="nt">&quot;namespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;task&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sampletask3&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="nt">"keys"</span><span class="p">:</span><span class="w"> </span><span class="s2">"task"</span><span class="p">,</span><span class="w"> </span><span class="c1">// ds.get</span>
+<span class="w">    </span><span class="nt">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"task"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sampletask1"</span><span class="p">],</span><span class="w"> </span><span class="c1">// PathType[]</span>
+<span class="w">    </span><span class="nt">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// KeyOptions</span>
+<span class="w">      </span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"task"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sampletask3"</span><span class="p">]</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;task&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;task&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sampletask2&quot;</span><span class="p">]],</span>
+<span class="w">    </span><span class="nt">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"task"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"task"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sampletask2"</span><span class="p">]],</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;namespace&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// With &quot;kind&quot; (optional)</span>
-<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Task&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// ds.runQuery (at least one parameter)</span>
-<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Task1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Task2&quot;</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;filter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;done&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;filter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;priority&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&gt;=&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;order&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;priority&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;descending&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}]</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;namespace&gt;"</span><span class="p">,</span><span class="w"> </span><span class="c1">// With "kind" (optional)</span>
+<span class="w">    </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Task"</span><span class="p">,</span><span class="w"> </span><span class="c1">// ds.runQuery (at least one parameter)</span>
+<span class="w">    </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Task1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Task2"</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"filter"</span><span class="p">,</span><span class="w"> </span><span class="s2">"done"</span><span class="p">,</span><span class="w"> </span><span class="s2">"="</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"filter"</span><span class="p">,</span><span class="w"> </span><span class="s2">"priority"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&gt;="</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"order"</span><span class="p">,</span><span class="w"> </span><span class="s2">"priority"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"descending"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}]</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* RunQueryOptions */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* RunQueryOptions */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// ds.save</span>
-<span class="w">    </span><span class="nt">&quot;keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;task&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// ds.save</span>
+<span class="w">    </span><span class="nt">"keys"</span><span class="p">:</span><span class="w"> </span><span class="s2">"task"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Task&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* Same */</span><span class="p">]</span>
+<span class="w">    </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Task"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* Same */</span><span class="p">]</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -680,26 +680,26 @@
 <p><strong>npm</strong> i <em>&#64;google-cloud/bigtable</em></p>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bigtable&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Instance</span>
-<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"h1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcp"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bigtable"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Instance</span>
+<span class="w">    </span><span class="nt">"table"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span>
 
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rowKey1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// bt.get</span>
-<span class="w">    </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;column1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;column2&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rowKey1"</span><span class="p">,</span><span class="w"> </span><span class="c1">// bt.get</span>
+<span class="w">    </span><span class="nt">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"column1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"column2"</span><span class="p">],</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;empty&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// bt.createReadStream</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;empty&gt;"</span><span class="p">,</span><span class="w"> </span><span class="c1">// bt.createReadStream</span>
 
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Filter */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Overrides &quot;filter&quot; in GetRowOptions</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* GetRowOptions */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Filter */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Overrides "filter" in GetRowOptions</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* GetRowOptions */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// bt.save</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rowKey1&quot;</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// bt.save</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rowKey1"</span><span class="w"> </span><span class="c1">// Same as item being retrieved</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -716,52 +716,52 @@
 <p><strong>npm</strong> i <em>&#64;google-cloud/spanner</em></p>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;spanner&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodejs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Instance</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"h1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcp"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spanner"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Instance</span>
 
-<span class="w">    </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sample&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;databasePool&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* session-pool.SessionPoolOptions */</span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;databaseQuery&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* protos.IQueryOptions */</span><span class="p">}</span>
+<span class="w">    </span><span class="nt">"database"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Required</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"databasePool"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* session-pool.SessionPoolOptions */</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"databaseQuery"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* protos.IQueryOptions */</span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.table.read</span>
-<span class="w">    </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;col2&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Overrides &quot;columns&quot; in ReadRequest</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// ReadRequest</span>
-<span class="w">      </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">      </span><span class="nt">&quot;keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">    </span><span class="nt">"table"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.table.read</span>
+<span class="w">    </span><span class="nt">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"col1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"col2"</span><span class="p">],</span><span class="w"> </span><span class="c1">// Overrides "columns" in ReadRequest</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// ReadRequest</span>
+<span class="w">      </span><span class="nt">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="nt">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;tableRead&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* TimestampBounds */</span><span class="p">}</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"tableRead"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* TimestampBounds */</span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;empty&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.run</span>
-<span class="w">    </span><span class="nt">&quot;flags&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.runStream</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// DML</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// ExecuteSqlRequest</span>
-<span class="w">      </span><span class="nt">&quot;sql&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;p1&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;p2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;types&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;p1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;numeric&quot;</span><span class="w"> </span><span class="c1">// date | float | float32 | int | protoEnum | protoMessage | struct | pgJsonb | pgNumeric | timestamp</span>
+<span class="w">    </span><span class="nt">"table"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;empty&gt;"</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.run</span>
+<span class="w">    </span><span class="nt">"flags"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.runStream</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT 1"</span><span class="p">,</span><span class="w"> </span><span class="c1">// DML</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// ExecuteSqlRequest</span>
+<span class="w">      </span><span class="nt">"sql"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT 1"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"p1"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"p2"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"p1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"numeric"</span><span class="w"> </span><span class="c1">// date | float | float32 | int | protoEnum | protoMessage | struct | pgJsonb | pgNumeric | timestamp</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;demo&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.table.update</span>
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;updateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0 - update | 1 - insert | 2 - replace</span>
-<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;tableUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* UpdateRowsOptions */</span><span class="p">}</span>
+<span class="w">    </span><span class="nt">"table"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.table.update</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"updateType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0 - update | 1 - insert | 2 - replace</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"tableUpdate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* UpdateRowsOptions */</span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;empty&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.runUpdate</span>
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;sql&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;p1&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;p2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">"table"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;empty&gt;"</span><span class="p">,</span><span class="w"> </span><span class="c1">// sp.runUpdate</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT 1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"sql"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT 1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"p1"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"p2"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -778,25 +778,25 @@
 <p><strong>npm</strong> i <em>firebase</em> &amp;&amp; <strong>npm</strong> i <em>firebase-admin</em> (optional)</p>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gcp&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;firebase&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"h1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcp"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"firebase"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;path/to/ref&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// rd.child</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path/to/ref"</span><span class="p">,</span><span class="w"> </span><span class="c1">// rd.child</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;path/to/ref&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// rd.query</span>
-<span class="w">    </span><span class="nt">&quot;orderBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;orderByChild&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;path/to/child&quot;</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;startAfter&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;limitToFirst&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path/to/ref"</span><span class="p">,</span><span class="w"> </span><span class="c1">// rd.query</span>
+<span class="w">    </span><span class="nt">"orderBy"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"orderByChild"</span><span class="p">,</span><span class="w"> </span><span class="s2">"path/to/child"</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"startAfter"</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">"limitToFirst"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
 <span class="w">    </span><span class="p">],</span>
 
-<span class="w">    </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// rd.update</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;path/to/ref&quot;</span><span class="w"> </span><span class="c1">// Same as item being retrieved (rd.child)</span>
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Document */</span><span class="p">},</span><span class="w"> </span><span class="c1">// rd.update</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path/to/ref"</span><span class="w"> </span><span class="c1">// Same as item being retrieved (rd.child)</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -826,6 +826,13 @@
 </section>
 <section id="pi-r-gcp">
 <h2>&#64;pi-r/gcp<a class="headerlink" href="#pi-r-gcp" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.13.0: </span></p>
+<ul class="simple">
+<li><p><em>NPM</em> package <strong>&#64;google-cloud/firestore</strong> was upgraded from <em>8.7</em> to <em class="target">9.0</em> with a <em class="alt">NodeJS 22</em> requirement.</p></li>
+<li><p><em>NPM</em> package <strong>&#64;google-cloud/storage</strong> was upgraded from <em>7.22</em> to <em class="target">8.0</em> with a <em class="alt">NodeJS 22</em> requirement.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.12.0: </span></p>
 <ul class="simple">

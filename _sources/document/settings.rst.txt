@@ -6,7 +6,6 @@ These are the latest server default settings for the :target:`chrome` framework.
 
 .. code-block::
   :caption: squared.json [#]_
-  :emphasize-lines: 8,28-30,104-106
 
   {
     "apiVersion": "1.5.0",

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Built-In &mdash; E-mc 0.14.5 documentation</title>
+  <title>Built-In &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -298,21 +298,21 @@
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">squared.json</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;rollup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;bundle-es6&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;treeshake&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="hll"><span class="w">      </span><span class="nt">&quot;external&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/\\.js$/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// String with /[^|$]/ is parsed as a RegExp</span>
-</span><span class="w">      </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;node-resolve&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;@rollup/plugin-commonjs&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// &quot;commonjs&quot;</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;__default__&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;babel&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;babelHelpers&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bundled&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// __default__ (@pi-r property)</span>
+<span class="w">  </span><span class="nt">"rollup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"bundle-es6"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"treeshake"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="hll"><span class="w">      </span><span class="nt">"external"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/\\.js$/"</span><span class="p">,</span><span class="w"> </span><span class="c1">// String with /[^|$]/ is parsed as a RegExp</span>
+</span><span class="w">      </span><span class="nt">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"node-resolve"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"@rollup/plugin-commonjs"</span><span class="p">,</span><span class="w"> </span><span class="c1">// "commonjs"</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"babel"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"__default__"</span><span class="p">:</span><span class="w"> </span><span class="s2">"babel"</span><span class="p">,</span><span class="w"> </span><span class="nt">"babelHelpers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bundled"</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// __default__ (@pi-r property)</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;es&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;preserveModules&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;sourcemap&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;plugins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">          </span><span class="p">[</span><span class="s2">&quot;@rollup/plugin-terser&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;keep_classnames&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// npm i @rollup/plugin-terser</span>
+<span class="w">      </span><span class="nt">"output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"preserveModules"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"sourcemap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">[</span><span class="s2">"@rollup/plugin-terser"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"keep_classnames"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="c1">// npm i @rollup/plugin-terser</span>
 <span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>

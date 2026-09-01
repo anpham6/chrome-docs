@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SQL Server &mdash; E-mc 0.14.5 documentation</title>
+  <title>SQL Server &mdash; E-mc 0.14.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
@@ -17,7 +17,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c64b94d8"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -111,12 +111,12 @@
 </ul>
 <section id="interface">
 <h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConnectionConfiguration</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;tedious&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DataType</span><span class="p">,</span><span class="w"> </span><span class="nx">ParameterData</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;tedious/lib/data-type&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@e-mc/mssql/types/pool&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// From &quot;@types/tedious-connection-pool&quot;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConnectionConfiguration</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"tedious"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DataType</span><span class="p">,</span><span class="w"> </span><span class="nx">ParameterData</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"tedious/lib/data-type"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@e-mc/mssql/types/pool"</span><span class="p">;</span><span class="w"> </span><span class="c1">// From "@types/tedious-connection-pool"</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">MSSQLDataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mssql&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"mssql"</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">credential</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">MSSQLCredential</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">MSSQLRequestParameters</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">MSSQLRequestWithOutputParameters</span><span class="p">;</span>
@@ -143,7 +143,7 @@
 </div>
 <section id="pool">
 <h3>Pool<a class="headerlink" href="#pool" title="Link to this heading"></a></h3>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@e-mc/mssql/types/pool&quot;</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@e-mc/mssql/types/pool"</span><span class="p">;</span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">PoolConfig</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">min?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// min</span>
@@ -161,61 +161,61 @@
 <li><p><a class="reference external" href="https://tediousjs.github.io/tedious/api-connection.html">Connection</a></p></li>
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="s2">&quot;dataSource&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;uri&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;username&gt;:&lt;password&gt;@localhost:1433/&lt;database&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// authentication.options@server:options</span>
+<span class="w">  </span><span class="s2">"dataSource"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">"uri"</span><span class="o">:</span><span class="w"> </span><span class="s2">"&lt;username&gt;:&lt;password&gt;@localhost:1433/&lt;database&gt;"</span><span class="p">,</span><span class="w"> </span><span class="c1">// authentication.options@server:options</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="s2">&quot;credential&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.db.json</span>
+<span class="w">    </span><span class="s2">"credential"</span><span class="o">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w"> </span><span class="c1">// squared.db.json</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="s2">&quot;credential&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="s2">&quot;server&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;port&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1433</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;database&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;example&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;trustServerCertificate&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Local development</span>
+<span class="w">    </span><span class="s2">"credential"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">"server"</span><span class="o">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"options"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"port"</span><span class="o">:</span><span class="w"> </span><span class="mf">1433</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"database"</span><span class="o">:</span><span class="w"> </span><span class="s2">"example"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"trustServerCertificate"</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Local development</span>
 
 <span class="w">        </span><span class="cm">/* Azure */</span>
-<span class="w">        </span><span class="s2">&quot;encrypt&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;enableArithAbort&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;connectionIsolationLevel&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="c1">// ISOLATION_LEVEL.READ_UNCOMMITTED</span>
+<span class="w">        </span><span class="s2">"encrypt"</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"enableArithAbort"</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"connectionIsolationLevel"</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="c1">// ISOLATION_LEVEL.READ_UNCOMMITTED</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="s2">&quot;authentication&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="s2">&quot;userName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">      </span><span class="s2">"authentication"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"options"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="s2">"userName"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"password"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">        </span><span class="p">},</span>
 <span class="w">        </span><span class="cm">/* OR */</span>
-<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ntlm&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="s2">&quot;domain&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;workstation&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;userName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"ntlm"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"options"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="s2">"domain"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"workstation"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"userName"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"password"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">        </span><span class="p">},</span>
 <span class="w">        </span><span class="cm">/* OR */</span>
-<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;token-credential&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// @azure/core-auth</span>
-<span class="w">        </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="s2">&quot;credential&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;getToken&quot;</span><span class="o">:</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">scopes</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;**********&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"token-credential"</span><span class="p">,</span><span class="w"> </span><span class="c1">// @azure/core-auth</span>
+<span class="w">        </span><span class="s2">"options"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="s2">"credential"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">"getToken"</span><span class="o">:</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">scopes</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="s2">"**********"</span><span class="p">;</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">},</span>
 <span class="w">        </span><span class="cm">/* OR */</span>
-<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-default&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-password&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-access-token&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-msi-vm&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-msi-app-service&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;azure-active-directory-service-principal-secret&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="s2">&quot;userName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;clientId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;tenantId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;token&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;msiEndpoint&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;msiSecret&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"azure-active-directory-default"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"azure-active-directory-password"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"azure-active-directory-access-token"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"azure-active-directory-msi-vm"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"azure-active-directory-msi-app-service"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"azure-active-directory-service-principal-secret"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"options"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="s2">"userName"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"password"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"clientId"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"tenantId"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"token"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"msiEndpoint"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"msiSecret"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
@@ -231,36 +231,36 @@
 <li><p><a class="reference external" href="http://tediousjs.github.io/tedious/parameters.html">Parameters</a></p></li>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;img&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attribute&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dataSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mssql&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;credential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"img"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attribute"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mssql"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Authentication */</span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM table WHERE id = @name AND value = @value&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.execSql</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./path/to/statement.sql&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Extension &quot;.sql&quot; (settings.directory.sql + users/username/?)</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT * FROM table WHERE id = @name AND value = @value"</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.execSql</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./path/to/statement.sql"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Extension ".sql" (settings.directory.sql + users/username/?)</span>
 <span class="w">    </span><span class="cm">/* OR */</span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uspGetItems&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.callProcedure</span>
-<span class="w">    </span><span class="nt">&quot;storedProc&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uspGetItems"</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.callProcedure</span>
+<span class="w">    </span><span class="nt">"storedProc"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VarChar&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="cm">/* Implicit: Int */</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// MSSQLRequestParameters</span>
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Decimal&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">12.345</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;precision&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;scale&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}],</span>
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TVP&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* MSSQLRequestParameters[] */</span><span class="p">],</span><span class="w"> </span><span class="nt">&quot;rows&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* unknown[][] */</span><span class="p">]</span><span class="w"> </span><span class="p">}],</span>
-<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* MSSQLRequestParameters */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Two keys only for object detection (required)</span>
-<span class="w">      </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* MSSQLRequestParameters */</span><span class="p">}</span><span class="w"> </span><span class="c1">// Last row i{/* MSSQLRequestParameters */}n result (data[&quot;__returnvalue__&quot;] = true)</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"a"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VarChar"</span><span class="p">,</span><span class="w"> </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nt">"b"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="cm">/* Implicit: Int */</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// MSSQLRequestParameters</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c"</span><span class="p">,</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Decimal"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.345</span><span class="p">,</span><span class="w"> </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"precision"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">"scale"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}],</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d"</span><span class="p">,</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TVP"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* MSSQLRequestParameters[] */</span><span class="p">],</span><span class="w"> </span><span class="nt">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* unknown[][] */</span><span class="p">]</span><span class="w"> </span><span class="p">}],</span>
+<span class="w">    </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"input"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* MSSQLRequestParameters */</span><span class="p">},</span><span class="w"> </span><span class="c1">// Two keys only for object detection (required)</span>
+<span class="w">      </span><span class="nt">"output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* MSSQLRequestParameters */</span><span class="p">}</span><span class="w"> </span><span class="c1">// Last row i{/* MSSQLRequestParameters */}n result (data["__returnvalue__"] = true)</span>
 <span class="w">    </span><span class="p">},</span>
 
-<span class="w">    </span><span class="cm">/* Result: { &quot;item_src&quot;: &quot;mssql.png&quot;, &quot;item_alt&quot;: &quot;SQL Server&quot; } */</span>
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item_src&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item_alt&quot;</span>
+<span class="w">    </span><span class="cm">/* Result: { "item_src": "mssql.png", "item_alt": "SQL Server" } */</span>
+<span class="w">    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item_src"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item_alt"</span>
 <span class="w">    </span><span class="p">},</span>
 
-<span class="w">    </span><span class="nt">&quot;usePool&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;usePool&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// tedious-connection-pool2</span>
-<span class="w">      </span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="nt">"usePool"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"usePool"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// tedious-connection-pool2</span>
+<span class="w">      </span><span class="nt">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -269,10 +269,16 @@
 </section>
 <section id="pi-r-mssql">
 <h2>&#64;pi-r/mssql<a class="headerlink" href="#pi-r-mssql" title="Link to this heading"></a></h2>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 0.11.0: </span></p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.13.0: </span></p>
 <ul class="simple">
-<li><p>NPM package <strong>tedious</strong> was upgraded from <em>18.6</em> to <em class="target">19.2</em> with a <em class="alt">NodeJS 18.17</em> requirement.</p></li>
+<li><p><em>NPM</em> package <strong>tedious</strong> was upgraded from <em>19.2</em> to <em class="target">20.0</em> with a <em class="alt">NodeJS 22</em> requirement.</p></li>
+</ul>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.0: </span></p>
+<ul class="simple">
+<li><p><em>NPM</em> package <strong>tedious</strong> was upgraded from <em>18.6</em> to <em class="target">19.2</em> with a <em class="alt">NodeJS 18.17</em> requirement.</p></li>
 </ul>
 </div>
 <div class="versionadded">
@@ -294,10 +300,10 @@
 </li>
 </ul>
 </div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 0.8.0: </span></p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.8.0: </span></p>
 <ul class="simple">
-<li><p>NPM package <strong>tedious</strong> was upgraded from <em>16.7</em> to <em class="target">18.3</em> with a <em class="alt">NodeJS 18</em> requirement.</p></li>
+<li><p><em>NPM</em> package <strong>tedious</strong> was upgraded from <em>16.7</em> to <em class="target">18.3</em> with a <em class="alt">NodeJS 18</em> requirement.</p></li>
 </ul>
 </div>
 </section>

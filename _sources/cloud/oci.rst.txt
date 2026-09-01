@@ -197,6 +197,10 @@ Example usage
 @pi-r/oci
 =========
 
+.. versionadded:: 0.13.0
+
+  - *NPM* package **oracledb** was upgraded from *6.10* to :target:`7.0` with a :alt:`NodeJS 14.17` requirement.
+
 .. versionchanged:: 0.12.0
 
  - ``BREAKING`` There is no special handling when uploading the file extension ":lower:`.map`". *CloudStorageUpload* property **descendantsGroup** as :alt:`[".map"]` can be used to restore the old behavior.

@@ -155,6 +155,9 @@ Commands
         "csv": false,
         "differ": "",
         "error": "",
+        "match": "",
+        "missing_on_dst": "",
+        "missing_on_src": "",
         "format": "",
         "separator": "",
         "timeformat": "",
@@ -189,6 +192,7 @@ Commands
         "bind": "",
         "contimeout": "",
         "disable_http2": false,
+        "http_proxy": "",
         "timeout": "",
         "config": ""
       }

@@ -7,6 +7,7 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
+  :emphasize-lines: 30
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
@@ -37,7 +38,7 @@ Interface
   function isEmpty(value: unknown): boolean;
   function isError(err: unknown, ...name: string[]): err is Error;
   function isErrorCode(err: unknown, ...code: unknown[]): err is Required<ErrorCode>;
-  function asFunction(value: unknown, sync?: boolean): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
+  function asFunction(value: unknown, sync?: boolean, cjs?: boolean): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
   function asExt(value: string): string;
   function parseTime(value: number | string, epoch: true): number;
   function parseTime(value: number | string, negative: false): number;
@@ -221,6 +222,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.14.7
+
+  - :alt:`function` **asFunction** argument :target:`cjs` as :alt:`boolean` for creating a virtual :target:`module.exports` was implemented.
 
 .. versionadded:: 0.14.1
 

@@ -75,10 +75,6 @@ These are the latest server default settings for the :target:`chrome` framework.
               "abort": false,
               "local_file": 0
             },
-            "mongodb": {
-              "abort": false,
-              "local_file": 0
-            },
             "redis": {
               "abort": false,
               "local_file": 0

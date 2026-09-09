@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 179
 
   import type { LogStatus } from "./squared";
 
@@ -188,7 +189,7 @@ Interface
       writeFail(value: LogValue, message?: unknown, options?: LogFailOptions | LogType): void;
       enabled(key: string, username?: string): boolean;
       parseFunction(value: unknown, options?: ParseFunctionOptions): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
-      parseFunction(value: unknown, absolute: boolean, sync?: boolean): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
+      parseFunction(value: unknown, absolute: boolean, sync?: boolean, cjs?: boolean): ((...args: unknown[]) => Promise<unknown> | unknown) | null;
       asString(value: unknown, cacheKey?: boolean | "throws"): string;
       asHash(data: BinaryLike, options?: AsHashOptions): string;
       asHash(data: BinaryLike, algorithm?: string, options?: HashOptions): string;
@@ -261,6 +262,12 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.14.7
+
+  - *ModuleConstructor* :alt:`function` **parseFunction** argument :target:`cjs` as :alt:`boolean` was implemented.
+
+.. note:: The :alt:`property` alias is named **module** in *ParseFunctionOptions*.
 
 .. deprecated:: 0.13.8
 
@@ -400,6 +407,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 12,17,19
 
   import type { BackgroundColor, ForegroundColor, LogMessageOptions, LogTypeValue, LoggerProgress, LoggerStatus } from "./logger";
   import type { LoggerProcessSettings } from "./settings";
@@ -411,11 +419,14 @@ Settings
       process?: {
           cpu_usage?: boolean;
           memory_usage?: boolean;
+          /** @deprecated */
           inline?: boolean;
       };
       require?: {
           ext?: string | string[] | boolean;
           npm?: boolean;
+          module?: boolean;
+          /** @deprecated */
           inline?: boolean;
       };
       posix?: {
@@ -574,6 +585,14 @@ Settings
 
 Changelog
 ---------
+
+.. versionadded:: 0.14.7
+
+  - *NodeModule* property **require.module** for loading an inline text function through :target:`module.exports` was created.
+
+.. deprecated:: 0.14.7
+
+  - *NodeModule* properties **process.inline** | **require.inline** functionality can be achieved using **require.module** global definitions.
 
 .. versionadded:: 0.14.0
 

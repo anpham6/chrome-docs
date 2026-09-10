@@ -65,7 +65,7 @@ Interface
       dataSource: {
           source: "uri" | "local" | "export" | "json";
           source: "cloud";
-          source: "mariadb" | "mongodb" | "mssql" | "mysql" | "oracle" | "postgres" | "redis";
+          source: "mariadb" | "mongodb" | "mssql" | "mysql" | "oracle" | "postgres" | "redis" | "sqlite";
           postQuery?: string;
           preRender?: string;
           whenEmpty?: string;

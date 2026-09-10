@@ -253,7 +253,7 @@ Interface
       sanitizeArgs(values: string[], doubleQuote?: boolean): string[];
       purgeMemory(percent: number, parent: boolean): Promise<number>;
       purgeMemory(percent: number, limit: number, parent?: boolean): Promise<number>;
-      purgeMemory(percent?: number, limit?: number | boolean, parent?: unknown): Promise<number>;
+      purgeMemory(percent?: number, limit?: number, parent?: unknown): Promise<number>;
       canWrite(name: "temp" | "home"): boolean;
       loadSettings(settings: Settings, password?: string): boolean;
       readonly prototype: IModule<IHost>;

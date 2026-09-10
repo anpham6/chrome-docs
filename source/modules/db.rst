@@ -27,13 +27,13 @@ Interface
       hasSource(source: string, ...type: number[]): boolean;
       applyCommand(...items: DbDataSource[]): void;
       executeQuery(item: DbDataSource, callback: ErrorQueryCallback): Promise<QueryResult>;
-      executeQuery(item: DbDataSource, sessionKey: string): Promise<QueryResult>;
-      executeQuery(item: DbDataSource, options?: ExecuteQueryOptions | string): Promise<QueryResult>;
+      executeQuery(item: DbDataSource, sessionKey: string | undefined): Promise<QueryResult>;
+      executeQuery(item: DbDataSource, options?: ExecuteQueryOptions): Promise<QueryResult>;
       executeBatchQuery(batch: DbDataSource[], callback: ErrorQueryCallback, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       executeBatchQuery(batch: DbDataSource[], sessionKey: string, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       executeBatchQuery(batch: DbDataSource[], options?: ExecuteBatchQueryOptions | string, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       processRows(batch: DbDataSource[], tasks: Promise<QueryResult | null>[], parallel: boolean): Promise<BatchQueryResult>;
-      processRows(batch: DbDataSource[], tasks: Promise<QueryResult | null>[], options?: ProcessRowsOptions | boolean, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
+      processRows(batch: DbDataSource[], tasks: Promise<QueryResult | null>[], options?: ProcessRowsOptions, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       handleFail(err: unknown, item: DbDataSource, options?: HandleFailOptions): boolean;
       readTLSCert(value: unknown, cache?: boolean): string;
       readTLSConfig(options: SecureContextOptions, cache?: boolean): void;
@@ -158,7 +158,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.db.json>`_
-  :emphasize-lines: 18,21
+  :emphasize-lines: 12,19,22,32
 
   import type { DbSourceOptions, ImportModule, PurgeComponent, RefreshAheadAction } from "./settings";
 
@@ -171,6 +171,7 @@ Settings
       oracle?: DbStoredCredentials;
       postgres?: DbStoredCredentials;
       redis?: DbStoredCredentials;
+      sqlite?: DbStoredCredentials;
       settings?: {
           broadcast_id?: string | string[];
           users?: Record<string, Record<string, unknown>>;
@@ -190,6 +191,7 @@ Settings
           oracle?: DbSourceOptions;
           postgres?: DbSourceOptions;
           redis?: DbSourceOptions;
+          sqlite?: Omit<DbSourceOptions, "pool">;
       };
   }
 
@@ -197,6 +199,10 @@ Settings
 
 Changelog
 =========
+
+.. versionadded:: 0.14.7
+
+  - *DbModule* property and settings **sqlite** for native SQLite was created.
 
 .. versionadded:: 0.14.6
 

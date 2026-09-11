@@ -12,10 +12,15 @@ Example configuration
 
 .. code-block::
   :caption: squared.json
+  :emphasize-lines: 4-7
 
   {
     "image": {
       "handler": "@pi-r/jimp",
+      "extensions": [ // v0.13.1
+        "pi-r-jimp-node-webpmux", // npm i pi-r-jimp-node-webpmux
+        "pi-r-jimp-avif-unknown"  // Read as AVIF -> Output as BMP
+      ],
       "webp": "webp-custom", // IImage handler for "image/webp" (npm i webp-custom)
       "avif": "avif-custom", // IImage handler for "image/avif" (npm i avif-custom)
       "settings": {
@@ -84,14 +89,14 @@ WebP
 
 .. rst-class:: center-data
 
-========== = = ==================== ========== =======
-Library    R W         NPM           CJS         ESM
-========== = = ==================== ========== =======
-dwebp      x   dwebp-bin [#webp]_   1.0.0       2.0.0
-cwebp        x cwebp-bin [#webp]_   6.0.0       8.0.0
-gif2webp     x gif2webp-bin         3.0.0       5.0.0
-webpmux    x x node-webpmux         3.2.0       3.2.0
-========== = = ==================== ========== =======
+========== = = ======================= ========== =======
+Library    R W         NPM                CJS       ESM
+========== = = ======================= ========== =======
+dwebp      x   dwebp-bin [#webp]_       1.0.0      2.0.0
+cwebp        x cwebp-bin [#webp]_       6.0.0      8.0.0
+gif2webp     x gif2webp-bin             3.0.0      5.0.0
+webpmux    x x pi-r-jimp-node-webpmux   0.1.0      0.1.0
+========== = = ======================= ========== =======
 
 There can be transparency issues for *WebP* animated transformations due to the *WebP* compression algorithm. **node-webpmux** is used to extract the raw data from the *WebP* image and to reconstruct the frames.
 
@@ -253,6 +258,10 @@ Transformations are given a *UUID* filename except when ":lower:`@`" or ":lower:
 
 @pi-r/jimp
 ==========
+
+.. versionadded:: 0.13.1
+
+  - Initial release for animated WebP extension ``pi-r-jimp-node-webpmux``.
 
 .. versionadded:: 0.11.0
 

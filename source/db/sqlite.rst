@@ -10,26 +10,23 @@ Interface
 
 .. code-block:: typescript
 
-  import type { AggregateOptions, DatabaseSyncOptions, SQLInputValue } from "node:sqlite";
+  import type { AggregateOptions, DatabaseSyncOptions, PrepareOptions, SQLInputValue } from "node:sqlite";
 
   interface SQLiteDataSource extends DbDataSource {
       source: "sqlite";
       query?: string;
       params?: SQLInputValue | SQLInputValue[];
-      options?: {
-          allowBareNamedParameters?: boolean;
-          allowUnknownNamedParameters?: boolean;
-          returnArrays?: boolean;
-          readBigInts?: boolean;
-      };
-      create?: string[];
+      options?: PrepareOptions;
+      create?: string | string[];
       update?: string | SQLiteUpdateObject;
   }
 
   interface SQLiteDatabaseConfig {
+      memory?: boolean;
       path?: string;
       options?: DatabaseSyncOptions;
       extras?: {
+          backup_access?: boolean | string;
           aggregate?: Record<string, AggregateOptions>;
           aggregate_module?: boolean;
           session_timeout?: number | string;
@@ -51,12 +48,14 @@ Interface
   interface SQLiteUpdateObject {
       sql: string;
       params: SQLInputValue[][];
+      options?: PrepareOptions;
   }
 
 Authentication
 ==============
 
 - `Connection <https://nodejs.org/api/sqlite.html#new-databasesyncpath-options>`_
+- `Date Format <https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date-format>`_
 
 ::
 
@@ -79,7 +78,7 @@ Authentication
           "allowBareNamedParameters": true
         },
         "extras": {
-          "session_timeout": "1h" // calls db.close() + clears user cache
+          "session_timeout": "1h" // Calls db.close() + Clears user cache
         },
         "roles": {
           "admin": {
@@ -87,9 +86,9 @@ Authentication
           },
           "reader": {
             "allow": ["READ", "SELECT"],
-            "ignore": ["COPY"] // does not cancel subsequent actions
+            "ignore": ["COPY"] // Does not cancel subsequent actions
           },
-          "all_users": { // inherited first by all sessions
+          "all_users": { // Inherited first by all sessions
             "deny": ["*"]
           }
         },
@@ -99,6 +98,16 @@ Authentication
             "allow": ["INSERT", "UPDATE"]
           }
         }
+      },
+      "daemon": {
+        "memory": true,
+        "path": "./data/db/init.sql", // Optional
+        "extras": {
+          "backup_access": "./data/backup/daemon-%Y-%m-%d.sqlite3", // Numeric specifiers only
+          "session_timeout": 0 // Not used
+        },
+        "roles": {/* Same */},
+        "users": {/* Same */}
       }
     }
   }
@@ -166,14 +175,14 @@ Example usage
       ],
 
       "update": {
-        "sql": "INSERT INTO demo VALUES (?, ?)", // db.prepare().run()
+        "sql": "INSERT INTO demo VALUES (?, ?)", // db.prepare()
         "params": [
-          [1, "Hello"],
-          [2, "World"]
+          [1, "Hello"], // run(1, "Hello")
+          [2, "World"]  // run(2, "World")
         ]
       },
 
-      "query": "SELECT * FROM demo WHERE ID = 2", // db.prepare().all()
+      "query": "SELECT * FROM ? WHERE ID = ?", // db.prepare().all("demo", 2)
       "options": {
         "allowBareNamedParameters": false
       }

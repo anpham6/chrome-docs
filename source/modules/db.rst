@@ -71,7 +71,7 @@ Interface
       DB_SOURCE_NAME: string;
       DB_SOURCE_CLIENT: boolean;
       DB_SOURCE_TYPE: number;
-      setCredential(this: IDb, item: DbDataSource): Promise<void>;
+      setCredential(this: IDb, item: DbDataSource): void | Promise<void>;
       executeQuery(this: IDb, item: DbDataSource, options?: ExecuteQueryOptions | string): Promise<QueryResult>;
       executeBatchQuery(this: IDb, batch: DbDataSource[], options?: ExecuteBatchQueryOptions | string, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       checkTimeout?(this: IDbSourceClient, value: number, limit?: number): Promise<number>;

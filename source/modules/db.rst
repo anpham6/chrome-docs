@@ -59,7 +59,7 @@ Interface
   interface DbConstructor extends ClientDbConstructor<IHost> {
       REFESH_AHEAD_GC_INTERVAL: number;
       readonly HASH_ALGORITHM: string;
-      loadSettings(settings: Settings & { db?: DbSettings }, password?: string): boolean;
+      loadSettings(settings: Settings & { db?: DbModule }, password?: string): boolean;
       setPoolConfig(value: Record<string, PoolConfig>): void;
       getPoolConfig(source: string): Required<PoolConfig> | undefined;
       clearInterval(uuidKey: string): void;
@@ -72,8 +72,10 @@ Interface
       DB_SOURCE_CLIENT: boolean;
       DB_SOURCE_TYPE: number;
       setCredential(this: IDb, item: DbDataSource): void | Promise<void>;
-      executeQuery(this: IDb, item: DbDataSource, options?: ExecuteQueryOptions | string): Promise<QueryResult>;
-      executeBatchQuery(this: IDb, batch: DbDataSource[], options?: ExecuteBatchQueryOptions | string, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
+      executeQuery(this: IDb, item: DbDataSource, sessionKey: string | undefined): Promise<QueryResult>;
+      executeQuery(this: IDb, item: DbDataSource, options?: ExecuteQueryOptions): Promise<QueryResult>;
+      executeBatchQuery(this: IDb, batch: DbDataSource[], sessionKey: string | undefined, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
+      executeBatchQuery(this: IDb, batch: DbDataSource[], options?: ExecuteBatchQueryOptions, outResult?: BatchQueryResult): Promise<BatchQueryResult>;
       checkTimeout?(this: IDbSourceClient, value: number, limit?: number): Promise<number>;
   }
 
@@ -158,7 +160,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.db.json>`_
-  :emphasize-lines: 12,19,22,32
+  :emphasize-lines: 14,21,24,34
 
   import type { DbSourceOptions, ImportModule, PurgeComponent, RefreshAheadAction } from "./settings";
 

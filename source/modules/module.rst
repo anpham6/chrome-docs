@@ -229,7 +229,6 @@ Interface
       readBuffer(value: string | URL, cache?: boolean | ReadBufferOptions): Buffer | null;
       resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer): Promise<FileTypeResult | undefined>;
       lookupMime(value: string, extension?: boolean): string;
-      /** @deprecated class */
       initCpuUsage(instance?: IModule, thread?: boolean): CpuUsage;
       /** @deprecated private */
       getCpuUsage(start: CpuUsage, format: true, thread?: boolean): string;
@@ -274,9 +273,8 @@ Changelog
   - *ModuleConstructor* :alt:`function` will be converted into :target:`private` class methods:
 
     .. hlist::
-      :columns: 4
+      :columns: 3
 
-      - initCpuUsage :alt:`(public)`
       - getCpuUsage
       - getMemUsage
       - formatCpuMem

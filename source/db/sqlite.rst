@@ -25,6 +25,10 @@ Interface
       memory?: boolean;
       path?: string;
       options?: DatabaseSyncOptions;
+      cache?: {
+          prepare?: boolean;
+          all_users?: number | string;
+      };
       extras?: {
           backup_access?: boolean | string;
           aggregate?: Record<string, AggregateOptions>;
@@ -76,6 +80,10 @@ Authentication
         "options": {
           "readOnly": false,
           "allowBareNamedParameters": true
+        },
+        "cache": {
+          "prepare": true,
+          "all_users": "2m" // Authenticated users have their own cache settings
         },
         "extras": {
           "session_timeout": "1h" // Calls db.close() + Clears user cache

@@ -26,7 +26,7 @@ Interface
       path?: string;
       options?: DatabaseSyncOptions;
       cache?: {
-          prepare?: boolean;
+          prepare?: number | [number, number] | boolean;
           all_users?: number | string;
       };
       extras?: {
@@ -82,7 +82,7 @@ Authentication
           "allowBareNamedParameters": true
         },
         "cache": {
-          "prepare": true,
+          "prepare": [500, 0.5], // LRU (true: 1000/0.25)
           "all_users": "2m" // Authenticated users have their own cache settings
         },
         "extras": {

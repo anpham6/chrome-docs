@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQLite &mdash; E-mc 0.14.6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=9dcc611a" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/role.css?v=f68eca48" />
+      <link rel="stylesheet" type="text/css" href="../_static/content.css?v=7c8efdee" />
+      <link rel="stylesheet" type="text/css" href="../_static/highlight-abap.css?v=0a013c1c" />
+      <link rel="stylesheet" type="text/css" href="../_static/override.css?v=46102404" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f1b31eb2"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Request" href="../request/index.html" />
+    <link rel="prev" title="SQL Server" href="mssql.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            E-mc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../document/index.html">Document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../image/index.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Database</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="interface.html">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pool.html">Pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mariadb.html">MariaDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mongodb.html">MongoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql.html">MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oracle.html">Oracle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postgres.html">PostgreSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redis.html">Redis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mssql.html">SQL Server</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SQLite</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#authentication">Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-usage">Example usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pi-r-sqlite">&#64;pi-r/sqlite</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../request/index.html">Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task/index.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compress/index.html">Compress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Build Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions.html">Versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: url(https://e-mc.readthedocs.io/en/latest/_static/places/007.png);" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E-mc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Database</a></li>
+      <li class="breadcrumb-item active">SQLite</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sqlite">
+<h1>SQLite<a class="headerlink" href="#sqlite" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nodejs.org/api/sqlite.html#sqlite">NodeJS v26</a> <em class="alt">(node:sqlite)</em></p></li>
+<li><p><strong>npm</strong> i <em>&#64;pi-r/sqlite</em></p></li>
+</ul>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h2>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AggregateOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">DatabaseSyncOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">PrepareOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">SQLInputValue</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"node:sqlite"</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">SQLiteDataSource</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DbDataSource</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">"sqlite"</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">query?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">params?</span><span class="o">:</span><span class="w"> </span><span class="kt">SQLInputValue</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">SQLInputValue</span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">PrepareOptions</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">create?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">update?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">SQLiteUpdateObject</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">SQLiteDatabaseConfig</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">memory?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">path?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">DatabaseSyncOptions</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">cache</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">prepare?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">all_users?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">extras</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">backup_access?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">aggregate?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">AggregateOptions</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">aggregate_module?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">session_timeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">roles?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">SQLiteAuthorization</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">users?</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">SQLiteUserPrivileges</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">SQLiteAuthorization</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">allow?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">deny?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">ignore?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">SQLiteUserPrivileges</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">SQLiteAuthorization</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">roles?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">SQLiteUpdateObject</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">sql</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="kt">SQLInputValue</span><span class="p">[][];</span>
+<span class="w">    </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">PrepareOptions</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nodejs.org/api/sqlite.html#new-databasesyncpath-options">Connection</a></p></li>
+<li><p><a class="reference external" href="https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date-format">Date Format</a></p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"credential"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="c1">// auto-populated through server settings + Host authentication</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">squared.db.json</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"sqlite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"main"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./data/db/demo.sqlite3"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"readOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"allowBareNamedParameters"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"cache"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"prepare"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">],</span><span class="w"> </span><span class="c1">// LRU (true: 1000/0.25)</span>
+<span class="w">        </span><span class="nt">"all_users"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2m"</span><span class="w"> </span><span class="c1">// Authenticated users have their own cache settings</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"extras"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"session_timeout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1h"</span><span class="w"> </span><span class="c1">// Calls db.close() + Clears user cache</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"admin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"allow"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">"reader"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"allow"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"READ"</span><span class="p">,</span><span class="w"> </span><span class="s2">"SELECT"</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">"ignore"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"COPY"</span><span class="p">]</span><span class="w"> </span><span class="c1">// Does not cancel subsequent actions</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">"all_users"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Inherited first by all sessions</span>
+<span class="w">          </span><span class="nt">"deny"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// JWT authentication</span>
+<span class="w">          </span><span class="nt">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"reader"</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">"allow"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"INSERT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"UPDATE"</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"daemon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"memory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./data/db/init.sql"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Optional</span>
+<span class="w">      </span><span class="nt">"extras"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"backup_access"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./data/backup/daemon-%Y-%m-%d.sqlite3"</span><span class="p">,</span><span class="w"> </span><span class="c1">// Numeric specifiers only</span>
+<span class="w">        </span><span class="nt">"session_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="c1">// Not used</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="cm">/* Same */</span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nodejs.org/api/sqlite.html#authorization-action-codes">Authorization action codes</a></p></li>
+</ul>
+<table class="docutils align-default" style="width: 600px">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>SQLITE_CREATE_INDEX</p></td>
+<td><p>SQLITE_CREATE_TABLE</p></td>
+<td><p>SQLITE_CREATE_TEMP_INDEX</p></td>
+</tr>
+<tr class="row-even"><td><p>SQLITE_CREATE_TEMP_TABLE</p></td>
+<td><p>SQLITE_CREATE_TEMP_TRIGGER</p></td>
+<td><p>SQLITE_CREATE_TEMP_VIEW</p></td>
+</tr>
+<tr class="row-odd"><td><p>SQLITE_CREATE_TRIGGER</p></td>
+<td><p>SQLITE_CREATE_VIEW</p></td>
+<td><p>SQLITE_DELETE</p></td>
+</tr>
+<tr class="row-even"><td><p>SQLITE_DROP_INDEX</p></td>
+<td><p>SQLITE_DROP_TABLE</p></td>
+<td><p>SQLITE_DROP_TEMP_INDEX</p></td>
+</tr>
+<tr class="row-odd"><td><p>SQLITE_DROP_TEMP_TABLE</p></td>
+<td><p>SQLITE_DROP_TEMP_TRIGGER</p></td>
+<td><p>SQLITE_DROP_TEMP_VIEW</p></td>
+</tr>
+<tr class="row-even"><td><p>SQLITE_DROP_TRIGGER</p></td>
+<td><p>SQLITE_DROP_VIEW</p></td>
+<td><p>SQLITE_INSERT</p></td>
+</tr>
+<tr class="row-odd"><td><p>SQLITE_PRAGMA</p></td>
+<td><p>SQLITE_READ</p></td>
+<td><p>SQLITE_SELECT</p></td>
+</tr>
+<tr class="row-even"><td><p>SQLITE_TRANSACTION</p></td>
+<td><p>SQLITE_UPDATE</p></td>
+<td><p>SQLITE_ATTACH</p></td>
+</tr>
+<tr class="row-odd"><td><p>SQLITE_DETACH</p></td>
+<td><p>SQLITE_ALTER_TABLE</p></td>
+<td><p>SQLITE_REINDEX</p></td>
+</tr>
+<tr class="row-even"><td><p>SQLITE_ANALYZE</p></td>
+<td><p>SQLITE_CREATE_VTABLE</p></td>
+<td><p>SQLITE_DROP_VTABLE</p></td>
+</tr>
+<tr class="row-odd"><td><p>SQLITE_FUNCTION</p></td>
+<td><p>SQLITE_SAVEPOINT</p></td>
+<td><p>SQLITE_COPY</p></td>
+</tr>
+<tr class="row-even"><td><p>SQLITE_RECURSIVE</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="example-usage">
+<h2>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sqlite.org/lang.html">Query</a></p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"img"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attribute"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sqlite"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">"create"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">"CREATE TABLE demo (id int, title varchar(50)); CREATE TABLE user (id int, name varchar(50));"</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.exec()</span>
+<span class="w">      </span><span class="s2">"INSERT INTO demo VALUES (1, 'Hello'); INSERT INTO demo VALUES (2, 'World');"</span>
+<span class="w">    </span><span class="p">],</span>
+
+<span class="w">    </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"sql"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSERT INTO demo VALUES (?, ?)"</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.prepare()</span>
+<span class="w">      </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">],</span><span class="w"> </span><span class="c1">// run(1, "Hello")</span>
+<span class="w">        </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"World"</span><span class="p">]</span><span class="w">  </span><span class="c1">// run(2, "World")</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT * FROM ? WHERE ID = ?"</span><span class="p">,</span><span class="w"> </span><span class="c1">// db.prepare().all("demo", 2)</span>
+<span class="w">    </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"allowBareNamedParameters"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="pi-r-sqlite">
+<h2>&#64;pi-r/sqlite<a class="headerlink" href="#pi-r-sqlite" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.13.1: </span></p>
+<ul class="simple">
+<li><p>Initial release under <code class="docutils literal notranslate"><span class="pre">&#64;pi-r/sqlite</span></code> with a <em class="alt">NodeJS 24.10</em> requirement.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mssql.html" class="btn btn-neutral float-left" title="SQL Server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../request/index.html" class="btn btn-neutral float-right" title="Request" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

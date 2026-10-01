@@ -162,7 +162,8 @@ Interface
   }
 
   interface FileManagerConstructor extends HostConstructor {
-      purgeMemory(percent?: number, limit?: number | boolean, parent?: number | boolean): Promise<number>;
+      purgeMemory(percent: number, parent: boolean): Promise<number>;
+      purgeMemory(percent?: number, limit?: number, parent?: number | boolean): Promise<number>;
       loadSettings(settings: Settings, password?: string): boolean;
       loadSettings(settings: Settings, permission?: PermissionReadWrite, password?: string): boolean;
       sanitizeAssets(assets: ExternalAsset[], exclusions?: string[]): ExternalAsset[];

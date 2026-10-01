@@ -114,7 +114,11 @@
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@pi-r/jimp"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"webp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webp-custom"</span><span class="p">,</span><span class="w"> </span><span class="c1">// IImage handler for "image/webp" (npm i webp-custom)</span>
+<span class="hll"><span class="w">    </span><span class="nt">"extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="c1">// v0.13.1</span>
+</span><span class="hll"><span class="w">      </span><span class="s2">"pi-r-jimp-node-webpmux"</span><span class="p">,</span><span class="w"> </span><span class="c1">// npm i pi-r-jimp-node-webpmux</span>
+</span><span class="hll"><span class="w">      </span><span class="s2">"pi-r-jimp-avif-unknown"</span><span class="w">  </span><span class="c1">// Read as AVIF -&gt; Output as BMP</span>
+</span><span class="hll"><span class="w">    </span><span class="p">],</span>
+</span><span class="w">    </span><span class="nt">"webp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webp-custom"</span><span class="p">,</span><span class="w"> </span><span class="c1">// IImage handler for "image/webp" (npm i webp-custom)</span>
 <span class="w">    </span><span class="nt">"avif"</span><span class="p">:</span><span class="w"> </span><span class="s2">"avif-custom"</span><span class="p">,</span><span class="w"> </span><span class="c1">// IImage handler for "image/avif" (npm i avif-custom)</span>
 <span class="w">    </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">"jimp"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -234,9 +238,9 @@
 <tr class="row-odd"><td><p>webpmux</p></td>
 <td><p>x</p></td>
 <td><p>x</p></td>
-<td><p>node-webpmux</p></td>
-<td><p>3.2.0</p></td>
-<td><p>3.2.0</p></td>
+<td><p>pi-r-jimp-node-webpmux</p></td>
+<td><p>0.1.0</p></td>
+<td><p>0.1.0</p></td>
 </tr>
 </tbody>
 </table>
@@ -433,6 +437,12 @@ webp~2x(1024x768)
 </section>
 <section id="pi-r-jimp">
 <h2>&#64;pi-r/jimp<a class="headerlink" href="#pi-r-jimp" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.13.1: </span></p>
+<ul class="simple">
+<li><p>Initial release for animated WebP extension <code class="docutils literal notranslate"><span class="pre">pi-r-jimp-node-webpmux</span></code>.</p></li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.0: </span></p>
 <ul>

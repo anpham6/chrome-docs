@@ -149,6 +149,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 97-99,134
 
   import type { PermittedDirectories } from "./core";
   import type { SecureConfig } from "./http";
@@ -246,6 +247,9 @@ Settings
           csv?: boolean;
           differ?: string;
           error?: string;
+          match?: string;
+          missing_on_dst?: string;
+          missing_on_src?: string;
           format?: string;
           separator?: string;
           timeformat?: string;
@@ -280,6 +284,7 @@ Settings
           bind?: string;
           contimeout?: string;
           disable_http2?: boolean;
+          http_proxy?: string;
           timeout?: string;
           config?: string;
       };
@@ -287,6 +292,18 @@ Settings
 
 Changelog
 ---------
+
+.. versionadded:: 0.14.7
+
+  - *DownloadModule* section **rclone** properties were created:
+
+    .. hlist::
+      :columns: 4
+
+      - match
+      - missing_on_dst
+      - missing_on_src
+      - http_proxy
 
 .. versionadded:: 0.14.0
 

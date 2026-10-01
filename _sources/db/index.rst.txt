@@ -14,3 +14,4 @@ Database
   postgres
   redis
   mssql
+  sqlite

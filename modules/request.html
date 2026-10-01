@@ -378,7 +378,10 @@
 <span class="w">        </span><span class="nx">csv?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">differ?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">error?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">format?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="hll"><span class="w">        </span><span class="nx">match?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="hll"><span class="w">        </span><span class="nx">missing_on_dst?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="hll"><span class="w">        </span><span class="nx">missing_on_src?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="w">        </span><span class="nx">format?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">separator?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">timeformat?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="s2">"md5"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"SHA-1"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"DropboxHash"</span><span class="p">;</span>
@@ -412,7 +415,8 @@
 <span class="w">        </span><span class="nx">bind?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">contimeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">disable_http2?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">timeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="hll"><span class="w">        </span><span class="nx">http_proxy?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span class="w">        </span><span class="nx">timeout?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">        </span><span class="nx">config?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="p">}</span>
@@ -421,6 +425,26 @@
 </div>
 <section id="id3">
 <h3>Changelog<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.7: </span></p>
+<ul>
+<li><p><em>DownloadModule</em> section <strong>rclone</strong> properties were created:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>match</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>missing_on_dst</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>missing_on_src</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>http_proxy</p></li>
+</ul>
+</td></tr></table>
+</li>
+</ul>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.14.0: </span></p>
 <ul>

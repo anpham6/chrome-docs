@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 113,124
+  :emphasize-lines: 96,98,101,116,127
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -104,10 +104,13 @@ Interface
       hasCache(source: string, sessionKey?: string): boolean;
       hasCoerce(source: string, component: keyof DbCoerceSettings, uuidKey: string | undefined): boolean;
       hasCoerce(source: string, component: keyof DbCoerceSettings, credential?: unknown): boolean;
-      getQueryResult(source: string, credential: unknown, queryString: string, options: CacheOptions): QueryResult | undefined;
+      getQueryResult(source: string, credential: unknown, queryString: string, options?: CacheOptions): QueryResult | undefined;
+      /** @deprecated options */
       getQueryResult(source: string, credential: unknown, queryString: string, renewCache: boolean): QueryResult | undefined;
+      /** @deprecated options */
       getQueryResult(source: string, credential: unknown, queryString: string, sessionKey?: string, renewCache?: boolean): QueryResult | undefined;
-      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, options: CacheOptions): QueryResult;
+      setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, options?: CacheOptions): QueryResult;
+      /** @deprecated options */
       setQueryResult(source: string, credential: unknown, queryString: string, result: unknown, sessionKey?: string): QueryResult;
       getCacheResult(source: string, credential: unknown, queryString: string, cacheValue: CacheOptions, ignoreCache?: unknown): QueryResult | undefined;
       applyState(items: DataSource | DataSource[], value: number, as?: boolean): void;
@@ -263,6 +266,10 @@ Interface
 
 Changelog
 =========
+
+.. deprecated:: 0.14.7
+
+  - *IClientDb* :alt:`function` **setQueryResult** | **getQueryResult** optional parameters are exclusively used as :target:`CacheOptions`.
 
 .. versionadded:: 0.14.6
 

@@ -30,8 +30,7 @@ Interface
       transactionFail?: boolean;
   }
 
-.. code-block::
-  :emphasize-lines: 25
+::
 
   interface DbDataSource extends DataSource {
       source: string; // Built-in alias | NPM package name

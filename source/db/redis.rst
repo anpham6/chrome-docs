@@ -9,7 +9,6 @@ Interface
 =========
 
 .. code-block:: typescript
-  :emphasize-lines: 57,59
 
   import type { RediSearchSchema, RedisClientOptions, SearchOptions } from "redis";
 

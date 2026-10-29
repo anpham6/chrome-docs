@@ -9,7 +9,6 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 47,52
 
   import type { DbDataSource } from "./squared";
 
@@ -160,7 +159,6 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.db.json>`_
-  :emphasize-lines: 14,21,24,34
 
   import type { DbSourceOptions, ImportModule, PurgeComponent, RefreshAheadAction } from "./settings";
 

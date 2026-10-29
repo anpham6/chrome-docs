@@ -9,7 +9,6 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 96,98,101,116,127
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 

@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 71
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { HttpAdapterConstructor, HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
@@ -92,6 +93,15 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.15.0
+
+ - *OpenOptions* :alt:`property` **format** value ":lower:`auto`" uses *HTTP* response header :target:`Content-Type` to parse the response body into an object.
+
+.. versionchanged:: 0.15.0
+
+  - ``BREAKING`` *HTTP* native Agent **proxyEnv** is used when **NODE_USE_ENV_PROXY=1** is detected.
+  - ``BREAKING`` *RequestConstructor* :alt:`function` **defineDnsLookup** options property :target:`family` as :alt:`DnsLookupSettings` when used with values ":lower:`IPv4`" | ":lower:`IPv6`" will set *LookupOptions* as :alt:`node:dns` property :target:`order` to ":lower:`ipv4first`" | ":lower:`ipv6first`".
+
 .. versionadded:: 0.14.3
 
   - *IRequest* :alt:`function` **patch** for *HTTP* method :target:`PATCH` was created.
@@ -120,8 +130,8 @@ Changelog
 
 .. versionadded:: 0.11.0
 
-  - *IRequest* :alt:`property` setter **adapter** for the local HTTP implementation as :alt:`IHttpAdapter` was created.
-  - *RequestConstructor* :alt:`function` **defineHttpAdapter** for the global HTTP implementation as :alt:`IHttpAdapter` was created.
+  - *IRequest* :alt:`property` setter **adapter** for the local *HTTP* implementation as :alt:`IHttpAdapter` was created.
+  - *RequestConstructor* :alt:`function` **defineHttpAdapter** for the global *HTTP* implementation as :alt:`IHttpAdapter` was created.
   - *IRequest* :alt:`function` **get** supports :target:`Zstd` decompression for *Content-Encoding*. [#zstd]_
 
 .. deprecated:: 0.11.0
@@ -130,7 +140,7 @@ Changelog
 
 .. versionadded:: 0.10.3
 
-  - *IRequest* :alt:`function` **put** for HTTP method :target:`PUT` was created.
+  - *IRequest* :alt:`function` **put** for *HTTP* method :target:`PUT` was created.
 
 .. versionchanged:: 0.9.0
 
@@ -322,7 +332,7 @@ Changelog
 
 .. versionchanged:: 0.13.5
 
-  - *RequestModule* :target:`agent` properties **keep_alive_interval** | **proxy_env** for configuring the HTTP/s global :target:`Agent` instance were created.
+  - *RequestModule* :target:`agent` properties **keep_alive_interval** | **proxy_env** for configuring the *HTTP/s* global :target:`Agent` instance were created.
   - *RequestModule* property **proxy.keep_alive_interval** for throttling the keep alive packets :alt:`(ms)` was created.
 
 .. versionadded:: 0.13.0

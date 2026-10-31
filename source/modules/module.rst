@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 34-37,39-42
 
   import type { LogStatus } from "./squared";
 
@@ -260,6 +261,10 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.15.0
+
+  - ``BREAKING`` *IModule* :alt:`function` **readFile** | **writeFile** non-synchronous variations implemented the :target:`Abortable` interface.
 
 .. versionadded:: 0.14.7
 

@@ -9,13 +9,14 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 14,19,21,24-25
 
   import type { IFileManager, ModuleConstructor } from "./index";
   import type { ExternalAsset } from "./asset";
   import type { ClientConstructor, HostInitConfig, IClient, IPermission } from "./core";
   import type { FinalizeResult, PostFinalizeCallback } from "./filemanager";
   import type { WatchModule } from "./settings";
-  import type { IFileGroup, ModifiedPostFinalizeListener, SecureOptions } from "./watch";
+  import type { IFileGroup, ModifiedPostFinalizeListener, SecureOptions, WatchOptions } from "./watch";
 
   import type * as ws from "ws";
 
@@ -23,15 +24,18 @@ Interface
       connectTimeout: number;
       init(config?: HostInitConfig): this;
       start(assets: ExternalAsset[], permission?: IPermission | null): void;
+      watch(localUri: string, options?: WatchOptions): void;
       modified(watch: IFileGroup<ExternalAsset>): Promise<FinalizeResult | void>;
       configureServer(options: SecureOptions): boolean;
       setCA(value: string): boolean;
+      /** @deprecated */
       setSSLKey(value: string): boolean;
+      /** @deprecated */
       setSSLCert(value: string): boolean;
       hasSecureProtocol(): boolean;
       getRecursiveFiles(watch: IFileGroup<ExternalAsset>): [string, string[]][];
-      whenModified?(assets: ExternalAsset[], postFinalize: PostFinalizeCallback): IFileManager;
-      whenModified?(assets: ExternalAsset[], sanitize?: boolean, postFinalize?: PostFinalizeCallback): IFileManager;
+      whenModified?(assets: ExternalAsset[], postFinalize: PostFinalizeCallback): IFileManager | null;
+      whenModified?(assets: ExternalAsset[], sanitize?: boolean, postFinalize?: PostFinalizeCallback): IFileManager | null;
       set assets(value: ExternalAsset[]);
       get assets(): ExternalAsset[];
       set interval(value);
@@ -57,6 +61,18 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.15.0
+
+  - *IWatch* :alt:`function` **watch** for starting individual file watches was created.
+
+.. versionchanged:: 0.15.0
+
+  - ``BREAKING`` *IWatch* :alt:`function` **whenModified** return value was modified to :target:`IFileManager | null`.
+
+.. deprecated:: 0.15.0
+
+  - *IWatch* :alt:`function` **setSSLKey** | **setSSLCert** using a legacy *SecureContextOptions* as :alt:`node:http` property :target:`secureProtocol` is no longer supported.
 
 .. versionadded:: 0.12.0
 

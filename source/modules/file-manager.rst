@@ -184,6 +184,10 @@ Interface
 Changelog
 =========
 
+.. versionchanged:: 0.15.0
+
+  - ``BREAKING`` *FileManagerConstructor* :alt:`function` **writeChecksum** | **verifyChecksum** will no longer perform a recursive search when using ":lower:`./*.js`" instead of ":lower:`*.js`" or ":lower:`**/*.js`".
+
 .. versionadded:: 0.14.1
 
   - *ExternalAsset* property **headers** as :alt:`OutgoingHttpHeaders` was implemented.

@@ -9,14 +9,14 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 34-37,39-42
+  :emphasize-lines: 34-37,39-42,206-209
 
   import type { LogStatus } from "./squared";
 
   import type { IHost } from "./index";
   import type { IAbortComponent, IPermission } from "./core";
   import type { ExecCommand, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, LoggerFormat, StatusType } from "./logger";
-  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, DirectoryActionType, FileActionType, GetTempDirOptions, GlobDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
+  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, DirectoryActionType, FileActionType, GetTempDirOptions, GlobOptions, GlobDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
   import type { ErrorCode, Settings } from "./node";
   import type { LoggerFormatSettings } from "./settings";
 
@@ -216,8 +216,10 @@ Interface
       removeDir(value: string | URL, empty?: boolean, recursive?: boolean): boolean;
       copyDir(src: string | URL, dest: string | URL, move?: boolean, recursive?: boolean): Promise<CopyDirResult>;
       copyDir(src: string | URL, dest: string | URL, options?: CopyDirOptions): Promise<CopyDirResult>;
-      globDir(src: string | URL, pattern: string | string[], recursive: boolean | number): Promise<string[]>;
-      globDir(src: string | URL, pattern: string | string[], options?: GlobDirOptions): Promise<string[]>;
+      globFind(pattern: string | string[], options: GlobFindOptions, callback: (match: string | Dirent) => unknown): string | undefined;
+      globFind(pattern: string | string[], callback: (match: string) => unknown): string | undefined;
+      globDir(srcOrPattern: string | URL | string[], options?: GlobDirOptions): Promise<string[]>;
+      globDir(src: string | URL, pattern?: string | string[], options?: GlobDirOptions): Promise<string[]>;
       renameFile(src: string | URL, dest: string | URL, throws?: boolean): boolean;
       streamFile(value: string | URL, cache: boolean): Promise<Buffer | string>;
       streamFile(value: string | URL, options: ReadBufferOptions): Promise<Buffer | string>;
@@ -230,16 +232,6 @@ Interface
       resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer): Promise<FileTypeResult | undefined>;
       lookupMime(value: string, extension?: boolean): string;
       initCpuUsage(instance?: IModule, thread?: boolean): CpuUsage;
-      /** @deprecated private */
-      getCpuUsage(start: CpuUsage, format: true, thread?: boolean): string;
-      /** @deprecated private */
-      getCpuUsage(start: CpuUsage, format?: boolean, thread?: boolean): number;
-      /** @deprecated private */
-      getMemUsage(format: true, free?: boolean): string;
-      /** @deprecated private */
-      getMemUsage(format?: boolean, free?: boolean): number;
-      /** @deprecated private */
-      formatCpuMem(start: CpuUsage, all?: boolean): string;
       getPackageVersion(name: string | [string, string], options?: PackageVersionOptions): string;
       checkSemVer(name: string | [string, string], options: CheckSemVerOptions): boolean;
       checkSemVer(name: string | [string, string], min: number | string, max?: number | string): boolean;
@@ -262,9 +254,27 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.15.0
+
+  - *ModuleConstructor* :alt:`function` **globFind** for calling :target:`globDir` with a predicate function was created.
+
 .. versionchanged:: 0.15.0
 
   - ``BREAKING`` *IModule* :alt:`function` **readFile** | **writeFile** non-synchronous variations implemented the :target:`Abortable` interface.
+  - *ModuleConstructor* :alt:`function` **globDir** when called without a **src** argument will default to the *current working directory* as :alt:`process.cwd()`.
+  - *ModuleConstructor* :alt:`function` **globDir** when called without a **pattern** argument will default to *all files* as :alt:`**/*`.
+
+.. versionremoved:: 0.15.0
+
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **globDir** optional argument **recursive** is only available in :target:`options` as :alt:`GlobDirOptions`.
+  - ``BREAKING`` *ModuleConstructor* functions supporting **initCpuUsage** are no longer overridable:
+
+    .. hlist::
+      :columns: 3
+
+      - getCpuUsage
+      - getMemUsage
+      - formatCpuMem
 
 .. versionadded:: 0.14.7
 

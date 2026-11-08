@@ -229,7 +229,7 @@ Interface
       readText(value: string | URL, encoding?: BufferEncoding | ReadTextOptions, cache?: boolean): string;
       readBuffer(value: string | URL, options: ReadBufferOptions): Promise<Buffer | null> | Buffer | null;
       readBuffer(value: string | URL, cache?: boolean | ReadBufferOptions): Buffer | null;
-      resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer): Promise<FileTypeResult | undefined>;
+      resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer | Readable | Blob): Promise<FileTypeResult | undefined>;
       lookupMime(value: string, extension?: boolean): string;
       initCpuUsage(instance?: IModule, thread?: boolean): CpuUsage;
       getPackageVersion(name: string | [string, string], options?: PackageVersionOptions): string;
@@ -275,6 +275,18 @@ Changelog
       - getCpuUsage
       - getMemUsage
       - formatCpuMem
+
+.. versionchanged:: 0.14.8
+
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **globDir** option **exclude** as :alt:`GlobDirOptions` when set to a directory name with a trailing slash will not be searched :alt:`(e.g. node_modules/)`.
+
+.. note:: Backported: 0.13.13 / 0.12.19 / 0.11.20 / 0.10.23 / 0.9.31
+
+.. versionchanged:: 0.14.8
+
+  - *ModuleConstructor* :alt:`function` **resolveMime** option **data** as :alt:`FileTypeFormat` can read from a native :target:`Blob` instance.
+
+.. note:: Backported: 0.13.13
 
 .. versionadded:: 0.14.7
 

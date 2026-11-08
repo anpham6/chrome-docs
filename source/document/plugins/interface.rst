@@ -16,7 +16,8 @@ Interface
       external?: PlainObject;
   }
 
-::
+.. code-block::
+  :emphasize-lines: 19,26
 
   import type { IModule } from "../../types/lib";
   import type { ChunkData, FindModuleOptions, SourceInput, SourceMap } from "../../types/document";
@@ -36,14 +37,14 @@ Interface
       createSourceMap(code: string): SourceMap; // Use "nextMap" method for sourceMap (additional sourceMaps)
       toBaseConfig(all?: boolean): PlainObject;
       upgrade(context: unknown, options: FindModuleOptions): unknown; // Use exact dependency installed with package
-      upgrade(context: unknown, startDir?: string, packageName?: string, version?: string): unknown;
+      upgrade(context: unknown, startDir?: string | URL, packageName?: string, version?: string): unknown;
       findModule(startDir: string, packageName?: string, version?: string): string;
 
       /* ESM */
       getMainFile(code?: string, imports?: ImportModule): SourceInput<string> | undefined;
       getSourceFiles(imports?: ImportModule): SourceInput<[string, string?, string?][]> | undefined;
       upgradeESM(context: unknown, options: FindModuleOptions): Promise<unknown>; // Dynamic import with "require" fallback
-      upgradeESM(context: unknown, dirname?: string, pkgname?: string, version?: string): Promise<unknown>;
+      upgradeESM(context: unknown, startDir?: string | URL, pkgname?: string, version?: string): Promise<unknown>;
 
       /* Return values */
       out: {
@@ -67,6 +68,12 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.14.8
+
+  - *ITransformSeries* :alt:`function` **upgrade** | **upgradeESM** optional argument :target:`startDir` as ``URL`` :alt:`(import.meta.url)` was implemented.
+
+.. note:: Backported: 0.13.13
 
 .. versionchanged:: 0.13.0
 

@@ -9,14 +9,15 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 19,22,25,28
 
   import type { IModule, ModuleConstructor } from "./index";
-  import type { BrotliCompressLevel, BufferResult, CompressFormat, CompressLevel, TryFileCompressor } from "./compress";
+  import type { BrotliCompressLevel, BufferResult, CompressFormat, CompressLevel, TryFileCompressor, ZstdCompressLevel } from "./compress";
   import type { CompressModule, CompressSettings } from "./settings";
 
   import type { WriteStream } from "node:fs";
   import type { Readable } from "node:stream";
-  import type { BrotliCompress, BrotliOptions, Gzip, ZlibOptions } from "node:zlib";
+  import type { BrotliCompress, BrotliOptions, Gzip, ZlibOptions, ZstdCompress, ZstdOptions } from "node:zlib";
 
   interface ICompress extends IModule {
       module: CompressModule;
@@ -28,12 +29,16 @@ Interface
       getReadable(file: string | URL | Buffer): Readable;
       createGzip(file: string | Buffer, options?: CompressLevel): Gzip;
       createBrotliCompress(file: string | Buffer, options?: BrotliCompressLevel): BrotliCompress;
-      createWriteStreamAsGzip(file: string | Buffer, output: string, options?: CompressLevel): WriteStream;
-      createWriteStreamAsBrotli(file: string | Buffer, output: string, options?: BrotliCompressLevel): WriteStream;
+      createZstdCompress(file: Bufferable, options?: ZstdCompressLevel): ZstdCompress;
+      createWriteStreamAsGzip(file: Bufferable, output: string, options?: CompressLevel): WriteStream;
+      createWriteStreamAsBrotli(file: Bufferable, output: string, options?: BrotliCompressLevel): WriteStream;
+      createWriteStreamAsZstd(file: Bufferable, output: string, options?: ZstdCompressLevel): WriteStream;
       intoGzipStream(output: string, options?: ZlibOptions): WriteStream;
       intoBrotliStream(output: string, options?: BrotliOptions): WriteStream;
-      writeGzip(file: string | Buffer, output: string, options?: CompressLevel): Promise<void>;
-      writeBrotli(file: string | Buffer, output: string, options?: CompressLevel): Promise<void>;
+      intoZstdStream(output: string, options?: ZstdOptions): WriteStream;
+      writeGzip(file: Bufferable, output: string, options?: CompressLevel): Promise<void>;
+      writeBrotli(file: Bufferable, output: string, options?: CompressLevel): Promise<void>;
+      writeZstd(file: Bufferable, output: string, options?: CompressLevel): Promise<void>;
       tryFile(file: string | Buffer, options: CompressFormat): Promise<BufferResult>;
       tryFile(file: string | Buffer, output: string, options?: CompressFormat): Promise<BufferResult>;
       tryImage(file: string, options: CompressFormat): Promise<BufferResult>;
@@ -53,6 +58,18 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.15.0
+
+  - *ICompress* :alt:`function` for **Zstandard** as :alt:`zst` were created:
+
+    .. hlist::
+      :columns: 2
+
+      - createZstdCompress
+      - createWriteStreamAsZstd
+      - intoGzipStream
+      - writeZstd
 
 .. versionadded:: 0.14.0
 

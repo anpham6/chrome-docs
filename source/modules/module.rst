@@ -9,14 +9,14 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 34-37,39-42,206-209
+  :emphasize-lines: 34-37,39-42,203,205-206,208,210-213
 
   import type { LogStatus } from "./squared";
 
   import type { IHost } from "./index";
   import type { IAbortComponent, IPermission } from "./core";
   import type { ExecCommand, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, LoggerFormat, StatusType } from "./logger";
-  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, DirectoryActionType, FileActionType, GetTempDirOptions, GlobOptions, GlobDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, WriteFileOptions } from "./module";
+  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, DirectoryActionType, FileActionType, GetTempDirOptions, GlobOptions, GlobDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, RemoveDirBaseOptions, WriteFileOptions } from "./module";
   import type { ErrorCode, Settings } from "./node";
   import type { LoggerFormatSettings } from "./settings";
 
@@ -212,14 +212,18 @@ Interface
       joinPath(...values: unknown[]): string;
       normalizePath(value: unknown, flags?: boolean | number): string;
       createDir(value: string | URL, overwrite?: boolean): boolean;
+      /** @deprecated RemoveDirBaseOptions */
       removeDir(value: string | URL, sinceCreated: number, recursive?: boolean): boolean;
-      removeDir(value: string | URL, empty?: boolean, recursive?: boolean): boolean;
+      /** @deprecated RemoveDirBaseOptions */
+      removeDir(value: string | URL, emptyDir?: boolean, recursive?: boolean): boolean;
+      removeDir(value: string | URL, options?: RemoveDirBaseOptions): boolean;
+      /** @deprecated CopyDirOptions */
       copyDir(src: string | URL, dest: string | URL, move?: boolean, recursive?: boolean): Promise<CopyDirResult>;
       copyDir(src: string | URL, dest: string | URL, options?: CopyDirOptions): Promise<CopyDirResult>;
       globFind(pattern: string | string[], options: GlobFindOptions, callback: (match: string | Dirent) => unknown): string | undefined;
       globFind(pattern: string | string[], callback: (match: string) => unknown): string | undefined;
-      globDir(srcOrPattern: string | URL | string[], options?: GlobDirOptions): Promise<string[]>;
-      globDir(src: string | URL, pattern?: string | string[], options?: GlobDirOptions): Promise<string[]>;
+      globDir(srcOrPattern: string | URL | string[], options?: GlobDirOptions): Promise<string[] | Dirent[]>;
+      globDir(src: string | URL, pattern?: string | string[], options?: GlobDirOptions): Promise<string[] | Dirent[]>;
       renameFile(src: string | URL, dest: string | URL, throws?: boolean): boolean;
       streamFile(value: string | URL, cache: boolean): Promise<Buffer | string>;
       streamFile(value: string | URL, options: ReadBufferOptions): Promise<Buffer | string>;
@@ -261,13 +265,14 @@ Changelog
 .. versionchanged:: 0.15.0
 
   - ``BREAKING`` *IModule* :alt:`function` **readFile** | **writeFile** non-synchronous variations implemented the :target:`Abortable` interface.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **copyDir** does not traverse **dot** directories without :target:`dotDir` as :alt:`CopyDirOptions` set to :target:`true`.
   - *ModuleConstructor* :alt:`function` **globDir** when called without a **src** argument will default to the *current working directory* as :alt:`process.cwd()`.
-  - *ModuleConstructor* :alt:`function` **globDir** when called without a **pattern** argument will default to *all files* as :alt:`**/*`.
+  - *ModuleConstructor* :alt:`function` **globDir** when called without a **pattern** argument will default to :target:`all files` as :alt:`**/*`.
 
 .. versionremoved:: 0.15.0
 
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **globDir** optional argument **recursive** is only available in :target:`options` as :alt:`GlobDirOptions`.
-  - ``BREAKING`` *ModuleConstructor* functions supporting **initCpuUsage** are no longer overridable:
+  - *ModuleConstructor* :alt:`function` used with **initCpuUsage** are no longer overridable:
 
     .. hlist::
       :columns: 3
@@ -276,9 +281,14 @@ Changelog
       - getMemUsage
       - formatCpuMem
 
+.. deprecated:: 0.15.0
+
+  - *ModuleConstructor* :alt:`function` **removeDir** optional arguments are available in :target:`options` as :alt:`RemoveDirBaseOptions`.
+  - *ModuleConstructor* :alt:`function` **copyDir** optional arguments are available in :target:`options` as :alt:`CopyDirOptions`.
+
 .. versionchanged:: 0.14.8
 
-  - ``BREAKING`` *ModuleConstructor* :alt:`function` **globDir** option **exclude** as :alt:`GlobDirOptions` when set to a directory name with a trailing slash will not be searched :alt:`(e.g. node_modules/)`.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **globDir** option **exclude** as :alt:`GlobDirOptions` when set to an actual directory with a trailing slash will not be searched :alt:`(e.g. node_modules/)`.
 
 .. note:: Backported: 0.13.13 / 0.12.19 / 0.11.20 / 0.10.23 / 0.9.31
 
@@ -498,7 +508,7 @@ Settings
   }
 
   interface ErrorModule {
-      out?: string | (err: Error, data: LogTypeValue, require?: NodeRequire) => void;
+      out?: string | (err: Error, data: LogTypeValue) => void;
       fatal?: boolean;
       settings?: {
           trap_exceptions?: boolean;
@@ -615,7 +625,7 @@ Changelog
 
 .. deprecated:: 0.14.7
 
-  - *NodeModule* properties **process.inline** | **require.inline** functionality can be achieved using **require.module** global definitions.
+  - *NodeModule* properties **process.inline** | **require.inline** functionality can be achieved using **require.module**.
 
 .. versionadded:: 0.14.0
 

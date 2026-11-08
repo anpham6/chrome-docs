@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 30-31
 
   import type { DataSource, LogStatus, WorkerAction } from "./squared";
 
@@ -39,7 +40,8 @@ Interface
       resumeLog(type?: string): void;
       hasLog(type: string): boolean;
       delayMessage(...args: unknown[]): void;
-      willAbort(value: string | IModule): boolean;
+      willAbort(value: string | bigint | IModule): boolean;
+      registerAbort(name: string, type: number | bigint, override?: boolean): boolean;
       loadModule(name: string, ...args: any[]): IModule | null;
       retain(process: IModule): void;
       release(process: IModule, log?: boolean): boolean;
@@ -266,13 +268,17 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.15.0
+
+  - *IHost* :alt:`function` **registerAbort** for creating custom error classes was created.
+
 .. deprecated:: 0.14.7
 
   - *IClientDb* :alt:`function` **setQueryResult** | **getQueryResult** optional parameters are exclusively used as :target:`CacheOptions`.
 
 .. versionadded:: 0.14.6
 
-  - *ClientDbConstructor* :alt:`function` **keyForResult** for creating cache keys with placeholders was created.
+  - *ClientDbConstructor* :alt:`function` **keyForResult** for concatenating cache keys with placeholders was created.
   - *ClientDbConstructor* :alt:`property` **STORE_RESULT_KEY_SEPARATOR** for delimiting cache key items was created.
 
 .. versionadded:: 0.14.0
@@ -367,6 +373,7 @@ Settings
 
 .. code-block::
   :caption: `View JSON <https://www.unpkg.com/squared-express/dist/squared.json>`_
+  :emphasize-lines: 47
 
   import type { ExecOptions } from "./settings";
 
@@ -412,8 +419,17 @@ Settings
       };
   }
 
+  interface ErrorModule {
+      abort?: string[];
+      custom?: Record<string, number | bigint | string | undefined>;
+  }
+
 Changelog
 ---------
+
+.. versionadded:: 0.15.0
+
+  - *ErrorModule* property **custom** for registering custom abort classes was implemented.
 
 .. versionadded:: 0.12.0
 

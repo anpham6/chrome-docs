@@ -109,6 +109,7 @@ Interface
       STDOUT: 32768;
       DB: 65536;
       USER: 131072;
+      CUSTOM: 262144;
   }
 
   interface LOG_STATE {
@@ -221,6 +222,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.15.0
+
+  - :alt:`enum` **LOG_STATE** with :target:`CUSTOM` for abort class error conditions was created. 
 
 .. versionadded:: 0.14.7
 

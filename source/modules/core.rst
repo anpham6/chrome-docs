@@ -273,7 +273,7 @@ Changelog
 
 .. versionadded:: 0.14.6
 
-  - *ClientDbConstructor* :alt:`function` **keyForResult** for creating cache keys with placeholders was created.
+  - *ClientDbConstructor* :alt:`function` **keyForResult** for concatenating cache keys with placeholders was created.
   - *ClientDbConstructor* :alt:`property` **STORE_RESULT_KEY_SEPARATOR** for delimiting cache key items was created.
 
 .. versionadded:: 0.14.0

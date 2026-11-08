@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 179
+  :emphasize-lines: 179,209-211,217
 
   import type { LogStatus } from "./squared";
 
@@ -219,15 +219,15 @@ Interface
       globDir(src: string | URL, pattern: string | string[], recursive: boolean | number): Promise<string[]>;
       globDir(src: string | URL, pattern: string | string[], options?: GlobDirOptions): Promise<string[]>;
       renameFile(src: string | URL, dest: string | URL, throws?: boolean): boolean;
-      streamFile(value: string | URL, cache: boolean): Promise<Buffer | string>;
-      streamFile(value: string | URL, options: ReadBufferOptions): Promise<Buffer | string>;
-      streamFile(value: string | URL, cache?: boolean | ReadBufferOptions, options?: ReadBufferOptions): Promise<Buffer | string>;
+      streamFile(src: string, cache: boolean): Promise<Buffer>;
+      streamFile(src: string, options: ReadBufferOptions): Promise<Buffer | string>;
+      streamFile(src: string, cache?: boolean, options?: ReadBufferOptions): Promise<Buffer | string>;
       readText(value: string | URL, cache: boolean): string;
       readText(value: string | URL, options: ReadTextOptions): Promise<string> | string;
-      readText(value: string | URL, encoding?: BufferEncoding | ReadTextOptions, cache?: boolean): string;
-      readBuffer(value: string | URL, options: ReadBufferOptions): Promise<Buffer | null> | Buffer | null;
-      readBuffer(value: string | URL, cache?: boolean | ReadBufferOptions): Buffer | null;
-      resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer): Promise<FileTypeResult | undefined>;
+      readText(value: string | URL, encoding?: BufferEncoding, cache?: boolean): string;
+      readBuffer(value: string | URL, cache: boolean): Buffer | null;
+      readBuffer(value: string | URL, options?: ReadBufferOptions): Promise<Buffer | null> | Buffer | null;
+      resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer | Readable | Blob): Promise<FileTypeResult | undefined>;
       lookupMime(value: string, extension?: boolean): string;
       initCpuUsage(instance?: IModule, thread?: boolean): CpuUsage;
       /** @deprecated private */
@@ -261,6 +261,19 @@ Interface
 
 Changelog
 =========
+
+.. versionchanged:: 0.14.8
+
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **globDir** option **exclude** as :alt:`GlobDirOptions` when set to an actual directory with a trailing slash will not be searched :alt:`(e.g. node_modules/)`.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **streamFile** on read errors **ENOENT** | **EISDIR** will throw instead of returning :target:`null`.
+
+.. note:: Backported: 0.13.13 / 0.12.19 / 0.11.20 / 0.10.23 / 0.9.31
+
+.. versionchanged:: 0.14.8
+
+  - *ModuleConstructor* :alt:`function` **resolveMime** option **data** as :alt:`FileTypeFormat` can read from a native :target:`Blob` instance.
+
+.. note:: Backported: 0.13.13
 
 .. versionadded:: 0.14.7
 
@@ -590,7 +603,7 @@ Changelog
 
 .. deprecated:: 0.14.7
 
-  - *NodeModule* properties **process.inline** | **require.inline** functionality can be achieved using **require.module** global definitions.
+  - *NodeModule* properties **process.inline** | **require.inline** functionality can be achieved using **require.module**.
 
 .. versionadded:: 0.14.0
 

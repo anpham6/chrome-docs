@@ -225,9 +225,9 @@ Example usage
 
 .. versionadded:: 0.7.0
 
-  - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
-  - **CLOUD_UPLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
-  - **configBucket.tags** using *PutBucketTaggingRequest* was implemented.
+  - *ICloudServiceClient* attribute **CLOUD_UPLOAD_STREAM** was enabled.
+  - *ICloudServiceClient* attribute **CLOUD_UPLOAD_CHUNK** was enabled.
+  - *PutBucketTaggingRequest* group **configBucket.tags** feature was implemented.
 
 .. versionremoved:: 0.7.0
 

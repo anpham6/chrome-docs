@@ -298,7 +298,7 @@ Example usage
 
 .. versionadded:: 0.10.0
 
-  - *DynamoDB* method **transactGet** using *TransactGetItemsInput* was implemented.
+  - *DynamoDB* method **transactGet** as :alt:`TransactGetItemsInput` was implemented.
 
 .. versionadded:: 0.9.0
 
@@ -306,12 +306,12 @@ Example usage
 
 .. versionadded:: 0.7.0
 
-  - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
-  - **CLOUD_UPLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
-  - **chunkSize** | **chunkLimit** in *CloudStorageUpload* were implemented.
-  - **configBucket.tags** using *PutBucketTaggingRequest* was implemented.
-  - **configBucket.cors** using *CORSConfiguration* was implemented.
-  - **configBucket.lifecycle** using *LifecycleConfiguration* was implemented.
+  - *ICloudServiceClient* attribute **CLOUD_UPLOAD_STREAM** was enabled.
+  - *ICloudServiceClient* attribute **CLOUD_UPLOAD_CHUNK** was enabled.
+  - *CloudStorageUpload* properties **chunkSize** | **chunkLimit** were implemented.
+  - *PutBucketTaggingRequest* group **configBucket.tags** feature was implemented.
+  - *CORSConfiguration* group **configBucket.cors** feature was implemented.
+  - *LifecycleConfiguration* group **configBucket.lifecycle** feature was implemented.
 
 .. versionremoved:: 0.7.0
 

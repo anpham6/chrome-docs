@@ -321,7 +321,7 @@ Example usage
 
 .. versionadded:: 0.8.2
 
-  - *AzureStorageCredential* property **accountSas** for URL authentication using :abbr:`SAS (Shared Access Signatures)` was implemented.
+  - *AzureStorageCredential* property **accountSas** for URL authentication as :abbr:`SAS (Shared Access Signatures)` was implemented.
 
 .. versionadded:: 0.8.1
 
@@ -329,11 +329,11 @@ Example usage
 
 .. versionadded:: 0.7.0
 
-  - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
-  - **CLOUD_UPLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
-  - **CLOUD_DOWNLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
-  - **chunkSize** | **chunkLimit** in *CloudStorageUpload* were implemented.
-  - **chunkSize** | **chunkLimit** in *CloudStorageDownload* were implemented.
+  - *ICloudServiceClient* attribute **CLOUD_UPLOAD_STREAM** was enabled.
+  - *ICloudServiceClient* attribute **CLOUD_UPLOAD_CHUNK** was enabled.
+  - *ICloudServiceClient* attribute **CLOUD_DOWNLOAD_CHUNK** was enabled.  
+  - *CloudStorageUpload* properties **chunkSize** | **chunkLimit** were implemented.
+  - *CloudStorageDownload* properties **chunkSize** | **chunkLimit** were implemented.
 
 .. versionadded:: 0.6.2
 

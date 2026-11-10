@@ -96,6 +96,7 @@ Changelog
 .. versionadded:: 0.15.0
 
  - *OpenOptions* :alt:`property` **format** value ":lower:`auto`" uses *HTTP* response header :target:`Content-Type` to parse the response body into an object.
+ - *OpenOptions* :alt:`property` **format** can be used as an *HTTP* request header :target:`Accept` with response parsed as ":lower:`auto`".
 
 .. versionchanged:: 0.15.0
 

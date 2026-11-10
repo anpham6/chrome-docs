@@ -9,6 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
+  :emphasize-lines: 37
 
   import type { IFileManager, IHost, IScopeOrigin } from "./index";
   import type { ExternalAsset } from "./asset";
@@ -46,6 +47,7 @@ Interface
       getUploadHandler(service: string, credential: unknown): (...args: unknown[]) => void;
       getDownloadHandler(service: string, credential: unknown): (...args: unknown[]) => void;
       resolveService(service: string, folder?: string): string;
+      generateBucketName(service?: string): string;
       get settings(): CloudSettings;
   }
 
@@ -97,6 +99,10 @@ Interface
 
 Changelog
 =========
+
+.. versionadded:: 0.15.0
+
+  - *ICloud* :alt:`function` **generateBucketName** for uploads with :target:`bucket` as :alt:`undefined` was created.
 
 .. versionchanged:: 0.14.0
 

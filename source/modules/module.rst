@@ -9,14 +9,14 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 34-37,39-42,203,205-206,208,210-213
+  :emphasize-lines: 34-37,39-42,203,207,209-213
 
   import type { LogStatus } from "./squared";
 
   import type { IHost } from "./index";
   import type { IAbortComponent, IPermission } from "./core";
   import type { ExecCommand, LogArguments, LogComponent, LogDate, LogFailOptions, LogMessageOptions, LogOptions, LogProcessOptions, LogTime, LogType, LogValue, LoggerFormat, StatusType } from "./logger";
-  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, DirectoryActionType, FileActionType, GetTempDirOptions, GlobOptions, GlobDirOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, RemoveDirBaseOptions, WriteFileOptions } from "./module";
+  import type { AsHashOptions, CheckSemVerOptions, CopyDirOptions, CopyDirResult, CopyFileOptions, CreateDirOptions, DeleteFileOptions, DirectoryActionType, FileActionType, GetTempDirOptions, GlobOptions, GlobDirOptions, GlobFindOptions, MoveFileOptions, ParseFunctionOptions, PermissionOptions, ProtocolType, ReadBufferOptions, ReadFileCallback, ReadFileOptions, ReadHashOptions, ReadTextOptions, RemoveDirOptions, RemoveDirBaseOptions, WriteFileOptions } from "./module";
   import type { ErrorCode, Settings } from "./node";
   import type { LoggerFormatSettings } from "./settings";
 
@@ -214,25 +214,24 @@ Interface
       createDir(value: string | URL, overwrite?: boolean): boolean;
       /** @deprecated RemoveDirBaseOptions */
       removeDir(value: string | URL, sinceCreated: number, recursive?: boolean): boolean;
-      /** @deprecated RemoveDirBaseOptions */
       removeDir(value: string | URL, emptyDir?: boolean, recursive?: boolean): boolean;
       removeDir(value: string | URL, options?: RemoveDirBaseOptions): boolean;
       /** @deprecated CopyDirOptions */
       copyDir(src: string | URL, dest: string | URL, move?: boolean, recursive?: boolean): Promise<CopyDirResult>;
       copyDir(src: string | URL, dest: string | URL, options?: CopyDirOptions): Promise<CopyDirResult>;
-      globFind(pattern: string | string[], options: GlobFindOptions, callback: (match: string | Dirent) => unknown): string | undefined;
-      globFind(pattern: string | string[], callback: (match: string) => unknown): string | undefined;
-      globDir(srcOrPattern: string | URL | string[], options?: GlobDirOptions): Promise<string[] | Dirent[]>;
-      globDir(src: string | URL, pattern?: string | string[], options?: GlobDirOptions): Promise<string[] | Dirent[]>;
+      globFind(pattern: string | string[], options: GlobFindOptions, callback: (match: string | Dirent, source: { parentPath: string; depth: number; fromSym: boolean }) => unknown): string | Dirent | undefined;
+      globFind(pattern: string | string[], callback: (match: string, source: { parentPath: string; depth: number; fromSym: boolean }) => unknown): string | undefined;
+      globDir(srcOrPattern: string | URL | string[], sync?: boolean): string[] | Dirent[] | Promise<string[] | Dirent[]>;
+      globDir(srcOrPattern: string | URL | string[], options?: GlobDirOptions, sync?: boolean): string[] | Dirent[] | Promise<string[] | Dirent[]>;
+      globDir(src: string | URL, pattern?: string | string[], options?: GlobDirOptions, sync?: boolean): string[] | Dirent[] | Promise<string[] | Dirent[]>;
       renameFile(src: string | URL, dest: string | URL, throws?: boolean): boolean;
-      streamFile(value: string | URL, cache: boolean): Promise<Buffer | string>;
-      streamFile(value: string | URL, options: ReadBufferOptions): Promise<Buffer | string>;
-      streamFile(value: string | URL, cache?: boolean | ReadBufferOptions, options?: ReadBufferOptions): Promise<Buffer | string>;
+      streamFile(src: string, cache: boolean): Promise<Buffer>;
+      streamFile(src: string, options?: ReadBufferOptions): Promise<Buffer | string>;
       readText(value: string | URL, cache: boolean): string;
-      readText(value: string | URL, options: ReadTextOptions): Promise<string> | string;
-      readText(value: string | URL, encoding?: BufferEncoding | ReadTextOptions, cache?: boolean): string;
-      readBuffer(value: string | URL, options: ReadBufferOptions): Promise<Buffer | null> | Buffer | null;
-      readBuffer(value: string | URL, cache?: boolean | ReadBufferOptions): Buffer | null;
+      readText(value: string | URL, encoding?: BufferEncoding, cache?: boolean): string;
+      readText(value: string | URL, options?: ReadTextOptions): Promise<string> | string;
+      readBuffer(value: string | URL, cache: boolean): Buffer | null;
+      readBuffer(value: string | URL, options?: ReadBufferOptions): Promise<Buffer | null> | Buffer | null;
       resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer | Readable | Blob): Promise<FileTypeResult | undefined>;
       lookupMime(value: string, extension?: boolean): string;
       initCpuUsage(instance?: IModule, thread?: boolean): CpuUsage;
@@ -260,7 +259,20 @@ Changelog
 
 .. versionadded:: 0.15.0
 
-  - *ModuleConstructor* :alt:`function` **globFind** for calling :target:`globDir` with a predicate function was created.
+  - *ModuleConstructor* :alt:`function` **globFind** for calling :target:`globDir` synchronously with a predicate function was created.
+  - *ModuleConstructor* :alt:`function` **globDir** argument :target:`sync` as :alt:`boolean` was implemented.
+  - *ModuleConstructor* :alt:`function` **globDir** optional properties as :alt:`GlobDirOptions`:
+
+    .. hlist::
+      :columns: 3
+
+      - literalClasses
+      - all
+      - subPath
+      - withFileTypes
+      - followSymlinks
+      - throwsSymlinks
+      - throwsReadDir
 
 .. versionchanged:: 0.15.0
 
@@ -272,6 +284,7 @@ Changelog
 .. versionremoved:: 0.15.0
 
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **globDir** optional argument **recursive** is only available in :target:`options` as :alt:`GlobDirOptions`.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **streamFile** no longer recognizes a third argument :target:`options` as :alt:`ReadBufferOptions`.
   - *ModuleConstructor* :alt:`function` used with **initCpuUsage** are no longer overridable:
 
     .. hlist::
@@ -284,11 +297,12 @@ Changelog
 .. deprecated:: 0.15.0
 
   - *ModuleConstructor* :alt:`function` **removeDir** optional arguments are available in :target:`options` as :alt:`RemoveDirBaseOptions`.
-  - *ModuleConstructor* :alt:`function` **copyDir** optional arguments are available in :target:`options` as :alt:`CopyDirOptions`.
+  - *ModuleConstructor* :alt:`function` **copyDir** optional argument :target:`sinceCreated` are available in :target:`options` as :alt:`CopyDirOptions`.
 
 .. versionchanged:: 0.14.8
 
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **globDir** option **exclude** as :alt:`GlobDirOptions` when set to an actual directory with a trailing slash will not be searched :alt:`(e.g. node_modules/)`.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **streamFile** on read errors **ENOENT** | **EISDIR** will throw instead of returning :target:`null`.
 
 .. note:: Backported: 0.13.13 / 0.12.19 / 0.11.20 / 0.10.23 / 0.9.31
 
@@ -297,6 +311,10 @@ Changelog
   - *ModuleConstructor* :alt:`function` **resolveMime** option **data** as :alt:`FileTypeFormat` can read from a native :target:`Blob` instance.
 
 .. note:: Backported: 0.13.13
+
+.. deprecated:: 0.14.8
+
+  - *ModuleConstructor* :alt:`function` **streamFile** trailing argument :target:`options` as :alt:`ReadBufferOptions` is a duplicate.
 
 .. versionadded:: 0.14.7
 

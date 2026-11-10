@@ -72,7 +72,7 @@ Changelog
 
 .. deprecated:: 0.15.0
 
-  - *IWatch* :alt:`function` **setSSLKey** | **setSSLCert** using a legacy *SecureContextOptions* as :alt:`node:http` property :target:`secureProtocol` is no longer supported.
+  - *IWatch* :alt:`function` **setSSLKey** | **setSSLCert** using a legacy *SecureContextOptions* property :target:`secureProtocol` as :alt:`node:http` is not supported by *OpenSSL 3.0*.
 
 .. versionadded:: 0.12.0
 

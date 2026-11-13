@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 34-37,39-42,203,207,209-213
+  :emphasize-lines: 34-37,39-42,180,203,207,209-213,224
 
   import type { LogStatus } from "./squared";
 
@@ -219,8 +219,8 @@ Interface
       /** @deprecated CopyDirOptions */
       copyDir(src: string | URL, dest: string | URL, move?: boolean, recursive?: boolean): Promise<CopyDirResult>;
       copyDir(src: string | URL, dest: string | URL, options?: CopyDirOptions): Promise<CopyDirResult>;
-      globFind(pattern: string | string[], options: GlobFindOptions, callback: (match: string | Dirent, source: { parentPath: string; depth: number; fromSym: boolean }) => unknown): string | Dirent | undefined;
-      globFind(pattern: string | string[], callback: (match: string, source: { parentPath: string; depth: number; fromSym: boolean }) => unknown): string | undefined;
+      globFind(pattern: string | string[], options: GlobFindOptions, callback: (match: string | Dirent, source: { parentPath: string; depth: number; fromSym: boolean; count: number; next: boolean }) => unknown): string | Dirent | undefined;
+      globFind(pattern: string | string[], callback: (match: string, source: { parentPath: string; depth: number; fromSym: boolean; count: number; next: boolean }) => unknown): string | undefined;
       globDir(srcOrPattern: string | URL | string[], sync?: boolean): string[] | Dirent[] | Promise<string[] | Dirent[]>;
       globDir(srcOrPattern: string | URL | string[], options?: GlobDirOptions, sync?: boolean): string[] | Dirent[] | Promise<string[] | Dirent[]>;
       globDir(src: string | URL, pattern?: string | string[], options?: GlobDirOptions, sync?: boolean): string[] | Dirent[] | Promise<string[] | Dirent[]>;
@@ -234,7 +234,7 @@ Interface
       readBuffer(value: string | URL, options?: ReadBufferOptions): Promise<Buffer | null> | Buffer | null;
       resolveMime(data: string | Buffer | Uint8Array | ArrayBuffer | Readable | Blob): Promise<FileTypeResult | undefined>;
       lookupMime(value: string, extension?: boolean): string;
-      initCpuUsage(instance?: IModule, thread?: boolean): CpuUsage;
+      initCpuUsage(target?: object | symbol, thread?: boolean): CpuUsage;
       getPackageVersion(name: string | [string, string], options?: PackageVersionOptions): string;
       checkSemVer(name: string | [string, string], options: CheckSemVerOptions): boolean;
       checkSemVer(name: string | [string, string], min: number | string, max?: number | string): boolean;
@@ -259,9 +259,9 @@ Changelog
 
 .. versionadded:: 0.15.0
 
-  - *ModuleConstructor* :alt:`function` **globFind** for calling :target:`globDir` synchronously with a predicate function was created.
+  - *ModuleConstructor* :alt:`function` **globFind** for calling ``globDir`` synchronously with a predicate function was created.
   - *ModuleConstructor* :alt:`function` **globDir** argument :target:`sync` as :alt:`boolean` was implemented.
-  - *ModuleConstructor* :alt:`function` **globDir** optional properties as :alt:`GlobDirOptions`:
+  - *ModuleConstructor* :alt:`function` **globDir** properties as :alt:`GlobDirOptions`:
 
     .. hlist::
       :columns: 3
@@ -269,22 +269,36 @@ Changelog
       - literalClasses
       - all
       - subPath
+      - realPath :alt:`(default: true)`
       - withFileTypes
       - followSymlinks
       - throwsSymlinks
       - throwsReadDir
 
+.. tip:: **fs.glob** results can be replicated using these options ``{ all: true, subPath: true, realPath: false }``.
+
 .. versionchanged:: 0.15.0
 
-  - ``BREAKING`` *IModule* :alt:`function` **readFile** | **writeFile** non-synchronous variations implemented the :target:`Abortable` interface.
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **copyDir** does not traverse **dot** directories without :target:`dotDir` as :alt:`CopyDirOptions` set to :target:`true`.
-  - *ModuleConstructor* :alt:`function` **globDir** when called without a **src** argument will default to the *current working directory* as :alt:`process.cwd()`.
+  - *IModule* :alt:`function` **readFile** | **writeFile** non-synchronous variations implemented the :target:`Abortable` interface.
+  - *ModuleConstructor* :alt:`function` **globDir** when called without a **src** argument will default to the :target:`current working directory` as :alt:`process.cwd()`.
   - *ModuleConstructor* :alt:`function` **globDir** when called without a **pattern** argument will default to :target:`all files` as :alt:`**/*`.
+  - *ModuleConstructor* :alt:`function` **initCpuUsage** first argument :target:`target` as :alt:`IModule` was modified to :alt:`object | symbol`.
+  - *ModuleConstructor* :alt:`function` **asString** will produce a non-generic representation for these objects:
+
+    .. hlist::
+      :columns: 4
+
+      - RegExp
+      - ArrayBuffer
+      - TypedArray
+      - DataView
+      - URL (file\://)
 
 .. versionremoved:: 0.15.0
 
-  - ``BREAKING`` *ModuleConstructor* :alt:`function` **globDir** optional argument **recursive** is only available in :target:`options` as :alt:`GlobDirOptions`.
-  - ``BREAKING`` *ModuleConstructor* :alt:`function` **streamFile** no longer recognizes a third argument :target:`options` as :alt:`ReadBufferOptions`.
+  - *ModuleConstructor* :alt:`function` **globDir** argument **recursive** is available in :target:`options` as :alt:`GlobDirOptions`.
+  - *ModuleConstructor* :alt:`function` **streamFile** no longer recognizes the third argument :target:`options` as :alt:`ReadBufferOptions`.
   - *ModuleConstructor* :alt:`function` used with **initCpuUsage** are no longer overridable:
 
     .. hlist::
@@ -297,7 +311,7 @@ Changelog
 .. deprecated:: 0.15.0
 
   - *ModuleConstructor* :alt:`function` **removeDir** optional arguments are available in :target:`options` as :alt:`RemoveDirBaseOptions`.
-  - *ModuleConstructor* :alt:`function` **copyDir** optional argument :target:`sinceCreated` are available in :target:`options` as :alt:`CopyDirOptions`.
+  - *ModuleConstructor* :alt:`function` **copyDir** argument :target:`sinceCreated` is available in :target:`options` as :alt:`CopyDirOptions`.
 
 .. versionchanged:: 0.14.8
 
@@ -664,7 +678,7 @@ Changelog
 
 .. versionadded:: 0.11.2
 
-  - *NodeModule* group **posix** property **strict** for mixed pattern expressions with Windows was created.
+  - *NodeModule* group **posix** property **strict** for mixed pattern expressions on *Windows* was created.
 
 .. versionadded:: 0.11.0
 

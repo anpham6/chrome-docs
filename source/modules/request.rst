@@ -100,8 +100,8 @@ Changelog
 
 .. versionchanged:: 0.15.0
 
-  - ``BREAKING`` *HTTP* native Agent **proxyEnv** is used when **NODE_USE_ENV_PROXY=1** is detected.
-  - ``BREAKING`` *RequestConstructor* :alt:`function` **defineDnsLookup** options property :target:`family` as :alt:`DnsLookupSettings` when used with values ":lower:`IPv4`" | ":lower:`IPv6`" will set *LookupOptions* as :alt:`node:dns` property :target:`order` to ":lower:`ipv4first`" | ":lower:`ipv6first`".
+  - *HTTP* native Agent **proxyEnv** is used when **NODE_USE_ENV_PROXY=1** is detected.
+  - *RequestConstructor* :alt:`function` **defineDnsLookup** options property :target:`family` as :alt:`DnsLookupSettings` when used with values ":lower:`IPv4`" | ":lower:`IPv6`" will set *LookupOptions* as :alt:`node:dns` property :target:`order` to ":lower:`ipv4first`" | ":lower:`ipv6first`".
 
 .. versionadded:: 0.14.3
 

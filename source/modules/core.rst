@@ -324,7 +324,7 @@ Changelog
 
 .. versionchanged:: 0.12.0
 
-  - ``BREAKING`` Permission glob matchers **picomatch** | **minimatch** do not set any initial options other than :target:`nocase` for *Windows*.
+  - ``BREAKING`` Permission glob matchers **picomatch** | **minimatch** do not set any initial options other than :target:`nocase` on *Windows*.
   - *HostConstructor* :alt:`function` **kill** can be called without :target:`iv` when using a pre-encrypted :target:`username`.
   - *IPermission* :alt:`function` setters can be called with a boolean:
 
@@ -431,6 +431,20 @@ Changelog
 
   - *ErrorModule* property **custom** for registering custom abort classes was implemented.
 
+.. versionchanged:: 0.14.8
+
+  - *PermissionModule* folder access rights on *Windows* when filtered through **minimatch** enabled :target:`windowsPathsNoEscape` for these properties:
+
+    .. hlist::
+      :columns: 4
+
+      - disk_read
+      - disk_write
+      - unc_read
+      - unc_write
+
+.. note:: Backported: 0.13.13 / 0.12.19
+
 .. versionadded:: 0.12.0
 
   - *ProcessModule* property group **workers** for channel throttling was implemented.
@@ -461,7 +475,6 @@ References
 - https://www.unpkg.com/@e-mc/types/lib/squared.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/core.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/db.d.ts
-- https://www.unpkg.com/@e-mc/types/lib/dom.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/node.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/settings.d.ts

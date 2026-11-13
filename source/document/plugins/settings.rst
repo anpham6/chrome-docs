@@ -4,12 +4,16 @@ Settings
 
 All packages can be customized per authenticated username using the ``settings.users`` block. The base settings are then searched until something is found.
 
-::
+.. code-block::
+  :emphasize-lines: 6
 
   {
     "document": {
       "chrome": {
         "handler": "@pi-r/chrome",
+        "extensions": [
+          "@pi-r/chrome/extensions/css/remove-unused" // Optional
+        ],
         "eval": {
           "function": true, // Enable inline functions
           "absolute": false, // Enable absolute paths to local files
@@ -329,4 +333,4 @@ The same concept can be used inline anywhere using a ``script`` tag with the **t
 
 .. attention:: Using **data-chrome-template** requires the setting :code:`eval.template = true`.
 
-.. [#] this = NodeJS.process
+.. [#] this = NodeJS.process (deprecated)

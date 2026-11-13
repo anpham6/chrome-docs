@@ -726,25 +726,25 @@ Realtime Database
 .. versionadded:: 0.8.0
 
   - *GCPStorage* action **download** using **createReadStream** with :alt:`chunkLimit` was implemented.
-  - *Firestore* method **findNearest** as a *VectorQuery* and *Query* is supported.
-  - *Firestore* property **update** supports using *FieldValue<"vector" | "arrayUnion" | "arrayRemove">* methods.
+  - *Firestore* method **findNearest** as :alt:`VectorQuery` | :alt:`Query` is supported.
+  - *Firestore* property **update** supports using :target:`FieldValue<"vector" | "arrayUnion" | "arrayRemove">` methods.
 
 .. versionadded:: 0.7.1
 
-  - *Firestore* methods **where** | **orderBy** | **select** supports using *FieldPath* params.
+  - *Firestore* methods **where** | **orderBy** | **select** supports using :target:`FieldPath` params.
 
 .. versionadded:: 0.7.0
 
-  - **CLOUD_UPLOAD_STREAM** attribute in *ICloudServiceClient* was enabled.
-  - **CLOUD_UPLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
-  - **CLOUD_DOWNLOAD_CHUNK** attribute in *ICloudServiceClient* was enabled.
-  - **chunkSize** | **chunkLimit** in *CloudStorageUpload* were implemented.
-  - **chunkSize** | **chunkLimit** in *CloudStorageDownload* were implemented.
-  - *GCPStorage* **configBucket.tags** using *Metadata* was implemented.
-  - *GCPStorage* **configBucket.cors** using *Cors* was implemented.
-  - *GCPStorage* **configBucket.lifecycle** using *LifecycleRule* was implemented.
-  - *Firestore* property **update** supports using *FieldValue<"delete" | "increment" | "serverTimestamp">* methods.
-  - *Firestore* property **update** supports using property **updateType** enum values.
+  - *ICloudServiceClient* attribute **CLOUD_UPLOAD_STREAM** was enabled.
+  - *ICloudServiceClient* attribute **CLOUD_UPLOAD_CHUNK** was enabled.
+  - *ICloudServiceClient* attribute **CLOUD_DOWNLOAD_CHUNK** was enabled.  
+  - *CloudStorageUpload* properties **chunkSize** | **chunkLimit** were implemented.
+  - *CloudStorageDownload* properties **chunkSize** | **chunkLimit** were implemented.
+  - *GCPStorage* group **configBucket.tags** feature as :alt:`Metadata` was implemented.
+  - *GCPStorage* group **configBucket.cors** feature :alt:`Cors` was implemented.
+  - *GCPStorage* group **configBucket.lifecycle** feature :alt:`LifecycleRule` was implemented.
+  - *Firestore* property **update** supports using :target:`FieldValue<"delete" | "increment" | "serverTimestamp">` methods.
+  - *Firestore* property **update** supports using property :target:`updateType` enum values.
 
 .. versionremoved:: 0.7.0
 
@@ -753,7 +753,7 @@ Realtime Database
 .. versionadded:: 0.6.3
 
   - *Firestore* property **id** supports multiple document references.
-  - *Firestore* property **query** supports using *Filter<"and" | "or">* conditional groups.
+  - *Firestore* property **query** supports using :target:`Filter<"and" | "or">` conditional groups.
 
 .. versionadded:: 0.6.2
 

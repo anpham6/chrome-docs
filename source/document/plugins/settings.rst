@@ -4,14 +4,19 @@ Settings
 
 All packages can be customized per authenticated username using the ``settings.users`` block. The base settings are then searched until something is found.
 
-::
+.. code-block::
+  :emphasize-lines: 6,10
 
   {
     "document": {
       "chrome": {
         "handler": "@pi-r/chrome",
+        "extensions": [
+          "@pi-r/chrome/extensions/css/remove-unused" // Optional
+        ],
         "eval": {
           "function": true, // Enable inline functions
+          "regexp": true, // Enable inline RegExp patterns
           "absolute": false, // Enable absolute paths to local files
           "template": false, // Enable external template functions
           "userconfig": false // Enable functions inside local files from user queries
@@ -103,8 +108,8 @@ External plugins per package have to be pre-installed from NPM and may not be av
     }
   }
 
-Using inline function [#]_
-==========================
+Using inline function
+=====================
 
 The suffix ":lower:`-output`" is used to create the variable ``options.outputConfig``.
 
@@ -328,5 +333,3 @@ The same concept can be used inline anywhere using a ``script`` tag with the **t
   }
 
 .. attention:: Using **data-chrome-template** requires the setting :code:`eval.template = true`.
-
-.. [#] this = NodeJS.process

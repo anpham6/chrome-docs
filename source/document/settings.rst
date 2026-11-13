@@ -18,6 +18,7 @@ These are the latest server default settings for the :target:`chrome` framework.
         ],
         "eval": {
           "function": true,
+          "regexp": true,
           "absolute": false,
           "template": false,
           "userconfig": false

@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 179,209-211,217
+  :emphasize-lines: 179,209-210,212,218
 
   import type { LogStatus } from "./squared";
 
@@ -220,7 +220,8 @@ Interface
       globDir(src: string | URL, pattern: string | string[], options?: GlobDirOptions): Promise<string[]>;
       renameFile(src: string | URL, dest: string | URL, throws?: boolean): boolean;
       streamFile(src: string, cache: boolean): Promise<Buffer>;
-      streamFile(src: string, options: ReadBufferOptions): Promise<Buffer | string>;
+      streamFile(src: string, options?: ReadBufferOptions): Promise<Buffer | string>;
+      /** @deprecated options */
       streamFile(src: string, cache?: boolean, options?: ReadBufferOptions): Promise<Buffer | string>;
       readText(value: string | URL, cache: boolean): string;
       readText(value: string | URL, options: ReadTextOptions): Promise<string> | string;
@@ -274,6 +275,10 @@ Changelog
   - *ModuleConstructor* :alt:`function` **resolveMime** option **data** as :alt:`FileTypeFormat` can read from a native :target:`Blob` instance.
 
 .. note:: Backported: 0.13.13
+
+.. deprecated:: 0.14.8
+
+  - *ModuleConstructor* :alt:`function` **streamFile** trailing argument :target:`options` as :alt:`ReadBufferOptions` is a duplicate.
 
 .. versionadded:: 0.14.7
 

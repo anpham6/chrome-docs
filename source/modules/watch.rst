@@ -68,7 +68,7 @@ Changelog
 
 .. versionchanged:: 0.15.0
 
-  - ``BREAKING`` *IWatch* :alt:`function` **whenModified** return value was modified to :target:`IFileManager | null`.
+  - *IWatch* :alt:`function` **whenModified** return value was modified to :target:`IFileManager | null`.
 
 .. deprecated:: 0.15.0
 

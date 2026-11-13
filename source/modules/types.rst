@@ -7,11 +7,12 @@ Interface
 
 .. code-block:: typescript
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/index.d.ts>`_
+  :emphasize-lines: 41,43,61
 
   import type { LogArguments } from "./lib/logger";
   import type { ErrorCode, HighResolutionTime } from "./lib/node";
 
-  import type { BinaryLike, BinaryToTextEncoding, CipherGCMTypes, Encoding } from "node:crypto";
+  import type { BinaryLike, BinaryToTextEncoding, CipherGCMTypes } from "node:crypto";
   import type { BytesOptions } from "bytes";
 
   function createAbortError(reject: true): Promise<never>;
@@ -46,8 +47,10 @@ Interface
   function parseExpires(value: number | string, start?: number | boolean): number;
   function formatTime(value: number, char: string): string;
   function formatTime(value: number, elapsed?: boolean, char?: string): string;
-  function convertTime(value: number | string): number;
+  function convertTime(value: HighResolutionTime | number | string): number;
+  /** @deprecated format */
   function convertTime(value: HighResolutionTime, format: true): string;
+  /** @deprecated format */
   function convertTime(value: HighResolutionTime, format?: boolean): number;
   function hasGlob(value: string): boolean;
   /** @deprecated RegExp.escape */
@@ -64,9 +67,9 @@ Interface
   function coerceObject(data: unknown, parseString?: (...args: [string]) => unknown, cache?: boolean): unknown;
   function getEncoding(value: unknown, fallback?: BufferEncoding): BufferEncoding;
   function getAlgorithm(value: unknown, fallback?: string): string | undefined;
-  function encryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
-  function decryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: Encoding): string | undefined;
-  function hashKey(data: BinaryLike, algorithm?: string, encoding?: BinaryToTextEncoding): string;
+  function encryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: BufferEncoding): string | undefined;
+  function decryptUTF8(algorithm: CipherGCMTypes, key: BinaryLike, iv: BinaryLike, data: string, encoding?: BufferEncoding): string | undefined;
+  function hashKey(data: BinaryLike, algorithm?: string, encoding?: BufferEncoding): string;
   function incrementUUID(restart?: boolean): string;
   function validateUUID(value: unknown): value is string;
   function sanitizeCmd(value: string, ...args: unknown[]): string;
@@ -226,6 +229,14 @@ Changelog
 .. versionadded:: 0.15.0
 
   - :alt:`enum` **LOG_STATE** with :target:`CUSTOM` for abort class error conditions was created. 
+
+.. versionchanged:: 0.15.0
+
+  - :alt:`function` **hashKey** argument :target:`encoding` as :alt:`BinaryToTextEncoding` was changed to :target:`BufferEncoding`.
+
+.. deprecated:: 0.15.0
+
+  - :alt:`function` **convertTime** argument :target:`format` as :alt:`boolean` can be achieved by calling **formatTime** directly.
 
 .. versionadded:: 0.14.7
 

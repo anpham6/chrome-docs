@@ -261,7 +261,7 @@ Changelog
 
   - *ModuleConstructor* :alt:`function` **globFind** for calling :target:`globDir` synchronously with a predicate function was created.
   - *ModuleConstructor* :alt:`function` **globDir** argument :target:`sync` as :alt:`boolean` was implemented.
-  - *ModuleConstructor* :alt:`function` **globDir** optional properties as :alt:`GlobDirOptions`:
+  - *ModuleConstructor* :alt:`function` **globDir** properties as :alt:`GlobDirOptions`:
 
     .. hlist::
       :columns: 3
@@ -269,10 +269,13 @@ Changelog
       - literalClasses
       - all
       - subPath
+      - realPath :alt:`(default: true)`
       - withFileTypes
       - followSymlinks
       - throwsSymlinks
       - throwsReadDir
+
+.. tip:: **fs.glob** results can be replicated using these options ``{ all: true, subPath: true, realPath: false }``.
 
 .. versionchanged:: 0.15.0
 
@@ -283,7 +286,7 @@ Changelog
 
 .. versionremoved:: 0.15.0
 
-  - ``BREAKING`` *ModuleConstructor* :alt:`function` **globDir** optional argument **recursive** is only available in :target:`options` as :alt:`GlobDirOptions`.
+  - ``BREAKING`` *ModuleConstructor* :alt:`function` **globDir** argument **recursive** is available in :target:`options` as :alt:`GlobDirOptions`.
   - ``BREAKING`` *ModuleConstructor* :alt:`function` **streamFile** no longer recognizes a third argument :target:`options` as :alt:`ReadBufferOptions`.
   - *ModuleConstructor* :alt:`function` used with **initCpuUsage** are no longer overridable:
 
@@ -297,7 +300,7 @@ Changelog
 .. deprecated:: 0.15.0
 
   - *ModuleConstructor* :alt:`function` **removeDir** optional arguments are available in :target:`options` as :alt:`RemoveDirBaseOptions`.
-  - *ModuleConstructor* :alt:`function` **copyDir** optional argument :target:`sinceCreated` are available in :target:`options` as :alt:`CopyDirOptions`.
+  - *ModuleConstructor* :alt:`function` **copyDir** argument :target:`sinceCreated` is available in :target:`options` as :alt:`CopyDirOptions`.
 
 .. versionchanged:: 0.14.8
 

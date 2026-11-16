@@ -223,6 +223,10 @@ Interface
 Changelog
 =========
 
+.. versionadded:: 0.14.8
+
+  - :alt:`function` **asFunction** can parse files with multiple functions when using the **export default** convention.
+
 .. versionadded:: 0.14.7
 
   - :alt:`function` **asFunction** argument :target:`cjs` as :alt:`boolean` for creating a virtual :target:`module.exports` was implemented.
@@ -435,7 +439,7 @@ References
 
 - https://www.unpkg.com/@e-mc/types/index.d.ts
 - https://www.unpkg.com/@e-mc/types/lib/logger.d.ts
-- https://www.unpkg.com/@e-mc/types@0.13.8/lib/node.d.ts
+- https://www.unpkg.com/@e-mc/types/lib/node.d.ts
 
 * https://www.npmjs.com/package/@types/node
 * https://www.npmjs.com/package/@types/bytes

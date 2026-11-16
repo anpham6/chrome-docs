@@ -629,7 +629,7 @@ Changelog
 
 .. versionadded:: 0.11.2
 
-  - *NodeModule* group **posix** property **strict** for mixed pattern expressions with Windows was created.
+  - *NodeModule* group **posix** property **strict** for mixed pattern expressions on Windows was created.
 
 .. versionadded:: 0.11.0
 

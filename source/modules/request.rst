@@ -9,7 +9,7 @@ Interface
 
 .. code-block::
   :caption: `View Source <https://www.unpkg.com/@e-mc/types/lib/index.d.ts>`_
-  :emphasize-lines: 71
+  :emphasize-lines: 43-46,71
 
   import type { IModule, ModuleConstructor } from "./index";
   import type { HttpAdapterConstructor, HttpAgentSettings, HttpProtocolVersion, HttpRequestClient, InternetProtocolVersion } from "./http";
@@ -100,6 +100,7 @@ Changelog
 
 .. versionchanged:: 0.15.0
 
+  - ``BREAKING`` *HTTP* :ref:`POST <references-mdn-multipart>` uploads require package :doc:`@e-mc/use <use>` when using :target:`Content-Type` as :alt:`multipart/form-data`.
   - *HTTP* native Agent **proxyEnv** is used when **NODE_USE_ENV_PROXY=1** is detected.
   - *RequestConstructor* :alt:`function` **defineDnsLookup** options property :target:`family` as :alt:`DnsLookupSettings` when used with values ":lower:`IPv4`" | ":lower:`IPv6`" will set *LookupOptions* as :alt:`node:dns` property :target:`order` to ":lower:`ipv4first`" | ":lower:`ipv6first`".
 

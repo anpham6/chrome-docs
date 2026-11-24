@@ -200,3 +200,9 @@ https://developer.mozilla.org/en-US/docs/Web/API/DOMException
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control
   | `Cache-Control header <search.html?q=Cache-Control>`_
+
+.. _references-mdn-multipart:
+.. rst-class:: block-list
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/POST#multipart_form_submission
+  | `Multipart form submission <search.html?q=Multipart>`_

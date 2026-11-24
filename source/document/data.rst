@@ -5,10 +5,12 @@ Data Sources
 Using the same concept as a database you can read from these files:
 
 - **JSON**
-- **YAML**
-- JSON5 [#]_
-- XML [#]_
-- TOML [#]_
+- :doc:`@e-mc/use </modules/use>` [#]_
+
+  * YAML
+  * JSON5
+  * XML
+  * TOML
 
 Then optionally select nested objects with these :target:`query` expressions:
 
@@ -495,8 +497,6 @@ Changelog
   - *DataSource* property **source** option value ":lower:`json`" as *JSONDataSource* was implemented.
   - *TextDataSource* property **leadingText** | **trailingText** were created.
 
-.. [#] npm i json5
-.. [#] npm i fast-xml-parser
-.. [#] npm i toml
+.. [#] npm i json5 fast-xml-parser toml (up to E-mc 0.14)
 .. [#] npm i jmespath
 .. [#] npm i ejs

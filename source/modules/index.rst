@@ -16,6 +16,7 @@ Modules
   request
   task
   types
+  use
   watch
 
 ESM export

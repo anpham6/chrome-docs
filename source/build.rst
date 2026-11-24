@@ -206,7 +206,7 @@ Example remote configuration
   /* OR */
   squared.saveAs("example.zip", { config: "json" }); // json | yaml
 
-.. tip:: **JSON5** [#]_ and **TOML** [#]_ file formats are also supported.
+.. tip:: **JSON5** and **TOML** file formats are also supported. [#]_
 
 Example incremental
 ===================
@@ -493,7 +493,6 @@ There is no difference when using :doc:`data sources <document/data>` for writin
   });
 
 .. [#] https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap
-.. [#] npm i json5
-.. [#] npm i toml
+.. [#] npm i @e-mc/use
 .. [#] squared-express 4.0 + sqd-serve 0.18
 .. [#] squared 5.7.2

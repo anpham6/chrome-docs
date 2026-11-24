@@ -2,8 +2,16 @@
 Request
 =======
 
-- `aria2 <https://aria2.github.io/manual/en/html/README.html>`_
-- `rclone <https://rclone.org/overview>`_
+Installation
+============
+
+- **npm** i *@e-mc/request*
+- **npm** i *@e-mc/use* [#]_
+
+.. attention:: ``POST: multipart`` and parsing ``format: YAML/TOML/JSON5/XML`` into a *JSON* object are optionally installed features as of **E-mc 0.15**. :doc:`@e-mc/use </modules/use>` maintains full compatibility with **E-mc 0.14**.
+
+* `aria2 <https://aria2.github.io/manual/en/html/README.html>`_
+* `rclone <https://rclone.org/overview>`_
 
 .. important:: Program binaries are expected to already be installed on the host system.
 
@@ -275,3 +283,4 @@ Unsupported options
   * --name-transform
 
 .. [#opt] Default options can be overriden by **binOpts**.
+.. [#] Individual components can be swapped out for customizations.
